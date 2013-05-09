@@ -325,11 +325,11 @@
 
     [UIView transitionFromView:_animationView1
                         toView:_animationView2
-                      duration:1.f
+                      duration:0.7f
                        options:UIViewAnimationOptionTransitionFlipFromLeft
                     completion:^(BOOL finished) {
                         
-                        [UIView animateWithDuration:1.f animations:^{
+                        [UIView animateWithDuration:0.5f animations:^{
                             _animationView2.alpha = 0.f;
                         } completion:^(BOOL finished2) {
                             

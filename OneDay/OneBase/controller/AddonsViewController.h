@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KMViewControllerBase.h"
 
-@interface AddonsViewController : UIViewController
+@interface AddonsViewController : KMViewControllerBase
 - (IBAction)cancel:(id)sender;
 - (IBAction)save:(id)sender;
 @end

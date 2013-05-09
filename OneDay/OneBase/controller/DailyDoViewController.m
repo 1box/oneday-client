@@ -36,18 +36,25 @@
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if (event.subtype == UIEventSubtypeMotionShake) {
-        if (hasHintForKey(@"DailyDo")) {
-            resetHasHintForKey(@"DailyDo");
+        if (!_hint.shown) {
+            if (hasHintForKey(@"DailyDo")) {
+                resetHasHintForKey(@"DailyDo");
+            }
+            
+            self.hint = [[HintHelper alloc] initWithViewController:self dialogsPathPrefix:@"DailyDo"];
+            [_hint show];
+            [SSCommon playSound:@"shake.mp3"];
         }
-        
-        self.hint = [[HintHelper alloc] initWithViewController:self dialogsPathPrefix:@"DailyDo"];
-        [_hint show];
-        [SSCommon playSound:@"shake.mp3"];
     }
     
     if ([super respondsToSelector:@selector(motionEnded:withEvent:)]) {
         [super motionEnded:motion withEvent:event];
     }
+}
+
+- (NSString *)pageNameForTrack
+{
+    return @"_addon.dailyDoName";
 }
 
 #pragma mark - Viewlifecycle

@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KMViewControllerBase.h"
 
 @class DailyDoView;
 @class AddonData;
 
-@interface DailyDoViewController : UIViewController
+@interface DailyDoViewController : KMViewControllerBase
 @property (nonatomic, retain) IBOutlet DailyDoView *dailyDoView;
 @property (nonatomic, retain) AddonData *addon;
 

@@ -42,6 +42,8 @@ static inline void resetHasHintForKey(NSString *hintKey) {
 
 @interface HintHelper : NSObject
 
+@property (nonatomic, readonly) BOOL shown;
+
 - (id)initWithViewController:(UIViewController *)vc dialogsPathPrefix:(NSString *)prefix;
 - (void)setDidCloseTarget:(id)target selector:(SEL)selector;
 - (BOOL)show;

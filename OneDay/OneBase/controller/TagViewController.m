@@ -10,6 +10,7 @@
 #import "TagManager.h"
 #import "KMTableView.h"
 #import "TagViewListCell.h"
+#import "AddonData.h"
 #import "DailyDoBase.h"
 #import "TagData.h"
 #import "KMModelManager.h"
@@ -34,6 +35,11 @@ typedef enum {
 @end
 
 @implementation TagViewController
+
+- (NSString *)pageNameForTrack
+{
+    return [NSString stringWithFormat:@"TagPage_%@", _dailyDo.addon.dailyDoName];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -74,8 +80,6 @@ typedef enum {
         TagData *tmpTag = [_tags objectAtIndex:idx];
         if (cell.isChecked) {
             [tmpTag addDailyDosObject:_dailyDo];
-            
-            trackEvent(@"tag", [NSString stringWithFormat:@"add_%@", tmpTag]);
         }
         else {
             [tmpTag removeDailyDosObject:_dailyDo];

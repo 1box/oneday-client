@@ -25,6 +25,18 @@
     [self.collectionView reloadData];
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"HomeCover"];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"HomeCover"];
+}
+
 #pragma mark - Actions
 
 - (IBAction)dismiss:(id)sender

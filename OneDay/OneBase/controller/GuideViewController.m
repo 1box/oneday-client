@@ -126,6 +126,11 @@
 //    self.guideView.backgroundColor = [UIColor clearColor];
 }
 
+- (NSString *)pageNameForTrack
+{
+    return @"GuidePage";
+}
+
 #pragma mark - UICollectionViewDataSource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView

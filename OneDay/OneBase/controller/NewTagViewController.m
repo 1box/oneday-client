@@ -18,6 +18,11 @@
 
 @implementation NewTagViewController
 
+- (NSString *)pageNameForTrack
+{
+    return @"NewTag";
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -27,8 +32,6 @@
 {
     [super viewDidAppear:animated];
     [_textField becomeFirstResponder];
-    
-    trackEvent(@"tag", @"enter");
 }
 
 #pragma mark - Actions

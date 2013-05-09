@@ -47,16 +47,6 @@ typedef NS_ENUM(NSInteger, RateSectionRowType) {
 
 @implementation MoreViewController
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewDidDisappear:(BOOL)animated
-{
-    [super viewDidDisappear:animated];
-}
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"showRecommendApp"] ||
@@ -76,6 +66,11 @@ typedef NS_ENUM(NSInteger, RateSectionRowType) {
 - (void)segueBackButtonClicked:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (NSString *)pageNameForTrack
+{
+    return @"MorePage";
 }
 
 #pragma mark - private
@@ -386,7 +381,6 @@ typedef NS_ENUM(NSInteger, RateSectionRowType) {
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-    trackEvent(@"more", @"share_app_mail");
     [controller.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -394,7 +388,6 @@ typedef NS_ENUM(NSInteger, RateSectionRowType) {
 
 - (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
 {
-    trackEvent(@"more", @"share_app_message");
     [controller.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 @end

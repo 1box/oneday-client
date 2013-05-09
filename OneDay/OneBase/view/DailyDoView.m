@@ -63,22 +63,16 @@
 {
     DailyDoPropertyCell *tCell = sender;
     if ([[segue identifier] isEqualToString:@"showTodo"]) {
-        trackEvent(@"dailyDo", [NSString stringWithFormat:@"showTodo_%@", _todayDo.addon.dailyDoName]);
-
         TodoViewController *controller = [segue destinationViewController];
         controller.dailyDo = _todayDo;
         controller.navigationItem.title = tCell.nameLabel.text;
     }
     else if ([[segue identifier] isEqualToString:@"showTag"]) {
-        trackEvent(@"dailyDo", [NSString stringWithFormat:@"showTag_%@", _todayDo.addon.dailyDoName]);
-        
         TagViewController *controller = [segue destinationViewController];
         controller.dailyDo = _todayDo;
         controller.navigationItem.title = tCell.nameLabel.text;
     }
     else if ([[segue identifier] isEqualToString:@"showTimeline"]) {
-        trackEvent(@"dailyDo", [NSString stringWithFormat:@"showTimeline_%@", _todayDo.addon.dailyDoName]);
-
         TimelineViewController *controller = [segue destinationViewController];
         NSMutableArray *dailyDos = [NSMutableArray arrayWithObject:_todayDo];
         [dailyDos addObjectsFromArray:_loggedDos];
@@ -86,8 +80,6 @@
         controller.navigationItem.title = tCell.nameLabel.text;
     }
     else if ([[segue identifier] isEqualToString:@"showNote"]) {
-        trackEvent(@"dailyDo", [NSString stringWithFormat:@"showNote_%@", _todayDo.addon.dailyDoName]);
-
         NoteViewController *controller = [segue destinationViewController];
         controller.propertyKey = tCell.propertyKey;
         controller.propertiesDict = _propertiesDict;
@@ -127,8 +119,6 @@
 {
     [super viewDidAppear];
     [self reloadData];
-    
-    trackEvent(@"dailyDo", @"enter");
 }
 
 #pragma mark - private
@@ -147,8 +137,6 @@
 - (IBAction)addTodo:(id)sender
 {
     __strong AddonData *tAddon = _todayDo.addon;
-    
-    trackEvent(@"dailyDo", [NSString stringWithFormat:@"quick_enter_%@", tAddon.dailyDoName]);
     
     KMAlertView *quickAlert = [[KMAlertView alloc] initWithTitle:NSLocalizedString(tAddon.dailyDoName, nil)
                                                         messages:@[NSLocalizedString(@"_quickEntryMessage", nil)]
@@ -474,8 +462,6 @@
     if (indexPath.section == _todaySectionIndex) {
         if (_todayDoUnfold) {
             if (indexPath.row == 0) {
-                trackEvent(@"dailyDo", [NSString stringWithFormat:@"select_today_%@", _todayDo.addon.dailyDoName]);
-                
                 _todayDoUnfold = NO;
             }
         }
@@ -484,11 +470,9 @@
         }
     }
     else if (indexPath.section == _tomorrowSectionIndex) {
-        trackEvent(@"dailyDo", [NSString stringWithFormat:@"select_tomorrow_%@", _todayDo.addon.dailyDoName]);
         _tomorrowDoUnfold = !_tomorrowDoUnfold;
     }
     else if (indexPath.section == _loggedSectionIndex) {
-        trackEvent(@"dailyDo", [NSString stringWithFormat:@"select_log_%@", _todayDo.addon.dailyDoName]);
         _loggedDoUnfoldIndex = (indexPath.row == _loggedDoUnfoldIndex) ? LoggedDoUnfoldDefaultIndex : indexPath.row;
     }
     

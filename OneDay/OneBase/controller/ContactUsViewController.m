@@ -25,28 +25,22 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    trackEvent(@"contactUs", @"enter");
     [_listView reloadData];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewWillAppear:animated];
+    [MobClick beginLogPageView:@"ContactUs"];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [MobClick endLogPageView:@"ContactUs"];
 }
 
 #pragma mark - UITableViewDelegate
@@ -72,11 +66,9 @@
             break;
         case 1: // contect twitter
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://twitter.com/oneboxappp"]];
-            trackEvent(@"contactUs", @"contact_tweet");
             break;
         case 2: // contect sina weibo
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://weibo.com/oneboxapp"]];
-            trackEvent(@"contactUs", @"contact_sina");
             break;
     }
 }
@@ -90,7 +82,6 @@
 
 - (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-    trackEvent(@"contactUs", @"contact_mail");
     [controller.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 

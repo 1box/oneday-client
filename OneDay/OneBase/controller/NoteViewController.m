@@ -8,6 +8,7 @@
 
 #import "NoteViewController.h"
 #import "DailyDoBase.h"
+#import "AddonData.h"
 #import "KMModelManager.h"
 #import "DailyDoManager.h"
 
@@ -15,6 +16,11 @@
 @end
 
 @implementation NoteViewController
+
+- (NSString *)pageNameForTrack
+{
+    return [NSString stringWithFormat:@"NotePage_%@", _dailyDo.addon.dailyDoName];
+}
 
 - (void)didReceiveMemoryWarning
 {

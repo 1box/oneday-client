@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KMViewControllerBase.h"
 
 @class MADayView;
 @class DailyDoBase;
 
-@interface TimelineViewController : UIViewController
+@interface TimelineViewController : KMViewControllerBase
 
 @property (nonatomic) IBOutlet MADayView *calendarView;
 @property (nonatomic) IBOutlet UIView *pickerContainer;

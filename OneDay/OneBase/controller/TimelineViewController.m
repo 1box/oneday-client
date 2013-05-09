@@ -11,6 +11,7 @@
 #import "MAEvent.h"
 
 #import "KMModelManager.h"
+#import "AddonData.h"
 #import "TodoData.h"
 #import "DailyDoBase.h"
 #import "KMDateUtils.h"
@@ -24,6 +25,17 @@
 @end
 
 @implementation TimelineViewController
+
+- (NSString *)pageNameForTrack
+{
+    if ([_dailyDos count] > 0) {
+        DailyDoBase *dailyDo = [_dailyDos objectAtIndex:0];
+        return [NSString stringWithFormat:@"TimelinePage_%@", dailyDo.addon.dailyDoName];
+    }
+    else {
+        return [super pageNameForTrack];
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {

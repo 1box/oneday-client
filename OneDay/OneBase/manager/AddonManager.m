@@ -137,7 +137,6 @@ static AddonManager *_sharedManager;
 
 - (BOOL)moveAddon:(AddonData *)addon toIndex:(NSUInteger)index
 {
-    trackEvent(@"addon", [NSString stringWithFormat:@"move_%@_%d", addon.dailyDoName, index]);
     if (index == [addon.orderIndex intValue]) {
         return NO;
     }
@@ -199,8 +198,6 @@ static AddonManager *_sharedManager;
 
 - (BOOL)removeAddon:(AddonData *)addon
 {
-    trackEvent(@"addon", [NSString stringWithFormat:@"remove_%@", addon.dailyDoName]);
-    
     NSError *error = nil;
     
     NSArray *greaterOrders = [[KMModelManager sharedManager] entitiesWithEqualQueries:@{@"display" : @YES}
@@ -233,8 +230,6 @@ static AddonManager *_sharedManager;
 
 - (BOOL)addAddon:(AddonData *)addon
 {
-    trackEvent(@"addon", [NSString stringWithFormat:@"add_%@", addon.dailyDoName]);
-    
     addon.orderIndex = [NSNumber numberWithInt:[[self currentAddons] count]];
     addon.display = @YES;
     

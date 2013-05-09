@@ -7,11 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KMViewControllerBase.h"
 #import "KMTextView.h"
 
 @class DailyDoBase;
 
-@interface TodoViewController : UIViewController
+@interface TodoViewController : KMViewControllerBase
+
 @property (nonatomic) IBOutlet KMTextView *inputView;
 @property (nonatomic) DailyDoBase *dailyDo;
 

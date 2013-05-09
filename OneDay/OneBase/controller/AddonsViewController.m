@@ -35,6 +35,11 @@
     [_addonsView reloadData];
 }
 
+- (NSString *)pageNameForTrack
+{
+    return @"AddonsPage";
+}
+
 #pragma mark - Actions
 
 - (IBAction)cancel:(id)sender

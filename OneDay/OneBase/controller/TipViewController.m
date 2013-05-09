@@ -26,27 +26,20 @@
 
 @implementation TipViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (NSString *)pageNameForTrack
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    return [NSString stringWithFormat:@"TipPage_%@", _currentAddon.dailyDoName];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
     self.hasTipAddons = [[AddonManager sharedManager] hasTipAddons];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    trackEvent(@"tip", @"enter");
     
     if (_currentAddon) {
         _currentPage = [_hasTipAddons indexOfObject:_currentAddon] + NumberOfMainTips;

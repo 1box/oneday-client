@@ -33,6 +33,11 @@
 
 @implementation TodoViewController
 
+- (NSString *)pageNameForTrack
+{
+    return [NSString stringWithFormat:@"TodoPage_%@", _dailyDo.addon.dailyDoName];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -95,8 +100,6 @@
     else {
         [_hint setDidCloseTarget:self selector:@selector(handleHintClosed)];
     }
-    
-    trackEvent(@"toDo", [NSString stringWithFormat:@"enter_%@", _dailyDo.addon.dailyDoName]);
 }
 
 - (void)viewDidDisappear:(BOOL)animated
@@ -145,8 +148,6 @@
 
 - (IBAction)cancel:(id)sender
 {
-    trackEvent(@"toDo", [NSString stringWithFormat:@"cancel_%@", _dailyDo.addon.dailyDoName]);
-    
     [_dailyDo recoveryToSnapshot];
 //    [self refreshText];
     [self.navigationController popViewControllerAnimated:YES];
@@ -154,8 +155,6 @@
 
 - (IBAction)save:(id)sender
 {
-    trackEvent(@"toDo", [NSString stringWithFormat:@"save_%@", _dailyDo.addon.dailyDoName]);
-    
     [self.navigationController popViewControllerAnimated:YES];
     [_dailyDo removeBlankTodos];
     [_dailyDo detectTodos];

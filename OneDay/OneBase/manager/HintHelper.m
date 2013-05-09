@@ -20,6 +20,7 @@
     __weak id _closeTarget;
     SEL _closeSelector;
 }
+@property (nonatomic, readwrite) BOOL shown;
 @property (nonatomic) NSArray *dialogs;
 @end
 
@@ -66,6 +67,7 @@
 - (BOOL)show
 {
     if ([_dialogs count] > 0) {
+        _shown = YES;
         [self loadNext];
     }
     return [_dialogs count] > 0;
@@ -130,6 +132,8 @@
 
 - (void)hintStateDidClose:(id)hintState
 {
+    _shown = NO;
+    
     if (_closeTarget && [_closeTarget respondsToSelector:_closeSelector]) {
         NSMethodSignature *ms = [_closeTarget methodSignatureForSelector:_closeSelector];
         NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:ms];

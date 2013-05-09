@@ -98,13 +98,15 @@
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if (event.subtype == UIEventSubtypeMotionShake) {
-        if (hasHintForKey([self mainHintPrefix])) {
-            resetHasHintForKey([self mainHintPrefix]);
+        if (!_hint.shown) {
+            if (hasHintForKey([self mainHintPrefix])) {
+                resetHasHintForKey([self mainHintPrefix]);
+            }
+            
+            self.hint = [[HintHelper alloc] initWithViewController:self dialogsPathPrefix:[self mainHintPrefix]];
+            [_hint show];
+            [SSCommon playSound:@"shake.mp3"];
         }
-        
-        self.hint = [[HintHelper alloc] initWithViewController:self dialogsPathPrefix:[self mainHintPrefix]];
-        [_hint show];
-        [SSCommon playSound:@"shake.mp3"];
     }
     
     if ([super respondsToSelector:@selector(motionEnded:withEvent:)]) {
@@ -115,6 +117,11 @@
 - (NSString *)mainHintPrefix
 {
     return [NSString stringWithFormat:@"OneDay_%@", [SSCommon versionName]];
+}
+
+- (NSString *)pageNameForTrack
+{
+    return @"MainPage";
 }
 
 #pragma mark - Viewlifecycle
@@ -210,7 +217,6 @@
     if (tIndexPath) {
         NSMutableArray *tArray = [[_dataSource objectAtIndex:tIndexPath.section] mutableCopy];
         __strong AddonData *tAddon = [tArray objectAtIndex:tIndexPath.item];
-        trackEvent(@"main", [NSString stringWithFormat:@"remove_%@", tAddon.dailyDoName]);
         
         [tArray removeObjectAtIndex:tIndexPath.item];
         [_dataSource replaceObjectAtIndex:tIndexPath.section withObject:tArray];
@@ -234,8 +240,6 @@
         NSMutableArray *tArray = [[_dataSource objectAtIndex:tIndexPath.section] mutableCopy];
         __strong AddonData *tAddon = [tArray objectAtIndex:tIndexPath.item];
         
-        trackEvent(@"main", [NSString stringWithFormat:@"quick_enter_%@", tAddon.dailyDoName]);
-        
         KMAlertView *quickAlert = [[KMAlertView alloc] initWithTitle:NSLocalizedString(tAddon.dailyDoName, nil)
                                                             messages:@[NSLocalizedString(@"_quickEntryMessage", nil)]
                                                             delegate:self];
@@ -246,7 +250,6 @@
 
 - (IBAction)clearButtonClicked:(id)sender
 {
-    trackEvent(@"main", @"clear_button");
     [self changeEditingStatus:!_editing];
 }
 
@@ -362,9 +365,6 @@ static NSString *feedCollectCellID = @"FeedCollectCell";
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    AddonData *addon = [[_dataSource objectAtIndex:indexPath.section] objectAtIndex:indexPath.item];
-    trackEvent(@"main", [NSString stringWithFormat:@"select_%@", addon.dailyDoName]);
-    
     [collectionView deselectItemAtIndexPath:indexPath animated:YES];
 }
 

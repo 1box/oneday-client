@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KMViewControllerBase.h"
 
 @class AddonData;
 
-@interface TipViewController : UIViewController
+@interface TipViewController : KMViewControllerBase
+
 @property (nonatomic) AddonData *currentAddon;
 
 - (IBAction)pageControlClicked:(id)sender;

@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KMViewControllerBase.h"
 
 @class KMTableView;
 @class DailyDoBase;
 
-@interface TagViewController : UIViewController
+@interface TagViewController : KMViewControllerBase
 @property (nonatomic) IBOutlet KMTableView *tagsView;
 @property (nonatomic) DailyDoBase *dailyDo;
 - (IBAction)cancel:(id)sender;

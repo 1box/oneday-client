@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KMViewControllerBase.h"
 
 @class RootVerticalToolbar;
 
-@interface MainViewController : UIViewController
+@interface MainViewController : KMViewControllerBase
 @property (nonatomic) IBOutlet UICollectionView *collectionView;
 @property (nonatomic) IBOutlet UIImageView *backgroundView;
 @property (nonatomic) IBOutlet RootVerticalToolbar *toolbar;

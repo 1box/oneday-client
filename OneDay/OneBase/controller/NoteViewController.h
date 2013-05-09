@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KMViewControllerBase.h"
 #import "KMTextView.h"
+
 @class DailyDoBase;
 
-@interface NoteViewController : UIViewController
+@interface NoteViewController : KMViewControllerBase
+
 @property (nonatomic) IBOutlet KMTextView *textView;
 @property (nonatomic) DailyDoBase *dailyDo;
 @property (nonatomic) NSMutableDictionary *propertiesDict;

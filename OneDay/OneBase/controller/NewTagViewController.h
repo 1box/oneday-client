@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KMViewControllerBase.h"
 
 @class KMTableView;
 @class DailyDoBase;
 
-@interface NewTagViewController : UIViewController
+@interface NewTagViewController : KMViewControllerBase
 @property (nonatomic) IBOutlet KMTableView *listView;
 @property (nonatomic) IBOutlet UITextField *textField;
 @property (nonatomic) DailyDoBase *dailyDo;

@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KMViewControllerBase.h"
 
 @class KMTableView;
 
-@interface MoreViewController : UIViewController
+@interface MoreViewController : KMViewControllerBase
 
 @property (nonatomic) IBOutlet UIView *pickerContainer;
 @property (nonatomic) IBOutlet UIToolbar *pickerToolbar;

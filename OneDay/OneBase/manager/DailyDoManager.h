@@ -27,11 +27,26 @@
 #define kConfigurationShowQuickEntry @"ShowQuickEntry"
 #define kConfigurationShowMoveToTomorrow @"ShowMoveToTomorrow"
 
+
+#define DailyDoManagerLoggedDosLoadFinishedNotification @"DailyDoManagerLoggedDosLoadFinishedNotification"
+#define kDailyDoManagerLoggedDosLoadConditionKey @"kDailyDoManagerLoggedDosLoadConditionKey"
+#define kDailyDoManagerLoggedLoadResultKey @"kDailyDoManagerLoggedLoadResultKey"
+
+#define kDailyDoManagerLoadConditionMinCreateTimeKey @"kDailyDoManagerLoadConditionMinCreateTimeKey"
+#define kDailyDoManagerLoadConditionCountKey @"kDailyDoManagerLoadConditionCountKey"
+#define kDailyDoManagerLoadConditionIsLoadMoreKey @"kDailyDoManagerLoadConditionIsLoadMoreKey"
+
+#define kDailyDoManagerLoadConditionAddonKey @"kDailyDoManagerLoadConditionAddonKey"
+#define kDailyDoManagerLoadResultDataListKey @"kDailyDoManagerLoadResultDataListKey"
+#define kDailyDoManagerLoadResultErrorKey @"kDailyDoManagerLoadResultErrorKey"
+
+
 @class AddonData;
 @class DailyDoBase;
 @class TodoData;
 
 @interface DailyDoManager : NSObject
+
 + (DailyDoManager *)sharedManager;
 
 // properties
@@ -47,4 +62,7 @@
 - (id)tomorrowDoForAddon:(AddonData *)addon;
 - (id)todayDoForAddon:(AddonData *)addon;
 - (NSArray *)loggedDosForAddon:(AddonData *)addon;
+
+- (void)loadLoggedDosForCondition:(NSDictionary *)condition;
+
 @end

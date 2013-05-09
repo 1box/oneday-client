@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface AppDelegateBase : UIResponder <UIApplicationDelegate>
+
 @property (nonatomic) UIWindow *window;
+
+// extended
++ (NSString *)bundleIDForRate;
 @end

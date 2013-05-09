@@ -18,7 +18,7 @@
 #import "iVersion.h"
 #import "Constants.h"
 
-@interface AppDelegateBase ()
+@interface AppDelegateBase () <iRateDelegate>
 @property (nonatomic) UINavigationController *nav;
 @end
 
@@ -26,15 +26,14 @@
 
 + (void)initialize
 {
+    NSString *bundleID = [self bundleIDForRate];
+    if (!KMEmptyString(bundleID)) {
+        [iRate sharedInstance].applicationBundleID = bundleID;
+        [iRate sharedInstance].onlyPromptIfLatestVersion = NO;
+        
 //#warning debug code
-//    [iRate sharedInstance].ratedThisVersion = NO;
-//    [iRate sharedInstance].daysUntilPrompt = 0;
-//    [iRate sharedInstance].usesUntilPrompt = 0;
-    
-    //configure iRate
-    [iRate sharedInstance].daysUntilPrompt = 3;
-    [iRate sharedInstance].usesUntilPrompt = 10;
-    [iRate sharedInstance].ratingsURL = [NSURL URLWithString:@"https://itunes.apple.com/us/app/yi-tian-ai-ji-hua-ai-ji-lu/id573096972?ls=1&mt=8"];
+//        [iRate sharedInstance].previewMode = YES;
+    }
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -52,6 +51,7 @@
         [[TagManager sharedManager] loadDefaultTagsFromPlist];
     }
     
+    [iRate sharedInstance].delegate = self;
     [[iVersion sharedInstance] checkForNewVersion];
     
     [[UIToolbar appearance] setBackgroundImage:[UIImage imageNamed:@"toolbar_bg.png"] forToolbarPosition:UIToolbarPositionBottom barMetrics:UIBarMetricsDefault];
@@ -90,4 +90,24 @@
 {
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
 }
+
+#pragma mark - extended
+
++ (NSString *)bundleIDForRate
+{
+    return @"";
+}
+
+#pragma mark - iRateDelegate
+
+- (void)iRateUserDidAttemptToRateApp
+{
+    trackEvent(@"iRate", @"Confirm");
+}
+
+- (void)iRateUserDidDeclineToRateApp
+{
+    trackEvent(@"iRate", @"Decline");
+}
+
 @end

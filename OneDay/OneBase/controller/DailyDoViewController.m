@@ -77,6 +77,12 @@
     [_dailyDoView viewDidAppear];
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:animated];
+    [_dailyDoView viewDidDisappear];
+}
+
 #pragma mark - Actions
 
 - (IBAction)dismiss:(id)sender

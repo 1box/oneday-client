@@ -9,4 +9,10 @@
 #import "AppDelegate.h"
 
 @implementation AppDelegate
+
++ (NSString *)bundleIDForRate
+{
+    return @"com.oneboxdesign.OneDay";
+}
+
 @end

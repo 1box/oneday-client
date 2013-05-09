@@ -54,25 +54,34 @@ static unsigned _unitFlags = (NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalend
     }
 }
 
+- (NSDateFormatter *)yearToDayFormatter
+{
+    static NSDateFormatter *yearToDayFormatter_ = nil;
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        if (!yearToDayFormatter_) {
+            yearToDayFormatter_ = [[NSDateFormatter alloc] init];
+            [yearToDayFormatter_ setLocale:[NSLocale currentLocale]];
+            [yearToDayFormatter_ setDateFormat:@"yyyy.MM.dd"];
+        }
+    });
+    return yearToDayFormatter_;
+}
+
 - (NSDate *)morning
 {
-    NSDateComponents *components = [[NSCalendar currentCalendar] components:_unitFlags fromDate:self];
-    components.hour = 0;
-    components.minute = 0;
-    components.second = 0;
-    
-    return [[NSCalendar currentCalendar] dateFromComponents:components];
+    NSDateFormatter *dateFormatter = [self yearToDayFormatter];
+    return [dateFormatter dateFromString:[dateFormatter stringFromDate:self]];
 }
 
 - (NSDate *)midnight
 {
-    NSDateComponents *components = [[NSCalendar currentCalendar] components:_unitFlags fromDate:self];
-    components.day = components.day;
-    components.hour = 23;
-    components.minute = 59;
-    components.second = 59;
-    
-    return [[NSCalendar currentCalendar] dateFromComponents:components];
+    NSTimeInterval interval = [self timeIntervalSince1970];
+    interval += 24*60*60;
+    NSDate *tomorrow = [NSDate dateWithTimeIntervalSince1970:interval];
+    NSDateFormatter *dateFormatter = [self yearToDayFormatter];
+    return [dateFormatter dateFromString:[dateFormatter stringFromDate:tomorrow]];
 }
 
 - (BOOL)isSameDayWithDate:(NSDate *)date

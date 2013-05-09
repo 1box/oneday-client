@@ -196,4 +196,50 @@ static DailyDoManager *_sharedManager;
         return nil;
     }
 }
+
+- (void)loadLoggedDosForCondition:(NSDictionary *)condition
+{
+    int count = [[condition objectForKey:kDailyDoManagerLoadConditionCountKey] intValue];
+    BOOL isLoadMore = [[condition objectForKey:kDailyDoManagerLoadConditionIsLoadMoreKey] boolValue];
+    AddonData *addon = [condition objectForKey:kDailyDoManagerLoadConditionAddonKey];
+    
+    NSTimeInterval lessThan = 0.f;
+    if (isLoadMore) {
+        lessThan = [[condition objectForKey:kDailyDoManagerLoadConditionMinCreateTimeKey] doubleValue];
+    }
+    else {
+        lessThan = [[[NSDate date] morning] timeIntervalSince1970];
+    }
+    
+    Class DailyDoData = NSClassFromString(addon.dailyDoName);
+    
+    NSError *error = nil;
+    NSArray *dailyDos = [[KMModelManager sharedManager] entitiesWithEqualQueries:nil
+                                                                 lessThanQueries:@{@"createTime" : [NSNumber numberWithDouble:lessThan]}
+                                                          lessThanOrEqualQueries:nil
+                                                              greaterThanQueries:nil
+                                                       greaterThanOrEqualQueries:nil
+                                                                 notEqualQueries:nil
+                                                               entityDescription:[DailyDoData entityDescription]
+                                                                      unFaulting:NO
+                                                                          offset:0
+                                                                           count:count
+                                                                 sortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"createTime" ascending:NO]]
+                                                                           error:&error];
+    
+    NSMutableDictionary *mutUserInfo = [NSMutableDictionary dictionaryWithCapacity:5];
+    NSMutableDictionary *mutResult = [NSMutableDictionary dictionaryWithCapacity:5];
+    if (!error) {
+        [mutResult setObject:dailyDos forKey:kDailyDoManagerLoadResultDataListKey];
+    }
+    else {
+        [mutResult setObject:error forKey:kDailyDoManagerLoadResultErrorKey];
+    }
+    
+    [mutUserInfo setObject:[mutResult copy] forKey:kDailyDoManagerLoggedLoadResultKey];
+    [mutUserInfo setObject:condition forKey:kDailyDoManagerLoggedDosLoadConditionKey];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:DailyDoManagerLoggedDosLoadFinishedNotification object:self userInfo:[mutUserInfo copy]];
+}
+
 @end

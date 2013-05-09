@@ -21,6 +21,7 @@
 #import "DailyDoTodoCellListCell.h"
 #import "DailyDoTagCell.h"
 #import "DailyDoNoteCell.h"
+#import "KMLoadMoreCell.h"
 #import "KMAlertView.h"
 
 #import "KMModelManager.h"
@@ -33,7 +34,11 @@
 #define CommonCellHeight 44.f
 #define LoggedDoUnfoldDefaultIndex -1
 
-@interface DailyDoView () <KMAlertViewDelegate>
+@interface DailyDoView () <KMAlertViewDelegate> {
+    
+    BOOL _isLoading;
+    BOOL _canLoadMore;
+}
 
 @property (nonatomic) DailyDoBase *todayDo;
 @property (nonatomic) DailyDoBase *tomorrowDo;
@@ -49,7 +54,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        _isLoading = NO;
+        _canLoadMore = NO;
     }
     return self;
 }
@@ -103,7 +109,7 @@
     
     self.todayDo = [[DailyDoManager sharedManager] todayDoForAddon:_addon];
     self.tomorrowDo = [[DailyDoManager sharedManager] tomorrowDoForAddon:_addon];
-    self.loggedDos = [[DailyDoManager sharedManager] loggedDosForAddon:_addon];
+    self.loggedDos = [NSArray array];
     self.properties = [[DailyDoManager sharedManager] propertiesForDoName:_addon.dailyDoName];
     self.configurations = [[DailyDoManager sharedManager] configurationsForDoName:_addon.dailyDoName];
     self.propertiesDict = [[[DailyDoManager sharedManager] propertiesDictForProperties:_properties inDailyDo:_todayDo] mutableCopy];
@@ -118,10 +124,38 @@
 - (void)viewDidAppear
 {
     [super viewDidAppear];
-    [self reloadData];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(loadDataFinished:)
+                                                 name:DailyDoManagerLoggedDosLoadFinishedNotification
+                                               object:[DailyDoManager sharedManager]];
+    
+    [self loadLoggedDos:NO];
+}
+
+- (void)viewDidDisappear
+{
+    [super viewDidDisappear];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:DailyDoManagerLoggedDosLoadFinishedNotification object:[DailyDoManager sharedManager]];
 }
 
 #pragma mark - private
+
+- (void)loadLoggedDos:(BOOL)loadMore
+{
+    if (!_isLoading) {
+        _isLoading = YES;
+        
+        NSMutableDictionary *mutCondition = [NSMutableDictionary dictionaryWithDictionary:
+                                             @{ kDailyDoManagerLoadConditionCountKey : [NSNumber numberWithInt:20],
+                                           kDailyDoManagerLoadConditionIsLoadMoreKey : [NSNumber numberWithBool:loadMore],
+                                                kDailyDoManagerLoadConditionAddonKey : _addon}];
+        if ([_loggedDos count] > 0 && loadMore) {
+            DailyDoBase *dailyDo = [_loggedDos lastObject];
+            [mutCondition setObject:dailyDo.createTime forKey:kDailyDoManagerLoadConditionMinCreateTimeKey];
+        }
+        [[DailyDoManager sharedManager] loadLoggedDosForCondition:[mutCondition copy]];
+    }
+}
 
 - (void)reloadData
 {
@@ -214,34 +248,36 @@
     [self reloadData];
 }
 
-#pragma mark - UIAlertViewDelegate
+#pragma mark - DailyDoManagerLoggedDosLoadFinishedNotification
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)loadDataFinished:(NSNotification *)notification
 {
-    if (alertView.cancelButtonIndex != buttonIndex) {
-        [[DailyDoManager sharedManager] moveDailyDoUndos:_todayDo toAnother:_tomorrowDo];
-        [self reloadData];
+    NSDictionary *userInfo = notification.userInfo;
+    NSDictionary *condition = [userInfo objectForKey:kDailyDoManagerLoggedDosLoadConditionKey];
+    AddonData *addon = [condition objectForKey:kDailyDoManagerLoadConditionAddonKey];
+    if (addon != _addon) {
+        return;
     }
-}
-
-#pragma mark - KMAlertViewDelegate
-
-- (void)kmAlertView:(KMAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex != alertView.cancelButtonIndex) {
-        NSString *tContent = alertView.textView.text;
-        if (!KMEmptyString(tContent)) {
-            AddonData *tAddon = (AddonData *)alertView.userInfo;
-            DailyDoBase *todayDo = [[DailyDoManager sharedManager] todayDoForAddon:tAddon];
-            TodoData *todo = [todayDo insertNewTodoAtIndex:[todayDo.todos count]];
-            todo.content = tContent;
-            
-            [[KMModelManager sharedManager] saveContext:nil];
-            
-            [_todayDo detectTodos];
-            [self reloadData];
+    
+    NSDictionary *result = [userInfo objectForKey:kDailyDoManagerLoggedLoadResultKey];
+    NSError *error = [result objectForKey:kDailyDoManagerLoadResultErrorKey];
+    if (!error) {
+        NSArray *dataList = [result objectForKey:kDailyDoManagerLoadResultDataListKey];
+        if ([dataList count] > 0) {
+            NSMutableArray *mutLoggedDos = [[NSMutableArray alloc] initWithArray:_loggedDos];
+            [mutLoggedDos addObjectsFromArray:dataList];
+            self.loggedDos = [mutLoggedDos copy];
         }
+        
+        _canLoadMore = [dataList count] > 0;
+        
+        [_listView reloadData];
     }
+    else {
+        _canLoadMore = NO;
+    }
+    
+    _isLoading = NO;
 }
 
 #pragma mark - UITableViewDataSource
@@ -267,6 +303,9 @@
     }
     else if (section == _loggedSectionIndex) {
         ret = [_loggedDos count];
+        if (_canLoadMore) {
+            ret ++;
+        }
     }
     
     return ret;
@@ -290,8 +329,13 @@
        ret = [_tomorrowDo.todos count] == 0 ? 0.f : [DailyDoTomorrowCell heightOfCellForDailyDo:_tomorrowDo unfolded:_tomorrowDoUnfold]; 
     }
     else if (indexPath.section == _loggedSectionIndex) {
-        ret = [DailyDoLoggedCell heightOfCellForDailyDo:[_loggedDos objectAtIndex:indexPath.row]
-                                               unfolded:(indexPath.row == _loggedDoUnfoldIndex)];
+        if (indexPath.row < [_loggedDos count]) {
+            ret = [DailyDoLoggedCell heightOfCellForDailyDo:[_loggedDos objectAtIndex:indexPath.row]
+                                                   unfolded:(indexPath.row == _loggedDoUnfoldIndex)];
+        }
+        else {
+            ret = 44.f;
+        }
     }
     
     return ret;
@@ -306,6 +350,7 @@
     static NSString *todayPropertyTimelineCell = @"TodayPropertyTimelineCellID";
     static NSString *loggedDoCell = @"LoggedDoCellID";
     static NSString *tomorrowDoCell = @"TomorrowCellID";
+    static NSString *loadMoreCell = @"LoadMoreCellID";
     
     if (indexPath.section == _todaySectionIndex) {
         if (indexPath.row == 0) {
@@ -358,10 +403,22 @@
         return cell;
     }
     else if (indexPath.section == _loggedSectionIndex) {
-        DailyDoLoggedCell *cell = [tableView dequeueReusableCellWithIdentifier:loggedDoCell];
-        cell.loggedDo = [_loggedDos objectAtIndex:indexPath.row];
-        cell.unfolded = indexPath.row == _loggedDoUnfoldIndex;
-        return cell;
+        if (indexPath.row < [_loggedDos count]) {
+            DailyDoLoggedCell *cell = [tableView dequeueReusableCellWithIdentifier:loggedDoCell];
+            cell.loggedDo = [_loggedDos objectAtIndex:indexPath.row];
+            cell.unfolded = indexPath.row == _loggedDoUnfoldIndex;
+            return cell;
+        }
+        else {
+            KMLoadMoreCell *cell = [tableView dequeueReusableCellWithIdentifier:loadMoreCell];
+            cell.loading = YES;
+            
+            [self performBlock:^{
+                [self loadLoggedDos:YES];
+            } afterDelay:0.1f];
+            
+            return cell;
+        }
     }
     
     return nil;
@@ -414,10 +471,10 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.section == _todaySectionIndex && indexPath.row != 0) {
-        return NO;
-    }
-    return YES;
+    BOOL ret = YES;
+    ret &= !(indexPath.section == _todaySectionIndex && indexPath.row != 0);
+    ret &= indexPath.section && indexPath.row >= [_loggedDos count];
+    return ret;
 }
 
 #pragma mark - UITableViewDelegate
@@ -473,10 +530,43 @@
         _tomorrowDoUnfold = !_tomorrowDoUnfold;
     }
     else if (indexPath.section == _loggedSectionIndex) {
-        _loggedDoUnfoldIndex = (indexPath.row == _loggedDoUnfoldIndex) ? LoggedDoUnfoldDefaultIndex : indexPath.row;
+        if (indexPath.row < [_loggedDos count]) {
+            _loggedDoUnfoldIndex = (indexPath.row == _loggedDoUnfoldIndex) ? LoggedDoUnfoldDefaultIndex : indexPath.row;
+        }
     }
     
     [tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section] withRowAnimation:UITableViewRowAnimationNone];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (alertView.cancelButtonIndex != buttonIndex) {
+        [[DailyDoManager sharedManager] moveDailyDoUndos:_todayDo toAnother:_tomorrowDo];
+        [self reloadData];
+    }
+}
+
+#pragma mark - KMAlertViewDelegate
+
+- (void)kmAlertView:(KMAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex != alertView.cancelButtonIndex) {
+        NSString *tContent = alertView.textView.text;
+        if (!KMEmptyString(tContent)) {
+            AddonData *tAddon = (AddonData *)alertView.userInfo;
+            DailyDoBase *todayDo = [[DailyDoManager sharedManager] todayDoForAddon:tAddon];
+            TodoData *todo = [todayDo insertNewTodoAtIndex:[todayDo.todos count]];
+            todo.content = tContent;
+            
+            [[KMModelManager sharedManager] saveContext:nil];
+            
+            [_todayDo detectTodos];
+            [self reloadData];
+        }
+    }
+}
+
 @end

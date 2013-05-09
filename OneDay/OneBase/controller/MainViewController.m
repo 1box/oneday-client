@@ -37,6 +37,9 @@
     BOOL _hasAppear;
 }
 
+@property (nonatomic) UIImageView *animationView1;
+@property (nonatomic) UIImageView *animationView2;
+
 @property (nonatomic) NSMutableArray *addons;
 @property (nonatomic) NSMutableArray *dataSource;
 @property (nonatomic) HintHelper *hint;
@@ -72,6 +75,8 @@
         NSIndexPath *indexPath = [[_collectionView indexPathsForSelectedItems] objectAtIndex:0];
         DailyDoViewController *controller = [segue destinationViewController];
         controller.addon = [_addons objectAtIndex:(indexPath.section * NumberOfItems + indexPath.item)];
+    
+        trackEvent(controller.addon.dailyDoName, @"enter");
     }
     else if ([[segue identifier] isEqualToString:@"rootShowTipPage"]) {
         
@@ -138,6 +143,7 @@
     _collectionView.scrollEnabled = NO;
 }
 
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -154,6 +160,19 @@
     
     NSString *currentHomeCoverImageName = [NSString stringWithFormat:@"homecover00%d.jpg", homeCoverSelectedIndex() + 1];
     _backgroundView.image = [UIImage imageWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:currentHomeCoverImageName]];
+    
+    // add flip splash animationView1
+    UIView *containerView = self.navigationController.view;
+    self.animationView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]];
+    [containerView addSubview:_animationView1];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    if (_animationView1) {
+        [self flipSplashAnimation];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -291,6 +310,24 @@
             ((RootCollectCell*)cell).editing = _editing;
         }
     }
+}
+
+- (void)flipSplashAnimation
+{
+    self.animationView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"splash-screen-no-logo.png"]];
+
+    [UIView transitionFromView:_animationView1
+                        toView:_animationView2
+                      duration:1.f
+                       options:UIViewAnimationOptionTransitionFlipFromLeft
+                    completion:^(BOOL finished) {
+                        
+                        [_animationView1 removeFromSuperview];
+                        [_animationView2 removeFromSuperview];
+                        
+                        self.animationView1 = nil;
+                        self.animationView2 = nil;
+                    }];
 }
 
 #pragma mark - KMAlertViewDelegate

@@ -925,6 +925,24 @@
                                                     <outlet property="presentView" destination="cW4-qR-7uR" id="wj5-Ed-E7A"/>
                                                 </connections>
                                             </tableViewCell>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoadMoreCellID" id="s4D-q4-VWm" customClass="KMLoadMoreCell">
+                                                <rect key="frame" x="0.0" y="523" width="320" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                    <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" style="gray" id="3o4-3k-EUX">
+                                                            <rect key="frame" x="141" y="11" width="20" height="20"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </activityIndicatorView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <connections>
+                                                    <outlet property="indicator" destination="3o4-3k-EUX" id="PLg-mB-41q"/>
+                                                </connections>
+                                            </tableViewCell>
                                         </prototypes>
                                         <connections>
                                             <outlet property="dataSource" destination="BuM-O9-0HO" id="Cn9-Uv-mzc"/>
@@ -2386,7 +2404,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="addonNameLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="AddonsViewController" superclassName="UIViewController">
+        <class className="AddonsViewController" superclassName="KMViewControllerBase">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddonsViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancel:"/>
@@ -2412,6 +2430,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="DailyDoLoggedCell" superclassName="KMUnfoldTableCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DailyDoLoggedCell.h"/>
             <relationships>
+                <relationship kind="action" name="checkbox:"/>
                 <relationship kind="outlet" name="checkbox" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="completeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
@@ -2476,7 +2495,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
             </relationships>
         </class>
-        <class className="DailyDoViewController" superclassName="UIViewController">
+        <class className="DailyDoViewController" superclassName="KMViewControllerBase">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DailyDoViewController.h"/>
             <relationships>
                 <relationship kind="action" name="dismiss:"/>
@@ -2489,15 +2508,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="DarkNavigationBarButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DarkNavigationBarButton.h"/>
         </class>
-        <class className="FeedbackViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FeedbackViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="sendFeedback:"/>
-                <relationship kind="outlet" name="mTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="mTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="mToolBar" candidateClass="UIToolbar"/>
-            </relationships>
-        </class>
         <class className="GuideViewCloudCellView" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GuideViewCloudCellView.h"/>
             <relationships>
@@ -2507,9 +2517,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="cloudContentView" candidateClass="UIImageView"/>
             </relationships>
         </class>
-        <class className="GuideViewController" superclassName="UIViewController">
+        <class className="GuideViewController" superclassName="KMViewControllerBase">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GuideViewController.h"/>
             <relationships>
+                <relationship kind="action" name="dismiss:"/>
                 <relationship kind="action" name="handleSingleTap:"/>
                 <relationship kind="outlet" name="guideView" candidateClass="UICollectionView"/>
                 <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
@@ -2534,6 +2545,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="KMCollectionViewSnakeLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KMCollectionViewSnakeLayout.h"/>
         </class>
+        <class className="KMLoadMoreCell" superclassName="KMTableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KMLoadMoreCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="indicator" candidateClass="UIActivityIndicatorView"/>
+            </relationships>
+        </class>
         <class className="KMReorderableCollectionViewSnakeLayout" superclassName="KMCollectionViewSnakeLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KMReorderableCollectionViewSnakeLayout.h"/>
         </class>
@@ -2555,6 +2572,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="KMViewBase" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KMViewBase.h"/>
         </class>
+        <class className="KMViewControllerBase" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/KMViewControllerBase.h"/>
+        </class>
         <class className="MADayView" superclassName="UIView">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MADayView.h"/>
             <relationships>
@@ -2562,7 +2582,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="delegate"/>
             </relationships>
         </class>
-        <class className="MainViewController" superclassName="UIViewController">
+        <class className="MainViewController" superclassName="KMViewControllerBase">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
             <relationships>
                 <relationship kind="action" name="clearButtonClicked:"/>
@@ -2574,7 +2594,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="toolbar" candidateClass="RootVerticalToolbar"/>
             </relationships>
         </class>
-        <class className="MoreViewController" superclassName="UIViewController">
+        <class className="MoreViewController" superclassName="KMViewControllerBase">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreViewController.h"/>
             <relationships>
                 <relationship kind="action" name="alarmBadgeSwitch:"/>
@@ -2597,7 +2617,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="NavigationBarButton" superclassName="UIButton">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NavigationBarButton.h"/>
         </class>
-        <class className="NewTagViewController" superclassName="UIViewController">
+        <class className="NewTagViewController" superclassName="KMViewControllerBase">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NewTagViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancel:"/>
@@ -2609,7 +2629,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="NormalNavigationBar" superclassName="UINavigationBar">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NormalNavigationBar.h"/>
         </class>
-        <class className="NoteViewController" superclassName="UIViewController">
+        <class className="NoteViewController" superclassName="KMViewControllerBase">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NoteViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancel:"/>
@@ -2635,7 +2655,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="pageView" candidateClass="UIView"/>
             </relationships>
         </class>
-        <class className="TagViewController" superclassName="UIViewController">
+        <class className="TagViewController" superclassName="KMViewControllerBase">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TagViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancel:"/>
@@ -2650,7 +2670,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="tagName" candidateClass="UILabel"/>
             </relationships>
         </class>
-        <class className="TimelineViewController" superclassName="UIViewController">
+        <class className="TimelineViewController" superclassName="KMViewControllerBase">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TimelineViewController.h"/>
             <relationships>
                 <relationship kind="action" name="back:"/>
@@ -2670,7 +2690,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="zoomView" candidateClass="UIScrollView"/>
             </relationships>
         </class>
-        <class className="TipViewController" superclassName="UIViewController">
+        <class className="TipViewController" superclassName="KMViewControllerBase">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TipViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancel:"/>
@@ -2680,7 +2700,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
             </relationships>
         </class>
-        <class className="TodoViewController" superclassName="UIViewController">
+        <class className="TodoViewController" superclassName="KMViewControllerBase">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TodoViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancel:"/>
@@ -2699,6 +2719,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="UMTableViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UMTableViewController.h"/>

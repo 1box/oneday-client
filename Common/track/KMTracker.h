@@ -23,6 +23,8 @@ static inline void trackEvent (NSString * event, NSString * label) {
             [MobClick event:event label:label];
         }
     });
+    
+    SSLog(@"Track event:%@, label:%@", event, label);
 }
 
 

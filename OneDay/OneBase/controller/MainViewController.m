@@ -25,6 +25,7 @@
 #import "HintHelper.h"
 #import "CartoonManager.h"
 #import "TagManager.h"
+#import "SplashHelper.h"
 
 #define NumberOfItems (IS_IPHONE_5 ? 8 : 6)
 
@@ -36,9 +37,6 @@
     BOOL _editing;
     BOOL _hasAppear;
 }
-
-@property (nonatomic) UIImageView *animationView1;
-@property (nonatomic) UIImageView *animationView2;
 
 @property (nonatomic) NSMutableArray *addons;
 @property (nonatomic) NSMutableArray *dataSource;
@@ -142,10 +140,7 @@
     // to fix bug on iPhone 4S
     _collectionView.scrollEnabled = NO;
     
-    // add flip splash animationView1
-    UIView *containerView = self.navigationController.view;
-    self.animationView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]];
-    [containerView addSubview:_animationView1];
+    [[SplashHelper sharedHelper] prepareSplashAnimationView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -169,9 +164,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    if (_animationView1) {
-        [self flipSplashAnimation];
-    }
+    [[SplashHelper sharedHelper] splashFlipAnimation];
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -309,37 +302,6 @@
             ((RootCollectCell*)cell).editing = _editing;
         }
     }
-}
-
-- (void)flipSplashAnimation
-{
-    self.animationView2 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"splash-screen-no-logo.png"]];
-    UILabel *textLabel = [[UILabel alloc] init];
-    textLabel.text = @"今日事，今日毕。";
-    textLabel.backgroundColor = [UIColor clearColor];
-    textLabel.textColor = [UIColor whiteColor];
-    textLabel.font = [UIFont boldSystemFontOfSize:33.f];
-    [textLabel sizeToFit];
-    textLabel.center = CGPointMake(SSWidth(_animationView2)/2, SSHeight(_animationView2)/2);
-    [_animationView2 addSubview:textLabel];
-
-    [UIView transitionFromView:_animationView1
-                        toView:_animationView2
-                      duration:0.7f
-                       options:UIViewAnimationOptionTransitionFlipFromLeft
-                    completion:^(BOOL finished) {
-                        
-                        [UIView animateWithDuration:0.5f animations:^{
-                            _animationView2.alpha = 0.f;
-                        } completion:^(BOOL finished2) {
-                            
-                            [_animationView1 removeFromSuperview];
-                            [_animationView2 removeFromSuperview];
-                            
-                            self.animationView1 = nil;
-                            self.animationView2 = nil;
-                        }];
-                    }];
 }
 
 #pragma mark - KMAlertViewDelegate

@@ -1166,6 +1166,8 @@
 		CB40E524170C905500E6C9C6 /* DarkNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CB40E522170C905500E6C9C6 /* DarkNavigationBar.m */; };
 		CB40E52D170C90EE00E6C9C6 /* NormalNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CB40E52C170C90EE00E6C9C6 /* NormalNavigationBar.m */; };
 		CB40E52E170C90EE00E6C9C6 /* NormalNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CB40E52C170C90EE00E6C9C6 /* NormalNavigationBar.m */; };
+		CB620E88173C933200E4F3DC /* SplashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB620E87173C933200E4F3DC /* SplashHelper.m */; };
+		CB620E89173C933200E4F3DC /* SplashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB620E87173C933200E4F3DC /* SplashHelper.m */; };
 		CB886CA4173BCB8E0074586F /* UMTableViewController_N.m in Sources */ = {isa = PBXBuildFile; fileRef = CB886C7F173BCB8E0074586F /* UMTableViewController_N.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		CB886CA5173BCB8E0074586F /* UMTableViewController_N.m in Sources */ = {isa = PBXBuildFile; fileRef = CB886C7F173BCB8E0074586F /* UMTableViewController_N.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		CB886CA6173BCB8E0074586F /* UMTableViewController_New.m in Sources */ = {isa = PBXBuildFile; fileRef = CB886C81173BCB8E0074586F /* UMTableViewController_New.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
@@ -2403,6 +2405,8 @@
 		CB40E522170C905500E6C9C6 /* DarkNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarkNavigationBar.m; sourceTree = "<group>"; };
 		CB40E52B170C90EE00E6C9C6 /* NormalNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalNavigationBar.h; sourceTree = "<group>"; };
 		CB40E52C170C90EE00E6C9C6 /* NormalNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalNavigationBar.m; sourceTree = "<group>"; };
+		CB620E86173C933200E4F3DC /* SplashHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashHelper.h; sourceTree = "<group>"; };
+		CB620E87173C933200E4F3DC /* SplashHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashHelper.m; sourceTree = "<group>"; };
 		CB886C7E173BCB8E0074586F /* UMTableViewController_N.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMTableViewController_N.h; sourceTree = "<group>"; };
 		CB886C7F173BCB8E0074586F /* UMTableViewController_N.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMTableViewController_N.m; sourceTree = "<group>"; };
 		CB886C80173BCB8E0074586F /* UMTableViewController_New.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMTableViewController_New.h; sourceTree = "<group>"; };
@@ -3532,6 +3536,8 @@
 				3F55A60F16E50D4900EBBA30 /* CartoonManager.m */,
 				3F55A61016E50D4900EBBA30 /* TagManager.h */,
 				3F55A61116E50D4900EBBA30 /* TagManager.m */,
+				CB620E86173C933200E4F3DC /* SplashHelper.h */,
+				CB620E87173C933200E4F3DC /* SplashHelper.m */,
 			);
 			path = manager;
 			sourceTree = "<group>";
@@ -6075,6 +6081,7 @@
 				CB886CBE173BCBDE0074586F /* UMTableViewController.m in Sources */,
 				CB886CCA173BD6250074586F /* KMViewControllerBase.m in Sources */,
 				CBD1E462173C128A00694991 /* KMLoadMoreCell.m in Sources */,
+				CB620E89173C933200E4F3DC /* SplashHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6184,6 +6191,7 @@
 				CB886CBD173BCBDE0074586F /* UMTableViewController.m in Sources */,
 				CB886CC9173BD6250074586F /* KMViewControllerBase.m in Sources */,
 				CBD1E461173C128A00694991 /* KMLoadMoreCell.m in Sources */,
+				CB620E88173C933200E4F3DC /* SplashHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -17,7 +17,7 @@
     CGRect fitFrame = self.frame;
     CGFloat fitHeight = [self.text sizeWithFont:self.font
                               constrainedToSize:CGSizeMake(fitWidth, CGFLOAT_MAX)
-                                  lineBreakMode:UIBaselineAdjustmentAlignBaselines].height;
+                                  lineBreakMode:NSLineBreakByWordWrapping].height;
     
     fitFrame.size.width = fitWidth;
     fitFrame.size.height = fitHeight;

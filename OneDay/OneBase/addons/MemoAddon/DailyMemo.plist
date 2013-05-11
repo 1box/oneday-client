@@ -37,8 +37,10 @@
 		<string>MemoPlaceHolder</string>
 		<key>ShowQuickEntry</key>
 		<true/>
-		<key>ShowMoveToTomorrow</key>
-		<true/>
+		<key>ActionType</key>
+		<integer>7</integer>
+		<key>QuickAddPropertyName</key>
+		<string>todos</string>
 	</dict>
 </dict>
 </plist>

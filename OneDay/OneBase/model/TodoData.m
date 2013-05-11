@@ -58,7 +58,7 @@
     TodoData *tmpTodo = [[[self class] alloc] initWithEntity:[self entityDescription] insertIntoManagedObjectContext:insert ? [[KMModelManager sharedManager] managedObjectContext] : nil];
     tmpTodo.itemID = [NSNumber numberWithInteger:newToDoItemID()];
     tmpTodo.check = @NO;
-//    tmpTodo.eventColor = [[GCCalendar colors] objectAtIndex:random()%GCCalendarColorCount];
+//    tmpTodo.eventColor = [[GCCalendar colors] objectAtIndex:arc4random()%GCCalendarColorCount];
     
     return tmpTodo;
 }

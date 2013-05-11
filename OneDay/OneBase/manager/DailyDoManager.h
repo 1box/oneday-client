@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DailyDoActionHelper.h"
 
 #define kPropertyNameKey @"name"
 #define kProperyIconKey @"icon"
@@ -19,13 +20,15 @@
 #define PropertyTypeTags @"tags"
 #define PropertyTypeTodos @"todos"
 
+
 #define kConfigurationDefaultUnfoldKey @"DefaultUnfold"
 #define kConfigurationShowTimelineKey @"ShowTimeline"
 #define kConfigurationSlogan @"Slogan"
 #define kConfigurationTimelineTitle @"TimelineTitle"
 #define kConfigurationPlaceHolder @"PlaceHolder"
 #define kConfigurationShowQuickEntry @"ShowQuickEntry"
-#define kConfigurationShowMoveToTomorrow @"ShowMoveToTomorrow"
+#define kConfigurationActionType @"ActionType"
+#define kConfigurationQuickAddPropertyName @"QuickAddPropertyName"
 
 
 #define DailyDoManagerLoggedDosLoadFinishedNotification @"DailyDoManagerLoggedDosLoadFinishedNotification"
@@ -41,6 +44,7 @@
 #define kDailyDoManagerLoadResultErrorKey @"kDailyDoManagerLoadResultErrorKey"
 
 
+
 @class AddonData;
 @class DailyDoBase;
 @class TodoData;
@@ -51,8 +55,10 @@
 
 // properties
 - (NSArray *)propertiesForDoName:(NSString *)doName;
-- (NSDictionary *)configurationsForDoName:(NSString *)doName;
 - (NSDictionary *)propertiesDictForProperties:(NSArray *)properties inDailyDo:(DailyDoBase *)dailyDo;
+
+// configurations
+- (NSDictionary *)configurationsForDoName:(NSString *)doName;
 - (NSString *)sloganForDoName:(NSString *)doName;
 
 // dailydos

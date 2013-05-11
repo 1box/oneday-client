@@ -27,6 +27,8 @@
 "delete"="删除";
 "_done"="完成";
 "_edit"="编辑";
+"QuickAddTodoDone"="新的便签已添加";
+"ShowAllUndosTitle"="查看所有未完成";
 
 // tags
 "HomeTag"            ="在家";

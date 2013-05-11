@@ -26,24 +26,20 @@ static DailyDoManager *_sharedManager;
     return _sharedManager;
 }
 
++ (id)alloc
+{
+    NSAssert(_sharedManager == nil, @"Attempt alloc another instance for a singleton.");
+    return [super alloc];
+}
+
+#pragma mark - Properties
+
 - (NSArray *)propertiesForDoName:(NSString *)doName
 {
     NSString *path = [[NSBundle mainBundle] pathForResource:doName ofType:@"plist"];
     if (path) {
         NSDictionary *root = [NSDictionary dictionaryWithContentsOfFile:path];
         return [root objectForKey:@"Properties"];
-    }
-    else {
-        return nil;
-    }
-}
-
-- (NSDictionary *)configurationsForDoName:(NSString *)doName
-{
-    NSString *path = [[NSBundle mainBundle] pathForResource:doName ofType:@"plist"];
-    if (path) {
-        NSDictionary *root = [NSDictionary dictionaryWithContentsOfFile:path];
-        return [root objectForKey:@"Configurations"];
     }
     else {
         return nil;
@@ -64,6 +60,20 @@ static DailyDoManager *_sharedManager;
     }
     
     return ret;
+}
+
+#pragma mark - Configurations
+
+- (NSDictionary *)configurationsForDoName:(NSString *)doName
+{
+    NSString *path = [[NSBundle mainBundle] pathForResource:doName ofType:@"plist"];
+    if (path) {
+        NSDictionary *root = [NSDictionary dictionaryWithContentsOfFile:path];
+        return [root objectForKey:@"Configurations"];
+    }
+    else {
+        return nil;
+    }
 }
 
 - (NSString *)sloganForDoName:(NSString *)doName

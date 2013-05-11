@@ -11,7 +11,7 @@
 @class AddonData;
 @class KMTableView;
 
-@interface DailyDoView : KMViewBase <UITableViewDataSource, UITableViewDelegate, UIAlertViewDelegate> {
+@interface DailyDoView : KMViewBase <UITableViewDataSource, UITableViewDelegate> {
 @private
     BOOL _todayDoUnfold;
     BOOL _tomorrowDoUnfold;
@@ -31,4 +31,5 @@
 - (IBAction)checkbox:(id)sender;
 - (IBAction)moveTodoToTomorrow:(id)sender;
 - (IBAction)addTodo:(id)sender;
+- (IBAction)otherActions:(id)sender;
 @end

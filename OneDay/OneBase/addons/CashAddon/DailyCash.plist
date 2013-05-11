@@ -37,8 +37,10 @@
 		<string>CashPlaceHolder</string>
 		<key>ShowQuickEntry</key>
 		<false/>
-		<key>ShowMoveToTomorrow</key>
-		<false/>
+		<key>ActionType</key>
+		<integer>2</integer>
+		<key>QuickAddPropertyName</key>
+		<string>todos</string>
 	</dict>
 </dict>
 </plist>

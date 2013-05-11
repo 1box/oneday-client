@@ -77,7 +77,7 @@
 {
     _loggedDo = loggedDo;
     if (_loggedDo) {
-        _checkbox.enabled = ![_loggedDo.check boolValue];
+        _checkbox.enabled = ![_loggedDo.check boolValue] && [_loggedDo.todos count] > 0;
         _dateLabel.text = [MonthToDayFormatter() stringFromDate:[NSDate dateWithTimeIntervalSince1970:[_loggedDo.createTime doubleValue]]];
         _completeLabel.text = [_loggedDo completionText];
         _presentView.dailyDo = _loggedDo;

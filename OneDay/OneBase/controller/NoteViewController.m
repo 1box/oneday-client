@@ -44,7 +44,6 @@
 - (void)refreshText
 {
     _textView.text = [_dailyDo valueForKey:_propertyKey];
-    NSLog(@"property value:%@", _textView.text);
 }
 
 #pragma mark - Actions

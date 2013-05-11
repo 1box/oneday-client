@@ -12,6 +12,8 @@
 #import "TimelineViewController.h"
 #import "NoteViewController.h"
 #import "TagViewController.h"
+#import "UndoViewController.h"
+#import "DarkNavigationBar.h"
 
 #import "KMTableView.h"
 #import "DailyDoTodayCell.h"
@@ -22,11 +24,11 @@
 #import "DailyDoTagCell.h"
 #import "DailyDoNoteCell.h"
 #import "KMLoadMoreCell.h"
-#import "KMAlertView.h"
 
 #import "KMModelManager.h"
 #import "DailyDoManager.h"
 #import "AddonsHeader.h"
+#import "DailyDoActionHelper.h"
 #import "AddonData.h"
 #import "DailyDoBase.h"
 #import "TodoData.h"
@@ -34,7 +36,7 @@
 #define CommonCellHeight 44.f
 #define LoggedDoUnfoldDefaultIndex -1
 
-@interface DailyDoView () <KMAlertViewDelegate> {
+@interface DailyDoView () <DailyDoActionHelperDelegate, UIActionSheetDelegate> {
     
     BOOL _isLoading;
     BOOL _canLoadMore;
@@ -114,21 +116,35 @@
     self.configurations = [[DailyDoManager sharedManager] configurationsForDoName:_addon.dailyDoName];
     self.propertiesDict = [[[DailyDoManager sharedManager] propertiesDictForProperties:_properties inDailyDo:_todayDo] mutableCopy];
     
-    BOOL showMoveToTomorrow = [[[[DailyDoManager sharedManager] configurationsForDoName:_addon.dailyDoName] objectForKey:kConfigurationShowMoveToTomorrow] boolValue];
-    if (!showMoveToTomorrow) {
-        NSArray *items = [_toolbar.items subarrayWithRange:NSMakeRange(1, [_toolbar.items count] - 1)];
-        _toolbar.items = items;
+    [DailyDoActionHelper sharedHelper].delegate = self;
+    
+    // load action items
+    NSArray *items = _toolbar.items;
+    NSMutableArray *mutItems = [NSMutableArray arrayWithCapacity:[items count]];
+    NSInteger actionType = [[_configurations objectForKey:kConfigurationActionType] integerValue];
+    
+    if ((actionType & DailyDoActionTypeMoveToTomorrow) == DailyDoActionTypeMoveToTomorrow) {
+        [mutItems addObject:[items objectAtIndex:0]];
     }
+    if ((actionType & DailyDoActionTypeQuickAdd) == DailyDoActionTypeQuickAdd) {
+        [mutItems addObject:[items objectAtIndex:1]];
+    }
+    [mutItems addObject:[items objectAtIndex:2]];
+    if ((actionType & DailyDoActionTypeShowAllUndos) == DailyDoActionTypeShowAllUndos) {
+        [mutItems addObject:[items objectAtIndex:3]];
+    }
+    
+    _toolbar.items = [mutItems copy];
 }
 
 - (void)viewDidAppear
 {
     [super viewDidAppear];
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(loadDataFinished:)
                                                  name:DailyDoManagerLoggedDosLoadFinishedNotification
                                                object:[DailyDoManager sharedManager]];
-    
     [self loadLoggedDos:NO];
 }
 
@@ -170,44 +186,12 @@
 
 - (IBAction)addTodo:(id)sender
 {
-    __strong AddonData *tAddon = _todayDo.addon;
-    
-    KMAlertView *quickAlert = [[KMAlertView alloc] initWithTitle:NSLocalizedString(tAddon.dailyDoName, nil)
-                                                        messages:@[NSLocalizedString(@"_quickEntryMessage", nil)]
-                                                        delegate:self];
-    quickAlert.userInfo = tAddon;
-    [quickAlert show];
+    [[DailyDoActionHelper sharedHelper] quickAddTodo:_todayDo];
 }
 
 - (IBAction)moveTodoToTomorrow:(id)sender
 {
-    if ([_todayDo.check boolValue] || [_todayDo.todos count] == 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
-                                                        message:NSLocalizedString(@"NoUndoToTomorrowMessage", nil)
-                                                       delegate:self
-                                              cancelButtonTitle:NSLocalizedString(@"_confirm", nil)
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
-    else {
-        NSMutableString *undoString = [NSMutableString string];
-        for (int i=0; i < [_todayDo.todos count]; i++) {
-            if (i != [_todayDo.todos count] - 1) {
-                [undoString appendString:@" "];
-            }
-            
-            TodoData *todo = [[_todayDo todosSortedByIndex] objectAtIndex:i];
-            if (![todo.check boolValue]) {
-                [undoString appendFormat:@"%d. %@", i + 1, todo.content];
-            }
-        }
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
-                                                        message:[NSString stringWithFormat:NSLocalizedString(@"MoveToTomorrowMessage", nil), undoString]
-                                                       delegate:self
-                                              cancelButtonTitle:NSLocalizedString(@"_cancel", nil)
-                                              otherButtonTitles:NSLocalizedString(@"MoveToTomorrow", nil), nil];
-        [alert show];
-    }
+    [[DailyDoActionHelper sharedHelper] move:_todayDo toTomorrow:_tomorrowDo];
 }
 
 - (IBAction)edit:(id)sender
@@ -246,6 +230,29 @@
     
     [[KMModelManager sharedManager] saveContext:nil];
     [self reloadData];
+}
+
+- (IBAction)otherActions:(id)sender
+{
+    NSMutableArray *otherButtonTitles = [NSMutableArray arrayWithCapacity:10];
+    NSInteger actionType = [[_configurations objectForKey:kConfigurationActionType] integerValue];
+    if (DailyDoActionTypeShowAllUndos == (actionType & DailyDoActionTypeShowAllUndos)) {
+        [otherButtonTitles addObject:NSLocalizedString(@"ShowAllUndosTitle", nil)];
+    }
+    [otherButtonTitles addObject:NSLocalizedString(@"_cancel", nil)];
+    
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@""
+                                                    delegate:self
+                                           cancelButtonTitle:nil
+                                      destructiveButtonTitle:nil
+                                           otherButtonTitles:nil];
+    for (NSString *title in otherButtonTitles) {
+        [sheet addButtonWithTitle:title];
+    }
+    sheet.cancelButtonIndex = [otherButtonTitles count] - 1;
+    
+    sheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+    [sheet showInView:self];
 }
 
 #pragma mark - DailyDoManagerLoggedDosLoadFinishedNotification
@@ -473,7 +480,7 @@
 {
     BOOL ret = YES;
     ret &= !(indexPath.section == _todaySectionIndex && indexPath.row != 0);
-    ret &= indexPath.section && indexPath.row >= [_loggedDos count];
+    ret &= !(indexPath.section == _loggedSectionIndex && indexPath.row >= [_loggedDos count]);
     return ret;
 }
 
@@ -539,32 +546,51 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
-#pragma mark - UIAlertViewDelegate
+#pragma mark - DailyDoActionHelperDelegate
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)dailyDoActionHelper:(DailyDoActionHelper *)helper doActionForType:(DailyDoActionType)actionType
 {
-    if (alertView.cancelButtonIndex != buttonIndex) {
-        [[DailyDoManager sharedManager] moveDailyDoUndos:_todayDo toAnother:_tomorrowDo];
-        [self reloadData];
+    switch (actionType) {
+        case DailyDoActionTypeMoveToTomorrow:
+        case DailyDoActionTypeQuickAdd:
+        {
+            [self reloadData];
+        }
+            break;
+        case DailyDoActionTypeShowAllUndos:
+        {
+            UINavigationController *nav = [[UIStoryboard storyboardWithName:@"OneDayStoryboard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"UndoNavigationControllerID"];
+            
+//            UndosViewController *controller = [[UndosViewController alloc] init];
+//            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
+//            [nav.navigationBar setBackgroundImage:[UIImage imageNamed:@"dark_nav_bg.png"] forBarMetrics:UIBarMetricsDefault];
+            UIViewController *topViewController = [SSCommon topViewControllerFor:self];
+            [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
+        }
+            break;
+            
+        default:
+            break;
     }
 }
 
-#pragma mark - KMAlertViewDelegate
+#pragma mark - UIActionSheetDelegate
 
-- (void)kmAlertView:(KMAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex != alertView.cancelButtonIndex) {
-        NSString *tContent = alertView.textView.text;
-        if (!KMEmptyString(tContent)) {
-            AddonData *tAddon = (AddonData *)alertView.userInfo;
-            DailyDoBase *todayDo = [[DailyDoManager sharedManager] todayDoForAddon:tAddon];
-            TodoData *todo = [todayDo insertNewTodoAtIndex:[todayDo.todos count]];
-            todo.content = tContent;
-            
-            [[KMModelManager sharedManager] saveContext:nil];
-            
-            [_todayDo detectTodos];
-            [self reloadData];
+    if (buttonIndex != actionSheet.cancelButtonIndex) {
+        NSInteger actionType = [[_configurations objectForKey:kConfigurationActionType] integerValue];
+        switch (buttonIndex) {
+            case 0:
+            {
+                if (DailyDoActionTypeShowAllUndos == (actionType & DailyDoActionTypeShowAllUndos)) {
+                    [[DailyDoActionHelper sharedHelper] showAllUndos:_addon];
+                }
+            }
+                break;
+                
+            default:
+                break;
         }
     }
 }

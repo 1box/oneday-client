@@ -12,6 +12,22 @@
 
 - (void)awakeFromNib
 {
+    [self updateThemes];
+}
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self updateThemes];
+    }
+    return self;
+}
+
+#pragma mark - private
+
+- (void)updateThemes
+{
     UIImage *backgroundImage = [UIImage imageNamed:@"dark_nav_btn_bg.png"];
     backgroundImage = [backgroundImage stretchableImageWithLeftCapWidth:backgroundImage.size.width/2 topCapHeight:backgroundImage.size.height/2];
     UIImage *pressBackgroundImage = [UIImage imageNamed:@"dark_nav_btn_bg_press.png"];

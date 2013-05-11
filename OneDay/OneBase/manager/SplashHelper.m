@@ -45,14 +45,20 @@ typedef NS_ENUM(NSInteger, SplashRandomTextType) {
 
 @implementation SplashHelper
 
+static SplashHelper *_sharedHelper = nil;
 + (SplashHelper *)sharedHelper
 {
-    static SplashHelper *_sharedHelper = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedHelper = [[SplashHelper alloc] init];
     });
     return _sharedHelper;
+}
+
++ (id)alloc
+{
+    NSAssert(_sharedHelper == nil, @"Attempt alloc another instance for a singleton.");
+    return [super alloc];
 }
 
 - (void)prepareSplashAnimationView
@@ -74,17 +80,16 @@ typedef NS_ENUM(NSInteger, SplashRandomTextType) {
                            options:UIViewAnimationOptionTransitionFlipFromLeft
                         completion:^(BOOL finished) {
                             
-#warning debug code
-//                            [UIView animateWithDuration:0.65f animations:^{
-//                                _animationView2.alpha = 0.05f;
-//                            } completion:^(BOOL finished2) {
-//                                
-//                                [_animationView1 removeFromSuperview];
-//                                [_animationView2 removeFromSuperview];
-//                                
-//                                self.animationView1 = nil;
-//                                self.animationView2 = nil;
-//                            }];
+                            [UIView animateWithDuration:0.65f animations:^{
+                                _animationView2.alpha = 0.05f;
+                            } completion:^(BOOL finished2) {
+                                
+                                [_animationView1 removeFromSuperview];
+                                [_animationView2 removeFromSuperview];
+                                
+                                self.animationView1 = nil;
+                                self.animationView2 = nil;
+                            }];
                         }];
     }
 }
@@ -99,26 +104,26 @@ typedef NS_ENUM(NSInteger, SplashRandomTextType) {
     NSString *randomTitle = @"";
     NSString *randomText = @"一天-爱计划，爱记录";
     
-    int textType = rand()%2;
+    int textType = arc4random()%2;
     switch (textType) {
         case SplashRandomTextTypeQuote:
         {
             NSArray *quotes = @[@"好的一天是成功的开始", @"今日事，今日毕", @"专注目标，日拱一卒，永不言败!"];
-            int index = rand()%[quotes count];
+            int index = arc4random()%[quotes count];
             randomText = [quotes objectAtIndex:index];
         }
             break;
         case SplashRandomTextTypeTodayDo:
         {
             NSArray *addons = [[AddonManager sharedManager] currentAddons];
-            int index = rand()%[addons count];
+            int index = arc4random()%[addons count];
             
             DailyDoBase *todayDo = [[DailyDoManager sharedManager] todayDoForAddon:[addons objectAtIndex:index]];
             randomTitle = [NSString stringWithFormat:@"%@: ", NSLocalizedString(todayDo.addon.title, nil)];
             
             NSArray *todos = [todayDo todosSortedByIndex];
             if (todayDo && [todos count] > 0) {
-                int todoIndex = rand()%[todos count];
+                int todoIndex = arc4random()%[todos count];
                 TodoData *todo = [todos objectAtIndex:todoIndex];
                 randomText = [todo pureContent];
             }

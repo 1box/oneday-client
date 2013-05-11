@@ -37,8 +37,10 @@
 		<string>WorkoutPlaceHolder</string>
 		<key>ShowQuickEntry</key>
 		<false/>
-		<key>ShowMoveToTomorrow</key>
-		<true/>
+		<key>ActionType</key>
+		<integer>7</integer>
+		<key>QuickAddPropertyName</key>
+		<string>todos</string>
 	</dict>
 </dict>
 </plist>

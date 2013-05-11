@@ -27,6 +27,8 @@
 "delete"="Delete";
 "_done"="Done";
 "_edit"="Edit";
+"QuickAddTodoDone"="New memo created";
+"ShowAllUndosTitle"="Show all undos";
 
 // tags
 "HomeTag"            ="At home";

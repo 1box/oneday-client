@@ -27,8 +27,10 @@
 		<string>ShortPlaceHolder</string>
 		<key>ShowQuickEntry</key>
 		<false/>
-		<key>ShowMoveToTomorrow</key>
-		<false/>
+		<key>ActionType</key>
+		<integer>2</integer>
+		<key>QuickAddPropertyName</key>
+		<string>shortContent</string>
 	</dict>
 </dict>
 </plist>

@@ -33,6 +33,12 @@ static AlarmNotificationManager *_sharedManager = nil;
     return _sharedManager;
 }
 
++ (id)alloc
+{
+    NSAssert(_sharedManager == nil, @"Attempt alloc another instance for a singleton.");
+    return [super alloc];
+}
+
 #pragma mark - public
 
 - (void)handleAlarmLocalNotification:(UILocalNotification *)notification

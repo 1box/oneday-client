@@ -14,6 +14,7 @@
 #import "RootCollectCell.h"
 #import "RootVerticalToolbar.h"
 #import "DarkNavigationBarButton.h"
+#import "MTStatusBarOverlay.h"
 #import "TipViewController.h"
 
 #import "AddonManager.h"
@@ -311,11 +312,15 @@
     if (buttonIndex != alertView.cancelButtonIndex) {
         NSString *tContent = alertView.textView.text;
         if (!KMEmptyString(tContent)) {
+            // 只有每日便签用到了快速添加
             AddonData *tAddon = (AddonData *)alertView.userInfo;
+            
             DailyDoBase *todayDo = [[DailyDoManager sharedManager] todayDoForAddon:tAddon];
             TodoData *todo = [todayDo insertNewTodoAtIndex:[todayDo.todos count]];
             todo.content = tContent;
             [[KMModelManager sharedManager] saveContext:nil];
+            
+            [[MTStatusBarOverlay sharedOverlay] postFinishMessage:NSLocalizedString(@"QuickAddTodoDone", nil) duration:2.f];
         }
     }
 }

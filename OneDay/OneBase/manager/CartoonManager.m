@@ -29,6 +29,12 @@ static CartoonManager *_sharedManager;
     return _sharedManager;
 }
 
++ (id)alloc
+{
+    NSAssert(_sharedManager == nil, @"Attempt alloc another instance for a singleton.");
+    return [super alloc];
+}
+
 - (void)startChangeCartoonTimer
 {
     if (randomCartoonSwitch()) {
@@ -62,7 +68,7 @@ static CartoonManager *_sharedManager;
     NSInteger addonsCount = [[AddonManager sharedManager] addonsCount];
     
     if(addonsCount != 0) {
-        int randomIndex = random()%addonsCount;
+        int randomIndex = arc4random()%addonsCount;
         if (randomIndex == _cartoonIndex) {
             randomIndex = (randomIndex + 1)%addonsCount;
         }

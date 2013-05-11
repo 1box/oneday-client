@@ -23,6 +23,12 @@ static TagManager *_sharedManager;
     return _sharedManager;
 }
 
++ (id)alloc
+{
+    NSAssert(_sharedManager == nil, @"Attempt alloc another instance for a singleton.");
+    return [super alloc];
+}
+
 #pragma mark - public
 
 - (void)loadDefaultTagsFromPlist

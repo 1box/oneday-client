@@ -1135,6 +1135,8 @@
 		CB045E91173CD16100BD415A /* MTStatusBarOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = CB045E8F173CD16100BD415A /* MTStatusBarOverlay.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		CB083EFC170C8DB500959971 /* NavigationBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CB083EFB170C8DB500959971 /* NavigationBarButton.m */; };
 		CB083EFD170C8DB500959971 /* NavigationBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CB083EFB170C8DB500959971 /* NavigationBarButton.m */; };
+		CB1D26D1173F3B6D00D6B801 /* TodoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1D26D0173F3B6D00D6B801 /* TodoManager.m */; };
+		CB1D26D2173F3B6D00D6B801 /* TodoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1D26D0173F3B6D00D6B801 /* TodoManager.m */; };
 		CB2C709B1638423700D0D348 /* SSDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2C6F561638423700D0D348 /* SSDataUtil.m */; };
 		CB2C709C1638423700D0D348 /* SSEntityBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2C6F581638423700D0D348 /* SSEntityBase.m */; };
 		CB2C709F1638423700D0D348 /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2C6F611638423700D0D348 /* UIDevice-Hardware.m */; };
@@ -2331,6 +2333,8 @@
 		CB045E8F173CD16100BD415A /* MTStatusBarOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTStatusBarOverlay.m; path = MTStatusBarOverlay/MTStatusBarOverlay.m; sourceTree = "<group>"; };
 		CB083EFA170C8DB500959971 /* NavigationBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarButton.h; sourceTree = "<group>"; };
 		CB083EFB170C8DB500959971 /* NavigationBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarButton.m; sourceTree = "<group>"; };
+		CB1D26CF173F3B6D00D6B801 /* TodoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoManager.h; sourceTree = "<group>"; };
+		CB1D26D0173F3B6D00D6B801 /* TodoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoManager.m; sourceTree = "<group>"; };
 		CB2C6F541638423700D0D348 /* SSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSData.h; sourceTree = "<group>"; };
 		CB2C6F551638423700D0D348 /* SSDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDataUtil.h; sourceTree = "<group>"; };
 		CB2C6F561638423700D0D348 /* SSDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDataUtil.m; sourceTree = "<group>"; };
@@ -3475,6 +3479,8 @@
 				3F55A61116E50D4900EBBA30 /* TagManager.m */,
 				CB620E86173C933200E4F3DC /* SplashHelper.h */,
 				CB620E87173C933200E4F3DC /* SplashHelper.m */,
+				CB1D26CF173F3B6D00D6B801 /* TodoManager.h */,
+				CB1D26D0173F3B6D00D6B801 /* TodoManager.m */,
 			);
 			path = manager;
 			sourceTree = "<group>";
@@ -5960,6 +5966,7 @@
 				CBFBDBC6173D5322008799AC /* DailyDoActionHelper.m in Sources */,
 				CBFBDBCA173D77D7008799AC /* UndoViewController.m in Sources */,
 				CB8CE0F7173E327A00B0E275 /* UndoCellView.m in Sources */,
+				CB1D26D2173F3B6D00D6B801 /* TodoManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6074,6 +6081,7 @@
 				CBFBDBC5173D5322008799AC /* DailyDoActionHelper.m in Sources */,
 				CBFBDBC9173D77D7008799AC /* UndoViewController.m in Sources */,
 				CB8CE0F6173E327A00B0E275 /* UndoCellView.m in Sources */,
+				CB1D26D1173F3B6D00D6B801 /* TodoManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

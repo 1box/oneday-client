@@ -71,6 +71,7 @@ static DailyDoManager *_sharedManager;
         NSDictionary *root = [NSDictionary dictionaryWithContentsOfFile:path];
         return [root objectForKey:@"Configurations"];
     }
+    
     else {
         return nil;
     }
@@ -215,7 +216,7 @@ static DailyDoManager *_sharedManager;
     
     NSTimeInterval lessThan = 0.f;
     if (isLoadMore) {
-        lessThan = [[condition objectForKey:kDailyDoManagerLoadConditionMinCreateTimeKey] doubleValue];
+        lessThan = [[condition objectForKey:kDailyDoManagerLoadConditionMaxCreateTimeKey] doubleValue];
     }
     else {
         lessThan = [[[NSDate date] morning] timeIntervalSince1970];

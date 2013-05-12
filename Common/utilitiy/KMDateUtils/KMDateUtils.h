@@ -67,6 +67,18 @@ static NSDateFormatter *YearToMiniteFormatter() {
     return __yearToMiniteFormatter;
 }
 
+// yyyy-MM-dd EEEE
+static NSDateFormatter *__yearToDayWeekFormatter = nil;
+static NSDateFormatter *YearToDayWeekFormatter() {
+    if (__yearToDayWeekFormatter == nil) {
+        __yearToDayWeekFormatter = [[NSDateFormatter alloc] init];
+        [__yearToDayWeekFormatter setLocale:currentDateLocale()];
+        [__yearToDayWeekFormatter setDateFormat:@"yyyy-MM-dd EEEE"];
+        [__yearToDayWeekFormatter setTimeZone:[NSTimeZone localTimeZone]];
+    }
+    return __yearToDayWeekFormatter;
+}
+
 // yyyy-MM-dd
 static NSDateFormatter *__yearToDayFormatter = nil;
 static NSDateFormatter *YearToDayFormatter() {

@@ -163,11 +163,11 @@
         
         NSMutableDictionary *mutCondition = [NSMutableDictionary dictionaryWithDictionary:
                                              @{ kDailyDoManagerLoadConditionCountKey : [NSNumber numberWithInt:20],
-                                           kDailyDoManagerLoadConditionIsLoadMoreKey : [NSNumber numberWithBool:loadMore],
                                                 kDailyDoManagerLoadConditionAddonKey : _addon}];
         if ([_loggedDos count] > 0 && loadMore) {
             DailyDoBase *dailyDo = [_loggedDos lastObject];
-            [mutCondition setObject:dailyDo.createTime forKey:kDailyDoManagerLoadConditionMinCreateTimeKey];
+            [mutCondition setObject:kDailyDoManagerLoadConditionIsLoadMoreKey forKey:[NSNumber numberWithBool:loadMore]];
+            [mutCondition setObject:dailyDo.createTime forKey:kDailyDoManagerLoadConditionMaxCreateTimeKey];
         }
         [[DailyDoManager sharedManager] loadLoggedDosForCondition:[mutCondition copy]];
     }
@@ -560,10 +560,8 @@
         case DailyDoActionTypeShowAllUndos:
         {
             UINavigationController *nav = [[UIStoryboard storyboardWithName:@"OneDayStoryboard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"UndoNavigationControllerID"];
-            
-//            UndosViewController *controller = [[UndosViewController alloc] init];
-//            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:controller];
-//            [nav.navigationBar setBackgroundImage:[UIImage imageNamed:@"dark_nav_bg.png"] forBarMetrics:UIBarMetricsDefault];
+            UndoViewController *controller = (UndoViewController *)nav.topViewController;
+            controller.addon = _addon;
             UIViewController *topViewController = [SSCommon topViewControllerFor:self];
             [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
         }

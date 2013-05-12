@@ -35,7 +35,7 @@
 #define kDailyDoManagerLoggedDosLoadConditionKey @"kDailyDoManagerLoggedDosLoadConditionKey"
 #define kDailyDoManagerLoggedLoadResultKey @"kDailyDoManagerLoggedLoadResultKey"
 
-#define kDailyDoManagerLoadConditionMinCreateTimeKey @"kDailyDoManagerLoadConditionMinCreateTimeKey"
+#define kDailyDoManagerLoadConditionMaxCreateTimeKey @"kDailyDoManagerLoadConditionMaxCreateTimeKey"
 #define kDailyDoManagerLoadConditionCountKey @"kDailyDoManagerLoadConditionCountKey"
 #define kDailyDoManagerLoadConditionIsLoadMoreKey @"kDailyDoManagerLoadConditionIsLoadMoreKey"
 

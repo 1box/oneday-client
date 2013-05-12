@@ -11,5 +11,10 @@
 @class AddonData;
 
 @interface UndoViewController : KMViewControllerBase
+
 @property (nonatomic) AddonData *addon;
+
+- (IBAction)moveAllToTomorrow:(id)sender;
+- (IBAction)checkAll:(id)sender;
+
 @end

@@ -9,9 +9,11 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, DailyDoActionType) {
-    DailyDoActionTypeMoveToTomorrow = 1UL,
-    DailyDoActionTypeQuickAdd = (1UL << 1),
-    DailyDoActionTypeShowAllUndos = (1UL << 2)
+    DailyDoActionTypeMoveToTomorrow = 1UL,              // 1
+    DailyDoActionTypeQuickAdd = (1UL << 1),             // 2
+    DailyDoActionTypeShowAllUndos = (1UL << 2),         // 4
+    DailyDoActionTypeCashMonthSummary = (1UL << 3),     // 8
+    DailyDoActionTypeCashYearSummary = (1UL << 4)       // 16
 };
 
 
@@ -35,5 +37,7 @@ typedef NS_ENUM(NSInteger, DailyDoActionType) {
 - (void)move:(DailyDoBase *)todayDo toTomorrow:(DailyDoBase *)tomorrowDo;
 - (void)quickAddTodo:(DailyDoBase *)dailyDo;
 - (void)showAllUndos:(AddonData *)addon;
+- (void)showCashMonthSummary;
+- (void)showCashYearSummary;
 
 @end

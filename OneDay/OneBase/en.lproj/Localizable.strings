@@ -27,8 +27,13 @@
 "delete"="Delete";
 "_done"="Done";
 "_edit"="Edit";
-"QuickAddTodoDone"="New memo created";
+
+"QuickAddTodoDone"="New memo created.";
+"MoveAllUndosToToday"="All undos moved to today.";
+"CheckAllUndos"="All undos has been checked.";
 "ShowAllUndosTitle"="Show all undos";
+"CashMonthSummaryTitle"="Month Summary";
+"CashYearSummaryTitle"="Year Summary";
 
 // tags
 "HomeTag"            ="At home";

@@ -13,6 +13,7 @@
 #import "NoteViewController.h"
 #import "TagViewController.h"
 #import "UndoViewController.h"
+#import "SummaryViewController.h"
 #import "DarkNavigationBar.h"
 
 #import "KMTableView.h"
@@ -102,10 +103,6 @@
 {
     [super loadView];
     
-    _todaySectionIndex = 0;
-    _tomorrowSectionIndex = [_tomorrowDo.todos count] > 0 ? 1 : -1;
-    _loggedSectionIndex = _tomorrowSectionIndex == 1 ? 2 : 1;
-    
     _loggedDoUnfoldIndex = LoggedDoUnfoldDefaultIndex;
     _todayDoUnfold = YES;
     
@@ -118,6 +115,10 @@
     
     [DailyDoActionHelper sharedHelper].delegate = self;
     
+    _todaySectionIndex = 0;
+    _tomorrowSectionIndex = [_tomorrowDo.todos count] > 0 ? 1 : -1;
+    _loggedSectionIndex = _tomorrowSectionIndex == 1 ? 2 : 1;
+    
     // load action items
     NSArray *items = _toolbar.items;
     NSMutableArray *mutItems = [NSMutableArray arrayWithCapacity:[items count]];
@@ -126,11 +127,17 @@
     if ((actionType & DailyDoActionTypeMoveToTomorrow) == DailyDoActionTypeMoveToTomorrow) {
         [mutItems addObject:[items objectAtIndex:0]];
     }
+    
     if ((actionType & DailyDoActionTypeQuickAdd) == DailyDoActionTypeQuickAdd) {
         [mutItems addObject:[items objectAtIndex:1]];
     }
+    
     [mutItems addObject:[items objectAtIndex:2]];
-    if ((actionType & DailyDoActionTypeShowAllUndos) == DailyDoActionTypeShowAllUndos) {
+    
+    if ((actionType & DailyDoActionTypeShowAllUndos) == DailyDoActionTypeShowAllUndos ||
+        (actionType & DailyDoActionTypeCashMonthSummary) == DailyDoActionTypeCashMonthSummary ||
+        (actionType & DailyDoActionTypeCashYearSummary) == DailyDoActionTypeCashYearSummary) {
+        
         [mutItems addObject:[items objectAtIndex:3]];
     }
     
@@ -163,10 +170,10 @@
         
         NSMutableDictionary *mutCondition = [NSMutableDictionary dictionaryWithDictionary:
                                              @{ kDailyDoManagerLoadConditionCountKey : [NSNumber numberWithInt:20],
+                                                kDailyDoManagerLoadConditionIsLoadMoreKey : [NSNumber numberWithBool:loadMore],
                                                 kDailyDoManagerLoadConditionAddonKey : _addon}];
         if ([_loggedDos count] > 0 && loadMore) {
             DailyDoBase *dailyDo = [_loggedDos lastObject];
-            [mutCondition setObject:kDailyDoManagerLoadConditionIsLoadMoreKey forKey:[NSNumber numberWithBool:loadMore]];
             [mutCondition setObject:dailyDo.createTime forKey:kDailyDoManagerLoadConditionMaxCreateTimeKey];
         }
         [[DailyDoManager sharedManager] loadLoggedDosForCondition:[mutCondition copy]];
@@ -238,6 +245,12 @@
     NSInteger actionType = [[_configurations objectForKey:kConfigurationActionType] integerValue];
     if (DailyDoActionTypeShowAllUndos == (actionType & DailyDoActionTypeShowAllUndos)) {
         [otherButtonTitles addObject:NSLocalizedString(@"ShowAllUndosTitle", nil)];
+    }
+    if (DailyDoActionTypeCashMonthSummary == (actionType & DailyDoActionTypeCashMonthSummary)) {
+        [otherButtonTitles addObject:NSLocalizedString(@"CashMonthSummaryTitle", nil)];
+    }
+    if (DailyDoActionTypeCashYearSummary == (actionType & DailyDoActionTypeCashYearSummary)) {
+        [otherButtonTitles addObject:NSLocalizedString(@"CashYearSummaryTitle", nil)];
     }
     [otherButtonTitles addObject:NSLocalizedString(@"_cancel", nil)];
     
@@ -566,6 +579,26 @@
             [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
         }
             break;
+        case DailyDoActionTypeCashMonthSummary:
+        {
+            UINavigationController *nav = [[UIStoryboard storyboardWithName:@"OneDayStoryboard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SummaryNavigationControllerID"];
+            SummaryViewController *controller = (SummaryViewController *)nav.topViewController;
+            controller.type = SummaryViewTypeMonth;
+            controller.addon = _addon;
+            UIViewController *topViewController = [SSCommon topViewControllerFor:self];
+            [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
+        }
+            break;
+        case DailyDoActionTypeCashYearSummary:
+        {
+            UINavigationController *nav = [[UIStoryboard storyboardWithName:@"OneDayStoryboard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SummaryNavigationControllerID"];
+            SummaryViewController *controller = (SummaryViewController *)nav.topViewController;
+            controller.type = SummaryViewTypeYear;
+            controller.addon = _addon;
+            UIViewController *topViewController = [SSCommon topViewControllerFor:self];
+            [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
+        }
+            break;
             
         default:
             break;
@@ -583,6 +616,16 @@
             {
                 if (DailyDoActionTypeShowAllUndos == (actionType & DailyDoActionTypeShowAllUndos)) {
                     [[DailyDoActionHelper sharedHelper] showAllUndos:_addon];
+                }
+                else if (DailyDoActionTypeCashMonthSummary == (actionType & DailyDoActionTypeCashMonthSummary)) {
+                    [[DailyDoActionHelper sharedHelper] showCashMonthSummary];
+                }
+            }
+                break;
+            case 1:
+            {
+                if (DailyDoActionTypeCashYearSummary == (actionType & DailyDoActionTypeCashYearSummary)) {
+                    [[DailyDoActionHelper sharedHelper] showCashYearSummary];
                 }
             }
                 break;

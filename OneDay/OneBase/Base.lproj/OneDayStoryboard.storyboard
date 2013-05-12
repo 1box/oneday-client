@@ -267,7 +267,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EFu-L1-8ui" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="698" y="-1120"/>
+            <point key="canvasLocation" x="-356" y="-1272"/>
         </scene>
         <!--Undo View Controller - _undos-->
         <scene sceneID="97u-Oo-UfU">
@@ -320,6 +320,8 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <connections>
+                                            <outlet property="checkbox" destination="L0l-xa-lbg" id="qsz-LX-NOz"/>
+                                            <outlet property="contentLabel" destination="hEa-q9-Itr" id="R7f-X8-5na"/>
                                             <outlet property="textLabel" destination="hEa-q9-Itr" id="Rzw-rt-13B"/>
                                         </connections>
                                     </tableViewCell>
@@ -350,16 +352,36 @@
                                 <items>
                                     <barButtonItem style="plain" id="kji-kn-GJF">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3wS-Mp-Pl9" customClass="DarkNavigationBarButton">
-                                            <rect key="frame" x="12" y="6" width="159" height="33"/>
+                                            <rect key="frame" x="12" y="7" width="110" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                            <state key="normal" title="_moveAllToTomorrow">
+                                            <state key="normal" title="_moveAllToToday">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <state key="highlighted">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="moveAllToTomorrow:" destination="thz-yf-aCq" eventType="touchUpInside" id="qiA-nB-jgd"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" id="xTX-ed-0I0">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vsG-Ok-wde" customClass="DarkNavigationBarButton">
+                                            <rect key="frame" x="132" y="7" width="70" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <state key="normal" title="_checkAll">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="checkAll:" destination="thz-yf-aCq" eventType="touchUpInside" id="Rdr-1O-pgd"/>
+                                            </connections>
                                         </button>
                                     </barButtonItem>
                                 </items>
@@ -369,7 +391,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="_undos" id="ODK-ul-Ybk">
                         <barButtonItem key="leftBarButtonItem" id="afW-Xq-qGc">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CiK-Sz-Dag">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CiK-Sz-Dag" customClass="DarkNavigationBarButton">
                                 <rect key="frame" x="5" y="7" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -392,7 +414,61 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="huD-EX-qB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1124" y="-1120"/>
+            <point key="canvasLocation" x="70" y="-1272"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="piL-HI-2dQ">
+            <objects>
+                <navigationController storyboardIdentifier="SummaryNavigationControllerID" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="nLq-GA-fx9" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="f3h-cI-7DQ" customClass="DarkNavigationBar">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PFF-C4-kmq" kind="relationship" relationship="rootViewController" id="Vr3-QH-0q0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jwK-aN-flD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="456" y="-1276"/>
+        </scene>
+        <!--Summary View Controller - _summary-->
+        <scene sceneID="MJK-cc-Mrv">
+            <objects>
+                <viewController id="PFF-C4-kmq" customClass="SummaryViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uey-VF-fOz">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_white.png" id="4jz-Bd-DKM">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="_summary" id="cIF-PZ-umF">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="t1L-5d-H4v">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4GS-yq-UHN" customClass="DarkNavigationBarButton">
+                                <rect key="frame" x="5" y="7" width="40" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" image="nav_dismiss.png">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="PFF-C4-kmq" eventType="touchUpInside" id="QBj-hC-QJ2"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eCw-H0-z3f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="844" y="-1276"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="oMW-HR-yng">
@@ -2812,6 +2888,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="pageView" candidateClass="UIView"/>
             </relationships>
         </class>
+        <class className="SummaryViewController" superclassName="KMViewControllerBase">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SummaryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="dismiss:"/>
+            </relationships>
+        </class>
         <class className="TagViewController" superclassName="KMViewControllerBase">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TagViewController.h"/>
             <relationships>
@@ -2877,9 +2959,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
         </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
         <class className="UMTableViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UMTableViewController.h"/>
         </class>
@@ -2887,12 +2966,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UndoCellView.h"/>
             <relationships>
                 <relationship kind="action" name="checkbox:"/>
+                <relationship kind="outlet" name="checkbox" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="contentLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="UndoViewController" superclassName="KMViewControllerBase">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UndoViewController.h"/>
             <relationships>
+                <relationship kind="action" name="checkAll:"/>
+                <relationship kind="action" name="moveAllToTomorrow:"/>
                 <relationship kind="outlet" name="undosView" candidateClass="KMTableView"/>
             </relationships>
         </class>

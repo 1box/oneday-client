@@ -13,7 +13,10 @@
 #import "KMTableView.h"
 #import "UndoCellView.h"
 #import "KMLoadMoreCell.h"
+#import "MTStatusBarOverlay.h"
 #import "TodoManager.h"
+#import "DailyDoManager.h"
+#import "KMModelManager.h"
 #import "KMDateUtils.h"
 
 
@@ -28,6 +31,9 @@
     
     BOOL _isLoading;
     BOOL _canLoadMore;
+    
+    BOOL _hasChecked;
+    BOOL _hasMoved;
 }
 @property (nonatomic) IBOutlet KMTableView *undosView;
 @property (nonatomic) NSArray *undos;
@@ -96,10 +102,10 @@
         
         NSMutableDictionary *mutCondition = [NSMutableDictionary dictionaryWithDictionary:
                                              @{ kTodoManagerLoadConditionCountKey : [NSNumber numberWithInt:20],
+                                                kTodoManagerLoadConditionIsLoadMoreKey : [NSNumber numberWithBool:loadMore],
                                                 kTodoManagerLoadConditionAddonKey : _addon}];
         if ([_undos count] > 0 && loadMore) {
             TodoData *todo = [_undos lastObject];
-            [mutCondition setObject:kTodoManagerLoadConditionIsLoadMoreKey forKey:[NSNumber numberWithBool:loadMore]];
             [mutCondition setObject:todo.dailyDo.createTime forKey:kTodoManagerLoadConditionMaxCreateTimeKey];
         }
         [[TodoManager sharedManager] undosForCondition:[mutCondition copy]];
@@ -151,6 +157,49 @@
 
 #pragma mark - Actions
 
+- (IBAction)moveAllToTomorrow:(id)sender
+{
+    if (_hasMoved) {
+        return;
+    }
+    
+    DailyDoBase *todayDo = [[DailyDoManager sharedManager] todayDoForAddon:_addon];
+    [_undos enumerateObjectsUsingBlock:^(TodoData *todo, NSUInteger idx, BOOL *stop) {
+        if (todo.dailyDo != todayDo) {
+            todo.dailyDo = todayDo;
+        }
+    }];
+    [todayDo reorderTodos:NO];
+    
+    [[KMModelManager sharedManager] saveContext:nil];
+    _hasMoved = YES;
+    
+    [self prepareDataSource];
+    [_undosView reloadData];
+    
+    [[MTStatusBarOverlay sharedOverlay] postFinishMessage:NSLocalizedString(@"MoveAllUndosToToday", nil) duration:2.f];
+}
+
+- (IBAction)checkAll:(id)sender
+{
+    if (_hasChecked) {
+        return;
+    }
+    
+    [_undos enumerateObjectsUsingBlock:^(TodoData *todo, NSUInteger idx, BOOL *stop) {
+        if (![todo.check boolValue]) {
+            todo.check = @YES;
+        }
+    }];
+    
+    [[KMModelManager sharedManager] saveContext:nil];
+    _hasChecked = YES;
+    
+    [_undosView reloadData];
+    
+    [[MTStatusBarOverlay sharedOverlay] postFinishMessage:NSLocalizedString(@"CheckAllUndos", nil) duration:2.f];
+}
+
 - (IBAction)dismiss:(id)sender
 {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
@@ -165,9 +214,21 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    NSInteger ret = [[_groupedUndos objectAtIndex:section] count];
+    UndoDateGroupedData *groupedData = [_groupedUndos objectAtIndex:section];
+    NSInteger ret = [groupedData.dataList count];
     if (section == [_groupedUndos count] - 1 && _canLoadMore) {
         ret ++;
+    }
+    return ret;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UndoDateGroupedData *groupedData = [_groupedUndos objectAtIndex:indexPath.section];
+    CGFloat ret = 44.f;
+    if (indexPath.section != [_groupedUndos count] - 1 ||
+        indexPath.row != [groupedData.dataList count]) {
+        ret = [UndoCellView heightForTodoData:[groupedData.dataList objectAtIndex:indexPath.row]];
     }
     return ret;
 }
@@ -177,8 +238,9 @@
     static NSString *undoCellID = @"UndoCellID";
     static NSString *loadMoreCellID = @"LoadMoreCellID";
     
-    if (indexPath.section == [_groupedUndos count] &&
-        indexPath.row == [[_groupedUndos objectAtIndex:indexPath.section] count] - 1) {
+    UndoDateGroupedData *groupedData = [_groupedUndos objectAtIndex:indexPath.section];
+    if (indexPath.section == [_groupedUndos count] - 1 &&
+        indexPath.row == [groupedData.dataList count]) {
         
         KMLoadMoreCell *cell = [tableView dequeueReusableCellWithIdentifier:loadMoreCellID];
         cell.loading = YES;
@@ -191,9 +253,22 @@
     }
     else {
         UndoCellView *cell = [tableView dequeueReusableCellWithIdentifier:undoCellID];
-        cell.todo = [[_groupedUndos objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
+        cell.todo = [groupedData.dataList objectAtIndex:indexPath.row];
         return cell;
     }
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    UndoDateGroupedData *groupedData = [_groupedUndos objectAtIndex:section];
+    NSString *ret = groupedData.dateString;
+    if ([groupedData.lastDate isToday]) {
+        ret = @"今天";
+    }
+    else if ([groupedData.lastDate isTomorrow]) {
+        ret = @"明天";
+    }
+    return ret;
 }
 
 @end

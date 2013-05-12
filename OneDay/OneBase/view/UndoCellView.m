@@ -11,17 +11,22 @@
 #import "KMModelManager.h"
 #import "UILabel+UILabelAdditions.h"
 
+#define TextWidth (300 - 35 - 10)
+
 @implementation UndoCellView
 
 + (CGFloat)heightForTodoData:(TodoData *)todo
 {
-    return heightOfContent([todo pureContent], 270, 13.f) + 20.f;
+    CGFloat ret = heightOfContent([todo pureContent], TextWidth, 13.f) + 20.f;
+    ret = MAX(ret, 44.f);
+    return ret;
 }
 
 - (void)setTodo:(TodoData *)todo
 {
     _todo = todo;
     if (_todo) {
+        _checkbox.enabled = ![todo.check boolValue];
         _contentLabel.text = [todo pureContent];
     }
 }
@@ -30,7 +35,8 @@
 {
     [super layoutSubviews];
     if (_todo) {
-        [_contentLabel heightThatFitsWidth:SSWidth(self) - 50];
+        [_contentLabel heightThatFitsWidth:TextWidth];
+        setFrameWithOrigin(_contentLabel, 35, (SSHeight(self) - SSHeight(_contentLabel))/2);
     }
 }
 

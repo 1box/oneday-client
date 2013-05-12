@@ -13,6 +13,7 @@
 @interface UndoCellView : KMTableViewCell
 
 @property (nonatomic) TodoData *todo;
+@property (nonatomic) IBOutlet UIButton *checkbox;
 @property (nonatomic) IBOutlet UILabel *contentLabel;
 
 + (CGFloat)heightForTodoData:(TodoData *)todo;

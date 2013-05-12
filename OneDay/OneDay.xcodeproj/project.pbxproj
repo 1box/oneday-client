@@ -1447,6 +1447,8 @@
 		CB4607F6173D4B8800955454 /* main_tip1.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4606A6173D4B8800955454 /* main_tip1.png */; };
 		CB4607F7173D4B8800955454 /* main_tip1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4606A8173D4B8800955454 /* main_tip1@2x.png */; };
 		CB4607F8173D4B8800955454 /* main_tip1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4606A8173D4B8800955454 /* main_tip1@2x.png */; };
+		CB48EC8B17400A6E00B232CB /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB48EC8A17400A6E00B232CB /* SummaryViewController.m */; };
+		CB48EC8C17400A6E00B232CB /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB48EC8A17400A6E00B232CB /* SummaryViewController.m */; };
 		CB620E88173C933200E4F3DC /* SplashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB620E87173C933200E4F3DC /* SplashHelper.m */; };
 		CB620E89173C933200E4F3DC /* SplashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB620E87173C933200E4F3DC /* SplashHelper.m */; };
 		CB886CA4173BCB8E0074586F /* UMTableViewController_N.m in Sources */ = {isa = PBXBuildFile; fileRef = CB886C7F173BCB8E0074586F /* UMTableViewController_N.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
@@ -2513,6 +2515,8 @@
 		CB4606AA173D4B8800955454 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/main_tip1-568h@2x.png"; sourceTree = "<group>"; };
 		CB4606AB173D4B8800955454 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/main_tip1.png"; sourceTree = "<group>"; };
 		CB4606AC173D4B8800955454 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/main_tip1@2x.png"; sourceTree = "<group>"; };
+		CB48EC8917400A6E00B232CB /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
+		CB48EC8A17400A6E00B232CB /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
 		CB620E86173C933200E4F3DC /* SplashHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashHelper.h; sourceTree = "<group>"; };
 		CB620E87173C933200E4F3DC /* SplashHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashHelper.m; sourceTree = "<group>"; };
 		CB886C7E173BCB8E0074586F /* UMTableViewController_N.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMTableViewController_N.h; sourceTree = "<group>"; };
@@ -3454,6 +3458,8 @@
 				CBF82A0D170EBD63004674C5 /* HomeCoverViewController.m */,
 				CBFBDBC7173D77D7008799AC /* UndoViewController.h */,
 				CBFBDBC8173D77D7008799AC /* UndoViewController.m */,
+				CB48EC8917400A6E00B232CB /* SummaryViewController.h */,
+				CB48EC8A17400A6E00B232CB /* SummaryViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -5967,6 +5973,7 @@
 				CBFBDBCA173D77D7008799AC /* UndoViewController.m in Sources */,
 				CB8CE0F7173E327A00B0E275 /* UndoCellView.m in Sources */,
 				CB1D26D2173F3B6D00D6B801 /* TodoManager.m in Sources */,
+				CB48EC8C17400A6E00B232CB /* SummaryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6082,6 +6089,7 @@
 				CBFBDBC9173D77D7008799AC /* UndoViewController.m in Sources */,
 				CB8CE0F6173E327A00B0E275 /* UndoCellView.m in Sources */,
 				CB1D26D1173F3B6D00D6B801 /* TodoManager.m in Sources */,
+				CB48EC8B17400A6E00B232CB /* SummaryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

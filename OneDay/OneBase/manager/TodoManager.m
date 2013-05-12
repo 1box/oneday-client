@@ -33,18 +33,24 @@ static TodoManager *_sharedManager = nil;
 - (void)undosForCondition:(NSDictionary *)condition
 {
     AddonData *addon = [condition objectForKey:kTodoManagerLoadConditionAddonKey];
-    NSNumber *lessThan = @0;
+    
+    NSDictionary *lessThanQuery = nil;
+    NSDictionary *greaterThanQuery = nil;
     BOOL isLoadMore = [[condition objectForKey:kTodoManagerLoadConditionIsLoadMoreKey] boolValue];
     if (isLoadMore) {
-        lessThan = [condition objectForKey:kTodoManagerLoadConditionMaxCreateTimeKey];
+        lessThanQuery = @{@"dailyDo.createTime" : [condition objectForKey:kTodoManagerLoadConditionMaxCreateTimeKey]};
     }
+    else {
+        greaterThanQuery = @{@"dailyDo.createTime" : @0};
+    }
+    
     NSInteger count = [[condition objectForKey:kTodoManagerLoadConditionCountKey] integerValue];
     
     NSError *error = nil;
     NSArray *results = [[KMModelManager sharedManager] entitiesWithEqualQueries:@{@"dailyDo.addon.dailyDoName" : addon.dailyDoName, @"check" : @NO}
-                                                                lessThanQueries:@{@"dailyDo.createTime" : lessThan}
+                                                                lessThanQueries:lessThanQuery
                                                          lessThanOrEqualQueries:nil
-                                                             greaterThanQueries:nil
+                                                             greaterThanQueries:greaterThanQuery
                                                       greaterThanOrEqualQueries:nil
                                                                 notEqualQueries:nil
                                                               entityDescription:[TodoData entityDescription]

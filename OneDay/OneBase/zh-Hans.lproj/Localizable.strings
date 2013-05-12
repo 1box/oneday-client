@@ -27,8 +27,13 @@
 "delete"="删除";
 "_done"="完成";
 "_edit"="编辑";
+
 "QuickAddTodoDone"="新的便签已添加";
+"MoveAllUndosToToday"="所有未完成已经移到今天";
+"CheckAllUndos"="所有项目已标记完成";
 "ShowAllUndosTitle"="查看所有未完成";
+"CashMonthSummaryTitle"="月收支汇总";
+"CashYearSummaryTitle"="年收支汇总";
 
 // tags
 "HomeTag"            ="在家";

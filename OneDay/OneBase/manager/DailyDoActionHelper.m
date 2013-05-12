@@ -8,6 +8,7 @@
 
 #import "DailyDoActionHelper.h"
 #import "KMAlertView.h"
+#import "MTStatusBarOverlay.h"
 #import "DailyDoManager.h"
 #import "KMModelManager.h"
 #import "AddonData.h"
@@ -48,12 +49,7 @@ static DailyDoActionHelper *_sharedHelper = nil;
 - (void)move:(DailyDoBase *)todayDo toTomorrow:(DailyDoBase *)tomorrowDo
 {
     if ([todayDo.check boolValue] || [todayDo.todos count] == 0) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@""
-                                                        message:NSLocalizedString(@"NoUndoToTomorrowMessage", nil)
-                                                       delegate:self
-                                              cancelButtonTitle:NSLocalizedString(@"_confirm", nil)
-                                              otherButtonTitles:nil];
-        [alert show];
+        [[MTStatusBarOverlay sharedOverlay] postErrorMessage:NSLocalizedString(@"NoUndoToTomorrowMessage", nil) duration:2.f];
     }
     else {
         NSMutableString *undoString = [NSMutableString string];
@@ -95,6 +91,20 @@ static DailyDoActionHelper *_sharedHelper = nil;
 {
     if (_delegate && [_delegate respondsToSelector:@selector(dailyDoActionHelper:doActionForType:)]) {
         [_delegate dailyDoActionHelper:self doActionForType:DailyDoActionTypeShowAllUndos];
+    }
+}
+
+- (void)showCashMonthSummary
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(dailyDoActionHelper:doActionForType:)]) {
+        [_delegate dailyDoActionHelper:self doActionForType:DailyDoActionTypeCashMonthSummary];
+    }
+}
+
+- (void)showCashYearSummary
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(dailyDoActionHelper:doActionForType:)]) {
+        [_delegate dailyDoActionHelper:self doActionForType:DailyDoActionTypeCashYearSummary];
     }
 }
 

@@ -18,5 +18,7 @@
 #import "NSUserDefaultsAdditions.h"
 #import "NSString+NSStringAdditions.h"
 #import "UITextView+UITextViewAdditions.h"
+#import "KMFrameUtilities.h"
+#import "KMMathUtilities.h"
 
 #endif

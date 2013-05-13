@@ -10,6 +10,23 @@
 #import "MobClick.h"
 #import "UMFeedback.h"
 
+
+#ifndef DEBUG
+    #ifndef SSLog
+        #define SSLog(format,...) \
+        { \
+        }
+    #endif
+#else
+    #ifndef SSLog
+        #define SSLog(format,...) \
+        { \
+            NSLog((@"%s [Line %d] " format), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);	\
+        }
+    #endif
+#endif
+
+
 static inline void trackEvent (NSString * event, NSString * label) {
     if(event == nil) {
         return;

@@ -30,7 +30,7 @@ static KMTracker *_sharedTracker = nil;
 
 - (void)startTrack
 {
-    [MobClick startWithAppkey:[self umengAppKey] reportPolicy:REALTIME channelId:CHANNEL_NAME];
+    [MobClick startWithAppkey:[self umengAppKey] reportPolicy:REALTIME channelId:[KMCommon channelName]];
     [UMFeedback checkWithAppkey:[self umengAppKey]];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(umCheck:) name:UMFBCheckFinishedNotification object:nil];
     

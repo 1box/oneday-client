@@ -57,5 +57,9 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>AppName</key>
+	<string>own_day</string>
+	<key>ChannelName</key>
+	<string>App Store</string>
 </dict>
 </plist>

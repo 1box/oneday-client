@@ -30,7 +30,7 @@
         _tagLabel.backgroundColor = [UIColor clearColor];
         _tagLabel.text = tag;
         _tagLabel.textAlignment = NSTextAlignmentCenter;
-        _tagLabel.font = FONT_DEFAULT(10.f);
+        _tagLabel.font = [UIFont systemFontOfSize:10.f];
         [self addSubview:_tagLabel];
         
         [_tagLabel sizeToFit];

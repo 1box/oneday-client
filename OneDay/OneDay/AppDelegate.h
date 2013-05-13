@@ -9,4 +9,5 @@
 #import "AppDelegateBase.h"
 
 @interface AppDelegate : AppDelegateBase
+
 @end

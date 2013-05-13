@@ -98,7 +98,7 @@
     _dailyDo = dailyDo;
     if (_dailyDo) {
         _textView.text = [_dailyDo presentedText];
-        _textView.font = FONT_DEFAULT(TextViewTextFontSize);
+        _textView.font = [UIFont systemFontOfSize:TextViewTextFontSize];
     }
 }
 

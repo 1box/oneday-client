@@ -98,7 +98,7 @@
 - (NSArray*)hintStateRectsToHint:(id)hintState
 {
     NSString *frameKey = nil;
-    if (IS_IPHONE_5) {
+    if ([KMCommon is568Screen]) {
         frameKey = kHintDialogFrames568Key;
     }
     else {

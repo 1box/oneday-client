@@ -2347,6 +2347,7 @@
 		CB045E8F173CD16100BD415A /* MTStatusBarOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTStatusBarOverlay.m; path = MTStatusBarOverlay/MTStatusBarOverlay.m; sourceTree = "<group>"; };
 		CB083EFA170C8DB500959971 /* NavigationBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarButton.h; sourceTree = "<group>"; };
 		CB083EFB170C8DB500959971 /* NavigationBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarButton.m; sourceTree = "<group>"; };
+		CB0A47511740DA72001B87C6 /* KMMathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMathUtilities.h; sourceTree = "<group>"; };
 		CB1D26CF173F3B6D00D6B801 /* TodoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoManager.h; sourceTree = "<group>"; };
 		CB1D26D0173F3B6D00D6B801 /* TodoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoManager.m; sourceTree = "<group>"; };
 		CB2C6F541638423700D0D348 /* SSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSData.h; sourceTree = "<group>"; };
@@ -3716,6 +3717,7 @@
 		3F8F703F164254A20031B72C /* utilitiy */ = {
 			isa = PBXGroup;
 			children = (
+				CB0A47501740DA64001B87C6 /* KMMathUtilities */,
 				3F840B1816B687F600F5B354 /* NSDateFormatterAdditions */,
 				3F26970B1664C9CE005FAE1E /* UITextViewAdditions */,
 				3FDDDD75165019B000882170 /* NSStringAdditions */,
@@ -3878,6 +3880,14 @@
 				CB045E8F173CD16100BD415A /* MTStatusBarOverlay.m */,
 			);
 			name = MTStatusBarOverlay;
+			sourceTree = "<group>";
+		};
+		CB0A47501740DA64001B87C6 /* KMMathUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				CB0A47511740DA72001B87C6 /* KMMathUtilities.h */,
+			);
+			path = KMMathUtilities;
 			sourceTree = "<group>";
 		};
 		CB2C6EFE1638423700D0D348 /* Common */ = {

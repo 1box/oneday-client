@@ -28,7 +28,7 @@
 #import "TagManager.h"
 #import "SplashHelper.h"
 
-#define NumberOfItems (IS_IPHONE_5 ? 8 : 6)
+#define NumberOfItems ([KMCommon is568Screen] ? 8 : 6)
 
 @interface MainViewController () <UICollectionViewDataSource, UICollectionViewDelegate, KMReorderableCollectionViewDelegateSnakeLayout, UIGestureRecognizerDelegate, KMAlertViewDelegate> {
     
@@ -466,7 +466,7 @@ static NSString *feedCollectCellID = @"FeedCollectCell";
 
 - (CGFloat)itemWidth
 {
-    if (IS_IPHONE_5) {
+    if ([KMCommon is568Screen]) {
         return 95.f;
     }
     else {
@@ -476,7 +476,7 @@ static NSString *feedCollectCellID = @"FeedCollectCell";
 
 - (CGFloat)itemHeight
 {
-    if (IS_IPHONE_5) {
+    if ([KMCommon is568Screen]) {
         return 95.f;
     }
     else {

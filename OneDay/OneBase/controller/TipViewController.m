@@ -91,7 +91,7 @@ static NSString *tipCollectCellID = @"TipCollectCellID";
     }
     
     if (tImageName) {
-        if (IS_IPHONE_5) {
+        if ([KMCommon is568Screen]) {
             tImageName = [NSString stringWithFormat:@"%@%@%@", [tImageName substringToIndex:[tImageName length] - 4], @"-568h", [tImageName substringFromIndex:[tImageName length] - 4]];
         }
         tCell.tipImageView.image = [UIImage imageNamed:tImageName];

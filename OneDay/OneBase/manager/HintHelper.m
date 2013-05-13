@@ -33,8 +33,8 @@
         if (!(!prefix || KMEmptyString(prefix) || hasHintForKey(prefix))) {
             
             NSString *fileName = nil;
-            if ([prefix hasSuffix:[SSCommon versionName]]) {
-                fileName = [NSString stringWithFormat:@"%@HintDialogs", [prefix substringToIndex:[prefix length] - [[SSCommon versionName] length] - 1]];   // substract 1 for '_'
+            if ([prefix hasSuffix:[KMCommon versionName]]) {
+                fileName = [NSString stringWithFormat:@"%@HintDialogs", [prefix substringToIndex:[prefix length] - [[KMCommon versionName] length] - 1]];   // substract 1 for '_'
             }
             else {
                 fileName =  [NSString stringWithFormat:@"%@HintDialogs", prefix];

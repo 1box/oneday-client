@@ -34,6 +34,8 @@
 "ShowAllUndosTitle"="查看所有未完成";
 "CashMonthSummaryTitle"="月收支汇总";
 "CashYearSummaryTitle"="年收支汇总";
+"CashMonthSummaryText"="月收支: %f";
+"CashYearSummaryText"="年收支: %f";
 
 // tags
 "HomeTag"            ="在家";

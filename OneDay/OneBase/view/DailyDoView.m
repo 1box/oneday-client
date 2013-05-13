@@ -575,7 +575,7 @@
             UINavigationController *nav = [[UIStoryboard storyboardWithName:@"OneDayStoryboard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"UndoNavigationControllerID"];
             UndoViewController *controller = (UndoViewController *)nav.topViewController;
             controller.addon = _addon;
-            UIViewController *topViewController = [SSCommon topViewControllerFor:self];
+            UIViewController *topViewController = [KMCommon topViewControllerFor:self];
             [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
         }
             break;
@@ -585,7 +585,7 @@
             SummaryViewController *controller = (SummaryViewController *)nav.topViewController;
             controller.type = SummaryViewTypeMonth;
             controller.addon = _addon;
-            UIViewController *topViewController = [SSCommon topViewControllerFor:self];
+            UIViewController *topViewController = [KMCommon topViewControllerFor:self];
             [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
         }
             break;
@@ -595,7 +595,7 @@
             SummaryViewController *controller = (SummaryViewController *)nav.topViewController;
             controller.type = SummaryViewTypeYear;
             controller.addon = _addon;
-            UIViewController *topViewController = [SSCommon topViewControllerFor:self];
+            UIViewController *topViewController = [KMCommon topViewControllerFor:self];
             [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
         }
             break;

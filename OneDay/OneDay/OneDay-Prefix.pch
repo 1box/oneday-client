@@ -11,7 +11,7 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-    #import "SSCommon.h"
+    #import "KMCommon.h"
     #import "SSResourceManager.h"
     #import "Constants.h"
     #import "KMUtilsHeader.h"

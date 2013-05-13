@@ -27,32 +27,32 @@ static unsigned _unitFlags = (NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalend
     return [[NSCalendar currentCalendar] dateFromComponents:components];
 }
 
-- (BOOL)isToday
-{
-    NSDate *today = beginningOfToday();
-    NSDate *tomorrow = beginningOfTomorrow();
-    
-    NSDate *ealier = [self earlierDate:tomorrow];
-    NSDate *later = [self laterDate:today];
-    
-    return later == self && ealier == self;
-}
-
-- (BOOL)isTomorrow
-{
-    NSDate *tomorrow = beginningOfTomorrow();
-    NSDate *beginningtheDayAftertomorrow = nil;
-    BOOL ok = [[NSCalendar currentCalendar] rangeOfUnit:NSDayCalendarUnit startDate:&beginningtheDayAftertomorrow interval:NULL forDate:[NSDate currentTimeAfterDay:2]];
-    
-    if (ok) {
-        NSDate *ealier = [self earlierDate:beginningtheDayAftertomorrow];
-        NSDate *later = [self laterDate:tomorrow];
-        return later == self && ealier == self;
-    }
-    else {
-        return NO;
-    }
-}
+//- (BOOL)isToday
+//{
+//    NSDate *today = beginningOfToday();
+//    NSDate *tomorrow = beginningOfTomorrow();
+//    
+//    NSDate *ealier = [self earlierDate:tomorrow];
+//    NSDate *later = [self laterDate:today];
+//    
+//    return later == self && ealier == self;
+//}
+//
+//- (BOOL)isTomorrow
+//{
+//    NSDate *tomorrow = beginningOfTomorrow();
+//    NSDate *beginningtheDayAftertomorrow = nil;
+//    BOOL ok = [[NSCalendar currentCalendar] rangeOfUnit:NSDayCalendarUnit startDate:&beginningtheDayAftertomorrow interval:NULL forDate:[NSDate currentTimeAfterDay:2]];
+//    
+//    if (ok) {
+//        NSDate *ealier = [self earlierDate:beginningtheDayAftertomorrow];
+//        NSDate *later = [self laterDate:tomorrow];
+//        return later == self && ealier == self;
+//    }
+//    else {
+//        return NO;
+//    }
+//}
 
 - (NSDateFormatter *)yearToDayFormatter
 {

@@ -1124,7 +1124,7 @@
 		3FF3818F16D4709700BD19C3 /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2C6F611638423700D0D348 /* UIDevice-Hardware.m */; };
 		3FF3819016D4709700BD19C3 /* KMViewBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF92F2E1638D63E0055C761 /* KMViewBase.m */; };
 		3FF3819116D4709700BD19C3 /* SSResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2C6FEB1638423700D0D348 /* SSResourceManager.m */; };
-		3FF3819216D4709700BD19C3 /* SSCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2C6FED1638423700D0D348 /* SSCommon.m */; };
+		3FF3819216D4709700BD19C3 /* KMCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2C6FED1638423700D0D348 /* KMCommon.m */; };
 		3FF3819D16D4709700BD19C3 /* KMTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FC12586167EF70F003FFA8B /* KMTracker.m */; };
 		3FF381E816D470EB00BD19C3 /* ma_leftArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5F30C61667E85600749B4B /* ma_leftArrow.png */; };
 		3FF381E916D470EB00BD19C3 /* ma_leftArrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5F30C71667E85600749B4B /* ma_leftArrow@2x.png */; };
@@ -1143,7 +1143,7 @@
 		CB2C70D71638423700D0D348 /* CommonLogicSetting.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB2C6FE71638423700D0D348 /* CommonLogicSetting.strings */; };
 		CB2C70D81638423700D0D348 /* CommonUISetting.strings in Resources */ = {isa = PBXBuildFile; fileRef = CB2C6FE81638423700D0D348 /* CommonUISetting.strings */; };
 		CB2C70D91638423700D0D348 /* SSResourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2C6FEB1638423700D0D348 /* SSResourceManager.m */; };
-		CB2C70DA1638423700D0D348 /* SSCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2C6FED1638423700D0D348 /* SSCommon.m */; };
+		CB2C70DA1638423700D0D348 /* KMCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2C6FED1638423700D0D348 /* KMCommon.m */; };
 		CB2C7131163843B900D0D348 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2C7130163843B900D0D348 /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		CB2C7132163843C100D0D348 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFF9ED3163832E80066784B /* CoreGraphics.framework */; };
 		CB2C7134163843C600D0D348 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2C7133163843C600D0D348 /* AudioToolbox.framework */; };
@@ -1473,6 +1473,18 @@
 		CB886CCA173BD6250074586F /* KMViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CB886CC8173BD6250074586F /* KMViewControllerBase.m */; };
 		CB8CE0F6173E327A00B0E275 /* UndoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8CE0F5173E327A00B0E275 /* UndoCellView.m */; };
 		CB8CE0F7173E327A00B0E275 /* UndoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8CE0F5173E327A00B0E275 /* UndoCellView.m */; };
+		CB8EE12817408B5E0068A6BA /* PCLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EE12517408B5E0068A6BA /* PCLineChartView.m */; };
+		CB8EE12917408B5E0068A6BA /* PCLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EE12517408B5E0068A6BA /* PCLineChartView.m */; };
+		CB8EE12A17408B5E0068A6BA /* PCPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EE12717408B5E0068A6BA /* PCPieChart.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		CB8EE12B17408B5E0068A6BA /* PCPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EE12717408B5E0068A6BA /* PCPieChart.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		CB8EE12E17408B6A0068A6BA /* PCHalfPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EE12D17408B6A0068A6BA /* PCHalfPieChart.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		CB8EE12F17408B6A0068A6BA /* PCHalfPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EE12D17408B6A0068A6BA /* PCHalfPieChart.m */; settings = {COMPILER_FLAGS = "-w"; }; };
+		CB8EE134174094380068A6BA /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EE133174094380068A6BA /* NSDate-Utilities.m */; };
+		CB8EE135174094380068A6BA /* NSDate-Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EE133174094380068A6BA /* NSDate-Utilities.m */; };
+		CB8EE1381740943F0068A6BA /* NSDate+CupertinoYankee.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EE1371740943F0068A6BA /* NSDate+CupertinoYankee.m */; };
+		CB8EE1391740943F0068A6BA /* NSDate+CupertinoYankee.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EE1371740943F0068A6BA /* NSDate+CupertinoYankee.m */; };
+		CB8EE13C1740AE820068A6BA /* SummaryCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EE13B1740AE820068A6BA /* SummaryCellView.m */; };
+		CB8EE13D1740AE820068A6BA /* SummaryCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EE13B1740AE820068A6BA /* SummaryCellView.m */; };
 		CB91EDF2170742DA003FA094 /* cancelbtn_dialog.png in Resources */ = {isa = PBXBuildFile; fileRef = CB91EDDF170742DA003FA094 /* cancelbtn_dialog.png */; };
 		CB91EDF3170742DA003FA094 /* cancelbtn_dialog.png in Resources */ = {isa = PBXBuildFile; fileRef = CB91EDDF170742DA003FA094 /* cancelbtn_dialog.png */; };
 		CB91EDF4170742DA003FA094 /* cancelbtn_dialog@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB91EDE0170742DA003FA094 /* cancelbtn_dialog@2x.png */; };
@@ -2348,8 +2360,8 @@
 		CB2C6FE81638423700D0D348 /* CommonUISetting.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = CommonUISetting.strings; sourceTree = "<group>"; };
 		CB2C6FEA1638423700D0D348 /* SSResourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSResourceManager.h; sourceTree = "<group>"; };
 		CB2C6FEB1638423700D0D348 /* SSResourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSResourceManager.m; sourceTree = "<group>"; };
-		CB2C6FEC1638423700D0D348 /* SSCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCommon.h; sourceTree = "<group>"; };
-		CB2C6FED1638423700D0D348 /* SSCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCommon.m; sourceTree = "<group>"; };
+		CB2C6FEC1638423700D0D348 /* KMCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMCommon.h; sourceTree = "<group>"; };
+		CB2C6FED1638423700D0D348 /* KMCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMCommon.m; sourceTree = "<group>"; };
 		CB2C7130163843B900D0D348 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		CB2C7133163843C600D0D348 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CB2C7135163843D000D0D348 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
@@ -2546,6 +2558,18 @@
 		CB886CC8173BD6250074586F /* KMViewControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMViewControllerBase.m; sourceTree = "<group>"; };
 		CB8CE0F4173E327A00B0E275 /* UndoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UndoCellView.h; sourceTree = "<group>"; };
 		CB8CE0F5173E327A00B0E275 /* UndoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UndoCellView.m; sourceTree = "<group>"; };
+		CB8EE12417408B5E0068A6BA /* PCLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCLineChartView.h; path = iOSPlot/iOSPlot/Shared/PCLineChartView.h; sourceTree = "<group>"; };
+		CB8EE12517408B5E0068A6BA /* PCLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCLineChartView.m; path = iOSPlot/iOSPlot/Shared/PCLineChartView.m; sourceTree = "<group>"; };
+		CB8EE12617408B5E0068A6BA /* PCPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCPieChart.h; path = iOSPlot/iOSPlot/Shared/PCPieChart.h; sourceTree = "<group>"; };
+		CB8EE12717408B5E0068A6BA /* PCPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCPieChart.m; path = iOSPlot/iOSPlot/Shared/PCPieChart.m; sourceTree = "<group>"; };
+		CB8EE12C17408B6A0068A6BA /* PCHalfPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCHalfPieChart.h; path = iOSPlot/iOSPlot/PCHalfPieChart.h; sourceTree = "<group>"; };
+		CB8EE12D17408B6A0068A6BA /* PCHalfPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PCHalfPieChart.m; path = iOSPlot/iOSPlot/PCHalfPieChart.m; sourceTree = "<group>"; };
+		CB8EE132174094380068A6BA /* NSDate-Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate-Utilities.h"; path = "NSDate-Extensions/NSDate-Utilities.h"; sourceTree = "<group>"; };
+		CB8EE133174094380068A6BA /* NSDate-Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate-Utilities.m"; path = "NSDate-Extensions/NSDate-Utilities.m"; sourceTree = "<group>"; };
+		CB8EE1361740943F0068A6BA /* NSDate+CupertinoYankee.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+CupertinoYankee.h"; path = "CupertinoYankee/CupertinoYankee/NSDate+CupertinoYankee.h"; sourceTree = "<group>"; };
+		CB8EE1371740943F0068A6BA /* NSDate+CupertinoYankee.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+CupertinoYankee.m"; path = "CupertinoYankee/CupertinoYankee/NSDate+CupertinoYankee.m"; sourceTree = "<group>"; };
+		CB8EE13A1740AE820068A6BA /* SummaryCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryCellView.h; sourceTree = "<group>"; };
+		CB8EE13B1740AE820068A6BA /* SummaryCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryCellView.m; sourceTree = "<group>"; };
 		CB91EDDF170742DA003FA094 /* cancelbtn_dialog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelbtn_dialog.png; sourceTree = "<group>"; };
 		CB91EDE0170742DA003FA094 /* cancelbtn_dialog@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cancelbtn_dialog@2x.png"; sourceTree = "<group>"; };
 		CB91EDE1170742DA003FA094 /* cancelbtn_dialog_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cancelbtn_dialog_press.png; sourceTree = "<group>"; };
@@ -3585,6 +3609,8 @@
 				CB40E522170C905500E6C9C6 /* DarkNavigationBar.m */,
 				CB40E52B170C90EE00E6C9C6 /* NormalNavigationBar.h */,
 				CB40E52C170C90EE00E6C9C6 /* NormalNavigationBar.m */,
+				CB8EE13A1740AE820068A6BA /* SummaryCellView.h */,
+				CB8EE13B1740AE820068A6BA /* SummaryCellView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -3592,6 +3618,9 @@
 		3F5F2E231667E83000749B4B /* github */ = {
 			isa = PBXGroup;
 			children = (
+				CB8EE131174094300068A6BA /* NSDate-Extensions */,
+				CB8EE130174094250068A6BA /* CupertinoYankee */,
+				CB8EE12317408B390068A6BA /* iOSPlot */,
 				CB045E8D173CD15300BD415A /* MTStatusBarOverlay */,
 				3F00D3EF16BDB2F700BC6A0F /* iVersion */,
 				3FE914F5168224A800FBA04B /* EMHint */,
@@ -3862,8 +3891,8 @@
 				CBF92F2D1638D63E0055C761 /* KMViewBase.h */,
 				CBF92F2E1638D63E0055C761 /* KMViewBase.m */,
 				CB2C6FE61638423700D0D348 /* resource */,
-				CB2C6FEC1638423700D0D348 /* SSCommon.h */,
-				CB2C6FED1638423700D0D348 /* SSCommon.m */,
+				CB2C6FEC1638423700D0D348 /* KMCommon.h */,
+				CB2C6FED1638423700D0D348 /* KMCommon.m */,
 				CB2C702C1638423700D0D348 /* track */,
 				CB886CC7173BD6250074586F /* KMViewControllerBase.h */,
 				CB886CC8173BD6250074586F /* KMViewControllerBase.m */,
@@ -4221,6 +4250,37 @@
 				CB886CBA173BCBDE0074586F /* UMTableViewController.m */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		CB8EE12317408B390068A6BA /* iOSPlot */ = {
+			isa = PBXGroup;
+			children = (
+				CB8EE12C17408B6A0068A6BA /* PCHalfPieChart.h */,
+				CB8EE12D17408B6A0068A6BA /* PCHalfPieChart.m */,
+				CB8EE12417408B5E0068A6BA /* PCLineChartView.h */,
+				CB8EE12517408B5E0068A6BA /* PCLineChartView.m */,
+				CB8EE12617408B5E0068A6BA /* PCPieChart.h */,
+				CB8EE12717408B5E0068A6BA /* PCPieChart.m */,
+			);
+			name = iOSPlot;
+			sourceTree = "<group>";
+		};
+		CB8EE130174094250068A6BA /* CupertinoYankee */ = {
+			isa = PBXGroup;
+			children = (
+				CB8EE1361740943F0068A6BA /* NSDate+CupertinoYankee.h */,
+				CB8EE1371740943F0068A6BA /* NSDate+CupertinoYankee.m */,
+			);
+			name = CupertinoYankee;
+			sourceTree = "<group>";
+		};
+		CB8EE131174094300068A6BA /* NSDate-Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				CB8EE132174094380068A6BA /* NSDate-Utilities.h */,
+				CB8EE133174094380068A6BA /* NSDate-Utilities.m */,
+			);
+			name = "NSDate-Extensions";
 			sourceTree = "<group>";
 		};
 		CB91EDDD170742DA003FA094 /* KMAlertView */ = {
@@ -5903,7 +5963,7 @@
 				3FF3818F16D4709700BD19C3 /* UIDevice-Hardware.m in Sources */,
 				3FF3819016D4709700BD19C3 /* KMViewBase.m in Sources */,
 				3FF3819116D4709700BD19C3 /* SSResourceManager.m in Sources */,
-				3FF3819216D4709700BD19C3 /* SSCommon.m in Sources */,
+				3FF3819216D4709700BD19C3 /* KMCommon.m in Sources */,
 				3FF3819D16D4709700BD19C3 /* KMTracker.m in Sources */,
 				3FF3815C16D46EF500BD19C3 /* main.m in Sources */,
 				3FF3816016D46EF500BD19C3 /* AppDelegate.m in Sources */,
@@ -5974,6 +6034,12 @@
 				CB8CE0F7173E327A00B0E275 /* UndoCellView.m in Sources */,
 				CB1D26D2173F3B6D00D6B801 /* TodoManager.m in Sources */,
 				CB48EC8C17400A6E00B232CB /* SummaryViewController.m in Sources */,
+				CB8EE12917408B5E0068A6BA /* PCLineChartView.m in Sources */,
+				CB8EE12B17408B5E0068A6BA /* PCPieChart.m in Sources */,
+				CB8EE12F17408B6A0068A6BA /* PCHalfPieChart.m in Sources */,
+				CB8EE135174094380068A6BA /* NSDate-Utilities.m in Sources */,
+				CB8EE1391740943F0068A6BA /* NSDate+CupertinoYankee.m in Sources */,
+				CB8EE13D1740AE820068A6BA /* SummaryCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5987,7 +6053,7 @@
 				CB2C709C1638423700D0D348 /* SSEntityBase.m in Sources */,
 				CB2C709F1638423700D0D348 /* UIDevice-Hardware.m in Sources */,
 				CB2C70D91638423700D0D348 /* SSResourceManager.m in Sources */,
-				CB2C70DA1638423700D0D348 /* SSCommon.m in Sources */,
+				CB2C70DA1638423700D0D348 /* KMCommon.m in Sources */,
 				CBF92F2F1638D63E0055C761 /* KMViewBase.m in Sources */,
 				3F8F706B164254A20031B72C /* KMDrawRectUtilities.m in Sources */,
 				3F8F706D164254A20031B72C /* NSArray+NSArrayAdditions.m in Sources */,
@@ -6090,6 +6156,12 @@
 				CB8CE0F6173E327A00B0E275 /* UndoCellView.m in Sources */,
 				CB1D26D1173F3B6D00D6B801 /* TodoManager.m in Sources */,
 				CB48EC8B17400A6E00B232CB /* SummaryViewController.m in Sources */,
+				CB8EE12817408B5E0068A6BA /* PCLineChartView.m in Sources */,
+				CB8EE12A17408B5E0068A6BA /* PCPieChart.m in Sources */,
+				CB8EE12E17408B6A0068A6BA /* PCHalfPieChart.m in Sources */,
+				CB8EE134174094380068A6BA /* NSDate-Utilities.m in Sources */,
+				CB8EE1381740943F0068A6BA /* NSDate+CupertinoYankee.m in Sources */,
+				CB8EE13C1740AE820068A6BA /* SummaryCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

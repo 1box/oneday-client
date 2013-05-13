@@ -34,6 +34,8 @@
 "ShowAllUndosTitle"="Show all undos";
 "CashMonthSummaryTitle"="Month Summary";
 "CashYearSummaryTitle"="Year Summary";
+"CashMonthSummaryText"="Month Cash: %f";
+"CashYearSummaryText"="Year Cash: %f";
 
 // tags
 "HomeTag"            ="At home";

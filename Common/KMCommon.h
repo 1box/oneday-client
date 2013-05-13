@@ -149,7 +149,43 @@ static inline void setCenterWithY(UIView *view, float y){
     view.center = CGPointMake(view.center.x, y);
 }
 
-@interface SSCommon : NSObject
+
+static inline int roundNumberFloor(float seed) {
+    
+    int count = 0;
+    while (abs(seed) > 10) {
+        seed /= 10;
+        count ++;
+    }
+    
+    int ret = floorf(seed);
+    while (count >= 0) {
+        ret *= 10;
+        count --;
+    }
+    
+    return ret;
+}
+
+static inline int roundNumberCeil(float seed) {
+    
+    int count = 0;
+    while (abs(seed) > 10) {
+        seed /= 10;
+        count ++;
+    }
+    
+    int ret = floorf(seed);
+    while (count >= 0) {
+        ret *= 10;
+        count --;
+    }
+    
+    return ret;
+}
+
+
+@interface KMCommon : NSObject
 
 
 + (UIViewController*)topViewControllerFor:(UIResponder*)responder;

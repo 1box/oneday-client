@@ -43,7 +43,7 @@
             
             self.hint = [[HintHelper alloc] initWithViewController:self dialogsPathPrefix:@"DailyDo"];
             [_hint show];
-            [SSCommon playSound:@"shake.mp3"];
+            [KMCommon playSound:@"shake.mp3"];
         }
     }
     

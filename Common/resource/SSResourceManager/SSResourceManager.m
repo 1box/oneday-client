@@ -67,7 +67,7 @@ static SSResourceManager *shareBundle = nil;
     switch (themeMode) {
         case SSThemeModeNight:
         {
-            if ([SSCommon isPadDevice]) {
+            if ([KMCommon isPadDevice]) {
                 userDefinedUIDict = [self dictionaryWithFilePathForResource:IPadNightModeThemeUISetting ofType:strings];
                 if (userDefinedUIDict == nil) {
                     userDefinedUIDict = [self dictionaryWithFilePathForResource:IPadDayModeThemeUISetting ofType:strings];
@@ -93,7 +93,7 @@ static SSResourceManager *shareBundle = nil;
             break;
         case SSThemeModeDay:
         {
-            if ([SSCommon isPadDevice]) {
+            if ([KMCommon isPadDevice]) {
                 userDefinedUIDict = [self dictionaryWithFilePathForResource:IPadDayModeThemeUISetting ofType:strings];
                 userDefinedUIPlistDict = [self dictionaryWithFilePathForResource:IPadDayModeThemeUISetting ofType:plist];
             }
@@ -135,7 +135,7 @@ static SSResourceManager *shareBundle = nil;
     NSDictionary * commonLogicDict = [self dictionaryWithFilePathForResource:CommonLogicSetting ofType:strings];
     NSDictionary * projectLogicDict = [self dictionaryWithFilePathForResource:ProjectLogicSetting ofType:strings];
     NSDictionary * deviceLogicDict = nil;
-    if ([SSCommon isPadDevice]) {
+    if ([KMCommon isPadDevice]) {
         deviceLogicDict = [self dictionaryWithFilePathForResource:IPadLogicSetting ofType:strings];
         if (deviceLogicDict == nil) {
             deviceLogicDict = [self dictionaryWithFilePathForResource:IPhoneLogicSetting ofType:strings];
@@ -148,7 +148,7 @@ static SSResourceManager *shareBundle = nil;
     NSDictionary * commonLogicPListDict = [self dictionaryWithFilePathForResource:CommonLogicSetting ofType:plist];
     NSDictionary * projectLogicPListDict = [self dictionaryWithFilePathForResource:ProjectLogicSetting ofType:plist];
     NSDictionary * deviceLogicPListDict = nil;
-    if ([SSCommon isPadDevice]) {
+    if ([KMCommon isPadDevice]) {
         deviceLogicPListDict = [self dictionaryWithFilePathForResource:IPadLogicSetting ofType:plist];
         if (deviceLogicPListDict == nil) {
             deviceLogicPListDict = [self dictionaryWithFilePathForResource:IPhoneLogicSetting ofType:plist];
@@ -175,7 +175,7 @@ static SSResourceManager *shareBundle = nil;
     NSDictionary * commonUIDict = [self dictionaryWithFilePathForResource:CommonUISetting ofType:strings];
     NSDictionary * projectUIDict = [self dictionaryWithFilePathForResource:ProjectUISetting ofType:strings];
     NSDictionary * deviceUIDict = nil;
-    if ([SSCommon isPadDevice]) {
+    if ([KMCommon isPadDevice]) {
         deviceUIDict = [self dictionaryWithFilePathForResource:IPadUISetting ofType:strings];
         if (deviceUIDict == nil) {
             deviceUIDict = [self dictionaryWithFilePathForResource:IPhoneUISetting ofType:strings];
@@ -188,7 +188,7 @@ static SSResourceManager *shareBundle = nil;
     NSDictionary * commonUIPListDict = [self dictionaryWithFilePathForResource:CommonUISetting ofType:plist];
     NSDictionary * projectUIPListDict = [self dictionaryWithFilePathForResource:ProjectUISetting ofType:plist];
     NSDictionary * deviceUIPListDict = nil;
-    if ([SSCommon isPadDevice]) {
+    if ([KMCommon isPadDevice]) {
         deviceUIPListDict = [self dictionaryWithFilePathForResource:IPadUISetting ofType:plist];
         if (deviceUIPListDict == nil) {
             deviceUIPListDict = [self dictionaryWithFilePathForResource:IPhoneUISetting ofType:plist];

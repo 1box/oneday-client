@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "SSCommon.h"
+#import "KMCommon.h"
 #include <sys/socket.h>
 #include <sys/sysctl.h>
 #include <net/if.h>
@@ -17,7 +17,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 
-@implementation SSCommon
+@implementation KMCommon
 
 + (UIViewController*)topViewControllerFor:(UIResponder*)responder
 {
@@ -102,7 +102,7 @@
     
     if([string rangeOfString:@"device_platform"].location == NSNotFound)
     {
-        [string appendFormat:@"%@device_platform=%@", sep, [SSCommon platformName]];
+        [string appendFormat:@"%@device_platform=%@", sep, [KMCommon platformName]];
         sep = @"&";
     }
     
@@ -114,7 +114,7 @@
     
     if([string rangeOfString:@"app_name"].location == NSNotFound)
     {
-        [string appendFormat:@"%@app_name=%@", sep, [SSCommon appName]];
+        [string appendFormat:@"%@app_name=%@", sep, [KMCommon appName]];
         sep = @"&";
     }
     
@@ -126,17 +126,17 @@
     
     if([string rangeOfString:@"os_version"].location == NSNotFound)
     {
-        [string appendFormat:@"%@os_version=%@", sep, [SSCommon OSVersion]];
+        [string appendFormat:@"%@os_version=%@", sep, [KMCommon OSVersion]];
         sep = @"&";
     }
     
     if([string rangeOfString:@"version_code"].location == NSNotFound)
     {
-        [string appendFormat:@"%@version_code=%@", sep, [SSCommon versionName]];
+        [string appendFormat:@"%@version_code=%@", sep, [KMCommon versionName]];
     }
 
     
-    return [SSCommon customURLWithUserInfoStringFromString:string];
+    return [KMCommon customURLWithUserInfoStringFromString:string];
 }
 
 + (NSString*)URLStringByAddingParamsForURLString:(NSString*)strURL params:(NSString*)params 

@@ -7,18 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSDate+CupertinoYankee.h"
+#import "NSDate-Utilities.h"
 
 @interface NSDate (NSDateAdditions)
 
 + (NSDate *)currentTimeTomorrow;
 + (NSDate *)currentTimeAfterDay:(NSInteger)days;
 
-- (BOOL)isToday;
-- (BOOL)isTomorrow;
+//- (BOOL)isToday;
+//- (BOOL)isTomorrow;
 - (BOOL)isSameDayWithDate:(NSDate *)date;
 
 - (NSDate *)morning;
 - (NSDate *)midnight;
 - (NSDate *)sameTimeToday;
 - (NSDate *)sameTimeTomorrow;
+
 @end

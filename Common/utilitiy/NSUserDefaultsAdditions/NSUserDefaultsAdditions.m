@@ -26,7 +26,7 @@
             break;
     }
     
-    NSString *keyWithVersion = [NSString stringWithFormat:@"%@_%@", key, [SSCommon versionName]];
+    NSString *keyWithVersion = [NSString stringWithFormat:@"%@_%@", key, [KMCommon versionName]];
     NSInteger firstTime = [defaluts integerForKey:keyWithVersion];
     if (firstTime == 0) {
         [defaluts setInteger:1 forKey:keyWithVersion];
@@ -40,7 +40,7 @@
 + (BOOL)currentVersionFirstTimeRunByKey:(NSString *)key
 {
     NSUserDefaults *defaluts = [NSUserDefaults standardUserDefaults];
-    NSString *keyWithVersion = [NSString stringWithFormat:@"%@_%@", key, [SSCommon versionName]];
+    NSString *keyWithVersion = [NSString stringWithFormat:@"%@_%@", key, [KMCommon versionName]];
     NSInteger firstTime = [defaluts integerForKey:keyWithVersion];
     if (firstTime == 0) {
         [defaluts setInteger:1 forKey:keyWithVersion];

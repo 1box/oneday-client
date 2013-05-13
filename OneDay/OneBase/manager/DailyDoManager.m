@@ -12,6 +12,7 @@
 #import "DailyDoBase.h"
 #import "TodoData.h"
 #import "KMDateUtils.h"
+#import "SMDetector.h"
 
 @implementation DailyDoManager
 
@@ -253,4 +254,142 @@ static DailyDoManager *_sharedManager;
     [[NSNotificationCenter defaultCenter] postNotificationName:DailyDoManagerLoggedDosLoadFinishedNotification object:self userInfo:[mutUserInfo copy]];
 }
 
+// monthlyDos
+- (NSArray *)monthlyDosForAddon:(AddonData *)addon year:(NSDate *)year
+{
+    NSMutableArray *mutMonthlyDos = [NSMutableArray arrayWithCapacity:12];
+    
+    Class DailyDoData = NSClassFromString(addon.dailyDoName);
+    
+    NSNumber *lessThan = [NSNumber numberWithDouble:[[[NSDate date] endOfYear] timeIntervalSince1970]];
+    NSNumber *greaterThanOrEqual = [NSNumber numberWithDouble:[[[NSDate date] beginningOfYear] timeIntervalSince1970]];
+    
+    NSError *error = nil;
+    NSArray *results = [[KMModelManager sharedManager] entitiesWithEqualQueries:nil
+                                                                lessThanQueries:@{@"createTime" : lessThan}
+                                                         lessThanOrEqualQueries:nil
+                                                             greaterThanQueries:nil
+                                                      greaterThanOrEqualQueries:@{@"createTime": greaterThanOrEqual}
+                                                                notEqualQueries:nil
+                                                              entityDescription:[DailyDoData entityDescription]
+                                                                     unFaulting:NO
+                                                                         offset:0
+                                                                          count:NSIntegerMax
+                                                                sortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"createTime" ascending:NO]]
+                                                                          error:&error];
+    
+    if (!error && [results count] > 0) {
+        __block NSDate *lastDate = [NSDate date];
+        __block MonthlyDo *currentMonthDo = [[MonthlyDo alloc] init];
+        __block CGFloat summary = 0.f;
+        currentMonthDo.currentMonth = [NSDate date];
+        
+        NSMutableArray *dailyDosInMonth = [NSMutableArray arrayWithCapacity:35];
+        
+        [results enumerateObjectsUsingBlock:^(DailyDoBase *dailyDo, NSUInteger idx, BOOL *stop) {
+            
+            NSDate *createDate = [NSDate dateWithTimeIntervalSince1970:[dailyDo.createTime doubleValue]];
+            if ([lastDate isSameMonthAsDate:createDate]) {
+                [dailyDosInMonth addObject:dailyDo];
+                for (TodoData *todo in dailyDo.todos) {
+                    summary += [[[SMDetector defaultDetector] valueInString:todo.money byType:SmarkDetectTypeMoney] floatValue];
+                }
+            }
+            else {
+                currentMonthDo.dailyDos = [dailyDosInMonth copy];
+                currentMonthDo.summary = summary;
+                [mutMonthlyDos addObject:currentMonthDo];
+                
+                [dailyDosInMonth removeAllObjects];
+                [dailyDosInMonth addObject:dailyDo];
+                for (TodoData *todo in dailyDo.todos) {
+                    summary += [[[SMDetector defaultDetector] valueInString:todo.money byType:SmarkDetectTypeMoney] floatValue];
+                }
+                
+                currentMonthDo = [[MonthlyDo alloc] init];
+                currentMonthDo.currentMonth = createDate;
+            }
+            
+            lastDate = createDate;
+        }];
+        
+        if ([mutMonthlyDos lastObject] != currentMonthDo && [dailyDosInMonth count] > 0) {
+            currentMonthDo.dailyDos = [dailyDosInMonth copy];
+            currentMonthDo.summary = summary;
+            [mutMonthlyDos addObject:currentMonthDo];
+        }
+    }
+    
+    return [mutMonthlyDos copy];
+}
+
+// yearlyDos
+- (NSArray *)yearlyDosForAddon:(AddonData *)addon
+{
+    NSMutableArray *mutYearlyDos = [NSMutableArray arrayWithCapacity:12];
+    
+    Class DailyDoData = NSClassFromString(addon.dailyDoName);
+    
+    NSError *error = nil;
+    NSArray *results = [[KMModelManager sharedManager] entitiesWithQuery:nil
+                                                       entityDescription:[DailyDoData entityDescription]
+                                                              unFaulting:NO
+                                                                  offset:0
+                                                                   count:NSIntegerMax
+                                                         sortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"createTime" ascending:NO]]
+                                                                   error:&error];
+    
+    if (!error && [results count] > 0) {
+        __block NSDate *lastDate = [NSDate date];
+        __block YearlyDo *currentYearDo = [[YearlyDo alloc] init];
+        __block CGFloat summary = 0.f;
+        currentYearDo.currentYear = [NSDate date];
+        
+        NSMutableArray *dailyDosInYear = [NSMutableArray arrayWithCapacity:35];
+        
+        [results enumerateObjectsUsingBlock:^(DailyDoBase *dailyDo, NSUInteger idx, BOOL *stop) {
+            
+            NSDate *createDate = [NSDate dateWithTimeIntervalSince1970:[dailyDo.createTime doubleValue]];
+            if ([lastDate isSameYearAsDate:createDate]) {
+                [dailyDosInYear addObject:dailyDo];
+                for (TodoData *todo in dailyDo.todos) {
+                    summary += [[[SMDetector defaultDetector] valueInString:todo.money byType:SmarkDetectTypeMoney] floatValue];
+                }
+            }
+            else {
+                currentYearDo.dailyDos = [dailyDosInYear copy];
+                currentYearDo.summary = summary;
+                [mutYearlyDos addObject:currentYearDo];
+                
+                [dailyDosInYear removeAllObjects];
+                [dailyDosInYear addObject:dailyDo];
+                for (TodoData *todo in dailyDo.todos) {
+                    summary += [[[SMDetector defaultDetector] valueInString:todo.money byType:SmarkDetectTypeMoney] floatValue];
+                }
+                
+                currentYearDo = [[YearlyDo alloc] init];
+                currentYearDo.currentYear = createDate;
+            }
+            
+            lastDate = createDate;
+        }];
+        
+        if ([mutYearlyDos lastObject] != currentYearDo && [dailyDosInYear count] > 0) {
+            currentYearDo.dailyDos = [dailyDosInYear copy];
+            currentYearDo.summary = summary;
+            [mutYearlyDos addObject:currentYearDo];
+        }
+    }
+    
+    return [mutYearlyDos copy];
+}
+
+@end
+
+
+@implementation MonthlyDo
+@end
+
+
+@implementation YearlyDo
 @end

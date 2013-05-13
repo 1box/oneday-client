@@ -109,7 +109,7 @@
             
             self.hint = [[HintHelper alloc] initWithViewController:self dialogsPathPrefix:[self mainHintPrefix]];
             [_hint show];
-            [SSCommon playSound:@"shake.mp3"];
+            [KMCommon playSound:@"shake.mp3"];
         }
     }
     
@@ -120,7 +120,7 @@
 
 - (NSString *)mainHintPrefix
 {
-    return [NSString stringWithFormat:@"OneDay_%@", [SSCommon versionName]];
+    return [NSString stringWithFormat:@"OneDay_%@", [KMCommon versionName]];
 }
 
 - (NSString *)pageNameForTrack

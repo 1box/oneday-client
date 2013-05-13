@@ -44,6 +44,19 @@
 #define kDailyDoManagerLoadResultErrorKey @"kDailyDoManagerLoadResultErrorKey"
 
 
+@interface MonthlyDo : NSObject
+@property (nonatomic) NSDate *currentMonth;
+@property (nonatomic) NSArray *dailyDos;
+@property (nonatomic) CGFloat summary;
+@end
+
+
+@interface YearlyDo : NSObject
+@property (nonatomic) NSDate *currentYear;
+@property (nonatomic) NSArray *dailyDos;
+@property (nonatomic) CGFloat summary;
+@end
+
 
 @class AddonData;
 @class DailyDoBase;
@@ -70,5 +83,9 @@
 - (NSArray *)loggedDosForAddon:(AddonData *)addon;
 
 - (void)loadLoggedDosForCondition:(NSDictionary *)condition;
+
+// monthlyDos&yearlyDos
+- (NSArray *)monthlyDosForAddon:(AddonData *)addon year:(NSDate *)year;
+- (NSArray *)yearlyDosForAddon:(AddonData *)addon;
 
 @end

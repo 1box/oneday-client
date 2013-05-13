@@ -64,7 +64,11 @@ static SplashHelper *_sharedHelper = nil;
 - (void)prepareSplashAnimationView
 {
     UIView *containerView = ((AppDelegateBase *)[[UIApplication sharedApplication] delegate]).window.rootViewController.view;
-    self.animationView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Default.png"]];
+    NSString *imageName = @"Default.png";
+    if ([KMCommon is568Screen]) {
+        imageName = @"Default-568h.png";
+    }
+    self.animationView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
     [containerView addSubview:_animationView1];
     
     self.animationView2 = [[SplashHelpAnimationView alloc] initWithFrame:containerView.bounds];
@@ -152,7 +156,11 @@ static SplashHelper *_sharedHelper = nil;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        self.splashView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"splash-screen-no-logo.png"]];
+        NSString *imageName = @"splash-screen-no-logo.png";
+        if ([KMCommon is568Screen]) {
+            imageName = @"splash-screen-no-logo-568h.png";
+        }
+        self.splashView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
         [self addSubview:_splashView];
         
         self.titleLabel = [[UILabel alloc] init];

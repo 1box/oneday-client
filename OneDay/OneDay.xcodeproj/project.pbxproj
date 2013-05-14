@@ -1161,6 +1161,10 @@
 		CB2C714C1638442900D0D348 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB2C714B1638442900D0D348 /* CoreData.framework */; };
 		CB2C714D1638442E00D0D348 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFF9ECF163832E80066784B /* UIKit.framework */; };
 		CB2C714E1638443900D0D348 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBFF9ED1163832E80066784B /* Foundation.framework */; };
+		CB39DFCD1741FD9C007B1CE5 /* WorkoutAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB39DFCB1741FD9C007B1CE5 /* WorkoutAlarmViewController.m */; };
+		CB39DFCE1741FD9C007B1CE5 /* WorkoutAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB39DFCB1741FD9C007B1CE5 /* WorkoutAlarmViewController.m */; };
+		CB39DFD31741FF1F007B1CE5 /* WorkoutAlarmCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB39DFD21741FF1F007B1CE5 /* WorkoutAlarmCellView.m */; };
+		CB39DFD41741FF1F007B1CE5 /* WorkoutAlarmCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB39DFD21741FF1F007B1CE5 /* WorkoutAlarmCellView.m */; };
 		CB40E513170C8EDA00E6C9C6 /* DarkNavigationBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CB40E512170C8EDA00E6C9C6 /* DarkNavigationBarButton.m */; };
 		CB40E514170C8EDA00E6C9C6 /* DarkNavigationBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CB40E512170C8EDA00E6C9C6 /* DarkNavigationBarButton.m */; };
 		CB40E523170C905500E6C9C6 /* DarkNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CB40E522170C905500E6C9C6 /* DarkNavigationBar.m */; };
@@ -2377,6 +2381,10 @@
 		CB2C71471638441F00D0D348 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		CB2C71491638442400D0D348 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		CB2C714B1638442900D0D348 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		CB39DFCA1741FD9C007B1CE5 /* WorkoutAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutAlarmViewController.h; sourceTree = "<group>"; };
+		CB39DFCB1741FD9C007B1CE5 /* WorkoutAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutAlarmViewController.m; sourceTree = "<group>"; };
+		CB39DFD11741FF1F007B1CE5 /* WorkoutAlarmCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkoutAlarmCellView.h; sourceTree = "<group>"; };
+		CB39DFD21741FF1F007B1CE5 /* WorkoutAlarmCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkoutAlarmCellView.m; sourceTree = "<group>"; };
 		CB40E511170C8EDA00E6C9C6 /* DarkNavigationBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarkNavigationBarButton.h; sourceTree = "<group>"; };
 		CB40E512170C8EDA00E6C9C6 /* DarkNavigationBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarkNavigationBarButton.m; sourceTree = "<group>"; };
 		CB40E521170C905500E6C9C6 /* DarkNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DarkNavigationBar.h; sourceTree = "<group>"; };
@@ -3485,6 +3493,8 @@
 				CBFBDBC8173D77D7008799AC /* UndoViewController.m */,
 				CB48EC8917400A6E00B232CB /* SummaryViewController.h */,
 				CB48EC8A17400A6E00B232CB /* SummaryViewController.m */,
+				CB39DFCA1741FD9C007B1CE5 /* WorkoutAlarmViewController.h */,
+				CB39DFCB1741FD9C007B1CE5 /* WorkoutAlarmViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -3612,6 +3622,8 @@
 				CB40E52C170C90EE00E6C9C6 /* NormalNavigationBar.m */,
 				CB8EE13A1740AE820068A6BA /* SummaryCellView.h */,
 				CB8EE13B1740AE820068A6BA /* SummaryCellView.m */,
+				CB39DFD11741FF1F007B1CE5 /* WorkoutAlarmCellView.h */,
+				CB39DFD21741FF1F007B1CE5 /* WorkoutAlarmCellView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -6050,6 +6062,8 @@
 				CB8EE135174094380068A6BA /* NSDate-Utilities.m in Sources */,
 				CB8EE1391740943F0068A6BA /* NSDate+CupertinoYankee.m in Sources */,
 				CB8EE13D1740AE820068A6BA /* SummaryCellView.m in Sources */,
+				CB39DFCE1741FD9C007B1CE5 /* WorkoutAlarmViewController.m in Sources */,
+				CB39DFD41741FF1F007B1CE5 /* WorkoutAlarmCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6172,6 +6186,8 @@
 				CB8EE134174094380068A6BA /* NSDate-Utilities.m in Sources */,
 				CB8EE1381740943F0068A6BA /* NSDate+CupertinoYankee.m in Sources */,
 				CB8EE13C1740AE820068A6BA /* SummaryCellView.m in Sources */,
+				CB39DFCD1741FD9C007B1CE5 /* WorkoutAlarmViewController.m in Sources */,
+				CB39DFD31741FF1F007B1CE5 /* WorkoutAlarmCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

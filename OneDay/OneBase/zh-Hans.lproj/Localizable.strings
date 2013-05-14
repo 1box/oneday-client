@@ -30,10 +30,11 @@
 
 "QuickAddTodoDone"="新的便签已添加";
 "MoveAllUndosToToday"="所有未完成已经移到今天";
-"CheckAllUndos"="所有项目已标记完成";
+"CheckAllUndos"="所有项目已完成";
 "ShowAllUndosTitle"="查看所有未完成";
 "CashMonthSummaryTitle"="月收支汇总";
 "CashYearSummaryTitle"="年收支汇总";
+"WorkoutNotificationTitle"="定时提醒";
 "CashMonthSummaryText"="月收支: %f";
 "CashYearSummaryText"="年收支: %f";
 

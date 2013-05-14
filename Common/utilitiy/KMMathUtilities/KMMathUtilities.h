@@ -18,7 +18,7 @@ static inline int roundNumberFloor(float seed) {
     }
     
     int ret = floorf(seed);
-    while (count >= 0) {
+    while (count > 0) {
         ret *= 10;
         count --;
     }
@@ -35,7 +35,7 @@ static inline int roundNumberCeil(float seed) {
     }
     
     int ret = floorf(seed);
-    while (count >= 0) {
+    while (count > 0) {
         ret *= 10;
         count --;
     }

@@ -13,7 +13,8 @@ typedef NS_ENUM(NSInteger, DailyDoActionType) {
     DailyDoActionTypeQuickAdd = (1UL << 1),             // 2
     DailyDoActionTypeShowAllUndos = (1UL << 2),         // 4
     DailyDoActionTypeCashMonthSummary = (1UL << 3),     // 8
-    DailyDoActionTypeCashYearSummary = (1UL << 4)       // 16
+    DailyDoActionTypeCashYearSummary = (1UL << 4),      // 16
+    DailyDoActionTypeWorkoutNotification = (1UL << 5)   // 32
 };
 
 
@@ -39,5 +40,6 @@ typedef NS_ENUM(NSInteger, DailyDoActionType) {
 - (void)showAllUndos:(AddonData *)addon;
 - (void)showCashMonthSummary;
 - (void)showCashYearSummary;
+- (void)showWorkoutAlarms;
 
 @end

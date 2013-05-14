@@ -14,7 +14,7 @@
 #import "TagViewController.h"
 #import "UndoViewController.h"
 #import "SummaryViewController.h"
-#import "DarkNavigationBar.h"
+#import "WorkoutAlarmViewController.h"
 
 #import "KMTableView.h"
 #import "DailyDoTodayCell.h"
@@ -136,7 +136,8 @@
     
     if ((actionType & DailyDoActionTypeShowAllUndos) == DailyDoActionTypeShowAllUndos ||
         (actionType & DailyDoActionTypeCashMonthSummary) == DailyDoActionTypeCashMonthSummary ||
-        (actionType & DailyDoActionTypeCashYearSummary) == DailyDoActionTypeCashYearSummary) {
+        (actionType & DailyDoActionTypeCashYearSummary) == DailyDoActionTypeCashYearSummary ||
+        (actionType & DailyDoActionTypeWorkoutNotification) == DailyDoActionTypeWorkoutNotification) {
         
         [mutItems addObject:[items objectAtIndex:3]];
     }
@@ -251,6 +252,9 @@
     }
     if (DailyDoActionTypeCashYearSummary == (actionType & DailyDoActionTypeCashYearSummary)) {
         [otherButtonTitles addObject:NSLocalizedString(@"CashYearSummaryTitle", nil)];
+    }
+    if (DailyDoActionTypeWorkoutNotification == (actionType & DailyDoActionTypeWorkoutNotification)) {
+        [otherButtonTitles addObject:NSLocalizedString(@"WorkoutNotificationTitle", nil)];
     }
     [otherButtonTitles addObject:NSLocalizedString(@"_cancel", nil)];
     
@@ -599,6 +603,15 @@
             [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
         }
             break;
+        case DailyDoActionTypeWorkoutNotification:
+        {
+            UINavigationController *nav = [[UIStoryboard storyboardWithName:@"OneDayStoryboard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"WorkoutAlarmNavigationControllerID"];
+            WorkoutAlarmViewController *controller = (WorkoutAlarmViewController *)nav.topViewController;
+            controller.addon = _addon;
+            UIViewController *topViewController = [KMCommon topViewControllerFor:self];
+            [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
+        }
+            break;
             
         default:
             break;
@@ -626,6 +639,9 @@
             {
                 if (DailyDoActionTypeCashYearSummary == (actionType & DailyDoActionTypeCashYearSummary)) {
                     [[DailyDoActionHelper sharedHelper] showCashYearSummary];
+                }
+                else if (DailyDoActionTypeWorkoutNotification == (actionType & DailyDoActionTypeWorkoutNotification)) {
+                    [[DailyDoActionHelper sharedHelper] showWorkoutAlarms];
                 }
             }
                 break;

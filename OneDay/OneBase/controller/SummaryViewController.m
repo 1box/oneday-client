@@ -14,11 +14,13 @@
 #import "SummaryCellView.h"
 #import "KMDateUtils.h"
 
+#define LineChartHeight 220.f
+
 
 @interface SummaryViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (nonatomic) IBOutlet UILabel *titleLabel;
-@property (nonatomic) IBOutlet PCLineChartView *lineChart;
 @property (nonatomic) IBOutlet KMTableView *summaryList;
+@property (nonatomic) UILabel *titleLabel;
+@property (nonatomic) PCLineChartView *lineChart;
 
 @property (nonatomic) NSArray *lineComponents;
 @property (nonatomic) NSArray *summaryDos;
@@ -30,15 +32,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.lineChart = [[PCLineChartView alloc] initWithFrame:CGRectMake(0, 0, SSWidth(self.view), LineChartHeight)];
+    [self prepareDataSource];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    [self prepareDataSource];
-    
-    [_lineChart setNeedsDisplay];
     [_summaryList reloadData];
 }
 
@@ -48,15 +48,21 @@
 {
     NSMutableArray *mutLineComponents = [NSMutableArray arrayWithCapacity:5];
     NSMutableArray *summaryCashes = [NSMutableArray arrayWithCapacity:12];
+    
+    __block CGFloat minSummary = 0.f;
+    __block CGFloat maxSummary = 0.f;
+    
     switch (_type) {
         case SummaryViewTypeMonth:
         {
             self.summaryDos = [[DailyDoManager sharedManager] monthlyDosForAddon:_addon year:[NSDate date]];
-            [_lineChart setXLabels:[[YearToDayFormatter() monthSymbols] mutableCopy]];
+            NSMutableArray *xLabels = [NSMutableArray arrayWithCapacity:12];
+            for (int i=0; i<12; i++) {
+                [xLabels addObject:[NSNumber numberWithInt:i+1]];
+            }
+            [_lineChart setXLabels:xLabels];
             
             __block int lastMonth = 1;
-            __block CGFloat minSummary = 0.f;
-            __block CGFloat maxSummary = 0.f;
             [_summaryDos enumerateObjectsUsingBlock:^(MonthlyDo *monthlyDo, NSUInteger idx, BOOL *stop) {
                 for (int i=lastMonth; i < (monthlyDo.currentMonth.month - idx); i ++) {
                     [summaryCashes addObject:@0];
@@ -73,8 +79,6 @@
                 }
             }
             
-            _lineChart.minValue = roundNumberFloor(minSummary);
-            _lineChart.maxValue = roundNumberCeil(maxSummary);
         }
             break;
         case SummaryViewTypeYear:
@@ -91,8 +95,6 @@
             [_lineChart setXLabels:mutXLabels];
             
             __block int lastYear = ealiestYear;
-            __block CGFloat minSummary = 0.f;
-            __block CGFloat maxSummary = 0.f;
             [_summaryDos enumerateObjectsUsingBlock:^(YearlyDo *yearlyDo, NSUInteger idx, BOOL *stop) {
                 for (int i=lastYear; i < (yearlyDo.currentYear.year - idx); i ++) {
                     [summaryCashes addObject:@0];
@@ -108,9 +110,6 @@
 //                    [summaryCashes addObject:@0];
 //                }
 //            }
-            
-            _lineChart.minValue = roundNumberFloor(minSummary);
-            _lineChart.maxValue = roundNumberCeil(maxSummary);
         }
             break;
             
@@ -127,6 +126,31 @@
     
     self.lineComponents = [mutLineComponents copy];
     [_lineChart setComponents:[_lineComponents mutableCopy]];
+    
+    int range = MAX(abs(roundNumberFloor(minSummary)), abs(roundNumberCeil(maxSummary)));
+    _lineChart.minValue = -1*range;
+    _lineChart.maxValue = range;
+    _lineChart.interval = (range*2)/4;
+    _lineChart.yLabelFont = [UIFont boldSystemFontOfSize:10.f];
+    
+    NSMutableDictionary *mapping = [NSMutableDictionary dictionaryWithCapacity:5];
+    for (int i=_lineChart.minValue; i<=_lineChart.maxValue; i+=_lineChart.interval) {
+        NSString *mappingValue = @"";
+        if (abs(i/1000000000) > 1) {
+            mappingValue = [NSString stringWithFormat:@"%db", i/1000000000];
+        }
+        else if (abs(i/1000000) > 1) {
+            mappingValue = [NSString stringWithFormat:@"%dm", i/1000000];
+        }
+        else if (abs(i/1000) > 1) {
+            mappingValue = [NSString stringWithFormat:@"%dk", i/1000];
+        }
+        else {
+            mappingValue = [NSString stringWithFormat:@"%d", i];
+        }
+        [mapping setObject:mappingValue forKey:[NSNumber numberWithInteger:i]];
+    }
+    _lineChart.mappedYLabels = [mapping copy];
 }
 
 #pragma mark - Actions
@@ -172,22 +196,42 @@
     return cell;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    NSString *ret = @"";
-    switch (_type) {
-        case SummaryViewTypeMonth:
-            ret = NSLocalizedString(@"CashMonthSummaryTitle", nil);
-            break;
-        case SummaryViewTypeYear:
-            ret = NSLocalizedString(@"CashYearSummaryTitle", nil);
-            break;
-            
-        default:
-            break;
+    if (section == 0) {
+        return _lineChart;
     }
-    return ret;
+    else {
+        return nil;
+    }
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    if (section == 0) {
+        return LineChartHeight;
+    }
+    else {
+        return 0.f;
+    }
+}
+
+//- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+//{
+//    NSString *ret = @"";
+//    switch (_type) {
+//        case SummaryViewTypeMonth:
+//            ret = NSLocalizedString(@"CashMonthSummaryTitle", nil);
+//            break;
+//        case SummaryViewTypeYear:
+//            ret = NSLocalizedString(@"CashYearSummaryTitle", nil);
+//            break;
+//            
+//        default:
+//            break;
+//    }
+//    return ret;
+//}
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {

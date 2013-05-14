@@ -108,6 +108,13 @@ static DailyDoActionHelper *_sharedHelper = nil;
     }
 }
 
+- (void)showWorkoutAlarms
+{
+    if (_delegate && [_delegate respondsToSelector:@selector(dailyDoActionHelper:doActionForType:)]) {
+        [_delegate dailyDoActionHelper:self doActionForType:DailyDoActionTypeWorkoutNotification];
+    }
+}
+
 #pragma mark - UIAlertViewDelegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

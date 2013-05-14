@@ -8,6 +8,8 @@
 
 #import "KMUnfoldTableCell.h"
 
-@interface WorkoutAlarmCellView : KMUnfoldTableCell
+@class AlarmData;
 
+@interface WorkoutAlarmCellView : KMUnfoldTableCell
+@property (nonatomic) AlarmData *alarm;
 @end

@@ -54,13 +54,6 @@
     [_calendarView reloadData];
 }
 
-#pragma mark - Actions
-
-- (IBAction)back:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
 #pragma mark - private
 
 - (DailyDoBase *)dailyDoAtDate:(NSDate *)date

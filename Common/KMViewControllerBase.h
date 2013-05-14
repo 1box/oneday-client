@@ -11,4 +11,6 @@
 @interface KMViewControllerBase : UIViewController
 #pragma mark - protected
 - (NSString *)pageNameForTrack;
+- (IBAction)back:(id)sender;
+- (IBAction)dismiss:(id)sender;
 @end

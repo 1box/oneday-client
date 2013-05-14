@@ -12,12 +12,12 @@
 
 @interface TagData : SSEntityBase
 
-@property (nonatomic, retain) NSString *name;
-@property (nonatomic, retain) NSNumber *level;
-@property (nonatomic, retain) NSString *superTag;
-@property (nonatomic, retain) NSNumber *createTime;
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSNumber *level;
+@property (nonatomic, strong) NSString *superTag;
+@property (nonatomic, strong) NSNumber *createTime;
 
-@property (nonatomic, retain) NSSet *dailyDos;
+@property (nonatomic, strong) NSSet *dailyDos;
 @end
 
 @interface TagData (CoreDataGeneratedAccessors)

@@ -13,8 +13,10 @@
 @class DailyDoBase;
 
 @interface TagViewController : KMViewControllerBase
+
 @property (nonatomic) IBOutlet KMTableView *tagsView;
 @property (nonatomic) DailyDoBase *dailyDo;
+
 - (IBAction)cancel:(id)sender;
 - (IBAction)save:(id)sender;
 @end

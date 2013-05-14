@@ -24,6 +24,7 @@
 @dynamic tipImage;
 
 @dynamic dailyDos;
+@dynamic alarms;
 
 + (NSString *)entityName
 {

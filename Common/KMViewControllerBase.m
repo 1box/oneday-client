@@ -53,4 +53,16 @@
     [MobClick endLogPageView:[self pageNameForTrack]];
 }
 
+#pragma mark - Actions
+
+- (IBAction)back:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)dismiss:(id)sender
+{
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

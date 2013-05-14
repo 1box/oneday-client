@@ -20,7 +20,6 @@
 @property (nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (nonatomic) NSArray *dailyDos;
 
-- (IBAction)back:(id)sender;
 - (IBAction)pickerCanceled:(id)sender;
 - (IBAction)pickerConfirmed:(id)sender;
 @end

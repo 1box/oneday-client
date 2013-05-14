@@ -1171,6 +1171,12 @@
 		CB40E524170C905500E6C9C6 /* DarkNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CB40E522170C905500E6C9C6 /* DarkNavigationBar.m */; };
 		CB40E52D170C90EE00E6C9C6 /* NormalNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CB40E52C170C90EE00E6C9C6 /* NormalNavigationBar.m */; };
 		CB40E52E170C90EE00E6C9C6 /* NormalNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CB40E52C170C90EE00E6C9C6 /* NormalNavigationBar.m */; };
+		CB43D0A41742A1320075A2B1 /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB43D0A31742A1320075A2B1 /* AddAlarmViewController.m */; };
+		CB43D0A51742A1320075A2B1 /* AddAlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB43D0A31742A1320075A2B1 /* AddAlarmViewController.m */; };
+		CB43D0A81742A5080075A2B1 /* AlarmRepeatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB43D0A71742A5080075A2B1 /* AlarmRepeatViewController.m */; };
+		CB43D0A91742A5080075A2B1 /* AlarmRepeatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB43D0A71742A5080075A2B1 /* AlarmRepeatViewController.m */; };
+		CB43D0AC1742A52C0075A2B1 /* AlarmInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB43D0AB1742A52C0075A2B1 /* AlarmInputViewController.m */; };
+		CB43D0AD1742A52C0075A2B1 /* AlarmInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB43D0AB1742A52C0075A2B1 /* AlarmInputViewController.m */; };
 		CB4606AD173D4B8800955454 /* cell_normal_alone.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4605F6173D4B8700955454 /* cell_normal_alone.png */; };
 		CB4606AE173D4B8800955454 /* cell_normal_alone.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4605F6173D4B8700955454 /* cell_normal_alone.png */; };
 		CB4606AF173D4B8800955454 /* cell_normal_alone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4605F7173D4B8700955454 /* cell_normal_alone@2x.png */; };
@@ -1475,6 +1481,8 @@
 		CB886CBE173BCBDE0074586F /* UMTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB886CBA173BCBDE0074586F /* UMTableViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		CB886CC9173BD6250074586F /* KMViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CB886CC8173BD6250074586F /* KMViewControllerBase.m */; };
 		CB886CCA173BD6250074586F /* KMViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CB886CC8173BD6250074586F /* KMViewControllerBase.m */; };
+		CB8C059F1742116600522B61 /* AlarmData.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C059E1742116600522B61 /* AlarmData.m */; };
+		CB8C05A01742116600522B61 /* AlarmData.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C059E1742116600522B61 /* AlarmData.m */; };
 		CB8CE0F6173E327A00B0E275 /* UndoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8CE0F5173E327A00B0E275 /* UndoCellView.m */; };
 		CB8CE0F7173E327A00B0E275 /* UndoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8CE0F5173E327A00B0E275 /* UndoCellView.m */; };
 		CB8EE12817408B5E0068A6BA /* PCLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EE12517408B5E0068A6BA /* PCLineChartView.m */; };
@@ -2391,6 +2399,12 @@
 		CB40E522170C905500E6C9C6 /* DarkNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DarkNavigationBar.m; sourceTree = "<group>"; };
 		CB40E52B170C90EE00E6C9C6 /* NormalNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalNavigationBar.h; sourceTree = "<group>"; };
 		CB40E52C170C90EE00E6C9C6 /* NormalNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalNavigationBar.m; sourceTree = "<group>"; };
+		CB43D0A21742A1320075A2B1 /* AddAlarmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAlarmViewController.h; sourceTree = "<group>"; };
+		CB43D0A31742A1320075A2B1 /* AddAlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAlarmViewController.m; sourceTree = "<group>"; };
+		CB43D0A61742A5080075A2B1 /* AlarmRepeatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmRepeatViewController.h; sourceTree = "<group>"; };
+		CB43D0A71742A5080075A2B1 /* AlarmRepeatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmRepeatViewController.m; sourceTree = "<group>"; };
+		CB43D0AA1742A52C0075A2B1 /* AlarmInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmInputViewController.h; sourceTree = "<group>"; };
+		CB43D0AB1742A52C0075A2B1 /* AlarmInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmInputViewController.m; sourceTree = "<group>"; };
 		CB4605F6173D4B8700955454 /* cell_normal_alone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_normal_alone.png; sourceTree = "<group>"; };
 		CB4605F7173D4B8700955454 /* cell_normal_alone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cell_normal_alone@2x.png"; sourceTree = "<group>"; };
 		CB4605F8173D4B8700955454 /* cell_normal_bottom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cell_normal_bottom.png; sourceTree = "<group>"; };
@@ -2565,6 +2579,9 @@
 		CB886CBA173BCBDE0074586F /* UMTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMTableViewController.m; sourceTree = "<group>"; };
 		CB886CC7173BD6250074586F /* KMViewControllerBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMViewControllerBase.h; sourceTree = "<group>"; };
 		CB886CC8173BD6250074586F /* KMViewControllerBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMViewControllerBase.m; sourceTree = "<group>"; };
+		CB8C059C1742102D00522B61 /* DailyData 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DailyData 4.xcdatamodel"; sourceTree = "<group>"; };
+		CB8C059D1742116600522B61 /* AlarmData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmData.h; sourceTree = "<group>"; };
+		CB8C059E1742116600522B61 /* AlarmData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmData.m; sourceTree = "<group>"; };
 		CB8CE0F4173E327A00B0E275 /* UndoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UndoCellView.h; sourceTree = "<group>"; };
 		CB8CE0F5173E327A00B0E275 /* UndoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UndoCellView.m; sourceTree = "<group>"; };
 		CB8EE12417408B5E0068A6BA /* PCLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCLineChartView.h; path = iOSPlot/iOSPlot/Shared/PCLineChartView.h; sourceTree = "<group>"; };
@@ -3495,6 +3512,12 @@
 				CB48EC8A17400A6E00B232CB /* SummaryViewController.m */,
 				CB39DFCA1741FD9C007B1CE5 /* WorkoutAlarmViewController.h */,
 				CB39DFCB1741FD9C007B1CE5 /* WorkoutAlarmViewController.m */,
+				CB43D0A21742A1320075A2B1 /* AddAlarmViewController.h */,
+				CB43D0A31742A1320075A2B1 /* AddAlarmViewController.m */,
+				CB43D0A61742A5080075A2B1 /* AlarmRepeatViewController.h */,
+				CB43D0A71742A5080075A2B1 /* AlarmRepeatViewController.m */,
+				CB43D0AA1742A52C0075A2B1 /* AlarmInputViewController.h */,
+				CB43D0AB1742A52C0075A2B1 /* AlarmInputViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -3540,6 +3563,8 @@
 				3F55A62016E50D4900EBBA30 /* TagData.m */,
 				3F55A62116E50D4900EBBA30 /* TodoData.h */,
 				3F55A62216E50D4900EBBA30 /* TodoData.m */,
+				CB8C059D1742116600522B61 /* AlarmData.h */,
+				CB8C059E1742116600522B61 /* AlarmData.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -6064,6 +6089,10 @@
 				CB8EE13D1740AE820068A6BA /* SummaryCellView.m in Sources */,
 				CB39DFCE1741FD9C007B1CE5 /* WorkoutAlarmViewController.m in Sources */,
 				CB39DFD41741FF1F007B1CE5 /* WorkoutAlarmCellView.m in Sources */,
+				CB8C05A01742116600522B61 /* AlarmData.m in Sources */,
+				CB43D0A51742A1320075A2B1 /* AddAlarmViewController.m in Sources */,
+				CB43D0A91742A5080075A2B1 /* AlarmRepeatViewController.m in Sources */,
+				CB43D0AD1742A52C0075A2B1 /* AlarmInputViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6188,6 +6217,10 @@
 				CB8EE13C1740AE820068A6BA /* SummaryCellView.m in Sources */,
 				CB39DFCD1741FD9C007B1CE5 /* WorkoutAlarmViewController.m in Sources */,
 				CB39DFD31741FF1F007B1CE5 /* WorkoutAlarmCellView.m in Sources */,
+				CB8C059F1742116600522B61 /* AlarmData.m in Sources */,
+				CB43D0A41742A1320075A2B1 /* AddAlarmViewController.m in Sources */,
+				CB43D0A81742A5080075A2B1 /* AlarmRepeatViewController.m in Sources */,
+				CB43D0AC1742A52C0075A2B1 /* AlarmInputViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6655,11 +6688,12 @@
 		3F55A61716E50D4900EBBA30 /* DailyData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				CB8C059C1742102D00522B61 /* DailyData 4.xcdatamodel */,
 				3F55A61816E50D4900EBBA30 /* DailyData 2.xcdatamodel */,
 				3F55A61916E50D4900EBBA30 /* DailyData 3.xcdatamodel */,
 				3F55A61A16E50D4900EBBA30 /* DailyData.xcdatamodel */,
 			);
-			currentVersion = 3F55A61916E50D4900EBBA30 /* DailyData 3.xcdatamodel */;
+			currentVersion = CB8C059C1742102D00522B61 /* DailyData 4.xcdatamodel */;
 			path = DailyData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

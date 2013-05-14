@@ -14,6 +14,7 @@
 #import "AlarmNotificationManager.h"
 #import "CartoonManager.h"
 #import "AddonManager.h"
+#import "SplashHelper.h"
 #import "iRate.h"
 #import "iVersion.h"
 #import "Constants.h"
@@ -59,7 +60,14 @@
     
     UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (localNotification) {
-        [[AlarmNotificationManager sharedManager] handleAlarmLocalNotification:localNotification];
+        if ([SplashHelper sharedHelper].hasFliped) {
+            [[AlarmNotificationManager sharedManager] handleAlarmLocalNotification:localNotification];
+        }
+        else {
+            [[SplashHelper sharedHelper] addFinishedBlock:^(SplashHelper *helper) {
+                [[AlarmNotificationManager sharedManager] handleAlarmLocalNotification:localNotification];
+            }];
+        }
     }
     
     return YES;
@@ -68,7 +76,14 @@
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
     if ([[UIApplication sharedApplication] applicationState] != UIApplicationStateActive) {
-        [[AlarmNotificationManager sharedManager] handleAlarmLocalNotification:notification];
+        if ([SplashHelper sharedHelper].hasFliped) {
+            [[AlarmNotificationManager sharedManager] handleAlarmLocalNotification:notification];
+        }
+        else {
+            [[SplashHelper sharedHelper] addFinishedBlock:^(SplashHelper *helper) {
+                [[AlarmNotificationManager sharedManager] handleAlarmLocalNotification:notification];
+            }];
+        }
     }
 }
 

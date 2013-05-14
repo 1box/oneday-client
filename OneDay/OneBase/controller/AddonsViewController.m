@@ -12,7 +12,7 @@
 #import "AddonManager.h"
 
 @interface AddonsViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (nonatomic, strong) IBOutlet KMTableView *addonsView;
+@property (nonatomic) IBOutlet KMTableView *addonsView;
 @property (nonatomic) NSArray *preparedAddons;
 @end
 

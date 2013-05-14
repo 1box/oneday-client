@@ -10,11 +10,13 @@
 #import "KMViewControllerBase.h"
 
 @class GuideViewController;
+
 @protocol GuideViewControllerDelegate <NSObject>
 - (void)guideViewController:(GuideViewController *)controller didDismissedAnimation:(BOOL)animated;
 @end
 
+
 @interface GuideViewController : KMViewControllerBase
-@property (nonatomic, assign) id<GuideViewControllerDelegate> delegate;
+@property (nonatomic, weak) id<GuideViewControllerDelegate> delegate;
 - (IBAction)handleSingleTap:(id)sender;
 @end

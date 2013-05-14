@@ -41,7 +41,9 @@ typedef NS_ENUM(NSInteger, SplashRandomTextType) {
 @interface SplashHelper ()
 @property (nonatomic) UIImageView *animationView1;
 @property (nonatomic) SplashHelpAnimationView *animationView2;
+@property (nonatomic) NSMutableArray *finishedBlocks;
 @end
+
 
 @implementation SplashHelper
 
@@ -59,6 +61,23 @@ static SplashHelper *_sharedHelper = nil;
 {
     NSAssert(_sharedHelper == nil, @"Attempt alloc another instance for a singleton.");
     return [super alloc];
+}
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        _hasFliped = NO;
+        self.finishedBlocks = [NSMutableArray arrayWithCapacity:5];
+    }
+    return self;
+}
+
+#pragma mark - public
+
+- (void)addFinishedBlock:(LoadFlipSplashFinishedBlock)finishedBlock
+{
+    [_finishedBlocks addObject:[finishedBlock copy]];
 }
 
 - (void)prepareSplashAnimationView
@@ -93,6 +112,12 @@ static SplashHelper *_sharedHelper = nil;
                                 
                                 self.animationView1 = nil;
                                 self.animationView2 = nil;
+                                
+                                _hasFliped = YES;
+                                
+                                [_finishedBlocks enumerateObjectsUsingBlock:^(LoadFlipSplashFinishedBlock block, NSUInteger idx, BOOL *stop) {
+                                    block(self);
+                                }];
                             }];
                         }];
     }

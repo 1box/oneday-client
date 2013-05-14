@@ -11,8 +11,8 @@
 @class AddonData;
 
 @interface AddonsCell : KMCheckboxTableCell
-@property (nonatomic, strong) AddonData *addon;
+@property (nonatomic) AddonData *addon;
 
-@property (nonatomic, strong) IBOutlet UIImageView *addonIconView;
-@property (nonatomic, strong) IBOutlet UILabel *addonNameLabel;
+@property (nonatomic) IBOutlet UIImageView *addonIconView;
+@property (nonatomic) IBOutlet UILabel *addonNameLabel;
 @end

@@ -8,9 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+@class SplashHelper;
+
+typedef void (^LoadFlipSplashFinishedBlock)(SplashHelper *helper);
+
+
 @interface SplashHelper : NSObject
+
+@property (nonatomic, readonly) BOOL hasFliped;
+
 + (SplashHelper *)sharedHelper;
 
+- (void)addFinishedBlock:(LoadFlipSplashFinishedBlock)finishedBlock;
 - (void)prepareSplashAnimationView;
 - (void)splashFlipAnimation;
+
 @end

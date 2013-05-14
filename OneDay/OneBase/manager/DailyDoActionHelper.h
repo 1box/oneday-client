@@ -31,7 +31,7 @@ typedef NS_ENUM(NSInteger, DailyDoActionType) {
 
 @interface DailyDoActionHelper : NSObject
 
-@property (nonatomic, unsafe_unretained) id<DailyDoActionHelperDelegate> delegate;
+@property (nonatomic, weak) id<DailyDoActionHelperDelegate> delegate;
 
 + (DailyDoActionHelper *)sharedHelper;
 

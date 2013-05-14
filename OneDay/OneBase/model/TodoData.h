@@ -25,23 +25,23 @@ static inline NSUInteger newToDoItemID() {
 
 @interface TodoData : SSEntityBase
 
-@property (nonatomic) NSNumber *itemID;
-@property (nonatomic) NSNumber *index;
-@property (nonatomic) NSString *startTime;  // 24-hour style eg. 19:30
-@property (nonatomic) NSString *eventColor;
-@property (nonatomic) NSNumber *duration;   // seconds eg. 3600
-@property (nonatomic) NSString *location;
-@property (nonatomic) NSNumber *check;
-@property (nonatomic) NSString *content;    // contain time&duration if exsit
+@property (nonatomic, strong) NSNumber *itemID;
+@property (nonatomic, strong) NSNumber *index;
+@property (nonatomic, strong) NSString *startTime;  // 24-hour style eg. 19:30
+@property (nonatomic, strong) NSString *eventColor;
+@property (nonatomic, strong) NSNumber *duration;   // seconds eg. 3600
+@property (nonatomic, strong) NSString *location;
+@property (nonatomic, strong) NSNumber *check;
+@property (nonatomic, strong) NSString *content;    // contain time&duration if exsit
 
 // optional
-@property (nonatomic) NSString *money;
-@property (nonatomic) NSString *caloric;
-@property (nonatomic) NSString *distance;
-@property (nonatomic) NSString *frequency;
-@property (nonatomic) NSString *quantity;
+@property (nonatomic, strong) NSString *money;
+@property (nonatomic, strong) NSString *caloric;
+@property (nonatomic, strong) NSString *distance;
+@property (nonatomic, strong) NSString *frequency;
+@property (nonatomic, strong) NSString *quantity;
 
-@property (nonatomic) DailyDoBase *dailyDo;
+@property (nonatomic, strong) DailyDoBase *dailyDo;
 
 + (NSDateFormatter *)startTimeDateFormmatter;
 

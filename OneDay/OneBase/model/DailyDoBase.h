@@ -21,12 +21,12 @@ static inline NSUInteger newDailyDoItemID() {
 
 @interface DailyDoBase : SSEntityBase
 
-@property (nonatomic, retain) NSNumber *itemID;
-@property (nonatomic, retain) NSNumber *createTime; // eg. 978307200.0
+@property (nonatomic, strong) NSNumber *itemID;
+@property (nonatomic, strong) NSNumber *createTime; // eg. 978307200.0
 
-@property (nonatomic, retain) AddonData *addon;
-@property (nonatomic, retain) NSSet *tags;
-@property (nonatomic, retain) NSSet *todos;
+@property (nonatomic, strong) AddonData *addon;
+@property (nonatomic, strong) NSSet *tags;
+@property (nonatomic, strong) NSSet *todos;
 
 @property (nonatomic, readonly) NSNumber *check;
 

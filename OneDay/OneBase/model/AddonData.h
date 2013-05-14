@@ -11,18 +11,19 @@
 
 @interface AddonData : SSEntityBase
 
-@property (nonatomic, retain) NSString *dailyDoName;
-@property (nonatomic, retain) NSNumber *orderIndex;
-@property (nonatomic, retain) NSNumber *display;
-@property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *icon;
-@property (nonatomic, retain) NSString *cartoon;
-@property (nonatomic, retain) NSNumber *numberOfCartoons;
-@property (nonatomic, retain) NSNumber *detectType;
-@property (nonatomic, retain) NSNumber *showChecked;
-@property (nonatomic, retain) NSString *tipImage;
+@property (nonatomic, strong) NSString *dailyDoName;
+@property (nonatomic, strong) NSNumber *orderIndex;
+@property (nonatomic, strong) NSNumber *display;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *icon;
+@property (nonatomic, strong) NSString *cartoon;
+@property (nonatomic, strong) NSNumber *numberOfCartoons;
+@property (nonatomic, strong) NSNumber *detectType;
+@property (nonatomic, strong) NSNumber *showChecked;
+@property (nonatomic, strong) NSString *tipImage;
 
-@property (nonatomic, retain) NSSet *dailyDos;
+@property (nonatomic, strong) NSSet *dailyDos;
+@property (nonatomic, strong) NSSet *alarms;
 
 + (void)loadDefaultDataFromDefaultPlist;
 @end

@@ -30,29 +30,29 @@ static NSLocale* currentDateLocale() {
 
 #pragma mark - Getting begin of NSDate
 
-// Getting the beginning of the day
-static NSDate* beginningOfToday() {
-    NSDate *beginningOfToday = nil;
-    BOOL ok = [[NSCalendar currentCalendar] rangeOfUnit:NSDayCalendarUnit startDate:&beginningOfToday interval:NULL forDate:[NSDate date]];
-    if (ok) {
-        return beginningOfToday;
-    }
-    else {
-        return nil;
-    }
-}
+//// Getting the beginning of the day
+//static NSDate* beginningOfToday() {
+//    NSDate *beginningOfToday = nil;
+//    BOOL ok = [[NSCalendar currentCalendar] rangeOfUnit:NSDayCalendarUnit startDate:&beginningOfToday interval:NULL forDate:[NSDate date]];
+//    if (ok) {
+//        return beginningOfToday;
+//    }
+//    else {
+//        return nil;
+//    }
+//}
 
-// Getting the beginning of the day
-static NSDate *beginningOfTomorrow() {
-    NSDate *beginningOfTomorrow = nil;
-    BOOL ok = [[NSCalendar currentCalendar] rangeOfUnit:NSDayCalendarUnit startDate:&beginningOfTomorrow interval:NULL forDate:[NSDate currentTimeTomorrow]];
-    if (ok) {
-        return beginningOfTomorrow;
-    }
-    else {
-        return nil;
-    }
-}
+//// Getting the beginning of the day
+//static NSDate *beginningOfTomorrow() {
+//    NSDate *beginningOfTomorrow = nil;
+//    BOOL ok = [[NSCalendar currentCalendar] rangeOfUnit:NSDayCalendarUnit startDate:&beginningOfTomorrow interval:NULL forDate:[NSDate currentTimeTomorrow]];
+//    if (ok) {
+//        return beginningOfTomorrow;
+//    }
+//    else {
+//        return nil;
+//    }
+//}
 
 #pragma mark - date formmater
 

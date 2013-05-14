@@ -40,13 +40,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Actions
-
-- (IBAction)dismiss:(id)sender
-{
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-}
-
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -60,7 +53,8 @@
     
     WorkoutAlarmCellView *cell = [tableView dequeueReusableCellWithIdentifier:alarmCelID];
     if (indexPath.row < [_alarms count]) {
-        // need code
+        AlarmData *alarm = [_alarms objectAtIndex:indexPath.row];
+        cell.alarm = alarm;
     }
     return cell;
 }

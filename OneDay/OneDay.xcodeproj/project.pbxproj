@@ -976,8 +976,8 @@
 		3F55AAE116E50D4A00EBBA30 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F55A5FD16E50D4900EBBA30 /* Localizable.strings */; };
 		3F55AAE416E50D4A00EBBA30 /* AddonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55A60316E50D4900EBBA30 /* AddonManager.m */; };
 		3F55AAE516E50D4A00EBBA30 /* AddonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55A60316E50D4900EBBA30 /* AddonManager.m */; };
-		3F55AAE616E50D4A00EBBA30 /* AlarmNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55A60516E50D4900EBBA30 /* AlarmNotificationManager.m */; };
-		3F55AAE716E50D4A00EBBA30 /* AlarmNotificationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55A60516E50D4900EBBA30 /* AlarmNotificationManager.m */; };
+		3F55AAE616E50D4A00EBBA30 /* AlarmManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55A60516E50D4900EBBA30 /* AlarmManager.m */; };
+		3F55AAE716E50D4A00EBBA30 /* AlarmManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55A60516E50D4900EBBA30 /* AlarmManager.m */; };
 		3F55AAE816E50D4A00EBBA30 /* DailyDoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55A60716E50D4900EBBA30 /* DailyDoManager.m */; };
 		3F55AAE916E50D4A00EBBA30 /* DailyDoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55A60716E50D4900EBBA30 /* DailyDoManager.m */; };
 		3F55AAEE16E50D4A00EBBA30 /* HintHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55A60D16E50D4900EBBA30 /* HintHelper.m */; };
@@ -2212,8 +2212,8 @@
 		3F55A5FE16E50D4900EBBA30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3F55A60216E50D4900EBBA30 /* AddonManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddonManager.h; sourceTree = "<group>"; };
 		3F55A60316E50D4900EBBA30 /* AddonManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddonManager.m; sourceTree = "<group>"; };
-		3F55A60416E50D4900EBBA30 /* AlarmNotificationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmNotificationManager.h; sourceTree = "<group>"; };
-		3F55A60516E50D4900EBBA30 /* AlarmNotificationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmNotificationManager.m; sourceTree = "<group>"; };
+		3F55A60416E50D4900EBBA30 /* AlarmManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmManager.h; sourceTree = "<group>"; };
+		3F55A60516E50D4900EBBA30 /* AlarmManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmManager.m; sourceTree = "<group>"; };
 		3F55A60616E50D4900EBBA30 /* DailyDoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyDoManager.h; sourceTree = "<group>"; };
 		3F55A60716E50D4900EBBA30 /* DailyDoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyDoManager.m; sourceTree = "<group>"; };
 		3F55A60C16E50D4900EBBA30 /* HintHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HintHelper.h; sourceTree = "<group>"; };
@@ -3533,8 +3533,8 @@
 				3F55AC2A16E50DDE00EBBA30 /* OneDayHintDialogs.plist */,
 				3F55A60216E50D4900EBBA30 /* AddonManager.h */,
 				3F55A60316E50D4900EBBA30 /* AddonManager.m */,
-				3F55A60416E50D4900EBBA30 /* AlarmNotificationManager.h */,
-				3F55A60516E50D4900EBBA30 /* AlarmNotificationManager.m */,
+				3F55A60416E50D4900EBBA30 /* AlarmManager.h */,
+				3F55A60516E50D4900EBBA30 /* AlarmManager.m */,
 				3F55A60C16E50D4900EBBA30 /* HintHelper.h */,
 				3F55A60D16E50D4900EBBA30 /* HintHelper.m */,
 				3F55A60E16E50D4900EBBA30 /* CartoonManager.h */,
@@ -6033,7 +6033,7 @@
 				3F55AADD16E50D4A00EBBA30 /* TipViewController.m in Sources */,
 				3F55AADF16E50D4A00EBBA30 /* TodoViewController.m in Sources */,
 				3F55AAE516E50D4A00EBBA30 /* AddonManager.m in Sources */,
-				3F55AAE716E50D4A00EBBA30 /* AlarmNotificationManager.m in Sources */,
+				3F55AAE716E50D4A00EBBA30 /* AlarmManager.m in Sources */,
 				3F55AAE916E50D4A00EBBA30 /* DailyDoManager.m in Sources */,
 				3F55AAEF16E50D4A00EBBA30 /* HintHelper.m in Sources */,
 				3F55AAF116E50D4A00EBBA30 /* CartoonManager.m in Sources */,
@@ -6161,7 +6161,7 @@
 				3F55AADC16E50D4A00EBBA30 /* TipViewController.m in Sources */,
 				3F55AADE16E50D4A00EBBA30 /* TodoViewController.m in Sources */,
 				3F55AAE416E50D4A00EBBA30 /* AddonManager.m in Sources */,
-				3F55AAE616E50D4A00EBBA30 /* AlarmNotificationManager.m in Sources */,
+				3F55AAE616E50D4A00EBBA30 /* AlarmManager.m in Sources */,
 				3F55AAE816E50D4A00EBBA30 /* DailyDoManager.m in Sources */,
 				3F55AAEE16E50D4A00EBBA30 /* HintHelper.m in Sources */,
 				3F55AAF016E50D4A00EBBA30 /* CartoonManager.m in Sources */,

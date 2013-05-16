@@ -102,7 +102,7 @@
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if (event.subtype == UIEventSubtypeMotionShake) {
-        if (!_hint.shown) {
+        if (!_hint.shown && [SplashHelper sharedHelper].hasFliped) {
             if (hasHintForKey([self mainHintPrefix])) {
                 resetHasHintForKey([self mainHintPrefix]);
             }
@@ -149,8 +149,16 @@
     [super viewWillAppear:animated];
     
     if ([NSUserDefaults currentVersionFirstTimeRunByType:firstTimeTypeHomePage]) {
-        self.hint = [[HintHelper alloc] initWithViewController:self dialogsPathPrefix:[self mainHintPrefix]];
-        [_hint show];
+        if ([SplashHelper sharedHelper].hasFliped) {
+            self.hint = [[HintHelper alloc] initWithViewController:self dialogsPathPrefix:[self mainHintPrefix]];
+            [_hint show];
+        }
+        else {
+            [[SplashHelper sharedHelper] addFinishedBlock:^(SplashHelper *helper){
+                self.hint = [[HintHelper alloc] initWithViewController:self dialogsPathPrefix:[self mainHintPrefix]];
+                [_hint show];
+            }];
+        }
     }
     
     if (!_hasAppear) {

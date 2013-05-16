@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AlarmRepeatViewController : UITableViewController
+@class AlarmData;
 
+@interface AlarmRepeatViewController : UITableViewController
+@property (nonatomic) AlarmData *alarm;
 @end

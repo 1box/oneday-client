@@ -10,7 +10,7 @@
 #import "MoreViewController.h"
 #import "KMTableView.h"
 #import "MoreCell.h"
-#import "AlarmNotificationManager.h"
+#import "AlarmManager.h"
 #import "CartoonManager.h"
 #import "KMModelManager.h"
 #import "KMDateUtils.h"

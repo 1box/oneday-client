@@ -8,12 +8,16 @@
 
 #import "KMViewControllerBase.h"
 
+@class AddonData;
 @class KMTableView;
 
 @interface AddAlarmViewController : KMViewControllerBase
 
 @property (nonatomic) IBOutlet KMTableView *listView;
 @property (nonatomic) IBOutlet UIDatePicker *timePicker;
+@property (nonatomic) IBOutlet UISwitch *alarmTypeSwitch;
+
+@property (nonatomic) AddonData *addon;
 
 - (IBAction)save:(id)sender;
 - (IBAction)switchAlarmType:(id)sender;

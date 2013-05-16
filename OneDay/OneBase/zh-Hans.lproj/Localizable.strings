@@ -67,6 +67,8 @@
 "_dailyAlarmNotificationBody"="您今天仍有%@没有打钩，快去看看吧!";
 "Go and See"="知道了";
 "Check All"="全部完成";
+"AlarmDataDefaultTitle"="标题";
+"AlarmDataDefaultText"="摘要";
 
 // date formatter
 "UserFriendlyDateStringToday"="今天";

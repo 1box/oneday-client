@@ -87,9 +87,18 @@ typedef NS_ENUM(NSInteger, AlarmNotificationType) {
     AlarmNotificationTypeDailyDo
 };
 
-@interface AlarmNotificationManager : NSObject
+@class AddonData;
+@class AlarmData;
 
-+ (AlarmNotificationManager *)sharedManager;
+
+@interface AlarmManager : NSObject
+
++ (AlarmManager *)sharedManager;
+
+- (NSArray *)alarmsForAddon:(AddonData *)addon;
+- (AlarmData *)alarmForAddon:(AddonData *)addon;
+- (BOOL)insertAlarm:(AlarmData *)alarm;    // return YES for success
+
 - (void)rebuildAlarmNotifications;
 - (void)handleAlarmLocalNotification:(UILocalNotification *)notification;
 @end

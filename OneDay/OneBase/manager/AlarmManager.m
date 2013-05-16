@@ -6,28 +6,29 @@
 //  Copyright (c) 2012年 Kimi Yu. All rights reserved.
 //
 
-#import "AlarmNotificationManager.h"
+#import "AlarmManager.h"
 #import "AddonManager.h"
 #import "DailyDoManager.h"
 #import "KMModelManager.h"
 #import "AddonData.h"
 #import "DailyDoBase.h"
+#import "AlarmData.h"
 #import "TodoData.h"
 #import "KMDateUtils.h"
 #import "NSDateFormatter+NSDateFormatterAdditions.h"
 
-@interface AlarmNotificationManager () <UIAlertViewDelegate>
+@interface AlarmManager () <UIAlertViewDelegate>
 @property (nonatomic) UILocalNotification *localNotification;
 @end
 
-@implementation AlarmNotificationManager
+@implementation AlarmManager
 
-static AlarmNotificationManager *_sharedManager = nil;
-+ (AlarmNotificationManager *)sharedManager
+static AlarmManager *_sharedManager = nil;
++ (AlarmManager *)sharedManager
 {
     @synchronized(self) {
         if (!_sharedManager) {
-            _sharedManager = [[AlarmNotificationManager alloc] init];
+            _sharedManager = [[AlarmManager alloc] init];
         }
     }
     return _sharedManager;
@@ -39,7 +40,26 @@ static AlarmNotificationManager *_sharedManager = nil;
     return [super alloc];
 }
 
-#pragma mark - public
+#pragma mark - alarms
+
+- (NSArray *)alarmsForAddon:(AddonData *)addon
+{
+    return [addon.alarms sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"alarmTime" ascending:YES]]];
+}
+
+- (AlarmData *)alarmForAddon:(AddonData *)addon
+{
+    AlarmData *alarm = [AlarmData entityWithDictionary:nil];
+    alarm.addon = addon;
+    return alarm;
+}
+
+- (BOOL)insertAlarm:(AlarmData *)alarm
+{
+    return [[KMModelManager sharedManager] insertOrUpdateEntity:&alarm error:nil];
+}
+
+#pragma mark - alarm notifications
 
 - (void)handleAlarmLocalNotification:(UILocalNotification *)notification
 {

@@ -9,6 +9,7 @@
 #import "WorkoutAlarmViewController.h"
 #import "KMTableView.h"
 #import "WorkoutAlarmCellView.h"
+#import "AddAlarmViewController.h"
 
 
 @interface WorkoutAlarmViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -19,25 +20,13 @@
 
 @implementation WorkoutAlarmViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if ([segue.identifier isEqualToString:@"showAddAlarmView"]) {
+        UINavigationController *nav = segue.destinationViewController;
+        AddAlarmViewController *controller = (AddAlarmViewController *)nav.topViewController;
+        controller.addon = _addon;
     }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - UITableViewDataSource

@@ -8,6 +8,15 @@
 
 #import "KMViewControllerBase.h"
 
+typedef NS_ENUM(NSInteger, AlarmInputType) {
+    AlarmInputTypeTitle,
+    AlarmInputTypeText
+};
+
+@class AlarmData;
+
 @interface AlarmInputViewController : KMViewControllerBase
 @property (nonatomic) IBOutlet UITextField *textField;
+@property (nonatomic) AlarmInputType inputType;
+@property (nonatomic) AlarmData *alarm;
 @end

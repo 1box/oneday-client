@@ -7,6 +7,7 @@
 //
 
 #import "AlarmInputViewController.h"
+#import "AlarmData.h"
 
 @interface AlarmInputViewController () <UITextFieldDelegate>
 
@@ -14,25 +15,19 @@
 
 @implementation AlarmInputViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (IBAction)back:(id)sender
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    switch (_inputType) {
+        case AlarmInputTypeTitle:
+            _alarm.title = _textField.text;
+            break;
+            case AlarmInputTypeText:
+            _alarm.text = _textField.text;
+            break;
+        default:
+            break;
     }
-    return self;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super back:sender];
 }
 
 @end

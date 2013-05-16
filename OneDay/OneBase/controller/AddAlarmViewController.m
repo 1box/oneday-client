@@ -7,46 +7,70 @@
 //
 
 #import "AddAlarmViewController.h"
+#import "AlarmRepeatViewController.h"
+#import "AlarmInputViewController.h"
 #import "KMTableView.h"
 #import "KMTableViewCell.h"
+#import "AddonData.h"
+#import "AlarmData.h"
+#import "AlarmManager.h"
 
 @interface AddAlarmViewController () <UITableViewDataSource, UITableViewDelegate>
-
+@property (nonatomic) AlarmData *alarm;
 @end
 
 @implementation AddAlarmViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if ([segue.identifier isEqualToString:@"showAlarmEditRepeatType"]) {
+        AlarmRepeatViewController *controller = segue.destinationViewController;
+        controller.alarm = _alarm;
     }
-    return self;
+    else if ([segue.identifier isEqualToString:@"showAlarmEditTitle"]) {
+        AlarmInputViewController *controller = segue.destinationViewController;
+        controller.alarm = _alarm;
+        controller.inputType = AlarmInputTypeTitle;
+    }
+    else if ([segue.identifier isEqualToString:@"showAlarmEditText"]) {
+        AlarmInputViewController *controller = segue.destinationViewController;
+        controller.alarm = _alarm;
+        controller.inputType = AlarmInputTypeText;
+    }
 }
 
-- (void)viewDidLoad
+#pragma mark - View Lifecycles
+
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    [super viewWillAppear:animated];
+    self.alarm = [[AlarmManager sharedManager] alarmForAddon:_addon];
 }
 
-- (void)didReceiveMemoryWarning
+- (void)viewDidAppear:(BOOL)animated
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [super viewDidAppear:animated];
+    _alarmTypeSwitch.on = ([_alarm.type integerValue] == AlarmTypeGentle);
+    [_listView reloadData];
 }
 
 #pragma mark - Actions
 
 - (IBAction)save:(id)sender
 {
-    
+    [[AlarmManager sharedManager] insertAlarm:_alarm];
+    [self dismiss:sender];
 }
 
 - (IBAction)switchAlarmType:(id)sender
 {
-    
+    UISwitch *aSwitch = sender;
+    if (aSwitch.isOn) {
+        _alarm.type = [NSNumber numberWithInteger:AlarmTypeGentle];
+    }
+    else {
+        _alarm.type = [NSNumber numberWithInteger:AlarmTypeNag];
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -67,12 +91,27 @@
     static NSString *addAlarmAlarmTypeCellID = @"AddAlarmAlarmTypeCellID";
     static NSString *addAlarmTitleCellID = @"AddAlarmTitleCellID";
     static NSString *addAlarmTextCellID = @"AddAlarmTextCellID";
-    
-    if (indexPath.section == 0) {
-        KMTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:addAlarmRepeatTypeCellID];
-        return cell;
+    KMTableViewCell *cell = nil;
+    switch (indexPath.row) {
+        case 0:
+            cell = [tableView dequeueReusableCellWithIdentifier:addAlarmRepeatTypeCellID];
+            cell.detailTextLabel.text = [_alarm repeatText];
+            break;
+        case 1:
+            cell = [tableView dequeueReusableCellWithIdentifier:addAlarmAlarmTypeCellID];
+            break;
+        case 2:
+            cell = [tableView dequeueReusableCellWithIdentifier:addAlarmTitleCellID];
+            cell.detailTextLabel.text = _alarm.title;
+            break;
+        case 3:
+            cell = [tableView dequeueReusableCellWithIdentifier:addAlarmTextCellID];
+            cell.detailTextLabel.text = _alarm.text;
+            break;
+        default:
+            break;
     }
-    return nil;
+    return cell;
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath

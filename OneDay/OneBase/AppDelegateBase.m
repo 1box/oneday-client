@@ -11,7 +11,7 @@
 #import "AddonData.h"
 #import "TagManager.h"
 #import "KMModelManager.h"
-#import "AlarmNotificationManager.h"
+#import "AlarmManager.h"
 #import "CartoonManager.h"
 #import "AddonManager.h"
 #import "SplashHelper.h"
@@ -61,11 +61,11 @@
     UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     if (localNotification) {
         if ([SplashHelper sharedHelper].hasFliped) {
-            [[AlarmNotificationManager sharedManager] handleAlarmLocalNotification:localNotification];
+            [[AlarmManager sharedManager] handleAlarmLocalNotification:localNotification];
         }
         else {
             [[SplashHelper sharedHelper] addFinishedBlock:^(SplashHelper *helper) {
-                [[AlarmNotificationManager sharedManager] handleAlarmLocalNotification:localNotification];
+                [[AlarmManager sharedManager] handleAlarmLocalNotification:localNotification];
             }];
         }
     }
@@ -77,11 +77,11 @@
 {
     if ([[UIApplication sharedApplication] applicationState] != UIApplicationStateActive) {
         if ([SplashHelper sharedHelper].hasFliped) {
-            [[AlarmNotificationManager sharedManager] handleAlarmLocalNotification:notification];
+            [[AlarmManager sharedManager] handleAlarmLocalNotification:notification];
         }
         else {
             [[SplashHelper sharedHelper] addFinishedBlock:^(SplashHelper *helper) {
-                [[AlarmNotificationManager sharedManager] handleAlarmLocalNotification:notification];
+                [[AlarmManager sharedManager] handleAlarmLocalNotification:notification];
             }];
         }
     }
@@ -89,7 +89,7 @@
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
-    [[AlarmNotificationManager sharedManager] rebuildAlarmNotifications];
+    [[AlarmManager sharedManager] rebuildAlarmNotifications];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application

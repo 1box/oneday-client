@@ -23,11 +23,20 @@ typedef NS_ENUM(NSInteger, AlarmRepeatType) {
     AlarmRepeatTypeSaturday = (1UL << 6)
 };
 
+#define kMakeAlarmItemIDUserDefaultKey @"kMakeAlarmItemIDUserDefaultKey"
+static inline NSUInteger newAlarmItemID() {
+    NSUInteger makeID = [[NSUserDefaults standardUserDefaults] integerForKey:kMakeAlarmItemIDUserDefaultKey] + 1;
+    [[NSUserDefaults standardUserDefaults] setInteger:makeID forKey:kMakeAlarmItemIDUserDefaultKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    return makeID;
+}
+
 
 @class AddonData;
 
 @interface AlarmData : SSEntityBase
 
+@property (nonatomic, strong) NSNumber *itemID;
 @property (nonatomic, strong) NSString *alarmTime; // 24-hour style eg. 19:30
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *text;
@@ -37,4 +46,6 @@ typedef NS_ENUM(NSInteger, AlarmRepeatType) {
 
 @property (nonatomic, strong) AddonData *addon;
 
+- (NSString *)alarmTypeText;
+- (NSString *)repeatText;
 @end

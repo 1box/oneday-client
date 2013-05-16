@@ -14,6 +14,12 @@
 
 @implementation AlarmInputViewController
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    _textField.text = _alarm.text;
+}
+
 - (IBAction)back:(id)sender
 {
     _alarm.text = _textField.text;

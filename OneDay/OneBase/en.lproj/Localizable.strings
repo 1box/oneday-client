@@ -34,9 +34,12 @@
 "ShowAllUndosTitle"="Show all undos";
 "CashMonthSummaryTitle"="Month Summary";
 "CashYearSummaryTitle"="Year Summary";
+"AlarmNotificationTitle"="Alarm clock";
 "CashMonthSummaryText"="Month Cash: %f";
 "CashYearSummaryText"="Year Cash: %f";
-"DeleteAlarmSuccess"="Delete Success";
+"DeleteAlarmSuccess"="Delete Success.";
+"AlarmDataDefaultText"="Alarm clock";
+"CloseAllAlarmSuccess"="All alarms has been closed.";
 
 // tags
 "HomeTag"            ="At home";
@@ -67,7 +70,6 @@
 "_dailyAlarmNotificationBody"="Today you still have %@ not off, go and see it!";
 "Go and See"="I see";
 "Check All"="Check all";
-"AlarmDataDefaultText"="Snippet";
 
 // date formatter
 "UserFriendlyDateStringToday"="Today";

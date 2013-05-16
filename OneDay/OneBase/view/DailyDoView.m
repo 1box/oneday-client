@@ -137,7 +137,7 @@
     if ((actionType & DailyDoActionTypeShowAllUndos) == DailyDoActionTypeShowAllUndos ||
         (actionType & DailyDoActionTypeCashMonthSummary) == DailyDoActionTypeCashMonthSummary ||
         (actionType & DailyDoActionTypeCashYearSummary) == DailyDoActionTypeCashYearSummary ||
-        (actionType & DailyDoActionTypeWorkoutNotification) == DailyDoActionTypeWorkoutNotification) {
+        (actionType & DailyDoActionTypeAlarmNotification) == DailyDoActionTypeAlarmNotification) {
         
         [mutItems addObject:[items objectAtIndex:3]];
     }
@@ -253,8 +253,8 @@
     if (DailyDoActionTypeCashYearSummary == (actionType & DailyDoActionTypeCashYearSummary)) {
         [otherButtonTitles addObject:NSLocalizedString(@"CashYearSummaryTitle", nil)];
     }
-    if (DailyDoActionTypeWorkoutNotification == (actionType & DailyDoActionTypeWorkoutNotification)) {
-        [otherButtonTitles addObject:NSLocalizedString(@"WorkoutNotificationTitle", nil)];
+    if (DailyDoActionTypeAlarmNotification == (actionType & DailyDoActionTypeAlarmNotification)) {
+        [otherButtonTitles addObject:NSLocalizedString(@"AlarmNotificationTitle", nil)];
     }
     [otherButtonTitles addObject:NSLocalizedString(@"_cancel", nil)];
     
@@ -603,7 +603,7 @@
             [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
         }
             break;
-        case DailyDoActionTypeWorkoutNotification:
+        case DailyDoActionTypeAlarmNotification:
         {
             UINavigationController *nav = [[UIStoryboard storyboardWithName:@"OneDayStoryboard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"WorkoutAlarmNavigationControllerID"];
             WorkoutAlarmViewController *controller = (WorkoutAlarmViewController *)nav.topViewController;
@@ -640,7 +640,7 @@
                 if (DailyDoActionTypeCashYearSummary == (actionType & DailyDoActionTypeCashYearSummary)) {
                     [[DailyDoActionHelper sharedHelper] showCashYearSummary];
                 }
-                else if (DailyDoActionTypeWorkoutNotification == (actionType & DailyDoActionTypeWorkoutNotification)) {
+                else if (DailyDoActionTypeAlarmNotification == (actionType & DailyDoActionTypeAlarmNotification)) {
                     [[DailyDoActionHelper sharedHelper] showWorkoutAlarms];
                 }
             }

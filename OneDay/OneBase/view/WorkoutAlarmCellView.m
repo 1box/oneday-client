@@ -38,12 +38,14 @@
 {
     _alarm = alarm;
     if (_alarm) {
-        NSString *timeA = [HourToMiniteAFormatter() stringFromDate:[HourToMiniteAFormatter() dateFromString:_alarm.alarmTime]];
+        NSString *timeA = [HourToMiniteAFormatter() stringFromDate:[HourToMiniteFormatter() dateFromString:_alarm.alarmTime]];
         _AMPMLabel.text = [timeA substringFromIndex:5];
         _timeLabel.text = [timeA substringToIndex:4];
         _alarmTypeLabel.text = [_alarm alarmTypeText];
         _repeatLabel.text = [_alarm repeatText];
         _noteLabel.text = _alarm.text;
+        
+        _openSwitch.on = [_alarm.open boolValue];
     }
 }
 

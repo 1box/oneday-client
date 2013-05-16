@@ -111,7 +111,7 @@ static DailyDoActionHelper *_sharedHelper = nil;
 - (void)showWorkoutAlarms
 {
     if (_delegate && [_delegate respondsToSelector:@selector(dailyDoActionHelper:doActionForType:)]) {
-        [_delegate dailyDoActionHelper:self doActionForType:DailyDoActionTypeWorkoutNotification];
+        [_delegate dailyDoActionHelper:self doActionForType:DailyDoActionTypeAlarmNotification];
     }
 }
 

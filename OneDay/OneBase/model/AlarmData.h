@@ -14,6 +14,7 @@ typedef NS_ENUM(NSInteger, AlarmType) {
 };
 
 typedef NS_ENUM(NSInteger, AlarmRepeatType) {
+    AlarmRepeatTypeNever = 0,
     AlarmRepeatTypeSunday = 1UL,
     AlarmRepeatTypeMonday = (1UL << 1),
     AlarmRepeatTypeTuesday = (1UL << 2),

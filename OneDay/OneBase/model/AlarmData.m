@@ -135,6 +135,9 @@
     if (dayCount == 7) {
         return @"每天";
     }
+    else if (dayCount == 0) {
+        return @"从不";
+    }
     else {
         return [repeatText copy];
     }

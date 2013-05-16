@@ -14,6 +14,7 @@
 #import "AddonData.h"
 #import "AlarmData.h"
 #import "AlarmManager.h"
+#import "KMDateUtils.h"
 
 @interface AddAlarmViewController () <UITableViewDataSource, UITableViewDelegate>
 @end
@@ -38,7 +39,7 @@
 {
     [super viewWillAppear:animated];
     if (!_alarm) {
-        self.alarm = [[AlarmManager sharedManager] alarmForAddon:_addon];
+        self.alarm = [[AlarmManager sharedManager] alarmForDictionary:nil];
     }
 }
 
@@ -53,10 +54,22 @@
 
 - (IBAction)save:(id)sender
 {
-    [[AlarmManager sharedManager] insertOrUpdateAlarm:_alarm];
-    [[AlarmManager sharedManager] rebuildAlarmNotifications];
+    _alarm.alarmTime = [HourToMiniteFormatter() stringFromDate:_timePicker.date];
     
+    [[AlarmManager sharedManager] insertOrUpdateAlarm:_alarm toAddon:_addon];
+    [[AlarmManager sharedManager] rebuildAlarmNotifications];
+}
+
+- (IBAction)saveAndDismiss:(id)sender
+{
+    [self save:sender];
     [self dismiss:sender];
+}
+
+- (IBAction)saveAndBack:(id)sender
+{
+    [self save:sender];
+    [self back:sender];
 }
 
 - (IBAction)switchAlarmType:(id)sender
@@ -79,7 +92,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

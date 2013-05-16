@@ -8,36 +8,33 @@
 
 #import "AlarmRepeatViewController.h"
 #import "AlarmData.h"
+#import "KMTableView.h"
+#import "AlarmRepeatTypeCellView.h"
 
-@interface AlarmRepeatViewController () {
+#define AlarmRepeatTypeCellIDs @[@"SundayCellID", @"MondayCellID", @"TuesdayCellID", @"WednesdayCellID", @"ThursdayCellID", @"FridayCellID", @"SaturdayCellID"]
+
+
+@interface AlarmRepeatViewController () <UITableViewDataSource, UITableViewDelegate> {
     AlarmRepeatType _repeatType;
 }
-
+@property (nonatomic) IBOutlet KMTableView *listView;
 @end
+
 
 @implementation AlarmRepeatViewController
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+- (void)viewWillAppear:(BOOL)animated
 {
-    return 1;
+    [super viewWillAppear:animated];
+    _repeatType = [_alarm.repeatType integerValue];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 7;
-}
+#pragma mark - private
 
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (AlarmRepeatType)repeatTypeForRow:(NSInteger)row
 {
-    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    cell.editing = !cell.isEditing;
-    
     AlarmRepeatType repeatType;
-    switch (indexPath.row) {
+    switch (row) {
         case 0:
             repeatType = AlarmRepeatTypeSunday;
             break;
@@ -60,12 +57,74 @@
             repeatType = AlarmRepeatTypeSaturday;
             break;
     }
-    
-    if (cell.isEditing) {
-        _repeatType = _repeatType&repeatType;
+    return repeatType;
+}
+
+- (void)updateRepeatType
+{
+    AlarmRepeatType repeatType = AlarmRepeatTypeNever;
+    for (int i=0; i<7; i++) {
+        AlarmRepeatTypeCellView *tCell = (AlarmRepeatTypeCellView *)[_listView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0]];
+        if (tCell.isChecked) {
+            if (repeatType == AlarmRepeatTypeNever) {
+                repeatType = [self repeatTypeForRow:i];
+            }
+            else {
+                repeatType |= [self repeatTypeForRow:i];
+            }
+        }
     }
-    else {
-        _repeatType = _repeatType|repeatType;
+    _repeatType = repeatType;
+}
+
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 7;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    KMCheckboxTableCell *cell = [tableView dequeueReusableCellWithIdentifier:[AlarmRepeatTypeCellIDs stringWithEnum:indexPath.row]];
+    
+    AlarmRepeatType repeatType = [self repeatTypeForRow:indexPath.row];
+    cell.checked = repeatType == (repeatType & _repeatType);
+    
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_listView updateBackgroundViewForCell:cell atIndexPath:indexPath backgroundViewType:KMTableViewCellBackgroundViewTypeNormal];
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0) {
+        AlarmRepeatTypeCellView *cell = (AlarmRepeatTypeCellView*)[tableView cellForRowAtIndexPath:indexPath];
+        cell.checked = !cell.isChecked;
+        [self updateRepeatType];
+    }
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_listView updateBackgroundViewForCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath backgroundViewType:KMTableViewCellBackgroundViewTypeSelected];
+}
+
+- (void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    for (UITableViewCell *tCell in tableView.visibleCells) {
+        [_listView updateBackgroundViewForCell:tCell atIndexPath:[tableView indexPathForCell:tCell] backgroundViewType:KMTableViewCellBackgroundViewTypeNormal];
     }
 }
 

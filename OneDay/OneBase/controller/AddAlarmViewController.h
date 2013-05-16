@@ -21,6 +21,7 @@
 @property (nonatomic) AddonData *addon;
 @property (nonatomic) AlarmData *alarm;
 
-- (IBAction)save:(id)sender;
+- (IBAction)saveAndDismiss:(id)sender;
+- (IBAction)saveAndBack:(id)sender;
 - (IBAction)switchAlarmType:(id)sender;
 @end

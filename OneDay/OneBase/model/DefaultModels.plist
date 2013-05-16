@@ -72,7 +72,7 @@
 		</dict>
 		<dict>
 			<key>display</key>
-			<false/>
+			<true/>
 			<key>cartoon</key>
 			<string>sumou</string>
 			<key>detect_type</key>
@@ -86,7 +86,7 @@
 			<key>icon</key>
 			<string>daily_calorie.png</string>
 			<key>order_index</key>
-			<integer>3</integer>
+			<integer>4</integer>
 			<key>show_checked</key>
 			<false/>
 			<key>tip_image</key>
@@ -94,7 +94,7 @@
 		</dict>
 		<dict>
 			<key>display</key>
-			<false/>
+			<true/>
 			<key>cartoon</key>
 			<string>human</string>
 			<key>detect_type</key>
@@ -108,7 +108,7 @@
 			<key>icon</key>
 			<string>daily_workout.png</string>
 			<key>order_index</key>
-			<integer>4</integer>
+			<integer>5</integer>
 			<key>show_checked</key>
 			<true/>
 			<key>tip_image</key>
@@ -130,7 +130,7 @@
 			<key>icon</key>
 			<string>daily_memo.png</string>
 			<key>order_index</key>
-			<integer>5</integer>
+			<integer>3</integer>
 			<key>show_checked</key>
 			<true/>
 			<key>tip_image</key>

@@ -140,7 +140,7 @@ static DailyDoManager *_sharedManager;
         dailyDo = [dailyDos objectAtIndex:0];
     }
     else {
-        dailyDo = [DailyDoData insertEntityWithDictionary:nil];
+        dailyDo = [DailyDoData dataEntityWithInsert:YES];
         dailyDo.addon = addon;
         dailyDo.createTime = [NSNumber numberWithDouble:[[[NSDate date] sameTimeTomorrow] timeIntervalSince1970]];
         [[KMModelManager sharedManager] saveContext:nil];
@@ -175,7 +175,7 @@ static DailyDoManager *_sharedManager;
         dailyDo = [dailyDos objectAtIndex:0];
     }
     else {
-        dailyDo = [DailyDoData insertEntityWithDictionary:nil];
+        dailyDo = [DailyDoData dataEntityWithInsert:YES];
         dailyDo.addon = addon;
     }
     

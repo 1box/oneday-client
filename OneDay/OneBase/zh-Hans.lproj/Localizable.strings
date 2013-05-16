@@ -34,10 +34,12 @@
 "ShowAllUndosTitle"="查看所有未完成";
 "CashMonthSummaryTitle"="月收支汇总";
 "CashYearSummaryTitle"="年收支汇总";
-"WorkoutNotificationTitle"="定时提醒";
+"AlarmNotificationTitle"="定时提醒";
 "CashMonthSummaryText"="月收支: %f";
 "CashYearSummaryText"="年收支: %f";
 "DeleteAlarmSuccess"="闹铃删除成功";
+"AlarmDataDefaultText"="闹钟";
+"CloseAllAlarmSuccess"="所有闹铃已关闭";
 
 // tags
 "HomeTag"            ="在家";
@@ -68,7 +70,6 @@
 "_dailyAlarmNotificationBody"="您今天仍有%@没有打钩，快去看看吧!";
 "Go and See"="知道了";
 "Check All"="全部完成";
-"AlarmDataDefaultText"="摘要";
 
 // date formatter
 "UserFriendlyDateStringToday"="今天";

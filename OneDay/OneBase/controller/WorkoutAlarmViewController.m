@@ -11,7 +11,10 @@
 #import "WorkoutAlarmCellView.h"
 #import "AddAlarmViewController.h"
 #import "AlarmManager.h"
+#import "KMModelManager.h"
+#import "AlarmData.h"
 #import "MTStatusBarOverlay.h"
+#import "DarkNavigationBarButton.h"
 
 
 @interface WorkoutAlarmViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -36,15 +39,25 @@
         UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
         leftButton.frame = CGRectMake(5.f, 0, 44.f, 44.f);
         [leftButton setImage:[UIImage imageNamed:@"dark_nav_back.png"] forState:UIControlStateNormal];
-        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
         [leftButton addTarget:tController action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
         tController.navigationItem.leftBarButtonItem = leftItem;
         
-        tController.addon = _addon;
+        DarkNavigationBarButton *rightButton = (DarkNavigationBarButton *)tController.navigationItem.rightBarButtonItem.customView;
+        [rightButton removeTarget:tController action:@selector(saveAndDismiss:) forControlEvents:UIControlEventTouchUpInside];
+        [rightButton addTarget:tController action:@selector(saveAndBack:) forControlEvents:UIControlEventTouchUpInside];
         
-#warning test if earlier than willAppear?
-        tController.alarm = [_alarms objectAtIndex:_selectIndexPath];
+        tController.addon = _addon;
+        tController.alarm = [_alarms objectAtIndex:_selectIndexPath.row];
     }
+}
+
+#pragma mark - View Lifecycles
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.alarms = [[AlarmManager sharedManager] alarmsForAddon:_addon];
+    [_alarmView reloadData];
 }
 
 #pragma mark - Actions
@@ -52,6 +65,24 @@
 - (IBAction)edit:(id)sender
 {
     _alarmView.editing = !_alarmView.isEditing;
+}
+
+- (IBAction)closeAll:(id)sender
+{
+    __block BOOL needSave = NO;
+    [_alarms enumerateObjectsUsingBlock:^(AlarmData *alarm, NSUInteger idx, BOOL *stop) {
+        if ([alarm.open boolValue]) {
+            alarm.open = @NO;
+            needSave = YES;
+        }
+    }];
+    
+    if (needSave) {
+        [[KMModelManager sharedManager] saveContext:nil];
+        [_alarmView reloadData];
+        
+        [[MTStatusBarOverlay sharedOverlay] postFinishMessage:NSLocalizedString(@"CloseAllAlarmSuccess", nil) duration:2.f];
+    }
 }
 
 #pragma mark - UITableViewDataSource
@@ -78,11 +109,6 @@
     [_alarmView updateBackgroundViewForCell:cell atIndexPath:indexPath backgroundViewType:KMTableViewCellBackgroundViewTypeNormal];
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return YES;
-}
-
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return NSLocalizedString(@"delete", nil);
@@ -96,6 +122,12 @@
         AlarmData *alarm = [_alarms objectAtIndex:indexPath.row];
         if ([[AlarmManager sharedManager] removeAlarm:alarm]) {
             [[MTStatusBarOverlay sharedOverlay] postFinishMessage:NSLocalizedString(@"DeleteAlarmSuccess", nil) duration:2.f];
+            
+            NSMutableArray *mutAlarms = [NSMutableArray arrayWithArray:_alarms];
+            [mutAlarms removeObject:alarm];
+            self.alarms = [mutAlarms copy];
+            
+            [tableView reloadData];
         }
     }
 }
@@ -103,11 +135,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.selectIndexPath = indexPath;
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
 }
 
 - (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    self.selectIndexPath = indexPath;
     [_alarmView updateBackgroundViewForCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath backgroundViewType:KMTableViewCellBackgroundViewTypeSelected];
 }
 

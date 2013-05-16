@@ -96,8 +96,8 @@ typedef NS_ENUM(NSInteger, AlarmNotificationType) {
 + (AlarmManager *)sharedManager;
 
 - (NSArray *)alarmsForAddon:(AddonData *)addon;
-- (AlarmData *)alarmForAddon:(AddonData *)addon;
-- (BOOL)insertOrUpdateAlarm:(AlarmData *)alarm;    // return YES for success
+- (AlarmData *)alarmForDictionary:(NSDictionary *)dictionary;
+- (BOOL)insertOrUpdateAlarm:(AlarmData *)alarm toAddon:(AddonData *)addon;    // return YES for success
 - (BOOL)removeAlarm:(AlarmData *)alarm;    // return YES for success
 
 - (void)rebuildAlarmNotifications;

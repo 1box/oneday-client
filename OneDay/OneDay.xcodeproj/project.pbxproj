@@ -1461,6 +1461,8 @@
 		CB48EC8C17400A6E00B232CB /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB48EC8A17400A6E00B232CB /* SummaryViewController.m */; };
 		CB620E88173C933200E4F3DC /* SplashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB620E87173C933200E4F3DC /* SplashHelper.m */; };
 		CB620E89173C933200E4F3DC /* SplashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB620E87173C933200E4F3DC /* SplashHelper.m */; };
+		CB7421721745437200B75267 /* AlarmRepeatTypeCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7421711745437200B75267 /* AlarmRepeatTypeCellView.m */; };
+		CB7421731745437200B75267 /* AlarmRepeatTypeCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7421711745437200B75267 /* AlarmRepeatTypeCellView.m */; };
 		CB886CA4173BCB8E0074586F /* UMTableViewController_N.m in Sources */ = {isa = PBXBuildFile; fileRef = CB886C7F173BCB8E0074586F /* UMTableViewController_N.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		CB886CA5173BCB8E0074586F /* UMTableViewController_N.m in Sources */ = {isa = PBXBuildFile; fileRef = CB886C7F173BCB8E0074586F /* UMTableViewController_N.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		CB886CA6173BCB8E0074586F /* UMTableViewController_New.m in Sources */ = {isa = PBXBuildFile; fileRef = CB886C81173BCB8E0074586F /* UMTableViewController_New.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
@@ -2554,6 +2556,8 @@
 		CB48EC8A17400A6E00B232CB /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
 		CB620E86173C933200E4F3DC /* SplashHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashHelper.h; sourceTree = "<group>"; };
 		CB620E87173C933200E4F3DC /* SplashHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashHelper.m; sourceTree = "<group>"; };
+		CB7421701745437200B75267 /* AlarmRepeatTypeCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmRepeatTypeCellView.h; sourceTree = "<group>"; };
+		CB7421711745437200B75267 /* AlarmRepeatTypeCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmRepeatTypeCellView.m; sourceTree = "<group>"; };
 		CB886C7E173BCB8E0074586F /* UMTableViewController_N.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMTableViewController_N.h; sourceTree = "<group>"; };
 		CB886C7F173BCB8E0074586F /* UMTableViewController_N.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMTableViewController_N.m; sourceTree = "<group>"; };
 		CB886C80173BCB8E0074586F /* UMTableViewController_New.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMTableViewController_New.h; sourceTree = "<group>"; };
@@ -3599,6 +3603,8 @@
 		3F55A6AB16E50D4A00EBBA30 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				CB7421701745437200B75267 /* AlarmRepeatTypeCellView.h */,
+				CB7421711745437200B75267 /* AlarmRepeatTypeCellView.m */,
 				CB8CE0F4173E327A00B0E275 /* UndoCellView.h */,
 				CB8CE0F5173E327A00B0E275 /* UndoCellView.m */,
 				3F55A6AC16E50D4A00EBBA30 /* AddonsCell.h */,
@@ -6093,6 +6099,7 @@
 				CB43D0A51742A1320075A2B1 /* AddAlarmViewController.m in Sources */,
 				CB43D0A91742A5080075A2B1 /* AlarmRepeatViewController.m in Sources */,
 				CB43D0AD1742A52C0075A2B1 /* AlarmInputViewController.m in Sources */,
+				CB7421731745437200B75267 /* AlarmRepeatTypeCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6221,6 +6228,7 @@
 				CB43D0A41742A1320075A2B1 /* AddAlarmViewController.m in Sources */,
 				CB43D0A81742A5080075A2B1 /* AlarmRepeatViewController.m in Sources */,
 				CB43D0AC1742A52C0075A2B1 /* AlarmInputViewController.m in Sources */,
+				CB7421721745437200B75267 /* AlarmRepeatTypeCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

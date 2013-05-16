@@ -52,23 +52,24 @@ static AlarmManager *_sharedManager = nil;
     return [addon.alarms sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"alarmTime" ascending:YES]]];
 }
 
-- (AlarmData *)alarmForAddon:(AddonData *)addon
+- (AlarmData *)alarmForDictionary:(NSDictionary *)dictionary
 {
-    AlarmData *alarm = [AlarmData entityWithDictionary:nil];
-    alarm.addon = addon;
+    AlarmData *alarm = [AlarmData entityWithDictionary:dictionary];
     return alarm;
 }
 
-- (BOOL)insertOrUpdateAlarm:(AlarmData *)alarm
+- (BOOL)insertOrUpdateAlarm:(AlarmData *)alarm toAddon:(AddonData *)addon
 {
     BOOL success = [[KMModelManager sharedManager] insertOrUpdateEntity:&alarm error:nil];
     if (success) {
-        DailyDoBase *todayDo = [[DailyDoManager sharedManager] todayDoForAddon:alarm.addon];
+        alarm.addon = addon;
+        
+        DailyDoBase *todayDo = [[DailyDoManager sharedManager] todayDoForAddon:addon];
         TodoData *todo = [todayDo todoForAlarm:alarm];
         if (!todo) {
             todo = [todayDo insertNewTodoAtIndex:0];
         }
-        [todo updateWithAlarm:alarm save:YES];
+        [todo updateWithAlarm:alarm save:YES];  // save here
     }
     return success;
 }

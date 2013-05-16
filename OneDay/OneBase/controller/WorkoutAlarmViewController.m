@@ -10,11 +10,14 @@
 #import "KMTableView.h"
 #import "WorkoutAlarmCellView.h"
 #import "AddAlarmViewController.h"
+#import "AlarmManager.h"
+#import "MTStatusBarOverlay.h"
 
 
 @interface WorkoutAlarmViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) IBOutlet KMTableView *alarmView;
 @property (nonatomic) NSArray *alarms;
+@property (nonatomic) NSIndexPath *selectIndexPath;
 @end
 
 
@@ -24,9 +27,31 @@
 {
     if ([segue.identifier isEqualToString:@"showAddAlarmView"]) {
         UINavigationController *nav = segue.destinationViewController;
-        AddAlarmViewController *controller = (AddAlarmViewController *)nav.topViewController;
-        controller.addon = _addon;
+        AddAlarmViewController *tController = (AddAlarmViewController *)nav.topViewController;
+        tController.addon = _addon;
     }
+    else if ([segue.identifier isEqualToString:@"showEditAddAlarmView"]) {
+        AddAlarmViewController *tController = (AddAlarmViewController *)segue.destinationViewController;
+        
+        UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        leftButton.frame = CGRectMake(5.f, 0, 44.f, 44.f);
+        [leftButton setImage:[UIImage imageNamed:@"dark_nav_back.png"] forState:UIControlStateNormal];
+        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
+        [leftButton addTarget:tController action:@selector(back:) forControlEvents:UIControlEventTouchUpInside];
+        tController.navigationItem.leftBarButtonItem = leftItem;
+        
+        tController.addon = _addon;
+        
+#warning test if earlier than willAppear?
+        tController.alarm = [_alarms objectAtIndex:_selectIndexPath];
+    }
+}
+
+#pragma mark - Actions
+
+- (IBAction)edit:(id)sender
+{
+    _alarmView.editing = !_alarmView.isEditing;
 }
 
 #pragma mark - UITableViewDataSource
@@ -53,13 +78,32 @@
     [_alarmView updateBackgroundViewForCell:cell atIndexPath:indexPath backgroundViewType:KMTableViewCellBackgroundViewTypeNormal];
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NSLocalizedString(@"delete", nil);
+}
+
 #pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete && indexPath.row < [_alarms count]) {
+        AlarmData *alarm = [_alarms objectAtIndex:indexPath.row];
+        if ([[AlarmManager sharedManager] removeAlarm:alarm]) {
+            [[MTStatusBarOverlay sharedOverlay] postFinishMessage:NSLocalizedString(@"DeleteAlarmSuccess", nil) duration:2.f];
+        }
+    }
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row < [_alarms count]) {
-        // need code
-    }
+    self.selectIndexPath = indexPath;
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath

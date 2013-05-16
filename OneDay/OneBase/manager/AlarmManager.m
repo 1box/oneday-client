@@ -17,9 +17,14 @@
 #import "KMDateUtils.h"
 #import "NSDateFormatter+NSDateFormatterAdditions.h"
 
+#define kEverydayAlarmAlertKey 10909
+#define kAddonAlarmAlertKey 10910
+
+
 @interface AlarmManager () <UIAlertViewDelegate>
 @property (nonatomic) UILocalNotification *localNotification;
 @end
+
 
 @implementation AlarmManager
 
@@ -54,9 +59,30 @@ static AlarmManager *_sharedManager = nil;
     return alarm;
 }
 
-- (BOOL)insertAlarm:(AlarmData *)alarm
+- (BOOL)insertOrUpdateAlarm:(AlarmData *)alarm
 {
-    return [[KMModelManager sharedManager] insertOrUpdateEntity:&alarm error:nil];
+    BOOL success = [[KMModelManager sharedManager] insertOrUpdateEntity:&alarm error:nil];
+    if (success) {
+        DailyDoBase *todayDo = [[DailyDoManager sharedManager] todayDoForAddon:alarm.addon];
+        TodoData *todo = [todayDo todoForAlarm:alarm];
+        if (!todo) {
+            todo = [todayDo insertNewTodoAtIndex:0];
+        }
+        [todo updateWithAlarm:alarm save:YES];
+    }
+    return success;
+}
+
+- (BOOL)removeAlarm:(AlarmData *)alarm
+{
+    DailyDoBase *todayDo = [[DailyDoManager sharedManager] todayDoForAddon:alarm.addon];
+    TodoData *todo = [todayDo todoForAlarm:alarm];
+    if (todo) {
+        [[KMModelManager sharedManager] removeEntities:@[todo] save:NO error:nil];
+    }
+    
+    BOOL success = [[KMModelManager sharedManager] removeEntities:@[alarm] error:nil];
+    return success;
 }
 
 #pragma mark - alarm notifications
@@ -66,15 +92,36 @@ static AlarmManager *_sharedManager = nil;
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     
     AlarmNotificationType alarmType = [[notification.userInfo objectForKey:kAlarmNotificationTypeKey] integerValue];
-    if (alarmType == AlarmNotificationTypeEveryday) {
-        self.localNotification = notification;
-        NSDate *createDate = [notification.userInfo objectForKey:kAlarmNotificationCreateDateKey];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[YearToDayFormatter() userFriendlyStringFromDate:createDate]
-                                                        message:notification.alertBody
-                                                       delegate:self
-                                              cancelButtonTitle:NSLocalizedString(@"Go and See", nil)
-                                              otherButtonTitles:NSLocalizedString(@"Check All", nil), nil];
-        [alert show];
+    switch (alarmType) {
+        case AlarmNotificationTypeAddonAlarm:
+        {
+            self.localNotification = notification;
+            NSDate *createDate = [notification.userInfo objectForKey:kAlarmNotificationCreateDateKey];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[YearToDayFormatter() userFriendlyStringFromDate:createDate]
+                                                            message:notification.alertBody
+                                                           delegate:self
+                                                  cancelButtonTitle:NSLocalizedString(@"Go and See", nil)
+                                                  otherButtonTitles:nil];
+            alert.tag = kAddonAlarmAlertKey;
+            [alert show];
+        }
+            break;
+        case AlarmNotificationTypeEveryday:
+        {
+            self.localNotification = notification;
+            NSDate *createDate = [notification.userInfo objectForKey:kAlarmNotificationCreateDateKey];
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:[YearToDayFormatter() userFriendlyStringFromDate:createDate]
+                                                            message:notification.alertBody
+                                                           delegate:self
+                                                  cancelButtonTitle:NSLocalizedString(@"Go and See", nil)
+                                                  otherButtonTitles:NSLocalizedString(@"Check All", nil), nil];
+            alert.tag = kEverydayAlarmAlertKey;
+            [alert show];
+        }
+            break;
+            
+        default:
+            break;
     }
 }
 
@@ -82,9 +129,57 @@ static AlarmManager *_sharedManager = nil;
 {
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
     [self scheduleDailyAlarmNotification];
+    [self scheduleDailyAlarmNotification];
 }
 
 #pragma mark - private
+
+- (void)scheduleAddonAlarmNotification
+{
+    NSMutableDictionary *mutLocalNotifications = [NSMutableDictionary dictionaryWithCapacity:20];
+    
+    NSArray *addons = [[AddonManager sharedManager] alarmAddons];
+    [addons enumerateObjectsUsingBlock:^(AddonData *addon, NSUInteger idx, BOOL *stop) {
+        
+        NSArray *alarms = [[AlarmManager sharedManager] alarmsForAddon:addon];
+        [alarms enumerateObjectsUsingBlock:^(AlarmData *alarm, NSUInteger idx, BOOL *stop) {
+            
+            UILocalNotification *localNotification = [mutLocalNotifications objectForKey:alarm.alarmTime];
+            if (!localNotification) {
+                localNotification = [[UILocalNotification alloc] init];
+                localNotification.timeZone = [NSTimeZone defaultTimeZone];
+                localNotification.repeatInterval = 0;
+                localNotification.alertAction = NSLocalizedString(@"Go", nil);
+                NSDate *fireDate = [HourToMiniteFormatter() todayDateFromString:alarm.alarmTime];
+                if ([fireDate earlierDate:[NSDate date]] == fireDate) {
+                    fireDate = [fireDate sameTimeTomorrow];
+                }
+                localNotification.fireDate = fireDate;
+                localNotification.userInfo = @{
+                kAlarmNotificationTypeKey : [NSNumber numberWithInteger:AlarmNotificationTypeAddonAlarm],
+                kAlarmNotificationCreateDateKey : [NSDate date]
+                };
+            }
+            
+            NSMutableString *message = [NSMutableString stringWithCapacity:100];
+                NSString *alertBody = localNotification.alertBody;
+                if (!KMEmptyString(alertBody)) {
+                    [message appendFormat:@"%@; ", alertBody];
+                }
+                else {
+                    [message appendFormat:@"%@: ", NSLocalizedString(addon.dailyDoName, nil)];
+                }
+            [message appendString:alarm.text];
+            localNotification.alertBody = [message copy];
+            
+            [mutLocalNotifications setObject:localNotification forKey:alarm.alarmTime];
+        }];
+    }];
+    
+    [mutLocalNotifications.allValues enumerateObjectsUsingBlock:^(UILocalNotification *notification, NSUInteger idx, BOOL *stop) {
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    }];
+}
 
 - (void)scheduleDailyAlarmNotification
 {
@@ -143,7 +238,11 @@ static AlarmManager *_sharedManager = nil;
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex != alertView.cancelButtonIndex) {
+    if (alertView.tag == kAddonAlarmAlertKey) {
+        // do nothing
+    }
+    else {
+        if (buttonIndex != alertView.cancelButtonIndex) {
         // mark all check
         NSArray *addons = [[AddonManager sharedManager] alarmAddons];
         [addons enumerateObjectsUsingBlock:^(AddonData *tAddon, NSUInteger idx, BOOL *stop) {
@@ -157,7 +256,9 @@ static AlarmManager *_sharedManager = nil;
             }
         }];
         [[KMModelManager sharedManager] saveContext:nil];
+        }
     }
+    
     [self rebuildAlarmNotifications];
 }
 

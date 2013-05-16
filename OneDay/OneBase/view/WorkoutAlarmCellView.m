@@ -8,6 +8,8 @@
 
 #import "WorkoutAlarmCellView.h"
 #import "AlarmData.h"
+#import "KMModelManager.h"
+#import "AlarmManager.h"
 #import "KMDateUtils.h"
 
 
@@ -45,5 +47,13 @@
     }
 }
 
+- (IBAction)handleOpenSwitch:(id)sender
+{
+    UISwitch *aSwitch = sender;
+    _alarm.open = [NSNumber numberWithBool:aSwitch.isOn];
+    [[KMModelManager sharedManager] saveContext:nil];
+    
+    [[AlarmManager sharedManager] rebuildAlarmNotifications];
+}
 
 @end

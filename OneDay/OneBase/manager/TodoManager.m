@@ -30,7 +30,7 @@ static TodoManager *_sharedManager = nil;
     return [super alloc];
 }
 
-- (void)undosForCondition:(NSDictionary *)condition
+- (void)loadUndosForCondition:(NSDictionary *)condition
 {
     AddonData *addon = [condition objectForKey:kTodoManagerLoadConditionAddonKey];
     

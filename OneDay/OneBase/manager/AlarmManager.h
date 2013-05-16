@@ -84,7 +84,7 @@ static inline void setMakeAlarmVibrator(BOOL make) {
 
 typedef NS_ENUM(NSInteger, AlarmNotificationType) {
     AlarmNotificationTypeEveryday = 0,
-    AlarmNotificationTypeDailyDo
+    AlarmNotificationTypeAddonAlarm
 };
 
 @class AddonData;
@@ -97,7 +97,8 @@ typedef NS_ENUM(NSInteger, AlarmNotificationType) {
 
 - (NSArray *)alarmsForAddon:(AddonData *)addon;
 - (AlarmData *)alarmForAddon:(AddonData *)addon;
-- (BOOL)insertAlarm:(AlarmData *)alarm;    // return YES for success
+- (BOOL)insertOrUpdateAlarm:(AlarmData *)alarm;    // return YES for success
+- (BOOL)removeAlarm:(AlarmData *)alarm;    // return YES for success
 
 - (void)rebuildAlarmNotifications;
 - (void)handleAlarmLocalNotification:(UILocalNotification *)notification;

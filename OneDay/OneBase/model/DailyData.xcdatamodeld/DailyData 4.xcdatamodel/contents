@@ -23,6 +23,7 @@
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="addon" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="AddonData" inverseName="alarms" inverseEntity="AddonData" syncable="YES"/>
+        <relationship name="todos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TodoData" inverseName="alarm" inverseEntity="TodoData" syncable="YES"/>
     </entity>
     <entity name="DailyCalorieData" representedClassName="DailyCalorie" parentEntity="DailyDoBase" syncable="YES"/>
     <entity name="DailyCashData" representedClassName="DailyCash" parentEntity="DailyDoBase" syncable="YES"/>
@@ -63,11 +64,12 @@
         <attribute name="money" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="quantity" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="startTime" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="alarm" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="AlarmData" inverseName="todos" inverseEntity="AlarmData" syncable="YES"/>
         <relationship name="dailyDo" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="DailyDoBase" inverseName="todos" inverseEntity="DailyDoBase" syncable="YES"/>
     </entity>
     <elements>
         <element name="AddonData" positionX="160" positionY="192" width="128" height="225"/>
-        <element name="AlarmData" positionX="160" positionY="192" width="128" height="165"/>
+        <element name="AlarmData" positionX="160" positionY="192" width="128" height="180"/>
         <element name="DailyCalorieData" positionX="160" positionY="192" width="128" height="45"/>
         <element name="DailyCashData" positionX="160" positionY="192" width="128" height="45"/>
         <element name="DailyDoBase" positionX="160" positionY="192" width="128" height="135"/>
@@ -76,6 +78,6 @@
         <element name="DailyShortData" positionX="160" positionY="192" width="128" height="60"/>
         <element name="DailyWorkoutData" positionX="160" positionY="192" width="128" height="45"/>
         <element name="TagData" positionX="160" positionY="192" width="128" height="120"/>
-        <element name="TodoData" positionX="160" positionY="192" width="128" height="255"/>
+        <element name="TodoData" positionX="160" positionY="192" width="128" height="270"/>
     </elements>
 </model>

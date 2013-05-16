@@ -8,8 +8,10 @@
 
 #import "DailyDoManager.h"
 #import "KMModelManager.h"
+#import "AlarmManager.h"
 #import "AddonData.h"
 #import "DailyDoBase.h"
+#import "AlarmData.h"
 #import "TodoData.h"
 #import "KMDateUtils.h"
 #import "SMDetector.h"
@@ -138,7 +140,7 @@ static DailyDoManager *_sharedManager;
         dailyDo = [dailyDos objectAtIndex:0];
     }
     else {
-        dailyDo = [DailyDoData dataEntityWithInsert:YES];
+        dailyDo = [DailyDoData insertEntityWithDictionary:nil];
         dailyDo.addon = addon;
         dailyDo.createTime = [NSNumber numberWithDouble:[[[NSDate date] sameTimeTomorrow] timeIntervalSince1970]];
         [[KMModelManager sharedManager] saveContext:nil];
@@ -173,10 +175,12 @@ static DailyDoManager *_sharedManager;
         dailyDo = [dailyDos objectAtIndex:0];
     }
     else {
-        dailyDo = [DailyDoData dataEntityWithInsert:YES];
+        dailyDo = [DailyDoData insertEntityWithDictionary:nil];
         dailyDo.addon = addon;
-        [[KMModelManager sharedManager] saveContext:nil];
     }
+    
+    [self addAlarmDependedTodosForDailyDo:&dailyDo];
+    [[KMModelManager sharedManager] saveContext:nil];
     
     return dailyDo;
 }
@@ -382,6 +386,23 @@ static DailyDoManager *_sharedManager;
     }
     
     return [mutYearlyDos copy];
+}
+
+#pragma mark - private
+
+- (void)addAlarmDependedTodosForDailyDo:(DailyDoBase **)dailyDo
+{
+    NSArray *alarms = [[AlarmManager sharedManager] alarmsForAddon:(*dailyDo).addon];
+    
+    int index = 0;
+    for (AlarmData *alarm in alarms) {
+        TodoData *todo = [(*dailyDo) todoForAlarm:alarm];
+        if (!todo) {
+            todo = [(*dailyDo) insertNewTodoAtIndex:index];
+            [todo updateWithAlarm:alarm save:NO];
+            index ++;
+        }
+    }
 }
 
 @end

@@ -9,6 +9,7 @@
 #import "KMViewControllerBase.h"
 
 @class AddonData;
+@class AlarmData;
 @class KMTableView;
 
 @interface AddAlarmViewController : KMViewControllerBase
@@ -18,6 +19,7 @@
 @property (nonatomic) IBOutlet UISwitch *alarmTypeSwitch;
 
 @property (nonatomic) AddonData *addon;
+@property (nonatomic) AlarmData *alarm;
 
 - (IBAction)save:(id)sender;
 - (IBAction)switchAlarmType:(id)sender;

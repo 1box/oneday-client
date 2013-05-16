@@ -25,6 +25,6 @@
 @interface TodoManager : NSObject
 
 + (TodoManager *)sharedManager;
-- (void)undosForCondition:(NSDictionary *)condition;
+- (void)loadUndosForCondition:(NSDictionary *)condition;
 
 @end

@@ -49,7 +49,6 @@
     DailyDoBase *dailyDo = [[[self class] alloc] initWithEntity:[self entityDescription] insertIntoManagedObjectContext:insert ? [[KMModelManager sharedManager] managedObjectContext] : nil];
     dailyDo.itemID = [NSNumber numberWithInteger:newDailyDoItemID()];
     dailyDo.createTime = [NSNumber numberWithDouble:[[NSDate date] timeIntervalSince1970]];
-//    dailyDo.check = @NO;
     
     return dailyDo;
 }
@@ -79,6 +78,17 @@
 - (NSArray *)todosSortedByStartTime
 {
     return [self.todos sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"startTime" ascending:YES]]];
+}
+
+- (TodoData *)todoForAlarm:(AlarmData *)alarm
+{
+    TodoData *ret = nil;
+    for (TodoData *todo in self.todos) {
+        if (todo.alarm == alarm) {
+            ret = todo;
+        }
+    }
+    return ret;
 }
 
 #pragma mark - insert&delete todos

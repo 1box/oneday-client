@@ -16,7 +16,6 @@
 #import "AlarmManager.h"
 
 @interface AddAlarmViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (nonatomic) AlarmData *alarm;
 @end
 
 @implementation AddAlarmViewController
@@ -27,15 +26,9 @@
         AlarmRepeatViewController *controller = segue.destinationViewController;
         controller.alarm = _alarm;
     }
-    else if ([segue.identifier isEqualToString:@"showAlarmEditTitle"]) {
-        AlarmInputViewController *controller = segue.destinationViewController;
-        controller.alarm = _alarm;
-        controller.inputType = AlarmInputTypeTitle;
-    }
     else if ([segue.identifier isEqualToString:@"showAlarmEditText"]) {
         AlarmInputViewController *controller = segue.destinationViewController;
         controller.alarm = _alarm;
-        controller.inputType = AlarmInputTypeText;
     }
 }
 
@@ -44,7 +37,9 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.alarm = [[AlarmManager sharedManager] alarmForAddon:_addon];
+    if (!_alarm) {
+        self.alarm = [[AlarmManager sharedManager] alarmForAddon:_addon];
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -58,7 +53,9 @@
 
 - (IBAction)save:(id)sender
 {
-    [[AlarmManager sharedManager] insertAlarm:_alarm];
+    [[AlarmManager sharedManager] insertOrUpdateAlarm:_alarm];
+    [[AlarmManager sharedManager] rebuildAlarmNotifications];
+    
     [self dismiss:sender];
 }
 
@@ -89,7 +86,6 @@
 {
     static NSString *addAlarmRepeatTypeCellID = @"AddAlarmRepeatTypeCellID";
     static NSString *addAlarmAlarmTypeCellID = @"AddAlarmAlarmTypeCellID";
-    static NSString *addAlarmTitleCellID = @"AddAlarmTitleCellID";
     static NSString *addAlarmTextCellID = @"AddAlarmTextCellID";
     KMTableViewCell *cell = nil;
     switch (indexPath.row) {
@@ -101,10 +97,6 @@
             cell = [tableView dequeueReusableCellWithIdentifier:addAlarmAlarmTypeCellID];
             break;
         case 2:
-            cell = [tableView dequeueReusableCellWithIdentifier:addAlarmTitleCellID];
-            cell.detailTextLabel.text = _alarm.title;
-            break;
-        case 3:
             cell = [tableView dequeueReusableCellWithIdentifier:addAlarmTextCellID];
             cell.detailTextLabel.text = _alarm.text;
             break;

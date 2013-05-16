@@ -33,18 +33,19 @@ static inline NSUInteger newAlarmItemID() {
 
 
 @class AddonData;
+@class TodoData;
 
 @interface AlarmData : SSEntityBase
 
 @property (nonatomic, strong) NSNumber *itemID;
 @property (nonatomic, strong) NSString *alarmTime; // 24-hour style eg. 19:30
-@property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSNumber *open;
 @property (nonatomic, strong) NSNumber *type;
 @property (nonatomic, strong) NSNumber *repeatType;
 
 @property (nonatomic, strong) AddonData *addon;
+@property (nonatomic, strong) NSSet *todos;
 
 - (NSString *)alarmTypeText;
 - (NSString *)repeatText;

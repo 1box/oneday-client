@@ -14,12 +14,12 @@
 
 @dynamic itemID;
 @dynamic alarmTime;
-@dynamic title;
 @dynamic text;
 @dynamic open;
 @dynamic type;
 @dynamic repeatType;
 @dynamic addon;
+@dynamic todos;
 
 + (NSString *)entityName
 {
@@ -35,7 +35,6 @@
 {
     return @{
              @"alarmTime" : @"alarm_time",
-             @"title" : @"title",
              @"text" : @"text",
              @"open" : @"open",
              @"type" : @"type"
@@ -49,7 +48,6 @@
     tAlarm.open = @YES;
     tAlarm.type = [NSNumber numberWithInteger:AlarmTypeGentle];
     tAlarm.repeatType = [NSNumber numberWithInt:(AlarmRepeatTypeSunday|AlarmRepeatTypeMonday|AlarmRepeatTypeTuesday|AlarmRepeatTypeWednesday|AlarmRepeatTypeThursday|AlarmRepeatTypeFriday|AlarmRepeatTypeSaturday)];
-    tAlarm.title = NSLocalizedString(@"AlarmDataDefaultTitle", nil);
     tAlarm.text = NSLocalizedString(@"AlarmDataDefaultText", nil);
     return tAlarm;
 }

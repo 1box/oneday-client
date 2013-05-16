@@ -10,23 +10,13 @@
 #import "AlarmData.h"
 
 @interface AlarmInputViewController () <UITextFieldDelegate>
-
 @end
 
 @implementation AlarmInputViewController
 
 - (IBAction)back:(id)sender
 {
-    switch (_inputType) {
-        case AlarmInputTypeTitle:
-            _alarm.title = _textField.text;
-            break;
-            case AlarmInputTypeText:
-            _alarm.text = _textField.text;
-            break;
-        default:
-            break;
-    }
+    _alarm.text = _textField.text;
     [super back:sender];
 }
 

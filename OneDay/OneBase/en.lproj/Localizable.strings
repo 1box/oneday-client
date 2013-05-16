@@ -36,6 +36,7 @@
 "CashYearSummaryTitle"="Year Summary";
 "CashMonthSummaryText"="Month Cash: %f";
 "CashYearSummaryText"="Year Cash: %f";
+"DeleteAlarmSuccess"="Delete Success";
 
 // tags
 "HomeTag"            ="At home";
@@ -66,7 +67,6 @@
 "_dailyAlarmNotificationBody"="Today you still have %@ not off, go and see it!";
 "Go and See"="I see";
 "Check All"="Check all";
-"AlarmDataDefaultTitle"="Title";
 "AlarmDataDefaultText"="Snippet";
 
 // date formatter

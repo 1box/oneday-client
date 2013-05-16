@@ -108,7 +108,7 @@
             TodoData *todo = [_undos lastObject];
             [mutCondition setObject:todo.dailyDo.createTime forKey:kTodoManagerLoadConditionMaxCreateTimeKey];
         }
-        [[TodoManager sharedManager] undosForCondition:[mutCondition copy]];
+        [[TodoManager sharedManager] loadUndosForCondition:[mutCondition copy]];
     }
 }
 

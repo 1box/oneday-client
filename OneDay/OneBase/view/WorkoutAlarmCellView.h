@@ -12,4 +12,5 @@
 
 @interface WorkoutAlarmCellView : KMUnfoldTableCell
 @property (nonatomic) AlarmData *alarm;
+- (IBAction)handleOpenSwitch:(id)sender;
 @end

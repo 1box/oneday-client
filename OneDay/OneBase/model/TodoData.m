@@ -8,6 +8,7 @@
 
 #import "TodoData.h"
 #import "DailyDoBase.h"
+#import "AlarmData.h"
 #import "KMModelManager.h"
 #import "SMConstants.h"
 #import "KMDateUtils.h"
@@ -29,6 +30,7 @@
 @dynamic frequency;
 @dynamic quantity;
 @dynamic dailyDo;
+@dynamic alarm;
 
 + (NSString *)entityName
 {
@@ -55,17 +57,29 @@
 
 + (id)dataEntityWithInsert:(BOOL)insert
 {
-    TodoData *tmpTodo = [[[self class] alloc] initWithEntity:[self entityDescription] insertIntoManagedObjectContext:insert ? [[KMModelManager sharedManager] managedObjectContext] : nil];
-    tmpTodo.itemID = [NSNumber numberWithInteger:newToDoItemID()];
-    tmpTodo.check = @NO;
-//    tmpTodo.eventColor = [[GCCalendar colors] objectAtIndex:arc4random()%GCCalendarColorCount];
+    TodoData *todo = [[[self class] alloc] initWithEntity:[self entityDescription] insertIntoManagedObjectContext:insert ? [[KMModelManager sharedManager] managedObjectContext] : nil];
+    todo.itemID = [NSNumber numberWithInteger:newToDoItemID()];
+    todo.check = @NO;
+//    todo.eventColor = [[GCCalendar colors] objectAtIndex:arc4random()%GCCalendarColorCount];
     
-    return tmpTodo;
+    return todo;
 }
 
 + (NSDateFormatter *)startTimeDateFormmatter
 {
     return HourToMiniteFormatter();
+}
+
+- (void)updateWithAlarm:(AlarmData *)alarm save:(BOOL)save
+{
+    self.alarm = alarm;
+    self.startTime = alarm.alarmTime;
+    self.duration = [NSNumber numberWithInt:DefaultTodoDuration];
+    self.content = [NSString stringWithString:alarm.text];
+    
+    if (save) {
+        [[KMModelManager sharedManager] saveContext:nil];
+    }
 }
 
 - (NSUInteger)lineNumberStringLength

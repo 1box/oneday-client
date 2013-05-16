@@ -21,7 +21,9 @@ static inline NSUInteger newToDoItemID() {
     return makeID;
 }
 
+
 @class DailyDoBase;
+@class AlarmData;
 
 @interface TodoData : SSEntityBase
 
@@ -42,13 +44,17 @@ static inline NSUInteger newToDoItemID() {
 @property (nonatomic, strong) NSString *quantity;
 
 @property (nonatomic, strong) DailyDoBase *dailyDo;
+@property (nonatomic, strong) AlarmData *alarm;
 
 + (NSDateFormatter *)startTimeDateFormmatter;
+
+- (void)updateWithAlarm:(AlarmData *)alarm save:(BOOL)save;
 
 - (NSUInteger)lineNumberStringLength;
 - (NSString *)lineNumberString;  // eg. 1. 
 - (NSString *)pureContent;  // content without SMSeparator
 - (NSString *)timelineContent;
 - (NSDate *)dateForStartTime;
+
 @end
 

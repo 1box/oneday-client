@@ -18,6 +18,7 @@ static inline NSUInteger newDailyDoItemID() {
 
 @class AddonData;
 @class TodoData;
+@class AlarmData;
 
 @interface DailyDoBase : SSEntityBase
 
@@ -32,6 +33,7 @@ static inline NSUInteger newDailyDoItemID() {
 
 - (NSArray *)todosSortedByIndex;
 - (NSArray *)todosSortedByStartTime;
+- (TodoData *)todoForAlarm:(AlarmData *)alarm;
 
 - (TodoData *)insertNewTodoAtIndex:(NSInteger)index;
 

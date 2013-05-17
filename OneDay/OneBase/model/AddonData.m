@@ -9,6 +9,8 @@
 #import "AddonData.h"
 #import "KMModelManager.h"
 #import "AddonManager.h"
+#import "DailyDoBase.h"
+
 
 @implementation AddonData
 
@@ -73,4 +75,24 @@
         [[AddonManager sharedManager] reorderAddons];
     }
 }
+
+- (BOOL)removeBlankDailyDos
+{
+    NSMutableArray *blankDailyDos = [NSMutableArray arrayWithCapacity:10];
+    
+    NSArray *dailyDos = [self.dailyDos sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"createTime" ascending:YES]]];
+    [dailyDos enumerateObjectsUsingBlock:^(DailyDoBase *dailyDo, NSUInteger idx, BOOL *stop) {
+        if ([dailyDo.todos count] == 0) {
+            [blankDailyDos addObject:dailyDo];
+        }
+    }];
+    
+    if ([blankDailyDos count] > 0) {
+        return [[KMModelManager sharedManager] removeEntities:[blankDailyDos copy] error:nil];
+    }
+    else {
+        return YES;
+    }
+}
+
 @end

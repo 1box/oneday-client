@@ -14,7 +14,7 @@
 #import "TagViewController.h"
 #import "UndoViewController.h"
 #import "SummaryViewController.h"
-#import "WorkoutAlarmViewController.h"
+#import "AlarmViewController.h"
 
 #import "KMTableView.h"
 #import "DailyDoTodayCell.h"
@@ -25,6 +25,7 @@
 #import "DailyDoTagCell.h"
 #import "DailyDoNoteCell.h"
 #import "KMLoadMoreCell.h"
+#import "MTStatusBarOverlay.h"
 
 #import "KMModelManager.h"
 #import "DailyDoManager.h"
@@ -255,6 +256,9 @@
     }
     if (DailyDoActionTypeAlarmNotification == (actionType & DailyDoActionTypeAlarmNotification)) {
         [otherButtonTitles addObject:NSLocalizedString(@"AlarmNotificationTitle", nil)];
+    }
+    if (DailyDoActionTypeClearAllBlank == (actionType & DailyDoActionTypeClearAllBlank)) {
+        [otherButtonTitles addObject:NSLocalizedString(@"ClearAllBlankTitle", nil)];
     }
     [otherButtonTitles addObject:NSLocalizedString(@"_cancel", nil)];
     
@@ -606,10 +610,16 @@
         case DailyDoActionTypeAlarmNotification:
         {
             UINavigationController *nav = [[UIStoryboard storyboardWithName:@"OneDayStoryboard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"WorkoutAlarmNavigationControllerID"];
-            WorkoutAlarmViewController *controller = (WorkoutAlarmViewController *)nav.topViewController;
+            AlarmViewController *controller = (AlarmViewController *)nav.topViewController;
             controller.addon = _addon;
             UIViewController *topViewController = [KMCommon topViewControllerFor:self];
             [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
+        }
+            break;
+        case DailyDoActionTypeClearAllBlank:
+        {
+            [[MTStatusBarOverlay sharedOverlay] postFinishMessage:NSLocalizedString(@"ClearAllBlankSuccess", nil) duration:2.f];
+            [self loadLoggedDos:NO];
         }
             break;
             
@@ -642,6 +652,16 @@
                 }
                 else if (DailyDoActionTypeAlarmNotification == (actionType & DailyDoActionTypeAlarmNotification)) {
                     [[DailyDoActionHelper sharedHelper] showWorkoutAlarms];
+                }
+                else if (DailyDoActionTypeClearAllBlank == (actionType & DailyDoActionTypeClearAllBlank)) {
+                    [[DailyDoActionHelper sharedHelper] clearAllBlank:_addon];
+                }
+            }
+                break;
+            case 2:
+            {
+                if (DailyDoActionTypeClearAllBlank == (actionType & DailyDoActionTypeClearAllBlank)) {
+                    [[DailyDoActionHelper sharedHelper] clearAllBlank:_addon];
                 }
             }
                 break;

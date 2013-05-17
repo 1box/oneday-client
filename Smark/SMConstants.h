@@ -36,17 +36,17 @@ static inline NSArray* numberSmark() {
  * must order by 'hours', 'hour', 'h'
  * [(（](\d+(\.\d{1,2})?(hours|hour|h|小时|时))?(\d+(\.\d{1,2})?(minutes|minute|m|分钟|分))?[)）]
  */
-#define SMDurationRegEx @"[(（](\\d+(\\.\\d{1,2})?(hours|hour|h|小时|时))?(\\d+(\\.\\d{1,2})?(minutes|minute|m|分钟|分))?[)）]"   // will match '()'
+#define SMDurationRegEx @" (\\d+(\\.\\d{1,2})?(hours|hour|h|小时|时))?(\\d+(\\.\\d{1,2})?(minutes|minute|m|分钟|分))?"   // will match '()'
 static inline NSArray* durationFaultSmark() {
-    return @[@"（）", @"（)", @"(）", @"()"];
+    return @[@" "];
 }
 
 static inline NSArray* durationBeginSmark() {
-    return @[@"(", @"（"];
+    return @[@" "];
 }
 
 static inline NSArray* durationEndSmark() {
-    return @[@")", @"）"];
+    return @[@" "];
 }
 
 static inline NSArray* durationHourUnit() {

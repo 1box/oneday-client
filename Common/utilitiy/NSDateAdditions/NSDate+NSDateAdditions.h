@@ -22,6 +22,6 @@
 - (NSDate *)morning;
 - (NSDate *)midnight;
 - (NSDate *)sameTimeToday;
-- (NSDate *)sameTimeTomorrow;
+//- (NSDate *)sameTimeTomorrow;
 
 @end

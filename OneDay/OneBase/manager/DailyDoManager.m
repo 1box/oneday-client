@@ -116,8 +116,8 @@ static DailyDoManager *_sharedManager;
 
 - (id)tomorrowDoForAddon:(AddonData *)addon
 {
-    NSTimeInterval lessThan = [[[[NSDate date] sameTimeTomorrow] midnight] timeIntervalSince1970];
-    NSTimeInterval greaterThanOrEqual = [[[[NSDate date] sameTimeTomorrow] morning] timeIntervalSince1970];
+    NSTimeInterval lessThan = [[[[NSDate date] dateByAddingDays:1] midnight] timeIntervalSince1970];
+    NSTimeInterval greaterThanOrEqual = [[[[NSDate date] dateByAddingDays:1] morning] timeIntervalSince1970];
     
     Class DailyDoData = NSClassFromString(addon.dailyDoName);
     
@@ -142,7 +142,7 @@ static DailyDoManager *_sharedManager;
     else {
         dailyDo = [DailyDoData dataEntityWithInsert:YES];
         dailyDo.addon = addon;
-        dailyDo.createTime = [NSNumber numberWithDouble:[[[NSDate date] sameTimeTomorrow] timeIntervalSince1970]];
+        dailyDo.createTime = [NSNumber numberWithDouble:[[[NSDate date] dateByAddingDays:1] timeIntervalSince1970]];
         [[KMModelManager sharedManager] saveContext:nil];
     }
     

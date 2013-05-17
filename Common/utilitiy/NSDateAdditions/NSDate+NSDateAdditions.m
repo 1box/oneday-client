@@ -101,13 +101,13 @@ static unsigned _unitFlags = (NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalend
     return [[NSCalendar currentCalendar] dateFromComponents:components];
 }
 
-- (NSDate *)sameTimeTomorrow
-{
-    NSDateComponents *components = [[NSCalendar currentCalendar] components:_unitFlags fromDate:self];
-    NSDateComponents *tComponents = [[NSCalendar currentCalendar] components:_unitFlags fromDate:[NSDate date]];
-    components.year = tComponents.year;
-    components.month = tComponents.month;
-    components.day = tComponents.day + 1;
-    return [[NSCalendar currentCalendar] dateFromComponents:components];
-}
+//- (NSDate *)sameTimeTomorrow
+//{
+//    NSDateComponents *components = [[NSCalendar currentCalendar] components:_unitFlags fromDate:self];
+//    NSDateComponents *tComponents = [[NSCalendar currentCalendar] components:_unitFlags fromDate:[NSDate date]];
+//    components.year = tComponents.year;
+//    components.month = tComponents.month;
+//    components.day = tComponents.day + 1;
+//    return [[NSCalendar currentCalendar] dateFromComponents:components];
+//}
 @end

@@ -26,4 +26,6 @@
 @property (nonatomic, strong) NSSet *alarms;
 
 + (void)loadDefaultDataFromDefaultPlist;
+- (BOOL)removeBlankDailyDos;    // return YES for success
+
 @end

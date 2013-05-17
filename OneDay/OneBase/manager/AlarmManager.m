@@ -129,7 +129,7 @@ static AlarmManager *_sharedManager = nil;
 - (void)rebuildAlarmNotifications
 {
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
-    [self scheduleDailyAlarmNotification];
+    [self scheduleAddonAlarmNotification];
     [self scheduleDailyAlarmNotification];
 }
 
@@ -145,24 +145,23 @@ static AlarmManager *_sharedManager = nil;
         NSArray *alarms = [[AlarmManager sharedManager] alarmsForAddon:addon];
         [alarms enumerateObjectsUsingBlock:^(AlarmData *alarm, NSUInteger idx, BOOL *stop) {
             
-            UILocalNotification *localNotification = [mutLocalNotifications objectForKey:alarm.alarmTime];
-            if (!localNotification) {
-                localNotification = [[UILocalNotification alloc] init];
-                localNotification.timeZone = [NSTimeZone defaultTimeZone];
-                localNotification.repeatInterval = 0;
-                localNotification.alertAction = NSLocalizedString(@"Go", nil);
-                NSDate *fireDate = [HourToMiniteFormatter() todayDateFromString:alarm.alarmTime];
-                if ([fireDate earlierDate:[NSDate date]] == fireDate) {
-                    fireDate = [fireDate sameTimeTomorrow];
+            for (NSDate *repeatTime in [alarm nextRepeatTimes]) {
+                
+                NSString *repeatTimeString = [HourToMiniteFormatter() stringFromDate:repeatTime];
+                UILocalNotification *localNotification = [mutLocalNotifications objectForKey:repeatTimeString];
+                if (!localNotification) {
+                    localNotification = [[UILocalNotification alloc] init];
+                    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+                    localNotification.repeatInterval = 0;
+                    localNotification.alertAction = NSLocalizedString(@"Go", nil);
+                    localNotification.fireDate = repeatTime;
+                    localNotification.userInfo = @{
+                                                   kAlarmNotificationTypeKey : [NSNumber numberWithInteger:AlarmNotificationTypeAddonAlarm],
+                                                   kAlarmNotificationCreateDateKey : [NSDate date]
+                                                   };
                 }
-                localNotification.fireDate = fireDate;
-                localNotification.userInfo = @{
-                kAlarmNotificationTypeKey : [NSNumber numberWithInteger:AlarmNotificationTypeAddonAlarm],
-                kAlarmNotificationCreateDateKey : [NSDate date]
-                };
-            }
-            
-            NSMutableString *message = [NSMutableString stringWithCapacity:100];
+                
+                NSMutableString *message = [NSMutableString stringWithCapacity:100];
                 NSString *alertBody = localNotification.alertBody;
                 if (!KMEmptyString(alertBody)) {
                     [message appendFormat:@"%@; ", alertBody];
@@ -170,10 +169,11 @@ static AlarmManager *_sharedManager = nil;
                 else {
                     [message appendFormat:@"%@: ", NSLocalizedString(addon.dailyDoName, nil)];
                 }
-            [message appendString:alarm.text];
-            localNotification.alertBody = [message copy];
-            
-            [mutLocalNotifications setObject:localNotification forKey:alarm.alarmTime];
+                [message appendString:alarm.text];
+                localNotification.alertBody = [message copy];
+                
+                [mutLocalNotifications setObject:localNotification forKey:repeatTimeString];
+            }
         }];
     }];
     
@@ -193,7 +193,7 @@ static AlarmManager *_sharedManager = nil;
         localNotification.soundName = playAlarmSounds() ? UILocalNotificationDefaultSoundName : nil;
         NSDate *fireDate = [HourToMiniteFormatter() todayDateFromString:alarmNotificationFireTimeString()];
         if ([fireDate earlierDate:[NSDate date]] == fireDate) {
-            fireDate = [fireDate sameTimeTomorrow];
+            fireDate = [fireDate dateByAddingDays:1];
         }
         localNotification.fireDate = fireDate;
         
@@ -225,9 +225,9 @@ static AlarmManager *_sharedManager = nil;
         localNotification.applicationIconBadgeNumber = showAppIconBadge() ? badgeNumber : 0;
         
         localNotification.userInfo = @{
-        kAlarmNotificationTypeKey : [NSNumber numberWithInteger:AlarmNotificationTypeEveryday],
-        kAlarmNotificationCreateDateKey : [NSDate date]
-        };
+                                       kAlarmNotificationTypeKey : [NSNumber numberWithInteger:AlarmNotificationTypeEveryday],
+                                       kAlarmNotificationCreateDateKey : [NSDate date]
+                                       };
         
         if (badgeNumber > 0) {
             [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
@@ -244,19 +244,19 @@ static AlarmManager *_sharedManager = nil;
     }
     else {
         if (buttonIndex != alertView.cancelButtonIndex) {
-        // mark all check
-        NSArray *addons = [[AddonManager sharedManager] alarmAddons];
-        [addons enumerateObjectsUsingBlock:^(AddonData *tAddon, NSUInteger idx, BOOL *stop) {
-            DailyDoBase *todayDo = [[DailyDoManager sharedManager] todayDoForAddon:tAddon];
-            if (![todayDo.check boolValue] && [todayDo.todos count] > 0) {
-                for (TodoData *todo in todayDo.todos) {
-                    if (![todo.check boolValue]) {
-                        todo.check = @YES;
+            // mark all check
+            NSArray *addons = [[AddonManager sharedManager] alarmAddons];
+            [addons enumerateObjectsUsingBlock:^(AddonData *tAddon, NSUInteger idx, BOOL *stop) {
+                DailyDoBase *todayDo = [[DailyDoManager sharedManager] todayDoForAddon:tAddon];
+                if (![todayDo.check boolValue] && [todayDo.todos count] > 0) {
+                    for (TodoData *todo in todayDo.todos) {
+                        if (![todo.check boolValue]) {
+                            todo.check = @YES;
+                        }
                     }
                 }
-            }
-        }];
-        [[KMModelManager sharedManager] saveContext:nil];
+            }];
+            [[KMModelManager sharedManager] saveContext:nil];
         }
     }
     

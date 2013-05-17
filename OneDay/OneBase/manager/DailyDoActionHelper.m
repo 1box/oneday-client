@@ -115,6 +115,15 @@ static DailyDoActionHelper *_sharedHelper = nil;
     }
 }
 
+- (void)clearAllBlank:(AddonData *)addon
+{
+    if ([addon removeBlankDailyDos]) {
+        if (_delegate && [_delegate respondsToSelector:@selector(dailyDoActionHelper:doActionForType:)]) {
+            [_delegate dailyDoActionHelper:self doActionForType:DailyDoActionTypeClearAllBlank];
+        }
+    }
+}
+
 #pragma mark - UIAlertViewDelegate
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

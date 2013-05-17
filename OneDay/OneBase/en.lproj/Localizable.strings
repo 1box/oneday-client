@@ -40,6 +40,8 @@
 "DeleteAlarmSuccess"="Delete Success.";
 "AlarmDataDefaultText"="Alarm clock";
 "CloseAllAlarmSuccess"="All alarms has been closed.";
+"ClearAllBlankTitle"="Clear all blank day";
+"ClearAllBlankSuccess"="All blank day deleted.";
 
 // tags
 "HomeTag"            ="At home";

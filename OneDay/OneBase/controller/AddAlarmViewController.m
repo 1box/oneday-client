@@ -46,7 +46,10 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    _alarmTypeSwitch.on = ([_alarm.type integerValue] == AlarmTypeGentle);
+    _nagTypeSwitch.on = ([_alarm.type integerValue] == AlarmNagTypeNag);
+    if (_alarm.alarmTime) {
+        _timePicker.date = [HourToMiniteFormatter() dateFromString:_alarm.alarmTime];
+    }
     [_listView reloadData];
 }
 
@@ -72,14 +75,14 @@
     [self back:sender];
 }
 
-- (IBAction)switchAlarmType:(id)sender
+- (IBAction)switchNagType:(id)sender
 {
     UISwitch *aSwitch = sender;
     if (aSwitch.isOn) {
-        _alarm.type = [NSNumber numberWithInteger:AlarmTypeGentle];
+        _alarm.type = [NSNumber numberWithInteger:AlarmNagTypeNag];
     }
     else {
-        _alarm.type = [NSNumber numberWithInteger:AlarmTypeNag];
+        _alarm.type = [NSNumber numberWithInteger:AlarmNagTypeGentle];
     }
 }
 
@@ -98,7 +101,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *addAlarmRepeatTypeCellID = @"AddAlarmRepeatTypeCellID";
-    static NSString *addAlarmAlarmTypeCellID = @"AddAlarmAlarmTypeCellID";
+    static NSString *addAlarmNagTypeCellID = @"AddAlarmNagTypeCellID";
     static NSString *addAlarmTextCellID = @"AddAlarmTextCellID";
     KMTableViewCell *cell = nil;
     switch (indexPath.row) {
@@ -107,7 +110,7 @@
             cell.detailTextLabel.text = [_alarm repeatText];
             break;
         case 1:
-            cell = [tableView dequeueReusableCellWithIdentifier:addAlarmAlarmTypeCellID];
+            cell = [tableView dequeueReusableCellWithIdentifier:addAlarmNagTypeCellID];
             break;
         case 2:
             cell = [tableView dequeueReusableCellWithIdentifier:addAlarmTextCellID];

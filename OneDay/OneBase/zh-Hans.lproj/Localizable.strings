@@ -40,6 +40,8 @@
 "DeleteAlarmSuccess"="闹铃删除成功";
 "AlarmDataDefaultText"="闹钟";
 "CloseAllAlarmSuccess"="所有闹铃已关闭";
+"ClearAllBlankTitle"="删除没有记录的日期";
+"ClearAllBlankSuccess"="没有记录的日期已删除";
 
 // tags
 "HomeTag"            ="在家";

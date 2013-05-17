@@ -16,12 +16,12 @@
 
 @property (nonatomic) IBOutlet KMTableView *listView;
 @property (nonatomic) IBOutlet UIDatePicker *timePicker;
-@property (nonatomic) IBOutlet UISwitch *alarmTypeSwitch;
+@property (nonatomic) IBOutlet UISwitch *nagTypeSwitch;
 
 @property (nonatomic) AddonData *addon;
 @property (nonatomic) AlarmData *alarm;
 
 - (IBAction)saveAndDismiss:(id)sender;
 - (IBAction)saveAndBack:(id)sender;
-- (IBAction)switchAlarmType:(id)sender;
+- (IBAction)switchNagType:(id)sender;
 @end

@@ -10,7 +10,7 @@
 
 @class AddonData;
 
-@interface WorkoutAlarmViewController : KMViewControllerBase
+@interface AlarmViewController : KMViewControllerBase
 @property (nonatomic) AddonData *addon;
 - (IBAction)edit:(id)sender;
 - (IBAction)closeAll:(id)sender;

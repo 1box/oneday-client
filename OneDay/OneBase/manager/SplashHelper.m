@@ -99,11 +99,11 @@ static SplashHelper *_sharedHelper = nil;
     if (_animationView1 && _animationView2) {
         [UIView transitionFromView:_animationView1
                             toView:_animationView2
-                          duration:0.8f
+                          duration:0.65f
                            options:UIViewAnimationOptionTransitionFlipFromLeft
                         completion:^(BOOL finished) {
                             
-                            [UIView animateWithDuration:0.65f animations:^{
+                            [UIView animateWithDuration:0.8f animations:^{
                                 _animationView2.alpha = 0.05f;
                             } completion:^(BOOL finished2) {
                                 

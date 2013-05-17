@@ -6,9 +6,9 @@
 //  Copyright (c) 2013年 Kimi Yu. All rights reserved.
 //
 
-#import "WorkoutAlarmViewController.h"
+#import "AlarmViewController.h"
 #import "KMTableView.h"
-#import "WorkoutAlarmCellView.h"
+#import "AlarmCellView.h"
 #import "AddAlarmViewController.h"
 #import "AlarmManager.h"
 #import "KMModelManager.h"
@@ -17,14 +17,14 @@
 #import "DarkNavigationBarButton.h"
 
 
-@interface WorkoutAlarmViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface AlarmViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) IBOutlet KMTableView *alarmView;
 @property (nonatomic) NSArray *alarms;
 @property (nonatomic) NSIndexPath *selectIndexPath;
 @end
 
 
-@implementation WorkoutAlarmViewController
+@implementation AlarmViewController
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -96,7 +96,7 @@
 {
     static NSString *alarmCelID = @"AlarmCellID";
     
-    WorkoutAlarmCellView *cell = [tableView dequeueReusableCellWithIdentifier:alarmCelID];
+    AlarmCellView *cell = [tableView dequeueReusableCellWithIdentifier:alarmCelID];
     if (indexPath.row < [_alarms count]) {
         AlarmData *alarm = [_alarms objectAtIndex:indexPath.row];
         cell.alarm = alarm;

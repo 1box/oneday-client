@@ -40,6 +40,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.nav = (UINavigationController *)_window.rootViewController;
+    NSLog(@"date %d", [[[NSDate date] dateByAddingDays:2] weekday]);
     
     [[KMTracker sharedTracker] setRootController:self.window.rootViewController];
     [[KMTracker sharedTracker] startTrack];

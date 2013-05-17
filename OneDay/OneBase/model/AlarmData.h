@@ -8,9 +8,9 @@
 
 #import "SSEntityBase.h"
 
-typedef NS_ENUM(NSInteger, AlarmType) {
-    AlarmTypeGentle = 0,
-    AlarmTypeNag
+typedef NS_ENUM(NSInteger, AlarmNagType) {
+    AlarmNagTypeNag = 0,
+    AlarmNagTypeGentle
 };
 
 typedef NS_ENUM(NSInteger, AlarmRepeatType) {
@@ -48,6 +48,8 @@ static inline NSUInteger newAlarmItemID() {
 @property (nonatomic, strong) AddonData *addon;
 @property (nonatomic, strong) NSSet *todos;
 
-- (NSString *)alarmTypeText;
+- (NSString *)nagTypeText;
 - (NSString *)repeatText;
+- (NSArray *)nextRepeatTimes;
+
 @end

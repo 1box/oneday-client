@@ -1560,10 +1560,10 @@
             </objects>
             <point key="canvasLocation" x="1262" y="-1272"/>
         </scene>
-        <!--Workout Alarm View Controller - _alarmClock-->
+        <!--Alarm View Controller - _alarmClock-->
         <scene sceneID="TKr-6j-OGd">
             <objects>
-                <viewController id="vtl-aQ-TwO" customClass="WorkoutAlarmViewController" sceneMemberID="viewController">
+                <viewController id="vtl-aQ-TwO" customClass="AlarmViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oLd-ta-3Vg">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1577,22 +1577,22 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlarmCellID" rowHeight="93" id="1Jf-E6-DQV" customClass="WorkoutAlarmCellView">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlarmCellID" rowHeight="93" id="1Jf-E6-DQV" customClass="AlarmCellView">
                                         <rect key="frame" x="0.0" y="46" width="320" height="95"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="1" width="300" height="92"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="am/pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pdk-WX-L3L">
-                                                    <rect key="frame" x="20" y="6" width="38" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="AM/PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Pdk-WX-L3L">
+                                                    <rect key="frame" x="20" y="9" width="30" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qwz-U9-8eu">
-                                                    <rect key="frame" x="66" y="6" width="83" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22:52" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qwz-U9-8eu">
+                                                    <rect key="frame" x="55" y="6" width="57" height="24"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1605,8 +1605,8 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="alarm type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hup-oy-o7u">
-                                                    <rect key="frame" x="152" y="7" width="57" height="21"/>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Nag type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hup-oy-o7u">
+                                                    <rect key="frame" x="130" y="6" width="99" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1632,7 +1632,7 @@
                                         <connections>
                                             <outlet property="AMPMLabel" destination="Pdk-WX-L3L" id="xqz-rO-j3X"/>
                                             <outlet property="accessoryView" destination="cAw-Bd-jrh" id="GWT-hR-It0"/>
-                                            <outlet property="alarmTypeLabel" destination="hup-oy-o7u" id="eWv-6O-yrp"/>
+                                            <outlet property="nagTypeLabel" destination="hup-oy-o7u" id="Cra-pU-ipE"/>
                                             <outlet property="noteLabel" destination="r8B-dg-4cJ" id="a7I-fA-5Kb"/>
                                             <outlet property="openSwitch" destination="cAw-Bd-jrh" id="PmW-qb-5mT"/>
                                             <outlet property="repeatLabel" destination="tCU-2F-U23" id="Ti7-Yv-50s"/>
@@ -1796,14 +1796,14 @@
                                             <segue destination="tzF-r5-3yO" kind="push" identifier="showAlarmEditRepeatType" id="QQB-zn-ahk"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddAlarmAlarmTypeCellID" textLabel="1Tj-Jz-BJ0" style="IBUITableViewCellStyleDefault" id="CX7-O5-DkG" customClass="KMTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddAlarmNagTypeCellID" textLabel="1Tj-Jz-BJ0" style="IBUITableViewCellStyleDefault" id="CX7-O5-DkG" customClass="KMTableViewCell">
                                         <rect key="frame" x="0.0" y="91" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="_alarmType" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Tj-Jz-BJ0">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="_nagType" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1Tj-Jz-BJ0">
                                                     <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -1854,7 +1854,7 @@
                             </tableView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" id="T80-2c-pLk">
                                 <rect key="frame" x="0.0" y="288" width="320" height="216"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="390242080.27548701">
                                     <!--2013-05-14 16:34:40 +0000-->
                                 </date>
@@ -1884,7 +1884,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="223" y="99" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="switchAlarmType:" destination="r0q-Ul-xMt" eventType="valueChanged" id="mvt-ge-Wzq"/>
+                                    <action selector="switchNagType:" destination="r0q-Ul-xMt" eventType="valueChanged" id="upI-Vh-ZEE"/>
                                 </connections>
                             </switch>
                         </subviews>
@@ -1927,8 +1927,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="alarmTypeSwitch" destination="bGI-MG-ukk" id="frT-h5-8IS"/>
                         <outlet property="listView" destination="hog-Ap-mfL" id="qZb-5d-jG9"/>
+                        <outlet property="nagTypeSwitch" destination="bGI-MG-ukk" id="u9t-Au-JfE"/>
                         <outlet property="timePicker" destination="T80-2c-pLk" id="WEW-p0-Qr0"/>
                     </connections>
                 </viewController>
@@ -3296,9 +3296,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <relationships>
                 <relationship kind="action" name="saveAndBack:"/>
                 <relationship kind="action" name="saveAndDismiss:"/>
-                <relationship kind="action" name="switchAlarmType:"/>
-                <relationship kind="outlet" name="alarmTypeSwitch" candidateClass="UISwitch"/>
+                <relationship kind="action" name="switchNagType:"/>
                 <relationship kind="outlet" name="listView" candidateClass="KMTableView"/>
+                <relationship kind="outlet" name="nagTypeSwitch" candidateClass="UISwitch"/>
                 <relationship kind="outlet" name="timePicker" candidateClass="UIDatePicker"/>
             </relationships>
         </class>
@@ -3317,6 +3317,18 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="addonsView" candidateClass="KMTableView"/>
             </relationships>
         </class>
+        <class className="AlarmCellView" superclassName="KMUnfoldTableCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlarmCellView.h"/>
+            <relationships>
+                <relationship kind="action" name="handleOpenSwitch:"/>
+                <relationship kind="outlet" name="AMPMLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nagTypeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="noteLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="openSwitch" candidateClass="UISwitch"/>
+                <relationship kind="outlet" name="repeatLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
         <class className="AlarmInputViewController" superclassName="KMViewControllerBase">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AlarmInputViewController.h"/>
             <relationships>
@@ -3330,6 +3342,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AlarmRepeatViewController.h"/>
             <relationships>
                 <relationship kind="outlet" name="listView" candidateClass="KMTableView"/>
+            </relationships>
+        </class>
+        <class className="AlarmViewController" superclassName="KMViewControllerBase">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlarmViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="closeAll:"/>
+                <relationship kind="action" name="edit:"/>
+                <relationship kind="outlet" name="alarmView" candidateClass="KMTableView"/>
             </relationships>
         </class>
         <class className="ContactUsViewController" superclassName="UITableViewController">
@@ -3673,26 +3693,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="action" name="checkAll:"/>
                 <relationship kind="action" name="moveAllToTomorrow:"/>
                 <relationship kind="outlet" name="undosView" candidateClass="KMTableView"/>
-            </relationships>
-        </class>
-        <class className="WorkoutAlarmCellView" superclassName="KMUnfoldTableCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WorkoutAlarmCellView.h"/>
-            <relationships>
-                <relationship kind="action" name="handleOpenSwitch:"/>
-                <relationship kind="outlet" name="AMPMLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="alarmTypeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="noteLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="openSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="repeatLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="WorkoutAlarmViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WorkoutAlarmViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="closeAll:"/>
-                <relationship kind="action" name="edit:"/>
-                <relationship kind="outlet" name="alarmView" candidateClass="KMTableView"/>
             </relationships>
         </class>
     </classes>

@@ -75,7 +75,7 @@
     self.alarm = alarm;
     self.startTime = alarm.alarmTime;
     self.duration = [NSNumber numberWithInt:DefaultTodoDuration];
-    self.content = [NSString stringWithString:alarm.text];
+    self.content = [NSString stringWithFormat:@"%@ %@\n", alarm.text, alarm.alarmTime];
     
     if (save) {
         [[KMModelManager sharedManager] saveContext:nil];

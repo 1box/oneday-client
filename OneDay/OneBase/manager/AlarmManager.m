@@ -52,6 +52,19 @@ static AlarmManager *_sharedManager = nil;
     return [addon.alarms sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"alarmTime" ascending:YES]]];
 }
 
+- (NSArray *)openAlarmsForAddon:(AddonData *)addon
+{
+    NSArray *alarms = [self alarmsForAddon:addon];
+    
+    NSMutableArray *mutRet = [NSMutableArray arrayWithCapacity:[alarms count]];
+    [alarms enumerateObjectsUsingBlock:^(AlarmData *alarm, NSUInteger idx, BOOL *stop) {
+        if ([alarm.open boolValue]) {
+            [mutRet addObject:alarm];
+        }
+    }];
+    return [mutRet copy];
+}
+
 - (AlarmData *)alarmForDictionary:(NSDictionary *)dictionary
 {
     AlarmData *alarm = [AlarmData entityWithDictionary:dictionary];
@@ -142,7 +155,7 @@ static AlarmManager *_sharedManager = nil;
     NSArray *addons = [[AddonManager sharedManager] alarmAddons];
     [addons enumerateObjectsUsingBlock:^(AddonData *addon, NSUInteger idx, BOOL *stop) {
         
-        NSArray *alarms = [[AlarmManager sharedManager] alarmsForAddon:addon];
+        NSArray *alarms = [[AlarmManager sharedManager] openAlarmsForAddon:addon];
         [alarms enumerateObjectsUsingBlock:^(AlarmData *alarm, NSUInteger idx, BOOL *stop) {
             
             for (NSDate *repeatTime in [alarm nextRepeatTimes]) {
@@ -154,6 +167,7 @@ static AlarmManager *_sharedManager = nil;
                     localNotification.timeZone = [NSTimeZone defaultTimeZone];
                     localNotification.repeatInterval = 0;
                     localNotification.alertAction = NSLocalizedString(@"Go", nil);
+                    localNotification.soundName = playAlarmSounds() ? UILocalNotificationDefaultSoundName : nil;
                     localNotification.fireDate = repeatTime;
                     localNotification.userInfo = @{
                                                    kAlarmNotificationTypeKey : [NSNumber numberWithInteger:AlarmNotificationTypeAddonAlarm],

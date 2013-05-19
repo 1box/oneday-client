@@ -289,12 +289,18 @@
     
     NSDictionary *result = [userInfo objectForKey:kDailyDoManagerLoggedLoadResultKey];
     NSError *error = [result objectForKey:kDailyDoManagerLoadResultErrorKey];
+    BOOL isLoadMore = [[condition objectForKey:kDailyDoManagerLoadConditionIsLoadMoreKey] boolValue];
     if (!error) {
         NSArray *dataList = [result objectForKey:kDailyDoManagerLoadResultDataListKey];
         if ([dataList count] > 0) {
-            NSMutableArray *mutLoggedDos = [[NSMutableArray alloc] initWithArray:_loggedDos];
-            [mutLoggedDos addObjectsFromArray:dataList];
-            self.loggedDos = [mutLoggedDos copy];
+            if (isLoadMore) {
+                NSMutableArray *mutLoggedDos = [[NSMutableArray alloc] initWithArray:_loggedDos];
+                [mutLoggedDos addObjectsFromArray:dataList];
+                self.loggedDos = [mutLoggedDos copy];
+            }
+            else {
+                self.loggedDos = dataList;
+            }
         }
         
         _canLoadMore = [dataList count] > 0;

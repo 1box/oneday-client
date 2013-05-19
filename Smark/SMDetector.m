@@ -7,6 +7,7 @@
 //
 
 #import "SMDetector.h"
+#import "KMDateUtils.h"
 
 @implementation SMDetector
 
@@ -148,21 +149,29 @@ static SMDetector *_defaultDetector = nil;
 - (NSArray *)datesInString:(NSString *)aString
 {
     NSError *error = nil;
-    NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingAllSystemTypes|NSTextCheckingTypeDate error:&error];
+    
+    NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeDate error:&error];
+//    NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingAllSystemTypes|NSTextCheckingTypeDate error:&error];
     
     if (error) {
         return nil;
     }
     
-    NSMutableArray *ret = [NSMutableArray array];
+    NSMutableArray *mutRet = [NSMutableArray arrayWithCapacity:10];
     [detector enumerateMatchesInString:aString
                                options:0
                                  range:NSMakeRange(0, [aString length])
                             usingBlock:^(NSTextCheckingResult *match, NSMatchingFlags flags, BOOL *stop) {
                                 
-                                [ret addObject:match.date];
+                                NSString *matchString = [aString substringWithRange:match.range];
+                                if ([matchString length] <= 5) {
+                                    [mutRet addObject:[[HourToMiniteFormatter() dateFromString:matchString] sameTimeToday]];
+                                }
+                                else {
+                                    [mutRet addObject:match.date];
+                                }
                             }];
-    return ret;
+    return [mutRet copy];
 }
 
 - (NSArray *)durationsInString:(NSString *)aString

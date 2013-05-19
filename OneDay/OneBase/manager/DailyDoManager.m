@@ -392,15 +392,17 @@ static DailyDoManager *_sharedManager;
 
 - (void)addAlarmDependedTodosForDailyDo:(DailyDoBase **)dailyDo
 {
-    NSArray *alarms = [[AlarmManager sharedManager] alarmsForAddon:(*dailyDo).addon];
-    
-    int index = 0;
-    for (AlarmData *alarm in alarms) {
-        TodoData *todo = [(*dailyDo) todoForAlarm:alarm];
-        if (!todo) {
-            todo = [(*dailyDo) insertNewTodoAtIndex:index];
-            [todo updateWithAlarm:alarm save:NO];
-            index ++;
+    if (autoAddOpenAlarmsToDailyDo()) {
+        NSArray *alarms = [[AlarmManager sharedManager] openAlarmsForAddon:(*dailyDo).addon];
+        
+        int index = 0;
+        for (AlarmData *alarm in alarms) {
+            TodoData *todo = [(*dailyDo) todoForAlarm:alarm];
+            if (!todo) {
+                todo = [(*dailyDo) insertNewTodoAtIndex:index];
+                [todo updateWithAlarm:alarm save:NO];
+                index ++;
+            }
         }
     }
 }

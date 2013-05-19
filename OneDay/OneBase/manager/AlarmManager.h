@@ -28,7 +28,6 @@ static inline void setAlarmNotificationFireTimeString(NSString *fireTime) {
 }
 
 #define kAlarmNotificationFireTimeSwitchUserDefaultKey @"kAlarmNotificationFireTimeSwitchUserDefaultKey"
-
 static inline void setAlarmNotificationSwitch(BOOL on) {
     [[NSUserDefaults standardUserDefaults] setBool:on forKey:kAlarmNotificationFireTimeSwitchUserDefaultKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -44,7 +43,6 @@ static inline BOOL alarmNotificationSwitch() {
 
 // alarm setting
 #define kShowAppIconBadgeUserDefaultKey @"kShowAppIconBadgeUserDefaultKey"
-
 static inline void setShowAppIconBadge(BOOL show) {
     [[NSUserDefaults standardUserDefaults] setBool:show forKey:kShowAppIconBadgeUserDefaultKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -58,7 +56,6 @@ static inline BOOL showAppIconBadge() {
 }
 
 #define kPlayAlarmSoundsUserDefaultKey @"kPlayAlarmSoundsUserDefaultKey"
-
 static inline void setPlayAlarmSounds(BOOL play) {
     [[NSUserDefaults standardUserDefaults] setBool:play forKey:kPlayAlarmSoundsUserDefaultKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
@@ -82,6 +79,20 @@ static inline void setMakeAlarmVibrator(BOOL make) {
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+#define kAutoAddOpenAlarmsToDailyDoUserDefaultKey @"kAutoAddOpenAlarmsToDailyDoUserDefaultKey"
+static inline void setAutoAddOpenAlarmsToDailyDo(BOOL autoAdd) {
+    [[NSUserDefaults standardUserDefaults] setBool:autoAdd forKey:kAutoAddOpenAlarmsToDailyDoUserDefaultKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+static inline BOOL autoAddOpenAlarmsToDailyDo() {
+    if ([NSUserDefaults firstTimeUseKey:kAutoAddOpenAlarmsToDailyDoUserDefaultKey]) {
+        setAutoAddOpenAlarmsToDailyDo(YES);
+    }
+    return [[NSUserDefaults standardUserDefaults] boolForKey:kAutoAddOpenAlarmsToDailyDoUserDefaultKey];
+}
+
+
 typedef NS_ENUM(NSInteger, AlarmNotificationType) {
     AlarmNotificationTypeEveryday = 0,
     AlarmNotificationTypeAddonAlarm
@@ -96,10 +107,12 @@ typedef NS_ENUM(NSInteger, AlarmNotificationType) {
 + (AlarmManager *)sharedManager;
 
 - (NSArray *)alarmsForAddon:(AddonData *)addon;
+- (NSArray *)openAlarmsForAddon:(AddonData *)addon;
 - (AlarmData *)alarmForDictionary:(NSDictionary *)dictionary;
 - (BOOL)insertOrUpdateAlarm:(AlarmData *)alarm toAddon:(AddonData *)addon;    // return YES for success
 - (BOOL)removeAlarm:(AlarmData *)alarm;    // return YES for success
 
 - (void)rebuildAlarmNotifications;
 - (void)handleAlarmLocalNotification:(UILocalNotification *)notification;
+
 @end

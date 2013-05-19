@@ -19,6 +19,7 @@
 
 @interface AlarmViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) IBOutlet KMTableView *alarmView;
+@property (nonatomic) IBOutlet UISwitch *autoAddSwitch;
 @property (nonatomic) NSArray *alarms;
 @property (nonatomic) NSIndexPath *selectIndexPath;
 @end
@@ -54,6 +55,12 @@
 
 #pragma mark - View Lifecycles
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    _autoAddSwitch.on = autoAddOpenAlarmsToDailyDo();
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     self.alarms = [[AlarmManager sharedManager] alarmsForAddon:_addon];
@@ -83,6 +90,12 @@
         
         [[MTStatusBarOverlay sharedOverlay] postFinishMessage:NSLocalizedString(@"CloseAllAlarmSuccess", nil) duration:2.f];
     }
+}
+
+- (IBAction)autoAddToDailyDo:(id)sender
+{
+    UISwitch *aSwitch = sender;
+    setAutoAddOpenAlarmsToDailyDo(aSwitch.on);
 }
 
 #pragma mark - UITableViewDataSource

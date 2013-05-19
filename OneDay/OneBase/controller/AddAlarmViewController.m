@@ -16,7 +16,9 @@
 #import "AlarmManager.h"
 #import "KMDateUtils.h"
 
-@interface AddAlarmViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface AddAlarmViewController () <UITableViewDataSource, UITableViewDelegate> {
+    BOOL _hasAppear;
+}
 @end
 
 @implementation AddAlarmViewController
@@ -47,7 +49,8 @@
 {
     [super viewDidAppear:animated];
     _nagTypeSwitch.on = ([_alarm.type integerValue] == AlarmNagTypeNag);
-    if (_alarm.alarmTime) {
+    if (_alarm.alarmTime && !_hasAppear) {
+        _hasAppear = YES;
         _timePicker.date = [HourToMiniteFormatter() dateFromString:_alarm.alarmTime];
     }
     [_listView reloadData];

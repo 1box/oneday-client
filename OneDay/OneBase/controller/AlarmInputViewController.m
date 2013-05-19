@@ -18,6 +18,7 @@
 {
     [super viewDidAppear:animated];
     _textField.text = _alarm.text;
+    [_textField becomeFirstResponder];
 }
 
 - (IBAction)back:(id)sender

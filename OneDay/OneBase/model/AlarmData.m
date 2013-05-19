@@ -47,7 +47,7 @@
     AlarmData *tAlarm = [[self alloc] initWithEntity:[self entityDescription] insertIntoManagedObjectContext:insert ? [[KMModelManager sharedManager] managedObjectContext] : nil];
     tAlarm.itemID = [NSNumber numberWithInteger:newAlarmItemID()];
     tAlarm.open = @YES;
-    tAlarm.type = [NSNumber numberWithInteger:AlarmNagTypeNag];
+    tAlarm.type = [NSNumber numberWithInteger:AlarmNagTypeGentle];
     tAlarm.repeatType = [NSNumber numberWithInt:(AlarmRepeatTypeSunday|AlarmRepeatTypeMonday|AlarmRepeatTypeTuesday|AlarmRepeatTypeWednesday|AlarmRepeatTypeThursday|AlarmRepeatTypeFriday|AlarmRepeatTypeSaturday)];
     tAlarm.text = NSLocalizedString(@"AlarmDataDefaultText", nil);
     return tAlarm;

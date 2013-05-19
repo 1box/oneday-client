@@ -1,12 +1,19 @@
+// ibtool OneDayStoryboard.storyboard --generate-strings-file NewStuff.strings
 
 /* Class = "IBUIButton"; normalTitle = "quick"; ObjectID = "1Eb-Wb-9Xf"; */
 "1Eb-Wb-9Xf.normalTitle" = "quick";
+
+/* Class = "IBUILabel"; text = "_nagType"; ObjectID = "1Tj-Jz-BJ0"; */
+"1Tj-Jz-BJ0.text" = "Nag";
 
 /* Class = "IBUIButton"; normalTitle = "Add"; ObjectID = "1Vk-iD-g1g"; */
 "1Vk-iD-g1g.normalTitle" = "Add";
 
 /* Class = "IBUIButton"; normalTitle = "_homecover"; ObjectID = "1td-Vu-xCJ"; */
 "1td-Vu-xCJ.normalTitle" = "Backdrop";
+
+/* Class = "IBUILabel"; text = "_everyTuesday"; ObjectID = "1wM-Dl-NX3"; */
+"1wM-Dl-NX3.text" = "Every Tuesday";
 
 /* Class = "IBUILabel"; text = "Detail"; ObjectID = "2HB-j3-GS4"; */
 "2HB-j3-GS4.text" = "Detail";
@@ -43,6 +50,12 @@
 
 /* Class = "IBUINavigationItem"; title = "_homeCover"; ObjectID = "7uX-Rl-0S1"; */
 "7uX-Rl-0S1.title" = "Backdrop";
+
+/* Class = "IBUILabel"; text = "summary"; ObjectID = "85h-1p-yyV"; */
+"85h-1p-yyV.text" = "Summary";
+
+/* Class = "IBUILabel"; text = "_repeatType"; ObjectID = "8Pc-dR-737"; */
+"8Pc-dR-737.text" = "Repeat";
 
 /* Class = "IBUIBarButtonItem"; title = "dismiss"; ObjectID = "8YW-6P-rd3"; */
 "8YW-6P-rd3.title" = "dismiss";
@@ -83,6 +96,9 @@
 /* Class = "IBUINavigationItem"; title = "_tags"; ObjectID = "FzV-0j-F2A"; */
 "FzV-0j-F2A.title" = "Tags";
 
+/* Class = "IBUIButton"; normalTitle = "_closeAll"; ObjectID = "GJk-c1-Fft"; */
+"GJk-c1-Fft.normalTitle" = "Close All";
+
 /* Class = "IBUIBarButtonItem"; title = "back"; ObjectID = "GYJ-oh-HYO"; */
 "GYJ-oh-HYO.title" = "back";
 
@@ -90,7 +106,10 @@
 "GgN-Lu-F1z.title" = "back";
 
 /* Class = "IBUIBarButtonItem"; title = "将未完成项目移到明天"; ObjectID = "Hca-Y6-TgS"; */
-"Hca-Y6-TgS.title" = "将未完成项目移到明天";
+"Hca-Y6-TgS.title" = "Move to tmr";
+
+/* Class = "IBUILabel"; text = "_everyFriday"; ObjectID = "IIU-1K-BL9"; */
+"IIU-1K-BL9.text" = "Every Friday";
 
 /* Class = "IBUILabel"; text = "_recommendApp"; ObjectID = "Iod-3r-lRd"; */
 "Iod-3r-lRd.text" = "Recommend Apps";
@@ -101,6 +120,9 @@
 /* Class = "IBUILabel"; text = "month"; ObjectID = "Jdn-F2-H7n"; */
 "Jdn-F2-H7n.text" = "month";
 
+/* Class = "IBUITextField"; text = "_alarmTextFieldPlaceHolder"; ObjectID = "JxE-Ld-t7W"; */
+"JxE-Ld-t7W.text" = "Alarm";
+
 /* Class = "IBUIBarButtonItem"; title = "done"; ObjectID = "KES-TY-TNP"; */
 "KES-TY-TNP.title" = "done";
 
@@ -110,20 +132,56 @@
 /* Class = "IBUIButton"; normalTitle = "remove"; ObjectID = "LK9-Qn-NoA"; */
 "LK9-Qn-NoA.normalTitle" = "remove";
 
+/* Class = "IBUILabel"; text = "_everyWednesday"; ObjectID = "L8W-wa-RgS"; */
+"L8W-wa-RgS.text" = "Every Wednesday";
+
 /* Class = "IBUILabel"; text = "property name"; ObjectID = "LQc-Z4-La4"; */
 "LQc-Z4-La4.text" = "property name";
+
+/* Class = "IBUILabel"; text = "_everyMonday"; ObjectID = "La2-Nb-76u"; */
+"La2-Nb-76u.text" = "Every Monday";
+
+/* Class = "IBUINavigationItem"; title = "_addAlarm"; ObjectID = "Lwc-Mn-XcX"; */
+"Lwc-Mn-XcX.title" = "Add Alarm";
 
 /* Class = "IBUILabel"; text = "_contactByTwitter"; ObjectID = "MjK-sj-3bU"; */
 "MjK-sj-3bU.text" = "@onebox on Twitter";
 
+/* Class = "IBUINavigationItem"; title = "_undos"; ObjectID = "ODK-ul-Ybk"; */
+"ODK-ul-Ybk.title" = "Undos";
+
+/* Class = "IBUILabel"; text = "_everySunday"; ObjectID = "Pcp-cp-fhD"; */
+"Pcp-cp-fhD.text" = "Every Sunday";
+
+/* Class = "IBUILabel"; text = "_alarmText"; ObjectID = "Pdb-Aa-bo5"; */
+"Pdb-Aa-bo5.text" = "Content";
+
+/* Class = "IBUILabel"; text = "AM/PM"; ObjectID = "Pdk-WX-L3L"; */
+"Pdk-WX-L3L.text" = "AM/PM";
+
+/* Class = "IBUINavigationItem"; title = "_alarmClock"; ObjectID = "Php-Pp-wb1"; */
+"Php-Pp-wb1.title" = "Alarms";
+
+/* Class = "IBUINavigationItem"; title = "_editAlarmContent"; ObjectID = "PuN-d3-Tux"; */
+"PuN-d3-Tux.title" = "Edit content";
+
 /* Class = "IBUILabel"; text = "tomorrow do"; ObjectID = "Pw3-Cm-qCp"; */
 "Pw3-Cm-qCp.text" = "tomorrow do";
+
+/* Class = "IBUILabel"; text = "22:52"; ObjectID = "Qwz-U9-8eu"; */
+"Qwz-U9-8eu.text" = "22:52";
 
 /* Class = "IBUIBarButtonItem"; title = "Confirm"; ObjectID = "RJp-6L-Kqh"; */
 "RJp-6L-Kqh.title" = "Confirm";
 
+/* Class = "IBUIButton"; normalTitle = "_save"; ObjectID = "S2m-Qd-V1M"; */
+"S2m-Qd-V1M.normalTitle" = "Save";
+
 /* Class = "IBUILabel"; text = "_moreShareToFriends"; ObjectID = "S2u-fz-7HH"; */
 "S2u-fz-7HH.text" = "Share to Friends";
+
+/* Class = "IBUILabel"; text = "_autoAddToDailyDo"; ObjectID = "TAS-ks-aS9"; */
+"TAS-ks-aS9.text" = "Auto add to daily";
 
 /* Class = "IBUIButton"; normalTitle = "_done"; ObjectID = "TvY-5g-ydx"; */
 "TvY-5g-ydx.normalTitle" = "Done";
@@ -164,6 +222,12 @@
 /* Class = "IBUILabel"; text = "Welcome to One Day!"; ObjectID = "bsc-mG-LBv"; */
 "bsc-mG-LBv.text" = "Welcome to One Day!";
 
+/* Class = "IBUILabel"; text = "Text Detail"; ObjectID = "bvu-5a-Md8"; */
+"bvu-5a-Md8.text" = "Text Detail";
+
+/* Class = "IBUINavigationItem"; title = "_summary"; ObjectID = "cIF-PZ-umF"; */
+"cIF-PZ-umF.title" = "Summary";
+
 /* Class = "IBUITableViewController"; title = "Contact"; ObjectID = "crr-ta-jpV"; */
 "crr-ta-jpV.title" = "Contact";
 
@@ -176,6 +240,9 @@
 /* Class = "IBUIBarButtonItem"; title = "edit"; ObjectID = "dpm-39-JLt"; */
 "dpm-39-JLt.title" = "edit";
 
+/* Class = "IBUIButton"; normalTitle = "_addAlarm"; ObjectID = "dq1-5Y-sqf"; */
+"dq1-5Y-sqf.normalTitle" = "Add Alarm";
+
 /* Class = "IBUILabel"; text = "_moreFeedback"; ObjectID = "e0s-tc-yJY"; */
 "e0s-tc-yJY.text" = "Feedback";
 
@@ -187,6 +254,24 @@
 
 /* Class = "IBUIBarButtonItem"; title = "back"; ObjectID = "fgN-rx-imH"; */
 "fgN-rx-imH.title" = "back";
+
+/* Class = "IBUILabel"; text = "Repeat Detail"; ObjectID = "fvy-cD-aJh"; */
+"fvy-cD-aJh.text" = "Repeat Detail";
+
+/* Class = "IBUIButton"; normalTitle = "_edit"; ObjectID = "fzh-av-Jex"; */
+"fzh-av-Jex.normalTitle" = "Edit";
+
+/* Class = "IBUILabel"; text = "_everyThursday"; ObjectID = "h0A-IK-GyM"; */
+"h0A-IK-GyM.text" = "Every Thursday";
+
+/* Class = "IBUILabel"; text = "text"; ObjectID = "hEa-q9-Itr"; */
+"hEa-q9-Itr.text" = "text";
+
+/* Class = "IBUINavigationItem"; title = "_editAlarmRepeatType"; ObjectID = "hlF-0j-OO6"; */
+"hlF-0j-OO6.title" = "Edit Repeat";
+
+/* Class = "IBUILabel"; text = "Nag type"; ObjectID = "hup-oy-o7u"; */
+"hup-oy-o7u.text" = "Nag";
 
 /* Class = "IBUIButton"; normalTitle = "Clear"; ObjectID = "i6o-4C-kV8"; */
 "i6o-4C-kV8.normalTitle" = "Clear";
@@ -224,6 +309,9 @@
 /* Class = "IBUIBarButtonItem"; title = "back"; ObjectID = "q0e-HM-PcI"; */
 "q0e-HM-PcI.title" = "back";
 
+/* Class = "IBUILabel"; text = "_everySaturday"; ObjectID = "pvU-zM-sxb"; */
+"pvU-zM-sxb.text" = "Every Saturday";
+
 /* Class = "IBUIBarButtonItem"; title = "back"; ObjectID = "q2b-uZ-Oho"; */
 "q2b-uZ-Oho.title" = "back";
 
@@ -238,6 +326,15 @@
 
 /* Class = "IBUILabel"; text = "second level tag"; ObjectID = "skO-aG-odf"; */
 "skO-aG-odf.text" = "second level tag";
+
+/* Class = "IBUILabel"; text = "repeat type"; ObjectID = "tCU-2F-U23"; */
+"tCU-2F-U23.text" = "repeat type";
+
+/* Class = "IBUIButton"; normalTitle = "_checkAll"; ObjectID = "vsG-Ok-wde"; */
+"vsG-Ok-wde.normalTitle" = "Check All";
+
+/* Class = "IBUIBarButtonItem"; title = "done"; ObjectID = "wHB-Xe-8lv"; */
+"wHB-Xe-8lv.title" = "done";
 
 /* Class = "IBUIBarButtonItem"; title = "done"; ObjectID = "wHB-Xe-8lv"; */
 "wHB-Xe-8lv.title" = "done";

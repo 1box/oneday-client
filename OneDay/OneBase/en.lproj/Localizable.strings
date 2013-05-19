@@ -42,6 +42,8 @@
 "CloseAllAlarmSuccess"="All alarms has been closed.";
 "ClearAllBlankTitle"="Clear all blank day";
 "ClearAllBlankSuccess"="All blank day deleted.";
+"AlarmNagTypeGentle"="Gentle";
+"AlarmNagTypeNag"="Nag";
 
 // tags
 "HomeTag"            ="At home";

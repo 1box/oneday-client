@@ -24,6 +24,9 @@
 /* Class = "IBUILabel"; text = "n"; ObjectID = "3Te-CT-sHY"; */
 "3Te-CT-sHY.text" = "n";
 
+/* Class = "IBUIButton"; normalTitle = "_moveAllToToday"; ObjectID = "3wS-Mp-Pl9"; */
+"3wS-Mp-Pl9.normalTitle" = "Move All To Today";
+
 /* Class = "IBUILabel"; text = "property name"; ObjectID = "47g-3v-2SK"; */
 "47g-3v-2SK.text" = "property name";
 
@@ -195,8 +198,8 @@
 /* Class = "IBUILabel"; text = "content"; ObjectID = "UjE-jE-Fdm"; */
 "UjE-jE-Fdm.text" = "content";
 
-/* Class = "IBUIBarButtonItem"; title = "_send"; ObjectID = "W1x-2N-zS9"; */
-"W1x-2N-zS9.title" = "Send";
+/* Class = "IBUIButton"; normalTitle = "_send"; ObjectID = "gaU-fC-dc6"; */
+"gaU-fC-dc6.normalTitle" = "Send";
 
 /* Class = "IBUINavigationItem"; title = "_contactUs"; ObjectID = "WQn-ns-LPv"; */
 "WQn-ns-LPv.title" = "Contact Us";

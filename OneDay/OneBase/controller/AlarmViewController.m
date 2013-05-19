@@ -20,6 +20,7 @@
 @interface AlarmViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) IBOutlet KMTableView *alarmView;
 @property (nonatomic) IBOutlet UISwitch *autoAddSwitch;
+@property (nonatomic) IBOutlet UILabel *autoAddLabel;
 @property (nonatomic) NSArray *alarms;
 @property (nonatomic) NSIndexPath *selectIndexPath;
 @end
@@ -64,7 +65,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     self.alarms = [[AlarmManager sharedManager] alarmsForAddon:_addon];
-    [_alarmView reloadData];
+    [self reloadData];
 }
 
 #pragma mark - Actions
@@ -86,7 +87,7 @@
     
     if (needSave) {
         [[KMModelManager sharedManager] saveContext:nil];
-        [_alarmView reloadData];
+        [self reloadData];
         
         [[MTStatusBarOverlay sharedOverlay] postFinishMessage:NSLocalizedString(@"CloseAllAlarmSuccess", nil) duration:2.f];
     }
@@ -96,6 +97,21 @@
 {
     UISwitch *aSwitch = sender;
     setAutoAddOpenAlarmsToDailyDo(aSwitch.on);
+}
+
+#pragma mark - private
+
+- (void)reloadData
+{
+    [_alarmView reloadData];
+    if ([_alarms count] > 0) {
+        _autoAddSwitch.hidden = YES;
+        _autoAddLabel.hidden = YES;
+    }
+    else {
+        _autoAddSwitch.hidden = NO;
+        _autoAddLabel.hidden = NO;
+    }
 }
 
 #pragma mark - UITableViewDataSource

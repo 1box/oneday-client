@@ -164,7 +164,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="wKb-0h-mgd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_blue.png" id="wKb-0h-mgd">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -352,7 +352,7 @@
                                 <items>
                                     <barButtonItem style="plain" id="kji-kn-GJF">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="3wS-Mp-Pl9" customClass="DarkNavigationBarButton">
-                                            <rect key="frame" x="12" y="7" width="110" height="30"/>
+                                            <rect key="frame" x="12" y="7" width="120" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                             <state key="normal" title="_moveAllToToday">
@@ -369,7 +369,7 @@
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="xTX-ed-0I0">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="vsG-Ok-wde" customClass="DarkNavigationBarButton">
-                                            <rect key="frame" x="132" y="7" width="70" height="30"/>
+                                            <rect key="frame" x="142" y="7" width="70" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                             <state key="normal" title="_checkAll">
@@ -1333,7 +1333,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="Dmv-36-Zda">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_blue.png" id="Dmv-36-Zda">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -1620,7 +1620,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="cAw-Bd-jrh">
-                                                    <rect key="frame" x="223" y="32" width="79" height="27"/>
+                                                    <rect key="frame" x="203" y="32" width="79" height="27"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
                                                         <action selector="handleOpenSwitch:" destination="1Jf-E6-DQV" eventType="valueChanged" id="Vyv-U8-aKt"/>
@@ -1646,15 +1646,15 @@
                                     <outlet property="delegate" destination="vtl-aQ-TwO" id="DfI-u3-5oH"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="_autoAddToDailyDo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TAS-ks-aS9">
-                                <rect key="frame" x="20" y="241" width="196" height="21"/>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="_autoAddToDailyDo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="TAS-ks-aS9">
+                                <rect key="frame" x="46" y="241" width="148" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="EXZ-vt-T9U">
-                                <rect key="frame" x="223" y="238" width="79" height="27"/>
+                            <switch hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="EXZ-vt-T9U">
+                                <rect key="frame" x="202" y="238" width="79" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <action selector="autoAddToDailyDo:" destination="vtl-aQ-TwO" eventType="valueChanged" id="xfn-MB-iOG"/>
@@ -1743,6 +1743,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="alarmView" destination="cWr-qF-Pez" id="O2v-vr-fql"/>
+                        <outlet property="autoAddLabel" destination="TAS-ks-aS9" id="hOe-wb-dLo"/>
                         <outlet property="autoAddSwitch" destination="EXZ-vt-T9U" id="V0U-43-7pW"/>
                     </connections>
                 </viewController>
@@ -2185,7 +2186,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="LWD-8i-zwy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_blue.png" id="LWD-8i-zwy">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -2886,7 +2887,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="background.png" id="G1d-Be-uP2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_blue.png" id="G1d-Be-uP2">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -3123,7 +3124,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <items>
                                     <barButtonItem style="plain" id="8xn-8I-INX">
                                         <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="sQW-9D-4AF">
-                                            <rect key="frame" x="12" y="7" width="222" height="30"/>
+                                            <rect key="frame" x="12" y="7" width="244" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -3134,11 +3135,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="Mor-H3-SQ6">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="gaU-fC-dc6" customClass="DarkNavigationBarButton">
-                                            <rect key="frame" x="244" y="7" width="73" height="30"/>
+                                            <rect key="frame" x="266" y="7" width="44" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                             <state key="normal" title="_send">
-                                                <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <state key="highlighted">
@@ -3281,7 +3282,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </scenes>
     <resources>
         <image name="add_tag.png" width="32" height="32"/>
-        <image name="background.png" width="16" height="16"/>
         <image name="bg_blue.png" width="320" height="480"/>
         <image name="bg_white.png" width="320" height="480"/>
         <image name="cell_normal_bg.png" width="64" height="64"/>
@@ -3382,6 +3382,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="action" name="closeAll:"/>
                 <relationship kind="action" name="edit:"/>
                 <relationship kind="outlet" name="alarmView" candidateClass="KMTableView"/>
+                <relationship kind="outlet" name="autoAddLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="autoAddSwitch" candidateClass="UISwitch"/>
             </relationships>
         </class>

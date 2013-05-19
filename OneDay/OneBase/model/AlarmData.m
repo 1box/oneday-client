@@ -61,10 +61,10 @@
     AlarmNagType nagType = [self.type integerValue];
     switch (nagType) {
         case AlarmNagTypeGentle:
-            ret = @"轻柔";
+            ret = NSLocalizedString(@"AlarmNagTypeGentle", nil);
             break;
             case AlarmNagTypeNag:
-            ret = @"唠叨";
+            ret = NSLocalizedString(@"AlarmNagTypeNag", nil);
             break;
             
         default:

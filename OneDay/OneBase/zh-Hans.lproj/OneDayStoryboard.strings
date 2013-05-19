@@ -57,7 +57,7 @@
 "85h-1p-yyV.text" = "汇总";
 
 /* Class = "IBUILabel"; text = "_repeatType"; ObjectID = "8Pc-dR-737"; */
-"8Pc-dR-737.text" = "_repeatType";
+"8Pc-dR-737.text" = "重复";
 
 /* Class = "IBUIBarButtonItem"; title = "dismiss"; ObjectID = "8YW-6P-rd3"; */
 "8YW-6P-rd3.title" = "dismiss";
@@ -197,8 +197,8 @@
 /* Class = "IBUILabel"; text = "content"; ObjectID = "UjE-jE-Fdm"; */
 "UjE-jE-Fdm.text" = "content";
 
-/* Class = "IBUIBarButtonItem"; title = "_send"; ObjectID = "W1x-2N-zS9"; */
-"W1x-2N-zS9.title" = "发送";
+/* Class = "IBUIButton"; normalTitle = "_send"; ObjectID = "gaU-fC-dc6"; */
+"gaU-fC-dc6.normalTitle" = "发送";
 
 /* Class = "IBUINavigationItem"; title = "_contactUs"; ObjectID = "WQn-ns-LPv"; */
 "WQn-ns-LPv.title" = "联系我们";

@@ -42,6 +42,8 @@
 "CloseAllAlarmSuccess"="所有闹铃已关闭";
 "ClearAllBlankTitle"="删除没有记录的日期";
 "ClearAllBlankSuccess"="没有记录的日期已删除";
+"AlarmNagTypeGentle"="轻柔";
+"AlarmNagTypeNag"="野蛮";
 
 // tags
 "HomeTag"            ="在家";

@@ -49,8 +49,8 @@
     NSMutableArray *mutLineComponents = [NSMutableArray arrayWithCapacity:5];
     NSMutableArray *summaryCashes = [NSMutableArray arrayWithCapacity:12];
     
-    __block CGFloat minSummary = 0.f;
-    __block CGFloat maxSummary = 0.f;
+    __block CGFloat minSummary = -40.f;
+    __block CGFloat maxSummary = 100.f;
     
     switch (_type) {
         case SummaryViewTypeMonth:

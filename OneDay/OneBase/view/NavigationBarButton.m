@@ -12,9 +12,9 @@
 
 - (void)awakeFromNib
 {
-    UIImage *backgroundImage = [UIImage imageNamed:@"nav_btn_bg.png"];
+    UIImage *backgroundImage = [UIImage imageNamed:@"light_nav_btn_bg.png"];
     backgroundImage = [backgroundImage stretchableImageWithLeftCapWidth:backgroundImage.size.width/2 topCapHeight:backgroundImage.size.height/2];
-    UIImage *pressBackgroundImage = [UIImage imageNamed:@"nav_btn_bg_press.png"];
+    UIImage *pressBackgroundImage = [UIImage imageNamed:@"light_nav_btn_bg_press.png"];
     pressBackgroundImage = [pressBackgroundImage stretchableImageWithLeftCapWidth:pressBackgroundImage.size.width/2 topCapHeight:pressBackgroundImage.size.height/2];
     [self setBackgroundImage:backgroundImage forState:UIControlStateNormal];
     [self setBackgroundImage:pressBackgroundImage forState:UIControlStateHighlighted];

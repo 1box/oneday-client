@@ -12,7 +12,7 @@
 
 - (void)awakeFromNib
 {
-    [self setBackgroundImage:[UIImage imageNamed:@"nav_bg.png"] forBarMetrics:UIBarMetricsDefault];
+    [self setBackgroundImage:[UIImage imageNamed:@"light_nav_bg.png"] forBarMetrics:UIBarMetricsDefault];
 }
 
 @end

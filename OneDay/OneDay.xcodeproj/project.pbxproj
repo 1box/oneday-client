@@ -1459,8 +1459,8 @@
 		CB4607F8173D4B8800955454 /* main_tip1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4606A8173D4B8800955454 /* main_tip1@2x.png */; };
 		CB48EC8B17400A6E00B232CB /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB48EC8A17400A6E00B232CB /* SummaryViewController.m */; };
 		CB48EC8C17400A6E00B232CB /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB48EC8A17400A6E00B232CB /* SummaryViewController.m */; };
-		CB4DB67617493A02001D3C02 /* UMEGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4DB65317493A02001D3C02 /* UMEGORefreshTableHeaderView.m */; };
-		CB4DB67717493A02001D3C02 /* UMEGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4DB65317493A02001D3C02 /* UMEGORefreshTableHeaderView.m */; };
+		CB4DB67617493A02001D3C02 /* UMEGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4DB65317493A02001D3C02 /* UMEGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		CB4DB67717493A02001D3C02 /* UMEGORefreshTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4DB65317493A02001D3C02 /* UMEGORefreshTableHeaderView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
 		CB4DB67817493A02001D3C02 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4DB65517493A02001D3C02 /* background@2x.png */; };
 		CB4DB67917493A02001D3C02 /* background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4DB65517493A02001D3C02 /* background@2x.png */; };
 		CB4DB67A17493A02001D3C02 /* blueArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4DB65617493A02001D3C02 /* blueArrow.png */; };
@@ -1517,8 +1517,6 @@
 		CB4DB6AD17493A02001D3C02 /* UMFeedbackTableViewCellRight.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4DB67217493A02001D3C02 /* UMFeedbackTableViewCellRight.m */; };
 		CB4DB6AE17493A02001D3C02 /* UMFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4DB67417493A02001D3C02 /* UMFeedbackViewController.m */; };
 		CB4DB6AF17493A02001D3C02 /* UMFeedbackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB4DB67417493A02001D3C02 /* UMFeedbackViewController.m */; };
-		CB4DB6B017493A02001D3C02 /* UMFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4DB67517493A02001D3C02 /* UMFeedbackViewController.xib */; };
-		CB4DB6B117493A02001D3C02 /* UMFeedbackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB4DB67517493A02001D3C02 /* UMFeedbackViewController.xib */; };
 		CB620E88173C933200E4F3DC /* SplashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB620E87173C933200E4F3DC /* SplashHelper.m */; };
 		CB620E89173C933200E4F3DC /* SplashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB620E87173C933200E4F3DC /* SplashHelper.m */; };
 		CB7421721745437200B75267 /* AlarmRepeatTypeCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7421711745437200B75267 /* AlarmRepeatTypeCellView.m */; };
@@ -2648,7 +2646,6 @@
 		CB4DB67217493A02001D3C02 /* UMFeedbackTableViewCellRight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMFeedbackTableViewCellRight.m; sourceTree = "<group>"; };
 		CB4DB67317493A02001D3C02 /* UMFeedbackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMFeedbackViewController.h; sourceTree = "<group>"; };
 		CB4DB67417493A02001D3C02 /* UMFeedbackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UMFeedbackViewController.m; sourceTree = "<group>"; };
-		CB4DB67517493A02001D3C02 /* UMFeedbackViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UMFeedbackViewController.xib; sourceTree = "<group>"; };
 		CB620E86173C933200E4F3DC /* SplashHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashHelper.h; sourceTree = "<group>"; };
 		CB620E87173C933200E4F3DC /* SplashHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashHelper.m; sourceTree = "<group>"; };
 		CB7421701745437200B75267 /* AlarmRepeatTypeCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmRepeatTypeCellView.h; sourceTree = "<group>"; };
@@ -4338,7 +4335,6 @@
 				CB4DB67217493A02001D3C02 /* UMFeedbackTableViewCellRight.m */,
 				CB4DB67317493A02001D3C02 /* UMFeedbackViewController.h */,
 				CB4DB67417493A02001D3C02 /* UMFeedbackViewController.m */,
-				CB4DB67517493A02001D3C02 /* UMFeedbackViewController.xib */,
 			);
 			name = chat;
 			path = Demo/chat;
@@ -5454,7 +5450,6 @@
 				CB4DB6A317493A02001D3C02 /* send_selected@2x.png in Resources */,
 				CB4DB6A517493A02001D3C02 /* umeng_logo.png in Resources */,
 				CB4DB6A917493A02001D3C02 /* UMContactViewController.xib in Resources */,
-				CB4DB6B117493A02001D3C02 /* UMFeedbackViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6172,7 +6167,6 @@
 				CB4DB6A217493A02001D3C02 /* send_selected@2x.png in Resources */,
 				CB4DB6A417493A02001D3C02 /* umeng_logo.png in Resources */,
 				CB4DB6A817493A02001D3C02 /* UMContactViewController.xib in Resources */,
-				CB4DB6B017493A02001D3C02 /* UMFeedbackViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -244,12 +244,14 @@ typedef NS_ENUM(NSInteger, RateSectionRowType) {
                 {
                     tCellID = alarmSoundSwitchCellID;
                     _alarmSoundSwitch.on = playAlarmSounds();
+                    _alarmSoundSwitch.hidden = NO;
                 }
                     break;
                 case SettingSectionRowTypeAlarmBadgeSwitch:
                 {
                     tCellID = alarmBadgeSwitchCellID;
                     _alarmBadgeSwitch.on = showAppIconBadge();
+                    _alarmBadgeSwitch.hidden = NO;
                 }
                     break;
             }

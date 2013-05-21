@@ -44,6 +44,9 @@
 "ClearAllBlankSuccess"="没有记录的日期已删除";
 "AlarmNagTypeGentle"="轻柔";
 "AlarmNagTypeNag"="野蛮";
+"AlarmRepeatTypeEveryDay"="每天";
+"AlarmRepeatTypeWorkday"="工作日";
+"AlarmRepeatTypeNone"="不重复";
 
 // tags
 "HomeTag"            ="在家";

@@ -77,69 +77,63 @@
 {
     AlarmRepeatType repeatType = [self.repeatType integerValue];
     
-    NSMutableString *repeatText = [NSMutableString stringWithCapacity:50];
-    int dayCount = 0;
-    
-    if (AlarmRepeatTypeSunday == (AlarmRepeatTypeSunday&repeatType)) {
-        [repeatText appendString:@"周日"];
-        dayCount ++;
+    if (repeatType == (AlarmRepeatTypeSunday|AlarmRepeatTypeMonday|AlarmRepeatTypeTuesday|AlarmRepeatTypeWednesday|AlarmRepeatTypeThursday|AlarmRepeatTypeFriday|AlarmRepeatTypeSaturday)) {
+        return NSLocalizedString(@"AlarmRepeatTypeEveryDay", nil);
     }
-    
-    if (AlarmRepeatTypeMonday == (AlarmRepeatTypeMonday&repeatType)) {
-        if ([repeatText length] > 0) {
-            [repeatText appendString:@" "];
-        }
-        [repeatText appendString:@"周一"];
-        dayCount ++;
+    else if (repeatType == (AlarmRepeatTypeMonday|AlarmRepeatTypeTuesday|AlarmRepeatTypeWednesday|AlarmRepeatTypeThursday|AlarmRepeatTypeFriday)) {
+        return NSLocalizedString(@"AlarmRepeatTypeWorkday", nil);
     }
-    
-    if (AlarmRepeatTypeTuesday == (AlarmRepeatTypeTuesday&repeatType)) {
-        if ([repeatText length] > 0) {
-            [repeatText appendString:@" "];
-        }
-        [repeatText appendString:@"周二"];
-        dayCount ++;
-    }
-    
-    if (AlarmRepeatTypeWednesday == (AlarmRepeatTypeWednesday&repeatType)) {
-        if ([repeatText length] > 0) {
-            [repeatText appendString:@" "];
-        }
-        [repeatText appendString:@"周三"];
-        dayCount ++;
-    }
-    
-    if (AlarmRepeatTypeThursday == (AlarmRepeatTypeThursday&repeatType)) {
-        if ([repeatText length] > 0) {
-            [repeatText appendString:@" "];
-        }
-        [repeatText appendString:@"周四"];
-        dayCount ++;
-    }
-    
-    if (AlarmRepeatTypeFriday == (AlarmRepeatTypeFriday&repeatType)) {
-        if ([repeatText length] > 0) {
-            [repeatText appendString:@" "];
-        }
-        [repeatText appendString:@"周五"];
-        dayCount ++;
-    }
-    
-    if (AlarmRepeatTypeSaturday == (AlarmRepeatTypeSaturday&repeatType)) {
-        if ([repeatText length] > 0) {
-            [repeatText appendString:@" "];
-        }
-        [repeatText appendString:@"周六"];
-        dayCount ++;
-    }
-    
-    if (dayCount == 7) {
-        return @"每天";
-    }
-    else if (dayCount == 0) {
-        return @"不重复";
+    else if (repeatType == AlarmRepeatTypeNever) {
+        return NSLocalizedString(@"AlarmRepeatTypeNone", nil);
     }
     else {
+        NSMutableString *repeatText = [NSMutableString stringWithCapacity:50];
+        
+        if (AlarmRepeatTypeSunday == (AlarmRepeatTypeSunday&repeatType)) {
+            [repeatText appendString:[[HourToMiniteFormatter() shortWeekdaySymbols] objectAtIndex:0]];
+        }
+        
+        if (AlarmRepeatTypeMonday == (AlarmRepeatTypeMonday&repeatType)) {
+            if ([repeatText length] > 0) {
+                [repeatText appendString:@" "];
+            }
+            [repeatText appendString:[[HourToMiniteFormatter() shortWeekdaySymbols] objectAtIndex:1]];
+        }
+        
+        if (AlarmRepeatTypeTuesday == (AlarmRepeatTypeTuesday&repeatType)) {
+            if ([repeatText length] > 0) {
+                [repeatText appendString:@" "];
+            }
+            [repeatText appendString:[[HourToMiniteFormatter() shortWeekdaySymbols] objectAtIndex:2]];
+        }
+        
+        if (AlarmRepeatTypeWednesday == (AlarmRepeatTypeWednesday&repeatType)) {
+            if ([repeatText length] > 0) {
+                [repeatText appendString:@" "];
+            }
+            [repeatText appendString:[[HourToMiniteFormatter() shortWeekdaySymbols] objectAtIndex:3]];
+        }
+        
+        if (AlarmRepeatTypeThursday == (AlarmRepeatTypeThursday&repeatType)) {
+            if ([repeatText length] > 0) {
+                [repeatText appendString:@" "];
+            }
+            [repeatText appendString:[[HourToMiniteFormatter() shortWeekdaySymbols] objectAtIndex:4]];
+        }
+        
+        if (AlarmRepeatTypeFriday == (AlarmRepeatTypeFriday&repeatType)) {
+            if ([repeatText length] > 0) {
+                [repeatText appendString:@" "];
+            }
+            [repeatText appendString:[[HourToMiniteFormatter() shortWeekdaySymbols] objectAtIndex:5]];
+        }
+        
+        if (AlarmRepeatTypeSaturday == (AlarmRepeatTypeSaturday&repeatType)) {
+            if ([repeatText length] > 0) {
+                [repeatText appendString:@" "];
+            }
+            [repeatText appendString:[[HourToMiniteFormatter() shortWeekdaySymbols] objectAtIndex:6]];
+        }
         return [repeatText copy];
     }
 }
@@ -148,6 +142,10 @@
 {
     NSDate *alarmDate = [[HourToMiniteFormatter() dateFromString:self.alarmTime] sameTimeToday];
     AlarmRepeatType repeatType = [self.repeatType integerValue];
+    if (repeatType == AlarmRepeatTypeNever) {
+        return nil;
+    }
+    
     AlarmRepeatType todayRepeatType = [AlarmData repeatTypeAfterDays:0];
     
     NSDate *nextRepeatTime = [NSDate date];
@@ -162,6 +160,7 @@
                 break;
             }
         }
+        
         NSInteger days = ([AlarmData weekdayForRepeatType:nextRepeatType] - [[NSDate date] weekday] + 7)%7;
         nextRepeatTime = [alarmDate dateByAddingDays:days];
     }

@@ -44,6 +44,9 @@
 "ClearAllBlankSuccess"="All blank day deleted.";
 "AlarmNagTypeGentle"="Gentle";
 "AlarmNagTypeNag"="Nag";
+"AlarmRepeatTypeEveryDay"="Everyday";
+"AlarmRepeatTypeWorkday"="Workdays";
+"AlarmRepeatTypeNone"="None";
 
 // tags
 "HomeTag"            ="At home";

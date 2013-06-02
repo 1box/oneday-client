@@ -32,4 +32,15 @@
     }
     return [tMutableString copy];
 }
+
+- (NSString *)SBCString
+{
+    return [self stringByReplacingOccurrencesOfString:@":" withString:@"："];
+}
+
+- (NSString *)DBCString
+{
+    return [self stringByReplacingOccurrencesOfString:@"：" withString:@":"];
+}
+
 @end

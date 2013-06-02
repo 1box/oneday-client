@@ -164,7 +164,11 @@ static SMDetector *_defaultDetector = nil;
                                 
                                 NSString *matchString = [aString substringWithRange:match.range];
                                 if ([matchString length] <= 5) {
-                                    [mutRet addObject:[[HourToMiniteFormatter() dateFromString:matchString] sameTimeToday]];
+                                    
+                                    NSDate *tDate = [HourToMiniteFormatter() dateFromString:[matchString DBCString]];
+                                    if (tDate) {
+                                        [mutRet addObject:[tDate sameTimeToday]];
+                                    }
                                 }
                                 else {
                                     [mutRet addObject:match.date];

@@ -54,7 +54,11 @@
 
 - (NSString *)pageNameForTrack
 {
-    return @"_addon.dailyDoName";
+    NSString *pageName = @"DailyDo";
+    if (_addon) {
+        pageName = _addon.dailyDoName;
+    }
+    return pageName;
 }
 
 #pragma mark - Viewlifecycle

@@ -11,6 +11,12 @@
 #define KMEmptyString(x) (![x isKindOfClass:[NSString class]] || x.length == 0)
 
 @interface NSString (NSStringAdditions)
+
 - (BOOL)isInputComponent;
 - (NSString *)stringByTrimmingStrings:(NSArray *)strings;
+
+// SBC&DBC case string convert, only support ":" now
+- (NSString *)SBCString;
+- (NSString *)DBCString;
+
 @end

@@ -3689,7 +3689,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 <relationship kind="outlet" name="zoomView" candidateClass="UIScrollView"/>
             </relationships>
         </class>
-        <class className="TipViewController" superclassName="UIViewController">
+        <class className="TipViewController" superclassName="KMViewControllerBase">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/TipViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancel:"/>
@@ -3718,6 +3718,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="UMTableViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UMTableViewController.h"/>

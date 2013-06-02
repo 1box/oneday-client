@@ -51,7 +51,9 @@
     _nagTypeSwitch.on = ([_alarm.type integerValue] == AlarmNagTypeNag);
     if (_alarm.alarmTime && !_hasAppear) {
         _hasAppear = YES;
-        _timePicker.date = [HourToMiniteFormatter() dateFromString:_alarm.alarmTime];
+        if (_timePicker) {
+            _timePicker.date = [HourToMiniteFormatter() dateFromString:_alarm.alarmTime];
+        }
     }
     [_listView reloadData];
 }

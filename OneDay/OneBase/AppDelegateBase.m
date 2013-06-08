@@ -14,6 +14,7 @@
 #import "AlarmManager.h"
 #import "CartoonManager.h"
 #import "AddonManager.h"
+#import "PasswordManager.h"
 #import "SplashHelper.h"
 #import "iRate.h"
 #import "iVersion.h"
@@ -59,16 +60,7 @@
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     
     UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
-    if (localNotification) {
-        if ([SplashHelper sharedHelper].hasFliped) {
-            [[AlarmManager sharedManager] handleAlarmLocalNotification:localNotification];
-        }
-        else {
-            [[SplashHelper sharedHelper] addFinishedBlock:^(SplashHelper *helper) {
-                [[AlarmManager sharedManager] handleAlarmLocalNotification:localNotification];
-            }];
-        }
-    }
+    [self handleLocalNotification:localNotification];
     
     return YES;
 }
@@ -76,25 +68,18 @@
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
     if ([[UIApplication sharedApplication] applicationState] != UIApplicationStateActive) {
-        if ([SplashHelper sharedHelper].hasFliped) {
-            [[AlarmManager sharedManager] handleAlarmLocalNotification:notification];
-        }
-        else {
-            [[SplashHelper sharedHelper] addFinishedBlock:^(SplashHelper *helper) {
-                [[AlarmManager sharedManager] handleAlarmLocalNotification:notification];
-            }];
-        }
+        [self handleLocalNotification:notification];
     }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     [[AlarmManager sharedManager] rebuildAlarmNotifications];
+    [[PasswordManager sharedManager] resetHasShownAddonDictionary];
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -104,6 +89,25 @@
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    [self showLaunchLock];
+}
+
+#pragma mark - private
+
+- (void)handleLocalNotification:(UILocalNotification *)notification
+{
+    if (notification) {
+        [[SplashHelper sharedHelper] addFinishedBlock:^(SplashHelper *helper) {
+            [[AlarmManager sharedManager] handleAlarmLocalNotification:notification];
+        }];
+    }
+}
+
+- (void)showLaunchLock
+{
+    [[SplashHelper sharedHelper] addFlipedBlock:^(SplashHelper *helper) {
+        [[PasswordManager sharedManager] showLaunchLockIfNecessary];
+    }];
 }
 
 #pragma mark - extended

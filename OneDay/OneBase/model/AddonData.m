@@ -24,6 +24,7 @@
 @dynamic detectType;
 @dynamic showChecked;
 @dynamic tipImage;
+@dynamic passwordOn;
 
 @dynamic dailyDos;
 @dynamic alarms;
@@ -51,13 +52,15 @@
     @"detectType" : @"detect_type",
     @"showChecked" : @"show_checked",
     @"tipImage" : @"tip_image",
+    @"passwordOn" : @"password_on",
     };
 }
 
 + (NSDictionary *)updateIgnoredKeys
 {
     return @{[NSNumber numberWithInteger:NSIntegerMin] : @"orderIndex",
-             @YES : @"display"};
+             @YES : @"display",
+             @NO : @"passwordOn"};
 }
 
 + (void)loadDefaultDataFromDefaultPlist

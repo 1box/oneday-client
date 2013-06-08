@@ -10,6 +10,9 @@
 
 @interface KMViewControllerBase : UIViewController
 #pragma mark - protected
+
++ (NSString *)storyBoardID;
+
 - (NSString *)pageNameForTrack;
 - (IBAction)back:(id)sender;
 - (IBAction)dismiss:(id)sender;

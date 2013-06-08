@@ -7,46 +7,58 @@
 */
 
 // date fomatter
-"CurrentDateLocale"="en_US";
-"MonthToDayFormat" ="MM.dd";
+"CurrentDateLocale" ="en_US";
+"MonthToDayFormat"  ="MM.dd";
 
-"Share to friends"="Share to friends";
-"Email"="Email";
-"Message"="Message";
-"_cancel"="Cancel";
-"_confirm"="OK";
-"Logged" ="Logged";
-"TomorrowDo"="Tomorrow";
-"tags"   ="Tags";
-"_recommendApp"="Recommend Apps";
-"_quickEntryMessage"="To be insert as a new record";
-"Go"="Go";
-"OK"="OK";
-"Cancel"="Cancel";
-"See"="See";
-"delete"="Delete";
-"_done"="Done";
-"_edit"="Edit";
+"Share to friends"   ="Share to friends";
+"Email"              ="Email";
+"Message"            ="Message";
+"_cancel"            ="Cancel";
+"_confirm"           ="OK";
+"Logged"             ="Logged";
+"TomorrowDo"         ="Tomorrow";
+"tags"               ="Tags";
+"_recommendApp"      ="Recommend Apps";
+"_quickEntryMessage" ="To be insert as a new record";
+"Go"                 ="Go";
+"OK"                 ="OK";
+"Cancel"             ="Cancel";
+"See"                ="See";
+"delete"             ="Delete";
+"_done"              ="Done";
+"_edit"              ="Edit";
 
-"QuickAddTodoDone"="New memo created.";
-"MoveAllUndosToToday"="All undos moved to today.";
-"CheckAllUndos"="All undos has been checked.";
-"ShowAllUndosTitle"="Show all undos";
-"CashMonthSummaryTitle"="Month Summary";
-"CashYearSummaryTitle"="Year Summary";
-"AlarmNotificationTitle"="Alarm clock";
-"CashMonthSummaryText"="Month Cash: %f";
-"CashYearSummaryText"="Year Cash: %f";
-"DeleteAlarmSuccess"="Delete Success.";
-"AlarmDataDefaultText"="Alarm clock";
-"CloseAllAlarmSuccess"="All alarms has been closed.";
-"ClearAllBlankTitle"="Clear all blank day";
-"ClearAllBlankSuccess"="All blank day deleted.";
-"AlarmNagTypeGentle"="Gentle";
-"AlarmNagTypeNag"="Nag";
-"AlarmRepeatTypeEveryDay"="Everyday";
-"AlarmRepeatTypeWorkday"="Workdays";
-"AlarmRepeatTypeNone"="None";
+"QuickAddTodoDone"        ="New memo created.";
+"MoveAllUndosToToday"     ="All undos moved to today.";
+"CheckAllUndos"           ="All undos has been checked.";
+"ShowAllUndosTitle"       ="Show all undos";
+"CashMonthSummaryTitle"   ="Month Summary";
+"CashYearSummaryTitle"    ="Year Summary";
+"AlarmNotificationTitle"  ="Alarm clock";
+"CashMonthSummaryText"    ="Month Cash: %f";
+"CashYearSummaryText"     ="Year Cash: %f";
+"DeleteAlarmSuccess"      ="Delete Success.";
+"AlarmDataDefaultText"    ="Alarm clock";
+"CloseAllAlarmSuccess"    ="All alarms has been closed.";
+"ClearAllBlankTitle"      ="Clear all blank day";
+"ClearAllBlankSuccess"    ="All blank day deleted.";
+"AlarmNagTypeGentle"      ="Gentle";
+"AlarmNagTypeNag"         ="Nag";
+"AlarmRepeatTypeEveryDay" ="Everyday";
+"AlarmRepeatTypeWorkday"  ="Workdays";
+"AlarmRepeatTypeNone"     ="None";
+
+// password
+
+"LaunchPasswordCellText" = "Launch password";
+
+// dot lock
+"InfoStatusFirstTimeSettingText" ="Set a Pattern !";
+"InfoStatusConfirmSettingText"   ="Confirm the Pattern !";
+"InfoStatusFailedConfirmText"    ="Failed to confirm, please retry";
+"InfoStatusNormalText"           ="Draw previously set pattern to go in";
+"InfoStatusFailedMatchText"      ="Wrong Guess # %d, try again !";
+"InfoStatusSuccessMatchText"     ="Welcome !";
 
 // tags
 "HomeTag"            ="At home";
@@ -61,136 +73,112 @@
 "StudyTag"           ="On study";
 
 // check update
-"_hasUpdateTitle"="New Version %@ Available Now";
-"_hasUpdateMessage"="What's New in this version:\n%@";
-"_hasUpdateCancel"="Not Now";
-"_hasUpdateOK"="Update";
-"_hasUpdateDefaultMessage"="♥ Love to plan, love to note, love your life, I'm not LadyGaga, I'm ♥一天・One Day.";
+"_hasUpdateTitle"          ="New Version %@ Available Now";
+"_hasUpdateMessage"        ="What's New in this version:\n%@";
+"_hasUpdateCancel"         ="Not Now";
+"_hasUpdateOK"             ="Update";
+"_hasUpdateDefaultMessage" ="♥ Love to plan, love to note, love your life, I'm not LadyGaga, I'm ♥一天・One Day.";
 
 // feedback
-"_feedbackSendFail"="Send failed, try later.";
-"_feedbackSendSuccess"="Thanks for your feedback!";
-"_hasFeedbacks"="You have %d new feedback";
+"_feedbackSendFail"    ="Send failed, try later.";
+"_feedbackSendSuccess" ="Thanks for your feedback!";
+"_hasFeedbacks"        ="You have %d new feedback";
 
 // alarm
-"_dailyAlarmNotificationMessage"="%d %@";
-"_dailyAlarmNotificationBody"="Today you still have %@ not off, go and see it!";
-"Go and See"="I see";
-"Check All"="Check all";
+"_dailyAlarmNotificationMessage" ="%d %@";
+"_dailyAlarmNotificationBody"    ="Today you still have %@ not off, go and see it!";
+"Go and See"                     ="I see";
+"Check All"                      ="Check all";
 
 // date formatter
-"UserFriendlyDateStringToday"="Today";
+"UserFriendlyDateStringToday" ="Today";
 
 // daily do view
-"MoveToTomorrowMessage"="Will move:\" %@ \"to tomorrow!";
-"NoUndoToTomorrowMessage"="Nothing can move to tomorrow!";
-"MoveToTomorrow"="Move";
-"_tomorrowDoText"="%d todo has been moved";
+"MoveToTomorrowMessage"   ="Will move:\" %@ \"to tomorrow!";
+"NoUndoToTomorrowMessage" ="Nothing can move to tomorrow!";
+"MoveToTomorrow"          ="Move";
+"_tomorrowDoText"         ="%d todo has been moved";
 
 // daily do
-"DailySchedule"    ="Daily Schedule";
-"TodaySchedule"    ="Today Schedule";
-"ScheduleTimeline" ="Timeline";
-"ScheduleSlogan"   ="Learn to plan your day, make your life under control";
-"ScheduleCompleteText" ="Done: %0.2f";
-"ScheduleNoText"="No schedule this day, your life is out of control";
-"SchedulePlaceHolder"="◉ Input Sample (1):
-◉ Input \"Have lunch at 11:50 am\", will automatically adjust the record's start time to 11:50 am\n
-◉ Input Sample (2): 
-◉ Input \"Have a nap 12:50 pm (1h30m)\", will automatically adjust the record's start time to 12:50 pm, end time to one and half hours later, which should be 2:20 pm\n
-◉ More Samples: 
+"DailySchedule"            ="Daily Schedule";
+"TodaySchedule"            ="Today Schedule";
+"ScheduleTimeline"         ="Timeline";
+"ScheduleSlogan"           ="Learn to plan your day, make your life under control";
+"ScheduleCompleteText"     ="Done: %0.2f";
+"ScheduleNoText"           ="No schedule this day, your life is out of control";
+"SchedulePlaceHolder"      ="◉ Input Sample (1):\
+◉ Input \"Have lunch at 11:50 am\", will automatically adjust the record's start time to 11:50 am\n\
+◉ Input Sample (2): \
+◉ Input \"Have a nap 12:50 pm (1h30m)\", will automatically adjust the record's start time to 12:50 pm, end time to one and half hours later, which should be 2:20 pm\n\
+◉ More Samples: \
 ◉ \"Go to a movie at 4:45 pm (1.5h)\"";
 
-"DailyShort"       ="Daily Short";
-"TodayShort"       ="My short";
-"ShortSlogan"      ="Shortcomings is not terrible at all. Remember to give it a fatal blow at the appropriate time";
-"ShortPlaceHolder"="* Shortcomings is not terrible at all. Remember to give it a fatal blow at the appropriate time!";
-"DailyShortNoText"="Not found short this day.";
+"DailyShort"               ="Daily Short";
+"TodayShort"               ="My short";
+"ShortSlogan"              ="Shortcomings is not terrible at all. Remember to give it a fatal blow at the appropriate time";
+"ShortPlaceHolder"         ="* Shortcomings is not terrible at all. Remember to give it a fatal blow at the appropriate time!";
+"DailyShortNoText"         ="Not found short this day.";
 
-"DailyCash"        ="Daily Cash";
-"TodayCash"        ="Today Balance";
-"CashTimeline"     ="Timeline";
-"CashSlogan"       ="Let your payments like a teapot, come easy, go difficultly";
-"CashGainTodayText"    ="Make %0.2f dollars today!";
-"CashLoseTodayText"    ="Spent %0.2f d today!";
-"CashEqualTodayText"    ="Balance of payments today!";
-"CashGainCompleteText" ="Income %0.2f dollars";
-"CashLoseCompleteText" ="Spent %0.2f dollars";
-"CashEqualCompleteText" ="Just balance";
-"CashNoText"="No cash record this day";
-"CashPlaceHolder"="◉ Input Sample (1):
-◉ Input \"Have Christmas dinner costs 500d\", will automatically adjust the record's money to: cost 500 dollars;\n
-◉ Input Sample (2): 
-◉ Input \"Wage day: +7500d\", will automatically adjust the record's money to: gain 7500 dollars;\n
-◉ More Samples: 
-◉ \"On the roadside pick up to 5 dollars\";
+"DailyCash"                ="Daily Cash";
+"TodayCash"                ="Today Balance";
+"CashTimeline"             ="Timeline";
+"CashSlogan"               ="Let your payments like a teapot, come easy, go difficultly";
+"CashGainTodayText"        ="Make %0.2f dollars today!";
+"CashLoseTodayText"        ="Spent %0.2f d today!";
+"CashEqualTodayText"       ="Balance of payments today!";
+"CashGainCompleteText"     ="Income %0.2f dollars";
+"CashLoseCompleteText"     ="Spent %0.2f dollars";
+"CashEqualCompleteText"    ="Just balance";
+"CashNoText"               ="No cash record this day";
+"CashPlaceHolder"          ="◉ Input Sample (1):\
+◉ Input \"Have Christmas dinner costs 500d\", will automatically adjust the record's money to: cost 500 dollars;\n\
+◉ Input Sample (2): \
+◉ Input \"Wage day: +7500d\", will automatically adjust the record's money to: gain 7500 dollars;\n\
+◉ More Samples: \
+◉ \"On the roadside pick up to 5 dollars\";\
 ◉ \"Go to sanya tourism spent 10000 dollars\";";
 
-"DailyWorkout"     ="Daily Workout";
-"TodayWorkout"     ="To-do Workouts";
-"WorkoutTimeline" ="Timeline";
-"WorkoutSlogan"    ="Successful sports belongs to the persevering! ";
-"WorkoutCompleteText" ="Daily done: %0.2f";
-"WorkoutNoText"="No workout plan this day";
-"WorkoutPlaceHolder"="◉ Input Sample (1):
-◉ Input \"Run 1kilometers\", will automatically adjust the record's distance to: 1000m\n
-◉ Input Sample (2): 
+"DailyWorkout"             ="Daily Workout";
+"TodayWorkout"             ="To-do Workouts";
+"WorkoutTimeline"          ="Timeline";
+"WorkoutSlogan"            ="Successful sports belongs to the persevering! ";
+"WorkoutCompleteText"      ="Daily done: %0.2f";
+"WorkoutNoText"            ="No workout plan this day";
+"WorkoutPlaceHolder"       ="◉ Input Sample (1):\
+◉ Input \"Run 1kilometers\", will automatically adjust the record's distance to: 1000m\n\
+◉ Input Sample (2): \
 ◉ Input \"Sit-ups 30 times\", will automatically adjust the record's times to: 30times\n";
 
-"DailyCalorie"     ="Daily Calorie";
-"TodayCalorie"     ="Today Calorie";
-"CalorieTimeline"  ="Timeline";
-"CalorieSlogan"    ="Be slim like him!";
-"CalorieGainTodayText" ="Gain %0.3fkilocalorie today";
-"CalorieLoseTodayText" ="Lose %0.3fkilocalorie today";
-"CalorieEqualTodayText" ="Balance of calories today";
-"CalorieGainCompleteText" ="totaly gain %0.3fkilocalorie";
-"CalorieLoseCompleteText" ="totaly lose %0.3fkilocalorie";
+"DailyCalorie"             ="Daily Calorie";
+"TodayCalorie"             ="Today Calorie";
+"CalorieTimeline"          ="Timeline";
+"CalorieSlogan"            ="Be slim like him!";
+"CalorieGainTodayText"     ="Gain %0.3fkilocalorie today";
+"CalorieLoseTodayText"     ="Lose %0.3fkilocalorie today";
+"CalorieEqualTodayText"    ="Balance of calories today";
+"CalorieGainCompleteText"  ="totaly gain %0.3fkilocalorie";
+"CalorieLoseCompleteText"  ="totaly lose %0.3fkilocalorie";
 "CalorieEqualCompleteText" ="Just balance";
-"CalorieNoText"="No calorie record this day";
-"CaloriePlaceHolder"="◉ Input Sample (1):
-◉ Input \"Ice cream, gain 127kilocalorie\", will automatically adjust the record's calorie to: gain 127kilocalorie\n
-◉ Input Sample (2): 
-◉ Input \"Do yoga make me lose 100kilocalorie\", will automatically adjust the record's calorie to: lose 100kilocalorie\n
-◉ More Samples: 
+"CalorieNoText"            ="No calorie record this day";
+"CaloriePlaceHolder"       ="◉ Input Sample (1):\
+◉ Input \"Ice cream, gain 127kilocalorie\", will automatically adjust the record's calorie to: gain 127kilocalorie\n\
+◉ Input Sample (2): \
+◉ Input \"Do yoga make me lose 100kilocalorie\", will automatically adjust the record's calorie to: lose 100kilocalorie\n\
+◉ More Samples: \
 ◉ Input \"Another ice cream, gain 127kilocalorie\"";
 
-"DailyMemo"     ="Daily Memo";
-"TodayMemo"     ="My Memo";
-"MemoTimeline"  ="Timeline";
-"MemoSlogan"    ="In remote antiquity Chinese people use tortoise shell to write memo.";
-"MemoTodayText" ="%d memos, %d undo";
-"MemoCompleteText" ="All %d memos have been checked";
-"MemoNoText"="No memos this day";
-"MemoPlaceHolder"="◉ In remote antiquity Chinese people use tortoise shell to write memo.";
+"DailyMemo"                ="Daily Memo";
+"TodayMemo"                ="My Memo";
+"MemoTimeline"             ="Timeline";
+"MemoSlogan"               ="In remote antiquity Chinese people use tortoise shell to write memo.";
+"MemoTodayText"            ="%d memos, %d undo";
+"MemoCompleteText"         ="All %d memos have been checked";
+"MemoNoText"               ="No memos this day";
+"MemoPlaceHolder"          ="◉ In remote antiquity Chinese people use tortoise shell to write memo.";
 
 // message
-"Share app mail subject"="Share an app to you: One Day - Love plan, Love note";
-"Share app mail message"="Nice app! One Day - Love plan, Love note! Click to download: https://itunes.apple.com/us/app/yi-tian-ai-ji-hua-ai-ji-lu/id573096972?ls=1&mt=8";
-"Share app message body"="Nice app! One Day - Love plan, Love note! Click to download: https://itunes.apple.com/us/app/yi-tian-ai-ji-hua-ai-ji-lu/id573096972?ls=1&mt=8";
-"Cannot mail"="Cannot send email";
-
-// iCloud
-"GuidePageiCloudMessage"="Tap, or drag the checkmark to the cloud to enable iCloud";
-
-"MoveDataToiCloudTitle"="Move Data to iCloud";
-"MoveDataToiCloudMessage"="Your data is about to be moved to iCloud. If you prefer to start using iCloud with data from a different device, tap Cancel and enable iCloud from that other device.";
-
-"SwitchDataToiCloudTitle"="iCloud Data";
-"SwitchDataToiCloudMessage"="Would you like to switch to using data from iCloud?";
-
-"TryLaterTitle"="iCloud Not Available";
-"TryLaterMessage"="iCloud is not currently available. Please try again later.";
-
-"SwitchToLocalDataTitle"="Stop Using iCloud";
-"SwitchToLocalDataMessage"="If you stop using iCloud you will switch to using local data on this device only. Your local data is completely separate from iCloud. Any changes you make will not be be synchronized with iCloud.";
-
-"HardResetTitle"="Delete iCloud Data";
-"HardResetMessage"="Your iCloud data for this app will be deleted from all of your devices, and you will be switched to using local data specific to each device. Any changes you make will not be be synchronized with iCloud.";
-
-"Cancel"="Cancel";
-"MoveData"="Move Data";
-"UseiCloud"="Use iCloud";
-"TryLaterDone"="OK";
-"SwitchToLocalContinue"="Continue";
+"Share app mail subject" ="Share an app to you: One Day - Love plan, Love note";
+"Share app mail message" ="Nice app! One Day - Love plan, Love note! Click to download: https://itunes.apple.com/us/app/yi-tian-ai-ji-hua-ai-ji-lu/id573096972?ls=1&mt=8";
+"Share app message body" ="Nice app! One Day - Love plan, Love note! Click to download: https://itunes.apple.com/us/app/yi-tian-ai-ji-hua-ai-ji-lu/id573096972?ls=1&mt=8";
+"Cannot mail"            ="Cannot send email";
 

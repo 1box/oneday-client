@@ -158,6 +158,20 @@
 	return (UIViewController *)topResponder;
 }
 
++ (UINavigationController *)topNavigationControllerFor:(UIResponder*)responder
+{
+    UIViewController *top = [KMCommon topViewControllerFor:responder];
+    if ([top isKindOfClass:[UINavigationController class]]) {
+        return (UINavigationController *)top;
+    }
+    else if (top.navigationController) {
+        return top.navigationController;
+    }
+    else {
+        return nil;
+    }
+}
+
 static AVAudioPlayer *_player = nil;
 + (void)playSound:(NSString *)fileName
 {

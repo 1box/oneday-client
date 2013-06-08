@@ -24,7 +24,7 @@
 
 @property (nonatomic) IBOutlet KMTableView *listView;
 @property (nonatomic) IBOutlet UIToolbar *toolbar;
-@property (nonatomic) AddonData *addon;
+@property (nonatomic, strong) AddonData *addon;
 
 - (IBAction)edit:(id)sender;
 - (IBAction)search:(id)sender;

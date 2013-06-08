@@ -42,6 +42,7 @@ typedef NS_ENUM(NSInteger, SplashRandomTextType) {
 @property (nonatomic) UIImageView *animationView1;
 @property (nonatomic) SplashHelpAnimationView *animationView2;
 @property (nonatomic) NSMutableArray *finishedBlocks;
+@property (nonatomic) NSMutableArray *flipedBlocks;
 @end
 
 
@@ -67,7 +68,10 @@ static SplashHelper *_sharedHelper = nil;
 {
     self = [super init];
     if (self) {
-        _hasFliped = NO;
+        _splashFliped   = NO;
+        _splashFinished = NO;
+        
+        self.flipedBlocks   = [NSMutableArray arrayWithCapacity:5];
         self.finishedBlocks = [NSMutableArray arrayWithCapacity:5];
     }
     return self;
@@ -75,9 +79,24 @@ static SplashHelper *_sharedHelper = nil;
 
 #pragma mark - public
 
+- (void)addFlipedBlock:(LoadFlipSplashFinishedBlock)flipedBlock
+{
+    if (_splashFliped) {
+        flipedBlock(self);
+    }
+    else {
+        [_flipedBlocks addObject:[flipedBlock copy]];
+    }
+}
+
 - (void)addFinishedBlock:(LoadFlipSplashFinishedBlock)finishedBlock
 {
-    [_finishedBlocks addObject:[finishedBlock copy]];
+    if (_splashFinished) {
+        finishedBlock(self);
+    }
+    else {
+        [_finishedBlocks addObject:[finishedBlock copy]];
+    }
 }
 
 - (void)prepareSplashAnimationView
@@ -103,6 +122,12 @@ static SplashHelper *_sharedHelper = nil;
                            options:UIViewAnimationOptionTransitionFlipFromLeft
                         completion:^(BOOL finished) {
                             
+                            _splashFliped = YES;
+                            
+                            [_flipedBlocks enumerateObjectsUsingBlock:^(LoadFlipSplashFinishedBlock block, NSUInteger idx, BOOL *stop) {
+                                block(self);
+                            }];
+                            
                             [UIView animateWithDuration:0.8f animations:^{
                                 _animationView2.alpha = 0.05f;
                             } completion:^(BOOL finished2) {
@@ -113,7 +138,7 @@ static SplashHelper *_sharedHelper = nil;
                                 self.animationView1 = nil;
                                 self.animationView2 = nil;
                                 
-                                _hasFliped = YES;
+                                _splashFinished = YES;
                                 
                                 [_finishedBlocks enumerateObjectsUsingBlock:^(LoadFlipSplashFinishedBlock block, NSUInteger idx, BOOL *stop) {
                                     block(self);

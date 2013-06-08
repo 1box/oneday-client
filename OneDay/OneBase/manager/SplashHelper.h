@@ -15,10 +15,12 @@ typedef void (^LoadFlipSplashFinishedBlock)(SplashHelper *helper);
 
 @interface SplashHelper : NSObject
 
-@property (nonatomic, readonly) BOOL hasFliped;
+@property (nonatomic, readonly) BOOL splashFliped;
+@property (nonatomic, readonly) BOOL splashFinished;
 
 + (SplashHelper *)sharedHelper;
 
+- (void)addFlipedBlock:(LoadFlipSplashFinishedBlock)flipedBlock;
 - (void)addFinishedBlock:(LoadFlipSplashFinishedBlock)finishedBlock;
 - (void)prepareSplashAnimationView;
 - (void)splashFlipAnimation;

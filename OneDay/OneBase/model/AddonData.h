@@ -21,6 +21,7 @@
 @property (nonatomic, strong) NSNumber *detectType;
 @property (nonatomic, strong) NSNumber *showChecked;
 @property (nonatomic, strong) NSString *tipImage;
+@property (nonatomic, strong) NSNumber *passwordOn;
 
 @property (nonatomic, strong) NSSet *dailyDos;
 @property (nonatomic, strong) NSSet *alarms;

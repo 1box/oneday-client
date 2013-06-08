@@ -28,6 +28,7 @@ typedef NS_ENUM(NSInteger, TipSectionRowType) {
 
 typedef NS_ENUM(NSInteger, SettingSectionRowType) {
     SettingSectionRowTypeRandomCartoonSwitch = 0,
+    SettingSectionRowTypePassword,
     SettingSectionRowTypeAlarmSwitch,
     SettingSectionRowTypeAlarmSoundSwitch,
     SettingSectionRowTypeAlarmBadgeSwitch,
@@ -180,7 +181,7 @@ typedef NS_ENUM(NSInteger, RateSectionRowType) {
             ret = 2;
             break;
         case SectionTypeSetting:
-            ret = alarmNotificationSwitch() ? 5 : 2;
+            ret = alarmNotificationSwitch() ? 6 : 3;
             break;
         case SectionTypeRate:
             ret = 4;
@@ -191,13 +192,14 @@ typedef NS_ENUM(NSInteger, RateSectionRowType) {
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *recommendAppCellID = @"MoreViewRecommendAppCellID";
-    static NSString *tipsCellID = @"MoreViewTipsCellID";
     static NSString *randomCartoonCellID = @"MoreViewRandomCartoonSwitchCellID";
+    static NSString *passwordCellID = @"MoreViewPasswordCellID";
     static NSString *alarmSwitchCellID = @"MoreViewAlarmSwitchCellID";
     static NSString *alarmSoundSwitchCellID = @"MoreViewAlarmSoundSwitchCellID";
     static NSString *alarmBadgeSwitchCellID = @"MoreViewAlarmBadgeSwitchCellID";
     static NSString *alarmPickerCellID = @"MoreViewAlarmPickerCellID";
+    static NSString *recommendAppCellID = @"MoreViewRecommendAppCellID";
+    static NSString *tipsCellID = @"MoreViewTipsCellID";
     static NSString *rateCellID = @"MoreViewRateCellID";
     static NSString *shareToFriendsCellID = @"MoreViewShareToFriendsCellID";
     static NSString *feedbackCellID = @"MoreViewFeedbackCellID";
@@ -226,6 +228,11 @@ typedef NS_ENUM(NSInteger, RateSectionRowType) {
                 {
                     tCellID = randomCartoonCellID;
                     _randomCartoonSwitch.on = randomCartoonSwitch();
+                }
+                    break;
+                case SettingSectionRowTypePassword:
+                {
+                    tCellID = passwordCellID;
                 }
                     break;
                 case SettingSectionRowTypeAlarmSwitch:

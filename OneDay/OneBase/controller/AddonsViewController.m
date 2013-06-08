@@ -80,7 +80,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     AddonsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"AddonsCellID"];
-    
     AddonData *tAddon = [_preparedAddons objectAtIndex:indexPath.row];
     cell.addon = tAddon;
     cell.checked = NO;

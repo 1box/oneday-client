@@ -30,6 +30,7 @@
 
 #define NumberOfItems ([KMCommon is568Screen] ? 8 : 6)
 
+
 @interface MainViewController () <UICollectionViewDataSource, UICollectionViewDelegate, KMReorderableCollectionViewDelegateSnakeLayout, UIGestureRecognizerDelegate, KMAlertViewDelegate> {
     
     NSUInteger _currentPage;
@@ -50,6 +51,7 @@
 @property (nonatomic) CGFloat cellLeftMargin;
 @end
 
+
 @implementation MainViewController
 
 - (void)awakeFromNib
@@ -67,14 +69,18 @@
     [super didReceiveMemoryWarning];
 }
 
+- (void)showDailyDoWithAddon:(AddonData *)addon segue:(UIStoryboardSegue *)segue
+{
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDailyDo"]) {
         
         NSIndexPath *indexPath = [[_collectionView indexPathsForSelectedItems] objectAtIndex:0];
+        AddonData *tAddon = [_addons objectAtIndex:(indexPath.section * NumberOfItems + indexPath.item)];
         DailyDoViewController *controller = [segue destinationViewController];
-        controller.addon = [_addons objectAtIndex:(indexPath.section * NumberOfItems + indexPath.item)];
-    
+        controller.addon = tAddon;
         trackEvent(controller.addon.dailyDoName, @"enter");
     }
     else if ([[segue identifier] isEqualToString:@"rootShowTipPage"]) {
@@ -102,7 +108,7 @@
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
 {
     if (event.subtype == UIEventSubtypeMotionShake) {
-        if (!_hint.shown && [SplashHelper sharedHelper].hasFliped) {
+        if (!_hint.shown && [SplashHelper sharedHelper].splashFinished) {
             if (hasHintForKey([self mainHintPrefix])) {
                 resetHasHintForKey([self mainHintPrefix]);
             }
@@ -149,7 +155,7 @@
     [super viewWillAppear:animated];
     
     if ([NSUserDefaults currentVersionFirstTimeRunByType:firstTimeTypeHomePage]) {
-        if ([SplashHelper sharedHelper].hasFliped) {
+        if ([SplashHelper sharedHelper].splashFinished) {
             self.hint = [[HintHelper alloc] initWithViewController:self dialogsPathPrefix:[self mainHintPrefix]];
             [_hint show];
         }

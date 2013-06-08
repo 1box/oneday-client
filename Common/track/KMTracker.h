@@ -41,7 +41,9 @@ static inline void trackEvent (NSString * event, NSString * label) {
         }
     });
     
-    SSLog(@"Track event:%@, label:%@", event, label);
+    if ([[KMCommon channelName] isEqualToString:@"test"]) {
+        SSLog(@"Track event:%@, label:%@", event, label);
+    }
 }
 
 

@@ -1459,6 +1459,18 @@
 		CB4607F8173D4B8800955454 /* main_tip1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4606A8173D4B8800955454 /* main_tip1@2x.png */; };
 		CB48EC8B17400A6E00B232CB /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB48EC8A17400A6E00B232CB /* SummaryViewController.m */; };
 		CB48EC8C17400A6E00B232CB /* SummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB48EC8A17400A6E00B232CB /* SummaryViewController.m */; };
+		CB5693CC1762D74400275D35 /* NormalCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5693C51762D74400275D35 /* NormalCircle.m */; };
+		CB5693CD1762D74400275D35 /* NormalCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5693C51762D74400275D35 /* NormalCircle.m */; };
+		CB5693CE1762D74400275D35 /* SPLine.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5693C71762D74400275D35 /* SPLine.m */; };
+		CB5693CF1762D74400275D35 /* SPLine.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5693C71762D74400275D35 /* SPLine.m */; };
+		CB5693D01762D74400275D35 /* SPLockOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5693C91762D74400275D35 /* SPLockOverlay.m */; };
+		CB5693D11762D74400275D35 /* SPLockOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5693C91762D74400275D35 /* SPLockOverlay.m */; };
+		CB5693D21762D74400275D35 /* SPLockScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5693CB1762D74400275D35 /* SPLockScreen.m */; };
+		CB5693D31762D74400275D35 /* SPLockScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5693CB1762D74400275D35 /* SPLockScreen.m */; };
+		CB5693D61762D7AB00275D35 /* DotLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5693D51762D7AB00275D35 /* DotLockViewController.m */; };
+		CB5693D71762D7AB00275D35 /* DotLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5693D51762D7AB00275D35 /* DotLockViewController.m */; };
+		CB5693DA1762E14E00275D35 /* PasswordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5693D91762E14E00275D35 /* PasswordManager.m */; };
+		CB5693DB1762E14E00275D35 /* PasswordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5693D91762E14E00275D35 /* PasswordManager.m */; };
 		CB620E88173C933200E4F3DC /* SplashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB620E87173C933200E4F3DC /* SplashHelper.m */; };
 		CB620E89173C933200E4F3DC /* SplashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB620E87173C933200E4F3DC /* SplashHelper.m */; };
 		CB7421721745437200B75267 /* AlarmRepeatTypeCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7421711745437200B75267 /* AlarmRepeatTypeCellView.m */; };
@@ -1547,6 +1559,10 @@
 		CBA5E957174941350023C456 /* messages_toolbar_background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBA5E93A174941350023C456 /* messages_toolbar_background@2x.png */; };
 		CBA5E95E174941350023C456 /* R_FeedbackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA5E93F174941350023C456 /* R_FeedbackTableViewCell.m */; };
 		CBA5E95F174941350023C456 /* R_FeedbackTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA5E93F174941350023C456 /* R_FeedbackTableViewCell.m */; };
+		CBB7A82B176308250064ED3B /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB7A82A176308250064ED3B /* PasswordViewController.m */; };
+		CBB7A82C176308250064ED3B /* PasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB7A82A176308250064ED3B /* PasswordViewController.m */; };
+		CBB7A82F176309F40064ED3B /* PasswordAddonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB7A82E176309F40064ED3B /* PasswordAddonCell.m */; };
+		CBB7A830176309F40064ED3B /* PasswordAddonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB7A82E176309F40064ED3B /* PasswordAddonCell.m */; };
 		CBD1E461173C128A00694991 /* KMLoadMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1E460173C128A00694991 /* KMLoadMoreCell.m */; };
 		CBD1E462173C128A00694991 /* KMLoadMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1E460173C128A00694991 /* KMLoadMoreCell.m */; };
 		CBF82A0E170EBD63004674C5 /* HomeCoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF82A0D170EBD63004674C5 /* HomeCoverViewController.m */; };
@@ -2567,6 +2583,18 @@
 		CB4606AC173D4B8800955454 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/main_tip1@2x.png"; sourceTree = "<group>"; };
 		CB48EC8917400A6E00B232CB /* SummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummaryViewController.h; sourceTree = "<group>"; };
 		CB48EC8A17400A6E00B232CB /* SummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummaryViewController.m; sourceTree = "<group>"; };
+		CB5693C41762D74400275D35 /* NormalCircle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalCircle.h; sourceTree = "<group>"; };
+		CB5693C51762D74400275D35 /* NormalCircle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalCircle.m; sourceTree = "<group>"; };
+		CB5693C61762D74400275D35 /* SPLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLine.h; sourceTree = "<group>"; };
+		CB5693C71762D74400275D35 /* SPLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLine.m; sourceTree = "<group>"; };
+		CB5693C81762D74400275D35 /* SPLockOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLockOverlay.h; sourceTree = "<group>"; };
+		CB5693C91762D74400275D35 /* SPLockOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLockOverlay.m; sourceTree = "<group>"; };
+		CB5693CA1762D74400275D35 /* SPLockScreen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SPLockScreen.h; sourceTree = "<group>"; };
+		CB5693CB1762D74400275D35 /* SPLockScreen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SPLockScreen.m; sourceTree = "<group>"; };
+		CB5693D41762D7AB00275D35 /* DotLockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DotLockViewController.h; sourceTree = "<group>"; };
+		CB5693D51762D7AB00275D35 /* DotLockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotLockViewController.m; sourceTree = "<group>"; };
+		CB5693D81762E14D00275D35 /* PasswordManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordManager.h; sourceTree = "<group>"; };
+		CB5693D91762E14E00275D35 /* PasswordManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordManager.m; sourceTree = "<group>"; };
 		CB620E86173C933200E4F3DC /* SplashHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashHelper.h; sourceTree = "<group>"; };
 		CB620E87173C933200E4F3DC /* SplashHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashHelper.m; sourceTree = "<group>"; };
 		CB7421701745437200B75267 /* AlarmRepeatTypeCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmRepeatTypeCellView.h; sourceTree = "<group>"; };
@@ -2641,6 +2669,11 @@
 		CBA5E93A174941350023C456 /* messages_toolbar_background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "messages_toolbar_background@2x.png"; sourceTree = "<group>"; };
 		CBA5E93E174941350023C456 /* R_FeedbackTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = R_FeedbackTableViewCell.h; sourceTree = "<group>"; };
 		CBA5E93F174941350023C456 /* R_FeedbackTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = R_FeedbackTableViewCell.m; sourceTree = "<group>"; };
+		CBB7A829176308250064ED3B /* PasswordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordViewController.h; sourceTree = "<group>"; };
+		CBB7A82A176308250064ED3B /* PasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
+		CBB7A82D176309F40064ED3B /* PasswordAddonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordAddonCell.h; sourceTree = "<group>"; };
+		CBB7A82E176309F40064ED3B /* PasswordAddonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordAddonCell.m; sourceTree = "<group>"; };
+		CBB7A83117630B670064ED3B /* DailyData 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DailyData 5.xcdatamodel"; sourceTree = "<group>"; };
 		CBD1E45F173C128A00694991 /* KMLoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMLoadMoreCell.h; sourceTree = "<group>"; };
 		CBD1E460173C128A00694991 /* KMLoadMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMLoadMoreCell.m; sourceTree = "<group>"; };
 		CBF82A0C170EBD63004674C5 /* HomeCoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCoverViewController.h; sourceTree = "<group>"; };
@@ -3527,6 +3560,10 @@
 				CB43D0A71742A5080075A2B1 /* AlarmRepeatViewController.m */,
 				CB43D0AA1742A52C0075A2B1 /* AlarmInputViewController.h */,
 				CB43D0AB1742A52C0075A2B1 /* AlarmInputViewController.m */,
+				CB5693D41762D7AB00275D35 /* DotLockViewController.h */,
+				CB5693D51762D7AB00275D35 /* DotLockViewController.m */,
+				CBB7A829176308250064ED3B /* PasswordViewController.h */,
+				CBB7A82A176308250064ED3B /* PasswordViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -3554,6 +3591,8 @@
 				CB620E87173C933200E4F3DC /* SplashHelper.m */,
 				CB1D26CF173F3B6D00D6B801 /* TodoManager.h */,
 				CB1D26D0173F3B6D00D6B801 /* TodoManager.m */,
+				CB5693D81762E14D00275D35 /* PasswordManager.h */,
+				CB5693D91762E14E00275D35 /* PasswordManager.m */,
 			);
 			path = manager;
 			sourceTree = "<group>";
@@ -3660,6 +3699,8 @@
 				CB8EE13B1740AE820068A6BA /* SummaryCellView.m */,
 				CB39DFD11741FF1F007B1CE5 /* AlarmCellView.h */,
 				CB39DFD21741FF1F007B1CE5 /* AlarmCellView.m */,
+				CBB7A82D176309F40064ED3B /* PasswordAddonCell.h */,
+				CBB7A82E176309F40064ED3B /* PasswordAddonCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -3667,6 +3708,7 @@
 		3F5F2E231667E83000749B4B /* github */ = {
 			isa = PBXGroup;
 			children = (
+				CB5693C31762D74400275D35 /* SPLockScreen */,
 				CB8EE131174094300068A6BA /* NSDate-Extensions */,
 				CB8EE130174094250068A6BA /* CupertinoYankee */,
 				CB8EE12317408B390068A6BA /* iOSPlot */,
@@ -4232,6 +4274,22 @@
 				CB4606A8173D4B8800955454 /* main_tip1@2x.png */,
 			);
 			path = tip_page;
+			sourceTree = "<group>";
+		};
+		CB5693C31762D74400275D35 /* SPLockScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CB5693C41762D74400275D35 /* NormalCircle.h */,
+				CB5693C51762D74400275D35 /* NormalCircle.m */,
+				CB5693C61762D74400275D35 /* SPLine.h */,
+				CB5693C71762D74400275D35 /* SPLine.m */,
+				CB5693C81762D74400275D35 /* SPLockOverlay.h */,
+				CB5693C91762D74400275D35 /* SPLockOverlay.m */,
+				CB5693CA1762D74400275D35 /* SPLockScreen.h */,
+				CB5693CB1762D74400275D35 /* SPLockScreen.m */,
+			);
+			name = SPLockScreen;
+			path = PatternLock/SPLockScreen;
 			sourceTree = "<group>";
 		};
 		CB886C6B173BCB8E0074586F /* UMAppNetwork_SDK */ = {
@@ -6150,6 +6208,14 @@
 				CBA5E943174941350023C456 /* FeedbackViewController.m in Sources */,
 				CBA5E947174941350023C456 /* L_FeedbackTableViewCell.m in Sources */,
 				CBA5E95F174941350023C456 /* R_FeedbackTableViewCell.m in Sources */,
+				CB5693CD1762D74400275D35 /* NormalCircle.m in Sources */,
+				CB5693CF1762D74400275D35 /* SPLine.m in Sources */,
+				CB5693D11762D74400275D35 /* SPLockOverlay.m in Sources */,
+				CB5693D31762D74400275D35 /* SPLockScreen.m in Sources */,
+				CB5693D71762D7AB00275D35 /* DotLockViewController.m in Sources */,
+				CB5693DB1762E14E00275D35 /* PasswordManager.m in Sources */,
+				CBB7A82C176308250064ED3B /* PasswordViewController.m in Sources */,
+				CBB7A830176309F40064ED3B /* PasswordAddonCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6282,6 +6348,14 @@
 				CBA5E942174941350023C456 /* FeedbackViewController.m in Sources */,
 				CBA5E946174941350023C456 /* L_FeedbackTableViewCell.m in Sources */,
 				CBA5E95E174941350023C456 /* R_FeedbackTableViewCell.m in Sources */,
+				CB5693CC1762D74400275D35 /* NormalCircle.m in Sources */,
+				CB5693CE1762D74400275D35 /* SPLine.m in Sources */,
+				CB5693D01762D74400275D35 /* SPLockOverlay.m in Sources */,
+				CB5693D21762D74400275D35 /* SPLockScreen.m in Sources */,
+				CB5693D61762D7AB00275D35 /* DotLockViewController.m in Sources */,
+				CB5693DA1762E14E00275D35 /* PasswordManager.m in Sources */,
+				CBB7A82B176308250064ED3B /* PasswordViewController.m in Sources */,
+				CBB7A82F176309F40064ED3B /* PasswordAddonCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6695,12 +6769,13 @@
 		3F55A61716E50D4900EBBA30 /* DailyData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				CBB7A83117630B670064ED3B /* DailyData 5.xcdatamodel */,
 				CB8C059C1742102D00522B61 /* DailyData 4.xcdatamodel */,
 				3F55A61816E50D4900EBBA30 /* DailyData 2.xcdatamodel */,
 				3F55A61916E50D4900EBBA30 /* DailyData 3.xcdatamodel */,
 				3F55A61A16E50D4900EBBA30 /* DailyData.xcdatamodel */,
 			);
-			currentVersion = CB8C059C1742102D00522B61 /* DailyData 4.xcdatamodel */;
+			currentVersion = CBB7A83117630B670064ED3B /* DailyData 5.xcdatamodel */;
 			path = DailyData.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

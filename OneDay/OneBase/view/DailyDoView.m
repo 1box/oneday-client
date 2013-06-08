@@ -29,6 +29,7 @@
 
 #import "KMModelManager.h"
 #import "DailyDoManager.h"
+#import "PasswordManager.h"
 #import "AddonsHeader.h"
 #import "DailyDoActionHelper.h"
 #import "AddonData.h"
@@ -144,23 +145,48 @@
     }
     
     _toolbar.items = [mutItems copy];
+    
+    [[PasswordManager sharedManager] showAddonLock:_addon finishBlock:nil];
 }
 
 - (void)viewDidAppear
 {
     [super viewDidAppear];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(loadDataFinished:)
-                                                 name:DailyDoManagerLoggedDosLoadFinishedNotification
-                                               object:[DailyDoManager sharedManager]];
+    [self registerNotifications];
     [self loadLoggedDos:NO];
 }
 
 - (void)viewDidDisappear
 {
     [super viewDidDisappear];
+    [self unregisterNotifications];
+}
+
+#pragma mark - notifications
+
+- (void)registerNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reportUIApplicationWillEnterForegroundNotification:)
+                                                 name:UIApplicationWillEnterForegroundNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(loadDataFinished:)
+                                                 name:DailyDoManagerLoggedDosLoadFinishedNotification
+                                               object:[DailyDoManager sharedManager]];
+}
+
+- (void)unregisterNotifications
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:DailyDoManagerLoggedDosLoadFinishedNotification object:[DailyDoManager sharedManager]];
+}
+
+- (void)reportUIApplicationWillEnterForegroundNotification:(NSNotification *)notification
+{
+    if (![PasswordManager launchPasswordOpen]) {
+        [[PasswordManager sharedManager] showAddonLock:_addon finishBlock:nil];
+    }
 }
 
 #pragma mark - private
@@ -586,7 +612,7 @@
             break;
         case DailyDoActionTypeShowAllUndos:
         {
-            UINavigationController *nav = [[UIStoryboard storyboardWithName:@"OneDayStoryboard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"UndoNavigationControllerID"];
+            UINavigationController *nav = [[UIStoryboard storyboardWithName:MainStoryBoardID bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"UndoNavigationControllerID"];
             UndoViewController *controller = (UndoViewController *)nav.topViewController;
             controller.addon = _addon;
             UIViewController *topViewController = [KMCommon topViewControllerFor:self];
@@ -595,7 +621,7 @@
             break;
         case DailyDoActionTypeCashMonthSummary:
         {
-            UINavigationController *nav = [[UIStoryboard storyboardWithName:@"OneDayStoryboard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SummaryNavigationControllerID"];
+            UINavigationController *nav = [[UIStoryboard storyboardWithName:MainStoryBoardID bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SummaryNavigationControllerID"];
             SummaryViewController *controller = (SummaryViewController *)nav.topViewController;
             controller.type = SummaryViewTypeMonth;
             controller.addon = _addon;
@@ -605,7 +631,7 @@
             break;
         case DailyDoActionTypeCashYearSummary:
         {
-            UINavigationController *nav = [[UIStoryboard storyboardWithName:@"OneDayStoryboard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SummaryNavigationControllerID"];
+            UINavigationController *nav = [[UIStoryboard storyboardWithName:MainStoryBoardID bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SummaryNavigationControllerID"];
             SummaryViewController *controller = (SummaryViewController *)nav.topViewController;
             controller.type = SummaryViewTypeYear;
             controller.addon = _addon;
@@ -615,7 +641,7 @@
             break;
         case DailyDoActionTypeAlarmNotification:
         {
-            UINavigationController *nav = [[UIStoryboard storyboardWithName:@"OneDayStoryboard" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"WorkoutAlarmNavigationControllerID"];
+            UINavigationController *nav = [[UIStoryboard storyboardWithName:MainStoryBoardID bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"WorkoutAlarmNavigationControllerID"];
             AlarmViewController *controller = (AlarmViewController *)nav.topViewController;
             controller.addon = _addon;
             UIViewController *topViewController = [KMCommon topViewControllerFor:self];

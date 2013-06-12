@@ -101,6 +101,10 @@ static SplashHelper *_sharedHelper = nil;
 
 - (void)prepareSplashAnimationView
 {
+    if ([KMCommon isPadDevice]) {
+        return;
+    }
+    
     UIView *containerView = ((AppDelegateBase *)[[UIApplication sharedApplication] delegate]).window.rootViewController.view;
     NSString *imageName = @"Default.png";
     if ([KMCommon is568Screen]) {
@@ -115,6 +119,16 @@ static SplashHelper *_sharedHelper = nil;
 
 - (void)splashFlipAnimation
 {
+    if ([KMCommon isPadDevice]) {
+        _splashFinished = YES;
+        
+        [_finishedBlocks enumerateObjectsUsingBlock:^(LoadFlipSplashFinishedBlock block, NSUInteger idx, BOOL *stop) {
+            block(self);
+        }];
+        
+        return;
+    }
+    
     if (_animationView1 && _animationView2) {
         [UIView transitionFromView:_animationView1
                             toView:_animationView2

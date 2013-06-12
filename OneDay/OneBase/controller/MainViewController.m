@@ -476,7 +476,10 @@ static NSString *feedCollectCellID = @"FeedCollectCell";
 
 - (CGFloat)itemWidth
 {
-    if ([KMCommon is568Screen]) {
+    if ([KMCommon isPadDevice]) {
+        return 180;
+    }
+    else if ([KMCommon is568Screen]) {
         return 95.f;
     }
     else {
@@ -486,7 +489,10 @@ static NSString *feedCollectCellID = @"FeedCollectCell";
 
 - (CGFloat)itemHeight
 {
-    if ([KMCommon is568Screen]) {
+    if ([KMCommon isPadDevice]) {
+        return 180.f;
+    }
+    else if ([KMCommon is568Screen]) {
         return 95.f;
     }
     else {

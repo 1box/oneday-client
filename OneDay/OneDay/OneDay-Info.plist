@@ -45,6 +45,8 @@
 	<true/>
 	<key>UILaunchImageFile</key>
 	<string>Default.png</string>
+	<key>UILaunchImageFile~ipad</key>
+	<string>Default.png</string>
 	<key>UILaunchImageFile~iphone</key>
 	<string>Default.png</string>
 	<key>UIMainStoryboardFile</key>
@@ -59,11 +61,20 @@
 	</array>
 	<key>UIStatusBarHidden</key>
 	<false/>
+	<key>UIStatusBarHidden~ipad</key>
+	<true/>
 	<key>UIStatusBarStyle</key>
 	<string>UIStatusBarStyleBlackTranslucent</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 </dict>
 </plist>

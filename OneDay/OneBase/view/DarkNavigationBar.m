@@ -12,7 +12,9 @@
 
 - (void)awakeFromNib
 {
-    [self setBackgroundImage:[UIImage imageNamed:@"dark_nav_bg.png"] forBarMetrics:UIBarMetricsDefault];
+    UIImage *navImage = [UIImage imageNamed:@"dark_nav_bg.png"];
+    navImage = [navImage stretchableImageWithLeftCapWidth:navImage.size.width/2 topCapHeight:navImage.size.height/2];
+    [self setBackgroundImage:navImage forBarMetrics:UIBarMetricsDefault];
 }
 
 @end

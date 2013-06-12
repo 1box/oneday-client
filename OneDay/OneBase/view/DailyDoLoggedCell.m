@@ -13,6 +13,7 @@
 #import "TodoData.h"
 #import "DailyDoPresentView.h"
 #import "KMModelManager.h"
+#import "UIView+CornerMark.h"
 
 #define TopPadding 14.f
 #define DateLabelRightMargin 7.f
@@ -67,10 +68,23 @@
         tmpFrame.origin.y = CGRectGetMaxY(_completeLabel.frame) + TopPadding;
         tmpFrame.size.width = PresentViewWidth;
         tmpFrame.size.height = vFrame.size.height - CGRectGetMaxY(_completeLabel.frame) - TopPadding;
+        
         _presentView.frame = tmpFrame;
         
         [_presentView refreshUI];
     }
+    
+    CornerMarkColorType color = CornerMarkColorTypeOrange;
+    if ([[NSDate dateWithTimeIntervalSince1970:[_loggedDo.createTime doubleValue]] isTypicallyWorkday]) {
+        color = CornerMarkColorTypeCyan;
+    }
+    UIImageView *markView = [self renderCornerMark:color scaleType:CornerMarkScaleTypeSmall isFavorite:NO];
+    
+    CGFloat topMargin = 0.f;
+    if (self.locationType == KMTableViewCellLocationTypeAlone || self.locationType == KMTableViewCellLocationTypeTop) {
+        topMargin = 1.f;
+    }
+    setFrameWithOrigin(markView, SSWidth(self) - SSWidth(markView) - 11, topMargin);
 }
 
 - (void)setLoggedDo:(DailyDoBase *)loggedDo
@@ -78,7 +92,7 @@
     _loggedDo = loggedDo;
     if (_loggedDo) {
         _checkbox.enabled = ![_loggedDo.check boolValue] && [_loggedDo.todos count] > 0;
-        _dateLabel.text = [MonthToDayFormatter() stringFromDate:[NSDate dateWithTimeIntervalSince1970:[_loggedDo.createTime doubleValue]]];
+        _dateLabel.text = [MonthToDayWFormatter() stringFromDate:[NSDate dateWithTimeIntervalSince1970:[_loggedDo.createTime doubleValue]]];
         _completeLabel.text = [_loggedDo completionText];
         _presentView.dailyDo = _loggedDo;
     }

@@ -27,6 +27,7 @@
 "delete"             ="删除";
 "_done"              ="完成";
 "_edit"              ="编辑";
+"_editDone"          ="退出编辑";
 
 "QuickAddTodoDone"        ="新的便签已添加";
 "MoveAllUndosToToday"     ="所有未完成已经移到今天";
@@ -49,7 +50,9 @@
 "AlarmRepeatTypeNone"     ="不重复";
 
 // password
-"LaunchPasswordCellText" = "启动密码";
+"LaunchPasswordCellText" = "开机密码";
+"LockLaunchSwitchText" = "开机密码";
+"LockResetSwitchText" = "重置密码";
 
 // dot lock
 "InfoStatusFirstTimeSettingText" ="Set a Pattern !";

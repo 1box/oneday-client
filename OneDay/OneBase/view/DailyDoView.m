@@ -32,18 +32,20 @@
 #import "PasswordManager.h"
 #import "AddonsHeader.h"
 #import "DailyDoActionHelper.h"
+#import "DailyDoViewHelper.h"
 #import "AddonData.h"
 #import "DailyDoBase.h"
 #import "TodoData.h"
 
 #define CommonCellHeight 44.f
-#define LoggedDoUnfoldDefaultIndex -1
 
 @interface DailyDoView () <DailyDoActionHelperDelegate, UIActionSheetDelegate> {
     
     BOOL _isLoading;
     BOOL _canLoadMore;
 }
+
+@property (nonatomic) DailyDoViewHelper *viewHelper;
 
 @property (nonatomic) DailyDoBase *todayDo;
 @property (nonatomic) DailyDoBase *tomorrowDo;
@@ -55,12 +57,14 @@
 
 @implementation DailyDoView
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithFrame:frame];
+    self = [super initWithCoder:aDecoder];
     if (self) {
         _isLoading = NO;
         _canLoadMore = NO;
+        
+        self.viewHelper = [[DailyDoViewHelper alloc] init];
     }
     return self;
 }
@@ -105,9 +109,6 @@
 {
     [super loadView];
     
-    _loggedDoUnfoldIndex = LoggedDoUnfoldDefaultIndex;
-    _todayDoUnfold = YES;
-    
     self.todayDo = [[DailyDoManager sharedManager] todayDoForAddon:_addon];
     self.tomorrowDo = [[DailyDoManager sharedManager] tomorrowDoForAddon:_addon];
     self.loggedDos = [NSArray array];
@@ -120,6 +121,11 @@
     _todaySectionIndex = 0;
     _tomorrowSectionIndex = [_tomorrowDo.todos count] > 0 ? 1 : -1;
     _loggedSectionIndex = _tomorrowSectionIndex == 1 ? 2 : 1;
+    
+    
+    UIImage *selectBackgroundImage = [UIImage imageNamed:@"light_nav_btn_bg_press.png"];
+    [_unfoldButton setBackgroundImage:[selectBackgroundImage stretchableImageWithLeftCapWidth:selectBackgroundImage.size.width/2 topCapHeight:selectBackgroundImage.size.height/2] forState:UIControlStateSelected];
+    _unfoldButton.selected = _viewHelper.allUnfold;
     
     // load action items
     NSArray *items = _toolbar.items;
@@ -136,13 +142,13 @@
     
     [mutItems addObject:[items objectAtIndex:2]];
     
-    if ((actionType & DailyDoActionTypeShowAllUndos) == DailyDoActionTypeShowAllUndos ||
-        (actionType & DailyDoActionTypeCashMonthSummary) == DailyDoActionTypeCashMonthSummary ||
-        (actionType & DailyDoActionTypeCashYearSummary) == DailyDoActionTypeCashYearSummary ||
-        (actionType & DailyDoActionTypeAlarmNotification) == DailyDoActionTypeAlarmNotification) {
-        
-        [mutItems addObject:[items objectAtIndex:3]];
-    }
+    // 至少会有"编辑"这个功能
+    //    if ((actionType & DailyDoActionTypeShowAllUndos) == DailyDoActionTypeShowAllUndos ||
+    //        (actionType & DailyDoActionTypeCashMonthSummary) == DailyDoActionTypeCashMonthSummary ||
+    //        (actionType & DailyDoActionTypeCashYearSummary) == DailyDoActionTypeCashYearSummary ||
+    //        (actionType & DailyDoActionTypeAlarmNotification) == DailyDoActionTypeAlarmNotification) {
+    [mutItems addObject:[items objectAtIndex:3]];
+    //    }
     
     _toolbar.items = [mutItems copy];
     
@@ -189,6 +195,16 @@
     }
 }
 
+#pragma mark - setter&getter
+
+- (void)setAddon:(AddonData *)addon
+{
+    _addon = addon;
+    if (_addon) {
+        _viewHelper.addon = _addon;
+    }
+}
+
 #pragma mark - private
 
 - (void)loadLoggedDos:(BOOL)loadMore
@@ -224,6 +240,14 @@
     [[DailyDoActionHelper sharedHelper] quickAddTodo:_todayDo];
 }
 
+- (IBAction)unfoldAll:(id)sender
+{
+    _viewHelper.allUnfold = !_viewHelper.allUnfold;
+    
+    _unfoldButton.selected = _viewHelper.allUnfold;
+    [_listView reloadData];
+}
+
 - (IBAction)moveTodoToTomorrow:(id)sender
 {
     [[DailyDoActionHelper sharedHelper] move:_todayDo toTomorrow:_tomorrowDo];
@@ -232,14 +256,6 @@
 - (IBAction)edit:(id)sender
 {
     [_listView setEditing:!_listView.editing animated:YES];
-    
-    UIButton *editButton = sender;
-    if (_listView.editing) {
-        [editButton setTitle:NSLocalizedString(@"_done", nil) forState:UIControlStateNormal];
-    }
-    else {
-        [editButton setTitle:NSLocalizedString(@"_edit", nil) forState:UIControlStateNormal];
-    }
 }
 
 - (IBAction)search:(id)sender
@@ -271,6 +287,13 @@
 {
     NSMutableArray *otherButtonTitles = [NSMutableArray arrayWithCapacity:10];
     NSInteger actionType = [[_configurations objectForKey:kConfigurationActionType] integerValue];
+    
+    NSString *editTitle = NSLocalizedString(@"_edit", nil);
+    if (_listView.editing) {
+        editTitle = NSLocalizedString(@"_editDone", nil);
+    }
+    [otherButtonTitles addObject:editTitle];
+    
     if (DailyDoActionTypeShowAllUndos == (actionType & DailyDoActionTypeShowAllUndos)) {
         [otherButtonTitles addObject:NSLocalizedString(@"ShowAllUndosTitle", nil)];
     }
@@ -354,7 +377,7 @@
     
     if (section == _todaySectionIndex) {
         ret = 1;
-        if (_todayDoUnfold) {
+        if (_viewHelper.todayDoUnfold) {
             ret += [_properties count] + ([[_configurations objectForKey:kConfigurationShowTimelineKey] boolValue] ? 1 : 0);
         }
     }
@@ -377,7 +400,7 @@
     
     if (indexPath.section == _todaySectionIndex) {
         if (indexPath.row == 0) {
-            ret = [DailyDoTodayCell heightOfCellForDailyDo:_todayDo unfold:_todayDoUnfold];
+            ret = [DailyDoTodayCell heightOfCellForDailyDo:_todayDo unfold:_viewHelper.todayDoUnfold];
         }
         else {
             if (indexPath.row == 1) {
@@ -386,12 +409,12 @@
         }
     }
     else if (indexPath.section == _tomorrowSectionIndex) {
-       ret = [_tomorrowDo.todos count] == 0 ? 0.f : [DailyDoTomorrowCell heightOfCellForDailyDo:_tomorrowDo unfolded:_tomorrowDoUnfold]; 
+       ret = [_tomorrowDo.todos count] == 0 ? 0.f : [DailyDoTomorrowCell heightOfCellForDailyDo:_tomorrowDo unfolded:_viewHelper.tomorrowDoUnfold]; 
     }
     else if (indexPath.section == _loggedSectionIndex) {
         if (indexPath.row < [_loggedDos count]) {
             ret = [DailyDoLoggedCell heightOfCellForDailyDo:[_loggedDos objectAtIndex:indexPath.row]
-                                                   unfolded:(indexPath.row == _loggedDoUnfoldIndex)];
+                                                   unfolded:[_viewHelper loggedUnfoldForIndex:indexPath.row]];
         }
         else {
             ret = 44.f;
@@ -416,7 +439,7 @@
         if (indexPath.row == 0) {
             DailyDoTodayCell *cell = [tableView dequeueReusableCellWithIdentifier:todayDoCell];
             cell.dailyDo = _todayDo;
-            cell.unfolded = _todayDoUnfold;
+            cell.unfolded = _viewHelper.todayDoUnfold;
             return cell;
         }
         else if (indexPath.row == [_properties count] + 1) {
@@ -459,14 +482,14 @@
     else if (indexPath.section == _tomorrowSectionIndex) {
         DailyDoTomorrowCell *cell = [tableView dequeueReusableCellWithIdentifier:tomorrowDoCell];
         cell.tomorrowDo = _tomorrowDo;
-        cell.unfolded = _tomorrowDoUnfold;
+        cell.unfolded = _viewHelper.tomorrowDoUnfold;
         return cell;
     }
     else if (indexPath.section == _loggedSectionIndex) {
         if (indexPath.row < [_loggedDos count]) {
             DailyDoLoggedCell *cell = [tableView dequeueReusableCellWithIdentifier:loggedDoCell];
             cell.loggedDo = [_loggedDos objectAtIndex:indexPath.row];
-            cell.unfolded = indexPath.row == _loggedDoUnfoldIndex;
+            cell.unfolded = [_viewHelper loggedUnfoldForIndex:indexPath.row];
             return cell;
         }
         else {
@@ -562,7 +585,7 @@
 
 - (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (!(_todayDoUnfold && [[tableView cellForRowAtIndexPath:indexPath] isKindOfClass:[DailyDoTodoCell class]])) {
+    if (!(_viewHelper.todayDoUnfold && [[tableView cellForRowAtIndexPath:indexPath] isKindOfClass:[DailyDoTodoCell class]])) {
         [_listView updateBackgroundViewForCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath backgroundViewType:KMTableViewCellBackgroundViewTypeSelected];
     }
 }
@@ -577,21 +600,16 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == _todaySectionIndex) {
-        if (_todayDoUnfold) {
-            if (indexPath.row == 0) {
-                _todayDoUnfold = NO;
-            }
-        }
-        else {
-            _todayDoUnfold = YES;
+        if ((_viewHelper.todayDoUnfold && indexPath.row == 0) || !_viewHelper.todayDoUnfold) {
+            [_viewHelper updateTodayDoUnfold];
         }
     }
     else if (indexPath.section == _tomorrowSectionIndex) {
-        _tomorrowDoUnfold = !_tomorrowDoUnfold;
+        [_viewHelper updateTomorrowDoUnfold];
     }
     else if (indexPath.section == _loggedSectionIndex) {
         if (indexPath.row < [_loggedDos count]) {
-            _loggedDoUnfoldIndex = (indexPath.row == _loggedDoUnfoldIndex) ? LoggedDoUnfoldDefaultIndex : indexPath.row;
+            [_viewHelper updateLoggedUnfoldForIndex:indexPath.row];
         }
     }
     
@@ -615,7 +633,7 @@
             UINavigationController *nav = [[UIStoryboard storyboardWithName:MainStoryBoardID bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"UndoNavigationControllerID"];
             UndoViewController *controller = (UndoViewController *)nav.topViewController;
             controller.addon = _addon;
-            UIViewController *topViewController = [KMCommon topViewControllerFor:self];
+            UIViewController *topViewController = [KMCommon topMostViewControllerFor:self];
             [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
         }
             break;
@@ -625,7 +643,7 @@
             SummaryViewController *controller = (SummaryViewController *)nav.topViewController;
             controller.type = SummaryViewTypeMonth;
             controller.addon = _addon;
-            UIViewController *topViewController = [KMCommon topViewControllerFor:self];
+            UIViewController *topViewController = [KMCommon topMostViewControllerFor:self];
             [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
         }
             break;
@@ -635,7 +653,7 @@
             SummaryViewController *controller = (SummaryViewController *)nav.topViewController;
             controller.type = SummaryViewTypeYear;
             controller.addon = _addon;
-            UIViewController *topViewController = [KMCommon topViewControllerFor:self];
+            UIViewController *topViewController = [KMCommon topMostViewControllerFor:self];
             [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
         }
             break;
@@ -644,7 +662,7 @@
             UINavigationController *nav = [[UIStoryboard storyboardWithName:MainStoryBoardID bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"WorkoutAlarmNavigationControllerID"];
             AlarmViewController *controller = (AlarmViewController *)nav.topViewController;
             controller.addon = _addon;
-            UIViewController *topViewController = [KMCommon topViewControllerFor:self];
+            UIViewController *topViewController = [KMCommon topMostViewControllerFor:self];
             [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
         }
             break;
@@ -666,8 +684,14 @@
 {
     if (buttonIndex != actionSheet.cancelButtonIndex) {
         NSInteger actionType = [[_configurations objectForKey:kConfigurationActionType] integerValue];
+        
         switch (buttonIndex) {
             case 0:
+            {
+                [self edit:nil];
+            }
+                break;
+            case 1:
             {
                 if (DailyDoActionTypeShowAllUndos == (actionType & DailyDoActionTypeShowAllUndos)) {
                     [[DailyDoActionHelper sharedHelper] showAllUndos:_addon];
@@ -677,7 +701,7 @@
                 }
             }
                 break;
-            case 1:
+            case 2:
             {
                 if (DailyDoActionTypeCashYearSummary == (actionType & DailyDoActionTypeCashYearSummary)) {
                     [[DailyDoActionHelper sharedHelper] showCashYearSummary];
@@ -690,7 +714,7 @@
                 }
             }
                 break;
-            case 2:
+            case 3:
             {
                 if (DailyDoActionTypeClearAllBlank == (actionType & DailyDoActionTypeClearAllBlank)) {
                     [[DailyDoActionHelper sharedHelper] clearAllBlank:_addon];

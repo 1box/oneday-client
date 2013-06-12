@@ -91,7 +91,7 @@ static NSDateFormatter *YearToDayFormatter() {
     return __yearToDayFormatter;
 }
 
-// MM.dd
+// MM.dd or MM月dd日
 static NSDateFormatter *__monthToDayFormatter = nil;
 static NSDateFormatter *MonthToDayFormatter() {
     if (__monthToDayFormatter == nil) {
@@ -100,6 +100,17 @@ static NSDateFormatter *MonthToDayFormatter() {
         [__monthToDayFormatter setTimeZone:[NSTimeZone localTimeZone]];
     }
     return __monthToDayFormatter;
+}
+
+// MM.dd Mon or MM月dd日 周一
+static NSDateFormatter *__monthToDayWFormatter = nil;
+static NSDateFormatter *MonthToDayWFormatter() {
+    if (__monthToDayWFormatter == nil) {
+        __monthToDayWFormatter = [[NSDateFormatter alloc] init];
+        [__monthToDayWFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:NSLocalizedString(@"CurrentDateLocale", nil)]];
+        [__monthToDayWFormatter setDateFormat:[NSString stringWithFormat:@"%@ E", NSLocalizedString(@"MonthToDayFormat", nil)]];
+    }
+    return __monthToDayWFormatter;
 }
 
 // HH:mm a

@@ -8,6 +8,8 @@
 
 #import "PasswordManager.h"
 #import "DotLockViewController.h"
+#import "AddonManager.h"
+#import "KMModelManager.h"
 #import "AddonData.h"
 
 #define kLaunchPasswordOpenUserDefaultKey @"kLaunchPasswordOpenUserDefaultKey"
@@ -60,10 +62,10 @@ static PasswordManager *_sharedManager = nil;
 {
     if ([PasswordManager launchPasswordOpen]) {
         InfoStatus status = InfoStatusFirstTimeSetting;
-        if ([self hasDotLockPassword]) {
+        if ([PasswordManager hasDotLockPassword]) {
             status = InfoStatusNormal;
         }
-        [self showLockViewWithInfoStatus:status finishBlock:nil];
+        [self showLockViewWithInfoStatus:status pageType:LockViewPageTypeLaunch addon:nil finishBlock:nil];
     }
 }
 
@@ -71,24 +73,53 @@ static PasswordManager *_sharedManager = nil;
 {
     if ([addon.passwordOn boolValue] && ![self hasShownLockForAddon:addon]) {
         InfoStatus status = InfoStatusFirstTimeSetting;
-        if ([self hasDotLockPassword]) {
+        if ([PasswordManager hasDotLockPassword]) {
             status = InfoStatusNormal;
         }
-        [self showLockViewWithInfoStatus:status finishBlock:finishedBlock];
+        [self showLockViewWithInfoStatus:status pageType:LockViewPageTypeAddon addon:addon finishBlock:finishedBlock];
         
         [self setHasShownLockForAddon:addon];
     }
 }
 
-#pragma mark - private
+- (void)showResetLock
+{
+    if ([PasswordManager hasDotLockPassword]) {
+        [self showLockViewWithInfoStatus:InfoStatusNormal
+                                pageType:LockViewPageTypeReset
+                                   addon:nil
+                             finishBlock:^(DotLockViewController *controller) {
+                                 
+                                 [self resetHasShownAddonDictionary];
+                                 [PasswordManager setDotLockPassword:nil];
+                                 
+                                 [self showLockViewWithInfoStatus:InfoStatusFirstTimeSetting
+                                                         pageType:LockViewPageTypeReset
+                                                            addon:nil
+                                                      finishBlock:nil];
+                             }];
+    }
+    else {
+        [self resetHasShownAddonDictionary];
+        [PasswordManager setDotLockPassword:nil];
+                                 
+        [self showLockViewWithInfoStatus:InfoStatusFirstTimeSetting
+                                pageType:LockViewPageTypeReset
+                                   addon:nil
+                             finishBlock:nil];
+    }
+}
 
-- (void)showLockViewWithInfoStatus:(InfoStatus)status finishBlock:(LockViewDismissBlock)aBlock
+- (void)showLockViewWithInfoStatus:(InfoStatus)status pageType:(LockViewPageType)pageType addon:(AddonData *)addon finishBlock:(LockViewDismissBlock)aBlock
 {
     if (!_lockViewHasShown) {
         DotLockViewController *controller = [[UIStoryboard storyboardWithName:MainStoryBoardID bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:DotLockStoryBoardID];
         controller.delegate = self;
         controller.infoLabelStatus = status;
-        [[KMCommon topNavigationControllerFor:nil] presentViewController:controller animated:NO completion:nil];
+        controller.pageType = pageType;
+        controller.addon = addon;
+        controller.finishBlock = aBlock;
+        [[KMCommon topMostNavigationControllerFor:nil] presentViewController:controller animated:NO completion:nil];
         
         _lockViewHasShown = YES;
     }
@@ -110,29 +141,37 @@ static PasswordManager *_sharedManager = nil;
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
+#pragma mark - reset lock
+
++ (BOOL)passwordOpen
+{
+    BOOL ret = [self launchPasswordOpen];
+    NSArray *currentAddons = [[AddonManager sharedManager] currentAddons];
+    for (AddonData *addon in currentAddons) {
+        ret |= [addon.passwordOn boolValue];
+    }
+    return ret;
+}
+
++ (void)setPasswordOpen:(BOOL)open
+{
+    [self setLaunchPasswordOpen:open];
+    NSArray *currentAddons = [[AddonManager sharedManager] currentAddons];
+    for (AddonData *addon in currentAddons) {
+        addon.passwordOn = [NSNumber numberWithBool:open];
+    }
+    [[KMModelManager sharedManager] saveContext:nil];
+}
+
 #pragma mark - dot lock
 
-- (void)setDotLockPasswordOpen:(BOOL)open
-{
-    [[NSUserDefaults standardUserDefaults] setBool:open forKey:kDotLockPasswordOpenUserDefaultKey];
-    [[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-- (BOOL)dotLockPasswordOpen
-{
-    if ([NSUserDefaults firstTimeUseKey:kDotLockPasswordOpenUserDefaultKey]) {
-        [self setDotLockPasswordOpen:YES];
-    }
-    return [[NSUserDefaults standardUserDefaults] boolForKey:kDotLockPasswordOpenUserDefaultKey];
-}
-
-- (BOOL)hasDotLockPassword
++ (BOOL)hasDotLockPassword
 {
     NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:kDotLockPasswordUserDefaultKey];
     return !KMEmptyString(password);
 }
 
-- (BOOL)checkDotLockPassword:(NSString *)password
++ (BOOL)checkDotLockPassword:(NSString *)password
 {
     NSString *savedPassword = [[NSUserDefaults standardUserDefaults] objectForKey:kDotLockPasswordUserDefaultKey];
     if (password && savedPassword && [password isEqualToString:savedPassword]) {
@@ -143,12 +182,10 @@ static PasswordManager *_sharedManager = nil;
     }
 }
 
-- (void)setDotLockPassword:(NSString *)password
++ (void)setDotLockPassword:(NSString *)password
 {
-    if (!KMEmptyString(password)) {
-        [[NSUserDefaults standardUserDefaults] setObject:password forKey:kDotLockPasswordUserDefaultKey];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
+    [[NSUserDefaults standardUserDefaults] setObject:password forKey:kDotLockPasswordUserDefaultKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 #pragma mark - LockViewControllerDelegate

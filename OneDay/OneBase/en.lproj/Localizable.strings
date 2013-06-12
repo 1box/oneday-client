@@ -27,6 +27,7 @@
 "delete"             ="Delete";
 "_done"              ="Done";
 "_edit"              ="Edit";
+"_editDone"          ="Edit Exit";
 
 "QuickAddTodoDone"        ="New memo created.";
 "MoveAllUndosToToday"     ="All undos moved to today.";
@@ -51,6 +52,8 @@
 // password
 
 "LaunchPasswordCellText" = "Launch password";
+"LockLaunchSwitchText" = "Launch password";
+"LockResetSwitchText" = "Reset password";
 
 // dot lock
 "InfoStatusFirstTimeSettingText" ="Set a Pattern !";

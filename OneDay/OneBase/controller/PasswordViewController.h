@@ -11,4 +11,5 @@
 @interface PasswordViewController : KMViewControllerBase
 - (IBAction)passwordOn:(id)sender;
 - (IBAction)closeAll:(id)sender;
+- (IBAction)resetPassword:(id)sender;
 @end

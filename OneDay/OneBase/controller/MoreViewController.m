@@ -36,8 +36,7 @@ typedef NS_ENUM(NSInteger, SettingSectionRowType) {
 };
 
 typedef NS_ENUM(NSInteger, RateSectionRowType) {
-    RateSectionRowTypeFeedback = 0,
-    RateSectionRowTypeRate,
+    RateSectionRowTypeRate = 0,
     RateSectionRowTypeShareToFriend,
     RateSectionRowTypeContactUs
 };
@@ -184,7 +183,7 @@ typedef NS_ENUM(NSInteger, RateSectionRowType) {
             ret = alarmNotificationSwitch() ? 6 : 3;
             break;
         case SectionTypeRate:
-            ret = 4;
+            ret = 3;
             break;
     }
     return ret;
@@ -202,7 +201,6 @@ typedef NS_ENUM(NSInteger, RateSectionRowType) {
     static NSString *tipsCellID = @"MoreViewTipsCellID";
     static NSString *rateCellID = @"MoreViewRateCellID";
     static NSString *shareToFriendsCellID = @"MoreViewShareToFriendsCellID";
-    static NSString *feedbackCellID = @"MoreViewFeedbackCellID";
     static NSString *contactUsCellID = @"MoreViewContactUsCellID";
     
     NSString *tCellID = nil;
@@ -272,9 +270,6 @@ typedef NS_ENUM(NSInteger, RateSectionRowType) {
                     break;
                 case RateSectionRowTypeRate:
                     tCellID = rateCellID;
-                    break;
-                case RateSectionRowTypeFeedback:
-                    tCellID = feedbackCellID;
                     break;
                 case RateSectionRowTypeContactUs:
                     tCellID = contactUsCellID;

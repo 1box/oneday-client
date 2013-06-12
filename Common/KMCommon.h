@@ -33,8 +33,8 @@
 + (CGSize)resolution;
 
 // tool
-+ (UIViewController *)topViewControllerFor:(UIResponder *)responder;
-+ (UINavigationController *)topNavigationControllerFor:(UIResponder*)responder;
++ (UIViewController *)topMostViewControllerFor:(UIResponder *)responder;
++ (UINavigationController *)topMostNavigationControllerFor:(UIResponder*)responder;
 + (void)playSound:(NSString *)fileName;
 
 // url utils

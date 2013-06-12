@@ -1471,6 +1471,18 @@
 		CB5693D71762D7AB00275D35 /* DotLockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5693D51762D7AB00275D35 /* DotLockViewController.m */; };
 		CB5693DA1762E14E00275D35 /* PasswordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5693D91762E14E00275D35 /* PasswordManager.m */; };
 		CB5693DB1762E14E00275D35 /* PasswordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5693D91762E14E00275D35 /* PasswordManager.m */; };
+		CB58B30F1768C5E70035CBDD /* corner_mark_small_cyan.png in Resources */ = {isa = PBXBuildFile; fileRef = CB58B30B1768C5E70035CBDD /* corner_mark_small_cyan.png */; };
+		CB58B3101768C5E70035CBDD /* corner_mark_small_cyan.png in Resources */ = {isa = PBXBuildFile; fileRef = CB58B30B1768C5E70035CBDD /* corner_mark_small_cyan.png */; };
+		CB58B3111768C5E70035CBDD /* corner_mark_small_cyan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB58B30C1768C5E70035CBDD /* corner_mark_small_cyan@2x.png */; };
+		CB58B3121768C5E70035CBDD /* corner_mark_small_cyan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB58B30C1768C5E70035CBDD /* corner_mark_small_cyan@2x.png */; };
+		CB58B3131768C5E70035CBDD /* corner_mark_small_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = CB58B30D1768C5E70035CBDD /* corner_mark_small_orange.png */; };
+		CB58B3141768C5E70035CBDD /* corner_mark_small_orange.png in Resources */ = {isa = PBXBuildFile; fileRef = CB58B30D1768C5E70035CBDD /* corner_mark_small_orange.png */; };
+		CB58B3151768C5E70035CBDD /* corner_mark_small_orange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB58B30E1768C5E70035CBDD /* corner_mark_small_orange@2x.png */; };
+		CB58B3161768C5E70035CBDD /* corner_mark_small_orange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB58B30E1768C5E70035CBDD /* corner_mark_small_orange@2x.png */; };
+		CB5ED9D6176460160092433A /* DailyDoViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5ED9D5176460160092433A /* DailyDoViewHelper.m */; };
+		CB5ED9D7176460160092433A /* DailyDoViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5ED9D5176460160092433A /* DailyDoViewHelper.m */; };
+		CB5EDA00176491260092433A /* UIView+CornerMark.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5ED9FF176491260092433A /* UIView+CornerMark.m */; };
+		CB5EDA01176491260092433A /* UIView+CornerMark.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5ED9FF176491260092433A /* UIView+CornerMark.m */; };
 		CB620E88173C933200E4F3DC /* SplashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB620E87173C933200E4F3DC /* SplashHelper.m */; };
 		CB620E89173C933200E4F3DC /* SplashHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CB620E87173C933200E4F3DC /* SplashHelper.m */; };
 		CB7421721745437200B75267 /* AlarmRepeatTypeCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB7421711745437200B75267 /* AlarmRepeatTypeCellView.m */; };
@@ -2595,6 +2607,14 @@
 		CB5693D51762D7AB00275D35 /* DotLockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DotLockViewController.m; sourceTree = "<group>"; };
 		CB5693D81762E14D00275D35 /* PasswordManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordManager.h; sourceTree = "<group>"; };
 		CB5693D91762E14E00275D35 /* PasswordManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordManager.m; sourceTree = "<group>"; };
+		CB58B30B1768C5E70035CBDD /* corner_mark_small_cyan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corner_mark_small_cyan.png; sourceTree = "<group>"; };
+		CB58B30C1768C5E70035CBDD /* corner_mark_small_cyan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "corner_mark_small_cyan@2x.png"; sourceTree = "<group>"; };
+		CB58B30D1768C5E70035CBDD /* corner_mark_small_orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = corner_mark_small_orange.png; sourceTree = "<group>"; };
+		CB58B30E1768C5E70035CBDD /* corner_mark_small_orange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "corner_mark_small_orange@2x.png"; sourceTree = "<group>"; };
+		CB5ED9D4176460160092433A /* DailyDoViewHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyDoViewHelper.h; sourceTree = "<group>"; };
+		CB5ED9D5176460160092433A /* DailyDoViewHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyDoViewHelper.m; sourceTree = "<group>"; };
+		CB5ED9FE176491260092433A /* UIView+CornerMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CornerMark.h"; sourceTree = "<group>"; };
+		CB5ED9FF176491260092433A /* UIView+CornerMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CornerMark.m"; sourceTree = "<group>"; };
 		CB620E86173C933200E4F3DC /* SplashHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplashHelper.h; sourceTree = "<group>"; };
 		CB620E87173C933200E4F3DC /* SplashHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplashHelper.m; sourceTree = "<group>"; };
 		CB7421701745437200B75267 /* AlarmRepeatTypeCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmRepeatTypeCellView.h; sourceTree = "<group>"; };
@@ -2673,7 +2693,7 @@
 		CBB7A82A176308250064ED3B /* PasswordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordViewController.m; sourceTree = "<group>"; };
 		CBB7A82D176309F40064ED3B /* PasswordAddonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PasswordAddonCell.h; sourceTree = "<group>"; };
 		CBB7A82E176309F40064ED3B /* PasswordAddonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordAddonCell.m; sourceTree = "<group>"; };
-		CBB7A83117630B670064ED3B /* DailyData 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DailyData 5.xcdatamodel"; sourceTree = "<group>"; };
+		CBB7A83117630B670064ED3B /* DailyData 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DailyData 5.xcdatamodel"; sourceTree = "<group>"; };
 		CBD1E45F173C128A00694991 /* KMLoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMLoadMoreCell.h; sourceTree = "<group>"; };
 		CBD1E460173C128A00694991 /* KMLoadMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMLoadMoreCell.m; sourceTree = "<group>"; };
 		CBF82A0C170EBD63004674C5 /* HomeCoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCoverViewController.h; sourceTree = "<group>"; };
@@ -2957,6 +2977,7 @@
 		3F55A3B116E50D4800EBBA30 /* OneBase */ = {
 			isa = PBXGroup;
 			children = (
+				CB5ED9FD176491040092433A /* additions */,
 				3F55A3B216E50D4800EBBA30 /* addons */,
 				3F55A5DD16E50D4900EBBA30 /* AppDelegateBase.h */,
 				3F55A5DE16E50D4900EBBA30 /* AppDelegateBase.m */,
@@ -3593,6 +3614,8 @@
 				CB1D26D0173F3B6D00D6B801 /* TodoManager.m */,
 				CB5693D81762E14D00275D35 /* PasswordManager.h */,
 				CB5693D91762E14E00275D35 /* PasswordManager.m */,
+				CB5ED9D4176460160092433A /* DailyDoViewHelper.h */,
+				CB5ED9D5176460160092433A /* DailyDoViewHelper.m */,
 			);
 			path = manager;
 			sourceTree = "<group>";
@@ -4090,6 +4113,7 @@
 		CB4605F5173D4B8700955454 /* daily_do_page */ = {
 			isa = PBXGroup;
 			children = (
+				CB5ED9D81764906F0092433A /* corner_mark */,
 				CB4605F6173D4B8700955454 /* cell_normal_alone.png */,
 				CB4605F7173D4B8700955454 /* cell_normal_alone@2x.png */,
 				CB4605F8173D4B8700955454 /* cell_normal_bottom.png */,
@@ -4290,6 +4314,26 @@
 			);
 			name = SPLockScreen;
 			path = PatternLock/SPLockScreen;
+			sourceTree = "<group>";
+		};
+		CB5ED9D81764906F0092433A /* corner_mark */ = {
+			isa = PBXGroup;
+			children = (
+				CB58B30B1768C5E70035CBDD /* corner_mark_small_cyan.png */,
+				CB58B30C1768C5E70035CBDD /* corner_mark_small_cyan@2x.png */,
+				CB58B30D1768C5E70035CBDD /* corner_mark_small_orange.png */,
+				CB58B30E1768C5E70035CBDD /* corner_mark_small_orange@2x.png */,
+			);
+			path = corner_mark;
+			sourceTree = "<group>";
+		};
+		CB5ED9FD176491040092433A /* additions */ = {
+			isa = PBXGroup;
+			children = (
+				CB5ED9FE176491260092433A /* UIView+CornerMark.h */,
+				CB5ED9FF176491260092433A /* UIView+CornerMark.m */,
+			);
+			path = additions;
 			sourceTree = "<group>";
 		};
 		CB886C6B173BCB8E0074586F /* UMAppNetwork_SDK */ = {
@@ -5372,6 +5416,10 @@
 				CB400373174BF4A200217E27 /* Default-568h@2x.png in Resources */,
 				CB400374174BF4A200217E27 /* Default.png in Resources */,
 				CB400375174BF4A200217E27 /* Default@2x.png in Resources */,
+				CB58B3101768C5E70035CBDD /* corner_mark_small_cyan.png in Resources */,
+				CB58B3121768C5E70035CBDD /* corner_mark_small_cyan@2x.png in Resources */,
+				CB58B3141768C5E70035CBDD /* corner_mark_small_orange.png in Resources */,
+				CB58B3161768C5E70035CBDD /* corner_mark_small_orange@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6073,6 +6121,10 @@
 				CB400370174BF48800217E27 /* Default-568h@2x.png in Resources */,
 				CB400371174BF48800217E27 /* Default.png in Resources */,
 				CB400372174BF48800217E27 /* Default@2x.png in Resources */,
+				CB58B30F1768C5E70035CBDD /* corner_mark_small_cyan.png in Resources */,
+				CB58B3111768C5E70035CBDD /* corner_mark_small_cyan@2x.png in Resources */,
+				CB58B3131768C5E70035CBDD /* corner_mark_small_orange.png in Resources */,
+				CB58B3151768C5E70035CBDD /* corner_mark_small_orange@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6216,6 +6268,8 @@
 				CB5693DB1762E14E00275D35 /* PasswordManager.m in Sources */,
 				CBB7A82C176308250064ED3B /* PasswordViewController.m in Sources */,
 				CBB7A830176309F40064ED3B /* PasswordAddonCell.m in Sources */,
+				CB5ED9D7176460160092433A /* DailyDoViewHelper.m in Sources */,
+				CB5EDA01176491260092433A /* UIView+CornerMark.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6356,6 +6410,8 @@
 				CB5693DA1762E14E00275D35 /* PasswordManager.m in Sources */,
 				CBB7A82B176308250064ED3B /* PasswordViewController.m in Sources */,
 				CBB7A82F176309F40064ED3B /* PasswordAddonCell.m in Sources */,
+				CB5ED9D6176460160092433A /* DailyDoViewHelper.m in Sources */,
+				CB5EDA00176491260092433A /* UIView+CornerMark.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

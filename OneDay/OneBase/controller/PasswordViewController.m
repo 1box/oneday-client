@@ -29,6 +29,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if ([PasswordManager passwordOpen] && [PasswordManager hasDotLockPassword]) {
+        [[PasswordManager sharedManager] showLockViewWithInfoStatus:InfoStatusNormal
+                                                           pageType:LockViewPageTypeLaunch
+                                                              addon:nil
+                                                        finishBlock:nil];
+    }
+    
     self.currentAddons = [[AddonManager sharedManager] currentAddons];
 }
 
@@ -67,6 +75,11 @@
     [[KMModelManager sharedManager] saveContext:nil];
     
     [_listView reloadData];
+}
+
+- (IBAction)resetPassword:(id)sender
+{
+    [[PasswordManager sharedManager] showResetLock];
 }
 
 #pragma mark - UITableViewDataSource

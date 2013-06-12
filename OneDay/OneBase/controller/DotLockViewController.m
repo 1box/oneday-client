@@ -9,6 +9,8 @@
 #import "DotLockViewController.h"
 #import "NormalCircle.h"
 #import "PasswordManager.h"
+#import "KMModelManager.h"
+#import "AddonData.h"
 
 
 @interface DotLockViewController () <LockScreenDelegate>
@@ -18,6 +20,15 @@
 
 
 @implementation DotLockViewController
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        _pageType = LockViewPageTypeLaunch;
+    }
+    return self;
+}
 
 - (NSString *)pageNameForTrack
 {
@@ -37,7 +48,29 @@
 	[self.view addSubview:_lockScreenView];
     [self.view sendSubviewToBack:_lockScreenView];
     
-    _passwordSwitch.on = [[PasswordManager sharedManager] dotLockPasswordOpen];
+    switch (_pageType) {
+        case LockViewPageTypeLaunch:
+        {
+            _passwordSwitch.on = [PasswordManager launchPasswordOpen];
+            _switchLabel.text = NSLocalizedString(@"LockLaunchSwitchText", nil);
+        }
+            break;
+        case LockViewPageTypeAddon:
+        {
+            _passwordSwitch.on = [_addon.passwordOn boolValue];
+            _switchLabel.text = NSLocalizedString(_addon.dailyDoName, nil);
+        }
+            break;
+        case LockViewPageTypeReset:
+        {
+            _passwordSwitch.on = [PasswordManager passwordOpen];
+            _switchLabel.text = NSLocalizedString(@"LockResetSwitchText", nil);
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -51,7 +84,27 @@
 - (IBAction)passwordSwitch:(id)sender
 {
     UISwitch *aSwitch = sender;
-    [[PasswordManager sharedManager] setDotLockPasswordOpen:aSwitch.isOn];
+    switch (_pageType) {
+        case LockViewPageTypeLaunch:
+        {
+            [PasswordManager setLaunchPasswordOpen:aSwitch.isOn];
+        }
+            break;
+        case LockViewPageTypeAddon:
+        {
+            _addon.passwordOn = [NSNumber numberWithBool:aSwitch.isOn];
+            [[KMModelManager sharedManager] saveContext:nil];
+        }
+            break;
+        case LockViewPageTypeReset:
+        {
+            [PasswordManager setPasswordOpen:aSwitch.isOn];
+        }
+            break;
+            
+        default:
+            break;
+    }
     
     if (!aSwitch.isOn) {
         [self dismiss:nil];
@@ -60,14 +113,15 @@
 
 - (IBAction)dismiss:(id)sender
 {
-    if (_finishBlock) {
-        _finishBlock(self);
-    }
-    [super dismiss:sender];
-    
-    if (_delegate && [_delegate respondsToSelector:@selector(lockViewControllerHasDismiss:)]) {
-        [_delegate lockViewControllerHasDismiss:self];
-    }
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:^() {
+        if (_delegate && [_delegate respondsToSelector:@selector(lockViewControllerHasDismiss:)]) {
+            [_delegate lockViewControllerHasDismiss:self];
+        }
+        
+        if (_finishBlock) {
+            _finishBlock(self);
+        }
+    }];
 }
 
 #pragma mark - private
@@ -75,6 +129,7 @@
 - (void)updateStatus
 {
     _passwordSwitch.hidden = (_infoLabelStatus != InfoStatusFirstTimeSetting);
+    _switchLabel.hidden = _passwordSwitch.hidden;
     
 	switch (self.infoLabelStatus) {
 		case InfoStatusFirstTimeSetting:
@@ -116,19 +171,18 @@
 		case InfoStatusFailedConfirm:
 		case InfoStatusConfirmSetting:
             if ([patternNumber isEqualToNumber:_tempPattern]) {
-                [[PasswordManager sharedManager] setDotLockPassword:[_tempPattern stringValue]];
+                [PasswordManager setDotLockPassword:[_tempPattern stringValue]];
                 self.tempPattern = nil;
                 [self dismiss:nil];
             }
 			else {
-                self.tempPattern = nil;
 				self.infoLabelStatus = InfoStatusFailedConfirm;
 				[self updateStatus];
 			}
 			break;
-		case  InfoStatusNormal:
+		case InfoStatusNormal:
 		case InfoStatusFailedMatch:
-            if ([[PasswordManager sharedManager] checkDotLockPassword:[patternNumber stringValue]]) {
+            if ([PasswordManager checkDotLockPassword:[patternNumber stringValue]]) {
                 self.infoLabelStatus = InfoStatusSuccessMatch;
                 [self updateStatus];
                 [self dismiss:nil];

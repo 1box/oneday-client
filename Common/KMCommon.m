@@ -144,23 +144,23 @@
 
 #pragma mark - tool
 
-+ (UIViewController *)topViewControllerFor:(UIResponder *)responder
++ (UIViewController *)topMostViewControllerFor:(UIResponder *)responder
 {
 	UIResponder *topResponder = responder;
+    if(!topResponder) {
+        topResponder = [[[[UIApplication sharedApplication] keyWindow] subviews] lastObject];
+    }
+    
 	while(topResponder && ![topResponder isKindOfClass:[UIViewController class]]) {
 		topResponder = [topResponder nextResponder];
 	}
-    
-    if(!topResponder) {
-        topResponder = [[[UIApplication sharedApplication] keyWindow] rootViewController];
-    }
 	
 	return (UIViewController *)topResponder;
 }
 
-+ (UINavigationController *)topNavigationControllerFor:(UIResponder*)responder
++ (UINavigationController *)topMostNavigationControllerFor:(UIResponder*)responder
 {
-    UIViewController *top = [KMCommon topViewControllerFor:responder];
+    UIViewController *top = [KMCommon topMostViewControllerFor:responder];
     if ([top isKindOfClass:[UINavigationController class]]) {
         return (UINavigationController *)top;
     }

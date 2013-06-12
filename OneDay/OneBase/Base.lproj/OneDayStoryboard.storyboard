@@ -276,11 +276,11 @@
                                     <action selector="passwordSwitch:" destination="Vgb-Tj-eIX" eventType="valueChanged" id="zaL-9b-Q0u"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="_passwordSwitchText" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1ab-5u-UuP">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1ab-5u-UuP">
                                 <rect key="frame" x="21" y="500" width="160" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -289,6 +289,7 @@
                     <connections>
                         <outlet property="infoLabel" destination="eQu-ni-9JA" id="g6i-oq-S9B"/>
                         <outlet property="passwordSwitch" destination="d7e-Fq-FTc" id="QWb-7G-gdb"/>
+                        <outlet property="switchLabel" destination="1ab-5u-UuP" id="2wl-Em-42o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hiz-vC-Ocx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1312,6 +1313,7 @@
                                 <connections>
                                     <outlet property="listView" destination="IhD-ay-hdj" id="VBa-4B-gYP"/>
                                     <outlet property="toolbar" destination="OUl-mj-b6i" id="SvU-AD-U9J"/>
+                                    <outlet property="unfoldButton" destination="5xN-UV-W1b" id="6i1-bu-RlM"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -1342,18 +1344,21 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="edit" id="dpm-39-JLt">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5xN-UV-W1b" customClass="NavigationBarButton">
-                                <rect key="frame" x="271" y="7" width="44" height="30"/>
+                                <rect key="frame" x="235" y="7" width="80" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                <state key="normal" title="_edit">
+                                <state key="normal" title="_allUnfold">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="selected" title="_allFold">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="edit:" destination="BuM-O9-0HO" eventType="touchUpInside" id="cfY-pO-Q0Z"/>
+                                    <action selector="unfoldAll:" destination="BuM-O9-0HO" eventType="touchUpInside" id="ccs-Nv-3L7"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -2609,29 +2614,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MoreViewFeedbackCellID" textLabel="e0s-tc-yJY" style="IBUITableViewCellStyleDefault" id="Dpd-d8-ByP">
-                                        <rect key="frame" x="0.0" y="487" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="_moreFeedback" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="e0s-tc-yJY">
-                                                    <rect key="frame" x="10" y="0.0" width="260" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <connections>
-                                            <segue destination="kKH-f5-MEe" kind="push" identifier="showFeedback" id="vG2-Cw-AAf"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="MoreViewContactUsCellID" textLabel="8vF-9h-ISM" style="IBUITableViewCellStyleDefault" id="spK-zU-QjK">
-                                        <rect key="frame" x="0.0" y="531" width="320" height="45"/>
+                                        <rect key="frame" x="0.0" y="487" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -2755,6 +2739,23 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </state>
                                 <connections>
                                     <action selector="dismiss:" destination="hBD-YU-fQK" eventType="touchUpInside" id="BrO-tK-vPN"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="CWz-fL-0aj">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="zpN-aw-3Ee" customClass="DarkNavigationBarButton">
+                                <rect key="frame" x="227" y="7" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <state key="normal" title="_moreFeedback">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="kKH-f5-MEe" kind="push" identifier="showFeedback" id="1Qb-zS-pzd"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -3215,13 +3216,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <rect key="frame" x="0.0" y="460" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Nev-2E-Yud"/>
-                                    <barButtonItem style="plain" id="S0Z-co-LiQ">
+                                    <barButtonItem title="close all" id="S0Z-co-LiQ">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="c9U-Sm-uac" customClass="DarkNavigationBarButton">
-                                            <rect key="frame" x="70" y="7" width="180" height="30"/>
+                                            <rect key="frame" x="6" y="7" width="100" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                            <state key="normal" title="_closeAllAddonPassword">
+                                            <state key="normal" title="_closeAll">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
@@ -3233,7 +3233,24 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             </connections>
                                         </button>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="7eo-km-hJn"/>
+                                    <barButtonItem title="reset" id="ekH-Bv-iW2">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="F2z-cG-s7f" customClass="DarkNavigationBarButton">
+                                            <rect key="frame" x="116" y="7" width="75" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                            <state key="normal" title="_reset">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="resetPassword:" destination="MO4-lE-zN3" eventType="touchUpInside" id="cIl-kS-d4m"/>
+                                            </connections>
+                                        </button>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="flexibleSpace" id="7eo-km-hJn"/>
                                 </items>
                             </toolbar>
                         </subviews>

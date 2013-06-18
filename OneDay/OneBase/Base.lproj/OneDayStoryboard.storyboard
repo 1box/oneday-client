@@ -662,96 +662,112 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="homecover001.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="aCp-eO-p12"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYQ-jS-nl9" customClass="RootVerticalToolbar">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" image="page_round_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="cHA-gy-9Jx"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="n" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Te-CT-sHY">
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                        <color key="textColor" red="0.3490196168422699" green="0.3490196168422699" blue="0.3490196168422699" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="och-wF-2dR" userLabel="smark button">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" type="user" id="KCS-Mn-hVe"/>
+                                            <constraint firstAttribute="height" constant="32" type="user" id="Nly-ll-bJp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="root_icon_smark.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="S5I-ld-L99" kind="modal" identifier="rootShowTipPage" id="DtN-0A-9OA"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6o-4C-kV8" userLabel="clear button">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" type="user" id="EnR-6E-NSW"/>
+                                            <constraint firstAttribute="width" constant="32" type="user" id="c3J-XZ-IK6"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="root_icon_clear.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clearButtonClicked:" destination="2" eventType="touchUpInside" id="THY-7C-RNd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zx3-pN-JBv" userLabel="setting button">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" type="user" id="3ZV-PV-FN2"/>
+                                            <constraint firstAttribute="height" constant="32" type="user" id="aN8-i4-Qby"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="root_icon_set.png">
+                                            <color key="titleColor" red="0.1647058874" green="0.49019610879999997" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="taJ-uP-hss" kind="modal" identifier="showMore" id="Jlh-IS-dUZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vk-iD-g1g" userLabel="add button">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" type="user" id="crg-uQ-FVZ"/>
+                                            <constraint firstAttribute="height" constant="32" type="user" id="wfX-fo-8eE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" image="root_icon_add.png">
+                                            <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted" image="root_icon_add_flash.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="ar3-L9-P8j" kind="modal" identifier="showPreparedAddons" id="s0a-Zw-51o"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="cHA-gy-9Jx" firstAttribute="top" secondItem="wYQ-jS-nl9" secondAttribute="top" constant="20" symbolic="YES" type="default" id="11r-kl-i3w"/>
+                                    <constraint firstItem="1Vk-iD-g1g" firstAttribute="top" secondItem="zx3-pN-JBv" secondAttribute="bottom" constant="10" type="user" id="3wE-2y-Iyg"/>
+                                    <constraint firstItem="3Te-CT-sHY" firstAttribute="leading" secondItem="cHA-gy-9Jx" secondAttribute="leading" type="default" id="7Sc-hD-JsL"/>
+                                    <constraint firstItem="3Te-CT-sHY" firstAttribute="centerX" secondItem="och-wF-2dR" secondAttribute="centerX" type="default" id="7dS-Eq-I2G"/>
+                                    <constraint firstItem="3Te-CT-sHY" firstAttribute="bottom" secondItem="cHA-gy-9Jx" secondAttribute="bottom" type="default" id="BGR-9U-0vh"/>
+                                    <constraint firstItem="i6o-4C-kV8" firstAttribute="top" secondItem="och-wF-2dR" secondAttribute="bottom" constant="10" type="user" id="HAo-BH-3HU"/>
+                                    <constraint firstAttribute="centerX" secondItem="1Vk-iD-g1g" secondAttribute="centerX" type="user" id="J6u-5p-oBm"/>
+                                    <constraint firstAttribute="centerX" secondItem="och-wF-2dR" secondAttribute="centerX" type="user" id="NIv-7N-Xhq"/>
+                                    <constraint firstAttribute="width" constant="44" type="user" id="TUr-eL-NId"/>
+                                    <constraint firstItem="zx3-pN-JBv" firstAttribute="top" secondItem="i6o-4C-kV8" secondAttribute="bottom" constant="10" type="user" id="agq-NO-9f5"/>
+                                    <constraint firstAttribute="bottom" secondItem="1Vk-iD-g1g" secondAttribute="bottom" constant="40" type="user" id="cib-Zj-VuG"/>
+                                    <constraint firstItem="3Te-CT-sHY" firstAttribute="top" secondItem="wYQ-jS-nl9" secondAttribute="top" constant="20" symbolic="YES" type="default" id="ro4-0n-fwY"/>
+                                    <constraint firstAttribute="centerX" secondItem="i6o-4C-kV8" secondAttribute="centerX" type="user" id="u4E-tc-8Ky"/>
+                                    <constraint firstItem="3Te-CT-sHY" firstAttribute="trailing" secondItem="cHA-gy-9Jx" secondAttribute="trailing" type="default" id="zpq-z3-Bgf"/>
+                                    <constraint firstAttribute="centerX" secondItem="zx3-pN-JBv" secondAttribute="centerX" type="user" id="zqx-lP-Kdc"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="pageLabel" destination="3Te-CT-sHY" id="Jft-5U-Pud"/>
+                                </connections>
+                            </view>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eK0-OO-NRZ">
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <collectionViewLayout key="collectionViewLayout" id="xll-5X-5qR" customClass="KMReorderableCollectionViewSnakeLayout"/>
-                                <view key="backgroundView" contentMode="scaleToFill" id="iVQ-gb-2H9">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wYQ-jS-nl9" customClass="RootVerticalToolbar">
-                                            <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xyZ-3S-ed2">
-                                                    <subviews>
-                                                        <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" image="page_round_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="cHA-gy-9Jx"/>
-                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="n" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Te-CT-sHY">
-                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
-                                                            <color key="textColor" red="0.3490196168422699" green="0.3490196168422699" blue="0.3490196168422699" alpha="1" colorSpace="deviceRGB"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                        </label>
-                                                    </subviews>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="och-wF-2dR">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <state key="normal" title="smark" image="root_icon_smark.png">
-                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <state key="highlighted">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="S5I-ld-L99" kind="modal" identifier="rootShowTipPage" id="DtN-0A-9OA"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6o-4C-kV8">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <state key="normal" title="Clear" image="root_icon_clear.png">
-                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <state key="highlighted">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="clearButtonClicked:" destination="2" eventType="touchUpInside" id="THY-7C-RNd"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zx3-pN-JBv">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <state key="normal" title="Set" image="root_icon_set.png">
-                                                        <color key="titleColor" red="0.1647058874" green="0.49019610879999997" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <state key="highlighted">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="taJ-uP-hss" kind="modal" identifier="showMore" id="Jlh-IS-dUZ"/>
-                                                    </connections>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vk-iD-g1g">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                    <state key="normal" title="Add" image="root_icon_add.png">
-                                                        <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <state key="highlighted" image="root_icon_add_flash.png">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <segue destination="ar3-L9-P8j" kind="modal" identifier="showPreparedAddons" id="s0a-Zw-51o"/>
-                                                    </connections>
-                                                </button>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <gestureRecognizers/>
-                                            <connections>
-                                                <outlet property="pageLabel" destination="3Te-CT-sHY" id="Jft-5U-Pud"/>
-                                                <outlet property="pageView" destination="xyZ-3S-ed2" id="gkd-kN-cNc"/>
-                                            </connections>
-                                        </view>
-                                    </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <gestureRecognizers/>
-                                    <connections>
-                                        <outletCollection property="gestureRecognizers" destination="ali-ZF-NQo" appends="YES" id="DS4-2q-4W7"/>
-                                    </connections>
-                                </view>
                                 <cells>
                                     <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FeedCollectCell" id="WQ7-fH-kJw" customClass="RootCollectCell">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -858,14 +874,17 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="aCp-eO-p12" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="46b-QT-lNa"/>
-                            <constraint firstItem="eK0-OO-NRZ" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="DpZ-rB-Olq"/>
-                            <constraint firstItem="eK0-OO-NRZ" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="Iew-HU-cFw"/>
-                            <constraint firstItem="aCp-eO-p12" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="XZc-ST-a2r"/>
+                            <constraint firstItem="aCp-eO-p12" firstAttribute="top" secondItem="3" secondAttribute="top" type="user" id="46b-QT-lNa"/>
+                            <constraint firstItem="wYQ-jS-nl9" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="user" id="5vl-Zf-pXh"/>
+                            <constraint firstItem="eK0-OO-NRZ" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="6Nt-rx-Lsr"/>
+                            <constraint firstItem="aCp-eO-p12" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="user" id="7nn-Zl-9HS"/>
+                            <constraint firstItem="eK0-OO-NRZ" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="8MO-bf-MXx"/>
+                            <constraint firstItem="eK0-OO-NRZ" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="user" id="DpZ-rB-Olq"/>
+                            <constraint firstItem="wYQ-jS-nl9" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="FJq-86-x91"/>
+                            <constraint firstItem="wYQ-jS-nl9" firstAttribute="top" secondItem="3" secondAttribute="top" type="user" id="ULg-Sj-ABK"/>
+                            <constraint firstItem="aCp-eO-p12" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="user" id="dPT-X2-gBr"/>
                             <constraint firstItem="aCp-eO-p12" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="user" id="hJK-QG-RRK"/>
-                            <constraint firstItem="aCp-eO-p12" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="user" id="oiF-Cm-hok"/>
                             <constraint firstItem="eK0-OO-NRZ" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="vhg-bR-s4K"/>
-                            <constraint firstItem="eK0-OO-NRZ" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="w9b-0u-dY4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3U3-gQ-wdY">

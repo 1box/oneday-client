@@ -942,8 +942,8 @@
 		3F55AAC116E50D4A00EBBA30 /* workout_todos_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F55A5D916E50D4900EBBA30 /* workout_todos_icon@2x.png */; };
 		3F55AAC216E50D4A00EBBA30 /* AppDelegateBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55A5DE16E50D4900EBBA30 /* AppDelegateBase.m */; };
 		3F55AAC316E50D4A00EBBA30 /* AppDelegateBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55A5DE16E50D4900EBBA30 /* AppDelegateBase.m */; };
-		3F55AAC616E50D4A00EBBA30 /* OneDayStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F55A5E116E50D4900EBBA30 /* OneDayStoryboard.storyboard */; };
-		3F55AAC716E50D4A00EBBA30 /* OneDayStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F55A5E116E50D4900EBBA30 /* OneDayStoryboard.storyboard */; };
+		3F55AAC616E50D4A00EBBA30 /* OneDayStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F55A5E116E50D4900EBBA30 /* OneDayStoryboard_iPhone.storyboard */; };
+		3F55AAC716E50D4A00EBBA30 /* OneDayStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F55A5E116E50D4900EBBA30 /* OneDayStoryboard_iPhone.storyboard */; };
 		3F55AAC816E50D4A00EBBA30 /* AddonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55A5E616E50D4900EBBA30 /* AddonsViewController.m */; };
 		3F55AAC916E50D4A00EBBA30 /* AddonsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55A5E616E50D4900EBBA30 /* AddonsViewController.m */; };
 		3F55AACA16E50D4A00EBBA30 /* ContactUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55A5E816E50D4900EBBA30 /* ContactUsViewController.m */; };
@@ -1553,6 +1553,8 @@
 		CB91EE09170742DB003FA094 /* popupbg_dialog@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB91EDEA170742DA003FA094 /* popupbg_dialog@2x.png */; };
 		CB91EE0E170742DB003FA094 /* KMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB91EDEF170742DA003FA094 /* KMAlertView.m */; };
 		CB91EE0F170742DB003FA094 /* KMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB91EDEF170742DA003FA094 /* KMAlertView.m */; };
+		CBA427951776F68A0027E902 /* UniversalStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA427941776F68A0027E902 /* UniversalStoryboard.storyboard */; };
+		CBA427961776F68A0027E902 /* UniversalStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA427941776F68A0027E902 /* UniversalStoryboard.storyboard */; };
 		CBA5E928174941200023C456 /* libUMFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA5E925174941200023C456 /* libUMFeedback.a */; };
 		CBA5E929174941200023C456 /* libUMFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA5E925174941200023C456 /* libUMFeedback.a */; };
 		CBA5E92A174941200023C456 /* umFeedback.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CBA5E926174941200023C456 /* umFeedback.bundle */; };
@@ -2235,7 +2237,7 @@
 		3F55A5DC16E50D4900EBBA30 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "zh-Hans"; path = "zh-Hans.lproj/daily_workout_tip@2x.png"; sourceTree = "<group>"; };
 		3F55A5DD16E50D4900EBBA30 /* AppDelegateBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegateBase.h; sourceTree = "<group>"; };
 		3F55A5DE16E50D4900EBBA30 /* AppDelegateBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegateBase.m; sourceTree = "<group>"; };
-		3F55A5E216E50D4900EBBA30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OneDayStoryboard.storyboard; sourceTree = "<group>"; };
+		3F55A5E216E50D4900EBBA30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OneDayStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		3F55A5E316E50D4900EBBA30 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		3F55A5E516E50D4900EBBA30 /* AddonsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddonsViewController.h; sourceTree = "<group>"; };
 		3F55A5E616E50D4900EBBA30 /* AddonsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddonsViewController.m; sourceTree = "<group>"; };
@@ -2325,8 +2327,8 @@
 		3F55A6CE16E50D4A00EBBA30 /* TipCollectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipCollectCell.h; sourceTree = "<group>"; };
 		3F55A6CF16E50D4A00EBBA30 /* TipCollectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipCollectCell.m; sourceTree = "<group>"; };
 		3F55A6D016E50D4A00EBBA30 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		3F55AC1416E50D5B00EBBA30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OneDayStoryboard.strings; sourceTree = "<group>"; };
-		3F55AC1516E50D5E00EBBA30 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/OneDayStoryboard.strings"; sourceTree = "<group>"; };
+		3F55AC1416E50D5B00EBBA30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OneDayStoryboard_iPhone.strings; sourceTree = "<group>"; };
+		3F55AC1516E50D5E00EBBA30 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/OneDayStoryboard_iPhone.strings"; sourceTree = "<group>"; };
 		3F55AC2916E50DDE00EBBA30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/DailyDoHintDialogs.plist; sourceTree = "<group>"; };
 		3F55AC2B16E50DDE00EBBA30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/OneDayHintDialogs.plist; sourceTree = "<group>"; };
 		3F55AC3016E50DE300EBBA30 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "zh-Hans"; path = "zh-Hans.lproj/DailyDoHintDialogs.plist"; sourceTree = "<group>"; };
@@ -2686,6 +2688,7 @@
 		CB91EDEA170742DA003FA094 /* popupbg_dialog@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popupbg_dialog@2x.png"; sourceTree = "<group>"; };
 		CB91EDED170742DA003FA094 /* KMAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMAlertView.h; sourceTree = "<group>"; };
 		CB91EDEF170742DA003FA094 /* KMAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMAlertView.m; sourceTree = "<group>"; };
+		CBA427941776F68A0027E902 /* UniversalStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UniversalStoryboard.storyboard; sourceTree = "<group>"; };
 		CBA5E925174941200023C456 /* libUMFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUMFeedback.a; path = UMFeedback_iOS/libUMFeedback.a; sourceTree = "<group>"; };
 		CBA5E926174941200023C456 /* umFeedback.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = umFeedback.bundle; path = UMFeedback_iOS/umFeedback.bundle; sourceTree = "<group>"; };
 		CBA5E927174941200023C456 /* UMFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UMFeedback.h; path = UMFeedback_iOS/UMFeedback.h; sourceTree = "<group>"; };
@@ -2994,7 +2997,8 @@
 		3F55A3B116E50D4800EBBA30 /* OneBase */ = {
 			isa = PBXGroup;
 			children = (
-				3F55A5E116E50D4900EBBA30 /* OneDayStoryboard.storyboard */,
+				CBA427941776F68A0027E902 /* UniversalStoryboard.storyboard */,
+				3F55A5E116E50D4900EBBA30 /* OneDayStoryboard_iPhone.storyboard */,
 				CBF626721768DD1000B29AA1 /* OneDayStoryboard_iPad.storyboard */,
 				CB5ED9FD176491040092433A /* additions */,
 				3F55A3B216E50D4800EBBA30 /* addons */,
@@ -5198,7 +5202,7 @@
 				3F55AABD16E50D4A00EBBA30 /* 2_s_human_0030@2x.png in Resources */,
 				3F55AABF16E50D4A00EBBA30 /* workout_todos_icon.png in Resources */,
 				3F55AAC116E50D4A00EBBA30 /* workout_todos_icon@2x.png in Resources */,
-				3F55AAC716E50D4A00EBBA30 /* OneDayStoryboard.storyboard in Resources */,
+				3F55AAC716E50D4A00EBBA30 /* OneDayStoryboard_iPhone.storyboard in Resources */,
 				3F55AAE116E50D4A00EBBA30 /* Localizable.strings in Resources */,
 				3F55AAFB16E50D4A00EBBA30 /* DefaultModels.plist in Resources */,
 				3F55AAFD16E50D4A00EBBA30 /* DefaultTags.plist in Resources */,
@@ -5447,6 +5451,7 @@
 				CB72F2CD1768D73A009272C3 /* Default-Portrait~ipad.png in Resources */,
 				CB72F2CF1768D73A009272C3 /* Default-portrait@2x~ipad.png in Resources */,
 				CBF626751768DD1100B29AA1 /* OneDayStoryboard_iPad.storyboard in Resources */,
+				CBA427961776F68A0027E902 /* UniversalStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5908,7 +5913,7 @@
 				3F55AABC16E50D4A00EBBA30 /* 2_s_human_0030@2x.png in Resources */,
 				3F55AABE16E50D4A00EBBA30 /* workout_todos_icon.png in Resources */,
 				3F55AAC016E50D4A00EBBA30 /* workout_todos_icon@2x.png in Resources */,
-				3F55AAC616E50D4A00EBBA30 /* OneDayStoryboard.storyboard in Resources */,
+				3F55AAC616E50D4A00EBBA30 /* OneDayStoryboard_iPhone.storyboard in Resources */,
 				3F55AAE016E50D4A00EBBA30 /* Localizable.strings in Resources */,
 				3F55AAFA16E50D4A00EBBA30 /* DefaultModels.plist in Resources */,
 				3F55AAFC16E50D4A00EBBA30 /* DefaultTags.plist in Resources */,
@@ -6157,6 +6162,7 @@
 				CB72F2CC1768D73A009272C3 /* Default-Portrait~ipad.png in Resources */,
 				CB72F2CE1768D73A009272C3 /* Default-portrait@2x~ipad.png in Resources */,
 				CBF626741768DD1100B29AA1 /* OneDayStoryboard_iPad.storyboard in Resources */,
+				CBA427951776F68A0027E902 /* UniversalStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6594,14 +6600,14 @@
 			name = "daily_workout_tip@2x.png";
 			sourceTree = "<group>";
 		};
-		3F55A5E116E50D4900EBBA30 /* OneDayStoryboard.storyboard */ = {
+		3F55A5E116E50D4900EBBA30 /* OneDayStoryboard_iPhone.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				3F55A5E216E50D4900EBBA30 /* Base */,
 				3F55AC1416E50D5B00EBBA30 /* en */,
 				3F55AC1516E50D5E00EBBA30 /* zh-Hans */,
 			);
-			name = OneDayStoryboard.storyboard;
+			name = OneDayStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
 		};
 		3F55A5FD16E50D4900EBBA30 /* Localizable.strings */ = {

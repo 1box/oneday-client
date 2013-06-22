@@ -630,7 +630,7 @@
             break;
         case DailyDoActionTypeShowAllUndos:
         {
-            UINavigationController *nav = [[UIStoryboard storyboardWithName:MainStoryBoardID bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"UndoNavigationControllerID"];
+            UINavigationController *nav = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"UndoNavigationControllerID"];
             UndoViewController *controller = (UndoViewController *)nav.topViewController;
             controller.addon = _addon;
             UIViewController *topViewController = [KMCommon topMostViewControllerFor:self];
@@ -639,7 +639,7 @@
             break;
         case DailyDoActionTypeCashMonthSummary:
         {
-            UINavigationController *nav = [[UIStoryboard storyboardWithName:MainStoryBoardID bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SummaryNavigationControllerID"];
+            UINavigationController *nav = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SummaryNavigationControllerID"];
             SummaryViewController *controller = (SummaryViewController *)nav.topViewController;
             controller.type = SummaryViewTypeMonth;
             controller.addon = _addon;
@@ -649,7 +649,7 @@
             break;
         case DailyDoActionTypeCashYearSummary:
         {
-            UINavigationController *nav = [[UIStoryboard storyboardWithName:MainStoryBoardID bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SummaryNavigationControllerID"];
+            UINavigationController *nav = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SummaryNavigationControllerID"];
             SummaryViewController *controller = (SummaryViewController *)nav.topViewController;
             controller.type = SummaryViewTypeYear;
             controller.addon = _addon;
@@ -659,7 +659,7 @@
             break;
         case DailyDoActionTypeAlarmNotification:
         {
-            UINavigationController *nav = [[UIStoryboard storyboardWithName:MainStoryBoardID bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"WorkoutAlarmNavigationControllerID"];
+            UINavigationController *nav = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"WorkoutAlarmNavigationControllerID"];
             AlarmViewController *controller = (AlarmViewController *)nav.topViewController;
             controller.addon = _addon;
             UIViewController *topViewController = [KMCommon topMostViewControllerFor:self];

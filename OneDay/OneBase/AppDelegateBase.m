@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegateBase.h"
-#import "NSUserDefaultsAdditions.h"
+#import "MainViewController.h"
 #import "AddonData.h"
 #import "TagManager.h"
 #import "KMModelManager.h"
@@ -19,10 +19,15 @@
 #import "iRate.h"
 #import "iVersion.h"
 #import "Constants.h"
+#import "NSUserDefaultsAdditions.h"
+
+#define MainViewStoryboardID @"MainViewControllerID"
+
 
 @interface AppDelegateBase () <iRateDelegate>
 @property (nonatomic) UINavigationController *nav;
 @end
+
 
 @implementation AppDelegateBase
 
@@ -40,9 +45,19 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.nav = (UINavigationController *)_window.rootViewController;
+    if ([KMCommon isPadDevice]) {
+//        split's viewControllers returns an array of views. The zero-index element should be the left view, the one-index element should be the right view.
+        UISplitViewController *split = (UISplitViewController *)_window.rootViewController;
+        self.nav = [split.viewControllers objectAtIndex:1];
+    }
+    else {
+        self.nav = (UINavigationController *)_window.rootViewController;
+    }
     
-    [[KMTracker sharedTracker] setRootController:self.window.rootViewController];
+    MainViewController *mainView = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:MainViewStoryboardID];
+    [_nav pushViewController:mainView animated:NO];
+    
+    [[KMTracker sharedTracker] setRootController:_nav];
     [[KMTracker sharedTracker] startTrack];
     
     [[KMModelManager sharedManager] start];

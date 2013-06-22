@@ -11,7 +11,8 @@
 
 #import "NSUserDefaultsAdditions.h"
 
-#define MainStoryBoardID @"OneDayStoryboard"
+#define OneDayStoryboardName @"OneDayStoryboard"
+#define UniversalStoryboardName @"UniversalStoryboard"
 
 #define kAutomaticLineNumberUserDefaultKey @"kAutomaticLineNumberUserDefaultKey"
 static inline void setAutomaticLineNumber(BOOL automatic) {

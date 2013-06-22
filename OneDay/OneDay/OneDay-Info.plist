@@ -50,7 +50,7 @@
 	<key>UILaunchImageFile~iphone</key>
 	<string>Default.png</string>
 	<key>UIMainStoryboardFile</key>
-	<string>OneDayStoryboard</string>
+	<string>OneDayStoryboard_iPhone</string>
 	<key>UIMainStoryboardFile~ipad</key>
 	<string>OneDayStoryboard_iPad</string>
 	<key>UIPrerenderedIcon</key>

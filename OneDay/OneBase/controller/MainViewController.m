@@ -354,6 +354,11 @@
     return CGSizeMake(self.itemWidth, self.itemHeight);
 }
 
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForSectionAtIndex:(NSInteger)section
+{
+    return _collectionView.frame.size;
+}
+
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
     return UIEdgeInsetsMake(self.topPadding,
@@ -371,7 +376,8 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return [[_dataSource objectAtIndex:section] count];
+    NSInteger ret = [[_dataSource objectAtIndex:section] count];
+    return ret;
 }
 
 static NSString *feedCollectCellID = @"FeedCollectCell";

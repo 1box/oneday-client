@@ -113,7 +113,7 @@ static PasswordManager *_sharedManager = nil;
 - (void)showLockViewWithInfoStatus:(InfoStatus)status pageType:(LockViewPageType)pageType addon:(AddonData *)addon finishBlock:(LockViewDismissBlock)aBlock
 {
     if (!_lockViewHasShown) {
-        DotLockViewController *controller = [[UIStoryboard storyboardWithName:MainStoryBoardID bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:DotLockStoryBoardID];
+        DotLockViewController *controller = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:DotLockStoryBoardID];
         controller.delegate = self;
         controller.infoLabelStatus = status;
         controller.pageType = pageType;

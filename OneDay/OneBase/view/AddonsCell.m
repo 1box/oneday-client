@@ -36,11 +36,11 @@
 
 - (void)refreshUI
 {
-    CGFloat iconHeight = self.frame.size.height - 2*VerticalPadding;
-    _addonIconView.frame = CGRectMake(0, 0, iconHeight, iconHeight);
-    [_addonNameLabel heightThatFitsWidth:230.f];
-    
-    _addonIconView.center = CGPointMake(10.0 + _addonIconView.frame.size.width/2, self.contentView.frame.size.height/2);
-    _addonNameLabel.center = CGPointMake(10.0 + CGRectGetMaxX(_addonIconView.frame) + _addonNameLabel.frame.size.width/2, _addonIconView.center.y);
+//    CGFloat iconHeight = self.frame.size.height - 2*VerticalPadding;
+//    _addonIconView.frame = CGRectMake(0, 0, iconHeight, iconHeight);
+//    [_addonNameLabel heightThatFitsWidth:230.f];
+//    
+//    _addonIconView.center = CGPointMake(10.0 + _addonIconView.frame.size.width/2, self.contentView.frame.size.height/2);
+//    _addonNameLabel.center = CGPointMake(10.0 + CGRectGetMaxX(_addonIconView.frame) + _addonNameLabel.frame.size.width/2, _addonIconView.center.y);
 }
 @end

@@ -69,7 +69,7 @@
     tmpFrame = CGRectMake(0, 0, DateViewWidth, dateViewHeight);
     tmpFrame.origin.x = CGRectGetMaxX(_checkbox.frame);
     _dateView.frame = tmpFrame;
-    [_dateView refreshUI];
+//    [_dateView refreshUI];
    
     if (!self.isUnfolded) {
         CGFloat presentHeight = [DailyDoPresentView heightOfCellForDailyDo:_dailyDo];
@@ -83,6 +83,12 @@
         [_presentView refreshUI];
     }
 }
+
+//- (void)layoutSubviews
+//{
+//    [super layoutSubviews];
+//    [self refreshUI];
+//}
 
 #pragma mark - Actions
 

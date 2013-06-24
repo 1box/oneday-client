@@ -20,5 +20,4 @@
 @property (nonatomic) IBOutlet UIImageView *bubbleImage;
 
 + (CGFloat)heightForDailyDo:(DailyDoBase *)dailyDo fixWidth:(CGFloat)width;
-- (void)refreshUI;
 @end

@@ -49,45 +49,57 @@
     return ret;
 }
 
-- (void)refreshUI
+- (void)setUnfolded:(BOOL)unfolded
 {
+    [super setUnfolded:unfolded];
+    
+//    CGFloat dateViewHeight = [DailyDoDateView heightForDailyDo:_dailyDo fixWidth:DateViewWidth];
+    
     _presentView.hidden = self.isUnfolded;
-    
-    CGRect vFrame = self.bounds;
-    vFrame.size.height = [DailyDoTodayCell heightOfCellForDailyDo:_dailyDo unfold:self.isUnfolded];
-    
-    CGFloat dateViewHeight = [DailyDoDateView heightForDailyDo:_dailyDo fixWidth:DateViewWidth];
-    
-    CGRect tmpFrame = _checkbox.frame;
-    tmpFrame.origin.x = LeftPadding;
-    _checkbox.frame = tmpFrame;
-    
-    CGPoint tmpCenter = _checkbox.center;
-    tmpCenter.y = dateViewHeight/2;
-    _checkbox.center = tmpCenter;
-    
-    tmpFrame = CGRectMake(0, 0, DateViewWidth, dateViewHeight);
-    tmpFrame.origin.x = CGRectGetMaxX(_checkbox.frame);
-    _dateView.frame = tmpFrame;
-//    [_dateView refreshUI];
-   
     if (!self.isUnfolded) {
         CGFloat presentHeight = [DailyDoPresentView heightOfCellForDailyDo:_dailyDo];
         
-        tmpFrame.origin.x = CGRectGetMaxX(_checkbox.frame);
-        tmpFrame.origin.y = CGRectGetMaxY(_dateView.frame) + DateViewBottomMargin;
-        tmpFrame.size.width = PresentViewWidth;
-        tmpFrame.size.height = presentHeight;
-        _presentView.frame = tmpFrame;
+        NSArray *constrains = self.constraints;
+        NSLog(@"constains:%@", constrains);
         
-        [_presentView refreshUI];
+        NSDictionary *views = NSDictionaryOfVariableBindings(_dateView);
+        NSArray *t = [NSLayoutConstraint constraintsWithVisualFormat:[NSString stringWithFormat:@"V:[_dateView]-(%f)-|", presentHeight + 6.f]
+                                                             options:NSLayoutAttributeTrailing
+                                                             metrics:nil
+                                                               views:views];
+        [self addConstraints:t];
     }
 }
 
-//- (void)layoutSubviews
+//- (void)refreshUI
 //{
-//    [super layoutSubviews];
-//    [self refreshUI];
+//    CGRect vFrame = self.bounds;
+//    vFrame.size.height = [DailyDoTodayCell heightOfCellForDailyDo:_dailyDo unfold:self.isUnfolded];
+//    
+//
+//    CGRect tmpFrame = _checkbox.frame;
+//    tmpFrame.origin.x = LeftPadding;
+//    _checkbox.frame = tmpFrame;
+//    
+//    CGPoint tmpCenter = _checkbox.center;
+//    tmpCenter.y = dateViewHeight/2;
+//    _checkbox.center = tmpCenter;
+//    
+//    tmpFrame = CGRectMake(0, 0, DateViewWidth, dateViewHeight);
+//    tmpFrame.origin.x = CGRectGetMaxX(_checkbox.frame);
+//    _dateView.frame = tmpFrame;
+//    [_dateView refreshUI];
+//   
+//    if (!self.isUnfolded) {
+//
+//        tmpFrame.origin.x = CGRectGetMaxX(_checkbox.frame);
+//        tmpFrame.origin.y = CGRectGetMaxY(_dateView.frame) + DateViewBottomMargin;
+//        tmpFrame.size.width = PresentViewWidth;
+//        tmpFrame.size.height = presentHeight;
+//        _presentView.frame = tmpFrame;
+//        
+//        [_presentView refreshUI];
+//    }
 //}
 
 #pragma mark - Actions

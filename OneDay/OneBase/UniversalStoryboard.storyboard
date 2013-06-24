@@ -955,16 +955,16 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="separatorColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TodayDoCellID" rowHeight="100" id="VdC-nf-19W" customClass="DailyDoTodayCell">
-                                                <rect key="frame" x="0.0" y="46" width="320" height="101"/>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TodayDoCellID" rowHeight="110" id="VdC-nf-19W" customClass="DailyDoTodayCell">
+                                                <rect key="frame" x="0.0" y="46" width="320" height="111"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                    <rect key="frame" x="10" y="1" width="300" height="99"/>
+                                                    <rect key="frame" x="10" y="1" width="300" height="109"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AN1-iF-DOS" customClass="DailyDoPresentView">
+                                                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AN1-iF-DOS" customClass="DailyDoPresentView">
                                                             <subviews>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="255" translatesAutoresizingMaskIntoConstraints="NO" id="Tec-XX-oLi">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="257" translatesAutoresizingMaskIntoConstraints="NO" id="Tec-XX-oLi">
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <nil key="highlightedColor"/>
@@ -972,12 +972,10 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstItem="Tec-XX-oLi" firstAttribute="centerY" secondItem="AN1-iF-DOS" secondAttribute="centerY" type="user" id="12o-ii-bCl"/>
-                                                                <constraint firstAttribute="bottom" secondItem="Tec-XX-oLi" secondAttribute="bottom" type="user" id="1vF-rS-L0L"/>
-                                                                <constraint firstItem="Tec-XX-oLi" firstAttribute="leading" secondItem="AN1-iF-DOS" secondAttribute="leading" type="user" id="4pR-cX-XJp"/>
-                                                                <constraint firstAttribute="trailing" secondItem="Tec-XX-oLi" secondAttribute="trailing" type="user" id="6T4-qH-oag"/>
-                                                                <constraint firstAttribute="width" constant="255" type="user" id="Fqd-LR-UyL"/>
-                                                                <constraint firstItem="Tec-XX-oLi" firstAttribute="top" secondItem="AN1-iF-DOS" secondAttribute="top" type="user" id="Uo7-X9-CBj"/>
+                                                                <constraint firstItem="Tec-XX-oLi" firstAttribute="trailing" secondItem="AN1-iF-DOS" secondAttribute="trailing" type="default" id="0TF-C1-0mX"/>
+                                                                <constraint firstItem="Tec-XX-oLi" firstAttribute="bottom" secondItem="AN1-iF-DOS" secondAttribute="bottom" type="default" id="3sp-ul-1oL"/>
+                                                                <constraint firstItem="Tec-XX-oLi" firstAttribute="leading" secondItem="AN1-iF-DOS" secondAttribute="leading" type="default" id="V5E-rk-LKL"/>
+                                                                <constraint firstItem="Tec-XX-oLi" firstAttribute="top" secondItem="AN1-iF-DOS" secondAttribute="top" type="default" id="VIx-sl-dcr"/>
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="textView" destination="Tec-XX-oLi" id="qKE-cf-BJP"/>
@@ -1003,12 +1001,7 @@
                                                         </button>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n1n-IP-JYK" customClass="DailyDoDateView">
                                                             <subviews>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcl-9T-IvM">
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="190" id="TMB-e3-4Ry"/>
-                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" type="user" id="w5z-YF-ZeM"/>
-                                                                    </constraints>
-                                                                </imageView>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gcl-9T-IvM"/>
                                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="day" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EEj-44-DwK">
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
@@ -1021,11 +1014,8 @@
                                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="165" translatesAutoresizingMaskIntoConstraints="NO" id="nXH-gg-HdU">
+                                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="172" translatesAutoresizingMaskIntoConstraints="NO" id="nXH-gg-HdU">
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="width" constant="165" id="RXe-Cg-n6Y"/>
-                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -1033,16 +1023,19 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstItem="The-jf-KoF" firstAttribute="leading" secondItem="EEj-44-DwK" secondAttribute="leading" type="user" id="ABG-x6-nIF"/>
-                                                                <constraint firstItem="EEj-44-DwK" firstAttribute="leading" secondItem="n1n-IP-JYK" secondAttribute="leading" constant="5" type="user" id="DdX-Ve-fNA"/>
-                                                                <constraint firstItem="gcl-9T-IvM" firstAttribute="centerX" secondItem="nXH-gg-HdU" secondAttribute="centerX" type="default" id="DoB-0P-VSZ"/>
-                                                                <constraint firstItem="nXH-gg-HdU" firstAttribute="centerY" secondItem="gcl-9T-IvM" secondAttribute="centerY" type="user" id="Qz4-3E-AIc"/>
-                                                                <constraint firstItem="gcl-9T-IvM" firstAttribute="top" secondItem="n1n-IP-JYK" secondAttribute="top" constant="8" type="user" id="aH3-pC-IlL"/>
-                                                                <constraint firstItem="gcl-9T-IvM" firstAttribute="bottom" secondItem="The-jf-KoF" secondAttribute="bottom" type="default" id="bPM-F9-7a3"/>
-                                                                <constraint firstAttribute="width" constant="255" type="user" id="gad-US-stl"/>
-                                                                <constraint firstItem="nXH-gg-HdU" firstAttribute="leading" secondItem="n1n-IP-JYK" secondAttribute="leading" constant="75" type="user" id="n77-mg-htL"/>
-                                                                <constraint firstItem="EEj-44-DwK" firstAttribute="top" secondItem="n1n-IP-JYK" secondAttribute="top" constant="5" type="user" id="vlg-H4-1dA"/>
-                                                                <constraint firstItem="nXH-gg-HdU" firstAttribute="centerY" secondItem="n1n-IP-JYK" secondAttribute="centerY" type="default" id="yIX-T2-qQS"/>
+                                                                <constraint firstItem="gcl-9T-IvM" firstAttribute="top" secondItem="n1n-IP-JYK" secondAttribute="top" constant="8" type="user" id="8DE-6B-iga"/>
+                                                                <constraint firstAttribute="trailing" secondItem="gcl-9T-IvM" secondAttribute="trailing" constant="5" type="user" id="8PA-hY-Vw1"/>
+                                                                <constraint firstItem="EEj-44-DwK" firstAttribute="leading" secondItem="n1n-IP-JYK" secondAttribute="leading" constant="5" type="user" id="Ax4-NI-V2J"/>
+                                                                <constraint firstItem="EEj-44-DwK" firstAttribute="top" secondItem="n1n-IP-JYK" secondAttribute="top" constant="8" type="user" id="DzA-Bs-fph"/>
+                                                                <constraint firstAttribute="bottom" secondItem="gcl-9T-IvM" secondAttribute="bottom" constant="8" type="user" id="F9g-Or-hvT"/>
+                                                                <constraint firstItem="The-jf-KoF" firstAttribute="top" secondItem="EEj-44-DwK" secondAttribute="bottom" constant="6" type="user" id="L7B-FQ-Vz3"/>
+                                                                <constraint firstItem="gcl-9T-IvM" firstAttribute="leading" secondItem="n1n-IP-JYK" secondAttribute="leading" constant="60" type="user" id="L8l-MV-UAK"/>
+                                                                <constraint firstAttribute="bottom" secondItem="nXH-gg-HdU" secondAttribute="bottom" constant="13" type="user" id="Prc-tq-9cF"/>
+                                                                <constraint firstItem="EEj-44-DwK" firstAttribute="leading" secondItem="The-jf-KoF" secondAttribute="leading" type="user" id="Wth-AB-TxR"/>
+                                                                <constraint firstAttribute="trailing" secondItem="nXH-gg-HdU" secondAttribute="trailing" constant="10" type="user" id="g9Z-Zg-GXk"/>
+                                                                <constraint firstItem="The-jf-KoF" firstAttribute="leading" secondItem="n1n-IP-JYK" secondAttribute="leading" constant="5" type="user" id="nej-tE-p52"/>
+                                                                <constraint firstItem="nXH-gg-HdU" firstAttribute="top" secondItem="n1n-IP-JYK" secondAttribute="top" constant="13" type="user" id="wgM-WR-3zF"/>
+                                                                <constraint firstItem="nXH-gg-HdU" firstAttribute="leading" secondItem="n1n-IP-JYK" secondAttribute="leading" constant="75" type="user" id="zwz-eZ-Q5m"/>
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="bubbleImage" destination="gcl-9T-IvM" id="9UQ-F4-m4h"/>
@@ -1055,16 +1048,16 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstItem="OhU-fx-qfR" firstAttribute="top" secondItem="VdC-nf-19W" secondAttribute="top" constant="24" id="6L9-e3-Xq0"/>
-                                                    <constraint firstItem="OhU-fx-qfR" firstAttribute="leading" secondItem="VdC-nf-19W" secondAttribute="leading" constant="5" type="user" id="7kS-Q8-Txf"/>
-                                                    <constraint firstItem="n1n-IP-JYK" firstAttribute="centerY" secondItem="OhU-fx-qfR" secondAttribute="centerY" type="user" id="JkW-nA-p8X"/>
-                                                    <constraint firstItem="AN1-iF-DOS" firstAttribute="top" relation="lessThanOrEqual" secondItem="n1n-IP-JYK" secondAttribute="bottom" constant="7" type="user" id="ONw-wK-9jK"/>
+                                                    <constraint firstItem="n1n-IP-JYK" firstAttribute="trailing" secondItem="AN1-iF-DOS" secondAttribute="trailing" type="default" id="0ac-KM-yyx"/>
+                                                    <constraint firstItem="OhU-fx-qfR" firstAttribute="leading" secondItem="VdC-nf-19W" secondAttribute="leading" constant="15" type="user" id="0wp-1k-ciu"/>
+                                                    <constraint firstAttribute="trailing" secondItem="n1n-IP-JYK" secondAttribute="trailing" constant="10" type="user" id="3Br-iS-JpE"/>
+                                                    <constraint firstItem="OhU-fx-qfR" firstAttribute="top" secondItem="VdC-nf-19W" secondAttribute="top" constant="6" id="4Cb-b5-kCJ"/>
                                                     <constraint firstItem="n1n-IP-JYK" firstAttribute="leading" secondItem="AN1-iF-DOS" secondAttribute="leading" type="default" id="OUC-8h-Og8"/>
-                                                    <constraint firstAttribute="bottom" secondItem="AN1-iF-DOS" secondAttribute="bottom" type="user" id="QMZ-ab-hqG"/>
-                                                    <constraint firstItem="n1n-IP-JYK" firstAttribute="top" secondItem="VdC-nf-19W" secondAttribute="top" constant="5" type="user" id="XNk-WV-x1y"/>
-                                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="n1n-IP-JYK" secondAttribute="bottom" constant="5" type="user" id="mRJ-d0-A1q"/>
-                                                    <constraint firstItem="AN1-iF-DOS" firstAttribute="leading" secondItem="OhU-fx-qfR" secondAttribute="trailing" type="user" id="mxP-Xg-i2p"/>
-                                                    <constraint firstItem="OhU-fx-qfR" firstAttribute="top" relation="greaterThanOrEqual" secondItem="VdC-nf-19W" secondAttribute="top" constant="5" type="user" id="xqw-qj-alL"/>
+                                                    <constraint firstItem="n1n-IP-JYK" firstAttribute="leading" secondItem="OhU-fx-qfR" secondAttribute="trailing" constant="5" type="user" id="Vi2-oJ-BkH"/>
+                                                    <constraint firstItem="AN1-iF-DOS" firstAttribute="bottom" secondItem="VdC-nf-19W" secondAttribute="bottom" type="default" id="aZL-We-hDD"/>
+                                                    <constraint firstAttribute="bottom" secondItem="n1n-IP-JYK" secondAttribute="bottom" type="user" id="pRA-lB-B4I"/>
+                                                    <constraint firstItem="n1n-IP-JYK" firstAttribute="top" secondItem="VdC-nf-19W" secondAttribute="top" type="user" id="scJ-eU-JDX"/>
+                                                    <constraint firstItem="AN1-iF-DOS" firstAttribute="top" secondItem="VdC-nf-19W" secondAttribute="top" constant="74" id="wVe-Ft-ezv"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="checkbox" destination="OhU-fx-qfR" id="Swt-yg-oTC"/>
@@ -1073,7 +1066,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell contentMode="scaleToFill" restorationIdentifier="TodayPropertyTodosCellID" selectionStyle="none" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="TodayPropertyTodosCellID" rowHeight="100" id="INi-dS-vlV" customClass="DailyDoTodoCell">
-                                                <rect key="frame" x="0.0" y="147" width="320" height="100"/>
+                                                <rect key="frame" x="0.0" y="157" width="320" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="10" y="0.0" width="267" height="99"/>
@@ -1186,7 +1179,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TodayPropertyTagsCellID" id="CbX-1u-GGN" customClass="DailyDoTagCell">
-                                                <rect key="frame" x="0.0" y="247" width="320" height="44"/>
+                                                <rect key="frame" x="0.0" y="257" width="320" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -1223,7 +1216,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TodayPropertyTimelineCellID" id="Jy9-fI-CBX" customClass="DailyDoPropertyCell">
-                                                <rect key="frame" x="0.0" y="291" width="320" height="44"/>
+                                                <rect key="frame" x="0.0" y="301" width="320" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -1255,7 +1248,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TodayPropertyNotesCellID" id="FC4-D7-lMO" customClass="DailyDoPropertyCell">
-                                                <rect key="frame" x="0.0" y="335" width="320" height="44"/>
+                                                <rect key="frame" x="0.0" y="345" width="320" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="10" y="0.0" width="280" height="43"/>
@@ -1292,7 +1285,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TomorrowCellID" id="G6K-Yr-hV0" customClass="DailyDoTomorrowCell">
-                                                <rect key="frame" x="0.0" y="379" width="320" height="44"/>
+                                                <rect key="frame" x="0.0" y="389" width="320" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -1369,7 +1362,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoggedDoCellID" rowHeight="100" id="mFw-zT-fRg" customClass="DailyDoLoggedCell">
-                                                <rect key="frame" x="0.0" y="423" width="320" height="100"/>
+                                                <rect key="frame" x="0.0" y="433" width="320" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="10" y="0.0" width="300" height="99"/>
@@ -1457,7 +1450,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LoadMoreCellID" id="blI-DO-RSv" customClass="KMLoadMoreCell">
-                                                <rect key="frame" x="0.0" y="523" width="320" height="44"/>
+                                                <rect key="frame" x="0.0" y="533" width="320" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                                     <rect key="frame" x="10" y="0.0" width="300" height="43"/>
@@ -3063,7 +3056,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="yPs-1f-G5e">
+                        <barButtonItem key="rightBarButtonItem" id="yPs-1f-G5e">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4fJ-6P-XPL" customClass="DarkNavigationBarButton">
                                 <rect key="frame" x="227" y="7" width="88" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -4079,7 +4072,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="GuideViewCloudCellView" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GuideViewCloudCellView.h"/>
             <relationships>
-                <relationship kind="action" name="handleSingleTap:"/>
                 <relationship kind="outlet" name="arrowWhiteView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="checkmarkGreyView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="checkmarkWhiteView" candidateClass="UIImageView"/>
@@ -4324,6 +4316,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
         <class className="UMTableViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UMTableViewController.h"/>

@@ -47,39 +47,6 @@
     return contentHeight;
 }
 
-- (void)refreshUI
-{
-    CGRect vFrame = self.frame;
-    vFrame.origin.x = 0.f;
-    vFrame.origin.y = 0.f;
-    
-    [_dayLabel sizeToFit];
-    [_monthAndYearLabel sizeToFit];
-    CGFloat titleLabelWidth = vFrame.size.width - BubbleOriginX - HorizontalPadding;
-    [_titleLabel heightThatFitsWidth:titleLabelWidth];
-    
-    CGRect tmpFrame = _dayLabel.frame;
-    tmpFrame.origin.x = HorizontalPadding;
-    tmpFrame.origin.y = TitleVerticalMargin;
-    _dayLabel.frame = tmpFrame;
-    
-    tmpFrame = _monthAndYearLabel.frame;
-    tmpFrame.origin.x = CGRectGetMinX(_dayLabel.frame);
-    tmpFrame.origin.y = CGRectGetMaxY(_dayLabel.frame) + DayLabelBottomMargin;
-    _monthAndYearLabel.frame = tmpFrame;
-    
-    tmpFrame = CGRectMake(0, 0, vFrame.size.width - BubbleOriginX - HorizontalPadding, vFrame.size.height - 2*VerticalPadding);
-    tmpFrame.origin.x = BubbleOriginX;
-    tmpFrame.origin.y = VerticalPadding;
-    _bubbleImage.frame = tmpFrame;
-    
-    tmpFrame.size.width -= TitleLeftMargin + TitleRightMargin;
-    tmpFrame.size.height -= TitleVerticalMargin*2;
-    tmpFrame.origin.x += TitleLeftMargin;
-    tmpFrame.origin.y += TitleVerticalMargin;
-    _titleLabel.frame = tmpFrame;
-}
-
 #pragma mark - public
 
 - (void)setDailyDo:(DailyDoBase *)dailyDo

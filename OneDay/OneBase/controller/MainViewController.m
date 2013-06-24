@@ -71,6 +71,17 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if ([[segue identifier] isEqualToString:@"showMore"] ||
+        [[segue identifier] isEqualToString:@"rootShowTipPage"] ||
+        [[segue identifier] isEqualToString:@"showPreparedAddons"] ||
+        [[segue identifier] isEqualToString:@"rootShowHomeCover"]) {
+        
+        if ([KMCommon isPadDevice]) {
+            UIViewController *destination = [segue destinationViewController];
+            destination.modalPresentationStyle = UIModalPresentationFormSheet;
+        }
+    }
+    
     if ([[segue identifier] isEqualToString:@"showDailyDo"]) {
         
         NSIndexPath *indexPath = [[_collectionView indexPathsForSelectedItems] objectAtIndex:0];

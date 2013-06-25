@@ -955,7 +955,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="separatorColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TodayDoCellID" rowHeight="110" id="VdC-nf-19W" customClass="DailyDoTodayCell">
+                                            <tableViewCell autoresizesSubviews="NO" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="TodayDoCellID" rowHeight="110" id="VdC-nf-19W" customClass="DailyDoTodayCell">
                                                 <rect key="frame" x="0.0" y="46" width="320" height="111"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1049,14 +1049,14 @@
                                                 </view>
                                                 <constraints>
                                                     <constraint firstItem="n1n-IP-JYK" firstAttribute="trailing" secondItem="AN1-iF-DOS" secondAttribute="trailing" type="default" id="0ac-KM-yyx"/>
-                                                    <constraint firstItem="OhU-fx-qfR" firstAttribute="leading" secondItem="VdC-nf-19W" secondAttribute="leading" constant="15" type="user" id="0wp-1k-ciu"/>
-                                                    <constraint firstAttribute="trailing" secondItem="n1n-IP-JYK" secondAttribute="trailing" constant="10" type="user" id="3Br-iS-JpE"/>
                                                     <constraint firstItem="OhU-fx-qfR" firstAttribute="top" secondItem="VdC-nf-19W" secondAttribute="top" constant="6" id="4Cb-b5-kCJ"/>
+                                                    <constraint firstItem="OhU-fx-qfR" firstAttribute="leading" secondItem="VdC-nf-19W" secondAttribute="leading" constant="15" id="EWo-HZ-db5"/>
                                                     <constraint firstItem="n1n-IP-JYK" firstAttribute="leading" secondItem="AN1-iF-DOS" secondAttribute="leading" type="default" id="OUC-8h-Og8"/>
-                                                    <constraint firstItem="n1n-IP-JYK" firstAttribute="leading" secondItem="OhU-fx-qfR" secondAttribute="trailing" constant="5" type="user" id="Vi2-oJ-BkH"/>
+                                                    <constraint firstAttribute="trailing" secondItem="n1n-IP-JYK" secondAttribute="trailing" constant="10" id="UcZ-LO-56X"/>
+                                                    <constraint firstItem="n1n-IP-JYK" firstAttribute="bottom" secondItem="VdC-nf-19W" secondAttribute="bottom" type="default" id="VgS-Qg-ucn"/>
                                                     <constraint firstItem="AN1-iF-DOS" firstAttribute="bottom" secondItem="VdC-nf-19W" secondAttribute="bottom" type="default" id="aZL-We-hDD"/>
-                                                    <constraint firstAttribute="bottom" secondItem="n1n-IP-JYK" secondAttribute="bottom" type="user" id="pRA-lB-B4I"/>
-                                                    <constraint firstItem="n1n-IP-JYK" firstAttribute="top" secondItem="VdC-nf-19W" secondAttribute="top" type="user" id="scJ-eU-JDX"/>
+                                                    <constraint firstItem="n1n-IP-JYK" firstAttribute="leading" secondItem="VdC-nf-19W" secondAttribute="leading" constant="53" id="eme-cz-NZA"/>
+                                                    <constraint firstItem="n1n-IP-JYK" firstAttribute="top" secondItem="VdC-nf-19W" secondAttribute="top" type="default" id="vzu-Ck-IwO"/>
                                                     <constraint firstItem="AN1-iF-DOS" firstAttribute="top" secondItem="VdC-nf-19W" secondAttribute="top" constant="74" id="wVe-Ft-ezv"/>
                                                 </constraints>
                                                 <connections>
@@ -3892,6 +3892,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="AddAlarmViewController" superclassName="KMViewControllerBase">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/AddAlarmViewController.h"/>
             <relationships>
+                <relationship kind="action" name="save:"/>
                 <relationship kind="action" name="saveAndBack:"/>
                 <relationship kind="action" name="saveAndDismiss:"/>
                 <relationship kind="action" name="switchNagType:"/>
@@ -3971,6 +3972,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="DailyDoLoggedCell" superclassName="KMUnfoldTableCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DailyDoLoggedCell.h"/>
             <relationships>
+                <relationship kind="action" name="checkbox:"/>
                 <relationship kind="outlet" name="checkbox" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="completeLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
@@ -4072,6 +4074,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="GuideViewCloudCellView" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GuideViewCloudCellView.h"/>
             <relationships>
+                <relationship kind="action" name="handlePan:"/>
+                <relationship kind="action" name="handleSingleTap:"/>
                 <relationship kind="outlet" name="arrowWhiteView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="checkmarkGreyView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="checkmarkWhiteView" candidateClass="UIImageView"/>
@@ -4151,6 +4155,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
             <relationships>
                 <relationship kind="action" name="clearButtonClicked:"/>
+                <relationship kind="action" name="handleBackgroundSingleTap:"/>
                 <relationship kind="action" name="quickButtonClicked:"/>
                 <relationship kind="action" name="removeButtonClicked:"/>
                 <relationship kind="outlet" name="backgroundSingleTap" candidateClass="UITapGestureRecognizer"/>
@@ -4335,6 +4340,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UndoViewController.h"/>
             <relationships>
                 <relationship kind="action" name="checkAll:"/>
+                <relationship kind="action" name="dismiss:"/>
                 <relationship kind="action" name="moveAllToTomorrow:"/>
                 <relationship kind="outlet" name="undosView" candidateClass="KMTableView"/>
             </relationships>

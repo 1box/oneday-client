@@ -16,6 +16,7 @@
 #import "DailyDoPresentView.h"
 
 #define LeftPadding 5.f
+#define RightPadding 5.f
 #define DateViewWidth 255.f
 #define PresentViewWidth 255.f
 #define DateViewBottomMargin 7.f
@@ -24,17 +25,6 @@
 @end
 
 @implementation DailyDoTodayCell
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
-#pragma mark - public
 
 + (CGFloat)heightOfCellForDailyDo:(DailyDoBase *)dailyDo unfold:(BOOL)unfold
 {
@@ -49,70 +39,108 @@
     return ret;
 }
 
-- (void)setUnfolded:(BOOL)unfolded
-{
-    [super setUnfolded:unfolded];
-    
-//    CGFloat dateViewHeight = [DailyDoDateView heightForDailyDo:_dailyDo fixWidth:DateViewWidth];
-    
-    _presentView.hidden = self.isUnfolded;
-    if (!self.isUnfolded) {
-        CGFloat presentHeight = [DailyDoPresentView heightOfCellForDailyDo:_dailyDo];
-        
-        NSArray *constrains = self.constraints;
-        NSLog(@"constains:%@", constrains);
-        
-        NSDictionary *views = NSDictionaryOfVariableBindings(_dateView);
-        NSArray *t = [NSLayoutConstraint constraintsWithVisualFormat:[NSString stringWithFormat:@"V:[_dateView]-(%f)-|", presentHeight + 6.f]
-                                                             options:NSLayoutAttributeTrailing
-                                                             metrics:nil
-                                                               views:views];
-        [self addConstraints:t];
-    }
-}
-
-//- (void)refreshUI
-//{
-//    CGRect vFrame = self.bounds;
-//    vFrame.size.height = [DailyDoTodayCell heightOfCellForDailyDo:_dailyDo unfold:self.isUnfolded];
-//    
-//
-//    CGRect tmpFrame = _checkbox.frame;
-//    tmpFrame.origin.x = LeftPadding;
-//    _checkbox.frame = tmpFrame;
-//    
-//    CGPoint tmpCenter = _checkbox.center;
-//    tmpCenter.y = dateViewHeight/2;
-//    _checkbox.center = tmpCenter;
-//    
-//    tmpFrame = CGRectMake(0, 0, DateViewWidth, dateViewHeight);
-//    tmpFrame.origin.x = CGRectGetMaxX(_checkbox.frame);
-//    _dateView.frame = tmpFrame;
-//    [_dateView refreshUI];
-//   
-//    if (!self.isUnfolded) {
-//
-//        tmpFrame.origin.x = CGRectGetMaxX(_checkbox.frame);
-//        tmpFrame.origin.y = CGRectGetMaxY(_dateView.frame) + DateViewBottomMargin;
-//        tmpFrame.size.width = PresentViewWidth;
-//        tmpFrame.size.height = presentHeight;
-//        _presentView.frame = tmpFrame;
-//        
-//        [_presentView refreshUI];
-//    }
-//}
-
-#pragma mark - Actions
+#pragma mark - setter&getter
 
 - (void)setDailyDo:(DailyDoBase *)dailyDo
 {
     _dailyDo = dailyDo;
     
     if (_dailyDo) {
+#warning debug code
+        _dateView.backgroundColor = [UIColor orangeColor];
+        _presentView.backgroundColor = [UIColor purpleColor];
+        
         _checkbox.selected = [_dailyDo.check boolValue];
         _dateView.dailyDo = _dailyDo;
         _presentView.dailyDo = _dailyDo;
     }
+}
+
+#pragma mark - extended
+
+- (void)setUnfolded:(BOOL)unfolded
+{
+    [super setUnfolded:unfolded];
+    _presentView.hidden = self.isUnfolded;
+}
+
+- (NSArray *)unfoldConstraints
+{
+    NSMutableArray *mutFoldConstraints = [NSMutableArray arrayWithCapacity:20];
+    
+    CGFloat dateHeight = [DailyDoDateView heightForDailyDo:_dailyDo fixWidth:DateViewWidth];
+    NSDictionary *views = NSDictionaryOfVariableBindings(_dateView, _checkbox);
+    NSDictionary *metrics = @{@"dateHeight" : @(dateHeight)};
+    
+    NSString *format = @"V:|[_dateView]|";
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:format
+                                                                          options:0
+                                                                          metrics:metrics
+                                                                            views:views];
+    [mutFoldConstraints addObjectsFromArray:verticalConstraints];
+    
+    format = @"V:|-5.0-[_checkbox(33.0)]";
+    verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:format
+                                                                 options:0
+                                                                 metrics:metrics
+                                                                   views:views];
+    [mutFoldConstraints addObjectsFromArray:verticalConstraints];
+    
+    metrics = @{@"leftPadding" : @(LeftPadding), @"rightPadding" : @(RightPadding)};
+    format = @"H:|-leftPadding-[_checkbox(33.0)]-leftPadding-[_dateView]-rightPadding-|";
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:format
+                                                                            options:0
+                                                                            metrics:metrics
+                                                                              views:views];
+    [mutFoldConstraints addObjectsFromArray:horizontalConstraints];
+    
+    return [mutFoldConstraints copy];
+}
+
+- (NSArray *)foldConstraints
+{
+    NSMutableArray *mutUnfoldConstraints = [NSMutableArray arrayWithCapacity:20];
+    
+    CGFloat dateHeight = [DailyDoDateView heightForDailyDo:_dailyDo fixWidth:DateViewWidth];
+    CGFloat presentHeight = [DailyDoPresentView heightOfCellForDailyDo:_dailyDo];
+    CGFloat dateViewBottomMargin = presentHeight > 0 ? DateViewBottomMargin : 0;
+    
+    NSDictionary *views = NSDictionaryOfVariableBindings(_dateView, _presentView, _checkbox);
+    NSDictionary *metrics = @{@"margin" : @(dateViewBottomMargin),
+                              @"presentHeight" : @(presentHeight),
+                              @"dateHeight" : @(dateHeight),
+                              @"dateBottom" : @(dateViewBottomMargin + presentHeight)};
+    
+    NSString *format = @"V:|[_dateView]-margin-[_presentView(presentHeight)]|";
+    NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:format
+                                                                          options:0
+                                                                          metrics:metrics
+                                                                            views:views];
+    [mutUnfoldConstraints addObjectsFromArray:verticalConstraints];
+    
+    format = @"V:|-5.0-[_checkbox(33.0)]";
+    verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:format
+                                                                 options:0
+                                                                 metrics:metrics
+                                                                   views:views];
+    [mutUnfoldConstraints addObjectsFromArray:verticalConstraints];
+    
+    metrics = @{@"leftPadding" : @(LeftPadding), @"rightPadding" : @(RightPadding)};
+    format = @"H:|-leftPadding-[_checkbox(33.0)]-leftPadding-[_dateView]-rightPadding-|";
+    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:format
+                                                                            options:0
+                                                                            metrics:metrics
+                                                                              views:views];
+    [mutUnfoldConstraints addObjectsFromArray:horizontalConstraints];
+    
+    format = @"H:|-leftPadding-[_checkbox(33.0)]-leftPadding-[_presentView]-rightPadding-|";
+    horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:format
+                                                                   options:0
+                                                                   metrics:metrics
+                                                                     views:views];
+    [mutUnfoldConstraints addObjectsFromArray:horizontalConstraints];
+    
+    return [mutUnfoldConstraints copy];
 }
 
 @end

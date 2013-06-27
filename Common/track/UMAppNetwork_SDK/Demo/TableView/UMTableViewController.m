@@ -46,10 +46,10 @@
 {
     [super viewDidLoad];
     self.navigationItem.title = @"精彩推荐";
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
-    self.view.backgroundColor = [UIColor whiteColor];
+//    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+//    self.view.backgroundColor = [UIColor whiteColor];
     
-    CGFloat navigationBarHeight = self.navigationController.navigationBar.bounds.size.height;
+    CGFloat navigationBarHeight = 0;//self.navigationController.navigationBar.bounds.size.height;
 
     _mTableView = [[UMUFPTableView alloc] initWithFrame:CGRectMake(0, navigationBarHeight, self.view.bounds.size.width, self.view.bounds.size.height - navigationBarHeight) style:UITableViewStylePlain appkey:@"4f7046375270156912000011" slotId:nil currentViewController:self];
     _mTableView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;

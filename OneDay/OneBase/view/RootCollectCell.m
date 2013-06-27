@@ -69,27 +69,10 @@
 
 - (void)refreshUI
 {
-//    CGRect vFrame = self.bounds;
-//    CGRect tmpFrame = vFrame;
-//    
-//    _backgroundImage.frame = tmpFrame;
-//    _selectedBackgroundImage.frame = tmpFrame;
-    
     self.backgroundView = _backgroundImage;
-//    self.selectedBackgroundView = _selectedBackgroundImage;
     
     _removeButton.hidden = YES;
     _quickButton.hidden = ![[[[DailyDoManager sharedManager] configurationsForDoName:_addon.dailyDoName] objectForKey:kConfigurationShowQuickEntry] boolValue];
-    
-//    [_titleLabel sizeToFit];
-//    
-//    tmpFrame = _titleLabel.frame;
-//    tmpFrame.origin.x = (vFrame.size.width - tmpFrame.size.width)/2;
-//    tmpFrame.origin.y = vFrame.size.height - TopPadding - tmpFrame.size.height;
-//    _titleLabel.frame = tmpFrame;
-//    
-//    _cartoonImage.center = CGPointMake(vFrame.size.width/2, vFrame.size.height/2);
-//    _titleImage.center = _cartoonImage.center;
 }
 
 - (void)setHighlighted:(BOOL)highlighted

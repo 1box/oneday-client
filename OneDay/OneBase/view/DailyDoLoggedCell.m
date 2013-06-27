@@ -45,46 +45,44 @@
 
 - (void)refreshUI
 {
-    _presentView.hidden = !self.isUnfolded;
-    
-    CGRect vFrame = self.bounds;
-    vFrame.size.height = [DailyDoLoggedCell heightOfCellForDailyDo:_loggedDo unfolded:self.unfolded];
-    
-    [_dateLabel sizeToFit];
-    [_completeLabel heightThatFitsWidth:CompleteLabelWidth];
-    
-    CGRect tmpFrame = _dateLabel.frame;
-    tmpFrame.origin.x = 35.f;
-    tmpFrame.origin.y = TopPadding;
-    _dateLabel.frame = tmpFrame;
-    
-    tmpFrame = _completeLabel.frame;
-    tmpFrame.origin.x = CGRectGetMaxX(_dateLabel.frame) + DateLabelRightMargin;
-    tmpFrame.origin.y = TopPadding;
-    _completeLabel.frame = tmpFrame;
-    
-    if (self.isUnfolded) {
-        tmpFrame.origin.x = CGRectGetMinX(_dateLabel.frame);
-        tmpFrame.origin.y = CGRectGetMaxY(_completeLabel.frame) + TopPadding;
-        tmpFrame.size.width = PresentViewWidth;
-        tmpFrame.size.height = vFrame.size.height - CGRectGetMaxY(_completeLabel.frame) - TopPadding;
-        
-        _presentView.frame = tmpFrame;
-        
-        [_presentView refreshUI];
-    }
-    
-    CornerMarkColorType color = CornerMarkColorTypeOrange;
-    if ([[NSDate dateWithTimeIntervalSince1970:[_loggedDo.createTime doubleValue]] isTypicallyWorkday]) {
-        color = CornerMarkColorTypeCyan;
-    }
-    UIImageView *markView = [self renderCornerMark:color scaleType:CornerMarkScaleTypeSmall isFavorite:NO];
-    
-    CGFloat topMargin = 0.f;
-    if (self.locationType == KMTableViewCellLocationTypeAlone || self.locationType == KMTableViewCellLocationTypeTop) {
-        topMargin = 1.f;
-    }
-    setFrameWithOrigin(markView, SSWidth(self) - SSWidth(markView) - 11, topMargin);
+//    CGRect vFrame = self.bounds;
+//    vFrame.size.height = [DailyDoLoggedCell heightOfCellForDailyDo:_loggedDo unfolded:self.unfolded];
+//    
+//    [_dateLabel sizeToFit];
+//    [_completeLabel heightThatFitsWidth:CompleteLabelWidth];
+//    
+//    CGRect tmpFrame = _dateLabel.frame;
+//    tmpFrame.origin.x = 35.f;
+//    tmpFrame.origin.y = TopPadding;
+//    _dateLabel.frame = tmpFrame;
+//    
+//    tmpFrame = _completeLabel.frame;
+//    tmpFrame.origin.x = CGRectGetMaxX(_dateLabel.frame) + DateLabelRightMargin;
+//    tmpFrame.origin.y = TopPadding;
+//    _completeLabel.frame = tmpFrame;
+//    
+//    if (self.isUnfolded) {
+//        tmpFrame.origin.x = CGRectGetMinX(_dateLabel.frame);
+//        tmpFrame.origin.y = CGRectGetMaxY(_completeLabel.frame) + TopPadding;
+//        tmpFrame.size.width = PresentViewWidth;
+//        tmpFrame.size.height = vFrame.size.height - CGRectGetMaxY(_completeLabel.frame) - TopPadding;
+//        
+//        _presentView.frame = tmpFrame;
+//        
+////        [_presentView refreshUI];
+//    }
+//    
+//    CornerMarkColorType color = CornerMarkColorTypeOrange;
+//    if ([[NSDate dateWithTimeIntervalSince1970:[_loggedDo.createTime doubleValue]] isTypicallyWorkday]) {
+//        color = CornerMarkColorTypeCyan;
+//    }
+//    UIImageView *markView = [self renderCornerMark:color scaleType:CornerMarkScaleTypeSmall isFavorite:NO];
+//    
+//    CGFloat topMargin = 0.f;
+//    if (self.locationType == KMTableViewCellLocationTypeAlone || self.locationType == KMTableViewCellLocationTypeTop) {
+//        topMargin = 1.f;
+//    }
+//    setFrameWithOrigin(markView, SSWidth(self) - SSWidth(markView) - 11, topMargin);
 }
 
 - (void)setLoggedDo:(DailyDoBase *)loggedDo
@@ -111,6 +109,16 @@
         _checkbox.enabled = NO;
         _completeLabel.text = [_loggedDo completionText];
         [self refreshUI];
+    }
+}
+
+#pragma mark - extended
+
+- (void)setUnfolded:(BOOL)unfolded
+{
+    _presentView.hidden = !self.isUnfolded;
+    if (!_presentView.hidden) {
+        [_presentView refreshUI];
     }
 }
 

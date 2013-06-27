@@ -41,37 +41,6 @@
     return ret;
 }
 
-- (void)refreshUI
-{
-    _presentView.hidden = !self.isUnfolded;
-    
-    CGRect vFrame = self.bounds;
-    vFrame.size.height = [DailyDoTomorrowCell heightOfCellForDailyDo:_tomorrowDo unfolded:self.unfolded];
-    
-    [_dateLabel sizeToFit];
-    [_tomorrowDoLabel heightThatFitsWidth:CompleteLabelWidth];
-    
-    CGRect tmpFrame = _dateLabel.frame;
-    tmpFrame.origin.x = 35.f;
-    tmpFrame.origin.y = TopPadding;
-    _dateLabel.frame = tmpFrame;
-    
-    tmpFrame = _tomorrowDoLabel.frame;
-    tmpFrame.origin.x = CGRectGetMaxX(_dateLabel.frame) + DateLabelRightMargin;
-    tmpFrame.origin.y = TopPadding;
-    _tomorrowDoLabel.frame = tmpFrame;
-    
-    if (self.isUnfolded) {
-        tmpFrame.origin.x = CGRectGetMinX(_dateLabel.frame);
-        tmpFrame.origin.y = CGRectGetMaxY(_tomorrowDoLabel.frame) + TopPadding;
-        tmpFrame.size.width = PresentViewWidth;
-        tmpFrame.size.height = [DailyDoPresentView heightOfCellForDailyDo:_tomorrowDo];//vFrame.size.height - CGRectGetMaxY(_tomorrowDoLabel.frame) - TopPadding;
-        _presentView.frame = tmpFrame;
-        
-        [_presentView refreshUI];
-    }
-}
-
 - (void)setTomorrowDo:(DailyDoBase *)tomorrowDo
 {
     _tomorrowDo = tomorrowDo;
@@ -81,4 +50,15 @@
         _presentView.dailyDo = _tomorrowDo;
     }
 }
+
+#pragma mark - extended
+
+- (void)setUnfolded:(BOOL)unfolded
+{
+    _presentView.hidden = self.isUnfolded;
+    if (!_presentView.hidden) {
+        [_presentView refreshUI];
+    }
+}
+
 @end

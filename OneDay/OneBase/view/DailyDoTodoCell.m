@@ -62,17 +62,6 @@
     }
 }
 
-- (void)refreshUI
-{
-    CGRect vFrame = self.bounds;
-    CGRect tmpFrame = vFrame;
-    tmpFrame.origin.x = CGRectGetMaxX(self.iconImage.frame) + 5.f;
-    tmpFrame.origin.y = ListTopPadding;
-    tmpFrame.size.width = ListViewWidth;
-    tmpFrame.size.height = vFrame.size.height - 2*ListTopPadding;
-    _listView.frame = tmpFrame;
-}
-
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

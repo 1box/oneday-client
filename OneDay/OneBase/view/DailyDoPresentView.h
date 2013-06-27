@@ -11,9 +11,12 @@
 @class DailyDoBase;
 
 @interface DailyDoPresentView : KMViewBase
+
 @property (nonatomic) IBOutlet UILabel *textView;
 @property (nonatomic) DailyDoBase *dailyDo;
 
 + (CGFloat)heightOfCellForDailyDo:(DailyDoBase *)dailyDo;
 - (void)refreshUI;
+
 @end
+

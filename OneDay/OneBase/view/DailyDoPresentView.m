@@ -17,9 +17,11 @@
 #define TextViewTextFontSize 14.f
 #define BottomPadding 10.f
 
+
 @interface DailyDoPresentView ()
 @property (nonatomic) NSMutableArray *tagTokens;
 @end
+
 
 @implementation DailyDoPresentView
 
@@ -50,45 +52,84 @@
 
 - (void)refreshUI
 {
-    CGRect vFrame = self.bounds;
-    CGRect tmpFrame = vFrame;
+    [self removeConstraints:self.constraints];
     
-    CGFloat tHeight = vFrame.size.height;
+    NSMutableArray *tConstraints = [NSMutableArray arrayWithCapacity:20];
+    
+    CGFloat textBottom = BottomPadding;
     if ([_dailyDo.tags count] > 0) {
-        tHeight -= TagBlockHeight;
-    }
-    else if (tHeight > 0) {
-        tHeight -= BottomPadding;
+        textBottom = TagBlockHeight;
     }
     
-    tmpFrame.size.height = tHeight;
-    _textView.frame = tmpFrame;
+    NSDictionary *views = NSDictionaryOfVariableBindings(_textView);
+    NSDictionary *metrics = @{@"textBottom" : @(textBottom)};
+    NSString *format = @"V:|[_textView]-textBottom-|";
+    [tConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:format
+                                                                              options:0
+                                                                              metrics:metrics
+                                                                                views:views]];
     
-    if (_tagTokens == nil) {
-        self.tagTokens = [NSMutableArray arrayWithCapacity:[_dailyDo.tags count]];
-    }
-    else {
-        for (TagTokenView *tagToken in _tagTokens) {
-            [tagToken removeFromSuperview];
-        }
-        [_tagTokens removeAllObjects];
-    }
+    format = @"H:|[_textView]|";
+    [tConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:format
+                                                                              options:0
+                                                                              metrics:metrics
+                                                                                views:views]];
+    
     
     if ([_dailyDo.tags count] > 0) {
+        NSMutableDictionary *mutViews = [NSMutableDictionary dictionaryWithCapacity:10];
+        NSMutableDictionary *mutMetrics = [NSMutableDictionary dictionaryWithCapacity:10];
+        NSMutableString *mutHFormat = [NSMutableString stringWithCapacity:100];
         
-        CGFloat subviewX = 0.f;
-        for (TagData *tag in _dailyDo.tags) {
-            TagTokenView *tagToken = [[TagTokenView alloc] initWithTag:NSLocalizedString(tag.name, nil)];
-            tagToken.frame = CGRectMake(subviewX,
-                                        CGRectGetMaxY(_textView.frame) + (TagBlockHeight - tagToken.bounds.size.height)/2,
-                                        tagToken.frame.size.width,
-                                        tagToken.frame.size.height);
-            [self addSubview:tagToken];
-            [_tagTokens addObject:tagToken];
-            
-            subviewX += tagToken.frame.size.width + 5.f;
+        [mutViews setObject:_textView forKey:@"_textView"];
+        [mutMetrics setObject:@5.0 forKey:@"tagSpacing"];
+        
+        if (_tagTokens == nil) {
+            self.tagTokens = [NSMutableArray arrayWithCapacity:[_dailyDo.tags count]];
         }
+        else {
+            for (TagTokenView *tagToken in _tagTokens) {
+                [tagToken removeFromSuperview];
+            }
+            [_tagTokens removeAllObjects];
+        }
+        
+        if ([_dailyDo.tags count] > 0) {
+            
+            [mutHFormat appendString:@"H:|"];
+            
+            int idx = 0;
+            for (TagData *tag in _dailyDo.tags) {
+                TagTokenView *tagToken = [[TagTokenView alloc] initWithTag:NSLocalizedString(tag.name, nil)];
+                tagToken.translatesAutoresizingMaskIntoConstraints = NO;
+                [self addSubview:tagToken];
+                [_tagTokens addObject:tagToken];
+                
+                [mutViews setObject:tagToken forKey:[NSString stringWithFormat:@"tagToken_%d", idx]];
+                
+                NSString *vFormat = [NSString stringWithFormat:@"V:[tagToken_%d(%f)]-%f-|", idx, tagToken.frame.size.height, (TagBlockHeight - tagToken.frame.size.height)/2];
+                [tConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:vFormat
+                                                                                          options:NSLayoutFormatAlignAllBottom
+                                                                                          metrics:[mutMetrics copy]
+                                                                                            views:[mutViews copy]]];
+                
+                [mutHFormat appendFormat:@"[tagToken_%d(%f)]", idx, tagToken.frame.size.width];
+                if (idx < [_dailyDo.tags count] - 1) {
+                    [mutHFormat appendString:@"-tagSpacing-"];
+                }
+                
+                idx ++;
+            }
+        }
+        
+        [tConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:[mutHFormat copy]
+                                                                                  options:0
+                                                                                  metrics:[mutMetrics copy]
+                                                                                    views:[mutViews copy]]];
+        
     }
+    
+    [self addConstraints:[tConstraints copy]];
 }
 
 #pragma mark - Actions

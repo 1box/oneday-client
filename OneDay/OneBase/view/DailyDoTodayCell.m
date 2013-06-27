@@ -46,9 +46,6 @@
     _dailyDo = dailyDo;
     
     if (_dailyDo) {
-#warning debug code
-        _dateView.backgroundColor = [UIColor orangeColor];
-        _presentView.backgroundColor = [UIColor purpleColor];
         
         _checkbox.selected = [_dailyDo.check boolValue];
         _dateView.dailyDo = _dailyDo;
@@ -62,6 +59,9 @@
 {
     [super setUnfolded:unfolded];
     _presentView.hidden = self.isUnfolded;
+    if (!_presentView.hidden) {
+        [_presentView refreshUI];
+    }
 }
 
 - (NSArray *)unfoldConstraints

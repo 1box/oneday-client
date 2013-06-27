@@ -42,32 +42,4 @@
     }
 }
 
-- (void)refreshUI
-{
-    [_enumLabel sizeToFit];
-    [_contentLabel heightThatFitsWidth:ContentLabelWidth];
-    
-    CGRect vFrame = self.bounds;
-    
-    CGRect tmpFrame = _checkbox.frame;
-    tmpFrame.origin.x = LeftPadding;
-    tmpFrame.origin.y = (vFrame.size.height - _contentLabel.frame.size.height)/2 - 3;
-    _checkbox.frame = tmpFrame;
-    
-    tmpFrame = _enumLabel.frame;
-    tmpFrame.origin.x = LeftPadding;
-    tmpFrame.origin.y = (vFrame.size.height - _contentLabel.frame.size.height)/2 + 1;
-    _enumLabel.frame = tmpFrame;
-    
-    tmpFrame = _contentLabel.frame;
-    if (_checkbox.hidden) {
-        tmpFrame.origin.x = CGRectGetMaxX(_enumLabel.frame);
-    }
-    else {
-        tmpFrame.origin.x = vFrame.size.width - ContentLabelWidth;
-    }
-    tmpFrame.origin.y = (vFrame.size.height - _contentLabel.frame.size.height)/2;
-    _contentLabel.frame = tmpFrame;
-}
-
 @end

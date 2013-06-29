@@ -102,7 +102,7 @@
     NSMutableArray *mutUnfoldConstraints = [NSMutableArray arrayWithCapacity:20];
     
     CGFloat dateHeight = [DailyDoDateView heightForDailyDo:_dailyDo fixWidth:DateViewWidth];
-    CGFloat presentHeight = [DailyDoPresentView heightOfCellForDailyDo:_dailyDo];
+    CGFloat presentHeight = [DailyDoPresentView heightOfCellForDailyDo:_dailyDo] + 10.f;    // add 10 to fix bug
     CGFloat dateViewBottomMargin = presentHeight > 0 ? DateViewBottomMargin : 0;
     
     NSDictionary *views = NSDictionaryOfVariableBindings(_dateView, _presentView, _checkbox);

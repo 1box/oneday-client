@@ -103,7 +103,7 @@
         controller.navigationItem.leftBarButtonItem = leftItem;
     }
     else if ([[segue identifier] isEqualToString:@"showPreparedAddons"]) {
-        _hasAppear = NO;
+//        _hasAppear = NO;
     }
 }
 
@@ -177,10 +177,8 @@
     if (!_hasAppear) {
         _hasAppear = YES;
         [self reloadData];
+        [self loadHomeCover];
     }
-    
-    NSString *currentHomeCoverImageName = [NSString stringWithFormat:@"homecover00%d.jpg", homeCoverSelectedIndex() + 1];
-    _backgroundView.image = [UIImage imageWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:currentHomeCoverImageName]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -207,12 +205,26 @@
                                              selector:@selector(reportODCartoonManagerRunAllCartoonsNotification:)
                                                  name:ODCartoonManagerRunAllCartoonsNotification
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reportHomeCoverDidSelectedNotification:)
+                                                 name:HomeCoverDidSelectedNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reportCurrentAddonsDidChangedNotification:)
+                                                 name:CurrentAddonsDidChangedNotification
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reportUIApplicationDidChangeStatusBarOrientationNotification:)
+                                                 name:UIApplicationDidChangeStatusBarOrientationNotification
+                                               object:nil];
 }
 
 - (void)unregisterNotifications
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:ODCartoonManagerRunAllCartoonsNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:ODCurrentCartoonIndexChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:HomeCoverDidSelectedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
 }
 
 - (void)reportODCurrentCartoonIndexChangedNotification:(NSNotification *)notification
@@ -232,6 +244,22 @@
     for (RootCollectCell *tCell in _collectionView.visibleCells) {
         [tCell startCartoon];
     }
+}
+
+- (void)reportHomeCoverDidSelectedNotification:(NSNotification *)notification
+{
+    [self loadHomeCover];
+}
+
+- (void)reportCurrentAddonsDidChangedNotification:(NSNotification *)notification
+{
+    [self reloadData];
+}
+
+- (void)reportUIApplicationDidChangeStatusBarOrientationNotification:(NSNotification *)notification
+{
+    // fix bug
+    [_collectionView reloadData];
 }
 
 #pragma mark - Actions
@@ -287,6 +315,12 @@
 }
 
 #pragma mark - private
+
+- (void)loadHomeCover
+{
+    NSString *currentHomeCoverImageName = [NSString stringWithFormat:@"homecover00%d.jpg", homeCoverSelectedIndex() + 1];
+    _backgroundView.image = [UIImage imageWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:currentHomeCoverImageName]];
+}
 
 - (void)reloadData
 {

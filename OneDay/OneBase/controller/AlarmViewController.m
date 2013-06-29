@@ -17,7 +17,9 @@
 #import "DarkNavigationBarButton.h"
 
 
-@interface AlarmViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface AlarmViewController () <UITableViewDataSource, UITableViewDelegate> {
+    BOOL _hasAppear;
+}
 @property (nonatomic) IBOutlet KMTableView *alarmView;
 @property (nonatomic) IBOutlet UISwitch *autoAddSwitch;
 @property (nonatomic) IBOutlet UILabel *autoAddLabel;
@@ -28,10 +30,23 @@
 
 @implementation AlarmViewController
 
+- (void)awakeFromNib
+{
+    [self registerNotifications];
+}
+
+- (void)dealloc
+{
+    [self unregisterNotifications];
+}
+
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"showAddAlarmView"]) {
         UINavigationController *nav = segue.destinationViewController;
+        if ([KMCommon isPadDevice]) {
+            nav.modalPresentationStyle = UIModalPresentationFormSheet;
+        }
         AddAlarmViewController *tController = (AddAlarmViewController *)nav.topViewController;
         tController.addon = _addon;
     }
@@ -63,6 +78,31 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated
+{
+    if (!_hasAppear) {
+        _hasAppear = YES;
+        
+        self.alarms = [[AlarmManager sharedManager] alarmsForAddon:_addon];
+        [self reloadData];
+    }
+}
+
+#pragma mark - notifications
+
+- (void)registerNotifications
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reportAlarmInsertOrUpdateNotification:)
+                                                 name:AlarmInsertOrUpdateNotification
+                                               object:nil];
+}
+
+- (void)unregisterNotifications
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:AlarmInsertOrUpdateNotification object:nil];
+}
+
+- (void)reportAlarmInsertOrUpdateNotification:(NSNotification *)notification
 {
     self.alarms = [[AlarmManager sharedManager] alarmsForAddon:_addon];
     [self reloadData];

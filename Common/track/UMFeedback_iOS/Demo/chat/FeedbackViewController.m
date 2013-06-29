@@ -88,8 +88,13 @@
         
         [feedbackClient post:dictionary];
         [self.mTextField resignFirstResponder];
-
     }
+}
+
+- (IBAction)back:(id)sender
+{
+    [self.mTextField resignFirstResponder];
+    [super back:sender];
 }
 
 #pragma mark tableview delegate

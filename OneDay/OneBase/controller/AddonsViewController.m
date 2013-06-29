@@ -57,6 +57,8 @@
         }
     }];
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:CurrentAddonsDidChangedNotification object:nil];
+    
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -88,7 +90,7 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [(KMTableViewCell *)cell refreshUI];
+//    [(KMTableViewCell *)cell refreshUI];
 }
 
 #pragma mark - UITableViewDelegate

@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "KMViewControllerBase.h"
 #import "UMFeedback.h"
 
-@interface FeedbackViewController : UIViewController <UMFeedbackDataDelegate> {
+@interface FeedbackViewController : KMViewControllerBase <UMFeedbackDataDelegate> {
     
     UMFeedback *feedbackClient;
 }

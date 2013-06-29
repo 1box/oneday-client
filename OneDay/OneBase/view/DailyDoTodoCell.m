@@ -86,6 +86,6 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [(KMTableViewCell *)cell refreshUI];
+//    [(KMTableViewCell *)cell refreshUI];
 }
 @end

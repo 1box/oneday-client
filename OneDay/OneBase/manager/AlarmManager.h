@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define AlarmInsertOrUpdateNotification @"AlarmInsertOrUpdateNotification"
+
 #define kAlarmNotificationTypeKey @"kAlarmNotificationTypeKey"
 #define kAlarmNotificationCreateDateKey @"kAlarmNotificationCreateDateKey"
 

@@ -1,8 +1,8 @@
 //
-//  SSCommon.m
-//  Gallery
+//  KMCommon.m
+//  OneDay
 //
-//  Created by Dianwei Hu on 3/29/12.
+//  Created by Kimi Yu on 3/29/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 

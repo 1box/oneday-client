@@ -36,7 +36,6 @@
     [super layoutSubviews];
     if (_todo) {
         [_contentLabel heightThatFitsWidth:TextWidth];
-        setFrameWithOrigin(_contentLabel, 35, (SSHeight(self) - SSHeight(_contentLabel))/2);
     }
 }
 

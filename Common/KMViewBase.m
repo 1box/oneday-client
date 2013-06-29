@@ -14,6 +14,15 @@
 
 @implementation KMViewBase
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        self.translatesAutoresizingMaskIntoConstraints = NO;
+    }
+    return self;
+}
+
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];

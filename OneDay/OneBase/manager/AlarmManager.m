@@ -83,6 +83,8 @@ static AlarmManager *_sharedManager = nil;
             todo = [todayDo insertNewTodoAtIndex:0];
         }
         [todo updateWithAlarm:alarm save:YES];  // save here
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:AlarmInsertOrUpdateNotification object:self];
     }
     return success;
 }

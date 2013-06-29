@@ -14,6 +14,8 @@
 #define OneDayStoryboardName @"OneDayStoryboard"
 #define UniversalStoryboardName @"UniversalStoryboard"
 
+#define CurrentAddonsDidChangedNotification @"CurrentAddonsDidChangedNotification"
+
 #define kAutomaticLineNumberUserDefaultKey @"kAutomaticLineNumberUserDefaultKey"
 static inline void setAutomaticLineNumber(BOOL automatic) {
     [[NSUserDefaults standardUserDefaults] setBool:automatic forKey:kAutomaticLineNumberUserDefaultKey];
@@ -29,10 +31,13 @@ static inline BOOL automaticLineNumber() {
 }
 
 #define kHomeCoverSelectedIndexUserDefaultKey @"kHomeCoverSelectedIndexUserDefaultKey"
+#define HomeCoverDidSelectedNotification @"HomeCoverDidSelectedNotification"
 
 static inline void setHomeCoverSelectedIndex(NSInteger idx) {
     [[NSUserDefaults standardUserDefaults] setInteger:idx forKey:kHomeCoverSelectedIndexUserDefaultKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:HomeCoverDidSelectedNotification object:nil];
 }
 
 static inline NSInteger homeCoverSelectedIndex() {

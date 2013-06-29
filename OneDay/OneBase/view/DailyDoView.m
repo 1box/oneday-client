@@ -180,12 +180,17 @@
                                              selector:@selector(loadDataFinished:)
                                                  name:DailyDoManagerLoggedDosLoadFinishedNotification
                                                object:[DailyDoManager sharedManager]];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reportUIApplicationDidChangeStatusBarOrientationNotification:)
+                                                 name:UIApplicationDidChangeStatusBarOrientationNotification
+                                               object:nil];
 }
 
 - (void)unregisterNotifications
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationWillEnterForegroundNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:DailyDoManagerLoggedDosLoadFinishedNotification object:[DailyDoManager sharedManager]];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
 }
 
 - (void)reportUIApplicationWillEnterForegroundNotification:(NSNotification *)notification
@@ -193,6 +198,12 @@
     if (![PasswordManager launchPasswordOpen]) {
         [[PasswordManager sharedManager] showAddonLock:_addon finishBlock:nil];
     }
+}
+
+- (void)reportUIApplicationDidChangeStatusBarOrientationNotification:(NSNotification *)notification
+{
+    // fix bug
+    [_listView reloadData];
 }
 
 #pragma mark - setter&getter
@@ -509,7 +520,6 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [(KMTableViewCell *)cell refreshUI];
     [_listView updateBackgroundViewForCell:cell atIndexPath:indexPath backgroundViewType:KMTableViewCellBackgroundViewTypeNormal];
 }
 
@@ -631,6 +641,9 @@
         case DailyDoActionTypeShowAllUndos:
         {
             UINavigationController *nav = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"UndoNavigationControllerID"];
+            if ([KMCommon isPadDevice]) {
+                nav.modalPresentationStyle = UIModalPresentationFormSheet;
+            }
             UndoViewController *controller = (UndoViewController *)nav.topViewController;
             controller.addon = _addon;
             UIViewController *topViewController = [KMCommon topMostViewControllerFor:self];
@@ -640,6 +653,9 @@
         case DailyDoActionTypeCashMonthSummary:
         {
             UINavigationController *nav = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SummaryNavigationControllerID"];
+            if ([KMCommon isPadDevice]) {
+                nav.modalPresentationStyle = UIModalPresentationFormSheet;
+            }
             SummaryViewController *controller = (SummaryViewController *)nav.topViewController;
             controller.type = SummaryViewTypeMonth;
             controller.addon = _addon;
@@ -650,6 +666,9 @@
         case DailyDoActionTypeCashYearSummary:
         {
             UINavigationController *nav = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SummaryNavigationControllerID"];
+            if ([KMCommon isPadDevice]) {
+                nav.modalPresentationStyle = UIModalPresentationFormSheet;
+            }
             SummaryViewController *controller = (SummaryViewController *)nav.topViewController;
             controller.type = SummaryViewTypeYear;
             controller.addon = _addon;
@@ -660,6 +679,9 @@
         case DailyDoActionTypeAlarmNotification:
         {
             UINavigationController *nav = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"WorkoutAlarmNavigationControllerID"];
+            if ([KMCommon isPadDevice]) {
+                nav.modalPresentationStyle = UIModalPresentationFormSheet;
+            }
             AlarmViewController *controller = (AlarmViewController *)nav.topViewController;
             controller.addon = _addon;
             UIViewController *topViewController = [KMCommon topMostViewControllerFor:self];

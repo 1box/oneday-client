@@ -55,7 +55,9 @@
 
 - (void)setUnfolded:(BOOL)unfolded
 {
-    _presentView.hidden = self.isUnfolded;
+    _unfolded = unfolded;
+    
+    _presentView.hidden = !self.isUnfolded;
     if (!_presentView.hidden) {
         [_presentView refreshUI];
     }

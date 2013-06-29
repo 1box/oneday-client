@@ -1553,6 +1553,8 @@
 		CB91EE09170742DB003FA094 /* popupbg_dialog@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB91EDEA170742DA003FA094 /* popupbg_dialog@2x.png */; };
 		CB91EE0E170742DB003FA094 /* KMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB91EDEF170742DA003FA094 /* KMAlertView.m */; };
 		CB91EE0F170742DB003FA094 /* KMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB91EDEF170742DA003FA094 /* KMAlertView.m */; };
+		CBA126CD177EC465008DBBFF /* CurrentAddonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA126CC177EC465008DBBFF /* CurrentAddonViewController.m */; };
+		CBA126CE177EC465008DBBFF /* CurrentAddonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA126CC177EC465008DBBFF /* CurrentAddonViewController.m */; };
 		CBA427951776F68A0027E902 /* UniversalStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA427941776F68A0027E902 /* UniversalStoryboard.storyboard */; };
 		CBA427961776F68A0027E902 /* UniversalStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA427941776F68A0027E902 /* UniversalStoryboard.storyboard */; };
 		CBA5E928174941200023C456 /* libUMFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA5E925174941200023C456 /* libUMFeedback.a */; };
@@ -2327,8 +2329,6 @@
 		3F55A6CE16E50D4A00EBBA30 /* TipCollectCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipCollectCell.h; sourceTree = "<group>"; };
 		3F55A6CF16E50D4A00EBBA30 /* TipCollectCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipCollectCell.m; sourceTree = "<group>"; };
 		3F55A6D016E50D4A00EBBA30 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		3F55AC1416E50D5B00EBBA30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OneDayStoryboard_iPhone.strings; sourceTree = "<group>"; };
-		3F55AC1516E50D5E00EBBA30 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/OneDayStoryboard_iPhone.strings"; sourceTree = "<group>"; };
 		3F55AC2916E50DDE00EBBA30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/DailyDoHintDialogs.plist; sourceTree = "<group>"; };
 		3F55AC2B16E50DDE00EBBA30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/OneDayHintDialogs.plist; sourceTree = "<group>"; };
 		3F55AC3016E50DE300EBBA30 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "zh-Hans"; path = "zh-Hans.lproj/DailyDoHintDialogs.plist"; sourceTree = "<group>"; };
@@ -2688,6 +2688,8 @@
 		CB91EDEA170742DA003FA094 /* popupbg_dialog@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popupbg_dialog@2x.png"; sourceTree = "<group>"; };
 		CB91EDED170742DA003FA094 /* KMAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMAlertView.h; sourceTree = "<group>"; };
 		CB91EDEF170742DA003FA094 /* KMAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMAlertView.m; sourceTree = "<group>"; };
+		CBA126CB177EC465008DBBFF /* CurrentAddonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentAddonViewController.h; sourceTree = "<group>"; };
+		CBA126CC177EC465008DBBFF /* CurrentAddonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentAddonViewController.m; sourceTree = "<group>"; };
 		CBA427941776F68A0027E902 /* UniversalStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UniversalStoryboard.storyboard; sourceTree = "<group>"; };
 		CBA5E925174941200023C456 /* libUMFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUMFeedback.a; path = UMFeedback_iOS/libUMFeedback.a; sourceTree = "<group>"; };
 		CBA5E926174941200023C456 /* umFeedback.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = umFeedback.bundle; path = UMFeedback_iOS/umFeedback.bundle; sourceTree = "<group>"; };
@@ -2714,8 +2716,6 @@
 		CBD1E45F173C128A00694991 /* KMLoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMLoadMoreCell.h; sourceTree = "<group>"; };
 		CBD1E460173C128A00694991 /* KMLoadMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMLoadMoreCell.m; sourceTree = "<group>"; };
 		CBF626731768DD1100B29AA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OneDayStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		CBF626761768DD1900B29AA1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OneDayStoryboard_iPad.strings; sourceTree = "<group>"; };
-		CBF626771768DD1B00B29AA1 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/OneDayStoryboard_iPad.strings"; sourceTree = "<group>"; };
 		CBF82A0C170EBD63004674C5 /* HomeCoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCoverViewController.h; sourceTree = "<group>"; };
 		CBF82A0D170EBD63004674C5 /* HomeCoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCoverViewController.m; sourceTree = "<group>"; };
 		CBF82B1A170F052A004674C5 /* 2_s_sumou_0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2_s_sumou_0001.png; sourceTree = "<group>"; };
@@ -3607,6 +3607,8 @@
 				CB5693D51762D7AB00275D35 /* DotLockViewController.m */,
 				CBB7A829176308250064ED3B /* PasswordViewController.h */,
 				CBB7A82A176308250064ED3B /* PasswordViewController.m */,
+				CBA126CB177EC465008DBBFF /* CurrentAddonViewController.h */,
+				CBA126CC177EC465008DBBFF /* CurrentAddonViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -6308,6 +6310,7 @@
 				CBB7A830176309F40064ED3B /* PasswordAddonCell.m in Sources */,
 				CB5ED9D7176460160092433A /* DailyDoViewHelper.m in Sources */,
 				CB5EDA01176491260092433A /* UIView+CornerMark.m in Sources */,
+				CBA126CE177EC465008DBBFF /* CurrentAddonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6450,6 +6453,7 @@
 				CBB7A82F176309F40064ED3B /* PasswordAddonCell.m in Sources */,
 				CB5ED9D6176460160092433A /* DailyDoViewHelper.m in Sources */,
 				CB5EDA00176491260092433A /* UIView+CornerMark.m in Sources */,
+				CBA126CD177EC465008DBBFF /* CurrentAddonViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6604,8 +6608,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				3F55A5E216E50D4900EBBA30 /* Base */,
-				3F55AC1416E50D5B00EBBA30 /* en */,
-				3F55AC1516E50D5E00EBBA30 /* zh-Hans */,
 			);
 			name = OneDayStoryboard_iPhone.storyboard;
 			sourceTree = "<group>";
@@ -6695,8 +6697,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				CBF626731768DD1100B29AA1 /* Base */,
-				CBF626761768DD1900B29AA1 /* en */,
-				CBF626771768DD1B00B29AA1 /* zh-Hans */,
 			);
 			name = OneDayStoryboard_iPad.storyboard;
 			sourceTree = "<group>";

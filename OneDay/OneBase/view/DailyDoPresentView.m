@@ -25,15 +25,6 @@
 
 @implementation DailyDoPresentView
 
-- (id)initWithFrame:(CGRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code
-    }
-    return self;
-}
-
 #pragma mark - public
 
 + (CGFloat)heightOfCellForDailyDo:(DailyDoBase *)dailyDo

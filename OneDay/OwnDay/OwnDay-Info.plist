@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>AppName</key>
+	<string>own_day</string>
 	<key>CFBundleDisplayName</key>
 	<string>我的一天</string>
 	<key>CFBundleExecutable</key>
@@ -37,12 +39,16 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>0.9</string>
+	<key>ChannelName</key>
+	<string>App Store</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchImageFile</key>
 	<string>Default.png</string>
 	<key>UIMainStoryboardFile</key>
-	<string>OneDayStoryboard</string>
+	<string>OneDayStoryboard_iPhone</string>
+	<key>UIMainStoryboardFile~ipad</key>
+	<string>OneDayStoryboard_iPad</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -57,9 +63,12 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>AppName</key>
-	<string>own_day</string>
-	<key>ChannelName</key>
-	<string>App Store</string>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
+		<string>UIInterfaceOrientationLandscapeLeft</string>
+		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
 </dict>
 </plist>

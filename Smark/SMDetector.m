@@ -150,7 +150,7 @@ static SMDetector *_defaultDetector = nil;
 {
     NSError *error = nil;
     
-    NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingAllSystemTypes|NSTextCheckingTypeDate error:&error];
+    NSDataDetector *detector = [NSDataDetector dataDetectorWithTypes:NSTextCheckingTypeDate error:&error];
     
     if (error) {
         return nil;

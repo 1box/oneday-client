@@ -20,6 +20,7 @@
 #import "iVersion.h"
 #import "Constants.h"
 #import "NSUserDefaultsAdditions.h"
+#import "UINavigationController+HideKeyboard.h"
 
 #define MainViewStoryboardID @"MainViewControllerID"
 

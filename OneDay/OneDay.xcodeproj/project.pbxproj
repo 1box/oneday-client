@@ -1129,6 +1129,8 @@
 		CB045E91173CD16100BD415A /* MTStatusBarOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = CB045E8F173CD16100BD415A /* MTStatusBarOverlay.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		CB083EFC170C8DB500959971 /* NavigationBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CB083EFB170C8DB500959971 /* NavigationBarButton.m */; };
 		CB083EFD170C8DB500959971 /* NavigationBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CB083EFB170C8DB500959971 /* NavigationBarButton.m */; };
+		CB1101E717A3B91200A7222A /* UniversalStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1101EA17A3B91200A7222A /* UniversalStoryboard.storyboard */; };
+		CB1101E817A3B91200A7222A /* UniversalStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1101EA17A3B91200A7222A /* UniversalStoryboard.storyboard */; };
 		CB1D26D1173F3B6D00D6B801 /* TodoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1D26D0173F3B6D00D6B801 /* TodoManager.m */; };
 		CB1D26D2173F3B6D00D6B801 /* TodoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1D26D0173F3B6D00D6B801 /* TodoManager.m */; };
 		CB2C709B1638423700D0D348 /* SSDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2C6F561638423700D0D348 /* SSDataUtil.m */; };
@@ -1553,10 +1555,10 @@
 		CB91EE09170742DB003FA094 /* popupbg_dialog@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB91EDEA170742DA003FA094 /* popupbg_dialog@2x.png */; };
 		CB91EE0E170742DB003FA094 /* KMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB91EDEF170742DA003FA094 /* KMAlertView.m */; };
 		CB91EE0F170742DB003FA094 /* KMAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB91EDEF170742DA003FA094 /* KMAlertView.m */; };
+		CB9D47DB17A407770074AD2C /* UINavigationController+HideKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D47DA17A407770074AD2C /* UINavigationController+HideKeyboard.m */; };
+		CB9D47DC17A407770074AD2C /* UINavigationController+HideKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D47DA17A407770074AD2C /* UINavigationController+HideKeyboard.m */; };
 		CBA126CD177EC465008DBBFF /* CurrentAddonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA126CC177EC465008DBBFF /* CurrentAddonViewController.m */; };
 		CBA126CE177EC465008DBBFF /* CurrentAddonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA126CC177EC465008DBBFF /* CurrentAddonViewController.m */; };
-		CBA427951776F68A0027E902 /* UniversalStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA427941776F68A0027E902 /* UniversalStoryboard.storyboard */; };
-		CBA427961776F68A0027E902 /* UniversalStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBA427941776F68A0027E902 /* UniversalStoryboard.storyboard */; };
 		CBA5E928174941200023C456 /* libUMFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA5E925174941200023C456 /* libUMFeedback.a */; };
 		CBA5E929174941200023C456 /* libUMFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA5E925174941200023C456 /* libUMFeedback.a */; };
 		CBA5E92A174941200023C456 /* umFeedback.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CBA5E926174941200023C456 /* umFeedback.bundle */; };
@@ -2412,6 +2414,7 @@
 		CB083EFA170C8DB500959971 /* NavigationBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarButton.h; sourceTree = "<group>"; };
 		CB083EFB170C8DB500959971 /* NavigationBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarButton.m; sourceTree = "<group>"; };
 		CB0A47511740DA72001B87C6 /* KMMathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMathUtilities.h; sourceTree = "<group>"; };
+		CB1101EB17A3B91700A7222A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UniversalStoryboard.storyboard; sourceTree = "<group>"; };
 		CB1D26CF173F3B6D00D6B801 /* TodoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoManager.h; sourceTree = "<group>"; };
 		CB1D26D0173F3B6D00D6B801 /* TodoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoManager.m; sourceTree = "<group>"; };
 		CB2C6F541638423700D0D348 /* SSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSData.h; sourceTree = "<group>"; };
@@ -2688,9 +2691,10 @@
 		CB91EDEA170742DA003FA094 /* popupbg_dialog@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "popupbg_dialog@2x.png"; sourceTree = "<group>"; };
 		CB91EDED170742DA003FA094 /* KMAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMAlertView.h; sourceTree = "<group>"; };
 		CB91EDEF170742DA003FA094 /* KMAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMAlertView.m; sourceTree = "<group>"; };
+		CB9D47D917A407770074AD2C /* UINavigationController+HideKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+HideKeyboard.h"; sourceTree = "<group>"; };
+		CB9D47DA17A407770074AD2C /* UINavigationController+HideKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+HideKeyboard.m"; sourceTree = "<group>"; };
 		CBA126CB177EC465008DBBFF /* CurrentAddonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentAddonViewController.h; sourceTree = "<group>"; };
 		CBA126CC177EC465008DBBFF /* CurrentAddonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentAddonViewController.m; sourceTree = "<group>"; };
-		CBA427941776F68A0027E902 /* UniversalStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = UniversalStoryboard.storyboard; sourceTree = "<group>"; };
 		CBA5E925174941200023C456 /* libUMFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUMFeedback.a; path = UMFeedback_iOS/libUMFeedback.a; sourceTree = "<group>"; };
 		CBA5E926174941200023C456 /* umFeedback.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = umFeedback.bundle; path = UMFeedback_iOS/umFeedback.bundle; sourceTree = "<group>"; };
 		CBA5E927174941200023C456 /* UMFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UMFeedback.h; path = UMFeedback_iOS/UMFeedback.h; sourceTree = "<group>"; };
@@ -2997,7 +3001,7 @@
 		3F55A3B116E50D4800EBBA30 /* OneBase */ = {
 			isa = PBXGroup;
 			children = (
-				CBA427941776F68A0027E902 /* UniversalStoryboard.storyboard */,
+				CB1101EA17A3B91200A7222A /* UniversalStoryboard.storyboard */,
 				3F55A5E116E50D4900EBBA30 /* OneDayStoryboard_iPhone.storyboard */,
 				CBF626721768DD1000B29AA1 /* OneDayStoryboard_iPad.storyboard */,
 				CB5ED9FD176491040092433A /* additions */,
@@ -4356,6 +4360,8 @@
 			children = (
 				CB5ED9FE176491260092433A /* UIView+CornerMark.h */,
 				CB5ED9FF176491260092433A /* UIView+CornerMark.m */,
+				CB9D47D917A407770074AD2C /* UINavigationController+HideKeyboard.h */,
+				CB9D47DA17A407770074AD2C /* UINavigationController+HideKeyboard.m */,
 			);
 			path = additions;
 			sourceTree = "<group>";
@@ -5453,7 +5459,7 @@
 				CB72F2CD1768D73A009272C3 /* Default-Portrait~ipad.png in Resources */,
 				CB72F2CF1768D73A009272C3 /* Default-portrait@2x~ipad.png in Resources */,
 				CBF626751768DD1100B29AA1 /* OneDayStoryboard_iPad.storyboard in Resources */,
-				CBA427961776F68A0027E902 /* UniversalStoryboard.storyboard in Resources */,
+				CB1101E817A3B91200A7222A /* UniversalStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6164,7 +6170,7 @@
 				CB72F2CC1768D73A009272C3 /* Default-Portrait~ipad.png in Resources */,
 				CB72F2CE1768D73A009272C3 /* Default-portrait@2x~ipad.png in Resources */,
 				CBF626741768DD1100B29AA1 /* OneDayStoryboard_iPad.storyboard in Resources */,
-				CBA427951776F68A0027E902 /* UniversalStoryboard.storyboard in Resources */,
+				CB1101E717A3B91200A7222A /* UniversalStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6311,6 +6317,7 @@
 				CB5ED9D7176460160092433A /* DailyDoViewHelper.m in Sources */,
 				CB5EDA01176491260092433A /* UIView+CornerMark.m in Sources */,
 				CBA126CE177EC465008DBBFF /* CurrentAddonViewController.m in Sources */,
+				CB9D47DC17A407770074AD2C /* UINavigationController+HideKeyboard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6454,6 +6461,7 @@
 				CB5ED9D6176460160092433A /* DailyDoViewHelper.m in Sources */,
 				CB5EDA00176491260092433A /* UIView+CornerMark.m in Sources */,
 				CBA126CD177EC465008DBBFF /* CurrentAddonViewController.m in Sources */,
+				CB9D47DB17A407770074AD2C /* UINavigationController+HideKeyboard.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6646,6 +6654,14 @@
 				3FD8DC3216D482EA00AC9C82 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CB1101EA17A3B91200A7222A /* UniversalStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CB1101EB17A3B91700A7222A /* Base */,
+			);
+			name = UniversalStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		CB460689173D4B8800955454 /* nav_logo.png */ = {

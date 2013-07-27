@@ -87,6 +87,11 @@
     [_dailyDoView viewDidDisappear];
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [_dailyDoView didRotateFromInterfaceOrientation:fromInterfaceOrientation];
+}
+
 #pragma mark - Actions
 
 - (IBAction)dismiss:(id)sender

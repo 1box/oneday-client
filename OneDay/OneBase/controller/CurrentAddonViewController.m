@@ -59,8 +59,12 @@
         DailyDoViewController *controller = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:DailyDoViewContollerID];
         controller.addon = [_currentAddons objectAtIndex:indexPath.row];
         
-        [self.navigationController popToRootViewControllerAnimated:NO];
-        [self.navigationController pushViewController:controller animated:YES];
+        UIWindow *mainWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
+        UISplitViewController *split = (UISplitViewController *)mainWindow.rootViewController;
+        UINavigationController *nav = [split.viewControllers objectAtIndex:1];
+        
+        [nav popToRootViewControllerAnimated:NO];
+        [nav pushViewController:controller animated:YES];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

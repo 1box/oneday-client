@@ -168,6 +168,11 @@
     [self unregisterNotifications];
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [_listView reloadData];
+}
+
 #pragma mark - notifications
 
 - (void)registerNotifications
@@ -180,10 +185,10 @@
                                              selector:@selector(loadDataFinished:)
                                                  name:DailyDoManagerLoggedDosLoadFinishedNotification
                                                object:[DailyDoManager sharedManager]];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(reportUIApplicationDidChangeStatusBarOrientationNotification:)
-                                                 name:UIApplicationDidChangeStatusBarOrientationNotification
-                                               object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(reportUIApplicationDidChangeStatusBarOrientationNotification:)
+//                                                 name:UIApplicationDidChangeStatusBarOrientationNotification
+//                                               object:nil];
 }
 
 - (void)unregisterNotifications
@@ -200,11 +205,11 @@
     }
 }
 
-- (void)reportUIApplicationDidChangeStatusBarOrientationNotification:(NSNotification *)notification
-{
-    // fix bug
-    [_listView reloadData];
-}
+//- (void)reportUIApplicationDidChangeStatusBarOrientationNotification:(NSNotification *)notification
+//{
+//    // fix bug
+//    [_listView reloadData];
+//}
 
 #pragma mark - setter&getter
 

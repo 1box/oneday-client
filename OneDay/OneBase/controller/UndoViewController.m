@@ -205,6 +205,13 @@
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark - UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [_undosView updateBackgroundViewForCell:cell atIndexPath:indexPath backgroundViewType:KMTableViewCellBackgroundViewTypeNormal];
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -254,6 +261,7 @@
     else {
         UndoCellView *cell = [tableView dequeueReusableCellWithIdentifier:undoCellID];
         cell.todo = [groupedData.dataList objectAtIndex:indexPath.row];
+        [cell refreshUI];
         return cell;
     }
 }

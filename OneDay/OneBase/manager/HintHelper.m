@@ -30,7 +30,7 @@
 {
     self = [super init];
     if (self) {
-        if (!(!prefix || KMEmptyString(prefix) || hasHintForKey(prefix))) {
+        if (!(!prefix || KMEmptyString(prefix) || hasHintForKey(prefix) || [KMCommon isPadDevice])) {
             
             NSString *fileName = nil;
             if ([prefix hasSuffix:[KMCommon versionName]]) {

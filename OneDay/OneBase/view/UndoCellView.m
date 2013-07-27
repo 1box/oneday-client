@@ -31,9 +31,9 @@
     }
 }
 
-- (void)layoutSubviews
+- (void)refreshUI
 {
-    [super layoutSubviews];
+    [super refreshUI];
     if (_todo) {
         [_contentLabel heightThatFitsWidth:TextWidth];
     }

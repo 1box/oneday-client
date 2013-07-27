@@ -402,7 +402,8 @@
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sb6-wN-eiJ">
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="22" id="xwa-vp-bbu"/>
+                                                        <constraint firstAttribute="width" constant="22" type="user" id="ISy-3j-UYw"/>
+                                                        <constraint firstAttribute="height" constant="22" type="user" id="ScX-Zx-agg"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                     <state key="normal" image="checkbox_overtime_n.png" backgroundImage="checkbox-s.png">
@@ -418,10 +419,6 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="text" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfP-WX-Cc7">
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="ZMQ-Ax-V9g"/>
-                                                        <constraint firstAttribute="width" constant="242" id="m4e-oT-BPY"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -430,11 +427,13 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="tfP-WX-Cc7" firstAttribute="top" secondItem="Sb6-wN-eiJ" secondAttribute="top" type="default" id="9oQ-BA-4DX"/>
-                                            <constraint firstItem="tfP-WX-Cc7" firstAttribute="leading" secondItem="Sb6-wN-eiJ" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Nrr-WF-Gub"/>
-                                            <constraint firstAttribute="centerY" secondItem="Sb6-wN-eiJ" secondAttribute="centerY" type="user" id="ToG-7H-hR3"/>
-                                            <constraint firstItem="Sb6-wN-eiJ" firstAttribute="leading" secondItem="2Gs-nR-9tv" secondAttribute="leading" constant="18" id="Vaf-ax-YCU"/>
-                                            <constraint firstAttribute="centerY" secondItem="tfP-WX-Cc7" secondAttribute="centerY" type="user" id="wA8-N4-yVF"/>
+                                            <constraint firstItem="tfP-WX-Cc7" firstAttribute="leading" secondItem="Sb6-wN-eiJ" secondAttribute="trailing" constant="5" type="user" id="Nrr-WF-Gub"/>
+                                            <constraint firstItem="Sb6-wN-eiJ" firstAttribute="leading" secondItem="2Gs-nR-9tv" secondAttribute="leading" constant="18" type="user" id="Rsm-wb-yre"/>
+                                            <constraint firstItem="Sb6-wN-eiJ" firstAttribute="top" secondItem="2Gs-nR-9tv" secondAttribute="top" constant="10" type="user" id="YFA-6n-lX7"/>
+                                            <constraint firstItem="tfP-WX-Cc7" firstAttribute="centerY" secondItem="2Gs-nR-9tv" secondAttribute="centerY" type="user" id="ebN-zv-VhB"/>
+                                            <constraint firstAttribute="trailing" secondItem="tfP-WX-Cc7" secondAttribute="trailing" constant="30" type="user" id="l9n-Tz-DEh"/>
+                                            <constraint firstAttribute="bottom" secondItem="tfP-WX-Cc7" secondAttribute="bottom" constant="10" type="user" id="xxL-JI-srn"/>
+                                            <constraint firstItem="tfP-WX-Cc7" firstAttribute="top" secondItem="2Gs-nR-9tv" secondAttribute="top" constant="10" type="user" id="zjC-fn-0vt"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="checkbox" destination="Sb6-wN-eiJ" id="9Pz-il-IYQ"/>
@@ -1080,9 +1079,6 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="property name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCp-ll-Szg">
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="233" type="user" id="zQR-46-Xzc"/>
-                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1166,11 +1162,12 @@
                                                 </view>
                                                 <constraints>
                                                     <constraint firstAttribute="bottom" secondItem="n1g-Fy-ru2" secondAttribute="bottom" constant="10" type="user" id="4Kd-0Q-TCh"/>
+                                                    <constraint firstItem="DCp-ll-Szg" firstAttribute="leading" secondItem="n1g-Fy-ru2" secondAttribute="leading" type="default" id="6yy-Pm-Kcx"/>
                                                     <constraint firstItem="DCp-ll-Szg" firstAttribute="top" secondItem="INi-dS-vlV" secondAttribute="top" constant="10" type="user" id="9en-FY-V3f"/>
                                                     <constraint firstAttribute="bottom" secondItem="DCp-ll-Szg" secondAttribute="bottom" constant="10" type="user" id="LWl-b4-5JO"/>
-                                                    <constraint firstItem="DCp-ll-Szg" firstAttribute="leading" secondItem="INi-dS-vlV" secondAttribute="leading" constant="53" id="RN0-CR-KBV"/>
+                                                    <constraint firstItem="DCp-ll-Szg" firstAttribute="leading" secondItem="INi-dS-vlV" secondAttribute="leading" constant="43" type="user" id="RN0-CR-KBV"/>
                                                     <constraint firstItem="Jbp-Uy-iYS" firstAttribute="top" secondItem="INi-dS-vlV" secondAttribute="top" constant="11" type="user" id="Rxa-AE-epz"/>
-                                                    <constraint firstItem="n1g-Fy-ru2" firstAttribute="leading" secondItem="INi-dS-vlV" secondAttribute="leading" constant="43" id="c0N-B8-pJK"/>
+                                                    <constraint firstAttribute="trailing" secondItem="DCp-ll-Szg" secondAttribute="trailing" constant="34" type="user" id="fY1-SY-ml4"/>
                                                     <constraint firstItem="n1g-Fy-ru2" firstAttribute="top" secondItem="INi-dS-vlV" secondAttribute="top" constant="10" type="user" id="lM1-a4-ne7"/>
                                                     <constraint firstItem="Jbp-Uy-iYS" firstAttribute="leading" secondItem="INi-dS-vlV" secondAttribute="leading" constant="17" id="oo4-ho-szi"/>
                                                 </constraints>
@@ -1207,10 +1204,10 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <constraints>
-                                                    <constraint firstItem="QLq-od-xJc" firstAttribute="leading" secondItem="CbX-1u-GGN" secondAttribute="leading" constant="52" id="FFP-vv-EAU"/>
+                                                    <constraint firstItem="QLq-od-xJc" firstAttribute="centerY" secondItem="CbX-1u-GGN" secondAttribute="centerY" type="default" id="3MR-Or-Dui"/>
+                                                    <constraint firstItem="QLq-od-xJc" firstAttribute="leading" secondItem="CbX-1u-GGN" secondAttribute="leading" constant="50" id="Xf7-JB-IH4"/>
                                                     <constraint firstItem="SIl-Mv-GsW" firstAttribute="leading" secondItem="CbX-1u-GGN" secondAttribute="leading" constant="20" type="default" id="fLw-Sv-Owp"/>
-                                                    <constraint firstItem="QLq-od-xJc" firstAttribute="top" secondItem="CbX-1u-GGN" secondAttribute="top" constant="11" id="sEZ-na-FQp"/>
-                                                    <constraint firstItem="SIl-Mv-GsW" firstAttribute="centerY" secondItem="CbX-1u-GGN" secondAttribute="centerY" type="default" id="tWJ-So-hIW"/>
+                                                    <constraint firstItem="QLq-od-xJc" firstAttribute="centerY" secondItem="SIl-Mv-GsW" secondAttribute="centerY" type="default" id="vV5-vv-TNt"/>
                                                 </constraints>
                                                 <connections>
                                                     <outlet property="iconImage" destination="SIl-Mv-GsW" id="zgV-ek-LXu"/>
@@ -1368,7 +1365,7 @@
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IrW-3a-wY7">
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="16" id="fDM-27-vdg"/>
+                                                                <constraint firstAttribute="height" constant="16" type="user" id="fDM-27-vdg"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1407,7 +1404,8 @@
                                                         </view>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IV5-5i-26A">
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="22" id="P7J-Gf-WYL"/>
+                                                                <constraint firstAttribute="height" constant="22" type="user" id="f9m-M0-f3P"/>
+                                                                <constraint firstAttribute="width" constant="22" type="user" id="hTb-YA-lrq"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                             <state key="normal" image="checkbox_overtime_n.png" backgroundImage="checkbox-s.png">
@@ -1429,7 +1427,6 @@
                                                     <constraint firstItem="IV5-5i-26A" firstAttribute="top" secondItem="mFw-zT-fRg" secondAttribute="top" constant="11" type="user" id="1uL-LC-sKA"/>
                                                     <constraint firstItem="IV5-5i-26A" firstAttribute="leading" secondItem="mFw-zT-fRg" secondAttribute="leading" constant="18" id="3ZQ-rF-lp1"/>
                                                     <constraint firstItem="IrW-3a-wY7" firstAttribute="leading" secondItem="GAK-9F-bRA" secondAttribute="leading" type="user" id="4Ck-wr-kkq"/>
-                                                    <constraint firstItem="IrW-3a-wY7" firstAttribute="centerY" secondItem="IV5-5i-26A" secondAttribute="centerY" type="default" id="5wz-Xy-ctT"/>
                                                     <constraint firstAttribute="trailing" secondItem="GAK-9F-bRA" secondAttribute="trailing" constant="20" type="user" id="7Xu-Rz-fFD"/>
                                                     <constraint firstItem="IrW-3a-wY7" firstAttribute="leading" secondItem="mFw-zT-fRg" secondAttribute="leading" constant="55" type="user" id="IjQ-mD-hez"/>
                                                     <constraint firstItem="IrW-3a-wY7" firstAttribute="top" secondItem="mFw-zT-fRg" secondAttribute="top" constant="14" type="user" id="YLP-Dq-qi0"/>
@@ -3892,458 +3889,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="welcome_checkmark_white.png" width="16" height="16"/>
         <image name="welcome_cloud_outline.png" width="16" height="16"/>
     </resources>
-    <classes>
-        <class className="AddAlarmViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddAlarmViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="saveAndBack:"/>
-                <relationship kind="action" name="saveAndDismiss:"/>
-                <relationship kind="action" name="switchNagType:"/>
-                <relationship kind="outlet" name="listView" candidateClass="KMTableView"/>
-                <relationship kind="outlet" name="nagTypeSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="timePicker" candidateClass="UIDatePicker"/>
-            </relationships>
-        </class>
-        <class className="AddonsCell" superclassName="KMCheckboxTableCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddonsCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addonIconView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="addonNameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="AddonsViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AddonsViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="addonsView" candidateClass="KMTableView"/>
-            </relationships>
-        </class>
-        <class className="AlarmCellView" superclassName="KMUnfoldTableCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlarmCellView.h"/>
-            <relationships>
-                <relationship kind="action" name="handleOpenSwitch:"/>
-                <relationship kind="outlet" name="AMPMLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="nagTypeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="noteLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="openSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="repeatLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="timeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="AlarmInputViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlarmInputViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="AlarmRepeatTypeCellView" superclassName="KMCheckboxTableCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlarmRepeatTypeCellView.h"/>
-        </class>
-        <class className="AlarmRepeatViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlarmRepeatViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="listView" candidateClass="KMTableView"/>
-            </relationships>
-        </class>
-        <class className="AlarmViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/AlarmViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="autoAddToDailyDo:"/>
-                <relationship kind="action" name="closeAll:"/>
-                <relationship kind="action" name="edit:"/>
-                <relationship kind="outlet" name="alarmView" candidateClass="KMTableView"/>
-                <relationship kind="outlet" name="autoAddLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="autoAddSwitch" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-        <class className="ContactUsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactUsViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="listView" candidateClass="KMTableView"/>
-            </relationships>
-        </class>
-        <class className="DailyDoDateView" superclassName="KMViewBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DailyDoDateView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="bubbleImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="dayLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="monthAndYearLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DailyDoLoggedCell" superclassName="KMUnfoldTableCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DailyDoLoggedCell.h"/>
-            <relationships>
-                <relationship kind="action" name="checkbox:"/>
-                <relationship kind="outlet" name="checkbox" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="completeLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="presentView" candidateClass="DailyDoPresentView"/>
-            </relationships>
-        </class>
-        <class className="DailyDoPresentView" superclassName="KMViewBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DailyDoPresentView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
-            </relationships>
-        </class>
-        <class className="DailyDoPropertyCell" superclassName="KMTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DailyDoPropertyCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="iconImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DailyDoTagCell" superclassName="DailyDoPropertyCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DailyDoTagCell.h"/>
-        </class>
-        <class className="DailyDoTodayCell" superclassName="KMUnfoldTableCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DailyDoTodayCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="checkbox" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="dateView" candidateClass="DailyDoDateView"/>
-                <relationship kind="outlet" name="presentView" candidateClass="DailyDoPresentView"/>
-            </relationships>
-        </class>
-        <class className="DailyDoTodoCell" superclassName="DailyDoPropertyCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DailyDoTodoCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="listView" candidateClass="KMTableView"/>
-            </relationships>
-        </class>
-        <class className="DailyDoTodoCellListCell" superclassName="KMTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DailyDoTodoCellListCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="checkbox" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="contentLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="enumLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DailyDoTomorrowCell" superclassName="KMUnfoldTableCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DailyDoTomorrowCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="presentView" candidateClass="DailyDoPresentView"/>
-                <relationship kind="outlet" name="tomorrowDoLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="DailyDoView" superclassName="KMViewBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DailyDoView.h"/>
-            <relationships>
-                <relationship kind="action" name="addTodo:"/>
-                <relationship kind="action" name="checkbox:"/>
-                <relationship kind="action" name="edit:"/>
-                <relationship kind="action" name="moveTodoToTomorrow:"/>
-                <relationship kind="action" name="otherActions:"/>
-                <relationship kind="action" name="search:"/>
-                <relationship kind="action" name="unfoldAll:"/>
-                <relationship kind="outlet" name="listView" candidateClass="KMTableView"/>
-                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
-                <relationship kind="outlet" name="unfoldButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="DailyDoViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DailyDoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="dismiss:"/>
-                <relationship kind="outlet" name="dailyDoView" candidateClass="DailyDoView"/>
-            </relationships>
-        </class>
-        <class className="DarkNavigationBar" superclassName="UINavigationBar">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DarkNavigationBar.h"/>
-        </class>
-        <class className="DarkNavigationBarButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DarkNavigationBarButton.h"/>
-        </class>
-        <class className="DotLockViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DotLockViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="passwordSwitch:"/>
-                <relationship kind="outlet" name="infoLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="passwordSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="switchLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="FeedbackViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/FeedbackViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="sendFeedback:"/>
-                <relationship kind="outlet" name="mTableView" candidateClass="UITableView"/>
-                <relationship kind="outlet" name="mTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="mToolBar" candidateClass="UIToolbar"/>
-            </relationships>
-        </class>
-        <class className="GuideViewCloudCellView" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GuideViewCloudCellView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="arrowWhiteView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="checkmarkGreyView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="checkmarkWhiteView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="cloudContentView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="GuideViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/GuideViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="handleSingleTap:"/>
-                <relationship kind="outlet" name="guideView" candidateClass="UICollectionView"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-            </relationships>
-        </class>
-        <class className="HomeCoverCellView" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeCoverCellView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="contentImage" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="HomeCoverViewController" superclassName="UICollectionViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeCoverViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="dismiss:"/>
-                <relationship kind="outlet" name="checkmark" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="KMCheckboxTableCell" superclassName="KMTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KMCheckboxTableCell.h"/>
-        </class>
-        <class className="KMCollectionViewSnakeLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KMCollectionViewSnakeLayout.h"/>
-        </class>
-        <class className="KMLoadMoreCell" superclassName="KMTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KMLoadMoreCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="indicator" candidateClass="UIActivityIndicatorView"/>
-            </relationships>
-        </class>
-        <class className="KMReorderableCollectionViewSnakeLayout" superclassName="KMCollectionViewSnakeLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KMReorderableCollectionViewSnakeLayout.h"/>
-        </class>
-        <class className="KMTableView" superclassName="UITableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KMTableView.h"/>
-        </class>
-        <class className="KMTableViewCell" superclassName="UITableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KMTableViewCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="backgroundImageView" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="KMTextView" superclassName="UITextView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KMTextView.h"/>
-        </class>
-        <class className="KMUnfoldTableCell" superclassName="KMTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KMUnfoldTableCell.h"/>
-        </class>
-        <class className="KMViewBase" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KMViewBase.h"/>
-        </class>
-        <class className="KMViewControllerBase" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/KMViewControllerBase.h"/>
-            <relationships>
-                <relationship kind="action" name="back:"/>
-                <relationship kind="action" name="dismiss:"/>
-            </relationships>
-        </class>
-        <class className="MADayView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MADayView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dataSource"/>
-                <relationship kind="outlet" name="delegate"/>
-            </relationships>
-        </class>
-        <class className="MainViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="clearButtonClicked:"/>
-                <relationship kind="action" name="quickButtonClicked:"/>
-                <relationship kind="action" name="removeButtonClicked:"/>
-                <relationship kind="outlet" name="backgroundSingleTap" candidateClass="UITapGestureRecognizer"/>
-                <relationship kind="outlet" name="backgroundView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
-                <relationship kind="outlet" name="toolbar" candidateClass="RootVerticalToolbar"/>
-            </relationships>
-        </class>
-        <class className="MoreViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="alarmBadgeSwitch:"/>
-                <relationship kind="action" name="alarmSoundSwitch:"/>
-                <relationship kind="action" name="alarmSwitch:"/>
-                <relationship kind="action" name="dismiss:"/>
-                <relationship kind="action" name="pickerCanceled:"/>
-                <relationship kind="action" name="pickerConfirmed:"/>
-                <relationship kind="action" name="randomCartoonSwitch:"/>
-                <relationship kind="outlet" name="alarmBadgeSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="alarmSoundSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="alarmSwitch" candidateClass="UISwitch"/>
-                <relationship kind="outlet" name="alarmTimePicker" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="listView" candidateClass="KMTableView"/>
-                <relationship kind="outlet" name="pickerContainer" candidateClass="UIView"/>
-                <relationship kind="outlet" name="pickerToolbar" candidateClass="UIToolbar"/>
-                <relationship kind="outlet" name="randomCartoonSwitch" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="NavigationBarButton" superclassName="UIButton">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NavigationBarButton.h"/>
-        </class>
-        <class className="NewTagViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NewTagViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="listView" candidateClass="KMTableView"/>
-                <relationship kind="outlet" name="textField" candidateClass="UITextField"/>
-            </relationships>
-        </class>
-        <class className="NormalNavigationBar" superclassName="UINavigationBar">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NormalNavigationBar.h"/>
-        </class>
-        <class className="NoteViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NoteViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="textView" candidateClass="KMTextView"/>
-            </relationships>
-        </class>
-        <class className="PasswordAddonCell" superclassName="KMTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PasswordAddonCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="addonLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="passwordSwitch" candidateClass="UISwitch"/>
-            </relationships>
-        </class>
-        <class className="PasswordViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PasswordViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="closeAll:"/>
-                <relationship kind="action" name="passwordOn:"/>
-                <relationship kind="action" name="resetPassword:"/>
-                <relationship kind="outlet" name="listView" candidateClass="KMTableView"/>
-            </relationships>
-        </class>
-        <class className="RootCollectCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RootCollectCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="backgroundImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="cartoonImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="quickButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="removeButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="titleImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="titleLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="RootVerticalToolbar" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RootVerticalToolbar.h"/>
-            <relationships>
-                <relationship kind="outlet" name="pageLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="pageView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="SummaryCellView" superclassName="KMCheckboxTableCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SummaryCellView.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="summaryLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SummaryViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SummaryViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="dismiss:"/>
-                <relationship kind="outlet" name="summaryList" candidateClass="KMTableView"/>
-            </relationships>
-        </class>
-        <class className="TagViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TagViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="tagsView" candidateClass="KMTableView"/>
-            </relationships>
-        </class>
-        <class className="TagViewListCell" superclassName="KMCheckboxTableCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TagViewListCell.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tagImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="tagName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="TimelineViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TimelineViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="pickerCanceled:"/>
-                <relationship kind="action" name="pickerConfirmed:"/>
-                <relationship kind="outlet" name="calendarView" candidateClass="MADayView"/>
-                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
-                <relationship kind="outlet" name="pickerContainer" candidateClass="UIView"/>
-                <relationship kind="outlet" name="pickerToolbar" candidateClass="UIToolbar"/>
-            </relationships>
-        </class>
-        <class className="TipCollectCell" superclassName="UICollectionViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TipCollectCell.h"/>
-            <relationships>
-                <relationship kind="action" name="doubleTaps:"/>
-                <relationship kind="outlet" name="tipImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="zoomView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="TipViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TipViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="dismiss:"/>
-                <relationship kind="action" name="pageControlClicked:"/>
-                <relationship kind="outlet" name="collectView" candidateClass="UICollectionView"/>
-                <relationship kind="outlet" name="pageControl" candidateClass="UIPageControl"/>
-            </relationships>
-        </class>
-        <class className="TodoViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TodoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="cancel:"/>
-                <relationship kind="action" name="save:"/>
-                <relationship kind="outlet" name="inputView" candidateClass="KMTextView"/>
-            </relationships>
-        </class>
-        <class className="UICollectionReusableView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
-        </class>
-        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
-        </class>
-        <class className="UICollectionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
-        </class>
-        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
-        <class className="UMTableViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UMTableViewController.h"/>
-        </class>
-        <class className="UndoCellView" superclassName="KMTableViewCell">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UndoCellView.h"/>
-            <relationships>
-                <relationship kind="action" name="checkbox:"/>
-                <relationship kind="outlet" name="checkbox" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="contentLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="UndoViewController" superclassName="KMViewControllerBase">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UndoViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="checkAll:"/>
-                <relationship kind="action" name="moveAllToTomorrow:"/>
-                <relationship kind="outlet" name="undosView" candidateClass="KMTableView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

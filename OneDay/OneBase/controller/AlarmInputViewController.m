@@ -24,6 +24,7 @@
 - (IBAction)back:(id)sender
 {
     _alarm.text = _textField.text;
+    [_textField resignFirstResponder];
     [super back:sender];
 }
 

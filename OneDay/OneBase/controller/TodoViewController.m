@@ -63,6 +63,9 @@
     CGFloat duration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     CGRect keyboardFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     
+    UIWindow *mainWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
+    keyboardFrame = [mainWindow.rootViewController.view convertRect:keyboardFrame fromView:mainWindow];
+    
     CGRect vFrame = self.view.frame;
     CGRect tFrame = _inputView.frame;
     tFrame.size.height = vFrame.size.height - keyboardFrame.size.height;

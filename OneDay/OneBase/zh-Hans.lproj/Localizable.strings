@@ -55,12 +55,12 @@
 "LockResetSwitchText" = "重置密码";
 
 // dot lock
-"InfoStatusFirstTimeSettingText" ="Set a Pattern !";
-"InfoStatusConfirmSettingText"   ="Confirm the Pattern !";
-"InfoStatusFailedConfirmText"    ="Failed to confirm, please retry";
-"InfoStatusNormalText"           ="Draw previously set pattern to go in";
-"InfoStatusFailedMatchText"      ="Wrong Guess # %d, try again !";
-"InfoStatusSuccessMatchText"     ="Welcome !";
+"InfoStatusFirstTimeSettingText" ="设置手势密码!";
+"InfoStatusConfirmSettingText"   ="重复上次的输入!";
+"InfoStatusFailedConfirmText"    ="两次输入不匹配, 请重新输入";
+"InfoStatusNormalText"           ="请输入密码!";
+"InfoStatusFailedMatchText"      ="密码不正确, 请重试!";
+"InfoStatusSuccessMatchText"     ="欢迎!";
 
 // tags
 "HomeTag"            ="在家";

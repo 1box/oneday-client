@@ -56,11 +56,11 @@
 "LockResetSwitchText" = "Reset password";
 
 // dot lock
-"InfoStatusFirstTimeSettingText" ="Set a Pattern !";
-"InfoStatusConfirmSettingText"   ="Confirm the Pattern !";
-"InfoStatusFailedConfirmText"    ="Failed to confirm, please retry";
-"InfoStatusNormalText"           ="Draw previously set pattern to go in";
-"InfoStatusFailedMatchText"      ="Wrong Guess # %d, try again !";
+"InfoStatusFirstTimeSettingText" ="Set a Pattern!";
+"InfoStatusConfirmSettingText"   ="Confirm the Pattern!";
+"InfoStatusFailedConfirmText"    ="Failed to confirm, please retry!";
+"InfoStatusNormalText"           ="Draw previously pattern to go on!";
+"InfoStatusFailedMatchText"      ="Wrong pattern, try again!";
 "InfoStatusSuccessMatchText"     ="Welcome !";
 
 // tags

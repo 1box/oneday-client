@@ -31,7 +31,7 @@
             </objects>
             <point key="canvasLocation" x="-1804" y="-606"/>
         </scene>
-        <!--Current Addon View Controller - Current Addons-->
+        <!--Current Addon View Controller - _currentAddons-->
         <scene sceneID="YnK-wy-7vH">
             <objects>
                 <viewController id="K16-eQ-lH3" customClass="CurrentAddonViewController" sceneMemberID="viewController">
@@ -67,7 +67,7 @@
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Current Addons" id="am1-Ih-1YJ"/>
+                    <navigationItem key="navigationItem" title="_currentAddons" id="am1-Ih-1YJ"/>
                     <connections>
                         <outlet property="listView" destination="JZA-ZR-hhx" id="sXE-Ir-Bqb"/>
                     </connections>

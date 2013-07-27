@@ -30,7 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationItem.title = @"精彩推荐";
+    self.navigationItem.title = NSLocalizedString(@"_recommendApp", nil);
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     self.view.backgroundColor = [UIColor whiteColor];
 }

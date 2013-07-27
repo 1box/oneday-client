@@ -2693,6 +2693,10 @@
 		CB91EDEF170742DA003FA094 /* KMAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMAlertView.m; sourceTree = "<group>"; };
 		CB9D47D917A407770074AD2C /* UINavigationController+HideKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+HideKeyboard.h"; sourceTree = "<group>"; };
 		CB9D47DA17A407770074AD2C /* UINavigationController+HideKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+HideKeyboard.m"; sourceTree = "<group>"; };
+		CB9D47DE17A40A370074AD2C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/UniversalStoryboard.strings; sourceTree = "<group>"; };
+		CB9D47E017A40A470074AD2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/UniversalStoryboard.strings"; sourceTree = "<group>"; };
+		CB9D47E617A418770074AD2C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OneDayStoryboard_iPad.strings; sourceTree = "<group>"; };
+		CB9D47E817A418780074AD2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/OneDayStoryboard_iPad.strings"; sourceTree = "<group>"; };
 		CBA126CB177EC465008DBBFF /* CurrentAddonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentAddonViewController.h; sourceTree = "<group>"; };
 		CBA126CC177EC465008DBBFF /* CurrentAddonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentAddonViewController.m; sourceTree = "<group>"; };
 		CBA5E925174941200023C456 /* libUMFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUMFeedback.a; path = UMFeedback_iOS/libUMFeedback.a; sourceTree = "<group>"; };
@@ -6660,6 +6664,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				CB1101EB17A3B91700A7222A /* Base */,
+				CB9D47DE17A40A370074AD2C /* en */,
+				CB9D47E017A40A470074AD2C /* zh-Hans */,
 			);
 			name = UniversalStoryboard.storyboard;
 			sourceTree = "<group>";
@@ -6713,6 +6719,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				CBF626731768DD1100B29AA1 /* Base */,
+				CB9D47E617A418770074AD2C /* en */,
+				CB9D47E817A418780074AD2C /* zh-Hans */,
 			);
 			name = OneDayStoryboard_iPad.storyboard;
 			sourceTree = "<group>";

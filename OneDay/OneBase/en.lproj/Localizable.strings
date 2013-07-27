@@ -28,6 +28,8 @@
 "_done"              ="Done";
 "_edit"              ="Edit";
 "_editDone"          ="Edit Exit";
+"_KMAlertViewCancel" ="Cancel";
+"_KMAlertViewConfirm"="OK";
 
 "QuickAddTodoDone"        ="New memo created.";
 "MoveAllUndosToToday"     ="All undos moved to today.";

@@ -56,7 +56,7 @@
 - (IBAction)passwordOn:(id)sender
 {
     UISwitch *aSwitch = sender;
-    NSIndexPath *indexPath = [_listView indexPathForCell:(PasswordAddonCell *)aSwitch.superview];
+    NSIndexPath *indexPath = [_listView indexPathForCell:(PasswordAddonCell *)aSwitch.superview.superview];
     if (indexPath.section == 0) {
         [PasswordManager setLaunchPasswordOpen:aSwitch.isOn];
     }

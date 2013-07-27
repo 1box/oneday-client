@@ -121,9 +121,14 @@
 
 - (void)showLaunchLock
 {
-    [[SplashHelper sharedHelper] addFlipedBlock:^(SplashHelper *helper) {
+    if ([KMCommon isPadDevice]) {
         [[PasswordManager sharedManager] showLaunchLockIfNecessary];
-    }];
+    }
+    else {
+        [[SplashHelper sharedHelper] addFlipedBlock:^(SplashHelper *helper) {
+            [[PasswordManager sharedManager] showLaunchLockIfNecessary];
+        }];
+    }
 }
 
 #pragma mark - extended

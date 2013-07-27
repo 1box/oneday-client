@@ -45,17 +45,17 @@
 
 - (void)refreshUI
 {
-//    CornerMarkColorType color = CornerMarkColorTypeOrange;
-//    if ([[NSDate dateWithTimeIntervalSince1970:[_loggedDo.createTime doubleValue]] isTypicallyWorkday]) {
-//        color = CornerMarkColorTypeCyan;
-//    }
-//    UIImageView *markView = [self renderCornerMark:color scaleType:CornerMarkScaleTypeSmall isFavorite:NO];
-//    
-//    CGFloat topMargin = 0.f;
-//    if (self.locationType == KMTableViewCellLocationTypeAlone || self.locationType == KMTableViewCellLocationTypeTop) {
-//        topMargin = 1.f;
-//    }
-//    setFrameWithOrigin(markView, SSWidth(self) - SSWidth(markView) - 11, topMargin);
+    CornerMarkColorType color = CornerMarkColorTypeOrange;
+    if ([[NSDate dateWithTimeIntervalSince1970:[_loggedDo.createTime doubleValue]] isTypicallyWorkday]) {
+        color = CornerMarkColorTypeCyan;
+    }
+    UIImageView *markView = [self renderCornerMark:color scaleType:CornerMarkScaleTypeSmall isFavorite:NO];
+    
+    CGFloat topMargin = 0.f;
+    if (self.locationType == KMTableViewCellLocationTypeAlone || self.locationType == KMTableViewCellLocationTypeTop) {
+        topMargin = 1.f;
+    }
+    setFrameWithOrigin(markView, SSWidth(self) - SSWidth(markView) - 11, topMargin);
 }
 
 - (void)setLoggedDo:(DailyDoBase *)loggedDo
@@ -63,7 +63,7 @@
     _loggedDo = loggedDo;
     if (_loggedDo) {
         _checkbox.enabled = ![_loggedDo.check boolValue] && [_loggedDo.todos count] > 0;
-        _dateLabel.text = [MonthToDayWFormatter() stringFromDate:[NSDate dateWithTimeIntervalSince1970:[_loggedDo.createTime doubleValue]]];
+        _dateLabel.text = [MonthToDayFormatter() stringFromDate:[NSDate dateWithTimeIntervalSince1970:[_loggedDo.createTime doubleValue]]];
         _completeLabel.text = [_loggedDo completionText];
         _presentView.dailyDo = _loggedDo;
     }

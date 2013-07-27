@@ -28,6 +28,8 @@
 "_done"              ="完成";
 "_edit"              ="编辑";
 "_editDone"          ="退出编辑";
+"_KMAlertViewCancel" ="取  消";
+"_KMAlertViewConfirm"="确  认";
 
 "QuickAddTodoDone"        ="新的便签已添加";
 "MoveAllUndosToToday"     ="所有未完成已经移到今天";

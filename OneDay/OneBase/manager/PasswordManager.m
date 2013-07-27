@@ -119,7 +119,17 @@ static PasswordManager *_sharedManager = nil;
         controller.pageType = pageType;
         controller.addon = addon;
         controller.finishBlock = aBlock;
-        [[KMCommon topMostNavigationControllerFor:nil] presentViewController:controller animated:NO completion:nil];
+        
+        if ([KMCommon isPadDevice]) {
+            UIWindow *mainWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
+            UISplitViewController *split = (UISplitViewController *)mainWindow.rootViewController;
+            UINavigationController *nav = [split.viewControllers objectAtIndex:1];
+            [nav presentViewController:controller animated:NO completion:nil];
+        }
+        else {
+            UINavigationController *nav = [KMCommon topMostNavigationControllerFor:nil];
+            [nav presentViewController:controller animated:NO completion:nil];
+        }
         
         _lockViewHasShown = YES;
     }

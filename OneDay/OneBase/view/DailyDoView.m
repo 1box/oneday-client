@@ -506,6 +506,7 @@
             DailyDoLoggedCell *cell = [tableView dequeueReusableCellWithIdentifier:loggedDoCell];
             cell.loggedDo = [_loggedDos objectAtIndex:indexPath.row];
             cell.unfolded = [_viewHelper loggedUnfoldForIndex:indexPath.row];
+            [cell refreshUI];
             return cell;
         }
         else {

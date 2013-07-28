@@ -85,7 +85,7 @@
     
     NSArray *dailyDos = [self.dailyDos sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"createTime" ascending:YES]]];
     [dailyDos enumerateObjectsUsingBlock:^(DailyDoBase *dailyDo, NSUInteger idx, BOOL *stop) {
-        if ([dailyDo.todos count] == 0 && ![[NSDate dateWithTimeIntervalSince1970:[dailyDo.createTime integerValue]] isToday]) {
+        if ([dailyDo isBlankDailyDo]) {
             [blankDailyDos addObject:dailyDo];
         }
     }];

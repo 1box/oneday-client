@@ -178,6 +178,12 @@
     return [mutRepeatTimes copy];
 }
 
+- (BOOL)needAlarmToday
+{
+    AlarmRepeatType todayRepeatType = [AlarmData repeatTypeAfterDays:0];
+    return (todayRepeatType == ([self.repeatType integerValue]&todayRepeatType));
+}
+
 #pragma mark - private
 
 + (AlarmRepeatType)repeatTypeAfterDays:(NSInteger)days

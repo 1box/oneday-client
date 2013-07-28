@@ -16,6 +16,8 @@
 
 #define CurrentAddonsDidChangedNotification @"CurrentAddonsDidChangedNotification"
 
+#define TrackMainViewEvent @"main_page"
+
 #define kAutomaticLineNumberUserDefaultKey @"kAutomaticLineNumberUserDefaultKey"
 static inline void setAutomaticLineNumber(BOOL automatic) {
     [[NSUserDefaults standardUserDefaults] setBool:automatic forKey:kAutomaticLineNumberUserDefaultKey];

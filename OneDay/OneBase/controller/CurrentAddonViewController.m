@@ -59,10 +59,10 @@
         DailyDoViewController *controller = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:DailyDoViewContollerID];
         controller.addon = [_currentAddons objectAtIndex:indexPath.row];
         
-        UIWindow *mainWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
-        UISplitViewController *split = (UISplitViewController *)mainWindow.rootViewController;
-        UINavigationController *nav = [split.viewControllers objectAtIndex:1];
-        
+//        UIWindow *mainWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
+//        UISplitViewController *split = (UISplitViewController *)mainWindow.rootViewController;
+//        UINavigationController *nav = [split.viewControllers objectAtIndex:1];
+        UINavigationController *nav = [KMCommon rootNavigationController];
         [nav popToRootViewControllerAnimated:NO];
         [nav pushViewController:controller animated:YES];
     }

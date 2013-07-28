@@ -148,12 +148,20 @@
 {
 	UIResponder *topResponder = responder;
     if(!topResponder) {
-        topResponder = [[[[UIApplication sharedApplication] keyWindow] subviews] lastObject];
+        topResponder = [[[[UIApplication sharedApplication] keyWindow] subviews] objectAtIndex:0];
     }
     
 	while(topResponder && ![topResponder isKindOfClass:[UIViewController class]]) {
 		topResponder = [topResponder nextResponder];
 	}
+    
+    if ([topResponder isKindOfClass:[UIViewController class]]) {
+        UIViewController *tController = (UIViewController *)topResponder;
+        while (tController.presentedViewController) {
+            tController = tController.presentedViewController;
+        }
+        topResponder = tController;
+    }
 	
 	return (UIViewController *)topResponder;
 }
@@ -170,6 +178,16 @@
     else {
         return nil;
     }
+}
+
++ (UINavigationController *)rootNavigationController
+{
+    id<UIApplicationDelegate> appDelegate = [[UIApplication sharedApplication] delegate];
+    UINavigationController *ret = nil;
+    if ([appDelegate respondsToSelector:@selector(nav)]) {
+        ret = [appDelegate performSelector:@selector(nav)];
+    }
+    return ret;
 }
 
 static AVAudioPlayer *_player = nil;

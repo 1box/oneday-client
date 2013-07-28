@@ -35,6 +35,7 @@
 // tool
 + (UIViewController *)topMostViewControllerFor:(UIResponder *)responder;
 + (UINavigationController *)topMostNavigationControllerFor:(UIResponder*)responder;
++ (UINavigationController *)rootNavigationController;
 + (void)playSound:(NSString *)fileName;
 
 // url utils

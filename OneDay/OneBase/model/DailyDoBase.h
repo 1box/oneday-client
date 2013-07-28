@@ -31,6 +31,8 @@ static inline NSUInteger newDailyDoItemID() {
 
 @property (nonatomic, readonly) NSNumber *check;
 
+- (BOOL)isBlankDailyDo;
+
 - (NSArray *)todosSortedByIndex;
 - (NSArray *)todosSortedByStartTime;
 - (TodoData *)todoForAlarm:(AlarmData *)alarm;

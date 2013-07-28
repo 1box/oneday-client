@@ -652,8 +652,8 @@
             }
             UndoViewController *controller = (UndoViewController *)nav.topViewController;
             controller.addon = _addon;
-            UIViewController *topViewController = [KMCommon topMostViewControllerFor:self];
-            [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
+            UIViewController *topMost = [KMCommon topMostViewControllerFor:self];
+            [topMost presentViewController:nav animated:YES completion:nil];
         }
             break;
         case DailyDoActionTypeCashMonthSummary:
@@ -665,8 +665,8 @@
             SummaryViewController *controller = (SummaryViewController *)nav.topViewController;
             controller.type = SummaryViewTypeMonth;
             controller.addon = _addon;
-            UIViewController *topViewController = [KMCommon topMostViewControllerFor:self];
-            [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
+            UIViewController *topMost = [KMCommon topMostViewControllerFor:self];
+            [topMost presentViewController:nav animated:YES completion:nil];
         }
             break;
         case DailyDoActionTypeCashYearSummary:
@@ -678,8 +678,8 @@
             SummaryViewController *controller = (SummaryViewController *)nav.topViewController;
             controller.type = SummaryViewTypeYear;
             controller.addon = _addon;
-            UIViewController *topViewController = [KMCommon topMostViewControllerFor:self];
-            [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
+            UIViewController *topMost = [KMCommon topMostViewControllerFor:self];
+            [topMost presentViewController:nav animated:YES completion:nil];
         }
             break;
         case DailyDoActionTypeAlarmNotification:
@@ -690,8 +690,8 @@
             }
             AlarmViewController *controller = (AlarmViewController *)nav.topViewController;
             controller.addon = _addon;
-            UIViewController *topViewController = [KMCommon topMostViewControllerFor:self];
-            [topViewController.navigationController presentViewController:nav animated:YES completion:nil];
+            UIViewController *topMost = [KMCommon topMostViewControllerFor:self];
+            [topMost presentViewController:nav animated:YES completion:nil];
         }
             break;
         case DailyDoActionTypeClearAllBlank:
@@ -726,6 +726,9 @@
                 }
                 else if (DailyDoActionTypeCashMonthSummary == (actionType & DailyDoActionTypeCashMonthSummary)) {
                     [[DailyDoActionHelper sharedHelper] showCashMonthSummary];
+                }
+                else if (DailyDoActionTypeClearAllBlank == (actionType & DailyDoActionTypeClearAllBlank)) {
+                    [[DailyDoActionHelper sharedHelper] clearAllBlank:_addon];
                 }
             }
                 break;

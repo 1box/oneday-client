@@ -28,6 +28,12 @@
 }
 
 #pragma mark - protected
+
+- (BOOL)isBlankDailyDo
+{
+    return KMEmptyString(self.shortContent) && ![[NSDate dateWithTimeIntervalSince1970:[self.createTime integerValue]] isToday];
+}
+
 - (NSString *)presentedText
 {
     return self.shortContent;

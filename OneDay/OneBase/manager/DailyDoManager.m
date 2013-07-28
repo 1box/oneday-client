@@ -398,7 +398,7 @@ static DailyDoManager *_sharedManager;
         int index = 0;
         for (AlarmData *alarm in alarms) {
             TodoData *todo = [(*dailyDo) todoForAlarm:alarm];
-            if (!todo) {
+            if (!todo && [alarm needAlarmToday]) {
                 todo = [(*dailyDo) insertNewTodoAtIndex:index];
                 [todo updateWithAlarm:alarm save:NO];
                 index ++;

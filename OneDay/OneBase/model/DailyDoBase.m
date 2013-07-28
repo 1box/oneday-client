@@ -68,6 +68,11 @@
     return [NSNumber numberWithBool:dailyDoChecked];
 }
 
+- (BOOL)isBlankDailyDo
+{
+    return [self.todos count] == 0 && ![[NSDate dateWithTimeIntervalSince1970:[self.createTime integerValue]] isToday];
+}
+
 #pragma mark - get todos
 
 - (NSArray *)todosSortedByIndex

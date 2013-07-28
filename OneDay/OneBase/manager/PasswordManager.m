@@ -120,16 +120,12 @@ static PasswordManager *_sharedManager = nil;
         controller.addon = addon;
         controller.finishBlock = aBlock;
         
-        if ([KMCommon isPadDevice]) {
-            UIWindow *mainWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
-            UISplitViewController *split = (UISplitViewController *)mainWindow.rootViewController;
-            UINavigationController *nav = [split.viewControllers objectAtIndex:1];
-            [nav presentViewController:controller animated:NO completion:nil];
-        }
-        else {
-            UINavigationController *nav = [KMCommon topMostNavigationControllerFor:nil];
-            [nav presentViewController:controller animated:NO completion:nil];
-        }
+//        if ([KMCommon isPadDevice]) {
+//            controller.modalPresentationStyle = UIModalPresentationFormSheet;
+//        }
+        
+        UIViewController *topMost = [KMCommon topMostViewControllerFor:nil];
+        [topMost presentViewController:controller animated:YES completion:nil];
         
         _lockViewHasShown = YES;
     }

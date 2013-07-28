@@ -11,6 +11,7 @@
 @interface AppDelegateBase : UIResponder <UIApplicationDelegate>
 
 @property (nonatomic) UIWindow *window;
+@property (nonatomic) UINavigationController *nav;
 
 // extended
 + (NSString *)bundleIDForRate;

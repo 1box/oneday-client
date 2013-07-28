@@ -26,7 +26,6 @@
 
 
 @interface AppDelegateBase () <iRateDelegate>
-@property (nonatomic) UINavigationController *nav;
 @end
 
 

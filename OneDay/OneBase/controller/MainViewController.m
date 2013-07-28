@@ -320,6 +320,8 @@
 {
     NSString *currentHomeCoverImageName = [NSString stringWithFormat:@"homecover00%d.jpg", homeCoverSelectedIndex() + 1];
     _backgroundView.image = [UIImage imageWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:currentHomeCoverImageName]];
+    
+    trackEvent(TrackMainViewEvent, currentHomeCoverImageName);
 }
 
 - (void)reloadData

@@ -73,15 +73,15 @@
     if (_pickerContainer.hidden) {
         _pickerContainer.hidden = NO;
         
-        CGRect keyboardEndFrame = _pickerContainer.frame;
-        keyboardEndFrame.origin.y -= keyboardEndFrame.size.height;
+        CGRect datePickerFrame = _pickerContainer.frame;
+        datePickerFrame.origin.y = SSHeight(self.view) - datePickerFrame.size.height;
         CGFloat duration = 0.25f;
         
         CGRect tmpFrame = _calendarView.frame;
-        tmpFrame.size.height -= keyboardEndFrame.size.height;
+        tmpFrame.size.height -= datePickerFrame.size.height;
         
         [UIView animateWithDuration:duration animations:^{
-            _pickerContainer.frame = keyboardEndFrame;
+            _pickerContainer.frame = datePickerFrame;
         } completion:^(BOOL finished) {
             _calendarView.frame = tmpFrame;
         }];
@@ -92,15 +92,15 @@
 {
     if (!_pickerContainer.hidden) {
         
-        CGRect keyboardEndFrame = _pickerContainer.frame;
-        keyboardEndFrame.origin.y += keyboardEndFrame.size.height;
+        CGRect datePickerFrame = _pickerContainer.frame;
+        datePickerFrame.origin.y = SSHeight(self.view);
         CGFloat duration = 0.2f;
         
         CGRect tmpFrame = _calendarView.frame;
-        tmpFrame.size.height += keyboardEndFrame.size.height;
+        tmpFrame.size.height += datePickerFrame.size.height;
         
         [UIView animateWithDuration:duration animations:^{
-            _pickerContainer.frame = keyboardEndFrame;
+            _pickerContainer.frame = datePickerFrame;
             _calendarView.frame = tmpFrame;
         } completion:^(BOOL finished) {
             _pickerContainer.hidden = YES;

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger, DailyDoActionType) {
+    DailyDoActionTypeNone = 0,
     DailyDoActionTypeMoveToTomorrow = 1UL,              // 1
     DailyDoActionTypeQuickAdd = (1UL << 1),             // 2
     DailyDoActionTypeShowAllUndos = (1UL << 2),         // 4
@@ -35,6 +36,8 @@ typedef NS_ENUM(NSInteger, DailyDoActionType) {
 @property (nonatomic, weak) id<DailyDoActionHelperDelegate> delegate;
 
 + (DailyDoActionHelper *)sharedHelper;
+
+- (NSDictionary *)indexHashForActionType:(DailyDoActionType)actionType;
 
 - (void)move:(DailyDoBase *)todayDo toTomorrow:(DailyDoBase *)tomorrowDo;
 - (void)quickAddTodo:(DailyDoBase *)dailyDo;

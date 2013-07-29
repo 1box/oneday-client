@@ -249,6 +249,30 @@
     [_listView reloadData];
 }
 
+- (void)doActionSheetActionForType:(DailyDoActionType)type
+{
+    switch (type) {
+        case DailyDoActionTypeShowAllUndos:
+            [[DailyDoActionHelper sharedHelper] showAllUndos:_addon];
+            break;
+        case DailyDoActionTypeCashMonthSummary:
+            [[DailyDoActionHelper sharedHelper] showCashMonthSummary];
+            break;
+        case DailyDoActionTypeCashYearSummary:
+            [[DailyDoActionHelper sharedHelper] showCashYearSummary];
+            break;
+        case DailyDoActionTypeAlarmNotification:
+            [[DailyDoActionHelper sharedHelper] showWorkoutAlarms];
+            break;
+        case DailyDoActionTypeClearAllBlank:
+            [[DailyDoActionHelper sharedHelper] clearAllBlank:_addon];
+            break;
+            
+        default:
+            break;
+    }
+}
+
 #pragma mark - Actions
 
 - (IBAction)addTodo:(id)sender
@@ -711,8 +735,6 @@
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex != actionSheet.cancelButtonIndex) {
-        NSInteger actionType = [[_configurations objectForKey:kConfigurationActionType] integerValue];
-        
         switch (buttonIndex) {
             case 0:
             {
@@ -720,40 +742,15 @@
             }
                 break;
             case 1:
-            {
-                if (DailyDoActionTypeShowAllUndos == (actionType & DailyDoActionTypeShowAllUndos)) {
-                    [[DailyDoActionHelper sharedHelper] showAllUndos:_addon];
-                }
-                else if (DailyDoActionTypeCashMonthSummary == (actionType & DailyDoActionTypeCashMonthSummary)) {
-                    [[DailyDoActionHelper sharedHelper] showCashMonthSummary];
-                }
-                else if (DailyDoActionTypeClearAllBlank == (actionType & DailyDoActionTypeClearAllBlank)) {
-                    [[DailyDoActionHelper sharedHelper] clearAllBlank:_addon];
-                }
-            }
-                break;
             case 2:
-            {
-                if (DailyDoActionTypeCashYearSummary == (actionType & DailyDoActionTypeCashYearSummary)) {
-                    [[DailyDoActionHelper sharedHelper] showCashYearSummary];
-                }
-                else if (DailyDoActionTypeAlarmNotification == (actionType & DailyDoActionTypeAlarmNotification)) {
-                    [[DailyDoActionHelper sharedHelper] showWorkoutAlarms];
-                }
-                else if (DailyDoActionTypeClearAllBlank == (actionType & DailyDoActionTypeClearAllBlank)) {
-                    [[DailyDoActionHelper sharedHelper] clearAllBlank:_addon];
-                }
-            }
-                break;
             case 3:
-            {
-                if (DailyDoActionTypeClearAllBlank == (actionType & DailyDoActionTypeClearAllBlank)) {
-                    [[DailyDoActionHelper sharedHelper] clearAllBlank:_addon];
-                }
-            }
-                break;
-                
             default:
+            {
+                NSInteger actionType = [[_configurations objectForKey:kConfigurationActionType] integerValue];
+                NSDictionary *indexHash = [[DailyDoActionHelper sharedHelper] indexHashForActionType:actionType];
+                DailyDoActionType tActionType = [[indexHash objectForKey:@(buttonIndex - 1)] integerValue];
+                [self doActionSheetActionForType:tActionType];
+            }
                 break;
         }
     }

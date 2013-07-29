@@ -38,7 +38,7 @@
 		<key>ShowQuickEntry</key>
 		<false/>
 		<key>ActionType</key>
-		<integer>103</integer>
+		<integer>99</integer>
 		<key>QuickAddPropertyName</key>
 		<string>todos</string>
 	</dict>

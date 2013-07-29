@@ -44,6 +44,39 @@ static DailyDoActionHelper *_sharedHelper = nil;
     return [super alloc];
 }
 
+#pragma mark - public
+
+- (NSDictionary *)indexHashForActionType:(DailyDoActionType)actionType
+{
+    NSMutableDictionary *mutRet = [NSMutableDictionary dictionaryWithCapacity:10];
+    NSMutableArray *actionTypes = [NSMutableArray arrayWithArray:@[
+                                   @(DailyDoActionTypeShowAllUndos),
+                                   @(DailyDoActionTypeCashMonthSummary),
+                                   @(DailyDoActionTypeCashYearSummary),
+                                   @(DailyDoActionTypeAlarmNotification),
+                                   @(DailyDoActionTypeClearAllBlank)]];
+    
+    int count = [actionTypes count];
+    for (int i=0; i < count; i ++) {
+        __block DailyDoActionType removedActionType = DailyDoActionTypeNone;
+        [actionTypes enumerateObjectsUsingBlock:^(NSNumber *tActionTypeNumber, NSUInteger idx, BOOL *stop) {
+            DailyDoActionType tActionType = [tActionTypeNumber integerValue];
+            if (tActionType == (actionType & tActionType)) {
+                [mutRet setObject:tActionTypeNumber forKey:@(i)];
+                removedActionType = tActionType;
+                
+                *stop = YES;
+            }
+        }];
+        
+        if ([actionTypes containsObject:@(removedActionType)]) {
+            [actionTypes removeObject:@(removedActionType)];
+        }
+    }
+    
+    return [mutRet copy];
+}
+
 #pragma mark - Actions
 
 - (void)move:(DailyDoBase *)todayDo toTomorrow:(DailyDoBase *)tomorrowDo

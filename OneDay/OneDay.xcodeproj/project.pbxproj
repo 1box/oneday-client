@@ -1161,6 +1161,8 @@
 		CB39DFCE1741FD9C007B1CE5 /* AlarmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CB39DFCB1741FD9C007B1CE5 /* AlarmViewController.m */; };
 		CB39DFD31741FF1F007B1CE5 /* AlarmCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB39DFD21741FF1F007B1CE5 /* AlarmCellView.m */; };
 		CB39DFD41741FF1F007B1CE5 /* AlarmCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB39DFD21741FF1F007B1CE5 /* AlarmCellView.m */; };
+		CB3FC40717A75CA70069B6BA /* DailySex.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3FC40617A75CA70069B6BA /* DailySex.m */; };
+		CB3FC40817A75CA70069B6BA /* DailySex.m in Sources */ = {isa = PBXBuildFile; fileRef = CB3FC40617A75CA70069B6BA /* DailySex.m */; };
 		CB400370174BF48800217E27 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB40036D174BF48800217E27 /* Default-568h@2x.png */; };
 		CB400371174BF48800217E27 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CB40036E174BF48800217E27 /* Default.png */; };
 		CB400372174BF48800217E27 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB40036F174BF48800217E27 /* Default@2x.png */; };
@@ -2448,6 +2450,8 @@
 		CB39DFCB1741FD9C007B1CE5 /* AlarmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmViewController.m; sourceTree = "<group>"; };
 		CB39DFD11741FF1F007B1CE5 /* AlarmCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmCellView.h; sourceTree = "<group>"; };
 		CB39DFD21741FF1F007B1CE5 /* AlarmCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmCellView.m; sourceTree = "<group>"; };
+		CB3FC40517A75CA70069B6BA /* DailySex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailySex.h; sourceTree = "<group>"; };
+		CB3FC40617A75CA70069B6BA /* DailySex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailySex.m; sourceTree = "<group>"; };
 		CB40036D174BF48800217E27 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CB40036E174BF48800217E27 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CB40036F174BF48800217E27 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -3026,6 +3030,8 @@
 		3F55A3B216E50D4800EBBA30 /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				CB3FC40417A75CA70069B6BA /* SexAddon */,
+				CB3FC3FE17A75C590069B6BA /* MensesAddon */,
 				3F55A3B316E50D4800EBBA30 /* AddonsHeader.h */,
 				3F55A3B416E50D4800EBBA30 /* CalorieAddon */,
 				3F55A40516E50D4800EBBA30 /* CashAddon */,
@@ -4125,6 +4131,22 @@
 				3FC12586167EF70F003FFA8B /* KMTracker.m */,
 			);
 			path = track;
+			sourceTree = "<group>";
+		};
+		CB3FC3FE17A75C590069B6BA /* MensesAddon */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MensesAddon;
+			sourceTree = "<group>";
+		};
+		CB3FC40417A75CA70069B6BA /* SexAddon */ = {
+			isa = PBXGroup;
+			children = (
+				CB3FC40517A75CA70069B6BA /* DailySex.h */,
+				CB3FC40617A75CA70069B6BA /* DailySex.m */,
+			);
+			path = SexAddon;
 			sourceTree = "<group>";
 		};
 		CB4605F4173D4B8700955454 /* images */ = {
@@ -6322,6 +6344,7 @@
 				CB5EDA01176491260092433A /* UIView+CornerMark.m in Sources */,
 				CBA126CE177EC465008DBBFF /* CurrentAddonViewController.m in Sources */,
 				CB9D47DC17A407770074AD2C /* UINavigationController+HideKeyboard.m in Sources */,
+				CB3FC40817A75CA70069B6BA /* DailySex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -6466,6 +6489,7 @@
 				CB5EDA00176491260092433A /* UIView+CornerMark.m in Sources */,
 				CBA126CD177EC465008DBBFF /* CurrentAddonViewController.m in Sources */,
 				CB9D47DB17A407770074AD2C /* UINavigationController+HideKeyboard.m in Sources */,
+				CB3FC40717A75CA70069B6BA /* DailySex.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -40,7 +40,7 @@
 	<key>CFBundleVersion</key>
 	<string>1.2.3</string>
 	<key>ChannelName</key>
-	<string>dev</string>
+	<string>App Store</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchImageFile</key>

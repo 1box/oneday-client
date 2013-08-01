@@ -288,7 +288,11 @@
                     tmpContent = [NSMutableString stringWithCapacity:[content length]];
                 }
                 [tmpContent insertString:content atIndex:relativeLocation];
-                tmpTodo.content = tmpContent;
+                
+                // TODO: quick fix bug
+                if (tmpTodo.managedObjectContext) {
+                    tmpTodo.content = tmpContent;
+                }
             }
             else {
                 TodoData *preTodo = [_todos objectAtIndex:index + offset - 1];

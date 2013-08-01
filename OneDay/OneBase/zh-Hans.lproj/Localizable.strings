@@ -146,7 +146,7 @@
 "TodayWorkout"             ="要做的运动";
 "WorkoutTimeline"          ="运动时间轴";
 "WorkoutSlogan"            ="运动计划既要科学，又要坚持！";
-"WorkoutCompleteText"      ="今天的运动计划完成了%0.2f";
+"WorkoutCompleteText"      ="运动计划完成了%0.2f";
 "WorkoutNoText"            ="这一天没有运动计划";
 "WorkoutPlaceHolder"       ="◉ 输入示例一：\
 ◉ 输入 \"跑了1千米\"，将自动把这条记录的距离记为：1000米\n\

@@ -88,7 +88,7 @@
         AddonData *tAddon = [_addons objectAtIndex:(indexPath.section * NumberOfItems + indexPath.item)];
         DailyDoViewController *controller = [segue destinationViewController];
         controller.addon = tAddon;
-        trackEvent(controller.addon.dailyDoName, @"enter");
+        trackEvent(TrackMainViewEvent, [NSString stringWithFormat:@"%@_enter", controller.addon.dailyDoName]);
     }
     else if ([[segue identifier] isEqualToString:@"rootShowTipPage"]) {
         

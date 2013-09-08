@@ -1554,7 +1554,7 @@
                     <toolbarItems>
                         <barButtonItem title="more to tmr" style="plain" id="tYQ-Ow-VdS"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="H0l-j2-NUu"/>
-                        <barButtonItem image="move.png" id="bZo-wb-VxM"/>
+                        <barButtonItem title="Item" id="bZo-wb-VxM"/>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="K9T-JP-yFq">
                         <barButtonItem key="leftBarButtonItem" title="back" id="bZj-En-5G8">
@@ -3742,7 +3742,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <objects>
                 <viewController id="exL-kg-UPV" customClass="TipViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZHr-fR-GUW">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" restorationIdentifier="" image="bg_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="SRA-Yi-FjF"/>
@@ -3871,7 +3871,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="list_cell_tag.png" width="33" height="33"/>
         <image name="list_icon_timeline.png" width="16" height="16"/>
         <image name="menu_white.png" width="16" height="16"/>
-        <image name="move.png" width="16" height="16"/>
         <image name="nav_back.png" width="30" height="30"/>
         <image name="nav_back_press.png" width="30" height="30"/>
         <image name="nav_dismiss.png" width="16" height="16"/>
@@ -4319,6 +4318,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
         </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
         <class className="UMTableViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UMTableViewController.h"/>
         </class>
@@ -4345,7 +4347,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="1vB-P8-pdP"/>
         <segue reference="Q7S-oa-MDi"/>
+        <segue reference="fKJ-vH-Ras"/>
     </inferredMetricsTieBreakers>
 </document>

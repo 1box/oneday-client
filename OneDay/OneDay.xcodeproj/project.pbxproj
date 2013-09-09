@@ -808,8 +808,6 @@
 		3F55AA3B16E50D4A00EBBA30 /* DailyWorkout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F55A59216E50D4900EBBA30 /* DailyWorkout.m */; };
 		3F55AA3C16E50D4A00EBBA30 /* DailyWorkout.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F55A59316E50D4900EBBA30 /* DailyWorkout.plist */; };
 		3F55AA3D16E50D4A00EBBA30 /* DailyWorkout.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F55A59316E50D4900EBBA30 /* DailyWorkout.plist */; };
-		3F55AA3E16E50D4A00EBBA30 /* DailyWorkoutHintDialogs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F55A59416E50D4900EBBA30 /* DailyWorkoutHintDialogs.plist */; };
-		3F55AA3F16E50D4A00EBBA30 /* DailyWorkoutHintDialogs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F55A59416E50D4900EBBA30 /* DailyWorkoutHintDialogs.plist */; };
 		3F55AA4016E50D4A00EBBA30 /* daily_workout_tip-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F55A59516E50D4900EBBA30 /* daily_workout_tip-568h@2x.png */; };
 		3F55AA4116E50D4A00EBBA30 /* daily_workout_tip-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F55A59516E50D4900EBBA30 /* daily_workout_tip-568h@2x.png */; };
 		3F55AA4216E50D4A00EBBA30 /* daily_workout_tip.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F55A59716E50D4900EBBA30 /* daily_workout_tip.png */; };
@@ -1561,6 +1559,8 @@
 		CB9D47DC17A407770074AD2C /* UINavigationController+HideKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = CB9D47DA17A407770074AD2C /* UINavigationController+HideKeyboard.m */; };
 		CBA126CD177EC465008DBBFF /* CurrentAddonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA126CC177EC465008DBBFF /* CurrentAddonViewController.m */; };
 		CBA126CE177EC465008DBBFF /* CurrentAddonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA126CC177EC465008DBBFF /* CurrentAddonViewController.m */; };
+		CBA20E4C17DD825100387AD4 /* DailyWorkoutHintDialogs.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBA20E4F17DD825100387AD4 /* DailyWorkoutHintDialogs.plist */; };
+		CBA20E4D17DD825100387AD4 /* DailyWorkoutHintDialogs.plist in Resources */ = {isa = PBXBuildFile; fileRef = CBA20E4F17DD825100387AD4 /* DailyWorkoutHintDialogs.plist */; };
 		CBA5E928174941200023C456 /* libUMFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA5E925174941200023C456 /* libUMFeedback.a */; };
 		CBA5E929174941200023C456 /* libUMFeedback.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA5E925174941200023C456 /* libUMFeedback.a */; };
 		CBA5E92A174941200023C456 /* umFeedback.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CBA5E926174941200023C456 /* umFeedback.bundle */; };
@@ -2172,7 +2172,6 @@
 		3F55A59116E50D4900EBBA30 /* DailyWorkout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyWorkout.h; sourceTree = "<group>"; };
 		3F55A59216E50D4900EBBA30 /* DailyWorkout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyWorkout.m; sourceTree = "<group>"; };
 		3F55A59316E50D4900EBBA30 /* DailyWorkout.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DailyWorkout.plist; sourceTree = "<group>"; };
-		3F55A59416E50D4900EBBA30 /* DailyWorkoutHintDialogs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DailyWorkoutHintDialogs.plist; sourceTree = "<group>"; };
 		3F55A59616E50D4900EBBA30 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/daily_workout_tip-568h@2x.png"; sourceTree = "<group>"; };
 		3F55A59816E50D4900EBBA30 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = en.lproj/daily_workout_tip.png; sourceTree = "<group>"; };
 		3F55A59A16E50D4900EBBA30 /* en */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = en; path = "en.lproj/daily_workout_tip@2x.png"; sourceTree = "<group>"; };
@@ -2703,6 +2702,8 @@
 		CB9D47E817A418780074AD2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/OneDayStoryboard_iPad.strings"; sourceTree = "<group>"; };
 		CBA126CB177EC465008DBBFF /* CurrentAddonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentAddonViewController.h; sourceTree = "<group>"; };
 		CBA126CC177EC465008DBBFF /* CurrentAddonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentAddonViewController.m; sourceTree = "<group>"; };
+		CBA20E4E17DD825100387AD4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/DailyWorkoutHintDialogs.plist; sourceTree = "<group>"; };
+		CBA20E5017DD825500387AD4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/DailyWorkoutHintDialogs.plist"; sourceTree = "<group>"; };
 		CBA5E925174941200023C456 /* libUMFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUMFeedback.a; path = UMFeedback_iOS/libUMFeedback.a; sourceTree = "<group>"; };
 		CBA5E926174941200023C456 /* umFeedback.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = umFeedback.bundle; path = UMFeedback_iOS/umFeedback.bundle; sourceTree = "<group>"; };
 		CBA5E927174941200023C456 /* UMFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UMFeedback.h; path = UMFeedback_iOS/UMFeedback.h; sourceTree = "<group>"; };
@@ -3498,7 +3499,7 @@
 				3F55A59116E50D4900EBBA30 /* DailyWorkout.h */,
 				3F55A59216E50D4900EBBA30 /* DailyWorkout.m */,
 				3F55A59316E50D4900EBBA30 /* DailyWorkout.plist */,
-				3F55A59416E50D4900EBBA30 /* DailyWorkoutHintDialogs.plist */,
+				CBA20E4F17DD825100387AD4 /* DailyWorkoutHintDialogs.plist */,
 				3F55A59516E50D4900EBBA30 /* daily_workout_tip-568h@2x.png */,
 				3F55A59716E50D4900EBBA30 /* daily_workout_tip.png */,
 				3F55A59916E50D4900EBBA30 /* daily_workout_tip@2x.png */,
@@ -5170,7 +5171,7 @@
 				3F55AA3716E50D4A00EBBA30 /* daily_workout.png in Resources */,
 				3F55AA3916E50D4A00EBBA30 /* daily_workout@2x.png in Resources */,
 				3F55AA3D16E50D4A00EBBA30 /* DailyWorkout.plist in Resources */,
-				3F55AA3F16E50D4A00EBBA30 /* DailyWorkoutHintDialogs.plist in Resources */,
+				CBA20E4D17DD825100387AD4 /* DailyWorkoutHintDialogs.plist in Resources */,
 				3F55AA4116E50D4A00EBBA30 /* daily_workout_tip-568h@2x.png in Resources */,
 				3F55AA4316E50D4A00EBBA30 /* daily_workout_tip.png in Resources */,
 				3F55AA4516E50D4A00EBBA30 /* daily_workout_tip@2x.png in Resources */,
@@ -5881,7 +5882,7 @@
 				3F55AA3616E50D4A00EBBA30 /* daily_workout.png in Resources */,
 				3F55AA3816E50D4A00EBBA30 /* daily_workout@2x.png in Resources */,
 				3F55AA3C16E50D4A00EBBA30 /* DailyWorkout.plist in Resources */,
-				3F55AA3E16E50D4A00EBBA30 /* DailyWorkoutHintDialogs.plist in Resources */,
+				CBA20E4C17DD825100387AD4 /* DailyWorkoutHintDialogs.plist in Resources */,
 				3F55AA4016E50D4A00EBBA30 /* daily_workout_tip-568h@2x.png in Resources */,
 				3F55AA4216E50D4A00EBBA30 /* daily_workout_tip.png in Resources */,
 				3F55AA4416E50D4A00EBBA30 /* daily_workout_tip@2x.png in Resources */,
@@ -6737,6 +6738,15 @@
 				CB4606AC173D4B8800955454 /* zh-Hans */,
 			);
 			name = "main_tip1@2x.png";
+			sourceTree = "<group>";
+		};
+		CBA20E4F17DD825100387AD4 /* DailyWorkoutHintDialogs.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CBA20E4E17DD825100387AD4 /* en */,
+				CBA20E5017DD825500387AD4 /* zh-Hans */,
+			);
+			name = DailyWorkoutHintDialogs.plist;
 			sourceTree = "<group>";
 		};
 		CBF626721768DD1000B29AA1 /* OneDayStoryboard_iPad.storyboard */ = {

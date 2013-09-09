@@ -43,4 +43,17 @@
 {
     return _tipImageView;
 }
+
+//- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view
+//{
+//    NSLog(@"begin");
+//}
+//- (void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale
+//{
+//    NSLog(@"end:%f", scale);
+//}
+//- (void)scrollViewDidZoom:(UIScrollView *)scrollView
+//{
+//    NSLog(@"did zoom:%f", scrollView.zoomScale);
+//}
 @end

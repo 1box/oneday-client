@@ -61,7 +61,7 @@
     }
 }
 
-- (void)reportKeyboardDidChangeFrame:(NSNotification *)notification
+- (void)reportKeyboardWillChangeFrame:(NSNotification *)notification
 {
     CGFloat duration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     CGRect keyboardFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
@@ -99,7 +99,7 @@
     [self updateInputHelperWords];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(reportKeyboardDidChangeFrame:)
+                                             selector:@selector(reportKeyboardWillChangeFrame:)
                                                  name:UIKeyboardWillChangeFrameNotification
                                                object:nil];
     

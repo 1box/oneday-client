@@ -21,7 +21,7 @@
 #define kQuickAddUserInfoDailyDoKey @"kQuickAddUserInfoDailyDoKey"
 
 
-@interface DailyDoActionHelper () <UIAlertViewDelegate, KMAlertViewDelegate>
+@interface DailyDoActionHelper () <UIAlertViewDelegate, KMAlertViewDelegate, KMAlertViewDataSource>
 @property (nonatomic) NSDictionary *moveToTomorrowUserInfo;
 @end
 
@@ -117,6 +117,7 @@ static DailyDoActionHelper *_sharedHelper = nil;
                                                         messages:@[NSLocalizedString(@"_quickEntryMessage", nil)]
                                                         delegate:self];
     quickAlert.userInfo = @{kQuickAddUserInfoDailyDoKey : dailyDo};
+    quickAlert.dataSource = self;
     [quickAlert show];
 }
 
@@ -171,6 +172,20 @@ static DailyDoActionHelper *_sharedHelper = nil;
         if (_delegate && [_delegate respondsToSelector:@selector(dailyDoActionHelper:doActionForType:)]) {
             [_delegate dailyDoActionHelper:self doActionForType:DailyDoActionTypeMoveToTomorrow];
         }
+    }
+}
+
+#pragma mark - KMAlertViewDataSource
+
+- (NSArray *)helperWordsInkmAlertView:(KMAlertView *)alertView
+{
+    NSDictionary *userInfo = alertView.userInfo;
+    DailyDoBase *dailyDo = [userInfo objectForKey:kQuickAddUserInfoDailyDoKey];
+    if (dailyDo) {
+        return [[DailyDoManager sharedManager] inputHelperWordsForDoName:dailyDo.addon.dailyDoName];
+    }
+    else {
+        return nil;
     }
 }
 

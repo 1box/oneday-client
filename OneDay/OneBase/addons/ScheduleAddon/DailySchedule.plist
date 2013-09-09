@@ -41,6 +41,16 @@
 		<integer>103</integer>
 		<key>QuickAddPropertyName</key>
 		<string>todos</string>
+		<key>InputHelperWords</key>
+		<array>
+			<string>(</string>
+			<string>)</string>
+			<string>.</string>
+			<string>小时</string>
+			<string>分</string>
+			<string>h</string>
+			<string>m</string>
+		</array>
 	</dict>
 </dict>
 </plist>

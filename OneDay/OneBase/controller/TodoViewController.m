@@ -8,6 +8,7 @@
 
 #import "TodoViewController.h"
 #import "TipViewController.h"
+#import "DarkNavigationBarButton.h"
 
 #import "DailyDoManager.h"
 #import "KMModelManager.h"
@@ -17,6 +18,8 @@
 #import "Smark.h"
 #import "HintHelper.h"
 #import "NSString+NSStringAdditions.h"
+
+#define HelperWordButtonTagPrefix 10000
 
 @interface TodoViewController () <UITextViewDelegate> {
     NSRange _selectRange;
@@ -70,10 +73,8 @@
     CGRect tFrame = _inputView.frame;
     tFrame.size.height = vFrame.size.height - keyboardFrame.size.height - SSHeight(_inputHelperBar);
     
-    _inputView.backgroundColor = [UIColor purpleColor];
-    
     CGRect barFrame = _inputHelperBar.frame;
-    barFrame.origin.y = SSMaxY(_inputView);
+    barFrame.origin.y = CGRectGetMaxY(tFrame);
     
     [UIView animateWithDuration:duration animations:^{
         _inputView.frame = tFrame;
@@ -82,23 +83,6 @@
 }
 
 #pragma mark - Viewliftcycle
-
-- (void)updateInputHelperWords
-{
-    NSArray *words = [[DailyDoManager sharedManager] inputHelperWordsForDoName:_dailyDo.addon.dailyDoName];
-    
-    CGRect tFrame = _inputHelperBar.frame;
-    if ([words count] > 0) {
-        tFrame.size.height = 44.f;
-    }
-    else {
-        tFrame.size.height = 0.f;
-    }
-    _inputHelperBar.frame = tFrame;
-    
-    [words enumerateObjectsUsingBlock:^(NSString *word, NSUInteger idx, BOOL *stop) {
-    }];
-}
 
 - (void)viewDidLoad
 {
@@ -172,7 +156,58 @@
     self.appendText = nil;
 }
 
+- (void)updateInputHelperWords
+{
+    NSArray *words = [[DailyDoManager sharedManager] inputHelperWordsForDoName:_dailyDo.addon.dailyDoName];
+    
+    CGRect tFrame = _inputHelperBar.frame;
+    
+    if ([words count] > 0) {
+        tFrame.size.height = 40.f;
+        _inputHelperBar.hidden = NO;
+        
+        NSMutableArray *mutItems = [NSMutableArray arrayWithCapacity:5];
+        [mutItems addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil]];
+        [words enumerateObjectsUsingBlock:^(NSString *word, NSUInteger idx, BOOL *stop) {
+            DarkNavigationBarButton *tButton = [DarkNavigationBarButton buttonWithType:UIButtonTypeCustom];
+            [tButton addTarget:self action:@selector(helperWordButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+            tButton.tag = HelperWordButtonTagPrefix + idx;
+            [tButton setTitle:word forState:UIControlStateNormal];
+            tButton.titleLabel.font = [UIFont boldSystemFontOfSize:12.f];
+            [tButton sizeToFit];
+            setFrameWithWidth(tButton, SSWidth(tButton) + 20.f);
+            
+            UIBarButtonItem *tItem = [[UIBarButtonItem alloc] initWithCustomView:tButton];
+            [mutItems addObject:tItem];
+        }];
+        
+        _inputHelperBar.items = [mutItems copy];
+    }
+    else {
+        tFrame.size.height = 0.f;
+        _inputHelperBar.hidden = YES;
+    }
+    
+    _inputHelperBar.frame = tFrame;
+}
+
 #pragma mark - Actions
+
+- (void)helperWordButtonClicked:(id)sender
+{
+    DarkNavigationBarButton *tButton = (DarkNavigationBarButton *)sender;
+    NSArray *words = [[DailyDoManager sharedManager] inputHelperWordsForDoName:_dailyDo.addon.dailyDoName];
+    
+    int idx = tButton.tag - HelperWordButtonTagPrefix;
+    if (idx < [words count]) {
+        NSString *word = [words objectAtIndex:idx];
+        
+        if ([self textView:_inputView shouldChangeTextInRange:_inputView.selectedRange replacementText:word]) {
+            _inputView.text = [_inputView.text stringByAppendingString:word];
+            [self textViewDidChange:_inputView];
+        }
+    }
+}
 
 - (IBAction)cancel:(id)sender
 {

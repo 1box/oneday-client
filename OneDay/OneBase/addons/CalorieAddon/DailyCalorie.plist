@@ -41,6 +41,13 @@
 		<integer>99</integer>
 		<key>QuickAddPropertyName</key>
 		<string>todos</string>
+		<key>InputHelperWords</key>
+		<array>
+			<string>大卡</string>
+			<string>千焦</string>
+			<string>kilocalorie</string>
+			<string>.</string>
+		</array>
 	</dict>
 </dict>
 </plist>

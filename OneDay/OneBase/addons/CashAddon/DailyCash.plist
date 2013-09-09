@@ -41,6 +41,11 @@
 		<integer>90</integer>
 		<key>QuickAddPropertyName</key>
 		<string>todos</string>
+		<key>InputHelperWords</key>
+		<array>
+			<string>元</string>
+			<string>dollar</string>
+		</array>
 	</dict>
 </dict>
 </plist>

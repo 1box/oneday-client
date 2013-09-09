@@ -86,6 +86,12 @@ static DailyDoManager *_sharedManager;
     return NSLocalizedString(tString, nil);
 }
 
+- (NSArray *)inputHelperWordsForDoName:(NSString *)doName
+{
+    NSArray *tArray = [[self configurationsForDoName:doName] objectForKey:kConfigurationInputHelperWords];
+    return tArray;
+}
+
 #pragma mark - DailyDos
 
 - (BOOL)saveDailyDoWithAddon:(AddonData *)addon updateDictionary:(NSDictionary *)aDictionary

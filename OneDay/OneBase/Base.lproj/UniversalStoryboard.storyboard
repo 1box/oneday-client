@@ -1762,7 +1762,7 @@
             <objects>
                 <viewController id="bwx-Gy-UqX" customClass="TodoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rw4-xW-rnO">
-                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zv2-kJ-F42" customClass="KMTextView">
@@ -1793,14 +1793,20 @@
                                     <segue destination="exL-kg-UPV" kind="push" identifier="todoPushToTipPage" id="fKJ-vH-Ras"/>
                                 </connections>
                             </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9W-A2-upc">
+                                <items/>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="F9W-A2-upc" firstAttribute="trailing" secondItem="Rw4-xW-rnO" secondAttribute="trailing" type="default" id="1fo-ry-UbL"/>
+                            <constraint firstItem="F9W-A2-upc" firstAttribute="bottom" secondItem="Rw4-xW-rnO" secondAttribute="bottom" type="default" id="Aj0-cj-cN2"/>
                             <constraint firstItem="Zv2-kJ-F42" firstAttribute="trailing" secondItem="Rw4-xW-rnO" secondAttribute="trailing" type="default" id="LM0-iL-QiP"/>
                             <constraint firstAttribute="trailing" secondItem="YPv-7D-eNT" secondAttribute="trailing" constant="8" id="Ngm-dk-RU4"/>
                             <constraint firstItem="YPv-7D-eNT" firstAttribute="top" secondItem="Rw4-xW-rnO" secondAttribute="top" constant="8" id="QPg-h6-vUL"/>
                             <constraint firstItem="Zv2-kJ-F42" firstAttribute="leading" secondItem="Rw4-xW-rnO" secondAttribute="leading" type="default" id="S6Q-kg-bfc"/>
                             <constraint firstItem="Zv2-kJ-F42" firstAttribute="top" secondItem="Rw4-xW-rnO" secondAttribute="top" type="default" id="SxH-9I-rOP"/>
+                            <constraint firstItem="F9W-A2-upc" firstAttribute="leading" secondItem="Rw4-xW-rnO" secondAttribute="leading" type="default" id="WSu-VM-gdj"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -1840,8 +1846,8 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="inputHelperBar" destination="F9W-A2-upc" id="mzd-vi-Szy"/>
                         <outlet property="inputView" destination="Zv2-kJ-F42" id="FIO-On-hDf"/>
                     </connections>
                 </viewController>
@@ -3742,7 +3748,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <objects>
                 <viewController id="exL-kg-UPV" customClass="TipViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZHr-fR-GUW">
-                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" restorationIdentifier="" image="bg_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="SRA-Yi-FjF"/>
@@ -4303,6 +4309,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <relationships>
                 <relationship kind="action" name="cancel:"/>
                 <relationship kind="action" name="save:"/>
+                <relationship kind="outlet" name="inputHelperBar" candidateClass="UIToolbar"/>
                 <relationship kind="outlet" name="inputView" candidateClass="KMTextView"/>
             </relationships>
         </class>

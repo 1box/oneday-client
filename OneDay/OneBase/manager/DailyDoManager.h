@@ -29,6 +29,7 @@
 #define kConfigurationShowQuickEntry @"ShowQuickEntry"
 #define kConfigurationActionType @"ActionType"
 #define kConfigurationQuickAddPropertyName @"QuickAddPropertyName"
+#define kConfigurationInputHelperWords @"InputHelperWords"
 
 
 #define DailyDoManagerLoggedDosLoadFinishedNotification @"DailyDoManagerLoggedDosLoadFinishedNotification"
@@ -73,6 +74,7 @@
 // configurations
 - (NSDictionary *)configurationsForDoName:(NSString *)doName;
 - (NSString *)sloganForDoName:(NSString *)doName;
+- (NSArray *)inputHelperWordsForDoName:(NSString *)doName;
 
 // dailydos
 - (BOOL)saveDailyDoWithAddon:(AddonData *)addon updateDictionary:(NSDictionary *)aDictionary;

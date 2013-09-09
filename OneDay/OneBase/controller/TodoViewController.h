@@ -15,6 +15,7 @@
 @interface TodoViewController : KMViewControllerBase
 
 @property (nonatomic) IBOutlet KMTextView *inputView;
+@property (nonatomic) IBOutlet UIToolbar *inputHelperBar;
 @property (nonatomic) DailyDoBase *dailyDo;
 
 - (IBAction)cancel:(id)sender;

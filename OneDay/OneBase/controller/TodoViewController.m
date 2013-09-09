@@ -68,14 +68,37 @@
     
     CGRect vFrame = self.view.frame;
     CGRect tFrame = _inputView.frame;
-    tFrame.size.height = vFrame.size.height - keyboardFrame.size.height;
+    tFrame.size.height = vFrame.size.height - keyboardFrame.size.height - SSHeight(_inputHelperBar);
+    
+    _inputView.backgroundColor = [UIColor purpleColor];
+    
+    CGRect barFrame = _inputHelperBar.frame;
+    barFrame.origin.y = SSMaxY(_inputView);
     
     [UIView animateWithDuration:duration animations:^{
         _inputView.frame = tFrame;
+        _inputHelperBar.frame = barFrame;
     }];
 }
 
 #pragma mark - Viewliftcycle
+
+- (void)updateInputHelperWords
+{
+    NSArray *words = [[DailyDoManager sharedManager] inputHelperWordsForDoName:_dailyDo.addon.dailyDoName];
+    
+    CGRect tFrame = _inputHelperBar.frame;
+    if ([words count] > 0) {
+        tFrame.size.height = 44.f;
+    }
+    else {
+        tFrame.size.height = 0.f;
+    }
+    _inputHelperBar.frame = tFrame;
+    
+    [words enumerateObjectsUsingBlock:^(NSString *word, NSUInteger idx, BOOL *stop) {
+    }];
+}
 
 - (void)viewDidLoad
 {
@@ -88,6 +111,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    [self updateInputHelperWords];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reportKeyboardDidChangeFrame:)

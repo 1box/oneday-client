@@ -189,6 +189,7 @@
                             <outletCollection property="gestureRecognizers" destination="bou-k0-gsY" appends="YES" id="0aM-KA-rcF"/>
                         </connections>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="guideView" destination="R1l-Oc-ZuK" id="TQr-uf-KY4"/>
                         <outlet property="pageControl" destination="Yxg-np-ZDY" id="62F-WF-C5z"/>
@@ -228,14 +229,14 @@
                         <viewControllerLayoutGuide type="bottom" id="j9m-DY-e8H"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="acL-zH-ZBf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="2t1-A4-ab5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="l7P-7b-mAO" customClass="KMTableView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddonsCellID" rowHeight="44" id="JyR-sU-kTg" customClass="AddonsCell">
@@ -296,6 +297,7 @@
                             <constraint firstItem="l7P-7b-mAO" firstAttribute="top" secondItem="acL-zH-ZBf" secondAttribute="top" id="w2A-cB-0kn"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="_addons" id="WNp-JV-uPn">
                         <barButtonItem key="leftBarButtonItem" title="dismiss" id="tuM-2T-EDR">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="6vM-dh-BR0" customClass="DarkNavigationBarButton">
@@ -387,6 +389,7 @@
                             <constraint firstAttribute="trailing" secondItem="wgz-ul-z2P" secondAttribute="trailing" constant="23" id="xRY-Mr-NaP"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <connections>
                         <outlet property="infoLabel" destination="4xa-5D-UQq" id="bdM-iK-9b7"/>
                         <outlet property="passwordSwitch" destination="wgz-ul-z2P" id="iHI-WN-Cwj"/>
@@ -421,14 +424,14 @@
                         <viewControllerLayoutGuide type="bottom" id="VYH-Cj-ZOt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wjY-ee-Klb">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="T51-Rc-UTT">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="iC7-Yj-gra" customClass="KMTableView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="UndoCellID" rowHeight="44" id="2Gs-nR-9tv" customClass="UndoCellView">
@@ -504,7 +507,7 @@
                                 </connections>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xdx-Od-hKP">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="460" width="320" height="44"/>
                                 <items>
                                     <barButtonItem id="XxR-Ha-DgO">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oUq-WG-6RZ" customClass="DarkNavigationBarButton">
@@ -558,6 +561,7 @@
                             <constraint firstItem="xdx-Od-hKP" firstAttribute="top" secondItem="iC7-Yj-gra" secondAttribute="bottom" id="sbl-GG-fzX"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="_undos" id="7hk-9D-kQZ">
                         <barButtonItem key="leftBarButtonItem" id="Ze5-B1-Ewc">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Y5c-oO-tl7" customClass="DarkNavigationBarButton">
@@ -609,11 +613,11 @@
                         <viewControllerLayoutGuide type="bottom" id="nRy-MN-nem"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ghy-kL-zc8">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="8R9-q0-1a2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="AbX-Ra-QdY" customClass="KMTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
@@ -680,6 +684,7 @@
                             <constraint firstItem="8R9-q0-1a2" firstAttribute="leading" secondItem="Ghy-kL-zc8" secondAttribute="leading" id="sUn-kF-iMJ"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="_summary" id="9bB-T6-hM0">
                         <barButtonItem key="leftBarButtonItem" id="1GE-7s-AVm">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="2fp-IJ-tMa" customClass="DarkNavigationBarButton">
@@ -716,14 +721,14 @@
                         <viewControllerLayoutGuide type="bottom" id="FbU-18-Xpu"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Nyx-6m-WaN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="homecover001.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fUq-eO-jMX">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             </imageView>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="HfL-xP-2wP">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <collectionViewLayout key="collectionViewLayout" id="BE8-m4-88b" customClass="KMReorderableCollectionViewSnakeLayout"/>
@@ -833,7 +838,7 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmJ-BM-2EA" customClass="RootVerticalToolbar">
-                                <rect key="frame" x="276" y="0.0" width="44" height="568"/>
+                                <rect key="frame" x="276" y="0.0" width="44" height="504"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" image="page_round_bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="pue-fm-Maj">
                                         <rect key="frame" x="12" y="20" width="20" height="20"/>
@@ -847,7 +852,7 @@
                                         <color key="shadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BPg-mp-2Ka" userLabel="smark button">
-                                        <rect key="frame" x="6" y="370" width="32" height="32"/>
+                                        <rect key="frame" x="6" y="306" width="32" height="32"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="root_icon_smark.png">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -861,7 +866,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dQ8-he-71s" userLabel="clear button">
-                                        <rect key="frame" x="6" y="412" width="32" height="32"/>
+                                        <rect key="frame" x="6" y="348" width="32" height="32"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="root_icon_clear.png">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -875,7 +880,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lhD-MV-FjS" userLabel="setting button">
-                                        <rect key="frame" x="6" y="454" width="32" height="32"/>
+                                        <rect key="frame" x="6" y="390" width="32" height="32"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="root_icon_set.png">
                                             <color key="titleColor" red="0.1647058874" green="0.49019610879999997" blue="0.86666673419999996" alpha="1" colorSpace="deviceRGB"/>
@@ -889,7 +894,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HHF-md-Qgn" userLabel="add button">
-                                        <rect key="frame" x="6" y="496" width="32" height="32"/>
+                                        <rect key="frame" x="6" y="432" width="32" height="32"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal" image="root_icon_add.png">
                                             <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -946,6 +951,7 @@
                             <outletCollection property="gestureRecognizers" destination="EcC-cw-gGH" appends="YES" id="vrd-0q-vpv"/>
                         </connections>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="aQ8-8X-bYa">
                         <barButtonItem key="leftBarButtonItem" id="Ecy-S7-nZQ">
                             <button key="customView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Jkv-wT-68k">
@@ -1020,17 +1026,17 @@
                         <viewControllerLayoutGuide type="bottom" id="WRe-lU-44P"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8BM-Ah-P5H">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQf-w9-oab" customClass="DailyDoView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="PH1-ZQ-gkq">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                     </imageView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="alq-7X-wct" customClass="KMTableView">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="separatorColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <prototypes>
@@ -1573,7 +1579,7 @@
                                         </connections>
                                     </tableView>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IPz-hI-gd4">
-                                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="460" width="320" height="44"/>
                                         <items>
                                             <barButtonItem style="plain" id="AyI-Tx-9g9">
                                                 <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4OH-tn-FYV" customClass="DarkNavigationBarButton">
@@ -1659,6 +1665,7 @@
                             <constraint firstItem="CQf-w9-oab" firstAttribute="top" secondItem="8BM-Ah-P5H" secondAttribute="top" id="iwq-bg-aOW"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems>
                         <barButtonItem title="more to tmr" style="plain" id="tYQ-Ow-VdS"/>
                         <barButtonItem style="plain" systemItem="flexibleSpace" id="H0l-j2-NUu"/>
@@ -1720,14 +1727,14 @@
                         <viewControllerLayoutGuide type="bottom" id="VAm-dX-1No"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="frc-2V-4tE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="imm-XX-Aiv">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="hkm-Sm-Gaj" customClass="KMTableView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="RootLevelCellID" id="IhF-3d-87o" customClass="TagViewListCell">
@@ -1800,7 +1807,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7U-su-Y5l">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="460" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Dda-Ca-dzl"/>
                                 </constraints>
@@ -1832,6 +1839,7 @@
                             <constraint firstItem="hkm-Sm-Gaj" firstAttribute="bottom" secondItem="frc-2V-4tE" secondAttribute="bottom" id="usf-nG-u84"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="_tags" id="JaX-v7-69t">
                         <barButtonItem key="leftBarButtonItem" title="back" id="hmh-6t-SSj">
@@ -1886,7 +1894,7 @@
                         <viewControllerLayoutGuide type="bottom" id="gPq-rN-B64"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Rw4-xW-rnO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zv2-kJ-F42" customClass="KMTextView">
@@ -1920,7 +1928,7 @@
                                 </connections>
                             </button>
                             <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F9W-A2-upc">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="460" width="320" height="44"/>
                                 <items/>
                             </toolbar>
                         </subviews>
@@ -1936,6 +1944,7 @@
                             <constraint firstItem="F9W-A2-upc" firstAttribute="leading" secondItem="Rw4-xW-rnO" secondAttribute="leading" id="WSu-VM-gdj"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="lrE-xK-fSm">
                         <barButtonItem key="leftBarButtonItem" title="back" id="m62-jd-vyw">
@@ -2006,7 +2015,7 @@
                         <viewControllerLayoutGuide type="bottom" id="fNH-Hz-KNv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZPu-3G-pjW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="0iS-cl-rj8">
@@ -2117,7 +2126,7 @@
                                 </connections>
                             </tableView>
                             <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="_autoAddToDailyDo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GFZ-kv-MM0">
-                                <rect key="frame" x="46" y="273" width="148" height="21"/>
+                                <rect key="frame" x="46" y="241" width="148" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="B6X-DS-t5H"/>
                                     <constraint firstAttribute="width" constant="148" id="k3k-rc-UcJ"/>
@@ -2127,13 +2136,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1nj-gI-Gxo">
-                                <rect key="frame" x="202" y="269" width="51" height="31"/>
+                                <rect key="frame" x="202" y="237" width="51" height="31"/>
                                 <connections>
                                     <action selector="autoAddToDailyDo:" destination="z78-g9-dpp" eventType="valueChanged" id="TS7-gL-u8W"/>
                                 </connections>
                             </switch>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55H-0a-bOe">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="460" width="320" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="3Rq-oW-Sw2"/>
                                 </constraints>
@@ -2192,6 +2201,7 @@
                             <constraint firstItem="oB7-YX-pqT" firstAttribute="trailing" secondItem="ZPu-3G-pjW" secondAttribute="trailing" id="x7D-iY-zPv"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="_alarmClock" id="Tqu-Vt-MLd">
                         <barButtonItem key="leftBarButtonItem" id="40h-Fn-wTK">
@@ -2265,11 +2275,11 @@
                         <viewControllerLayoutGuide type="bottom" id="iI0-WY-VSZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="974-cl-7wE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="b4x-G0-ziD">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="fiH-hF-0hz" customClass="KMTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="288"/>
@@ -2360,7 +2370,7 @@
                                 </connections>
                             </tableView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="jb2-FU-TDL">
-                                <rect key="frame" x="-80" y="352" width="480" height="216"/>
+                                <rect key="frame" x="-80" y="288" width="480" height="216"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="216" id="fgw-5Z-KqK"/>
                                 </constraints>
@@ -2403,6 +2413,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="jb2-FU-TDL" firstAttribute="centerX" secondItem="fiH-hF-0hz" secondAttribute="centerX" id="oY8-yj-vhb"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="_addAlarm" id="7QW-4q-pYn">
                         <barButtonItem key="leftBarButtonItem" id="kYN-8m-nDB">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RkJ-Mu-boS" customClass="DarkNavigationBarButton">
@@ -2464,7 +2475,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <viewControllerLayoutGuide type="bottom" id="M0L-zh-iUc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7w7-F9-iKf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="_alarmTextFieldPlaceHolder" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AzU-Id-QLu">
@@ -2486,6 +2497,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="AzU-Id-QLu" firstAttribute="top" secondItem="7w7-F9-iKf" secondAttribute="top" constant="80" id="SNF-iE-UAA"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="_editAlarmContent" id="Nlw-1M-6dI">
                         <barButtonItem key="leftBarButtonItem" id="jRw-7p-CQp">
@@ -2524,15 +2536,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <viewControllerLayoutGuide type="bottom" id="gdd-Gc-K5S"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4pb-6p-0VH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsMultipleSelection="YES" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="qXm-ae-X7G" customClass="KMTableView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SundayCellID" textLabel="953-oC-g4w" style="IBUITableViewCellStyleDefault" id="fsI-nt-dUu" customClass="AlarmRepeatTypeCellView">
-                                        <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fsI-nt-dUu" id="nMr-uY-Eq7">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -2549,7 +2561,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="MondayCellID" textLabel="1Ff-ov-atb" style="IBUITableViewCellStyleDefault" id="EH0-cl-O5v" customClass="AlarmRepeatTypeCellView">
-                                        <rect key="frame" x="0.0" y="163" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="EH0-cl-O5v" id="LzJ-nu-pFh">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -2566,7 +2578,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TuesdayCellID" textLabel="Pzj-w6-OuJ" style="IBUITableViewCellStyleDefault" id="q67-pU-dWm" customClass="AlarmRepeatTypeCellView">
-                                        <rect key="frame" x="0.0" y="207" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="143" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q67-pU-dWm" id="C9r-K0-Q06">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -2583,7 +2595,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="WednesdayCellID" textLabel="3WV-KI-IUe" style="IBUITableViewCellStyleDefault" id="IO8-gP-R9h" customClass="AlarmRepeatTypeCellView">
-                                        <rect key="frame" x="0.0" y="251" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="187" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IO8-gP-R9h" id="M5H-g8-D5P">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -2600,7 +2612,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ThursdayCellID" textLabel="iBf-js-TxW" style="IBUITableViewCellStyleDefault" id="Flk-AB-IJc" customClass="AlarmRepeatTypeCellView">
-                                        <rect key="frame" x="0.0" y="295" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="231" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Flk-AB-IJc" id="n8a-6p-si1">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -2617,7 +2629,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FridayCellID" textLabel="R4q-Si-x66" style="IBUITableViewCellStyleDefault" id="a8H-O4-GoF" customClass="AlarmRepeatTypeCellView">
-                                        <rect key="frame" x="0.0" y="339" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="275" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a8H-O4-GoF" id="EKf-qG-xWe">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -2634,7 +2646,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SaturdayCellID" textLabel="k0I-dN-haR" style="IBUITableViewCellStyleDefault" id="QkU-vB-kfk" customClass="AlarmRepeatTypeCellView">
-                                        <rect key="frame" x="0.0" y="383" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="319" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QkU-vB-kfk" id="qSJ-rn-VxA">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -2666,6 +2678,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="qXm-ae-X7G" firstAttribute="trailing" secondItem="4pb-6p-0VH" secondAttribute="trailing" id="t10-84-Z3P"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="_editAlarmRepeatType" id="BlB-bm-0MJ">
                         <barButtonItem key="leftBarButtonItem" id="Ube-pg-NI1">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5rC-12-7y9">
@@ -2702,14 +2715,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <viewControllerLayoutGuide type="bottom" id="dmO-ic-5YJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="1Nc-MW-XWq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="yGJ-qo-Y6y">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="A2a-pO-hty" customClass="KMTableView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="inputCellID" id="34b-qU-W0x" customClass="KMTableViewCell">
@@ -2779,6 +2792,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstAttribute="trailing" secondItem="K4s-Rp-qHp" secondAttribute="trailing" constant="30" id="vf5-VG-jGk"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="_newTag" id="hGz-Ua-Oan">
                         <barButtonItem key="leftBarButtonItem" title="back" id="RD3-4D-mIa">
@@ -2850,10 +2864,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <viewControllerLayoutGuide type="bottom" id="YOq-Vt-c9G"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="72w-Ic-oIf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="9U4-fc-UQY">
                         <barButtonItem key="leftBarButtonItem" title="back" id="vYj-nH-Ugr">
@@ -2889,14 +2904,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <viewControllerLayoutGuide type="bottom" id="KJg-3p-tVc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="EuG-88-dct">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="BHa-E9-cmz">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="jlM-cp-gHS" customClass="KMTableView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MoreViewRandomCartoonSwitchCellID" textLabel="xnt-U5-NO3" style="IBUITableViewCellStyleDefault" id="wTA-kP-W0a">
@@ -3124,7 +3139,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </tableView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oSr-DQ-nQB" userLabel="picker container">
-                                <rect key="frame" x="0.0" y="568" width="320" height="260"/>
+                                <rect key="frame" x="0.0" y="504" width="320" height="260"/>
                                 <subviews>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z5A-LQ-0cf">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -3203,10 +3218,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstAttribute="bottom" secondItem="oSr-DQ-nQB" secondAttribute="bottom" constant="-260" id="qLS-vS-664"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="_more" id="2iF-aO-0CV">
                         <barButtonItem key="leftBarButtonItem" title="dismiss" id="0qA-c3-BO8">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="D7d-wh-UfZ" customClass="DarkNavigationBarButton">
-                                <rect key="frame" x="5" y="7" width="40" height="30"/>
+                                <rect key="frame" x="16" y="7" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="nav_dismiss.png">
@@ -3223,7 +3239,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="yPs-1f-G5e">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4fJ-6P-XPL" customClass="DarkNavigationBarButton">
-                                <rect key="frame" x="245" y="7" width="70" height="30"/>
+                                <rect key="frame" x="234" y="7" width="70" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <state key="normal" title="_moreFeedback">
@@ -3299,7 +3315,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <objects>
                 <collectionViewController autoresizesArchivedViewToFullSize="NO" id="PUY-hM-M8h" customClass="HomeCoverViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="9RJ-SR-Q0M">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="I2J-o1-Nzi">
@@ -3310,7 +3326,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HomeCoverCellID" id="9Tq-Xn-Oj7" customClass="HomeCoverCellView">
-                                <rect key="frame" x="20" y="84" width="128" height="196"/>
+                                <rect key="frame" x="20" y="20" width="128" height="196"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="196"/>
@@ -3338,10 +3354,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <outlet property="delegate" destination="PUY-hM-M8h" id="0Qj-C9-QoN"/>
                         </connections>
                     </collectionView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="_homeCover" id="TkH-JC-qGr">
                         <barButtonItem key="leftBarButtonItem" id="1fu-2I-AMN">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RZV-sW-Obd" customClass="DarkNavigationBarButton">
-                                <rect key="frame" x="5" y="7" width="40" height="30"/>
+                                <rect key="frame" x="16" y="7" width="40" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="nav_dismiss.png">
@@ -3394,7 +3411,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <viewControllerLayoutGuide type="bottom" id="DAm-6P-vtQ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="UyG-WC-1PB">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uye-Y1-gN4" customClass="KMTextView">
@@ -3417,10 +3434,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="Uye-Y1-gN4" firstAttribute="trailing" secondItem="UyG-WC-1PB" secondAttribute="trailing" id="HiS-or-g2I"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="fnS-UH-kQv">
                         <barButtonItem key="leftBarButtonItem" title="back" id="X9M-zN-MdL">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ig3-nL-mKN">
-                                <rect key="frame" x="5" y="0.0" width="30" height="44"/>
+                                <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="nav_back.png">
@@ -3437,7 +3455,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="done" id="5Vo-Ep-8xu">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fq3-LX-nez" customClass="NavigationBarButton">
-                                <rect key="frame" x="271" y="7" width="44" height="30"/>
+                                <rect key="frame" x="260" y="7" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <state key="normal" title="_done">
@@ -3470,14 +3488,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <viewControllerLayoutGuide type="bottom" id="QUf-hT-246"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uyF-Wt-hrE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vus-GM-OHY">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c02-o5-ffZ" customClass="MADayView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Srd-uP-EPX" id="49i-56-Bvn"/>
@@ -3485,7 +3503,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xoV-0b-dPg" userLabel="picker container">
-                                <rect key="frame" x="0.0" y="568" width="320" height="260"/>
+                                <rect key="frame" x="0.0" y="504" width="320" height="260"/>
                                 <subviews>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CA8-fI-iW1">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -3562,10 +3580,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="c02-o5-ffZ" firstAttribute="bottom" secondItem="uyF-Wt-hrE" secondAttribute="bottom" id="yFc-ss-5Mt"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="2VT-Za-1Xb">
                         <barButtonItem key="leftBarButtonItem" title="back" id="xBg-SH-t35">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FFi-Qm-U6X">
-                                <rect key="frame" x="5" y="0.0" width="30" height="44"/>
+                                <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="nav_back.png">
@@ -3598,14 +3617,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             <objects>
                 <tableViewController title="Contact" id="2mp-N6-a04" customClass="ContactUsViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="w24-GM-AgA" customClass="KMTableView">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
                             <tableViewSection id="ogd-fU-Sb4">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Wm2-k8-ga5" style="IBUITableViewCellStyleDefault" id="YZx-I0-INc" customClass="KMTableViewCell">
-                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="35" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YZx-I0-INc" id="STw-2G-Tka">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -3627,7 +3646,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <tableViewSection id="8om-k1-Omm">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="h4f-DJ-dar" style="IBUITableViewCellStyleDefault" id="Pfo-bI-7Nn" customClass="KMTableViewCell">
-                                        <rect key="frame" x="0.0" y="163" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pfo-bI-7Nn" id="axO-30-xet">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -3649,7 +3668,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <tableViewSection id="DDn-jD-eSS">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="lqn-MP-fe0" style="IBUITableViewCellStyleDefault" id="Umv-1z-jmJ" customClass="KMTableViewCell">
-                                        <rect key="frame" x="0.0" y="227" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="163" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Umv-1z-jmJ" id="yVR-Ol-0vJ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -3674,11 +3693,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <outlet property="delegate" destination="2mp-N6-a04" id="wwO-0K-OTz"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="_contactUs" id="cLa-wW-Dvp">
                         <barButtonItem key="leftBarButtonItem" title="back" id="0WI-Vj-lvy">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="b1R-pc-LJy">
-                                <rect key="frame" x="5" y="0.0" width="30" height="44"/>
+                                <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="dark_nav_back.png">
@@ -3713,15 +3733,15 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <viewControllerLayoutGuide type="bottom" id="mjZ-gq-gGL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Unk-lq-py1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="IBx-BB-nkt" customClass="KMTableView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PasswordAddonCellID" id="SjC-8j-qrZ" customClass="PasswordAddonCell">
-                                        <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="55" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SjC-8j-qrZ" id="7Ao-QN-BQy">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -3759,7 +3779,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YCM-2X-UOY">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="460" width="320" height="44"/>
                                 <items>
                                     <barButtonItem title="close all" id="SEN-fm-Qsr">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WF7-fO-LKx" customClass="DarkNavigationBarButton">
@@ -3810,10 +3830,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="YCM-2X-UOY" firstAttribute="top" secondItem="IBx-BB-nkt" secondAttribute="bottom" id="shK-GO-HAd"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="_password" id="0Wc-Ym-w5w">
                         <barButtonItem key="leftBarButtonItem" title="back" id="Gnd-g8-CPg">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8zc-u3-iDL">
-                                <rect key="frame" x="5" y="0.0" width="30" height="44"/>
+                                <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="dark_nav_back.png">
@@ -3846,11 +3867,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <viewControllerLayoutGuide type="bottom" id="5dm-kv-xH5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ARN-uG-aYc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="UnZ-S8-rUN">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -3859,7 +3880,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZV-Nj-UrP">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="460" width="320" height="44"/>
                                 <items>
                                     <barButtonItem style="plain" id="829-AS-88y">
                                         <textField key="customView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="CKh-1P-dbM">
@@ -3904,10 +3925,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="FZV-Nj-UrP" firstAttribute="leading" secondItem="ARN-uG-aYc" secondAttribute="leading" id="rSO-ij-1kZ"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="_feedback" id="F5H-Hg-cWy">
                         <barButtonItem key="leftBarButtonItem" title="back" id="3cQ-Rt-dP1">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="scO-cu-dfi">
-                                <rect key="frame" x="5" y="0.0" width="30" height="44"/>
+                                <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="dark_nav_back.png">
@@ -3942,14 +3964,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <viewControllerLayoutGuide type="bottom" id="M8x-HW-A7d"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ZHr-fR-GUW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" restorationIdentifier="" image="bg_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="SRA-Yi-FjF">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                             </imageView>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" maximumZoomScale="2" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="aIR-cX-Oh5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Bro-p9-nQz">
                                     <size key="itemSize" width="124" height="176"/>
@@ -4007,7 +4029,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </collectionView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="uRG-WG-6tW">
-                                <rect key="frame" x="141" y="511" width="39" height="37"/>
+                                <rect key="frame" x="141" y="447" width="39" height="37"/>
                                 <connections>
                                     <action selector="pageControlClicked:" destination="exL-kg-UPV" eventType="valueChanged" id="AhZ-Ay-aoc"/>
                                 </connections>
@@ -4027,11 +4049,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             <constraint firstItem="SRA-Yi-FjF" firstAttribute="centerX" secondItem="uRG-WG-6tW" secondAttribute="centerX" id="pGS-cc-hdI"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="_tips" id="xb8-hh-Gp2">
                         <barButtonItem key="leftBarButtonItem" title="back" id="chB-UC-Tr6">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nil-8R-4o1">
-                                <rect key="frame" x="5" y="0.0" width="30" height="44"/>
+                                <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" image="dark_nav_back.png">
@@ -4060,70 +4083,26 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     <resources>
         <image name="add_tag.png" width="32" height="32"/>
         <image name="bg_blue.png" width="320" height="480"/>
-        <image name="bg_blue.png" width="320" height="480"/>
-        <image name="bg_blue.png" width="320" height="480"/>
-        <image name="bg_blue.png" width="320" height="480"/>
-        <image name="bg_blue.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
         <image name="bg_white.png" width="320" height="480"/>
         <image name="cell_normal_bg.png" width="64" height="64"/>
         <image name="cell_quick_icon.png" width="21" height="21"/>
         <image name="cell_remove_icon.png" width="21" height="21"/>
         <image name="checkbox-n.png" width="33" height="33"/>
-        <image name="checkbox-n.png" width="33" height="33"/>
-        <image name="checkbox-s.png" width="33" height="33"/>
-        <image name="checkbox-s.png" width="33" height="33"/>
-        <image name="checkbox-s.png" width="33" height="33"/>
         <image name="checkbox-s.png" width="33" height="33"/>
         <image name="checkbox_logged.png" width="33" height="33"/>
-        <image name="checkbox_logged.png" width="33" height="33"/>
-        <image name="checkbox_overtime_n.png" width="33" height="33"/>
         <image name="checkbox_overtime_n.png" width="33" height="33"/>
         <image name="checkboxdone-n.png" width="33" height="33"/>
-        <image name="checkboxdone-n.png" width="33" height="33"/>
-        <image name="checkboxdone-s.png" width="33" height="33"/>
         <image name="checkboxdone-s.png" width="33" height="33"/>
         <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back_press.png" width="30" height="30"/>
-        <image name="dark_nav_back_press.png" width="30" height="30"/>
-        <image name="dark_nav_back_press.png" width="30" height="30"/>
         <image name="dark_nav_back_press.png" width="30" height="30"/>
         <image name="guide_background.png" width="16" height="16"/>
         <image name="homecover001.jpg" width="320" height="568"/>
         <image name="homecover_check.png" width="32" height="32"/>
         <image name="list_cell_tag.png" width="33" height="33"/>
-        <image name="list_cell_tag.png" width="33" height="33"/>
-        <image name="list_cell_tag.png" width="33" height="33"/>
         <image name="list_icon_timeline.png" width="16" height="16"/>
         <image name="menu_white.png" width="16" height="16"/>
         <image name="nav_back.png" width="30" height="30"/>
-        <image name="nav_back.png" width="30" height="30"/>
-        <image name="nav_back.png" width="30" height="30"/>
-        <image name="nav_back.png" width="30" height="30"/>
-        <image name="nav_back.png" width="30" height="30"/>
-        <image name="nav_back.png" width="30" height="30"/>
         <image name="nav_back_press.png" width="30" height="30"/>
-        <image name="nav_back_press.png" width="30" height="30"/>
-        <image name="nav_back_press.png" width="30" height="30"/>
-        <image name="nav_back_press.png" width="30" height="30"/>
-        <image name="nav_back_press.png" width="30" height="30"/>
-        <image name="nav_back_press.png" width="30" height="30"/>
-        <image name="nav_dismiss.png" width="16" height="16"/>
-        <image name="nav_dismiss.png" width="16" height="16"/>
-        <image name="nav_dismiss.png" width="16" height="16"/>
-        <image name="nav_dismiss.png" width="16" height="16"/>
-        <image name="nav_dismiss.png" width="16" height="16"/>
-        <image name="nav_dismiss.png" width="16" height="16"/>
         <image name="nav_dismiss.png" width="16" height="16"/>
         <image name="nav_logo.png" width="63" height="26"/>
         <image name="page_round_bg.png" width="20" height="20"/>
@@ -4147,7 +4126,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Q7S-oa-MDi"/>
         <segue reference="fKJ-vH-Ras"/>
+        <segue reference="Q7S-oa-MDi"/>
     </inferredMetricsTieBreakers>
 </document>

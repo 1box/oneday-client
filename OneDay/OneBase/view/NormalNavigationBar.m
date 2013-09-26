@@ -15,6 +15,7 @@
     UIImage *navImage = [UIImage imageNamed:@"light_nav_bg.png"];
     navImage = [navImage stretchableImageWithLeftCapWidth:navImage.size.width/2 topCapHeight:navImage.size.height/2];
     [self setBackgroundImage:navImage forBarMetrics:UIBarMetricsDefault];
+    self.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor];
 }
 
 @end

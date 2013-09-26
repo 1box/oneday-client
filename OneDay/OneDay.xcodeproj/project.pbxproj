@@ -2702,8 +2702,8 @@
 		CB9D47E817A418780074AD2C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/OneDayStoryboard_iPad.strings"; sourceTree = "<group>"; };
 		CBA126CB177EC465008DBBFF /* CurrentAddonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CurrentAddonViewController.h; sourceTree = "<group>"; };
 		CBA126CC177EC465008DBBFF /* CurrentAddonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrentAddonViewController.m; sourceTree = "<group>"; };
-		CBA20E4E17DD825100387AD4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file; name = en; path = en.lproj/DailyWorkoutHintDialogs.plist; sourceTree = "<group>"; };
-		CBA20E5017DD825500387AD4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file; name = "zh-Hans"; path = "zh-Hans.lproj/DailyWorkoutHintDialogs.plist"; sourceTree = "<group>"; };
+		CBA20E4E17DD825100387AD4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/DailyWorkoutHintDialogs.plist; sourceTree = "<group>"; };
+		CBA20E5017DD825500387AD4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "zh-Hans"; path = "zh-Hans.lproj/DailyWorkoutHintDialogs.plist"; sourceTree = "<group>"; };
 		CBA5E925174941200023C456 /* libUMFeedback.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUMFeedback.a; path = UMFeedback_iOS/libUMFeedback.a; sourceTree = "<group>"; };
 		CBA5E926174941200023C456 /* umFeedback.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = umFeedback.bundle; path = UMFeedback_iOS/umFeedback.bundle; sourceTree = "<group>"; };
 		CBA5E927174941200023C456 /* UMFeedback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UMFeedback.h; path = UMFeedback_iOS/UMFeedback.h; sourceTree = "<group>"; };
@@ -4753,7 +4753,7 @@
 		CBFF9EC2163832E80066784B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Kimi Yu";
 			};
 			buildConfigurationList = CBFF9EC5163832E80066784B /* Build configuration list for PBXProject "OneDay" */;
@@ -6828,6 +6828,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../Common/track/\"/**";
+				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 			};
@@ -6872,8 +6873,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "E03395A0-BDCF-4743-9541-B3C581D0B4E2";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E03395A0-BDCF-4743-9541-B3C581D0B4E2";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -6892,8 +6893,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "356DD1A2-DFFA-4B25-BD28-DB0518AC619A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "356DD1A2-DFFA-4B25-BD28-DB0518AC619A";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

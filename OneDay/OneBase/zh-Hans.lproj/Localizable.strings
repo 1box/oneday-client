@@ -159,10 +159,10 @@
 "CalorieSlogan"            ="跟他一起努力减肥吧";
 "CalorieGainTodayText"     ="今天共摄取了%0.3f大卡";
 "CalorieLoseTodayText"     ="今天共消耗了%0.3f大卡";
-"CalorieEqualTodayText"    ="今天摄取和消耗的卡路里刚好平衡";
+"CalorieEqualTodayText"    ="今天摄取和消耗刚好平衡";
 "CalorieGainCompleteText"  ="共摄取了%0.3f大卡";
 "CalorieLoseCompleteText"  ="共消耗了%0.3f大卡";
-"CalorieEqualCompleteText" ="摄取和消耗的卡路里刚好平衡";
+"CalorieEqualCompleteText" ="摄取和消耗卡路里刚好平衡";
 "CalorieNoText"            ="这一天没有减肥记录";
 "CaloriePlaceHolder"       ="◉ 输入示例一：\
 ◉ 输入 \"吃了一盒八喜冰激凌增加了127大卡\"，将自动把这条记录的热量记为 摄入127大卡\n\

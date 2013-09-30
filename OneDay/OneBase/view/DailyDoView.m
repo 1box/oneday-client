@@ -407,7 +407,10 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    NSInteger ret = 3;
+    NSInteger ret = 2;
+    if (_tomorrowSectionIndex == 1) {
+        ret ++;
+    }
     return ret;
 }
 
@@ -553,38 +556,19 @@
     [_listView updateBackgroundViewForCell:cell atIndexPath:indexPath backgroundViewType:KMTableViewCellBackgroundViewTypeNormal];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 20.f;
-}
-
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     NSString *title = @"";
-    if (section == _loggedSectionIndex) {
+    if (section == _todaySectionIndex) {
+        title = NSLocalizedString(@"TodayDo", nil);
+    }
+    else if (section == _loggedSectionIndex) {
         title = NSLocalizedString(@"Logged", nil);
     }
     else if (section == _tomorrowSectionIndex && [_tomorrowDo.todos count] > 0) {
         title = NSLocalizedString(@"TomorrowDo", nil);
     }
-    
-    if (KMEmptyString(title)) {
-        return nil;
-    }
-    else {
-        UIView *ret = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 100, 44)];
-        
-        UILabel *tLabel = [[UILabel alloc] init];
-        tLabel.backgroundColor = [UIColor clearColor];
-        tLabel.text = title;
-        tLabel.font = [UIFont boldSystemFontOfSize:16.f];
-        tLabel.textColor = [UIColor whiteColor];
-        [tLabel sizeToFit];
-        setFrameWithX(tLabel, 10);
-        [ret addSubview:tLabel];
-        
-        return ret;
-    }
+    return title;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath

@@ -15,6 +15,7 @@
 "Message"            ="Message";
 "_cancel"            ="Cancel";
 "_confirm"           ="OK";
+"TodayDo"            ="Today";
 "Logged"             ="Logged";
 "TomorrowDo"         ="Tomorrow";
 "tags"               ="Tags";

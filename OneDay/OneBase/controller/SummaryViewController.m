@@ -177,7 +177,7 @@
             case SummaryViewTypeMonth:
             {
                 MonthlyDo *summaryDo = [_summaryDos objectAtIndex:indexPath.row];
-                cell.dateLabel.text = [[YearToDayFormatter() monthSymbols] objectAtIndex:summaryDo.currentMonth.month];
+                cell.dateLabel.text = [[YearToDayFormatter() shortMonthSymbols] objectAtIndex:summaryDo.currentMonth.month];
                 cell.summaryLabel.text = [NSString stringWithFormat:NSLocalizedString(@"CashMonthSummaryText", nil), summaryDo.summary];
             }
                 break;

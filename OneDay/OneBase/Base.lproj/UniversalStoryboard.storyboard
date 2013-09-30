@@ -591,19 +591,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKl-vs-Kpi">
-                                                    <rect key="frame" x="30" y="12" width="44" height="21"/>
+                                                    <rect key="frame" x="30" y="12" width="27" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="7vF-2o-elx"/>
-                                                        <constraint firstAttribute="width" constant="44" id="Dji-8L-ra8"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="summary" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Pg-nW-1Un">
-                                                    <rect key="frame" x="91" y="12" width="199" height="21"/>
+                                                    <rect key="frame" x="91" y="12" width="180" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="199" id="g6O-fu-7br"/>
+                                                        <constraint firstAttribute="width" constant="180" id="g6O-fu-7br"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1102,23 +1101,23 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="property name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCp-ll-Szg">
-                                                            <rect key="frame" x="43" y="9.5" width="243" height="80"/>
+                                                            <rect key="frame" x="43" y="10" width="243" height="80"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
                                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="n1g-Fy-ru2" customClass="KMTableView">
-                                                            <rect key="frame" x="43" y="9.5" width="255" height="80"/>
+                                                            <rect key="frame" x="43" y="10" width="215" height="80"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="255" id="nlA-8h-Ee8"/>
+                                                                <constraint firstAttribute="width" constant="215" id="nlA-8h-Ee8"/>
                                                             </constraints>
                                                             <prototypes>
                                                                 <tableViewCell contentMode="scaleToFill" restorationIdentifier="TodoPropertyListCellID" selectionStyle="none" indentationWidth="10" reuseIdentifier="TodoPropertyListCellID" rowHeight="22" id="dgh-Iq-DKl" customClass="DailyDoTodoCellListCell">
-                                                                    <rect key="frame" x="0.0" y="22" width="255" height="22"/>
+                                                                    <rect key="frame" x="0.0" y="22" width="215" height="22"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dgh-Iq-DKl" id="Tgp-9a-NZs">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="255" height="21"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="215" height="21"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <subviews>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zdh-Xk-QX9">
@@ -1140,10 +1139,10 @@
                                                                                     <action selector="checkbox:" destination="CQf-w9-oab" eventType="touchUpInside" id="d3C-Ps-VVe"/>
                                                                                 </connections>
                                                                             </button>
-                                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="195" translatesAutoresizingMaskIntoConstraints="NO" id="CwJ-Vh-LUm">
-                                                                                <rect key="frame" x="34" y="0.0" width="195" height="21"/>
+                                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="180" translatesAutoresizingMaskIntoConstraints="NO" id="CwJ-Vh-LUm">
+                                                                                <rect key="frame" x="34" y="0.0" width="180" height="21"/>
                                                                                 <constraints>
-                                                                                    <constraint firstAttribute="width" constant="195" id="2ea-Zt-Zhc"/>
+                                                                                    <constraint firstAttribute="width" constant="180" id="2ea-Zt-Zhc"/>
                                                                                 </constraints>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1957,7 +1956,7 @@
                                     <constraint firstAttribute="height" constant="548" id="R6f-Ly-Kw5"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oB7-YX-pqT" customClass="KMTableView">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="93" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oB7-YX-pqT" customClass="KMTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="461"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -3936,70 +3935,26 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     <resources>
         <image name="add_tag.png" width="32" height="32"/>
         <image name="bg_blue.png" width="320" height="480"/>
-        <image name="bg_blue.png" width="320" height="480"/>
-        <image name="bg_blue.png" width="320" height="480"/>
-        <image name="bg_blue.png" width="320" height="480"/>
-        <image name="bg_blue.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
         <image name="bg_white.png" width="320" height="480"/>
         <image name="cell_normal_bg.png" width="64" height="64"/>
         <image name="cell_quick_icon.png" width="21" height="21"/>
         <image name="cell_remove_icon.png" width="21" height="21"/>
         <image name="checkbox-n.png" width="33" height="33"/>
-        <image name="checkbox-n.png" width="33" height="33"/>
-        <image name="checkbox-s.png" width="33" height="33"/>
-        <image name="checkbox-s.png" width="33" height="33"/>
-        <image name="checkbox-s.png" width="33" height="33"/>
         <image name="checkbox-s.png" width="33" height="33"/>
         <image name="checkbox_logged.png" width="33" height="33"/>
-        <image name="checkbox_logged.png" width="33" height="33"/>
-        <image name="checkbox_overtime_n.png" width="33" height="33"/>
         <image name="checkbox_overtime_n.png" width="33" height="33"/>
         <image name="checkboxdone-n.png" width="33" height="33"/>
-        <image name="checkboxdone-n.png" width="33" height="33"/>
-        <image name="checkboxdone-s.png" width="33" height="33"/>
         <image name="checkboxdone-s.png" width="33" height="33"/>
         <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back_press.png" width="30" height="30"/>
-        <image name="dark_nav_back_press.png" width="30" height="30"/>
-        <image name="dark_nav_back_press.png" width="30" height="30"/>
         <image name="dark_nav_back_press.png" width="30" height="30"/>
         <image name="guide_background.png" width="16" height="16"/>
         <image name="homecover001.jpg" width="320" height="568"/>
         <image name="homecover_check.png" width="32" height="32"/>
         <image name="list_cell_tag.png" width="33" height="33"/>
-        <image name="list_cell_tag.png" width="33" height="33"/>
-        <image name="list_cell_tag.png" width="33" height="33"/>
         <image name="list_icon_timeline.png" width="16" height="16"/>
         <image name="menu_white.png" width="16" height="16"/>
         <image name="nav_back.png" width="30" height="30"/>
-        <image name="nav_back.png" width="30" height="30"/>
-        <image name="nav_back.png" width="30" height="30"/>
-        <image name="nav_back.png" width="30" height="30"/>
-        <image name="nav_back.png" width="30" height="30"/>
-        <image name="nav_back.png" width="30" height="30"/>
         <image name="nav_back_press.png" width="30" height="30"/>
-        <image name="nav_back_press.png" width="30" height="30"/>
-        <image name="nav_back_press.png" width="30" height="30"/>
-        <image name="nav_back_press.png" width="30" height="30"/>
-        <image name="nav_back_press.png" width="30" height="30"/>
-        <image name="nav_back_press.png" width="30" height="30"/>
-        <image name="nav_dismiss.png" width="16" height="16"/>
-        <image name="nav_dismiss.png" width="16" height="16"/>
-        <image name="nav_dismiss.png" width="16" height="16"/>
-        <image name="nav_dismiss.png" width="16" height="16"/>
-        <image name="nav_dismiss.png" width="16" height="16"/>
-        <image name="nav_dismiss.png" width="16" height="16"/>
         <image name="nav_dismiss.png" width="16" height="16"/>
         <image name="nav_logo.png" width="63" height="26"/>
         <image name="page_round_bg.png" width="20" height="20"/>
@@ -4023,7 +3978,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="kU8-df-8Bf"/>
         <segue reference="1vB-P8-pdP"/>
+        <segue reference="Q7S-oa-MDi"/>
     </inferredMetricsTieBreakers>
 </document>

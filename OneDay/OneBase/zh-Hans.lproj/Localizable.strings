@@ -15,6 +15,7 @@
 "Message"            ="发送短信";
 "_cancel"            ="取 消";
 "_confirm"           ="确 定";
+"TodayDo"            ="今天";
 "Logged"             ="旧的记录";
 "TomorrowDo"         ="移至明天";
 "tags"               ="标签";

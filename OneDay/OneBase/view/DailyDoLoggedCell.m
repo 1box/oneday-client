@@ -51,11 +51,11 @@
     }
     UIImageView *markView = [self renderCornerMark:color scaleType:CornerMarkScaleTypeSmall isFavorite:NO];
     
-    CGFloat topMargin = 0.f;
-    if (self.locationType == KMTableViewCellLocationTypeAlone || self.locationType == KMTableViewCellLocationTypeTop) {
-        topMargin = 1.f;
-    }
-    setFrameWithOrigin(markView, SSWidth(self) - SSWidth(markView) - 11, topMargin);
+//    CGFloat topMargin = 0.f;
+//    if (self.locationType == KMTableViewCellLocationTypeAlone || self.locationType == KMTableViewCellLocationTypeTop) {
+//        topMargin = 1.f;
+//    }
+    setFrameWithOrigin(markView, SSWidth(self) - SSWidth(markView), 0.f);
 }
 
 - (void)setLoggedDo:(DailyDoBase *)loggedDo

@@ -34,6 +34,7 @@ static inline CGFloat heightOfContent (NSString *contentStr, CGFloat fixWidth, C
 
 @interface UILabel (UILabelAdditions)
 
+// only for not autolayout
 - (void)heightThatFitsWidth:(CGFloat)fitWidth;
 
 @end

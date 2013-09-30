@@ -28,6 +28,7 @@
 + (CGFloat)heightOfCellForToDo:(TodoData *)todo
 {
     CGFloat ret = heightOfContent(todo.content, ContentLabelWidth, 14.f);
+    ret = MAX(ret, 22.f);
     return ret;
 }
 
@@ -39,6 +40,7 @@
         _checkbox.selected = [_todo.check boolValue];
         _enumLabel.text = [NSString stringWithFormat:@"%d. ", [_todo.index intValue] + 1];
         _contentLabel.text = _todo.content;
+        _contentLabel.backgroundColor = [UIColor purpleColor];
     }
 }
 

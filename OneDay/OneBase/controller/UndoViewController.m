@@ -261,7 +261,6 @@
     else {
         UndoCellView *cell = [tableView dequeueReusableCellWithIdentifier:undoCellID];
         cell.todo = [groupedData.dataList objectAtIndex:indexPath.row];
-        [cell refreshUI];
         return cell;
     }
 }

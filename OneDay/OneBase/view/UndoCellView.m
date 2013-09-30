@@ -11,7 +11,7 @@
 #import "KMModelManager.h"
 #import "UILabel+UILabelAdditions.h"
 
-#define TextWidth (300 - 35 - 10)
+#define TextWidth 245
 
 @implementation UndoCellView
 
@@ -28,14 +28,6 @@
     if (_todo) {
         _checkbox.enabled = ![todo.check boolValue];
         _contentLabel.text = [todo pureContent];
-    }
-}
-
-- (void)refreshUI
-{
-    [super refreshUI];
-    if (_todo) {
-        [_contentLabel heightThatFitsWidth:TextWidth];
     }
 }
 

@@ -74,6 +74,10 @@
     [[UIToolbar appearance] setBackgroundImage:[UIImage imageNamed:@"toolbar_bg.png"] forToolbarPosition:UIToolbarPositionBottom barMetrics:UIBarMetricsDefault];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
     
+    if ([[KMCommon versionName] floatValue] < 7.f) {
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:NO];
+    }
+    
     UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     [self handleLocalNotification:localNotification];
     

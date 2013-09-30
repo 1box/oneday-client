@@ -122,7 +122,6 @@
     _tomorrowSectionIndex = [_tomorrowDo.todos count] > 0 ? 1 : -1;
     _loggedSectionIndex = _tomorrowSectionIndex == 1 ? 2 : 1;
     
-    
     UIImage *selectBackgroundImage = [UIImage imageNamed:@"light_nav_btn_bg_press.png"];
     [_unfoldButton setBackgroundImage:[selectBackgroundImage stretchableImageWithLeftCapWidth:selectBackgroundImage.size.width/2 topCapHeight:selectBackgroundImage.size.height/2] forState:UIControlStateSelected];
     _unfoldButton.selected = _viewHelper.allUnfold;
@@ -309,7 +308,7 @@
     BOOL toChecked = !checkBox.selected;
     checkBox.selected = toChecked;
     
-    UIView *tCell = [KMCommon version] >= 7.0 ? checkBox.superview.superview.superview : checkBox.superview.superview;
+    UIView *tCell = [[KMCommon OSVersion] floatValue] >= 7.0 ? checkBox.superview.superview.superview : checkBox.superview.superview;
     if ([tCell isKindOfClass:[DailyDoTodoCellListCell class]]) {
         TodoData *todo = ((DailyDoTodoCellListCell*)tCell).todo;
         todo.check = [NSNumber numberWithBool:toChecked];

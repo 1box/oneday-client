@@ -1213,7 +1213,7 @@
                                                                                     <action selector="checkbox:" destination="CQf-w9-oab" eventType="touchUpInside" id="d3C-Ps-VVe"/>
                                                                                 </connections>
                                                                             </button>
-                                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="195" translatesAutoresizingMaskIntoConstraints="NO" id="CwJ-Vh-LUm">
+                                                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="content" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="195" translatesAutoresizingMaskIntoConstraints="NO" id="CwJ-Vh-LUm">
                                                                                 <rect key="frame" x="35" y="0.0" width="195" height="20"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="195" id="2ea-Zt-Zhc"/>
@@ -1232,12 +1232,14 @@
                                                                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                             </label>
                                                                         </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstItem="CwJ-Vh-LUm" firstAttribute="centerY" secondItem="zdh-Xk-QX9" secondAttribute="centerY" id="1yY-iz-Fe1"/>
+                                                                        </constraints>
                                                                     </tableViewCellContentView>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstItem="CwJ-Vh-LUm" firstAttribute="top" secondItem="dgh-Iq-DKl" secondAttribute="top" id="0ri-Py-Mce"/>
                                                                         <constraint firstItem="zdh-Xk-QX9" firstAttribute="top" secondItem="dgh-Iq-DKl" secondAttribute="top" id="1GB-pV-GEI"/>
-                                                                        <constraint firstAttribute="centerY" secondItem="CwJ-Vh-LUm" secondAttribute="centerY" id="2UY-Di-SuM"/>
                                                                         <constraint firstItem="zdh-Xk-QX9" firstAttribute="leading" secondItem="dgh-Iq-DKl" secondAttribute="leading" constant="5" id="2wu-By-4e9"/>
                                                                         <constraint firstItem="BQG-4U-uaN" firstAttribute="top" secondItem="dgh-Iq-DKl" secondAttribute="top" constant="4" id="8A7-mC-ivX"/>
                                                                         <constraint firstItem="BQG-4U-uaN" firstAttribute="leading" secondItem="dgh-Iq-DKl" secondAttribute="leading" constant="5" id="8Nh-dZ-tWa"/>

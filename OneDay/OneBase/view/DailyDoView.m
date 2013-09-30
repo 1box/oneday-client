@@ -309,11 +309,12 @@
     BOOL toChecked = !checkBox.selected;
     checkBox.selected = toChecked;
     
-    if ([checkBox.superview.superview isKindOfClass:[DailyDoTodoCellListCell class]]) {
-        TodoData *todo = ((DailyDoTodoCellListCell*)checkBox.superview.superview).todo;
+    UIView *tCell = checkBox.superview.superview.superview;
+    if ([tCell isKindOfClass:[DailyDoTodoCellListCell class]]) {
+        TodoData *todo = ((DailyDoTodoCellListCell*)tCell).todo;
         todo.check = [NSNumber numberWithBool:toChecked];
     }
-    else if ([checkBox.superview.superview isKindOfClass:[DailyDoTodayCell class]]) {
+    else if ([tCell isKindOfClass:[DailyDoTodayCell class]]) {
         for (TodoData *todo in _todayDo.todos) {
             todo.check = [NSNumber numberWithBool:toChecked];
         }

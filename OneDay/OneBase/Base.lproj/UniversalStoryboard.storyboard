@@ -1152,11 +1152,11 @@
                                                     <outlet property="presentView" destination="AN1-iF-DOS" id="Y9h-tG-vzW"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="TodayPropertyTodosCellID" selectionStyle="none" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="TodayPropertyTodosCellID" rowHeight="100" id="INi-dS-vlV" customClass="DailyDoTodoCell">
+                                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="TodayPropertyTodosCellID" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TodayPropertyTodosCellID" rowHeight="100" id="INi-dS-vlV" customClass="DailyDoTodoCell">
                                                 <rect key="frame" x="0.0" y="132" width="320" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="INi-dS-vlV" id="R5I-3N-q6A">
-                                                    <rect key="frame" x="0.0" y="0.0" width="253" height="99"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="287" height="99"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="property name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCp-ll-Szg">
@@ -1266,7 +1266,7 @@
                                                     <outlet property="iconImage" destination="Jbp-Uy-iYS" id="fqu-ho-ObN"/>
                                                     <outlet property="listView" destination="n1g-Fy-ru2" id="rdO-c2-uFp"/>
                                                     <outlet property="nameLabel" destination="DCp-ll-Szg" id="tDd-Xa-kIz"/>
-                                                    <segue destination="bwx-Gy-UqX" kind="push" identifier="showTodo" trigger="accessoryAction" id="IsK-aS-lZ2"/>
+                                                    <segue destination="bwx-Gy-UqX" kind="push" identifier="showTodo" id="sEx-OG-Jal"/>
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TodayPropertyTagsCellID" id="CbX-1u-GGN" customClass="DailyDoTagCell">
@@ -4103,6 +4103,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="kU8-df-8Bf"/>
-        <segue reference="uTW-Ln-vco"/>
+        <segue reference="fKJ-vH-Ras"/>
     </inferredMetricsTieBreakers>
 </document>

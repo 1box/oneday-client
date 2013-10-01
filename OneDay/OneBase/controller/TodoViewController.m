@@ -450,6 +450,7 @@
 
 - (void)textViewDidChange:(UITextView *)textView
 {
+    /******************* 判断是否需要处理 *******************/
     if (KMEmptyString(_removeText) && KMEmptyString(_appendText)) {
         if ([textView.text length] == 0) {
             [self refreshText];
@@ -457,12 +458,15 @@
         return;
     }
     
+    // marked部分为输入汉字时的拼音部分
     NSRange markedRange = [textView markedRange];
     if (markedRange.length > 0 && KMEmptyString(_removeText)) {
+        // 输入汉字时的拼音不应该被处理
         return;
     }
     else if (markedRange.length > 0 && [_removeText length] > 0) {
         if (NSIntersectionRange(markedRange, _removeTextRange).length > 0) {
+            // 输入汉字时删去拼音不应该被处理
             return;
         }
         else {
@@ -475,7 +479,10 @@
         }
     }
     
+    /******************* remove text *******************/
     BOOL hasRemovedSeparator = [self textView:textView removeTextInRange:&_removeTextRange replacementText:_appendText];
+    
+    /******************* append text *******************/
     if ([_appendText isEqualToString:SMSeparator]) {
         if (!hasRemovedSeparator) {
             NSUInteger index = [self indexForRange:NSMakeRange(_removeTextRange.location, 0)];
@@ -492,6 +499,7 @@
         [self textView:textView appendText:_appendText atLocation:_removeTextRange.location];
     }
     
+    /******************* refresh text *******************/
     [self refreshText];
     textView.selectedRange = _selectRange;
 }

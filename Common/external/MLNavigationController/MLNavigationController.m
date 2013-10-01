@@ -135,7 +135,7 @@
 - (void)moveViewWithX:(float)x
 {
     
-    NSLog(@"Move to:%f",x);
+//    NSLog(@"Move to:%f",x);
     x = x>320?320:x;
     x = x<0?0:x;
     

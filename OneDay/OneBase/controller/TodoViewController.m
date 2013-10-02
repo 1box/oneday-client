@@ -60,7 +60,7 @@
 
 - (void)reportKeyboardDidChangeFrame:(NSNotification *)notification
 {
-    CGFloat duration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    CGFloat duration = 0.3f; //[[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     CGRect keyboardFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
     
     UIWindow *mainWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:0];

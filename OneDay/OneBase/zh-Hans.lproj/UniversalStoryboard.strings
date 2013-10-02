@@ -81,7 +81,7 @@
 "9bB-T6-hM0.title" = "汇总";
 
 /* Class = "IBUIBarButtonItem"; title = "Confirm"; ObjectID = "ANc-DC-jHx"; */
-"ANc-DC-jHx.title" = "Confirm";
+"ANc-DC-jHx.title" = "确定";
 
 /* Class = "IBUITextField"; text = "_alarmTextFieldPlaceHolder"; ObjectID = "AzU-Id-QLu"; */
 "AzU-Id-QLu.text" = "";
@@ -150,7 +150,7 @@
 "JaX-v7-69t.title" = "_tags";
 
 /* Class = "IBUIBarButtonItem"; title = "Cancel"; ObjectID = "KYJ-dH-2IK"; */
-"KYJ-dH-2IK.title" = "Cancel";
+"KYJ-dH-2IK.title" = "取消";
 
 /* Class = "IBUILabel"; text = "Tap or swipe to begin."; ObjectID = "MFx-5Q-0Po"; */
 "MFx-5Q-0Po.text" = "Tap or swipe to begin.";
@@ -264,7 +264,7 @@
 "gUV-5m-1ru.normalTitle" = "remove";
 
 /* Class = "IBUIBarButtonItem"; title = "Cancel"; ObjectID = "gV7-bs-nhF"; */
-"gV7-bs-nhF.title" = "Cancel";
+"gV7-bs-nhF.title" = "取消";
 
 /* Class = "IBUILabel"; text = "Tap, or drag the checkmark to the cloud to enable iCloud."; ObjectID = "gVi-Yh-ucM"; */
 "gVi-Yh-ucM.text" = "Tap, or drag the checkmark to the cloud to enable iCloud.";
@@ -312,7 +312,7 @@
 "m62-jd-vyw.title" = "back";
 
 /* Class = "IBUIBarButtonItem"; title = "Confirm"; ObjectID = "m7h-Hj-q0p"; */
-"m7h-Hj-q0p.title" = "Confirm";
+"m7h-Hj-q0p.title" = "确定";
 
 /* Class = "IBUILabel"; text = "title"; ObjectID = "my4-ZI-zXj"; */
 "my4-ZI-zXj.text" = "title";

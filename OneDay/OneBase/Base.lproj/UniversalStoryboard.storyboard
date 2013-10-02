@@ -1379,45 +1379,41 @@
                                                     <segue destination="USV-aw-viL" kind="push" identifier="showNote" id="606-RN-GZZ"/>
                                                 </connections>
                                             </tableViewCell>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TomorrowCellID" id="G6K-Yr-hV0" customClass="DailyDoTomorrowCell">
-                                                <rect key="frame" x="0.0" y="364" width="320" height="44"/>
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TomorrowCellID" rowHeight="100" id="G6K-Yr-hV0" customClass="DailyDoTomorrowCell">
+                                                <rect key="frame" x="0.0" y="364" width="320" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G6K-Yr-hV0" id="6Tf-pp-pKR">
-                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="undone_tomorrow.png" translatesAutoresizingMaskIntoConstraints="NO" id="Di1-sb-JVs">
-                                                            <rect key="frame" x="18" y="10.5" width="22" height="22"/>
+                                                            <rect key="frame" x="18" y="11" width="22" height="22"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="22" id="j0o-wM-oEm"/>
                                                                 <constraint firstAttribute="height" constant="22" id="ovw-Me-M0A"/>
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y9r-Ds-oFK">
-                                                            <rect key="frame" x="55" y="13.5" width="27" height="16"/>
+                                                            <rect key="frame" x="55" y="14" width="56" height="16"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="56" id="1YE-vt-yfK"/>
+                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
                                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="tomorrow do" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GSX-NQ-3hG">
-                                                            <rect key="frame" x="89" y="13.5" width="195" height="16"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="195" id="L4v-qD-g99"/>
-                                                            </constraints>
+                                                            <rect key="frame" x="118" y="14" width="165" height="16"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         </label>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="63A-dP-fZl" customClass="DailyDoPresentView">
-                                                            <rect key="frame" x="35" y="30" width="255" height="14"/>
+                                                            <rect key="frame" x="55" y="35" width="245" height="64"/>
                                                             <subviews>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ged-My-aOB">
-                                                                    <rect key="frame" x="59" y="-9" width="150" height="50"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="245" height="64"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="50" id="3iS-VX-nXo"/>
-                                                                        <constraint firstAttribute="width" constant="150" id="BfI-E0-qQR"/>
-                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                     <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
@@ -1428,25 +1424,30 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                             <constraints>
-                                                                <constraint firstItem="Ged-My-aOB" firstAttribute="leading" secondItem="63A-dP-fZl" secondAttribute="leading" constant="59" id="7Qj-3M-Xoa"/>
-                                                                <constraint firstAttribute="width" constant="255" id="fB7-jr-f9C"/>
-                                                                <constraint firstItem="Ged-My-aOB" firstAttribute="top" secondItem="63A-dP-fZl" secondAttribute="top" constant="-9" id="fC2-Ss-g55"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Ged-My-aOB" secondAttribute="trailing" id="9N6-nm-amN"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Ged-My-aOB" secondAttribute="bottom" id="XtX-7a-WKK"/>
+                                                                <constraint firstItem="Ged-My-aOB" firstAttribute="leading" secondItem="63A-dP-fZl" secondAttribute="leading" id="oHO-Dd-K2z"/>
+                                                                <constraint firstItem="Ged-My-aOB" firstAttribute="top" secondItem="63A-dP-fZl" secondAttribute="top" id="sYW-hQ-cbR"/>
                                                             </constraints>
                                                             <connections>
                                                                 <outlet property="textView" destination="Ged-My-aOB" id="RvJ-1Z-Rby"/>
                                                             </connections>
                                                         </view>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="63A-dP-fZl" secondAttribute="trailing" constant="20" id="4FB-7y-DQn"/>
+                                                        <constraint firstItem="Di1-sb-JVs" firstAttribute="top" secondItem="6Tf-pp-pKR" secondAttribute="top" constant="11" id="4Oh-vu-b6O"/>
+                                                        <constraint firstAttribute="bottom" secondItem="63A-dP-fZl" secondAttribute="bottom" id="NO9-Iu-sQe"/>
+                                                        <constraint firstAttribute="trailing" secondItem="GSX-NQ-3hG" secondAttribute="trailing" constant="37" id="QtJ-Ih-nf5"/>
+                                                        <constraint firstItem="y9r-Ds-oFK" firstAttribute="top" secondItem="GSX-NQ-3hG" secondAttribute="top" id="ghD-FY-yUE"/>
+                                                        <constraint firstItem="63A-dP-fZl" firstAttribute="top" secondItem="6Tf-pp-pKR" secondAttribute="top" constant="35" id="odY-a7-dYa"/>
+                                                        <constraint firstItem="y9r-Ds-oFK" firstAttribute="leading" secondItem="63A-dP-fZl" secondAttribute="leading" id="ugY-BI-fGV"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
                                                 <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="63A-dP-fZl" secondAttribute="bottom" id="3Td-1C-Ts1"/>
                                                     <constraint firstItem="Di1-sb-JVs" firstAttribute="centerY" secondItem="y9r-Ds-oFK" secondAttribute="centerY" id="6Xa-Vk-b6g"/>
                                                     <constraint firstItem="GSX-NQ-3hG" firstAttribute="leading" secondItem="y9r-Ds-oFK" secondAttribute="trailing" constant="7" id="WoU-Xu-yGb"/>
-                                                    <constraint firstItem="y9r-Ds-oFK" firstAttribute="top" secondItem="G6K-Yr-hV0" secondAttribute="top" constant="14" id="X9b-wk-c7b"/>
                                                     <constraint firstItem="y9r-Ds-oFK" firstAttribute="leading" secondItem="G6K-Yr-hV0" secondAttribute="leading" constant="55" id="axm-6o-fAr"/>
-                                                    <constraint firstItem="GSX-NQ-3hG" firstAttribute="top" secondItem="G6K-Yr-hV0" secondAttribute="top" constant="14" id="az5-eX-Cdq"/>
-                                                    <constraint firstItem="63A-dP-fZl" firstAttribute="leading" secondItem="G6K-Yr-hV0" secondAttribute="leading" constant="35" id="d1o-Tp-36i"/>
-                                                    <constraint firstItem="63A-dP-fZl" firstAttribute="top" secondItem="G6K-Yr-hV0" secondAttribute="top" constant="30" id="sUZ-Xv-H5e"/>
                                                     <constraint firstItem="Di1-sb-JVs" firstAttribute="leading" secondItem="G6K-Yr-hV0" secondAttribute="leading" constant="18" id="yb6-FF-hhS"/>
                                                 </constraints>
                                                 <connections>
@@ -1456,7 +1457,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoggedDoCellID" rowHeight="100" id="mFw-zT-fRg" customClass="DailyDoLoggedCell">
-                                                <rect key="frame" x="0.0" y="408" width="320" height="100"/>
+                                                <rect key="frame" x="0.0" y="464" width="320" height="100"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mFw-zT-fRg" id="Yp1-zz-BB0">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="99"/>
@@ -1522,12 +1523,14 @@
                                                             </connections>
                                                         </button>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="fEk-d6-OSN" firstAttribute="top" secondItem="IrW-3a-wY7" secondAttribute="top" id="SyL-sL-Hzg"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
                                                 <constraints>
                                                     <constraint firstItem="GAK-9F-bRA" firstAttribute="top" secondItem="mFw-zT-fRg" secondAttribute="top" constant="35" id="A7s-2y-Xhc"/>
                                                     <constraint firstItem="IV5-5i-26A" firstAttribute="top" secondItem="mFw-zT-fRg" secondAttribute="top" constant="11" id="GDw-OJ-TOK"/>
                                                     <constraint firstItem="IrW-3a-wY7" firstAttribute="leading" secondItem="GAK-9F-bRA" secondAttribute="leading" id="Hhf-Lk-Jdk"/>
-                                                    <constraint firstItem="fEk-d6-OSN" firstAttribute="top" secondItem="mFw-zT-fRg" secondAttribute="top" constant="14" id="R4u-8h-TK9"/>
                                                     <constraint firstItem="IrW-3a-wY7" firstAttribute="leading" secondItem="mFw-zT-fRg" secondAttribute="leading" constant="55" id="YNr-AJ-uZO"/>
                                                     <constraint firstItem="IrW-3a-wY7" firstAttribute="top" secondItem="mFw-zT-fRg" secondAttribute="top" constant="14" id="cQO-fM-aTP"/>
                                                     <constraint firstItem="fEk-d6-OSN" firstAttribute="leading" secondItem="IrW-3a-wY7" secondAttribute="trailing" constant="7" id="ibJ-Dq-tap"/>
@@ -1544,7 +1547,7 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="LoadMoreCellID" id="blI-DO-RSv" customClass="KMLoadMoreCell">
-                                                <rect key="frame" x="0.0" y="508" width="320" height="44"/>
+                                                <rect key="frame" x="0.0" y="564" width="320" height="44"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="blI-DO-RSv" id="OHr-ng-Tfj">
                                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>

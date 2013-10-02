@@ -22,14 +22,11 @@
 #define HelperWordButtonTagPrefix 10000
 
 @interface TodoViewController () <UITextViewDelegate> {
-    NSRange _selectRange;
-    NSRange _removeTextRange;
     
-    BOOL _needHandle;
+    NSRange _changeTextIndexRange;
+    NSRange _appendTextIndexRange;
 }
 @property (nonatomic) NSMutableArray *todos;
-@property (nonatomic) NSString *removeText;
-@property (nonatomic) NSString *appendText;
 @property (nonatomic, weak) SMDetector *detector;
 @property (nonatomic) HintHelper *hint;
 @end
@@ -102,6 +99,10 @@
                                              selector:@selector(reportKeyboardWillChangeFrame:)
                                                  name:UIKeyboardWillChangeFrameNotification
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reportUITextInputCurrentInputModeDidChangeNotification:)
+                                                 name:UITextInputCurrentInputModeDidChangeNotification
+                                               object:nil];
     
     [_dailyDo makeSnapshot];
     [self refreshText];
@@ -112,12 +113,24 @@
     else {
         [_hint setDidCloseTarget:self selector:@selector(handleHintClosed)];
     }
+    
+    for (UITextInputMode *mode in [UITextInputMode activeInputModes]) {
+        NSLog(@"input:%@", mode.primaryLanguage);
+    }
+    NSLog(@"current:%@", [UITextInputMode currentInputMode].primaryLanguage);
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextInputCurrentInputModeDidChangeNotification object:nil];
+}
+
+- (void)reportUITextInputCurrentInputModeDidChangeNotification:(NSNotification *)notification
+{
+    SSLog(@"current:%@", [UITextInputMode currentInputMode].primaryLanguage);
 }
 
 #pragma mark - private
@@ -125,6 +138,80 @@
 - (void)handleHintClosed
 {
     [_inputView becomeFirstResponder];
+}
+
+- (void)rematchText
+{
+    NSArray *tContents = [_inputView.text componentsSeparatedByString:SMSeparator];
+    NSMutableArray *mutContents = [NSMutableArray arrayWithCapacity:[tContents count]];
+    [tContents enumerateObjectsUsingBlock:^(NSString *content, NSUInteger idx, BOOL *stop) {
+        NSString *pureContent = content;
+        NSRange lineNumberRange = [content rangeOfString:@"."];
+        if (lineNumberRange.length > 0) {
+            if (NSMaxRange(lineNumberRange) < 4) {  // 此判断在 index < 999 时有效
+                if (NSMaxRange(lineNumberRange) < content.length) {
+                    NSString *nextLetter = [content substringWithRange:NSMakeRange(NSMaxRange(lineNumberRange), 1)];
+                    if ([nextLetter isEqualToString:@" "]) {
+                        pureContent = [content substringFromIndex:NSMaxRange(lineNumberRange) + 1];
+                    }
+                    else {
+                        pureContent = [content substringFromIndex:NSMaxRange(lineNumberRange)];
+                    }
+                }
+                else {
+                    pureContent = @"";
+                }
+            }
+        }
+        
+        if (idx < [tContents count] - 1) {
+            pureContent = [pureContent stringByAppendingString:SMSeparator];
+        }
+        [mutContents addObject:pureContent];
+    }];
+    
+    NSArray *contents = [mutContents copy];
+    SSLog(@"contents: %@", contents);
+    
+    if ([contents count] == [_todos count]) {
+        [_todos enumerateObjectsUsingBlock:^(TodoData *todo, NSUInteger idx, BOOL *stop) {
+            todo.content = [contents objectAtIndex:idx];
+        }];
+    }
+    else if ([contents count] > [_todos count]) {
+        [contents enumerateObjectsUsingBlock:^(NSString *content, NSUInteger idx, BOOL *stop) {
+            NSRange insertRange = NSMakeRange(NSMaxRange(_changeTextIndexRange),
+                                              _appendTextIndexRange.length - _changeTextIndexRange.length);
+            if (idx < insertRange.location) {
+                TodoData *todo = [_todos objectAtIndex:idx];
+                todo.content = content;
+            }
+            else if (idx >= insertRange.location && idx < NSMaxRange(insertRange)) {
+                TodoData *insertTodo = [_dailyDo insertNewTodoAtIndex:idx];
+                insertTodo.content = content;
+            }
+            else {
+                TodoData *todo = [_todos objectAtIndex:idx - insertRange.length];
+                todo.content = content;
+            }
+        }];
+    }
+    else {
+        [_todos enumerateObjectsUsingBlock:^(TodoData *todo, NSUInteger idx, BOOL *stop) {
+            NSRange removeRange = NSMakeRange(NSMaxRange(_appendTextIndexRange),
+                                              _changeTextIndexRange.length - _appendTextIndexRange.length);
+            if (idx < removeRange.location) {
+                todo.content = [contents objectAtIndex:idx];
+            }
+            else if (idx >= removeRange.location && idx < NSMaxRange(removeRange)) {
+                [_dailyDo removeTodos:@[todo]];
+            }
+            else {
+                todo.content = [contents objectAtIndex:idx - removeRange.length];
+            }
+        }];
+    }
+    [[KMModelManager sharedManager] saveContext:nil];
 }
 
 - (void)refreshText
@@ -139,7 +226,6 @@
         
         [_todos addObject:todo];
         text = [NSString stringWithFormat:@"%@%d. ", text, index + 1];
-        [self selectRangeMove:[todo lineNumberStringLength]];
     }
     
     _inputView.text = text;
@@ -151,9 +237,6 @@
     else {
         _inputView.placeholder = nil;
     }
-        
-    self.removeText = nil;
-    self.appendText = nil;
 }
 
 - (void)updateInputHelperWords
@@ -212,7 +295,6 @@
 - (IBAction)cancel:(id)sender
 {
     [_dailyDo recoveryToSnapshot];
-//    [self refreshText];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -249,158 +331,14 @@
     }
 }
 
-// return YES if has separator in removeText
-- (BOOL)textView:(UITextView *)textView removeTextInRange:(NSRange*)pRange replacementText:(NSString *)text
+- (BOOL)availableRange:(NSRange)range
 {
-    BOOL ret = NO;
-    NSRange range = *pRange;
-    if (range.length > 0) {
-        NSArray *removeContents = [_removeText componentsSeparatedByString:SMSeparator];
-        
-        NSRange breakRange = [_removeText rangeOfString:SMSeparator];
-        ret = breakRange.location != NSNotFound;
-        
-        NSUInteger index = [self indexForRange:(breakRange.length > 0 ? NSMakeRange(range.location, NSMaxRange(breakRange)) : range)];
-        
-        NSMutableArray *removeTodos = [NSMutableArray arrayWithCapacity:[removeContents count]];
-        [removeContents enumerateObjectsUsingBlock:^(NSString *content, NSUInteger offset, BOOL *stop){
-            
-            TodoData *tmpTodo = [_todos objectAtIndex:index + offset];
-            
-            NSUInteger lineNumber = [_detector lineNumberForString:content];
-            if (lineNumber == NSNotFound) {
-                if (offset == 0) {
-                    if (range.location < [tmpTodo lineNumberStringLength] + [_dailyDo todoTextLengthFromIndex:0 beforeIndex:index autoNumber:YES]) {
-                        // content must prefix by space
-                        if ([content length] > 1) {
-                            NSString *contentTrimSpace = [content substringFromIndex:1];
-                            if ([removeContents count] > 1) {
-                                contentTrimSpace = [NSString stringWithFormat:@"%@%@", contentTrimSpace, SMSeparator];
-                            }
-                            NSUInteger tmpLocation = range.location + 1 - [tmpTodo lineNumberStringLength] - [_dailyDo todoTextLengthFromIndex:0 beforeIndex:index autoNumber:YES];
-                            tmpTodo.content = [tmpTodo.content stringByReplacingOccurrencesOfString:contentTrimSpace withString:@"" options:0 range:NSMakeRange(tmpLocation, [tmpTodo.content length] - tmpLocation)];
-                            
-                            *pRange = NSMakeRange(range.location + 1, range.length - 1);
-                        }
-                        
-                        if (index > 0) {
-                            TodoData *preTodo = [_todos objectAtIndex:index - 1];
-                            preTodo.content = [NSString stringWithFormat:@"%@%@", [preTodo pureContent], tmpTodo.content];
-                            [removeTodos addObject:tmpTodo];
-                            
-                            [self selectRangeMove:-[tmpTodo lineNumberStringLength]];
-                        }
-                        else {
-                            [self selectRangeMove:1];
-                        }
-                    }
-                    else {
-                        NSUInteger tmpLocation = range.location - [tmpTodo lineNumberStringLength] - [_dailyDo todoTextLengthFromIndex:0 beforeIndex:index autoNumber:YES];
-                        tmpTodo.content = [tmpTodo.content stringByReplacingOccurrencesOfString:content withString:@"" options:0 range:NSMakeRange(tmpLocation, [tmpTodo.content length] - tmpLocation)];
-                    }
-                }
-                else {
-                    SSLog(@"Edit todo content when offset is %d not 0", index);
-                }
-            }
-            else {
-                content = [content stringByTrimmingLineNumber];
-                if (offset != [removeContents count] - 1) {
-                    content = [NSString stringWithFormat:@"%@%@", content, SMSeparator];
-                }
-                
-                if ([content length] == [tmpTodo.content length]) {
-                    [removeTodos addObject:tmpTodo];
-                }
-                else {
-                    tmpTodo.content = [tmpTodo.content stringByReplacingOccurrencesOfString:content withString:@"" options:0 range:NSMakeRange(0, [content length])];
-                }
-            }
-        }];
-        
-        if ([removeTodos count] > 0) {
-            [_dailyDo removeTodos:removeTodos];
-        }
-        [[KMModelManager sharedManager] saveContext:nil];
-    }
-    return ret;
-}
-
-- (void)textView:(UITextView *)textView appendText:(NSString *)appendText atLocation:(NSUInteger)location
-{
-    if ([appendText length] > 0) {
-        
-        NSUInteger index = [self indexForRange:NSMakeRange(location, 0)];
-        NSArray *appendContents = [appendText componentsSeparatedByString:SMSeparator];
-        
-        [appendContents enumerateObjectsUsingBlock:^(NSString *content, NSUInteger offset, BOOL *stop){
-            NSUInteger lineNumber = [_detector lineNumberForString:content];
-            if (lineNumber != NSNotFound) {
-                content = [content stringByTrimmingLineNumber];
-                [self selectRangeMove:-[[NSString stringWithFormat:@"%d. ", lineNumber] length]];
-            }
-            
-            if (offset == 0) {
-                TodoData *tmpTodo = [_todos objectAtIndex:index];
-                NSUInteger relativeLocation = location - [tmpTodo lineNumberStringLength] - [_dailyDo todoTextLengthFromIndex:0 beforeIndex:index autoNumber:YES];
-                NSMutableString *tmpContent = [tmpTodo.content mutableCopy];
-                if (!tmpContent) {
-                    tmpContent = [NSMutableString stringWithCapacity:[content length]];
-                }
-                [tmpContent insertString:content atIndex:relativeLocation];
-                
-                // TODO: quick fix bug
-                if (tmpTodo.managedObjectContext) {
-                    tmpTodo.content = tmpContent;
-                }
-            }
-            else {
-                TodoData *preTodo = [_todos objectAtIndex:index + offset - 1];
-                NSRange tmpSeparatorRange = [preTodo.content rangeOfString:SMSeparator];
-                if (tmpSeparatorRange.location == NSNotFound) {
-                    preTodo.content = [NSString stringWithFormat:@"%@%@", preTodo.content, SMSeparator];
-                    [self selectRangeMove:1];
-                }
-                
-                TodoData *insertTodo = [_dailyDo insertNewTodoAtIndex:index + offset];
-                if (offset != [appendContents count] - 1) {
-                    insertTodo.content = [NSString stringWithFormat:@"%@%@", content, SMSeparator];
-                }
-                else {
-                    insertTodo.content = content;
-                }
-                [_todos addObject:insertTodo];
-            }
-        }];
-        
-        [[KMModelManager sharedManager] saveContext:nil];
-    }
-}
-
-- (void)selectRangeMove:(NSInteger)length
-{
-    _selectRange = NSMakeRange(_selectRange.location + length, 0);
-}
-
-- (BOOL)convertToAvailableRange:(NSRange*)originalRange removeText:(NSString *)text
-{
-    if ([text isEqualToString:SMSeparator]) {   // remove a separator is unavailable
+    // 不允许单独删除换行符
+    if ([[_inputView.text substringWithRange:range] isEqualToString:SMSeparator]) {
         return NO;
     }
     
-    NSRange markedRange = [_inputView markedRange];
-    if (markedRange.length > 0) {
-        NSUInteger tmpLocation = markedRange.location == NSNotFound ? (*originalRange).location : markedRange.location;
-        NSUInteger tmpLength = (*originalRange).length >= markedRange.length ? (*originalRange).length - markedRange.length : (*originalRange).length;
-        *originalRange = NSMakeRange(tmpLocation, tmpLength);
-        
-        if (NSEqualRanges(NSIntersectionRange(*originalRange, markedRange), *originalRange)) {
-            return YES;
-        }
-    }
-    
-    NSUInteger index = [self indexForRange:*originalRange];
-    
+    NSUInteger index = [self indexForRange:range];
     if (index >= [_todos count]) {
         return NO;
     }
@@ -408,23 +346,22 @@
     TodoData *tmpTodo = [_todos objectAtIndex:index];
     NSUInteger beforeIndexLength = [_dailyDo todoTextLengthFromIndex:0 beforeIndex:index autoNumber:YES];
     
-    NSRange compareRange;
-    if ((*originalRange).length > 0) {
+    NSRange unavailabelRange;
+    if (range.length > 0) {
         // line number without space is unavailable range when remove text
-        compareRange = NSMakeRange(beforeIndexLength, [tmpTodo lineNumberStringLength] - 1);
+        unavailabelRange = NSMakeRange(beforeIndexLength, [tmpTodo lineNumberStringLength] - 1);
     }
     else {
         // line number containing space is unavailable range when only append text
-        compareRange = NSMakeRange(beforeIndexLength, [tmpTodo lineNumberStringLength]);
+        unavailabelRange = NSMakeRange(beforeIndexLength, [tmpTodo lineNumberStringLength]);
     }
     
-    NSRange intersectionRange = NSIntersectionRange(*originalRange, compareRange);
+    NSRange intersectionRange = NSIntersectionRange(range, unavailabelRange);
     if (NSMaxRange(intersectionRange) > 0) {
-        if ((*originalRange).length < compareRange.length) {
+        if ((range).length < unavailabelRange.length) {
             return NO;
         }
         else {
-            *originalRange = NSMakeRange((*originalRange).location + intersectionRange.length, (*originalRange).length - intersectionRange.length);
             return YES;
         }
     }
@@ -437,71 +374,46 @@
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    BOOL available = [self convertToAvailableRange:&range removeText:[textView.text substringWithRange:range]];
-    if (available) {
-        _selectRange = NSMakeRange(range.location + [text length], 0);
-        _removeTextRange = range;
-        
-        self.removeText = [textView.text substringWithRange:range];
-        self.appendText = text;
+    // TODO: 根据range或者text中是否有separator判断是否需要拆分或者合并todo
+    if ([textView markedRange].length > 0) {
+        return YES;
     }
-    return available;
+    
+    NSUInteger beginIndex = [self indexForRange:range];
+    
+    NSUInteger changeEndIndex = [self indexForRange:NSMakeRange(NSMaxRange(range) - 1, 1)];
+    _changeTextIndexRange = NSMakeRange(beginIndex, changeEndIndex - beginIndex);
+    
+    NSArray *appendContents = [text componentsSeparatedByString:SMSeparator];
+    _appendTextIndexRange = NSMakeRange(beginIndex, [appendContents count] - 1);
+    
+    BOOL availabel = [self availableRange:range];
+    SSLog(@"available:%d", availabel);
+    return availabel;
 }
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-    /******************* 判断是否需要处理 *******************/
-    if (KMEmptyString(_removeText) && KMEmptyString(_appendText)) {
-        if ([textView.text length] == 0) {
-            [self refreshText];
-        }
+    if ([textView markedRange].length > 0) {
         return;
     }
     
-    // marked部分为输入汉字时的拼音部分
-    NSRange markedRange = [textView markedRange];
-    if (markedRange.length > 0 && KMEmptyString(_removeText)) {
-        // 输入汉字时的拼音不应该被处理
-        return;
-    }
-    else if (markedRange.length > 0 && [_removeText length] > 0) {
-        if (NSIntersectionRange(markedRange, _removeTextRange).length > 0) {
-            // 输入汉字时删去拼音不应该被处理
-            return;
-        }
-        else {
-            // 全选内容后，输入中文会导致内容全部被删除，而没有默认的line number
-            NSMutableString *tmpText = [textView.text mutableCopy];
-            [tmpText deleteCharactersInRange:markedRange];
-            textView.text = tmpText;
-            
-            self.appendText = @"";
-        }
-    }
+    NSLog(@"should refresh");
     
-    /******************* remove text *******************/
-    BOOL hasRemovedSeparator = [self textView:textView removeTextInRange:&_removeTextRange replacementText:_appendText];
+    NSRange selectRange = textView.selectedRange;
     
-    /******************* append text *******************/
-    if ([_appendText isEqualToString:SMSeparator]) {
-        if (!hasRemovedSeparator) {
-            NSUInteger index = [self indexForRange:NSMakeRange(_removeTextRange.location, 0)];
-            TodoData *tmpTodo = [_todos objectAtIndex:index];
-            
-            NSInteger tmpLocation = _removeTextRange.location - [tmpTodo lineNumberStringLength] - [_dailyDo todoTextLengthFromIndex:0 beforeIndex:index autoNumber:YES];
-            if (tmpLocation >= 0) {
-                TodoData *secondTodo = [_dailyDo separateTodoAtIndex:index fromContentCharacterIndex:tmpLocation];
-                [self selectRangeMove:[secondTodo lineNumberStringLength]];
-            }
-        }
-    }
-    else {
-        [self textView:textView appendText:_appendText atLocation:_removeTextRange.location];
-    }
-    
-    /******************* refresh text *******************/
+    [self rematchText];
     [self refreshText];
-    textView.selectedRange = _selectRange;
+    
+    NSUInteger index = [self indexForRange:NSMakeRange(NSMaxRange(selectRange) + 1, 0)];
+    if (index < [_todos count]) {
+        TodoData *tTodo = [_todos objectAtIndex:index];
+        NSRange lineNumberRange = [textView.text rangeOfString:[tTodo lineNumberString]];
+        if (selectRange.location >= lineNumberRange.location && selectRange.location < NSMaxRange(lineNumberRange)) {
+            selectRange.location = NSMaxRange(lineNumberRange);
+        }
+    }
+    textView.selectedRange = selectRange;
 }
 
 @end

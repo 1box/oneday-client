@@ -64,7 +64,7 @@
 //        UINavigationController *nav = [split.viewControllers objectAtIndex:1];
         UINavigationController *nav = [KMCommon rootNavigationController];
         [nav popToRootViewControllerAnimated:NO];
-        [nav pushViewController:controller animated:YES];
+        [nav pushViewController:controller animated:NO];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

@@ -1116,6 +1116,8 @@
 		CB1101E817A3B91200A7222A /* UniversalStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1101EA17A3B91200A7222A /* UniversalStoryboard.storyboard */; };
 		CB1D26D1173F3B6D00D6B801 /* TodoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1D26D0173F3B6D00D6B801 /* TodoManager.m */; };
 		CB1D26D2173F3B6D00D6B801 /* TodoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB1D26D0173F3B6D00D6B801 /* TodoManager.m */; };
+		CB21DBBF17FC32B80009B792 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB21DBBE17FC32B80009B792 /* Images.xcassets */; };
+		CB21DBC017FC32B80009B792 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB21DBBE17FC32B80009B792 /* Images.xcassets */; };
 		CB2C709B1638423700D0D348 /* SSDataUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2C6F561638423700D0D348 /* SSDataUtil.m */; };
 		CB2C709C1638423700D0D348 /* SSEntityBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2C6F581638423700D0D348 /* SSEntityBase.m */; };
 		CB2C709F1638423700D0D348 /* UIDevice-Hardware.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2C6F611638423700D0D348 /* UIDevice-Hardware.m */; };
@@ -1274,9 +1276,7 @@
 		CB46076B173D4B8800955454 /* homecover005@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB460657173D4B8800955454 /* homecover005@2x.jpg */; };
 		CB46076C173D4B8800955454 /* homecover005@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB460657173D4B8800955454 /* homecover005@2x.jpg */; };
 		CB46076D173D4B8800955454 /* homecover006.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB460658173D4B8800955454 /* homecover006.jpg */; };
-		CB46076D17FA8BCD002D1A84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBF82E6417F498E0008CAFFC /* Images.xcassets */; };
 		CB46076E173D4B8800955454 /* homecover006.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB460658173D4B8800955454 /* homecover006.jpg */; };
-		CB46076E17FA8BCE002D1A84 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBF82E6417F498E0008CAFFC /* Images.xcassets */; };
 		CB46076F173D4B8800955454 /* homecover006@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB460659173D4B8800955454 /* homecover006@2x.jpg */; };
 		CB460770173D4B8800955454 /* homecover006@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CB460659173D4B8800955454 /* homecover006@2x.jpg */; };
 		CB460771173D4B8800955454 /* homecover_check.png in Resources */ = {isa = PBXBuildFile; fileRef = CB46065A173D4B8800955454 /* homecover_check.png */; };
@@ -1546,6 +1546,8 @@
 		CBBA8FE817F49C14006F0DF2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBBA8FE717F49C14006F0DF2 /* Default-568h@2x.png */; };
 		CBD1E461173C128A00694991 /* KMLoadMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1E460173C128A00694991 /* KMLoadMoreCell.m */; };
 		CBD1E462173C128A00694991 /* KMLoadMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBD1E460173C128A00694991 /* KMLoadMoreCell.m */; };
+		CBDA452017FC216D00C0CDC4 /* NormalNavigationBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDA451F17FC216D00C0CDC4 /* NormalNavigationBarButton.m */; };
+		CBDA452117FC216D00C0CDC4 /* NormalNavigationBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CBDA451F17FC216D00C0CDC4 /* NormalNavigationBarButton.m */; };
 		CBF626741768DD1100B29AA1 /* OneDayStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF626721768DD1000B29AA1 /* OneDayStoryboard_iPad.storyboard */; };
 		CBF626751768DD1100B29AA1 /* OneDayStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBF626721768DD1000B29AA1 /* OneDayStoryboard_iPad.storyboard */; };
 		CBF82A0E170EBD63004674C5 /* HomeCoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF82A0D170EBD63004674C5 /* HomeCoverViewController.m */; };
@@ -2360,6 +2362,7 @@
 		CB1101EB17A3B91700A7222A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UniversalStoryboard.storyboard; sourceTree = "<group>"; };
 		CB1D26CF173F3B6D00D6B801 /* TodoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TodoManager.h; sourceTree = "<group>"; };
 		CB1D26D0173F3B6D00D6B801 /* TodoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TodoManager.m; sourceTree = "<group>"; };
+		CB21DBBE17FC32B80009B792 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CB2C6F541638423700D0D348 /* SSData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSData.h; sourceTree = "<group>"; };
 		CB2C6F551638423700D0D348 /* SSDataUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDataUtil.h; sourceTree = "<group>"; };
 		CB2C6F561638423700D0D348 /* SSDataUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDataUtil.m; sourceTree = "<group>"; };
@@ -2669,6 +2672,8 @@
 		CBBA8FE717F49C14006F0DF2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		CBD1E45F173C128A00694991 /* KMLoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMLoadMoreCell.h; sourceTree = "<group>"; };
 		CBD1E460173C128A00694991 /* KMLoadMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMLoadMoreCell.m; sourceTree = "<group>"; };
+		CBDA451E17FC216D00C0CDC4 /* NormalNavigationBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalNavigationBarButton.h; sourceTree = "<group>"; };
+		CBDA451F17FC216D00C0CDC4 /* NormalNavigationBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormalNavigationBarButton.m; sourceTree = "<group>"; };
 		CBF626731768DD1100B29AA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/OneDayStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		CBF82A0C170EBD63004674C5 /* HomeCoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeCoverViewController.h; sourceTree = "<group>"; };
 		CBF82A0D170EBD63004674C5 /* HomeCoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeCoverViewController.m; sourceTree = "<group>"; };
@@ -2733,7 +2738,6 @@
 		CBF82B54170F052A004674C5 /* 2_s_sumou_0030.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2_s_sumou_0030.png; sourceTree = "<group>"; };
 		CBF82B55170F052A004674C5 /* 2_s_sumou_0030@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2_s_sumou_0030@2x.png"; sourceTree = "<group>"; };
 		CBF82E5B17F49394008CAFFC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		CBF82E6417F498E0008CAFFC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CBF92F2D1638D63E0055C761 /* KMViewBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMViewBase.h; sourceTree = "<group>"; };
 		CBF92F2E1638D63E0055C761 /* KMViewBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMViewBase.m; sourceTree = "<group>"; };
 		CBF92FF2163911940055C761 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
@@ -3663,6 +3667,8 @@
 				CB39DFD21741FF1F007B1CE5 /* AlarmCellView.m */,
 				CBB7A82D176309F40064ED3B /* PasswordAddonCell.h */,
 				CBB7A82E176309F40064ED3B /* PasswordAddonCell.m */,
+				CBDA451E17FC216D00C0CDC4 /* NormalNavigationBarButton.h */,
+				CBDA451F17FC216D00C0CDC4 /* NormalNavigationBarButton.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -4535,7 +4541,7 @@
 		CBF82E6317F498E0008CAFFC /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				CBF82E6417F498E0008CAFFC /* Images.xcassets */,
+				CB21DBBE17FC32B80009B792 /* Images.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -4901,7 +4907,6 @@
 				3F55A8AB16E50D4A00EBBA30 /* 2_s_hourglass_0009.png in Resources */,
 				3F55A8AD16E50D4A00EBBA30 /* 2_s_hourglass_0009@2x.png in Resources */,
 				3F55A8AF16E50D4A00EBBA30 /* 2_s_hourglass_0010.png in Resources */,
-				CB46076E17FA8BCE002D1A84 /* Images.xcassets in Resources */,
 				3F55A8B116E50D4A00EBBA30 /* 2_s_hourglass_0010@2x.png in Resources */,
 				3F55A8B316E50D4A00EBBA30 /* 2_s_hourglass_0011.png in Resources */,
 				3F55A8B516E50D4A00EBBA30 /* 2_s_hourglass_0011@2x.png in Resources */,
@@ -5238,6 +5243,7 @@
 				CBF82BB5170F052A004674C5 /* 2_s_sumou_0024@2x.png in Resources */,
 				CBF82BB7170F052A004674C5 /* 2_s_sumou_0025.png in Resources */,
 				CBF82BB9170F052A004674C5 /* 2_s_sumou_0025@2x.png in Resources */,
+				CB21DBC017FC32B80009B792 /* Images.xcassets in Resources */,
 				CBF82BBB170F052A004674C5 /* 2_s_sumou_0026.png in Resources */,
 				CBF82BBD170F052A004674C5 /* 2_s_sumou_0026@2x.png in Resources */,
 				CBF82BBF170F052A004674C5 /* 2_s_sumou_0027.png in Resources */,
@@ -5551,7 +5557,6 @@
 				3F55A85C16E50D4A00EBBA30 /* 2_s_turtle_0023@2x.png in Resources */,
 				3F55A85E16E50D4A00EBBA30 /* 2_s_turtle_0024.png in Resources */,
 				3F55A86016E50D4A00EBBA30 /* 2_s_turtle_0024@2x.png in Resources */,
-				CB46076D17FA8BCD002D1A84 /* Images.xcassets in Resources */,
 				3F55A86216E50D4A00EBBA30 /* 2_s_turtle_0025.png in Resources */,
 				3F55A86416E50D4A00EBBA30 /* 2_s_turtle_0025@2x.png in Resources */,
 				3F55A86616E50D4A00EBBA30 /* 2_s_turtle_0026.png in Resources */,
@@ -5845,6 +5850,7 @@
 				3F55AAA816E50D4A00EBBA30 /* 2_s_human_0025@2x.png in Resources */,
 				3F55AAAA16E50D4A00EBBA30 /* 2_s_human_0026.png in Resources */,
 				3F55AAAC16E50D4A00EBBA30 /* 2_s_human_0026@2x.png in Resources */,
+				CB21DBBF17FC32B80009B792 /* Images.xcassets in Resources */,
 				3F55AAAE16E50D4A00EBBA30 /* 2_s_human_0027.png in Resources */,
 				3F55AAB016E50D4A00EBBA30 /* 2_s_human_0027@2x.png in Resources */,
 				3F55AAB216E50D4A00EBBA30 /* 2_s_human_0028.png in Resources */,
@@ -6154,6 +6160,7 @@
 				3F55AADB16E50D4A00EBBA30 /* TimelineViewController.m in Sources */,
 				3F55AADD16E50D4A00EBBA30 /* TipViewController.m in Sources */,
 				3F55AADF16E50D4A00EBBA30 /* TodoViewController.m in Sources */,
+				CBDA452117FC216D00C0CDC4 /* NormalNavigationBarButton.m in Sources */,
 				3F55AAE516E50D4A00EBBA30 /* AddonManager.m in Sources */,
 				3F55AAE716E50D4A00EBBA30 /* AlarmManager.m in Sources */,
 				3F55AAE916E50D4A00EBBA30 /* DailyDoManager.m in Sources */,
@@ -6300,6 +6307,7 @@
 				3F55AADA16E50D4A00EBBA30 /* TimelineViewController.m in Sources */,
 				3F55AADC16E50D4A00EBBA30 /* TipViewController.m in Sources */,
 				3F55AADE16E50D4A00EBBA30 /* TodoViewController.m in Sources */,
+				CBDA452017FC216D00C0CDC4 /* NormalNavigationBarButton.m in Sources */,
 				3F55AAE416E50D4A00EBBA30 /* AddonManager.m in Sources */,
 				3F55AAE616E50D4A00EBBA30 /* AlarmManager.m in Sources */,
 				3F55AAE816E50D4A00EBBA30 /* DailyDoManager.m in Sources */,
@@ -6757,6 +6765,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -6778,6 +6787,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";

@@ -8,16 +8,41 @@
 
 #import "NavigationBarButton.h"
 
+#define NavigationButtonFixEdge 9.f
+
 @implementation NavigationBarButton
 
-- (void)awakeFromNib
+- (BOOL)isLeftNavBarButton
 {
-    UIImage *backgroundImage = [UIImage imageNamed:@"light_nav_btn_bg.png"];
-    backgroundImage = [backgroundImage stretchableImageWithLeftCapWidth:backgroundImage.size.width/2 topCapHeight:backgroundImage.size.height/2];
-    UIImage *pressBackgroundImage = [UIImage imageNamed:@"light_nav_btn_bg_press.png"];
-    pressBackgroundImage = [pressBackgroundImage stretchableImageWithLeftCapWidth:pressBackgroundImage.size.width/2 topCapHeight:pressBackgroundImage.size.height/2];
-    [self setBackgroundImage:backgroundImage forState:UIControlStateNormal];
-    [self setBackgroundImage:pressBackgroundImage forState:UIControlStateHighlighted];
+    return SSMinX(self) < ([KMCommon isPadDevice] ? 768.f/2 : 320.f/2);
+}
+
+- (UIEdgeInsets)alignmentRectInsets
+{
+    UIEdgeInsets ret = UIEdgeInsetsZero;
+    if ([KMCommon OSVersion].floatValue >= 7.f) {
+        if ([self isLeftNavBarButton]) {
+            ret = UIEdgeInsetsMake(0, NavigationButtonFixEdge, 0, 0);
+        }
+        else {
+            ret = UIEdgeInsetsMake(0, 0, 0, NavigationButtonFixEdge);
+        }
+    }
+    return ret;
+}
+
+- (UIEdgeInsets)contentEdgeInsets
+{
+    UIEdgeInsets ret = UIEdgeInsetsZero;
+    if ([KMCommon OSVersion].floatValue >= 7.f) {
+        if ([self isLeftNavBarButton]) {
+            ret = UIEdgeInsetsMake(0, -NavigationButtonFixEdge, 0, 0);
+        }
+        else {
+            ret = UIEdgeInsetsMake(0, 0, 0, -NavigationButtonFixEdge);
+        }
+    }
+    return ret;
 }
 
 @end

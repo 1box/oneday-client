@@ -349,9 +349,10 @@
     if (DailyDoActionTypeClearAllBlank == (actionType & DailyDoActionTypeClearAllBlank)) {
         [otherButtonTitles addObject:NSLocalizedString(@"ClearAllBlankTitle", nil)];
     }
+    
     [otherButtonTitles addObject:NSLocalizedString(@"_cancel", nil)];
     
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:@""
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil
                                                     delegate:self
                                            cancelButtonTitle:nil
                                       destructiveButtonTitle:nil
@@ -359,7 +360,9 @@
     for (NSString *title in otherButtonTitles) {
         [sheet addButtonWithTitle:title];
     }
+    
     sheet.cancelButtonIndex = [otherButtonTitles count] - 1;
+//    sheet.cancelButtonIndex = [KMCommon isPadDevice] ? -1 : [otherButtonTitles count] - 1;
     
     sheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
     [sheet showInView:self];

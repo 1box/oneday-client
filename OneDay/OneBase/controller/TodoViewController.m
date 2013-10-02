@@ -58,7 +58,7 @@
     }
 }
 
-- (void)reportKeyboardWillChangeFrame:(NSNotification *)notification
+- (void)reportKeyboardDidChangeFrame:(NSNotification *)notification
 {
     CGFloat duration = [[[notification userInfo] objectForKey:UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     CGRect keyboardFrame = [[[notification userInfo] objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
@@ -96,15 +96,11 @@
     [self updateInputHelperWords];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(reportKeyboardWillChangeFrame:)
-                                                 name:UIKeyboardWillChangeFrameNotification
-                                               object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(reportUITextInputCurrentInputModeDidChangeNotification:)
-                                                 name:UITextInputCurrentInputModeDidChangeNotification
+                                             selector:@selector(reportKeyboardDidChangeFrame:)
+                                                 name:UIKeyboardDidChangeFrameNotification
                                                object:nil];
     
-    [_dailyDo makeSnapshot];
+//    [_dailyDo makeSnapshot];
     [self refreshText];
     
     if (![_hint show]) {
@@ -113,24 +109,12 @@
     else {
         [_hint setDidCloseTarget:self selector:@selector(handleHintClosed)];
     }
-    
-    for (UITextInputMode *mode in [UITextInputMode activeInputModes]) {
-        NSLog(@"input:%@", mode.primaryLanguage);
-    }
-    NSLog(@"current:%@", [UITextInputMode currentInputMode].primaryLanguage);
-    
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillChangeFrameNotification object:nil];
-    [[NSNotificationCenter defaultCenter] removeObserver:self name:UITextInputCurrentInputModeDidChangeNotification object:nil];
-}
-
-- (void)reportUITextInputCurrentInputModeDidChangeNotification:(NSNotification *)notification
-{
-    SSLog(@"current:%@", [UITextInputMode currentInputMode].primaryLanguage);
 }
 
 #pragma mark - private
@@ -294,7 +278,7 @@
 
 - (IBAction)cancel:(id)sender
 {
-    [_dailyDo recoveryToSnapshot];
+//    [_dailyDo recoveryToSnapshot];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -374,7 +358,6 @@
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    // TODO: 根据range或者text中是否有separator判断是否需要拆分或者合并todo
     if ([textView markedRange].length > 0) {
         return YES;
     }
@@ -397,8 +380,6 @@
     if ([textView markedRange].length > 0) {
         return;
     }
-    
-    NSLog(@"should refresh");
     
     NSRange selectRange = textView.selectedRange;
     

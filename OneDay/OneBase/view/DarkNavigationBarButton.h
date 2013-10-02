@@ -6,8 +6,8 @@
 //  Copyright (c) 2013年 Kimi Yu. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "NavigationBarButton.h"
 
-@interface DarkNavigationBarButton : UIButton
+@interface DarkNavigationBarButton : NavigationBarButton
 
 @end

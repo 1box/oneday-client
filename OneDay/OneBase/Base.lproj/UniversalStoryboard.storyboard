@@ -953,7 +953,7 @@
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="iKG-a3-EnY">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ego-I7-Kpg" customClass="NavigationBarButton">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ego-I7-Kpg" customClass="NormalNavigationBarButton">
                                 <rect key="frame" x="234" y="7" width="70" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -1168,9 +1168,6 @@
                                                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="n1g-Fy-ru2" customClass="KMTableView">
                                                             <rect key="frame" x="43" y="10" width="215" height="80"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="215" id="nlA-8h-Ee8"/>
-                                                            </constraints>
                                                             <prototypes>
                                                                 <tableViewCell contentMode="scaleToFill" restorationIdentifier="TodoPropertyListCellID" selectionStyle="none" indentationWidth="10" reuseIdentifier="TodoPropertyListCellID" rowHeight="22" id="dgh-Iq-DKl" customClass="DailyDoTodoCellListCell">
                                                                     <rect key="frame" x="0.0" y="22" width="215" height="22"/>
@@ -1250,6 +1247,9 @@
                                                             </constraints>
                                                         </imageView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="n1g-Fy-ru2" secondAttribute="trailing" constant="29" id="cu5-A4-R8y"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
                                                 <constraints>
                                                     <constraint firstItem="DCp-ll-Szg" firstAttribute="top" secondItem="INi-dS-vlV" secondAttribute="top" constant="10" id="1qk-MN-WBK"/>
@@ -1667,7 +1667,7 @@
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="K9T-JP-yFq">
                         <barButtonItem key="leftBarButtonItem" title="back" id="bZj-En-5G8">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WHj-Nr-1TT">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WHj-Nr-1TT" customClass="NavigationBarButton">
                                 <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -1684,7 +1684,7 @@
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="edit" id="rXN-AC-nZ1">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="E7A-VR-0Ir" customClass="NavigationBarButton">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="E7A-VR-0Ir" customClass="NormalNavigationBarButton">
                                 <rect key="frame" x="234" y="7" width="70" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -1840,7 +1840,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="_tags" id="JaX-v7-69t">
                         <barButtonItem key="leftBarButtonItem" title="back" id="hmh-6t-SSj">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fcE-7A-LTy">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fcE-7A-LTy" customClass="NavigationBarButton">
                                 <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -1857,7 +1857,7 @@
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="done" id="hEx-eB-jk0">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RWi-KW-N7O" customClass="NavigationBarButton">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RWi-KW-N7O" customClass="NormalNavigationBarButton">
                                 <rect key="frame" x="260" y="7" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -1945,7 +1945,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="lrE-xK-fSm">
                         <barButtonItem key="leftBarButtonItem" title="back" id="m62-jd-vyw">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UKl-nm-MAw">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UKl-nm-MAw" customClass="NavigationBarButton">
                                 <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -1962,7 +1962,7 @@
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="done" id="u36-7n-CzH">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XuM-KH-JQx" customClass="NavigationBarButton">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="XuM-KH-JQx" customClass="NormalNavigationBarButton">
                                 <rect key="frame" x="260" y="7" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -2491,7 +2491,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="_editAlarmContent" id="Nlw-1M-6dI">
                         <barButtonItem key="leftBarButtonItem" id="jRw-7p-CQp">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="w5v-ja-EeM">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="w5v-ja-EeM" customClass="NavigationBarButton">
                                 <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -2665,7 +2665,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="_editAlarmRepeatType" id="BlB-bm-0MJ">
                         <barButtonItem key="leftBarButtonItem" id="Ube-pg-NI1">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5rC-12-7y9">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5rC-12-7y9" customClass="NavigationBarButton">
                                 <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -2780,7 +2780,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="_newTag" id="hGz-Ua-Oan">
                         <barButtonItem key="leftBarButtonItem" title="back" id="RD3-4D-mIa">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nTB-HZ-gQj">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nTB-HZ-gQj" customClass="NavigationBarButton">
                                 <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -2797,7 +2797,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="done" id="4HJ-eg-lX9">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5iP-28-KYc" customClass="NavigationBarButton">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="5iP-28-KYc" customClass="NormalNavigationBarButton">
                                 <rect key="frame" x="260" y="7" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -2856,7 +2856,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="9U4-fc-UQY">
                         <barButtonItem key="leftBarButtonItem" title="back" id="vYj-nH-Ugr">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1Z4-dd-seg">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="1Z4-dd-seg" customClass="NavigationBarButton">
                                 <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3416,7 +3416,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="fnS-UH-kQv">
                         <barButtonItem key="leftBarButtonItem" title="back" id="X9M-zN-MdL">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ig3-nL-mKN">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ig3-nL-mKN" customClass="NavigationBarButton">
                                 <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3433,7 +3433,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="done" id="5Vo-Ep-8xu">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fq3-LX-nez" customClass="NavigationBarButton">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Fq3-LX-nez" customClass="NormalNavigationBarButton">
                                 <rect key="frame" x="260" y="7" width="44" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -3562,7 +3562,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" id="2VT-Za-1Xb">
                         <barButtonItem key="leftBarButtonItem" title="back" id="xBg-SH-t35">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FFi-Qm-U6X">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FFi-Qm-U6X" customClass="NavigationBarButton">
                                 <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3676,7 +3676,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="_contactUs" id="cLa-wW-Dvp">
                         <barButtonItem key="leftBarButtonItem" title="back" id="0WI-Vj-lvy">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="b1R-pc-LJy">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="b1R-pc-LJy" customClass="NavigationBarButton">
                                 <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3812,7 +3812,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="_password" id="0Wc-Ym-w5w">
                         <barButtonItem key="leftBarButtonItem" title="back" id="Gnd-g8-CPg">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8zc-u3-iDL">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8zc-u3-iDL" customClass="NavigationBarButton">
                                 <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -3906,7 +3906,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <navigationItem key="navigationItem" title="_feedback" id="F5H-Hg-cWy">
                         <barButtonItem key="leftBarButtonItem" title="back" id="3cQ-Rt-dP1">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="scO-cu-dfi">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="scO-cu-dfi" customClass="NavigationBarButton">
                                 <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -4032,7 +4032,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="_tips" id="xb8-hh-Gp2">
                         <barButtonItem key="leftBarButtonItem" title="back" id="chB-UC-Tr6">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nil-8R-4o1">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="nil-8R-4o1" customClass="NavigationBarButton">
                                 <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>

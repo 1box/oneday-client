@@ -139,8 +139,8 @@ static SplashHelper *_sharedHelper = nil;
     if (_animationView1 && _animationView2) {
         [UIView transitionFromView:_animationView1
                             toView:_animationView2
-                          duration:1.1f
-                           options:UIViewAnimationOptionTransitionFlipFromLeft
+                          duration:0.5f
+                           options:UIViewAnimationOptionTransitionCurlUp
                         completion:^(BOOL finished) {
                             
                             _splashFliped = YES;
@@ -149,20 +149,25 @@ static SplashHelper *_sharedHelper = nil;
                                 block(self);
                             }];
                             
-                            [UIView animateWithDuration:0.8f animations:^{
-                                _animationView2.alpha = 0.05f;
-                            } completion:^(BOOL finished2) {
+                            [UIView animateWithDuration:0.7f animations:^{
+                                _animationView2.alpha = 0.99f;
+                            } completion:^(BOOL finished){
                                 
-                                [_animationView1 removeFromSuperview];
-                                [_animationView2 removeFromSuperview];
-                                
-                                self.animationView1 = nil;
-                                self.animationView2 = nil;
-                                
-                                _splashFinished = YES;
-                                
-                                [_finishedBlocks enumerateObjectsUsingBlock:^(LoadFlipSplashFinishedBlock block, NSUInteger idx, BOOL *stop) {
-                                    block(self);
+                                [UIView animateWithDuration:0.5f animations:^{
+                                    _animationView2.alpha = 0.05f;
+                                } completion:^(BOOL finished2) {
+                                    
+                                    [_animationView1 removeFromSuperview];
+                                    [_animationView2 removeFromSuperview];
+                                    
+                                    self.animationView1 = nil;
+                                    self.animationView2 = nil;
+                                    
+                                    _splashFinished = YES;
+                                    
+                                    [_finishedBlocks enumerateObjectsUsingBlock:^(LoadFlipSplashFinishedBlock block, NSUInteger idx, BOOL *stop) {
+                                        block(self);
+                                    }];
                                 }];
                             }];
                         }];

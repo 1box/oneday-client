@@ -10,4 +10,6 @@
 
 @interface NavigationBarButton : UIButton
 
+- (void)updateThemes;
+
 @end

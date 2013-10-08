@@ -98,7 +98,7 @@
         [leftButton setImage:[UIImage imageNamed:@"nav_dismiss.png"] forState:UIControlStateNormal];
         UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
         TipViewController *controller = [((UINavigationController*)[segue destinationViewController]).viewControllers objectAtIndex:0];
-        [controller.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"dark_nav_bg.png"] forBarMetrics:UIBarMetricsDefault];
+//        [controller.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"dark_nav_bg.png"] forBarMetrics:UIBarMetricsDefault];
         [leftButton addTarget:controller action:@selector(dismiss:) forControlEvents:UIControlEventTouchUpInside];
         controller.navigationItem.leftBarButtonItem = leftItem;
     }

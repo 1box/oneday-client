@@ -1122,6 +1122,8 @@
 		CB03E99118042B47004D35CF /* splash-with-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CB03E98818042B47004D35CF /* splash-with-logo.png */; };
 		CB03E99218042B47004D35CF /* splash-with-logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB03E98918042B47004D35CF /* splash-with-logo@2x.png */; };
 		CB03E99318042B47004D35CF /* splash-with-logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB03E98918042B47004D35CF /* splash-with-logo@2x.png */; };
+		CB03E996180441D5004D35CF /* ToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CB03E995180441D5004D35CF /* ToolbarButton.m */; };
+		CB03E997180441D5004D35CF /* ToolbarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CB03E995180441D5004D35CF /* ToolbarButton.m */; };
 		CB045E90173CD16100BD415A /* MTStatusBarOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = CB045E8F173CD16100BD415A /* MTStatusBarOverlay.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		CB045E91173CD16100BD415A /* MTStatusBarOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = CB045E8F173CD16100BD415A /* MTStatusBarOverlay.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		CB083EFC170C8DB500959971 /* NavigationBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CB083EFB170C8DB500959971 /* NavigationBarButton.m */; };
@@ -2408,6 +2410,8 @@
 		CB03E98718042B47004D35CF /* splash-with-logo-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash-with-logo-568h@2x.png"; sourceTree = "<group>"; };
 		CB03E98818042B47004D35CF /* splash-with-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash-with-logo.png"; sourceTree = "<group>"; };
 		CB03E98918042B47004D35CF /* splash-with-logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash-with-logo@2x.png"; sourceTree = "<group>"; };
+		CB03E994180441D5004D35CF /* ToolbarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolbarButton.h; sourceTree = "<group>"; };
+		CB03E995180441D5004D35CF /* ToolbarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolbarButton.m; sourceTree = "<group>"; };
 		CB045E8E173CD16100BD415A /* MTStatusBarOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTStatusBarOverlay.h; path = MTStatusBarOverlay/MTStatusBarOverlay.h; sourceTree = "<group>"; };
 		CB045E8F173CD16100BD415A /* MTStatusBarOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTStatusBarOverlay.m; path = MTStatusBarOverlay/MTStatusBarOverlay.m; sourceTree = "<group>"; };
 		CB083EFA170C8DB500959971 /* NavigationBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarButton.h; sourceTree = "<group>"; };
@@ -3724,6 +3728,8 @@
 				CBB7A82E176309F40064ED3B /* PasswordAddonCell.m */,
 				CBDA451E17FC216D00C0CDC4 /* NormalNavigationBarButton.h */,
 				CBDA451F17FC216D00C0CDC4 /* NormalNavigationBarButton.m */,
+				CB03E994180441D5004D35CF /* ToolbarButton.h */,
+				CB03E995180441D5004D35CF /* ToolbarButton.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -6277,6 +6283,7 @@
 				3F55AAF316E50D4A00EBBA30 /* TagManager.m in Sources */,
 				3F55AAF516E50D4A00EBBA30 /* AddonData.m in Sources */,
 				3F55AAF716E50D4A00EBBA30 /* DailyData.xcdatamodeld in Sources */,
+				CB03E997180441D5004D35CF /* ToolbarButton.m in Sources */,
 				3F55AAF916E50D4A00EBBA30 /* DailyDoBase.m in Sources */,
 				3F55AAFF16E50D4A00EBBA30 /* TagData.m in Sources */,
 				3F55AB0116E50D4A00EBBA30 /* TodoData.m in Sources */,
@@ -6424,6 +6431,7 @@
 				3F55AAF216E50D4A00EBBA30 /* TagManager.m in Sources */,
 				3F55AAF416E50D4A00EBBA30 /* AddonData.m in Sources */,
 				3F55AAF616E50D4A00EBBA30 /* DailyData.xcdatamodeld in Sources */,
+				CB03E996180441D5004D35CF /* ToolbarButton.m in Sources */,
 				3F55AAF816E50D4A00EBBA30 /* DailyDoBase.m in Sources */,
 				3F55AAFE16E50D4A00EBBA30 /* TagData.m in Sources */,
 				3F55AB0016E50D4A00EBBA30 /* TodoData.m in Sources */,

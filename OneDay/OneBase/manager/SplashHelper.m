@@ -139,8 +139,8 @@ static SplashHelper *_sharedHelper = nil;
     if (_animationView1 && _animationView2) {
         [UIView transitionFromView:_animationView1
                             toView:_animationView2
-                          duration:0.5f
-                           options:UIViewAnimationOptionTransitionCurlUp
+                          duration:0.7f
+                           options:UIViewAnimationOptionTransitionFlipFromRight
                         completion:^(BOOL finished) {
                             
                             _splashFliped = YES;

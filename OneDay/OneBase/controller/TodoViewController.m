@@ -8,7 +8,7 @@
 
 #import "TodoViewController.h"
 #import "TipViewController.h"
-#import "DarkNavigationBarButton.h"
+#import "ToolbarButton.h"
 
 #import "DailyDoManager.h"
 #import "KMModelManager.h"
@@ -236,7 +236,7 @@
         NSMutableArray *mutItems = [NSMutableArray arrayWithCapacity:5];
         [mutItems addObject:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil]];
         [words enumerateObjectsUsingBlock:^(NSString *word, NSUInteger idx, BOOL *stop) {
-            DarkNavigationBarButton *tButton = [DarkNavigationBarButton buttonWithType:UIButtonTypeCustom];
+            ToolbarButton *tButton = [ToolbarButton buttonWithType:UIButtonTypeCustom];
             [tButton addTarget:self action:@selector(helperWordButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
             tButton.tag = HelperWordButtonTagPrefix + idx;
             [tButton setTitle:word forState:UIControlStateNormal];
@@ -262,7 +262,7 @@
 
 - (void)helperWordButtonClicked:(id)sender
 {
-    DarkNavigationBarButton *tButton = (DarkNavigationBarButton *)sender;
+    ToolbarButton *tButton = (ToolbarButton *)sender;
     NSArray *words = [[DailyDoManager sharedManager] inputHelperWordsForDoName:_dailyDo.addon.dailyDoName];
     
     int idx = tButton.tag - HelperWordButtonTagPrefix;

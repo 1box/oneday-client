@@ -494,7 +494,7 @@
                                 <rect key="frame" x="0.0" y="460" width="320" height="44"/>
                                 <items>
                                     <barButtonItem id="XxR-Ha-DgO">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oUq-WG-6RZ" customClass="DarkNavigationBarButton">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="oUq-WG-6RZ" customClass="ToolbarButton">
                                             <rect key="frame" x="16" y="7" width="120" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -511,7 +511,7 @@
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem id="QZB-lz-njH">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WP8-S3-wLj" customClass="DarkNavigationBarButton">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="WP8-S3-wLj" customClass="ToolbarButton">
                                             <rect key="frame" x="146" y="7" width="70" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -954,7 +954,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="iKG-a3-EnY">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ego-I7-Kpg" customClass="NormalNavigationBarButton">
-                                <rect key="frame" x="234" y="7" width="70" height="30"/>
+                                <rect key="frame" x="229" y="7" width="75" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <state key="normal" title="_homecover">
@@ -1021,7 +1021,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQf-w9-oab" customClass="DailyDoView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="PH1-ZQ-gkq">
+                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="PH1-ZQ-gkq">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                     </imageView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="alq-7X-wct" customClass="KMTableView">
@@ -1411,7 +1411,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="63A-dP-fZl" customClass="DailyDoPresentView">
                                                             <rect key="frame" x="55" y="35" width="245" height="64"/>
                                                             <subviews>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ged-My-aOB">
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ged-My-aOB">
                                                                     <rect key="frame" x="0.0" y="0.0" width="245" height="64"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1481,7 +1481,7 @@
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAK-9F-bRA" customClass="DailyDoPresentView">
                                                             <rect key="frame" x="55" y="35" width="245" height="65"/>
                                                             <subviews>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvC-XV-B4n">
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvC-XV-B4n">
                                                                     <rect key="frame" x="0.0" y="0.0" width="245" height="65"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1576,7 +1576,7 @@
                                         <rect key="frame" x="0.0" y="460" width="320" height="44"/>
                                         <items>
                                             <barButtonItem style="plain" id="AyI-Tx-9g9">
-                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4OH-tn-FYV" customClass="DarkNavigationBarButton">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4OH-tn-FYV" customClass="ToolbarButton">
                                                     <rect key="frame" x="16" y="7" width="130" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -1593,7 +1593,7 @@
                                                 </button>
                                             </barButtonItem>
                                             <barButtonItem id="vzD-dN-Vg3">
-                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UuR-Qr-15r" customClass="DarkNavigationBarButton">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UuR-Qr-15r" customClass="ToolbarButton">
                                                     <rect key="frame" x="156" y="7" width="70" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -1611,7 +1611,7 @@
                                             </barButtonItem>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="LtX-Kx-Yym"/>
                                             <barButtonItem style="plain" id="10Y-4o-rcp">
-                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="S5z-qn-63N" customClass="DarkNavigationBarButton">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="S5z-qn-63N" customClass="ToolbarButton">
                                                     <rect key="frame" x="269" y="7" width="35" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -2145,7 +2145,7 @@
                                 </constraints>
                                 <items>
                                     <barButtonItem style="plain" id="ZI6-Oj-p54">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="S3P-ci-K5A" customClass="DarkNavigationBarButton">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="S3P-ci-K5A" customClass="ToolbarButton">
                                             <rect key="frame" x="16" y="7" width="80" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -2162,7 +2162,7 @@
                                         </button>
                                     </barButtonItem>
                                     <barButtonItem style="plain" id="t7b-gs-7RD">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UBb-Zq-L1T" customClass="DarkNavigationBarButton">
+                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="UBb-Zq-L1T" customClass="ToolbarButton">
                                             <rect key="frame" x="106" y="7" width="80" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
@@ -3131,16 +3131,32 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <constraint firstAttribute="height" constant="44" id="iVM-Ax-N2H"/>
                                         </constraints>
                                         <items>
-                                            <barButtonItem title="Cancel" id="gV7-bs-nhF">
-                                                <connections>
-                                                    <action selector="pickerCanceled:" destination="dhG-di-PXW" id="8t4-mp-AxG"/>
-                                                </connections>
+                                            <barButtonItem style="plain" id="S9p-Qd-ior">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fr8-Gz-DjM" customClass="ToolbarButton">
+                                                    <rect key="frame" x="16" y="6" width="73" height="33"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <state key="normal" title="_cancel">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="pickerCanceled:" destination="dhG-di-PXW" eventType="touchUpInside" id="so3-Hk-HXs"/>
+                                                    </connections>
+                                                </button>
                                             </barButtonItem>
                                             <barButtonItem systemItem="flexibleSpace" id="Y09-iQ-z4L"/>
-                                            <barButtonItem title="Confirm" id="m7h-Hj-q0p">
-                                                <connections>
-                                                    <action selector="pickerConfirmed:" destination="dhG-di-PXW" id="ptf-8g-lRn"/>
-                                                </connections>
+                                            <barButtonItem style="plain" id="vph-04-xLg">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ill-w4-dSk" customClass="ToolbarButton">
+                                                    <rect key="frame" x="231" y="6" width="73" height="33"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <state key="normal" title="_confirm">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="pickerConfirmed:" destination="dhG-di-PXW" eventType="touchUpInside" id="sZz-Vi-kz5"/>
+                                                    </connections>
+                                                </button>
                                             </barButtonItem>
                                         </items>
                                     </toolbar>
@@ -3220,7 +3236,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" id="yPs-1f-G5e">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4fJ-6P-XPL" customClass="DarkNavigationBarButton">
-                                <rect key="frame" x="234" y="7" width="70" height="30"/>
+                                <rect key="frame" x="229" y="7" width="75" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <state key="normal" title="_moreFeedback">
@@ -3490,16 +3506,32 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                             <constraint firstAttribute="height" constant="44" id="b0N-Qg-iUd"/>
                                         </constraints>
                                         <items>
-                                            <barButtonItem title="Cancel" id="KYJ-dH-2IK">
-                                                <connections>
-                                                    <action selector="pickerCanceled:" destination="Srd-uP-EPX" id="Hah-vg-qX4"/>
-                                                </connections>
+                                            <barButtonItem style="plain" id="Dpn-s0-3Nl">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="BYP-n1-sgm" customClass="ToolbarButton">
+                                                    <rect key="frame" x="16" y="7" width="46" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <state key="normal" title="_cancel">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="pickerCanceled:" destination="Srd-uP-EPX" eventType="touchUpInside" id="7pl-C6-0fw"/>
+                                                    </connections>
+                                                </button>
                                             </barButtonItem>
                                             <barButtonItem systemItem="flexibleSpace" id="76x-eH-25o"/>
-                                            <barButtonItem title="Confirm" id="ANc-DC-jHx">
-                                                <connections>
-                                                    <action selector="pickerConfirmed:" destination="Srd-uP-EPX" id="ow6-FH-H2f"/>
-                                                </connections>
+                                            <barButtonItem style="plain" id="V0F-cz-0EB">
+                                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="smV-lE-YdP" customClass="ToolbarButton">
+                                                    <rect key="frame" x="231" y="6" width="73" height="33"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <state key="normal" title="_confirm">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="pickerConfirmed:" destination="Srd-uP-EPX" eventType="touchUpInside" id="aD2-dz-iWE"/>
+                                                    </connections>
+                                                </button>
                                             </barButtonItem>
                                         </items>
                                     </toolbar>
@@ -4062,26 +4094,70 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     <resources>
         <image name="add_tag.png" width="32" height="32"/>
         <image name="bg_blue.png" width="320" height="480"/>
+        <image name="bg_blue.png" width="320" height="480"/>
+        <image name="bg_blue.png" width="320" height="480"/>
+        <image name="bg_blue.png" width="320" height="480"/>
+        <image name="bg_blue.png" width="320" height="480"/>
+        <image name="bg_white.png" width="320" height="480"/>
+        <image name="bg_white.png" width="320" height="480"/>
+        <image name="bg_white.png" width="320" height="480"/>
+        <image name="bg_white.png" width="320" height="480"/>
+        <image name="bg_white.png" width="320" height="480"/>
         <image name="bg_white.png" width="320" height="480"/>
         <image name="cell_normal_bg.png" width="64" height="64"/>
         <image name="cell_quick_icon.png" width="21" height="21"/>
         <image name="cell_remove_icon.png" width="21" height="21"/>
         <image name="checkbox-n.png" width="33" height="33"/>
+        <image name="checkbox-n.png" width="33" height="33"/>
+        <image name="checkbox-s.png" width="33" height="33"/>
+        <image name="checkbox-s.png" width="33" height="33"/>
+        <image name="checkbox-s.png" width="33" height="33"/>
         <image name="checkbox-s.png" width="33" height="33"/>
         <image name="checkbox_logged.png" width="33" height="33"/>
+        <image name="checkbox_logged.png" width="33" height="33"/>
+        <image name="checkbox_overtime_n.png" width="33" height="33"/>
         <image name="checkbox_overtime_n.png" width="33" height="33"/>
         <image name="checkboxdone-n.png" width="33" height="33"/>
+        <image name="checkboxdone-n.png" width="33" height="33"/>
+        <image name="checkboxdone-s.png" width="33" height="33"/>
         <image name="checkboxdone-s.png" width="33" height="33"/>
         <image name="dark_nav_back.png" width="30" height="30"/>
+        <image name="dark_nav_back.png" width="30" height="30"/>
+        <image name="dark_nav_back.png" width="30" height="30"/>
+        <image name="dark_nav_back.png" width="30" height="30"/>
+        <image name="dark_nav_back.png" width="30" height="30"/>
+        <image name="dark_nav_back.png" width="30" height="30"/>
+        <image name="dark_nav_back.png" width="30" height="30"/>
+        <image name="dark_nav_back_press.png" width="30" height="30"/>
+        <image name="dark_nav_back_press.png" width="30" height="30"/>
+        <image name="dark_nav_back_press.png" width="30" height="30"/>
         <image name="dark_nav_back_press.png" width="30" height="30"/>
         <image name="guide_background.png" width="16" height="16"/>
         <image name="homecover001.jpg" width="320" height="480"/>
         <image name="homecover_check.png" width="32" height="32"/>
         <image name="list_cell_tag.png" width="33" height="33"/>
+        <image name="list_cell_tag.png" width="33" height="33"/>
+        <image name="list_cell_tag.png" width="33" height="33"/>
         <image name="list_icon_timeline.png" width="16" height="16"/>
         <image name="menu_white.png" width="16" height="16"/>
         <image name="nav_back.png" width="30" height="30"/>
+        <image name="nav_back.png" width="30" height="30"/>
+        <image name="nav_back.png" width="30" height="30"/>
+        <image name="nav_back.png" width="30" height="30"/>
+        <image name="nav_back.png" width="30" height="30"/>
+        <image name="nav_back.png" width="30" height="30"/>
         <image name="nav_back_press.png" width="30" height="30"/>
+        <image name="nav_back_press.png" width="30" height="30"/>
+        <image name="nav_back_press.png" width="30" height="30"/>
+        <image name="nav_back_press.png" width="30" height="30"/>
+        <image name="nav_back_press.png" width="30" height="30"/>
+        <image name="nav_back_press.png" width="30" height="30"/>
+        <image name="nav_dismiss.png" width="16" height="16"/>
+        <image name="nav_dismiss.png" width="16" height="16"/>
+        <image name="nav_dismiss.png" width="16" height="16"/>
+        <image name="nav_dismiss.png" width="16" height="16"/>
+        <image name="nav_dismiss.png" width="16" height="16"/>
+        <image name="nav_dismiss.png" width="16" height="16"/>
         <image name="nav_dismiss.png" width="16" height="16"/>
         <image name="nav_logo.png" width="63" height="26"/>
         <image name="page_round_bg.png" width="20" height="20"/>
@@ -4105,7 +4181,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="kU8-df-8Bf"/>
-        <segue reference="fKJ-vH-Ras"/>
+        <segue reference="1vB-P8-pdP"/>
+        <segue reference="Q7S-oa-MDi"/>
     </inferredMetricsTieBreakers>
 </document>

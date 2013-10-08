@@ -39,10 +39,27 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    [self updateTitle];
     [_summaryList reloadData];
 }
 
 #pragma mark - private
+
+- (void)updateTitle
+{
+    NSString *title = @"";
+    switch (_type) {
+        case SummaryViewTypeMonth:
+            title = NSLocalizedString(@"CashMonthSummaryTitle", nil);
+            break;
+            case SummaryViewTypeYear:
+            title = NSLocalizedString(@"CashYearSummaryTitle", nil);
+            break;
+        default:
+            break;
+    }
+    self.navigationItem.title = title;
+}
 
 - (void)prepareDataSource
 {
@@ -177,7 +194,7 @@
             case SummaryViewTypeMonth:
             {
                 MonthlyDo *summaryDo = [_summaryDos objectAtIndex:indexPath.row];
-                cell.dateLabel.text = [[YearToDayFormatter() shortMonthSymbols] objectAtIndex:summaryDo.currentMonth.month];
+                cell.dateLabel.text = [[YearToDayFormatter() shortMonthSymbols] objectAtIndex:summaryDo.currentMonth.month - 1];
                 cell.summaryLabel.text = [NSString stringWithFormat:NSLocalizedString(@"CashMonthSummaryText", nil), summaryDo.summary];
             }
                 break;

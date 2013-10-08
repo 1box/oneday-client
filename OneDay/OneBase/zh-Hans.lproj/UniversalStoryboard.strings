@@ -80,9 +80,6 @@
 /* Class = "IBUINavigationItem"; title = "_summary"; ObjectID = "9bB-T6-hM0"; */
 "9bB-T6-hM0.title" = "汇总";
 
-/* Class = "IBUIBarButtonItem"; title = "Confirm"; ObjectID = "ANc-DC-jHx"; */
-"ANc-DC-jHx.title" = "确定";
-
 /* Class = "IBUITextField"; text = "_alarmTextFieldPlaceHolder"; ObjectID = "AzU-Id-QLu"; */
 "AzU-Id-QLu.text" = "";
 
@@ -148,9 +145,6 @@
 
 /* Class = "IBUINavigationItem"; title = "_tags"; ObjectID = "JaX-v7-69t"; */
 "JaX-v7-69t.title" = "_tags";
-
-/* Class = "IBUIBarButtonItem"; title = "Cancel"; ObjectID = "KYJ-dH-2IK"; */
-"KYJ-dH-2IK.title" = "取消";
 
 /* Class = "IBUILabel"; text = "Tap or swipe to begin."; ObjectID = "MFx-5Q-0Po"; */
 "MFx-5Q-0Po.text" = "Tap or swipe to begin.";
@@ -263,9 +257,6 @@
 /* Class = "IBUIButton"; normalTitle = "remove"; ObjectID = "gUV-5m-1ru"; */
 "gUV-5m-1ru.normalTitle" = "remove";
 
-/* Class = "IBUIBarButtonItem"; title = "Cancel"; ObjectID = "gV7-bs-nhF"; */
-"gV7-bs-nhF.title" = "取消";
-
 /* Class = "IBUILabel"; text = "Tap, or drag the checkmark to the cloud to enable iCloud."; ObjectID = "gVi-Yh-ucM"; */
 "gVi-Yh-ucM.text" = "Tap, or drag the checkmark to the cloud to enable iCloud.";
 
@@ -310,9 +301,6 @@
 
 /* Class = "IBUIBarButtonItem"; title = "back"; ObjectID = "m62-jd-vyw"; */
 "m62-jd-vyw.title" = "back";
-
-/* Class = "IBUIBarButtonItem"; title = "Confirm"; ObjectID = "m7h-Hj-q0p"; */
-"m7h-Hj-q0p.title" = "确定";
 
 /* Class = "IBUILabel"; text = "title"; ObjectID = "my4-ZI-zXj"; */
 "my4-ZI-zXj.text" = "title";
@@ -373,3 +361,15 @@
 
 /* Class = "IBUILabel"; text = "_nagType"; ObjectID = "zg1-r9-9Ac"; */
 "zg1-r9-9Ac.text" = "野蛮提醒";
+
+/* Class = "IBUIButton"; normalTitle = "_cancel"; ObjectID = "BYP-n1-sgm"; */
+"BYP-n1-sgm.normalTitle" = "取消";
+
+/* Class = "IBUIButton"; normalTitle = "_confirm"; ObjectID = "Ill-w4-dSk"; */
+"Ill-w4-dSk.normalTitle" = "确定";
+
+/* Class = "IBUIButton"; normalTitle = "_cancel"; ObjectID = "fr8-Gz-DjM"; */
+"fr8-Gz-DjM.normalTitle" = "取消";
+
+/* Class = "IBUIButton"; normalTitle = "_confirm"; ObjectID = "smV-lE-YdP"; */
+"smV-lE-YdP.normalTitle" = "确定";

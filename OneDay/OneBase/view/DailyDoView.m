@@ -122,8 +122,8 @@
     _tomorrowSectionIndex = [_tomorrowDo.todos count] > 0 ? 1 : -1;
     _loggedSectionIndex = _tomorrowSectionIndex == 1 ? 2 : 1;
     
-    UIImage *selectBackgroundImage = [UIImage imageNamed:@"light_nav_btn_bg_press.png"];
-    [_unfoldButton setBackgroundImage:[selectBackgroundImage stretchableImageWithLeftCapWidth:selectBackgroundImage.size.width/2 topCapHeight:selectBackgroundImage.size.height/2] forState:UIControlStateSelected];
+//    UIImage *selectBackgroundImage = [UIImage imageNamed:@"light_nav_btn_bg_press.png"];
+//    [_unfoldButton setBackgroundImage:[selectBackgroundImage stretchableImageWithLeftCapWidth:selectBackgroundImage.size.width/2 topCapHeight:selectBackgroundImage.size.height/2] forState:UIControlStateSelected];
     _unfoldButton.selected = _viewHelper.allUnfold;
     
     // load action items

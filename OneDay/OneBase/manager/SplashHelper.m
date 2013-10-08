@@ -106,11 +106,18 @@ static SplashHelper *_sharedHelper = nil;
     }
     
     UIView *containerView = ((AppDelegateBase *)[[UIApplication sharedApplication] delegate]).window.rootViewController.view;
-    NSString *imageName = @"Default.png";
+    NSString *imageName = @"splash-with-logo";
     if ([KMCommon is568Screen]) {
-        imageName = @"Default-568h.png";
+        imageName = @"splash-with-logo-568h";
     }
-    self.animationView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+    
+    NSMutableString *mutName = [NSMutableString stringWithString:imageName];
+        if ([[KMCommon OSVersion] floatValue] >= 7.f) {
+            [mutName appendString:@"-7"];
+        }
+    [mutName appendString:@".png"];
+    
+    self.animationView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[mutName copy]]];
     [containerView addSubview:_animationView1];
     
     self.animationView2 = [[SplashHelpAnimationView alloc] initWithFrame:containerView.bounds];
@@ -220,11 +227,17 @@ static SplashHelper *_sharedHelper = nil;
 {
     self = [super initWithFrame:frame];
     if (self) {
-        NSString *imageName = @"splash-screen-no-logo.png";
+        NSString *imageName = @"splash-screen-no-logo";
         if ([KMCommon is568Screen]) {
-            imageName = @"splash-screen-no-logo-568h.png";
+            imageName = @"splash-screen-no-logo-568h";
         }
-        self.splashView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
+        NSMutableString *mutName = [NSMutableString stringWithString:imageName];
+        if ([[KMCommon OSVersion] floatValue] >= 7.f) {
+            [mutName appendString:@"-7"];
+        }
+        [mutName appendString:@".png"];
+        
+        self.splashView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[mutName copy]]];
         [self addSubview:_splashView];
         
         self.titleLabel = [[UILabel alloc] init];

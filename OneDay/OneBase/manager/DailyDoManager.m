@@ -330,7 +330,8 @@ static DailyDoManager *_sharedManager;
         }
     }
     
-    return [mutMonthlyDos copy];
+    NSArray *monthDos = [mutMonthlyDos sortedArrayUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"currentMonth" ascending:YES]]];
+    return monthDos;
 }
 
 // yearlyDos

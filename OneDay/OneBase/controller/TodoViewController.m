@@ -161,7 +161,6 @@
     }];
     
     NSArray *contents = [mutContents copy];
-    SSLog(@"contents: %@", contents);
     
     if ([contents count] == [_todos count]) {
         [_todos enumerateObjectsUsingBlock:^(TodoData *todo, NSUInteger idx, BOOL *stop) {
@@ -377,7 +376,6 @@
     _appendTextIndexRange = NSMakeRange(beginIndex, [appendContents count] - 1);
     
     BOOL availabel = [self availableRange:range];
-    SSLog(@"available:%d", availabel);
     return availabel;
 }
 

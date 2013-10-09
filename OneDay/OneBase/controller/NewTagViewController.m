@@ -34,6 +34,12 @@
     [_textField becomeFirstResponder];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [_textField resignFirstResponder];
+}
+
 #pragma mark - Actions
 
 - (IBAction)cancel:(id)sender

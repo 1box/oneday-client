@@ -191,7 +191,7 @@
         <!--Navigation Controller-->
         <scene sceneID="UeP-rr-Slt">
             <objects>
-                <navigationController definesPresentationContext="YES" id="Nab-vx-mvh" customClass="MLNavigationController" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="Nab-vx-mvh" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="O0d-bE-urf" customClass="DarkNavigationBar">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -389,7 +389,7 @@
         <!--Navigation Controller-->
         <scene sceneID="OAa-lo-Ybk">
             <objects>
-                <navigationController storyboardIdentifier="UndoNavigationControllerID" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AVc-ly-b5z" customClass="MLNavigationController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="UndoNavigationControllerID" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AVc-ly-b5z" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="WD7-au-9qB" customClass="DarkNavigationBar">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -577,7 +577,7 @@
         <!--Navigation Controller-->
         <scene sceneID="chC-1J-2BD">
             <objects>
-                <navigationController storyboardIdentifier="SummaryNavigationControllerID" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u2i-k8-2dQ" customClass="MLNavigationController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="SummaryNavigationControllerID" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="u2i-k8-2dQ" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ahE-No-Pkb" customClass="DarkNavigationBar">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -990,7 +990,7 @@
         <!--Navigation Controller-->
         <scene sceneID="83M-BS-PGw">
             <objects>
-                <navigationController definesPresentationContext="YES" id="uoj-Me-Jrb" customClass="MLNavigationController" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="uoj-Me-Jrb" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="m35-TR-JF9" customClass="NormalNavigationBar">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1991,7 +1991,7 @@
         <!--Navigation Controller-->
         <scene sceneID="tqf-Ft-MX7">
             <objects>
-                <navigationController storyboardIdentifier="WorkoutAlarmNavigationControllerID" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DgV-t2-1l9" customClass="MLNavigationController" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="WorkoutAlarmNavigationControllerID" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DgV-t2-1l9" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eKI-7h-za2" customClass="DarkNavigationBar">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -2250,7 +2250,7 @@
         <!--Navigation Controller-->
         <scene sceneID="If3-zb-0nV">
             <objects>
-                <navigationController definesPresentationContext="YES" id="tGl-Os-fwt" customClass="MLNavigationController" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="tGl-Os-fwt" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Lce-bb-q0I"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mIP-m8-DYV" customClass="DarkNavigationBar">
                         <autoresizingMask key="autoresizingMask"/>
@@ -2827,7 +2827,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <!--Navigation Controller-->
         <scene sceneID="EIz-7B-gze">
             <objects>
-                <navigationController definesPresentationContext="YES" id="wJa-Mu-3RO" customClass="MLNavigationController" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="wJa-Mu-3RO" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3bv-t1-CZA" customClass="NormalNavigationBar">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3295,7 +3295,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <!--Navigation Controller-->
         <scene sceneID="WcD-lh-P6C">
             <objects>
-                <navigationController definesPresentationContext="YES" id="Krz-5F-Gzs" customClass="MLNavigationController" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="Krz-5F-Gzs" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LQZ-gH-fYD" customClass="DarkNavigationBar">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -3386,7 +3386,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <!--Navigation Controller-->
         <scene sceneID="7Vi-YT-JaD">
             <objects>
-                <navigationController definesPresentationContext="YES" id="nly-g7-ZW6" customClass="MLNavigationController" sceneMemberID="viewController">
+                <navigationController definesPresentationContext="YES" id="nly-g7-ZW6" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="u5w-yG-Bdj"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="daq-5Q-Xih" customClass="DarkNavigationBar">
                         <autoresizingMask key="autoresizingMask"/>
@@ -4130,7 +4130,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="1vB-P8-pdP"/>
-        <segue reference="Q7S-oa-MDi"/>
+        <segue reference="uTW-Ln-vco"/>
+        <segue reference="kU8-df-8Bf"/>
     </inferredMetricsTieBreakers>
 </document>

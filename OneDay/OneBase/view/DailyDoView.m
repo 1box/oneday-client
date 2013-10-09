@@ -25,6 +25,7 @@
 #import "DailyDoTagCell.h"
 #import "DailyDoNoteCell.h"
 #import "KMLoadMoreCell.h"
+#import "DailyDoPresentView.h"
 #import "MTStatusBarOverlay.h"
 
 #import "KMModelManager.h"
@@ -486,6 +487,7 @@
             DailyDoTodayCell *cell = [tableView dequeueReusableCellWithIdentifier:todayDoCell];
             cell.dailyDo = _todayDo;
             cell.unfolded = _viewHelper.todayDoUnfold;
+            cell.presentView.textView.scrollsToTop = NO;
             return cell;
         }
         else if (indexPath.row == [_properties count] + 1) {

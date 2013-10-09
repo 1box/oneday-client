@@ -1021,7 +1021,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQf-w9-oab" customClass="DailyDoView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <subviews>
-                                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="PH1-ZQ-gkq">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="PH1-ZQ-gkq">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                     </imageView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="alq-7X-wct" customClass="KMTableView">
@@ -3486,9 +3486,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="Vus-GM-OHY">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c02-o5-ffZ" customClass="MADayView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -3577,17 +3574,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Vus-GM-OHY" firstAttribute="leading" secondItem="uyF-Wt-hrE" secondAttribute="leading" id="2dW-0k-8a1"/>
                             <constraint firstItem="c02-o5-ffZ" firstAttribute="trailing" secondItem="uyF-Wt-hrE" secondAttribute="trailing" id="64Z-Ia-8Gh"/>
                             <constraint firstItem="xoV-0b-dPg" firstAttribute="top" relation="greaterThanOrEqual" secondItem="uyF-Wt-hrE" secondAttribute="top" constant="416" id="8bk-HV-D8E"/>
                             <constraint firstItem="xoV-0b-dPg" firstAttribute="leading" secondItem="uyF-Wt-hrE" secondAttribute="leading" id="Gs0-uZ-q90"/>
-                            <constraint firstItem="Vus-GM-OHY" firstAttribute="trailing" secondItem="uyF-Wt-hrE" secondAttribute="trailing" id="LIU-dE-RHH"/>
                             <constraint firstItem="xoV-0b-dPg" firstAttribute="trailing" secondItem="uyF-Wt-hrE" secondAttribute="trailing" id="S9d-9P-XUs"/>
-                            <constraint firstItem="Vus-GM-OHY" firstAttribute="top" secondItem="uyF-Wt-hrE" secondAttribute="top" id="Tbd-UJ-2DI"/>
                             <constraint firstItem="c02-o5-ffZ" firstAttribute="leading" secondItem="uyF-Wt-hrE" secondAttribute="leading" id="UuI-lA-bpP"/>
                             <constraint firstItem="c02-o5-ffZ" firstAttribute="top" secondItem="uyF-Wt-hrE" secondAttribute="top" id="bFa-ni-fGD"/>
                             <constraint firstAttribute="bottom" secondItem="xoV-0b-dPg" secondAttribute="bottom" constant="-260" id="cjL-wM-NfF"/>
-                            <constraint firstItem="Vus-GM-OHY" firstAttribute="bottom" secondItem="uyF-Wt-hrE" secondAttribute="bottom" id="s9r-vR-PFu"/>
                             <constraint firstItem="c02-o5-ffZ" firstAttribute="bottom" secondItem="uyF-Wt-hrE" secondAttribute="bottom" id="yFc-ss-5Mt"/>
                         </constraints>
                     </view>
@@ -4093,7 +4086,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </scenes>
     <resources>
         <image name="add_tag.png" width="32" height="32"/>
-        <image name="bg_blue.png" width="320" height="480"/>
         <image name="bg_blue.png" width="320" height="480"/>
         <image name="bg_blue.png" width="320" height="480"/>
         <image name="bg_blue.png" width="320" height="480"/>

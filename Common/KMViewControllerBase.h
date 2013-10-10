@@ -17,8 +17,8 @@
 - (IBAction)back:(id)sender;
 - (IBAction)dismiss:(id)sender;
 
-- (void)pullRefreshBack;
+- (void)pullBack;
 
 #pragma mark - public
-- (void)renderPullRefreshBack:(UIScrollView *)scrollView;
+- (void)renderPullBack:(UIScrollView *)scrollView;
 @end

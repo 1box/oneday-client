@@ -63,9 +63,9 @@
     [self loadUndos:NO];
 }
 
-- (void)pullRefreshBack
+- (void)pullBack
 {
-    [self renderPullRefreshBack:self.undosView];
+    [self renderPullBack:self.undosView];
 }
 
 #pragma mark - Load Data

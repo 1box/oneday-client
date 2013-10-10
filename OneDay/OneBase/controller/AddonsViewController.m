@@ -40,9 +40,9 @@
     return @"AddonsPage";
 }
 
-- (void)pullRefreshBack
+- (void)pullBack
 {
-    [self renderPullRefreshBack:self.addonsView];
+    [self renderPullBack:self.addonsView];
 }
 
 #pragma mark - Actions

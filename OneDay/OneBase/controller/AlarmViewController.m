@@ -69,9 +69,9 @@
     }
 }
 
-- (void)pullRefreshBack
+- (void)pullBack
 {
-    [self renderPullRefreshBack:self.alarmView];
+    [self renderPullBack:self.alarmView];
 }
 
 #pragma mark - View Lifecycles

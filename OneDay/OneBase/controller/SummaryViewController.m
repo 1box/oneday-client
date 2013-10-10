@@ -43,9 +43,9 @@
     [_summaryList reloadData];
 }
 
-- (void)pullRefreshBack
+- (void)pullBack
 {
-    [self renderPullRefreshBack:self.summaryList];
+    [self renderPullBack:self.summaryList];
 }
 
 #pragma mark - private

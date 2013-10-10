@@ -29,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self pullRefreshBack];
+    [self pullBack];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -48,7 +48,7 @@
 
 #pragma mark - extend
 
-- (void)pullRefreshBack
+- (void)pullBack
 {
     // should be extended
 }
@@ -67,7 +67,7 @@
 
 #pragma mark - public
 
-- (void)renderPullRefreshBack:(UIScrollView *)scrollView
+- (void)renderPullBack:(UIScrollView *)scrollView
 {
     __weak KMViewControllerBase *weakSelf = self;
 //    __weak UIScrollView *weakScroll = scrollView;

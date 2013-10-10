@@ -63,6 +63,11 @@
     [self loadUndos:NO];
 }
 
+- (void)pullRefreshBack
+{
+    [self renderPullRefreshBack:self.undosView];
+}
+
 #pragma mark - Load Data
 
 - (void)reportTodoManagerUndosLoadFinishedNotification:(NSNotification *)notification

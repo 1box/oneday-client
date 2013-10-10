@@ -188,3 +188,8 @@
 "Share app message body" ="Nice app! One Day - Love plan, Love note! Click to download: https://itunes.apple.com/us/app/yi-tian-ai-ji-hua-ai-ji-lu/id573096972?ls=1&mt=8";
 "Cannot mail"            ="Cannot send email";
 
+// pull refresh
+"Pull to refresh..."   ="Pull to dismiss";
+"Release to refresh..."="Release to dismiss";
+"Loading..."           ="Dismissing";
+

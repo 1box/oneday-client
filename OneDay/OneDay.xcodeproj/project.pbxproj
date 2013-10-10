@@ -1558,6 +1558,10 @@
 		CBB7A82F176309F40064ED3B /* PasswordAddonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB7A82E176309F40064ED3B /* PasswordAddonCell.m */; };
 		CBB7A830176309F40064ED3B /* PasswordAddonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB7A82E176309F40064ED3B /* PasswordAddonCell.m */; };
 		CBBA8FE817F49C14006F0DF2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CBBA8FE717F49C14006F0DF2 /* Default-568h@2x.png */; };
+		CBC0C8421806B14F008C34AE /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC0C83F1806B14F008C34AE /* UIScrollView+SVInfiniteScrolling.m */; };
+		CBC0C8431806B14F008C34AE /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC0C83F1806B14F008C34AE /* UIScrollView+SVInfiniteScrolling.m */; };
+		CBC0C8441806B14F008C34AE /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC0C8411806B14F008C34AE /* UIScrollView+SVPullToRefresh.m */; };
+		CBC0C8451806B14F008C34AE /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC0C8411806B14F008C34AE /* UIScrollView+SVPullToRefresh.m */; };
 		CBC565C317FC39AF0073C549 /* cell_normal_alone.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4605F6173D4B8700955454 /* cell_normal_alone.png */; };
 		CBC565C417FC39AF0073C549 /* cell_normal_alone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4605F7173D4B8700955454 /* cell_normal_alone@2x.png */; };
 		CBC565C517FC39AF0073C549 /* cell_normal_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4605F8173D4B8700955454 /* cell_normal_bottom.png */; };
@@ -2724,6 +2728,11 @@
 		CBB7A82E176309F40064ED3B /* PasswordAddonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PasswordAddonCell.m; sourceTree = "<group>"; };
 		CBB7A83117630B670064ED3B /* DailyData 5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DailyData 5.xcdatamodel"; sourceTree = "<group>"; };
 		CBBA8FE717F49C14006F0DF2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CBC0C83D1806B14F008C34AE /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		CBC0C83E1806B14F008C34AE /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		CBC0C83F1806B14F008C34AE /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		CBC0C8401806B14F008C34AE /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		CBC0C8411806B14F008C34AE /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
 		CBD1E45F173C128A00694991 /* KMLoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMLoadMoreCell.h; sourceTree = "<group>"; };
 		CBD1E460173C128A00694991 /* KMLoadMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMLoadMoreCell.m; sourceTree = "<group>"; };
 		CBDA451E17FC216D00C0CDC4 /* NormalNavigationBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalNavigationBarButton.h; sourceTree = "<group>"; };
@@ -3733,6 +3742,7 @@
 		3F5F2E231667E83000749B4B /* github */ = {
 			isa = PBXGroup;
 			children = (
+				CBC0C83C1806B14F008C34AE /* SVPullToRefresh */,
 				CB5693C31762D74400275D35 /* SPLockScreen */,
 				CB8EE131174094300068A6BA /* NSDate-Extensions */,
 				CB8EE130174094250068A6BA /* CupertinoYankee */,
@@ -4523,6 +4533,19 @@
 			);
 			name = chat;
 			path = UMFeedback_iOS/Demo/chat;
+			sourceTree = "<group>";
+		};
+		CBC0C83C1806B14F008C34AE /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				CBC0C83D1806B14F008C34AE /* SVPullToRefresh.h */,
+				CBC0C83E1806B14F008C34AE /* UIScrollView+SVInfiniteScrolling.h */,
+				CBC0C83F1806B14F008C34AE /* UIScrollView+SVInfiniteScrolling.m */,
+				CBC0C8401806B14F008C34AE /* UIScrollView+SVPullToRefresh.h */,
+				CBC0C8411806B14F008C34AE /* UIScrollView+SVPullToRefresh.m */,
+			);
+			name = SVPullToRefresh;
+			path = SVPullToRefresh/SVPullToRefresh;
 			sourceTree = "<group>";
 		};
 		CBF82B19170F052A004674C5 /* sumou */ = {
@@ -6211,6 +6234,7 @@
 				3FF3817416D4709700BD19C3 /* KMUnfoldTableCell.m in Sources */,
 				3FF3817516D4709700BD19C3 /* KMTextField.m in Sources */,
 				3FF3817616D4709700BD19C3 /* KMTextView.m in Sources */,
+				CBC0C8431806B14F008C34AE /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				3FF3817716D4709700BD19C3 /* iVersion.m in Sources */,
 				3FF3817816D4709700BD19C3 /* EMHint.m in Sources */,
 				3FF3817916D4709700BD19C3 /* EMHintsView.m in Sources */,
@@ -6263,6 +6287,7 @@
 				CBDA452117FC216D00C0CDC4 /* NormalNavigationBarButton.m in Sources */,
 				3F55AAE516E50D4A00EBBA30 /* AddonManager.m in Sources */,
 				3F55AAE716E50D4A00EBBA30 /* AlarmManager.m in Sources */,
+				CBC0C8451806B14F008C34AE /* UIScrollView+SVPullToRefresh.m in Sources */,
 				3F55AAE916E50D4A00EBBA30 /* DailyDoManager.m in Sources */,
 				3F55AAEF16E50D4A00EBBA30 /* HintHelper.m in Sources */,
 				3F55AAF116E50D4A00EBBA30 /* CartoonManager.m in Sources */,
@@ -6358,6 +6383,7 @@
 				3F8F706B164254A20031B72C /* KMDrawRectUtilities.m in Sources */,
 				3F8F706D164254A20031B72C /* NSArray+NSArrayAdditions.m in Sources */,
 				3F8F706F164254A20031B72C /* NSDate+NSDateAdditions.m in Sources */,
+				CBC0C8421806B14F008C34AE /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				3F8F7070164254A20031B72C /* NSNumber+NSNumberAdditions.m in Sources */,
 				3F8F7072164254A20031B72C /* NSUserDefaultsAdditions.m in Sources */,
 				3F8F7073164254A20031B72C /* UIColor+UIColorAddtions.m in Sources */,
@@ -6410,6 +6436,7 @@
 				CBDA452017FC216D00C0CDC4 /* NormalNavigationBarButton.m in Sources */,
 				3F55AAE416E50D4A00EBBA30 /* AddonManager.m in Sources */,
 				3F55AAE616E50D4A00EBBA30 /* AlarmManager.m in Sources */,
+				CBC0C8441806B14F008C34AE /* UIScrollView+SVPullToRefresh.m in Sources */,
 				3F55AAE816E50D4A00EBBA30 /* DailyDoManager.m in Sources */,
 				3F55AAEE16E50D4A00EBBA30 /* HintHelper.m in Sources */,
 				3F55AAF016E50D4A00EBBA30 /* CartoonManager.m in Sources */,

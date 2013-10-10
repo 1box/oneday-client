@@ -188,4 +188,8 @@
 "Share app message body" ="这个应用不错！\"一天\"，专注提高生活效率！点击下载：https://itunes.apple.com/us/app/yi-tian-ai-ji-hua-ai-ji-lu/id573096972?ls=1&mt=8";
 "Cannot mail"            ="无法发送邮件";
 
+// pull refresh
+"Pull to refresh..."   ="下拉可以返回";
+"Release to refresh..."="松开即可返回";
+"Loading..."           ="正在返回中";
 

@@ -43,6 +43,11 @@
     [_summaryList reloadData];
 }
 
+- (void)pullRefreshBack
+{
+    [self renderPullRefreshBack:self.summaryList];
+}
+
 #pragma mark - private
 
 - (void)updateTitle

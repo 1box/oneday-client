@@ -14,6 +14,7 @@
 #import "CartoonManager.h"
 #import "KMModelManager.h"
 #import "KMDateUtils.h"
+#import "UIScrollView+SVPullToRefresh.h"
 
 typedef NS_ENUM(NSInteger, SectionType) {
     SectionTypeSetting = 0,
@@ -73,6 +74,11 @@ typedef NS_ENUM(NSInteger, RateSectionRowType) {
     return @"MorePage";
 }
 
+- (void)pullRefreshBack
+{
+    [self renderPullRefreshBack:self.listView];
+}
+
 #pragma mark - private
 
 - (void)showDatePicker
@@ -118,11 +124,6 @@ typedef NS_ENUM(NSInteger, RateSectionRowType) {
 }
 
 #pragma mark - Actions
-
-- (IBAction)dismiss:(id)sender
-{
-    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-}
 
 - (IBAction)alarmSwitch:(id)sender
 {

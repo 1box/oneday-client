@@ -7,6 +7,7 @@
 //
 
 #import "HomeCoverViewController.h"
+#import "UIScrollView+SVPullToRefresh.h"
 
 
 @implementation HomeCoverCellView
@@ -18,6 +19,16 @@
 
 
 @implementation HomeCoverViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    __weak HomeCoverViewController *weakSelf = self;
+    [self.collectionView addPullToRefreshWithActionHandler:^{
+        [weakSelf dismiss:nil];
+    }];
+}
 
 - (void)viewDidAppear:(BOOL)animated
 {

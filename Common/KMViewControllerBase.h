@@ -16,4 +16,9 @@
 - (NSString *)pageNameForTrack;
 - (IBAction)back:(id)sender;
 - (IBAction)dismiss:(id)sender;
+
+- (void)pullRefreshBack;
+
+#pragma mark - public
+- (void)renderPullRefreshBack:(UIScrollView *)scrollView;
 @end

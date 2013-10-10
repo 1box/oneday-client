@@ -22,7 +22,6 @@
 @property (nonatomic) IBOutlet UISwitch *alarmBadgeSwitch;
 @property (nonatomic) IBOutlet UIDatePicker *alarmTimePicker;
 
-- (IBAction)dismiss:(id)sender;
 - (IBAction)randomCartoonSwitch:(id)sender;
 - (IBAction)alarmSwitch:(id)sender;
 - (IBAction)alarmSoundSwitch:(id)sender;

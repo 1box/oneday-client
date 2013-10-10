@@ -7,6 +7,7 @@
 //
 
 #import "KMViewControllerBase.h"
+#import "UIScrollView+SVPullToRefresh.h"
 
 @interface KMViewControllerBase ()
 
@@ -25,6 +26,12 @@
     return @"KMViewControllerBase";
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self pullRefreshBack];
+}
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -39,6 +46,13 @@
     [MobClick endLogPageView:[self pageNameForTrack]];
 }
 
+#pragma mark - extend
+
+- (void)pullRefreshBack
+{
+    // should be extended
+}
+
 #pragma mark - Actions
 
 - (IBAction)back:(id)sender
@@ -49,6 +63,18 @@
 - (IBAction)dismiss:(id)sender
 {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - public
+
+- (void)renderPullRefreshBack:(UIScrollView *)scrollView
+{
+    __weak KMViewControllerBase *weakSelf = self;
+//    __weak UIScrollView *weakScroll = scrollView;
+    [scrollView addPullToRefreshWithActionHandler:^{
+        [weakSelf dismiss:nil];
+//        [weakScroll.pullToRefreshView stopAnimating];
+    }];
 }
 
 @end

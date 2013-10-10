@@ -69,6 +69,11 @@
     }
 }
 
+- (void)pullRefreshBack
+{
+    [self renderPullRefreshBack:self.alarmView];
+}
+
 #pragma mark - View Lifecycles
 
 - (void)viewWillAppear:(BOOL)animated

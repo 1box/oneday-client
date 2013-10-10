@@ -40,6 +40,11 @@
     return @"AddonsPage";
 }
 
+- (void)pullRefreshBack
+{
+    [self renderPullRefreshBack:self.addonsView];
+}
+
 #pragma mark - Actions
 
 - (IBAction)cancel:(id)sender

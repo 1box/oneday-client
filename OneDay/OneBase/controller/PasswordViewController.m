@@ -56,7 +56,11 @@
 - (IBAction)passwordOn:(id)sender
 {
     UISwitch *aSwitch = sender;
-    NSIndexPath *indexPath = [_listView indexPathForCell:(PasswordAddonCell *)aSwitch.superview.superview];
+    
+    PasswordAddonCell *tCell = [[KMCommon OSVersion] floatValue] < 7.f ?
+                                (PasswordAddonCell *)aSwitch.superview.superview :
+                                (PasswordAddonCell *)aSwitch.superview.superview.superview;
+    NSIndexPath *indexPath = [_listView indexPathForCell:tCell];
     if (indexPath.section == 0) {
         [PasswordManager setLaunchPasswordOpen:aSwitch.isOn];
     }

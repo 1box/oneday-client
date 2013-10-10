@@ -41,9 +41,12 @@
 
 - (NSString *)completionText
 {
-    NSString *ret = NSLocalizedString(@"DailyShortNoText", nil);
-    if (!KMEmptyString(self.shortContent)) {
-        ret = self.shortContent;
+    NSString *ret = nil;
+    if (KMEmptyString(self.shortContent)) {
+        ret = NSLocalizedString(@"DailyShortNoText", nil);
+    }
+    else {
+        ret = NSLocalizedString(@"DailyShortCompleteText", nil);
     }
     return ret;
 }

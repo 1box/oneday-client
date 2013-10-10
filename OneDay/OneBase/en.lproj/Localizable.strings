@@ -128,6 +128,7 @@
 "ShortSlogan"              ="Shortcomings is not terrible at all. Remember to give it a fatal blow at the appropriate time";
 "ShortPlaceHolder"         ="* Shortcomings is not terrible at all. Remember to give it a fatal blow at the appropriate time!";
 "DailyShortNoText"         ="Not found short this day.";
+"DailyShortCompleteText"   ="Found short, click to see.";
 
 "DailyCash"                ="Daily Cash";
 "TodayCash"                ="Today Balance";

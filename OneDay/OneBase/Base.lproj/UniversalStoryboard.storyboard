@@ -1009,7 +1009,7 @@
         <!--Daily Do View Controller-->
         <scene sceneID="T3h-L3-3ao">
             <objects>
-                <viewController storyboardIdentifier="DailyDoViewContollerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8XF-eF-oSt" customClass="DailyDoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DailyDoViewStoryboardID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8XF-eF-oSt" customClass="DailyDoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="h2a-PR-nXf"/>
                         <viewControllerLayoutGuide type="bottom" id="WRe-lU-44P"/>
@@ -1038,7 +1038,7 @@
                                                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AN1-iF-DOS" customClass="DailyDoPresentView">
                                                             <rect key="frame" x="53" y="74" width="257" height="36"/>
                                                             <subviews>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaS-Yt-qtL">
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WaS-Yt-qtL">
                                                                     <rect key="frame" x="0.0" y="0.0" width="245" height="50"/>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                     <constraints>
@@ -2022,11 +2022,8 @@
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="93" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oB7-YX-pqT" customClass="KMTableView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="461"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="461" id="oBy-rv-sii"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlarmCellID" rowHeight="93" id="bYj-fS-PdS" customClass="AlarmCellView">
                                         <rect key="frame" x="0.0" y="22" width="320" height="93"/>
@@ -2183,6 +2180,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="55H-0a-bOe" firstAttribute="top" secondItem="oB7-YX-pqT" secondAttribute="bottom" id="2JR-Nx-e8f"/>
                             <constraint firstItem="GFZ-kv-MM0" firstAttribute="leading" secondItem="ZPu-3G-pjW" secondAttribute="leading" constant="46" id="98i-6A-3fA"/>
                             <constraint firstItem="1nj-gI-Gxo" firstAttribute="leading" secondItem="GFZ-kv-MM0" secondAttribute="trailing" constant="8" symbolic="YES" id="TDz-vd-WBU"/>
                             <constraint firstItem="oB7-YX-pqT" firstAttribute="leading" secondItem="ZPu-3G-pjW" secondAttribute="leading" id="U3V-Fk-3rP"/>
@@ -4087,69 +4085,26 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     <resources>
         <image name="add_tag.png" width="32" height="32"/>
         <image name="bg_blue.png" width="320" height="480"/>
-        <image name="bg_blue.png" width="320" height="480"/>
-        <image name="bg_blue.png" width="320" height="480"/>
-        <image name="bg_blue.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
         <image name="bg_white.png" width="320" height="480"/>
         <image name="cell_normal_bg.png" width="64" height="64"/>
         <image name="cell_quick_icon.png" width="21" height="21"/>
         <image name="cell_remove_icon.png" width="21" height="21"/>
         <image name="checkbox-n.png" width="33" height="33"/>
-        <image name="checkbox-n.png" width="33" height="33"/>
-        <image name="checkbox-s.png" width="33" height="33"/>
-        <image name="checkbox-s.png" width="33" height="33"/>
-        <image name="checkbox-s.png" width="33" height="33"/>
         <image name="checkbox-s.png" width="33" height="33"/>
         <image name="checkbox_logged.png" width="33" height="33"/>
-        <image name="checkbox_logged.png" width="33" height="33"/>
-        <image name="checkbox_overtime_n.png" width="33" height="33"/>
         <image name="checkbox_overtime_n.png" width="33" height="33"/>
         <image name="checkboxdone-n.png" width="33" height="33"/>
-        <image name="checkboxdone-n.png" width="33" height="33"/>
-        <image name="checkboxdone-s.png" width="33" height="33"/>
         <image name="checkboxdone-s.png" width="33" height="33"/>
         <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back.png" width="30" height="30"/>
-        <image name="dark_nav_back_press.png" width="30" height="30"/>
-        <image name="dark_nav_back_press.png" width="30" height="30"/>
-        <image name="dark_nav_back_press.png" width="30" height="30"/>
         <image name="dark_nav_back_press.png" width="30" height="30"/>
         <image name="guide_background.png" width="16" height="16"/>
         <image name="homecover001.jpg" width="320" height="480"/>
         <image name="homecover_check.png" width="32" height="32"/>
         <image name="list_cell_tag.png" width="33" height="33"/>
-        <image name="list_cell_tag.png" width="33" height="33"/>
-        <image name="list_cell_tag.png" width="33" height="33"/>
         <image name="list_icon_timeline.png" width="16" height="16"/>
         <image name="menu_white.png" width="16" height="16"/>
         <image name="nav_back.png" width="30" height="30"/>
-        <image name="nav_back.png" width="30" height="30"/>
-        <image name="nav_back.png" width="30" height="30"/>
-        <image name="nav_back.png" width="30" height="30"/>
-        <image name="nav_back.png" width="30" height="30"/>
-        <image name="nav_back.png" width="30" height="30"/>
         <image name="nav_back_press.png" width="30" height="30"/>
-        <image name="nav_back_press.png" width="30" height="30"/>
-        <image name="nav_back_press.png" width="30" height="30"/>
-        <image name="nav_back_press.png" width="30" height="30"/>
-        <image name="nav_back_press.png" width="30" height="30"/>
-        <image name="nav_back_press.png" width="30" height="30"/>
-        <image name="nav_dismiss.png" width="16" height="16"/>
-        <image name="nav_dismiss.png" width="16" height="16"/>
-        <image name="nav_dismiss.png" width="16" height="16"/>
-        <image name="nav_dismiss.png" width="16" height="16"/>
-        <image name="nav_dismiss.png" width="16" height="16"/>
-        <image name="nav_dismiss.png" width="16" height="16"/>
         <image name="nav_dismiss.png" width="16" height="16"/>
         <image name="nav_logo.png" width="63" height="26"/>
         <image name="page_round_bg.png" width="20" height="20"/>
@@ -4174,6 +4129,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="uTW-Ln-vco"/>
-        <segue reference="kU8-df-8Bf"/>
+        <segue reference="Q7S-oa-MDi"/>
     </inferredMetricsTieBreakers>
 </document>

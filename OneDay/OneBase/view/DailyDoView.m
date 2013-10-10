@@ -34,6 +34,7 @@
 #import "AddonsHeader.h"
 #import "DailyDoActionHelper.h"
 #import "DailyDoViewHelper.h"
+#import "AppPageManager.h"
 #import "AddonData.h"
 #import "DailyDoBase.h"
 #import "TodoData.h"
@@ -329,11 +330,23 @@
     NSMutableArray *otherButtonTitles = [NSMutableArray arrayWithCapacity:10];
     NSInteger actionType = [[_configurations objectForKey:kConfigurationActionType] integerValue];
     
-    NSString *editTitle = NSLocalizedString(@"_edit", nil);
+    NSString *editTitle = nil;
     if (_listView.editing) {
         editTitle = NSLocalizedString(@"_editDone", nil);
     }
+    else {
+        editTitle = NSLocalizedString(@"_edit", nil);
+    }
     [otherButtonTitles addObject:editTitle];
+    
+    NSString *homepageTitle = nil;
+    if ([[AppPageManager sharedManager] isHomepageAddon:_addon.dailyDoName]) {
+        homepageTitle = NSLocalizedString(@"_resetHomepage", nil);
+    }
+    else {
+        homepageTitle = NSLocalizedString(@"_setAsHomepage", nil);
+    }
+    [otherButtonTitles addObject:homepageTitle];
     
     if (DailyDoActionTypeShowAllUndos == (actionType & DailyDoActionTypeShowAllUndos)) {
         [otherButtonTitles addObject:NSLocalizedString(@"ShowAllUndosTitle", nil)];
@@ -736,13 +749,25 @@
             }
                 break;
             case 1:
-            case 2:
-            case 3:
+            {
+                if ([[AppPageManager sharedManager] isHomepageAddon:_addon.dailyDoName]) {
+                    [[AppPageManager sharedManager] setAsHomepageAddon:nil];
+                    [[MTStatusBarOverlay sharedOverlay] postFinishMessage:NSLocalizedString(@"ResetHomepageSuccess", nil)
+                                                                 duration:2.f];
+                }
+                else {
+                    [[AppPageManager sharedManager] setAsHomepageAddon:_addon.dailyDoName];
+                    NSString *message = [NSString stringWithFormat:NSLocalizedString(@"SetAsHomepageSuccess", nil), NSLocalizedString(_addon.dailyDoName, nil)];
+                    [[MTStatusBarOverlay sharedOverlay] postFinishMessage:message
+                                                                 duration:2.f];
+                }
+            }
+                break;
             default:
             {
                 NSInteger actionType = [[_configurations objectForKey:kConfigurationActionType] integerValue];
                 NSDictionary *indexHash = [[DailyDoActionHelper sharedHelper] indexHashForActionType:actionType];
-                DailyDoActionType tActionType = [[indexHash objectForKey:@(buttonIndex - 1)] integerValue];
+                DailyDoActionType tActionType = [[indexHash objectForKey:@(buttonIndex - 2)] integerValue];
                 [self doActionSheetActionForType:tActionType];
             }
                 break;

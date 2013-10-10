@@ -1562,6 +1562,8 @@
 		CBC0C8431806B14F008C34AE /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC0C83F1806B14F008C34AE /* UIScrollView+SVInfiniteScrolling.m */; };
 		CBC0C8441806B14F008C34AE /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC0C8411806B14F008C34AE /* UIScrollView+SVPullToRefresh.m */; };
 		CBC0C8451806B14F008C34AE /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC0C8411806B14F008C34AE /* UIScrollView+SVPullToRefresh.m */; };
+		CBC0C8481806BD83008C34AE /* AppPageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC0C8471806BD83008C34AE /* AppPageManager.m */; };
+		CBC0C8491806BD83008C34AE /* AppPageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC0C8471806BD83008C34AE /* AppPageManager.m */; };
 		CBC565C317FC39AF0073C549 /* cell_normal_alone.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4605F6173D4B8700955454 /* cell_normal_alone.png */; };
 		CBC565C417FC39AF0073C549 /* cell_normal_alone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4605F7173D4B8700955454 /* cell_normal_alone@2x.png */; };
 		CBC565C517FC39AF0073C549 /* cell_normal_bottom.png in Resources */ = {isa = PBXBuildFile; fileRef = CB4605F8173D4B8700955454 /* cell_normal_bottom.png */; };
@@ -2733,6 +2735,8 @@
 		CBC0C83F1806B14F008C34AE /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		CBC0C8401806B14F008C34AE /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
 		CBC0C8411806B14F008C34AE /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
+		CBC0C8461806BD83008C34AE /* AppPageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppPageManager.h; sourceTree = "<group>"; };
+		CBC0C8471806BD83008C34AE /* AppPageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppPageManager.m; sourceTree = "<group>"; };
 		CBD1E45F173C128A00694991 /* KMLoadMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMLoadMoreCell.h; sourceTree = "<group>"; };
 		CBD1E460173C128A00694991 /* KMLoadMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMLoadMoreCell.m; sourceTree = "<group>"; };
 		CBDA451E17FC216D00C0CDC4 /* NormalNavigationBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormalNavigationBarButton.h; sourceTree = "<group>"; };
@@ -3623,6 +3627,8 @@
 				CB5693D91762E14E00275D35 /* PasswordManager.m */,
 				CB5ED9D4176460160092433A /* DailyDoViewHelper.h */,
 				CB5ED9D5176460160092433A /* DailyDoViewHelper.m */,
+				CBC0C8461806BD83008C34AE /* AppPageManager.h */,
+				CBC0C8471806BD83008C34AE /* AppPageManager.m */,
 			);
 			path = manager;
 			sourceTree = "<group>";
@@ -6286,6 +6292,7 @@
 				3F55AADF16E50D4A00EBBA30 /* TodoViewController.m in Sources */,
 				CBDA452117FC216D00C0CDC4 /* NormalNavigationBarButton.m in Sources */,
 				3F55AAE516E50D4A00EBBA30 /* AddonManager.m in Sources */,
+				CBC0C8491806BD83008C34AE /* AppPageManager.m in Sources */,
 				3F55AAE716E50D4A00EBBA30 /* AlarmManager.m in Sources */,
 				CBC0C8451806B14F008C34AE /* UIScrollView+SVPullToRefresh.m in Sources */,
 				3F55AAE916E50D4A00EBBA30 /* DailyDoManager.m in Sources */,
@@ -6435,6 +6442,7 @@
 				3F55AADE16E50D4A00EBBA30 /* TodoViewController.m in Sources */,
 				CBDA452017FC216D00C0CDC4 /* NormalNavigationBarButton.m in Sources */,
 				3F55AAE416E50D4A00EBBA30 /* AddonManager.m in Sources */,
+				CBC0C8481806BD83008C34AE /* AppPageManager.m in Sources */,
 				3F55AAE616E50D4A00EBBA30 /* AlarmManager.m in Sources */,
 				CBC0C8441806B14F008C34AE /* UIScrollView+SVPullToRefresh.m in Sources */,
 				3F55AAE816E50D4A00EBBA30 /* DailyDoManager.m in Sources */,

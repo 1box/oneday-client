@@ -14,6 +14,9 @@
 #define OneDayStoryboardName @"OneDayStoryboard"
 #define UniversalStoryboardName @"UniversalStoryboard"
 
+#define MainViewStoryboardID @"MainViewControllerID"
+#define DailyDoViewStoryboardID @"DailyDoViewStoryboardID"
+
 #define CurrentAddonsDidChangedNotification @"CurrentAddonsDidChangedNotification"
 
 #define TrackMainViewEvent @"main_page"

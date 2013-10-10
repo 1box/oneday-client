@@ -29,6 +29,8 @@
 "_done"              ="完成";
 "_edit"              ="编辑";
 "_editDone"          ="退出编辑";
+"_setAsHomepage"     ="设为主页";
+"_resetHomepage"     ="取消主页";
 "_KMAlertViewCancel" ="取  消";
 "_KMAlertViewConfirm"="确  认";
 
@@ -51,6 +53,8 @@
 "AlarmRepeatTypeEveryDay" ="每天";
 "AlarmRepeatTypeWorkday"  ="工作日";
 "AlarmRepeatTypeNone"     ="不重复";
+"SetAsHomepageSuccess"    ="已将 %@ 设置为主页";
+"ResetHomepageSuccess"    ="已重置到默认主页";
 
 // password
 "LaunchPasswordCellText" = "开机密码";

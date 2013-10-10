@@ -21,6 +21,7 @@
 - (NSArray *)preparedAddons;
 - (NSArray *)hasTipAddons;
 - (NSArray *)alarmAddons;
+- (AddonData *)currentAddonForName:(NSString *)addonName;
 
 // return YES when succeced
 - (BOOL)moveAddon:(AddonData *)addon toIndex:(NSUInteger)index;

@@ -141,6 +141,20 @@ static AddonManager *_sharedManager;
     }
 }
 
+- (AddonData *)currentAddonForName:(NSString *)addonName
+{
+    NSArray *addons = [self currentAddons];
+    
+    __block AddonData *ret = nil;
+    [addons enumerateObjectsUsingBlock:^(AddonData *addon, NSUInteger idx, BOOL *stop){
+        if ([addon.dailyDoName isEqualToString:addonName]) {
+            ret = addon;
+        }
+    }];
+    
+    return ret;
+}
+
 - (BOOL)moveAddon:(AddonData *)addon toIndex:(NSUInteger)index
 {
     if (index == [addon.orderIndex intValue]) {

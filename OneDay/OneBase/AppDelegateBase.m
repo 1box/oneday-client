@@ -22,8 +22,6 @@
 #import "NSUserDefaultsAdditions.h"
 #import "UINavigationController+HideKeyboard.h"
 
-#define MainViewStoryboardID @"MainViewControllerID"
-
 
 @interface AppDelegateBase () <iRateDelegate>
 @end

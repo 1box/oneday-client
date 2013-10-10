@@ -29,6 +29,8 @@
 "_done"              ="Done";
 "_edit"              ="Edit";
 "_editDone"          ="Edit Exit";
+"_setAsHomepage"     ="Set as Homepage";
+"_resetHomepage"     ="Reset Homepage";
 "_KMAlertViewCancel" ="Cancel";
 "_KMAlertViewConfirm"="OK";
 
@@ -51,6 +53,8 @@
 "AlarmRepeatTypeEveryDay" ="Everyday";
 "AlarmRepeatTypeWorkday"  ="Workdays";
 "AlarmRepeatTypeNone"     ="None";
+"SetAsHomepageSuccess"    ="Set %@ as homepage.";
+"ResetHomepageSuccess"    ="Reset homepage to default.";
 
 // password
 

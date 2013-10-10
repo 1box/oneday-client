@@ -11,8 +11,6 @@
 #import "AddonData.h"
 #import "AddonManager.h"
 
-#define DailyDoViewContollerID @"DailyDoViewContollerID"
-
 @interface CurrentAddonViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic) NSArray *currentAddons;
 @end
@@ -56,12 +54,9 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row < [_currentAddons count]) {
-        DailyDoViewController *controller = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:DailyDoViewContollerID];
+        DailyDoViewController *controller = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:DailyDoViewStoryboardID];
         controller.addon = [_currentAddons objectAtIndex:indexPath.row];
         
-//        UIWindow *mainWindow = [[[UIApplication sharedApplication] windows] objectAtIndex:0];
-//        UISplitViewController *split = (UISplitViewController *)mainWindow.rootViewController;
-//        UINavigationController *nav = [split.viewControllers objectAtIndex:1];
         UINavigationController *nav = [KMCommon rootNavigationController];
         [nav popToRootViewControllerAnimated:NO];
         [nav pushViewController:controller animated:NO];

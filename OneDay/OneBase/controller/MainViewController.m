@@ -27,6 +27,7 @@
 #import "CartoonManager.h"
 #import "TagManager.h"
 #import "SplashHelper.h"
+#import "AppPageManager.h"
 
 #define NumberOfItems ([KMCommon is568Screen] ? 8 : 6)
 
@@ -178,6 +179,10 @@
         _hasAppear = YES;
         [self reloadData];
         [self loadHomeCover];
+        
+        [[SplashHelper sharedHelper] addFlipedBlock:^(SplashHelper *helper){
+            [[AppPageManager sharedManager] showHomepageForNavigation:self.navigationController];
+        }];
     }
 }
 

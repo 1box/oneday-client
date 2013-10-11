@@ -311,6 +311,8 @@ static DailyDoManager *_sharedManager;
                 [mutMonthlyDos addObject:currentMonthDo];
                 
                 [dailyDosInMonth removeAllObjects];
+                summary = 0.f;
+                
                 [dailyDosInMonth addObject:dailyDo];
                 for (TodoData *todo in dailyDo.todos) {
                     summary += [[[SMDetector defaultDetector] valueInString:todo.money byType:SmarkDetectTypeMoney] floatValue];

@@ -16,6 +16,6 @@
 - (NSString *)homepageAddon;
 - (BOOL)isHomepageAddon:(NSString *)addonName;
 
-- (void)showHomepageForNavigation:(UINavigationController *)nav;
+- (void)showHomepageForNavigation;
 
 @end

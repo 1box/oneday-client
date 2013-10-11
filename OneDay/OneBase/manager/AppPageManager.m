@@ -50,12 +50,13 @@ static AppPageManager *_sharedManager = nil;
     return [addonName isEqualToString:homepage];
 }
 
-- (void)showHomepageForNavigation:(UINavigationController *)nav
+- (void)showHomepageForNavigation
 {
     NSString *addonName = [[AppPageManager sharedManager] homepageAddon];
     if (!KMEmptyString(addonName)) {
         AddonData *tAddon = [[AddonManager sharedManager] currentAddonForName:addonName];
         if (tAddon) {
+            UINavigationController *nav = [KMCommon rootNavigationController];
             DailyDoViewController *controller = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:DailyDoViewStoryboardID];
             controller.addon = tAddon;
             [nav pushViewController:controller animated:NO];

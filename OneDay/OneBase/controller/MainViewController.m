@@ -180,9 +180,14 @@
         [self reloadData];
         [self loadHomeCover];
         
-        [[SplashHelper sharedHelper] addFlipedBlock:^(SplashHelper *helper){
-            [[AppPageManager sharedManager] showHomepageForNavigation:self.navigationController];
-        }];
+        if ([KMCommon isPadDevice]) {
+            [[AppPageManager sharedManager] showHomepageForNavigation];
+        }
+        else {
+            [[SplashHelper sharedHelper] addFlipedBlock:^(SplashHelper *helper){
+                [[AppPageManager sharedManager] showHomepageForNavigation];
+            }];
+        }
     }
 }
 

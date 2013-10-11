@@ -1,0 +1,3 @@
+[submodule "Common/submodule/SVPullToRefresh"]
+	path = Common/submodule/SVPullToRefresh
+	url = https://github.com/samvermette/SVPullToRefresh.git

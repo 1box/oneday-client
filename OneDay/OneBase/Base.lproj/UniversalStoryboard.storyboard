@@ -215,9 +215,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="2t1-A4-ab5">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="l7P-7b-mAO" customClass="KMTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -270,15 +267,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="l7P-7b-mAO" firstAttribute="trailing" secondItem="2t1-A4-ab5" secondAttribute="trailing" id="62W-h5-ceW"/>
-                            <constraint firstItem="l7P-7b-mAO" firstAttribute="leading" secondItem="2t1-A4-ab5" secondAttribute="leading" id="I8s-Sf-zg0"/>
-                            <constraint firstItem="2t1-A4-ab5" firstAttribute="top" secondItem="l7P-7b-mAO" secondAttribute="top" id="QsF-ef-bm1"/>
                             <constraint firstItem="l7P-7b-mAO" firstAttribute="leading" secondItem="acL-zH-ZBf" secondAttribute="leading" id="T6f-Jx-Atm"/>
-                            <constraint firstAttribute="trailing" secondItem="2t1-A4-ab5" secondAttribute="trailing" id="V6N-Hn-mhg"/>
                             <constraint firstItem="l7P-7b-mAO" firstAttribute="top" secondItem="acL-zH-ZBf" secondAttribute="top" id="XW3-lx-JoH"/>
                             <constraint firstAttribute="bottom" secondItem="l7P-7b-mAO" secondAttribute="bottom" id="a4h-ng-6kI"/>
-                            <constraint firstItem="2t1-A4-ab5" firstAttribute="bottom" secondItem="l7P-7b-mAO" secondAttribute="bottom" id="gif-CM-Oia"/>
-                            <constraint firstItem="2t1-A4-ab5" firstAttribute="leading" secondItem="acL-zH-ZBf" secondAttribute="leading" id="veO-RB-AGT"/>
+                            <constraint firstAttribute="trailing" secondItem="l7P-7b-mAO" secondAttribute="trailing" id="qLb-q1-6I8"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -413,9 +405,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="T51-Rc-UTT">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="iC7-Yj-gra" customClass="KMTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -532,18 +521,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iC7-Yj-gra" firstAttribute="top" secondItem="T51-Rc-UTT" secondAttribute="top" id="4bR-Pu-GRU"/>
-                            <constraint firstAttribute="trailing" secondItem="T51-Rc-UTT" secondAttribute="trailing" id="ESy-gv-nM4"/>
-                            <constraint firstItem="T51-Rc-UTT" firstAttribute="bottom" secondItem="xdx-Od-hKP" secondAttribute="bottom" id="L8B-cy-hN3"/>
+                            <constraint firstAttribute="trailing" secondItem="iC7-Yj-gra" secondAttribute="trailing" id="O2f-Ln-MB7"/>
                             <constraint firstAttribute="bottom" secondItem="xdx-Od-hKP" secondAttribute="bottom" id="Var-V3-Eqi"/>
                             <constraint firstItem="iC7-Yj-gra" firstAttribute="top" secondItem="wjY-ee-Klb" secondAttribute="top" id="aqP-z3-xDN"/>
-                            <constraint firstItem="xdx-Od-hKP" firstAttribute="trailing" secondItem="T51-Rc-UTT" secondAttribute="trailing" id="cac-s8-OI3"/>
                             <constraint firstItem="iC7-Yj-gra" firstAttribute="trailing" secondItem="xdx-Od-hKP" secondAttribute="trailing" id="eGQ-Bx-fqC"/>
                             <constraint firstItem="iC7-Yj-gra" firstAttribute="leading" secondItem="xdx-Od-hKP" secondAttribute="leading" id="i0Z-qv-rQ2"/>
-                            <constraint firstItem="T51-Rc-UTT" firstAttribute="leading" secondItem="wjY-ee-Klb" secondAttribute="leading" id="kxJ-x8-jcs"/>
                             <constraint firstItem="xdx-Od-hKP" firstAttribute="top" secondItem="iC7-Yj-gra" secondAttribute="bottom" id="rkv-yv-QIa"/>
                             <constraint firstItem="xdx-Od-hKP" firstAttribute="leading" secondItem="wjY-ee-Klb" secondAttribute="leading" id="uXA-0r-iIL"/>
-                            <constraint firstItem="T51-Rc-UTT" firstAttribute="leading" secondItem="iC7-Yj-gra" secondAttribute="leading" id="wXA-1S-PI3"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -601,9 +585,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="8R9-q0-1a2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AbX-Ra-QdY" customClass="KMTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -661,11 +642,7 @@
                         <constraints>
                             <constraint firstItem="AbX-Ra-QdY" firstAttribute="trailing" secondItem="Ghy-kL-zc8" secondAttribute="trailing" id="1cR-Qr-T1n"/>
                             <constraint firstItem="AbX-Ra-QdY" firstAttribute="top" secondItem="Ghy-kL-zc8" secondAttribute="top" id="4UG-ws-8tQ"/>
-                            <constraint firstItem="8R9-q0-1a2" firstAttribute="top" secondItem="Ghy-kL-zc8" secondAttribute="top" id="6eU-zE-izV"/>
                             <constraint firstItem="AbX-Ra-QdY" firstAttribute="leading" secondItem="Ghy-kL-zc8" secondAttribute="leading" id="7QV-5i-0Ta"/>
-                            <constraint firstItem="8R9-q0-1a2" firstAttribute="trailing" secondItem="Ghy-kL-zc8" secondAttribute="trailing" id="d0J-hJ-wTg"/>
-                            <constraint firstItem="8R9-q0-1a2" firstAttribute="bottom" secondItem="Ghy-kL-zc8" secondAttribute="bottom" id="j1i-yn-PPl"/>
-                            <constraint firstItem="8R9-q0-1a2" firstAttribute="leading" secondItem="Ghy-kL-zc8" secondAttribute="leading" id="sUn-kF-iMJ"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -1021,9 +998,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CQf-w9-oab" customClass="DailyDoView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="PH1-ZQ-gkq">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                                    </imageView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="alq-7X-wct" customClass="KMTableView">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1632,14 +1606,10 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="PH1-ZQ-gkq" firstAttribute="trailing" secondItem="CQf-w9-oab" secondAttribute="trailing" id="3gb-fW-ylY"/>
-                                    <constraint firstItem="alq-7X-wct" firstAttribute="top" secondItem="PH1-ZQ-gkq" secondAttribute="top" id="8B1-hf-qKW"/>
-                                    <constraint firstItem="PH1-ZQ-gkq" firstAttribute="top" secondItem="CQf-w9-oab" secondAttribute="top" id="8Hx-Ns-rIo"/>
-                                    <constraint firstItem="PH1-ZQ-gkq" firstAttribute="leading" secondItem="CQf-w9-oab" secondAttribute="leading" id="PmH-lO-iJs"/>
+                                    <constraint firstItem="alq-7X-wct" firstAttribute="top" secondItem="CQf-w9-oab" secondAttribute="top" id="DqK-Xl-1mP"/>
                                     <constraint firstItem="alq-7X-wct" firstAttribute="bottom" secondItem="IPz-hI-gd4" secondAttribute="top" id="T5u-zq-xSj"/>
                                     <constraint firstItem="IPz-hI-gd4" firstAttribute="trailing" secondItem="CQf-w9-oab" secondAttribute="trailing" id="Tnt-ph-yxc"/>
                                     <constraint firstItem="alq-7X-wct" firstAttribute="leading" secondItem="IPz-hI-gd4" secondAttribute="leading" id="ZBw-VC-JsC"/>
-                                    <constraint firstItem="PH1-ZQ-gkq" firstAttribute="bottom" secondItem="CQf-w9-oab" secondAttribute="bottom" id="brA-Yr-dc6"/>
                                     <constraint firstItem="IPz-hI-gd4" firstAttribute="leading" secondItem="CQf-w9-oab" secondAttribute="leading" id="n3V-QU-IZa"/>
                                     <constraint firstItem="IPz-hI-gd4" firstAttribute="bottom" secondItem="CQf-w9-oab" secondAttribute="bottom" id="r5Q-ld-y8v"/>
                                     <constraint firstItem="alq-7X-wct" firstAttribute="trailing" secondItem="IPz-hI-gd4" secondAttribute="trailing" id="w3y-iq-7FB"/>
@@ -1724,9 +1694,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="imm-XX-Aiv">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="hkm-Sm-Gaj" customClass="KMTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1824,16 +1791,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="t7U-su-Y5l" secondAttribute="bottom" id="1fb-WD-LeY"/>
-                            <constraint firstItem="hkm-Sm-Gaj" firstAttribute="trailing" secondItem="imm-XX-Aiv" secondAttribute="trailing" id="7gg-cs-08r"/>
+                            <constraint firstItem="hkm-Sm-Gaj" firstAttribute="leading" secondItem="t7U-su-Y5l" secondAttribute="leading" id="8Kc-oM-5LN"/>
                             <constraint firstAttribute="trailing" secondItem="t7U-su-Y5l" secondAttribute="trailing" id="FQ5-0y-tYS"/>
                             <constraint firstItem="t7U-su-Y5l" firstAttribute="top" secondItem="hkm-Sm-Gaj" secondAttribute="bottom" id="J76-b1-0LV"/>
-                            <constraint firstAttribute="trailing" secondItem="imm-XX-Aiv" secondAttribute="trailing" id="Kxd-wZ-FJD"/>
-                            <constraint firstItem="hkm-Sm-Gaj" firstAttribute="top" secondItem="imm-XX-Aiv" secondAttribute="top" id="QrM-cS-evi"/>
+                            <constraint firstItem="hkm-Sm-Gaj" firstAttribute="top" secondItem="frc-2V-4tE" secondAttribute="top" id="TG7-Dw-Se5"/>
                             <constraint firstItem="t7U-su-Y5l" firstAttribute="leading" secondItem="frc-2V-4tE" secondAttribute="leading" id="eh9-Wh-avO"/>
-                            <constraint firstAttribute="bottom" secondItem="imm-XX-Aiv" secondAttribute="bottom" id="iYA-Ja-Pni"/>
-                            <constraint firstItem="imm-XX-Aiv" firstAttribute="leading" secondItem="frc-2V-4tE" secondAttribute="leading" id="xDl-xt-yOr"/>
-                            <constraint firstItem="imm-XX-Aiv" firstAttribute="leading" secondItem="hkm-Sm-Gaj" secondAttribute="leading" id="ycY-v5-x7p"/>
-                            <constraint firstItem="imm-XX-Aiv" firstAttribute="top" secondItem="frc-2V-4tE" secondAttribute="top" id="z3c-92-uk3"/>
+                            <constraint firstItem="hkm-Sm-Gaj" firstAttribute="trailing" secondItem="t7U-su-Y5l" secondAttribute="trailing" id="gY5-Ut-Odc"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -2015,12 +1978,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="0iS-cl-rj8">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="548" id="R6f-Ly-Kw5"/>
-                                </constraints>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="93" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="oB7-YX-pqT" customClass="KMTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2185,11 +2142,8 @@
                             <constraint firstItem="1nj-gI-Gxo" firstAttribute="leading" secondItem="GFZ-kv-MM0" secondAttribute="trailing" constant="8" symbolic="YES" id="TDz-vd-WBU"/>
                             <constraint firstItem="oB7-YX-pqT" firstAttribute="leading" secondItem="ZPu-3G-pjW" secondAttribute="leading" id="U3V-Fk-3rP"/>
                             <constraint firstAttribute="centerY" secondItem="1nj-gI-Gxo" secondAttribute="centerY" id="WXf-xb-Osx"/>
-                            <constraint firstItem="0iS-cl-rj8" firstAttribute="top" secondItem="ZPu-3G-pjW" secondAttribute="top" id="dKg-fV-b0m"/>
                             <constraint firstAttribute="bottom" secondItem="55H-0a-bOe" secondAttribute="bottom" id="htL-38-mJH"/>
                             <constraint firstItem="55H-0a-bOe" firstAttribute="leading" secondItem="ZPu-3G-pjW" secondAttribute="leading" id="j0a-1s-tBy"/>
-                            <constraint firstItem="0iS-cl-rj8" firstAttribute="leading" secondItem="ZPu-3G-pjW" secondAttribute="leading" id="jB9-QV-Vaw"/>
-                            <constraint firstItem="0iS-cl-rj8" firstAttribute="trailing" secondItem="ZPu-3G-pjW" secondAttribute="trailing" id="oV5-jk-HcX"/>
                             <constraint firstAttribute="centerY" secondItem="GFZ-kv-MM0" secondAttribute="centerY" id="qrY-PB-srZ"/>
                             <constraint firstItem="55H-0a-bOe" firstAttribute="trailing" secondItem="ZPu-3G-pjW" secondAttribute="trailing" id="sgj-BW-YuL"/>
                             <constraint firstItem="oB7-YX-pqT" firstAttribute="top" secondItem="ZPu-3G-pjW" secondAttribute="top" id="vhU-q4-t8g"/>
@@ -2273,9 +2227,6 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="b4x-G0-ziD">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fiH-hF-0hz" customClass="KMTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="288"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2399,12 +2350,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <constraints>
                             <constraint firstItem="jb2-FU-TDL" firstAttribute="bottom" secondItem="974-cl-7wE" secondAttribute="bottom" id="3AX-4Q-fIr"/>
                             <constraint firstItem="fiH-hF-0hz" firstAttribute="leading" secondItem="974-cl-7wE" secondAttribute="leading" id="5AT-l6-lNj"/>
-                            <constraint firstItem="b4x-G0-ziD" firstAttribute="trailing" secondItem="974-cl-7wE" secondAttribute="trailing" id="Fu9-ig-gkI"/>
-                            <constraint firstItem="b4x-G0-ziD" firstAttribute="leading" secondItem="974-cl-7wE" secondAttribute="leading" id="JxP-FJ-DJY"/>
                             <constraint firstItem="fiH-hF-0hz" firstAttribute="top" secondItem="974-cl-7wE" secondAttribute="top" id="STE-Df-Y8x"/>
                             <constraint firstAttribute="centerX" secondItem="jb2-FU-TDL" secondAttribute="centerX" id="aQH-hA-xhl"/>
-                            <constraint firstItem="b4x-G0-ziD" firstAttribute="bottom" secondItem="974-cl-7wE" secondAttribute="bottom" id="afe-cs-2ux"/>
-                            <constraint firstItem="b4x-G0-ziD" firstAttribute="top" secondItem="974-cl-7wE" secondAttribute="top" id="fbr-3Q-R36"/>
                             <constraint firstItem="jb2-FU-TDL" firstAttribute="centerX" secondItem="fiH-hF-0hz" secondAttribute="centerX" id="oY8-yj-vhb"/>
                         </constraints>
                     </view>
@@ -2700,9 +2647,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_blue.png" translatesAutoresizingMaskIntoConstraints="NO" id="yGJ-qo-Y6y">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="A2a-pO-hty" customClass="KMTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2761,17 +2705,13 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yGJ-qo-Y6y" firstAttribute="bottom" secondItem="A2a-pO-hty" secondAttribute="bottom" id="0LD-5g-Mkw"/>
-                            <constraint firstAttribute="bottom" secondItem="yGJ-qo-Y6y" secondAttribute="bottom" id="547-3l-TFH"/>
                             <constraint firstItem="A2a-pO-hty" firstAttribute="leading" secondItem="1Nc-MW-XWq" secondAttribute="leading" id="BBS-Fs-PUm"/>
-                            <constraint firstItem="A2a-pO-hty" firstAttribute="trailing" secondItem="yGJ-qo-Y6y" secondAttribute="trailing" id="M5u-2j-oiR"/>
                             <constraint firstItem="K4s-Rp-qHp" firstAttribute="top" secondItem="8Nl-SL-XY3" secondAttribute="bottom" constant="18" id="OOw-A4-cKE"/>
                             <constraint firstItem="K4s-Rp-qHp" firstAttribute="leading" secondItem="1Nc-MW-XWq" secondAttribute="leading" constant="60" id="WEV-k1-Xgo"/>
                             <constraint firstItem="A2a-pO-hty" firstAttribute="top" secondItem="1Nc-MW-XWq" secondAttribute="top" id="Zx8-n6-hjt"/>
-                            <constraint firstItem="yGJ-qo-Y6y" firstAttribute="top" secondItem="A2a-pO-hty" secondAttribute="top" id="dXi-uC-JoY"/>
+                            <constraint firstAttribute="bottom" secondItem="A2a-pO-hty" secondAttribute="bottom" id="fBu-JP-lYR"/>
                             <constraint firstAttribute="trailing" secondItem="K4s-Rp-qHp" secondAttribute="trailing" constant="30" id="o0Y-ZI-oBj"/>
-                            <constraint firstItem="A2a-pO-hty" firstAttribute="leading" secondItem="yGJ-qo-Y6y" secondAttribute="leading" id="rEs-Yu-VgS"/>
-                            <constraint firstAttribute="trailing" secondItem="yGJ-qo-Y6y" secondAttribute="trailing" id="wVX-wx-Wf1"/>
+                            <constraint firstAttribute="trailing" secondItem="A2a-pO-hty" secondAttribute="trailing" id="suT-4U-hKK"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -2889,9 +2829,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="BHa-E9-cmz">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="jlM-cp-gHS" customClass="KMTableView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3202,15 +3139,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <constraints>
                             <constraint firstItem="oSr-DQ-nQB" firstAttribute="leading" secondItem="jlM-cp-gHS" secondAttribute="leading" id="18X-hG-XvV"/>
                             <constraint firstItem="jlM-cp-gHS" firstAttribute="leading" secondItem="EuG-88-dct" secondAttribute="leading" id="78G-yg-RlF"/>
-                            <constraint firstItem="jlM-cp-gHS" firstAttribute="trailing" secondItem="BHa-E9-cmz" secondAttribute="trailing" id="GMh-Ba-Xul"/>
+                            <constraint firstAttribute="bottom" secondItem="jlM-cp-gHS" secondAttribute="bottom" id="JJv-Da-rd0"/>
                             <constraint firstAttribute="bottom" secondItem="oSr-DQ-nQB" secondAttribute="bottom" constant="-260" id="NCg-gu-L54"/>
                             <constraint firstItem="jlM-cp-gHS" firstAttribute="top" secondItem="EuG-88-dct" secondAttribute="top" id="Qzv-Rm-lIc"/>
                             <constraint firstAttribute="trailing" secondItem="jlM-cp-gHS" secondAttribute="trailing" id="XIT-ER-UFM"/>
                             <constraint firstItem="oSr-DQ-nQB" firstAttribute="top" secondItem="KJg-3p-tVc" secondAttribute="bottom" id="YUC-VA-sbf"/>
-                            <constraint firstItem="BHa-E9-cmz" firstAttribute="bottom" secondItem="jlM-cp-gHS" secondAttribute="bottom" id="eJT-Qv-l95"/>
-                            <constraint firstItem="jlM-cp-gHS" firstAttribute="top" secondItem="BHa-E9-cmz" secondAttribute="top" id="qrW-FC-bqZ"/>
-                            <constraint firstAttribute="bottom" secondItem="BHa-E9-cmz" secondAttribute="bottom" id="rnC-Gb-DzA"/>
-                            <constraint firstItem="oSr-DQ-nQB" firstAttribute="trailing" secondItem="BHa-E9-cmz" secondAttribute="trailing" id="vce-dG-jPu"/>
+                            <constraint firstItem="jlM-cp-gHS" firstAttribute="trailing" secondItem="oSr-DQ-nQB" secondAttribute="trailing" id="rjE-yg-cEh"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -3968,9 +3902,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" restorationIdentifier="" image="bg_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="SRA-Yi-FjF">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
-                            </imageView>
                             <webView contentMode="scaleToFill" allowsInlineMediaPlayback="NO" mediaPlaybackRequiresUserAction="NO" mediaPlaybackAllowsAirPlay="NO" keyboardDisplayRequiresUserAction="NO" paginationMode="topToBottom" translatesAutoresizingMaskIntoConstraints="NO" id="fGe-Gj-NLo">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3986,13 +3917,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fGe-Gj-NLo" firstAttribute="trailing" secondItem="SRA-Yi-FjF" secondAttribute="trailing" id="8y9-TN-XRH"/>
-                            <constraint firstItem="SRA-Yi-FjF" firstAttribute="top" secondItem="ZHr-fR-GUW" secondAttribute="top" id="U7l-gf-uT6"/>
+                            <constraint firstAttribute="trailing" secondItem="fGe-Gj-NLo" secondAttribute="trailing" id="1he-y6-l5H"/>
+                            <constraint firstItem="fGe-Gj-NLo" firstAttribute="leading" secondItem="ZHr-fR-GUW" secondAttribute="leading" id="JI5-HT-575"/>
                             <constraint firstItem="Nn1-UA-uEj" firstAttribute="centerX" secondItem="fGe-Gj-NLo" secondAttribute="centerX" id="VDv-lo-GGp"/>
-                            <constraint firstItem="fGe-Gj-NLo" firstAttribute="bottom" secondItem="SRA-Yi-FjF" secondAttribute="bottom" id="dGA-B3-sBf"/>
-                            <constraint firstItem="fGe-Gj-NLo" firstAttribute="top" secondItem="SRA-Yi-FjF" secondAttribute="top" id="dRv-aS-SEh"/>
-                            <constraint firstItem="fGe-Gj-NLo" firstAttribute="leading" secondItem="SRA-Yi-FjF" secondAttribute="leading" id="gUP-uz-4Zo"/>
-                            <constraint firstItem="SRA-Yi-FjF" firstAttribute="leading" secondItem="ZHr-fR-GUW" secondAttribute="leading" id="ivV-bD-Ynz"/>
+                            <constraint firstItem="fGe-Gj-NLo" firstAttribute="top" secondItem="ZHr-fR-GUW" secondAttribute="top" id="aD9-xv-4dw"/>
                             <constraint firstAttribute="bottom" secondItem="fGe-Gj-NLo" secondAttribute="bottom" id="uR6-Gu-HB4"/>
                             <constraint firstItem="Nn1-UA-uEj" firstAttribute="centerY" secondItem="fGe-Gj-NLo" secondAttribute="centerY" id="vot-pU-ez3"/>
                         </constraints>
@@ -4030,16 +3958,6 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </scenes>
     <resources>
         <image name="add_tag.png" width="32" height="32"/>
-        <image name="bg_blue.png" width="320" height="480"/>
-        <image name="bg_blue.png" width="320" height="480"/>
-        <image name="bg_blue.png" width="320" height="480"/>
-        <image name="bg_blue.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
-        <image name="bg_white.png" width="320" height="480"/>
         <image name="cell_normal_bg.png" width="64" height="64"/>
         <image name="cell_quick_icon.png" width="21" height="21"/>
         <image name="cell_remove_icon.png" width="21" height="21"/>

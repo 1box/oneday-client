@@ -4031,26 +4031,69 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     <resources>
         <image name="add_tag.png" width="32" height="32"/>
         <image name="bg_blue.png" width="320" height="480"/>
+        <image name="bg_blue.png" width="320" height="480"/>
+        <image name="bg_blue.png" width="320" height="480"/>
+        <image name="bg_blue.png" width="320" height="480"/>
+        <image name="bg_white.png" width="320" height="480"/>
+        <image name="bg_white.png" width="320" height="480"/>
+        <image name="bg_white.png" width="320" height="480"/>
+        <image name="bg_white.png" width="320" height="480"/>
+        <image name="bg_white.png" width="320" height="480"/>
         <image name="bg_white.png" width="320" height="480"/>
         <image name="cell_normal_bg.png" width="64" height="64"/>
         <image name="cell_quick_icon.png" width="21" height="21"/>
         <image name="cell_remove_icon.png" width="21" height="21"/>
         <image name="checkbox-n.png" width="33" height="33"/>
+        <image name="checkbox-n.png" width="33" height="33"/>
+        <image name="checkbox-s.png" width="33" height="33"/>
+        <image name="checkbox-s.png" width="33" height="33"/>
+        <image name="checkbox-s.png" width="33" height="33"/>
         <image name="checkbox-s.png" width="33" height="33"/>
         <image name="checkbox_logged.png" width="33" height="33"/>
+        <image name="checkbox_logged.png" width="33" height="33"/>
+        <image name="checkbox_overtime_n.png" width="33" height="33"/>
         <image name="checkbox_overtime_n.png" width="33" height="33"/>
         <image name="checkboxdone-n.png" width="33" height="33"/>
+        <image name="checkboxdone-n.png" width="33" height="33"/>
+        <image name="checkboxdone-s.png" width="33" height="33"/>
         <image name="checkboxdone-s.png" width="33" height="33"/>
         <image name="dark_nav_back.png" width="30" height="30"/>
+        <image name="dark_nav_back.png" width="30" height="30"/>
+        <image name="dark_nav_back.png" width="30" height="30"/>
+        <image name="dark_nav_back.png" width="30" height="30"/>
+        <image name="dark_nav_back.png" width="30" height="30"/>
+        <image name="dark_nav_back.png" width="30" height="30"/>
+        <image name="dark_nav_back.png" width="30" height="30"/>
+        <image name="dark_nav_back_press.png" width="30" height="30"/>
+        <image name="dark_nav_back_press.png" width="30" height="30"/>
+        <image name="dark_nav_back_press.png" width="30" height="30"/>
         <image name="dark_nav_back_press.png" width="30" height="30"/>
         <image name="guide_background.png" width="16" height="16"/>
         <image name="homecover001.jpg" width="320" height="480"/>
         <image name="homecover_check.png" width="32" height="32"/>
         <image name="list_cell_tag.png" width="33" height="33"/>
+        <image name="list_cell_tag.png" width="33" height="33"/>
+        <image name="list_cell_tag.png" width="33" height="33"/>
         <image name="list_icon_timeline.png" width="16" height="16"/>
         <image name="menu_white.png" width="16" height="16"/>
         <image name="nav_back.png" width="30" height="30"/>
+        <image name="nav_back.png" width="30" height="30"/>
+        <image name="nav_back.png" width="30" height="30"/>
+        <image name="nav_back.png" width="30" height="30"/>
+        <image name="nav_back.png" width="30" height="30"/>
+        <image name="nav_back.png" width="30" height="30"/>
         <image name="nav_back_press.png" width="30" height="30"/>
+        <image name="nav_back_press.png" width="30" height="30"/>
+        <image name="nav_back_press.png" width="30" height="30"/>
+        <image name="nav_back_press.png" width="30" height="30"/>
+        <image name="nav_back_press.png" width="30" height="30"/>
+        <image name="nav_back_press.png" width="30" height="30"/>
+        <image name="nav_dismiss.png" width="16" height="16"/>
+        <image name="nav_dismiss.png" width="16" height="16"/>
+        <image name="nav_dismiss.png" width="16" height="16"/>
+        <image name="nav_dismiss.png" width="16" height="16"/>
+        <image name="nav_dismiss.png" width="16" height="16"/>
+        <image name="nav_dismiss.png" width="16" height="16"/>
         <image name="nav_dismiss.png" width="16" height="16"/>
         <image name="nav_logo.png" width="63" height="26"/>
         <image name="page_round_bg.png" width="20" height="20"/>

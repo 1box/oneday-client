@@ -10,6 +10,8 @@
 "CurrentDateLocale" ="en_US";
 "MonthToDayFormat"  ="MM.dd";
 
+"smark_tip_file_name" ="smark_tip_en";
+
 "Share to friends"   ="Share to friends";
 "Email"              ="Email";
 "Message"            ="Message";

@@ -142,6 +142,11 @@
     return @"MainPage";
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    [self loadHomeCover];
+}
+
 #pragma mark - Viewlifecycle
 
 - (void)viewDidLoad
@@ -329,7 +334,33 @@
 - (void)loadHomeCover
 {
     NSString *currentHomeCoverImageName = [NSString stringWithFormat:@"homecover00%d.jpg", homeCoverSelectedIndex() + 1];
-    _backgroundView.image = [UIImage imageWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:currentHomeCoverImageName]];
+    UIImage *tImage = [UIImage imageWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:currentHomeCoverImageName]];
+    
+    CGFloat imageWidth = tImage.size.width;
+    CGFloat imageHeight = tImage.size.height;
+    if ([KMCommon isPadDevice]) {
+        if (UIInterfaceOrientationIsPortrait(self.interfaceOrientation)) {
+            imageHeight = 960.f;
+        }
+        else {
+            imageHeight = 704.f;
+        }
+    }
+    else if ([KMCommon is568Screen]) {
+        imageHeight = 504.f;
+    }
+    else {
+        imageHeight = 416.f;
+    }
+    
+    imageWidth *= 2;
+    imageHeight *= 2;
+    
+    CGRect tFrame = CGRectMake(0, 0, imageWidth,  SSHeight(_backgroundView) * (imageWidth / SSWidth(_backgroundView)));
+    
+    CGImageRef imageRef = CGImageCreateWithImageInRect([tImage CGImage], tFrame);
+    _backgroundView.image = [UIImage imageWithCGImage:imageRef];
+    CGImageRelease(imageRef);
     
     trackEvent(@"homecover", currentHomeCoverImageName);
 }

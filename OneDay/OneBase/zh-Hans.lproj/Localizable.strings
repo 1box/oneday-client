@@ -10,6 +10,8 @@
 "CurrentDateLocale" ="zh_CN";
 "MonthToDayFormat"  ="MM月dd日";
 
+"smark_tip_file_name" ="smark_tip_zh";
+
 "Share to friends"   ="推荐给朋友";
 "Email"              ="发送电子邮件";
 "Message"            ="发送短信";

@@ -15,7 +15,5 @@
 
 @property (nonatomic) AddonData *currentAddon;
 
-- (IBAction)pageControlClicked:(id)sender;
 - (IBAction)cancel:(id)sender;
-- (IBAction)dismiss:(id)sender;
 @end

@@ -1,3 +1,6 @@
 [submodule "Common/submodule/SVPullToRefresh"]
 	path = Common/submodule/SVPullToRefresh
 	url = https://github.com/samvermette/SVPullToRefresh.git
+[submodule "Common/submodule/GHMarkdownParser"]
+	path = Common/submodule/GHMarkdownParser
+	url = https://github.com/OliverLetterer/GHMarkdownParser.git

@@ -1,0 +1,319 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {	
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;	
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>What is Smark?</title>
+
+</head>
+<body>
+<h2>Smark Introduce</h2>
+
+<h3>What is Smark?</h3>
+
+<blockquote><p>Smark is a kind oi input format, text which based on Smark could
+be recognize automaticly, time, location and so on, on purpose to
+input efficently.</p>
+
+<p>Smark focus on more eﬁiently inputing and easy life.</p>
+
+<p>pure text to input todos, records, easy to use, quickly input,
+intelligent recognise, new experience of life management!</p></blockquote>
+
+<h3>What's offered by Smark?</h3>
+
+<ol>
+<li>Create a new todo by press "Enter";</li>
+<li>Line number automatically;</li>
+<li>Intelligent iind time, duration and so on in the text;</li>
+<li>Automatic make a timeline for today records;</li>
+<li>Base on your text to calculate degree of completion for your
+informations;</li>
+<li>Wildcard: [Space]
+
+<ul>
+<li>[space] + number + unit, will be recognized, eg. [space] + 5</li>
+</ul>
+</li>
+<li>dollars, will be recognized to the money infonnation.</li>
+<li>keyword + number + unit, can be reconized too.</li>
+</ol>
+
+
+<h3>How to input a recognized format?</h3>
+
+<blockquote><p>lf following document is not interest for you, just ignore it for free. We are
+making efforts to let "Smark" smarter, so that you can understand
+everything that you want he do from your input! If you are interested in the
+"Smark“, keep going. l'm it will help to more effective for your input.</p></blockquote>
+
+<h4>To all kinds ot text, Smark supports to recognized "tlme' and "duration</h4>
+
+<h4>To all kinds of text, Smark supports to recognized "time" and "duration"</h4>
+
+<ol>
+<li><p>Daily Schedule</p>
+
+<ul>
+<li><p>[space] + time, to Input time</p>
+
+<pre><code>  eg. Input “Have lunch at 11:59 am“, will
+  automatically adjust the record's start time
+  to 11:50 am
+</code></pre>
+
+<ul>
+<li>Almost all kinds of time format can be recognized</li>
+</ul>
+</li>
+<li><p>bracket + duration + bracket clse, to input duration</p>
+
+<pre><code>  eg: Input "Have a nap 12:50 pm (1h30m)“, will
+  automatically adjust the record's start time
+  to 12:50 pm, end time to one and half hours
+  later, which should be 2:20 pm
+</code></pre>
+
+<ul>
+<li><p>Units support for duration (also support Chinese):</p>
+
+<p>  @"小时" , @"时" , @"分钟", @"分", @"hours",
+  @"hour" , @"h" , @"minutes"
+  @"minute", @"m";</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Daily Cash</p>
+
+<ul>
+<li>{ ' + ', '- ', [space], spend, spent gain, cost, make, eam,
+pay, lose, lost } + number + money unit, to input lose or gain
+money;
+
+<ul>
+<li><p>Input Samples:</p>
+
+<pre><code>  Spent 5 dollars to buy shoes
+  Subway -400d
+  Listen to the concert spending 200 dollar
+</code></pre></li>
+</ul>
+</li>
+<li><p>Units support for money units (also support Chinese):</p>
+
+<pre><code>  @"元" , @"块", @"yuan", @"RMB", @"$", @"d",
+  @"dollar", @"dollars"
+</code></pre></li>
+</ul>
+</li>
+<li><p>Daily Calorie</p>
+
+<ul>
+<li>{'+ ', '- ', [space], lose, lost, gain, fat, have, eat, absorb}+
+number + calorie unit, to input lose or gain calories;
+
+<ul>
+<li><p>Input Samples:</p>
+
+<pre><code>  Do yoga -1000ca1ories
+  Eat an apple this morning, gain 30 kilocalorie
+  Eat 300 kiloculories ice cream before go to bed
+  A listen to coke heat is 594 kilojoules
+</code></pre></li>
+</ul>
+</li>
+<li><p>Units support for calorie (also support Chinese):</p>
+
+<pre><code>  @"kilocalorie", @"calorie", @"cal", @"KJ", @"J", 
+  @"kilojoule", @"joule", @"大卡", @"千卡", 
+  @"卡路里", @"卡", @"焦耳", @"千焦", @"焦"
+</code></pre></li>
+</ul>
+</li>
+<li><p>Daily Workout</p>
+
+<ul>
+<li>{[space], run, walk, do} + number + distance unit, to input
+distance
+
+<ul>
+<li><p>Input Samples:</p>
+
+<pre><code>  Have run 200m
+</code></pre></li>
+<li><p>Units suppon for distance (also support Chinese):</p>
+
+<pre><code>  @"kilometer", @"kilometre", @"meter", @"metre", 
+  @"km", @"m", @"千米", @"米", @"公里
+</code></pre></li>
+</ul>
+</li>
+<li>{[space], do }+ number + times, to input times
+
+<ul>
+<li><p>Input Samples:</p>
+
+<pre><code>  sit—up 50times
+</code></pre></li>
+<li><p>Units support for times:</p>
+
+<pre><code>  @"times", @"time", @"次数", @"次", @"回"
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+</body>
+</html>

@@ -69,9 +69,9 @@
     }
 }
 
-- (void)pullBack
+- (void)preparePullDownAction
 {
-    [self renderPullBack:self.alarmView];
+    [self renderPullToDismiss:self.alarmView];
 }
 
 #pragma mark - View Lifecycles

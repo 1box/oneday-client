@@ -63,9 +63,9 @@
     [self loadUndos:NO];
 }
 
-- (void)pullBack
+- (void)preparePullDownAction
 {
-    [self renderPullBack:self.undosView];
+    [self renderPullToDismiss:self.undosView];
 }
 
 #pragma mark - Load Data

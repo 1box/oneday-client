@@ -204,6 +204,11 @@
     if (![PasswordManager launchPasswordOpen]) {
         [[PasswordManager sharedManager] showAddonLock:_addon finishBlock:nil];
     }
+    
+    self.todayDo = [[DailyDoManager sharedManager] todayDoForAddon:_addon];
+    self.tomorrowDo = [[DailyDoManager sharedManager] tomorrowDoForAddon:_addon];
+    [self loadLoggedDos:NO];
+    [self reloadData];
 }
 
 //- (void)reportUIApplicationDidChangeStatusBarOrientationNotification:(NSNotification *)notification

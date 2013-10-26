@@ -29,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self pullBack];
+    [self preparePullDownAction];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -48,9 +48,21 @@
     [MobClick endLogPageView:[self pageNameForTrack]];
 }
 
+#pragma mark - public
+
+- (BOOL)isNavigationRoot
+{
+    return !self.navigationController || [self.navigationController.viewControllers objectAtIndex:0] == self;
+}
+
+- (BOOL)isPresented
+{
+    return ([self isNavigationRoot] && self.presentingViewController != nil);
+}
+
 #pragma mark - extend
 
-- (void)pullBack
+- (void)preparePullDownAction
 {
     // should be extended
 }
@@ -69,7 +81,7 @@
 
 #pragma mark - public
 
-- (void)renderPullBack:(UIScrollView *)scrollView
+- (void)renderPullToDismiss:(UIScrollView *)scrollView
 {
     __weak KMViewControllerBase *weakSelf = self;
 //    __weak UIScrollView *weakScroll = scrollView;

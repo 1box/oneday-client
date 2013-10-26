@@ -9,6 +9,7 @@
 #import "TodoViewController.h"
 #import "TipViewController.h"
 #import "ToolbarButton.h"
+#import "NormalNavigationBarButton.h"
 
 #import "DailyDoManager.h"
 #import "KMModelManager.h"
@@ -49,8 +50,8 @@
         TipViewController *tController = segue.destinationViewController;
         tController.currentAddon = _dailyDo.addon;
         
-        UIButton *leftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        leftButton.frame = CGRectMake(5.f, 0, 44.f, 44.f);
+        NormalNavigationBarButton *leftButton = [NormalNavigationBarButton buttonWithType:UIButtonTypeCustom];
+        leftButton.frame = CGRectMake(5.f, 0, 30.f, 44.f);
         [leftButton setImage:[UIImage imageNamed:@"nav_back.png"] forState:UIControlStateNormal];
         UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:leftButton];
         [leftButton addTarget:tController action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];

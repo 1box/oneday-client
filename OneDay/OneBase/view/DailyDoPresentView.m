@@ -25,6 +25,12 @@
 
 @implementation DailyDoPresentView
 
+- (void)awakeFromNib
+{
+    // 在nib文件中指定不起作用
+    _textView.scrollEnabled = NO;
+}
+
 #pragma mark - public
 
 + (CGFloat)heightOfCellForDailyDo:(DailyDoBase *)dailyDo

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface KMViewControllerBase : UIViewController
+
 #pragma mark - protected
 
 + (NSString *)storyBoardID;
@@ -17,8 +18,12 @@
 - (IBAction)back:(id)sender;
 - (IBAction)dismiss:(id)sender;
 
-- (void)pullBack;
+- (void)preparePullDownAction;
 
 #pragma mark - public
-- (void)renderPullBack:(UIScrollView *)scrollView;
+
+- (BOOL)isNavigationRoot;
+- (BOOL)isPresented;
+- (void)renderPullToDismiss:(UIScrollView *)scrollView;
+
 @end

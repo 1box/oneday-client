@@ -40,9 +40,9 @@
     return @"AddonsPage";
 }
 
-- (void)pullBack
+- (void)preparePullDownAction
 {
-    [self renderPullBack:self.addonsView];
+    [self renderPullToDismiss:self.addonsView];
 }
 
 #pragma mark - Actions

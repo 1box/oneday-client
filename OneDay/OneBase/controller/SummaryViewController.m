@@ -43,9 +43,9 @@
     [_summaryList reloadData];
 }
 
-- (void)pullBack
+- (void)preparePullDownAction
 {
-    [self renderPullBack:self.summaryList];
+    [self renderPullToDismiss:self.summaryList];
 }
 
 #pragma mark - private

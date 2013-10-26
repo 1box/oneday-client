@@ -74,9 +74,9 @@ typedef NS_ENUM(NSInteger, RateSectionRowType) {
     return @"MorePage";
 }
 
-- (void)pullBack
+- (void)preparePullDownAction
 {
-    [self renderPullBack:self.listView];
+    [self renderPullToDismiss:self.listView];
 }
 
 #pragma mark - private

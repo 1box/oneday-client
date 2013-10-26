@@ -7,9 +7,10 @@
 //
 
 #import "TipViewController.h"
+#import "NormalNavigationBarButton.h"
 #import "AddonManager.h"
 #import "AddonData.h"
-#import "GHMarkdownParser.h"
+#import "UIScrollView+SVPullToRefresh.h"
 
 #define NumberOfMainTips 1
 #define NumberOfMoreTips 0
@@ -38,6 +39,15 @@
     [self loadTextFromFileName:NSLocalizedString(@"smark_tip_file_name", nil)];
 }
 
+#pragma mark - extended
+
+- (void)preparePullDownAction
+{
+    if (self.isPresented) {
+        [self renderPullToDismiss:self.tipView.scrollView];
+    }
+}
+
 #pragma mark - Actions
 
 - (IBAction)cancel:(id)sender
@@ -54,10 +64,12 @@
 
 - (void)loadTextFromFileName:(NSString *)name
 {
-    NSString *filePath = [[NSBundle mainBundle] pathForResource:name ofType:@"md"];
+    NSString *filePath = [[NSBundle mainBundle] pathForResource:name ofType:@"html"];
+//    NSString *filePath = [[NSBundle mainBundle] pathForResource:name ofType:@"md"];
     NSString *rawText = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
     
-    [_tipView loadHTMLString:rawText.flavoredHTMLStringFromMarkdown baseURL:nil];
+    [_tipView loadHTMLString:rawText baseURL:nil];
+//    [_tipView loadHTMLString:rawText.flavoredHTMLStringFromMarkdown baseURL:nil];
 }
 
 #pragma mark - UIWebViewDelegate

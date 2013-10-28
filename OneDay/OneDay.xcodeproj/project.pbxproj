@@ -2866,9 +2866,8 @@
 		3F55A3B216E50D4800EBBA30 /* addons */ = {
 			isa = PBXGroup;
 			children = (
-				CB3FC40417A75CA70069B6BA /* SexAddon */,
-				CB3FC3FE17A75C590069B6BA /* MensesAddon */,
 				3F55A3B316E50D4800EBBA30 /* AddonsHeader.h */,
+				CB3FC40417A75CA70069B6BA /* SexAddon */,
 				3F55A3B416E50D4800EBBA30 /* CalorieAddon */,
 				3F55A40516E50D4800EBBA30 /* CashAddon */,
 				3F55A45C16E50D4900EBBA30 /* MemoAddon */,
@@ -3961,13 +3960,6 @@
 				3FC12586167EF70F003FFA8B /* KMTracker.m */,
 			);
 			path = track;
-			sourceTree = "<group>";
-		};
-		CB3FC3FE17A75C590069B6BA /* MensesAddon */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = MensesAddon;
 			sourceTree = "<group>";
 		};
 		CB3FC40417A75CA70069B6BA /* SexAddon */ = {

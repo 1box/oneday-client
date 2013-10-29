@@ -55,6 +55,7 @@ everything that you want he do from your input! If you are interested in the
 
 
 2. Daily Cash
+	* Daily cash also support automaticly recognize "money" , beside "time" and "duration"
 	* { ' + ', '- ', [space], spend, spent gain, cost, make, eam,
 pay, lose, lost } + number + money unit, to input lose or gain
 money;
@@ -70,6 +71,7 @@ money;
 
 
 3. Daily Calorie
+	* Daily calorie also support automaticly recognize "heat" , beside "time" and "duration"
 	* {'+ ', '- ', [space], lose, lost, gain, fat, have, eat, absorb}+
 number + calorie unit, to input lose or gain calories;
 		- Input Samples:
@@ -86,6 +88,7 @@ number + calorie unit, to input lose or gain calories;
 
 
 3. Daily Workout
+	* Beside "time" and "duration", daily workout also support:
 	* {[space], run, walk, do} + number + distance unit, to input
 distance
 		- Input Samples:
@@ -102,3 +105,10 @@ distance
 		- Units support for times:
 		
 				@"times", @"time", @"次数", @"次", @"回"
+4. Daily Period
+	* Daily Period also support automaticly recognize "current day" , beside "time" and "duration"
+	* { period } + ":" + number + day, to input current day
+		- Input Samples:
+		
+				period:4day
+	* { pray, thanks }, to input your wishes.

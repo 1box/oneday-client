@@ -79,6 +79,14 @@ static SMDetector *_defaultDetector = nil;
                 case SmarkDetectTypeQuantity:
                     regExString = SMQuantityRegEx;
                     break;
+                case SmarkDetectTypeDays:
+                    options |= NSRegularExpressionCaseInsensitive;
+                    regExString = SMDaysRegEx;
+                    break;
+                case SmarkDetectTypeWish:
+                    options |= NSRegularExpressionCaseInsensitive;
+                    regExString = SMWishRegEx;
+                    break;
                 default:
                     break;
             }
@@ -88,6 +96,9 @@ static SMDetector *_defaultDetector = nil;
             }
         }
     }
+    
+    NSLog(@"detect result:%@", ret);
+    
     return ret;
 }
 
@@ -134,6 +145,13 @@ static SMDetector *_defaultDetector = nil;
                     caloric *= -1;
                 }
                 return [NSNumber numberWithFloat:caloric];
+            }
+                break;
+            case SmarkDetectTypeDays:
+            {
+                NSString *daysString = [aString stringByTrimmingStrings:DaysBeginSmark];
+                NSInteger dayCount = [[daysString stringByTrimmingStrings:DaysUnits] integerValue];
+                return @(dayCount);
             }
                 break;
                 

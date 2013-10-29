@@ -188,6 +188,44 @@
 "MemoNoText"               ="这一天没有便签";
 "MemoPlaceHolder"          ="◉ 古时候的便签是刻在龟背上的哦";
 
+"DailyPeriod"             ="姨妈日记";
+"TodayPeriod"             ="今日姨妈记录";
+"PeriodTimeline"          ="一天大姨妈";
+"PeriodSlogan"            ="还没来? 快来姨妈庙拜一拜!";
+"PeriodInTodayText"      ="今天是第%d天!";
+"PeriodAfterTodayText"   ="还愿去!";
+"PeriodBeforeTodayText"  ="距下次姨妈降临还有%d天";
+"PeriodNotComeTodayText" ="求姨妈!";
+"PeriodNoText"  ="暂无信息, 请输入今天是经期第几天";
+"PeriodCircleDaysText" ="月经周期";
+"PeriodFirstSecureDaysText" ="安全期";
+"PeriodEasyPregnantDaysText" ="易孕期";
+"PeriodOvulationDayText" ="排卵日";
+"PeriodSecondSecureDaysText" ="安全期";
+"PeriodDurationDaysText" ="月经期";
+"PeriodPlaceHolder"       ="◉ 输入示例一：\
+◉ 输入 \"第6天\"，将自动把这条记录记为 经期第六天\n\
+◉ 输入示例二：\
+◉ 输入 \"求姨妈\" 或 \"还愿\"，将自动把这条记录记录为你的愿望\"";
+
+"DailySex"             ="性福日记";
+"TodaySex"             ="今日性福日记";
+"SexTimeline"          ="一天性福时刻";
+"SexSlogan"            ="跟他一起努力减肥吧";
+"SexGainTodayText"     ="今天共摄取了%0.3f大卡";
+"SexLoseTodayText"     ="今天共消耗了%0.3f大卡";
+"SexEqualTodayText"    ="今天摄取和消耗刚好平衡";
+"SexGainCompleteText"  ="共摄取了%0.3f大卡";
+"SexLoseCompleteText"  ="共消耗了%0.3f大卡";
+"SexEqualCompleteText" ="摄取和消耗卡路里刚好平衡";
+"SexNoText"            ="这一天没有减肥记录";
+"SexPlaceHolder"       ="◉ 输入示例一：\
+◉ 输入 \"吃了一盒八喜冰激凌增加了127大卡\"，将自动把这条记录的热量记为 摄入127大卡\n\
+◉ 输入示例二：\
+◉ 输入 \"做瑜伽减了100大卡\"，将自动把这条记录的热量记为：消耗100大卡\n\
+◉ 更多可自动识别的示例：\
+◉ 输入 \"又吃了一盒八喜冰激凌摄取了 127大卡\"";
+
 // message
 // https://itunes.apple.com/us/app/yi-tian-ai-ji-hua-ai-ji-lu/id573096972?ls=1&mt=8
 "Share app mail subject" ="分享应用: 一天，专注提高每日生活效率";

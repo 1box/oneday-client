@@ -8,11 +8,11 @@
 			<key>name</key>
 			<string>todos</string>
 			<key>icon</key>
-			<string>cash_todos_icon.png</string>
+			<string>period_todos_icon.png</string>
 			<key>type</key>
 			<string>todos</string>
 			<key>displayName</key>
-			<string>TodayCash</string>
+			<string>TodayPeriod</string>
 		</dict>
 		<dict>
 			<key>name</key>
@@ -30,22 +30,24 @@
 		<key>ShowTimeline</key>
 		<true/>
 		<key>Slogan</key>
-		<string>CashSlogan</string>
+		<string>PeriodSlogan</string>
 		<key>TimelineTitle</key>
-		<string>CashTimeline</string>
+		<string>PeriodTimeline</string>
 		<key>PlaceHolder</key>
-		<string>CashPlaceHolder</string>
+		<string>PeriodPlaceHolder</string>
 		<key>ShowQuickEntry</key>
 		<false/>
 		<key>ActionType</key>
-		<integer>90</integer>
+		<integer>2</integer>
 		<key>QuickAddPropertyName</key>
 		<string>todos</string>
 		<key>InputHelperWords</key>
 		<array>
-			<string>元</string>
-			<string>dollar</string>
-			<string>.</string>
+			<string>求姨妈</string>
+			<string>还愿</string>
+			<string>第</string>
+			<string>天</string>
+			<string>day</string>
 		</array>
 	</dict>
 </dict>

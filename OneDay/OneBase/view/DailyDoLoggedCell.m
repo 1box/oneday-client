@@ -49,7 +49,7 @@
     if ([[NSDate dateWithTimeIntervalSince1970:[_loggedDo.createTime doubleValue]] isTypicallyWorkday]) {
         color = CornerMarkColorTypeCyan;
     }
-    UIImageView *markView = [self renderCornerMark:color scaleType:CornerMarkScaleTypeSmall isFavorite:NO];
+    UIImageView *markView = [self.contentView renderCornerMark:color scaleType:CornerMarkScaleTypeSmall isFavorite:NO];
     
 //    CGFloat topMargin = 0.f;
 //    if (self.locationType == KMTableViewCellLocationTypeAlone || self.locationType == KMTableViewCellLocationTypeTop) {

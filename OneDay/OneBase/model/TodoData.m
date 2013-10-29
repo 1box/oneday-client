@@ -29,6 +29,8 @@
 @dynamic distance;
 @dynamic frequency;
 @dynamic quantity;
+@dynamic days;
+@dynamic wish;
 @dynamic dailyDo;
 @dynamic alarm;
 

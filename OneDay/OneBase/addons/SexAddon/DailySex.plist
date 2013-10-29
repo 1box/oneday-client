@@ -8,11 +8,11 @@
 			<key>name</key>
 			<string>todos</string>
 			<key>icon</key>
-			<string>cash_todos_icon.png</string>
+			<string>sex_todos_icon.png</string>
 			<key>type</key>
 			<string>todos</string>
 			<key>displayName</key>
-			<string>TodayCash</string>
+			<string>TodaySex</string>
 		</dict>
 		<dict>
 			<key>name</key>
@@ -30,11 +30,11 @@
 		<key>ShowTimeline</key>
 		<true/>
 		<key>Slogan</key>
-		<string>CashSlogan</string>
+		<string>SexSlogan</string>
 		<key>TimelineTitle</key>
-		<string>CashTimeline</string>
+		<string>SexTimeline</string>
 		<key>PlaceHolder</key>
-		<string>CashPlaceHolder</string>
+		<string>SexPlaceHolder</string>
 		<key>ShowQuickEntry</key>
 		<false/>
 		<key>ActionType</key>
@@ -43,8 +43,8 @@
 		<string>todos</string>
 		<key>InputHelperWords</key>
 		<array>
-			<string>元</string>
-			<string>dollar</string>
+			<string>次</string>
+			<string>times</string>
 			<string>.</string>
 		</array>
 	</dict>

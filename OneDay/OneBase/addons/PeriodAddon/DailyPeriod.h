@@ -1,5 +1,5 @@
 //
-//  DailySex.h
+//  DailyPeriod.h
 //  OneDay
 //
 //  Created by kimimaro on 13-7-30.
@@ -8,6 +8,6 @@
 
 #import "DailyDoBase.h"
 
-@interface DailySex : DailyDoBase
+@interface DailyPeriod : DailyDoBase
 
 @end

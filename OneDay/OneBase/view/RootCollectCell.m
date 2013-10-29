@@ -19,7 +19,11 @@
     _addon = addon;
     if (_addon) {
         _titleLabel.text = NSLocalizedString(addon.title, nil);
-        NSString *cartoonName = [NSString stringWithFormat:@"2_s_%@_0001.png", _addon.cartoon];
+        int imageIndex = 1;
+        if ([_addon.dailyDoName isEqualToString:@"DailyPeriod"]) {
+            imageIndex = 9;
+        }
+        NSString *cartoonName = [NSString stringWithFormat:@"2_s_%@_00%02d.png", _addon.cartoon, imageIndex];
         _titleImage.image = [UIImage imageWithContentsOfFile:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:cartoonName]];
     }
 }

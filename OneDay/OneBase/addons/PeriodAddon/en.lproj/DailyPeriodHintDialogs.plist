@@ -14,7 +14,7 @@
 				<string>{{75, 150},{50,50}}</string>
 			</array>
 			<key>kHintDialogMessageKey</key>
-			<string>♥ Daily cash also support automaticly recognize &quot;money&quot; , beside &quot;time&quot; and &quot;duration&quot;
+			<string>♥ Daily Period also support automaticly recognize &quot;current day&quot; , beside &quot;time&quot; and &quot;duration&quot;
 
 (More to see input samples)</string>
 			<key>kHintDialogImageKey</key>

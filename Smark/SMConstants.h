@@ -16,14 +16,15 @@
 
 
 typedef NS_ENUM(NSInteger, SmarkDetectType) {
-    SmarkDetectTypeDate = 1UL,         // 时间 1
-    SmarkDetectTypeDuration = (1UL << 1),     // 时长 2
-    
-    SmarkDetectTypeMoney = (1UL << 2),    // 货币单位 4
-    SmarkDetectTypeCaloric = (1UL << 3),  // 热量单位 8
-    SmarkDetectTypeDistance = (1UL << 4), // 距离单位 16
-    SmarkDetectTypeFrequency = (1UL << 5),    // 次数 32
-    SmarkDetectTypeQuantity = (1UL << 6)      // 个数 64
+    SmarkDetectTypeDate = 1UL,              // 时间 1
+    SmarkDetectTypeDuration = (1UL << 1),   // 时长 2
+    SmarkDetectTypeMoney = (1UL << 2),      // 货币单位 4
+    SmarkDetectTypeCaloric = (1UL << 3),    // 热量单位 8
+    SmarkDetectTypeDistance = (1UL << 4),   // 距离单位 16
+    SmarkDetectTypeFrequency = (1UL << 5),  // 次数 32
+    SmarkDetectTypeQuantity = (1UL << 6),   // 个数 64
+    SmarkDetectTypeDays = (1UL << 7),       // 第x天 128
+    SmarkDetectTypeWish = (1UL << 8)        // 愿望 256
 };
 
 static inline NSArray* numberSmark() {
@@ -183,6 +184,25 @@ static inline NSArray* quantityUnitBeginSmark() {
 static inline NSArray* quantityUnits() {
     return @[@"个"];
 }
+
+/*
+ * 8) days
+ * case insensitive
+ * ^$ match at the line breaks
+ * (第|Period:)\d+(天|day)
+ */
+#define SMDaysRegEx @"(第|Period:)\\d+(天|day)"
+#define DaysBeginSmark (@[@"第", @"period:"])
+#define DaysUnits (@[@"天", @"day"])
+
+/*
+ * 9) wish
+ * case insensitive
+ * ^$ match at the line breaks
+ * 求姨妈|还愿
+ */
+#define SMWishRegEx @"求姨妈|还愿|Pray|Thanks"
+#define WishWords (@[@"求姨妈", @"还愿", @"Pray", @"Thanks"])
 
 @interface SMConstants : NSObject
 @end

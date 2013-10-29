@@ -320,6 +320,26 @@
         }
     }
     
+    if ((detectType & SmarkDetectTypeDays) == SmarkDetectTypeDays) {
+        for (TodoData *todo in [self todosSortedByIndex]) {
+            NSArray *days = [[SMDetector defaultDetector] itemInString:todo.content byType:SmarkDetectTypeDays];
+            if ([days count] > 0) {
+                todo.days = days[0];
+            }
+            else {
+                todo.days = nil;
+            }
+            
+            NSArray *wishes = [[SMDetector defaultDetector] itemInString:todo.content byType:SmarkDetectTypeWish];
+            if ([wishes count] > 0) {
+                todo.wish = wishes[0];
+            }
+            else {
+                todo.wish = nil;
+            }
+        }
+    }
+    
     BOOL ret = [[KMModelManager sharedManager] saveContext:nil];
     if (!ret) {
         SSLog(@"Error occurs when save detected time and duration!");

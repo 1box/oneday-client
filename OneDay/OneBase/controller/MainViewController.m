@@ -157,8 +157,8 @@
     _currentPage = 0;
     _toolbar.pageLabel.text = [NSString stringWithFormat:@"%d", _currentPage];
     
-    // to fix bug on iPhone 4S
-    _collectionView.scrollEnabled = NO;
+//    // to fix bug on iPhone 4S
+//    _collectionView.scrollEnabled = NO;
     
     [[SplashHelper sharedHelper] prepareSplashAnimationView];
 }

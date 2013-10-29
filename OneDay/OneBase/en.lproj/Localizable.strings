@@ -189,6 +189,38 @@
 "MemoNoText"               ="No memos this day";
 "MemoPlaceHolder"          ="◉ In remote antiquity Chinese people use tortoise shell to write memo.";
 
+"DailyPeriod"             ="Daily Period";
+"TodayPeriod"             ="My Period";
+"PeriodTimeline"          ="Timeline";
+"PeriodSlogan"            ="Periods didn't come? Pray!";
+"PeriodInTodayText"      ="Periods: Day %d!";
+"PeriodAfterTodayText"   ="Thanks!";
+"PeriodBeforeTodayText"  ="Next period come after %d day.";
+"PeriodNotComeTodayText" ="Pray for coming!";
+"PeriodNoText"  ="Input period x day to begin.";
+"PeriodCircleDaysText" ="Circle";
+"PeriodFirstSecureDaysText" ="Safe";
+"PeriodEasyPregnantDaysText" ="EP"; // easy pregnant
+"PeriodOvulationDayText" ="Ovulatory";
+"PeriodSecondSecureDaysText" ="Safe";
+"PeriodDurationDaysText" ="Period";
+"PeriodPlaceHolder"       ="◉ Input Sample (1):\
+◉ Input \"period 4 day\"";
+
+"DailySex"             ="Daily Sex";
+"TodaySex"             ="Today Sex";
+"SexTimeline"          ="Timeline";
+"SexSlogan"            ="Be slim like him!";
+"SexGainTodayText"     ="Gain %0.3fkilocalorie today";
+"SexLoseTodayText"     ="Lose %0.3fkilocalorie today";
+"SexEqualTodayText"    ="Balance of calories today";
+"SexGainCompleteText"  ="totaly gain %0.3fkilocalorie";
+"SexLoseCompleteText"  ="totaly lose %0.3fkilocalorie";
+"SexEqualCompleteText" ="Just balance";
+"SexNoText"            ="No calorie record this day";
+"SexPlaceHolder"       ="◉ Input Sample (1):\
+◉ Input \"Another ice cream, gain 127kilocalorie\"";
+
 // message
 "Share app mail subject" ="Share an app to you: One Day - Love plan, Love note";
 "Share app mail message" ="Nice app! One Day - Love plan, Love note! Click to download: https://itunes.apple.com/us/app/yi-tian-ai-ji-hua-ai-ji-lu/id573096972?ls=1&mt=8";

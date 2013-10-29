@@ -42,6 +42,8 @@ static inline NSUInteger newToDoItemID() {
 @property (nonatomic, strong) NSString *distance;
 @property (nonatomic, strong) NSString *frequency;
 @property (nonatomic, strong) NSString *quantity;
+@property (nonatomic, strong) NSString *days;
+@property (nonatomic, strong) NSString *wish;   // for Daily Period
 
 @property (nonatomic, strong) DailyDoBase *dailyDo;
 @property (nonatomic, strong) AlarmData *alarm;

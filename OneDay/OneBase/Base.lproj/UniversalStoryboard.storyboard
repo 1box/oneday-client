@@ -1312,7 +1312,6 @@
                                                 <connections>
                                                     <outlet property="iconImage" destination="Vyb-tz-9V5" id="eUl-8d-m2L"/>
                                                     <outlet property="nameLabel" destination="gTH-Nh-8MY" id="FN5-3y-Szv"/>
-                                                    <segue destination="Srd-uP-EPX" kind="push" identifier="showTimeline" id="meO-p2-OaY"/>
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="TodayPropertyNotesCellID" id="FC4-D7-lMO" customClass="DailyDoPropertyCell">
@@ -3406,20 +3405,52 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="889" y="766"/>
         </scene>
+        <!--Calendar View Controller-->
+        <scene sceneID="PSA-Cc-09t">
+            <objects>
+                <viewController storyboardIdentifier="CalendarViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="TXy-hQ-Sxz" customClass="CalendarViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ojX-Rq-eUH"/>
+                        <viewControllerLayoutGuide type="bottom" id="6CV-WN-6Pq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R8i-Nh-AZY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="LTW-PY-HOK">
+                        <barButtonItem key="leftBarButtonItem" title="back" style="plain" id="7X2-SD-W9B">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Xbr-37-88Z" customClass="NavigationBarButton">
+                                <rect key="frame" x="16" y="0.0" width="30" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="nav_back.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zcf-hU-ti4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1831" y="-591"/>
+        </scene>
         <!--Timeline View Controller-->
         <scene sceneID="qN0-dZ-UIt">
             <objects>
-                <viewController id="Srd-uP-EPX" customClass="TimelineViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimelineViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Srd-uP-EPX" customClass="TimelineViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CHE-MF-wXC"/>
                         <viewControllerLayoutGuide type="bottom" id="QUf-hT-246"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uyF-Wt-hrE">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c02-o5-ffZ" customClass="MADayView">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Srd-uP-EPX" id="49i-56-Bvn"/>
@@ -3427,7 +3458,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </connections>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xoV-0b-dPg" userLabel="picker container">
-                                <rect key="frame" x="0.0" y="504" width="320" height="260"/>
+                                <rect key="frame" x="0.0" y="568" width="320" height="260"/>
                                 <subviews>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CA8-fI-iW1">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

@@ -15,6 +15,7 @@
 #import "UndoViewController.h"
 #import "SummaryViewController.h"
 #import "AlarmViewController.h"
+#import "CalendarViewController.h"
 
 #import "KMTableView.h"
 #import "DailyDoTodayCell.h"
@@ -89,13 +90,13 @@
         controller.dailyDo = _todayDo;
         controller.navigationItem.title = tCell.nameLabel.text;
     }
-    else if ([[segue identifier] isEqualToString:@"showTimeline"]) {
-        TimelineViewController *controller = [segue destinationViewController];
-        NSMutableArray *dailyDos = [NSMutableArray arrayWithObject:_todayDo];
-        [dailyDos addObjectsFromArray:_loggedDos];
-        controller.dailyDos = [dailyDos copy];
-        controller.navigationItem.title = tCell.nameLabel.text;
-    }
+//    else if ([[segue identifier] isEqualToString:@"showTimeline"]) {
+//        TimelineViewController *controller = [segue destinationViewController];
+//        NSMutableArray *dailyDos = [NSMutableArray arrayWithObject:_todayDo];
+//        [dailyDos addObjectsFromArray:_loggedDos];
+//        controller.dailyDos = [dailyDos copy];
+//        controller.navigationItem.title = tCell.nameLabel.text;
+//    }
     else if ([[segue identifier] isEqualToString:@"showNote"]) {
         NoteViewController *controller = [segue destinationViewController];
         controller.propertyKey = tCell.propertyKey;
@@ -655,6 +656,27 @@
         if ((_viewHelper.todayDoUnfold && indexPath.row == 0) || !_viewHelper.todayDoUnfold) {
             [_viewHelper updateTodayDoUnfold];
         }
+        else if (_viewHelper.todayDoUnfold && indexPath.row == 3) {
+            
+            NSMutableArray *dailyDos = [NSMutableArray arrayWithObject:_todayDo];
+            [dailyDos addObjectsFromArray:_loggedDos];
+            
+            KMViewControllerBase *controller = nil;
+            if ([_addon.dailyDoName isEqualToString:@"DailyPeriod"]) {  // trick logic
+                controller = KMViewInUniversalStoryboard(CalendarViewStoryboardID);
+                ((CalendarViewController *)controller).dailyDos = [dailyDos copy];
+            }
+            else {
+                controller = KMViewInUniversalStoryboard(TimelineViewStoryboardID);
+                ((TimelineViewController *)controller).dailyDos = [dailyDos copy];
+            }
+            
+            DailyDoPropertyCell *tCell = (DailyDoPropertyCell *)[tableView cellForRowAtIndexPath:indexPath];
+            controller.navigationItem.title = tCell.nameLabel.text;
+            
+            UINavigationController *nav = [KMCommon topMostNavigationControllerFor:self];
+            [nav pushViewController:controller animated:YES];
+        }
     }
     else if (indexPath.section == _tomorrowSectionIndex) {
         [_viewHelper updateTomorrowDoUnfold];
@@ -682,7 +704,7 @@
             break;
         case DailyDoActionTypeShowAllUndos:
         {
-            UINavigationController *nav = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"UndoNavigationControllerID"];
+            UINavigationController *nav = KMViewInUniversalStoryboard(UndoNavigationControllerID);
             if ([KMCommon isPadDevice]) {
                 nav.modalPresentationStyle = UIModalPresentationFormSheet;
             }
@@ -694,7 +716,7 @@
             break;
         case DailyDoActionTypeCashMonthSummary:
         {
-            UINavigationController *nav = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SummaryNavigationControllerID"];
+            UINavigationController *nav = KMViewInUniversalStoryboard(SummaryNavigationControllerID);
             if ([KMCommon isPadDevice]) {
                 nav.modalPresentationStyle = UIModalPresentationFormSheet;
             }
@@ -707,7 +729,7 @@
             break;
         case DailyDoActionTypeCashYearSummary:
         {
-            UINavigationController *nav = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"SummaryNavigationControllerID"];
+            UINavigationController *nav = KMViewInUniversalStoryboard(SummaryNavigationControllerID);
             if ([KMCommon isPadDevice]) {
                 nav.modalPresentationStyle = UIModalPresentationFormSheet;
             }
@@ -720,7 +742,7 @@
             break;
         case DailyDoActionTypeAlarmNotification:
         {
-            UINavigationController *nav = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"WorkoutAlarmNavigationControllerID"];
+            UINavigationController *nav = KMViewInUniversalStoryboard(WorkoutAlarmNavigationControllerID);
             if ([KMCommon isPadDevice]) {
                 nav.modalPresentationStyle = UIModalPresentationFormSheet;
             }

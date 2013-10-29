@@ -4,3 +4,6 @@
 [submodule "Common/submodule/GHMarkdownParser"]
 	path = Common/submodule/GHMarkdownParser
 	url = https://github.com/OliverLetterer/GHMarkdownParser.git
+[submodule "Common/submodule/MNCalendarView"]
+	path = Common/submodule/MNCalendarView
+	url = https://github.com/min/MNCalendarView.git

@@ -14,8 +14,17 @@
 #define OneDayStoryboardName @"OneDayStoryboard"
 #define UniversalStoryboardName @"UniversalStoryboard"
 
-#define MainViewStoryboardID @"MainViewControllerID"
-#define DailyDoViewStoryboardID @"DailyDoViewStoryboardID"
+#define MainViewStoryboardID     @"MainViewControllerID"
+#define DailyDoViewStoryboardID  @"DailyDoViewStoryboardID"
+#define CalendarViewStoryboardID @"CalendarViewControllerID"
+#define TimelineViewStoryboardID @"TimelineViewControllerID"
+#define UndoNavigationControllerID @"UndoNavigationControllerID"
+#define SummaryNavigationControllerID @"SummaryNavigationControllerID"
+#define WorkoutAlarmNavigationControllerID @"WorkoutAlarmNavigationControllerID"
+
+#define KMViewInUniversalStoryboard(KMViewStoryboardID) [[UIStoryboard storyboardWithName:UniversalStoryboardName \
+                                                                                   bundle:[NSBundle mainBundle]] \
+                                                  instantiateViewControllerWithIdentifier:(KMViewStoryboardID)]
 
 #define CurrentAddonsDidChangedNotification @"CurrentAddonsDidChangedNotification"
 

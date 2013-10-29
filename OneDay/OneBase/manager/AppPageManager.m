@@ -57,7 +57,7 @@ static AppPageManager *_sharedManager = nil;
         AddonData *tAddon = [[AddonManager sharedManager] currentAddonForName:addonName];
         if (tAddon) {
             UINavigationController *nav = [KMCommon rootNavigationController];
-            DailyDoViewController *controller = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:DailyDoViewStoryboardID];
+            DailyDoViewController *controller = KMViewInUniversalStoryboard(DailyDoViewStoryboardID);
             controller.addon = tAddon;
             [nav pushViewController:controller animated:NO];
         }

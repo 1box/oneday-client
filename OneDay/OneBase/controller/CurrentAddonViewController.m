@@ -54,7 +54,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.row < [_currentAddons count]) {
-        DailyDoViewController *controller = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:DailyDoViewStoryboardID];
+        DailyDoViewController *controller = KMViewInUniversalStoryboard(DailyDoViewStoryboardID);
         controller.addon = [_currentAddons objectAtIndex:indexPath.row];
         
         UINavigationController *nav = [KMCommon rootNavigationController];

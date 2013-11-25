@@ -21,4 +21,5 @@
  * return kilocalorie rate for smark caloric
  */
 - (id)valueInString:(NSString *)aString byType:(SmarkDetectType)type;
+- (NSString *)stringForValue:(id)value byType:(SmarkDetectType)type;
 @end

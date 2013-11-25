@@ -162,6 +162,36 @@ static SMDetector *_defaultDetector = nil;
     return ret;
 }
 
+- (NSString *)stringForValue:(id)value byType:(SmarkDetectType)type
+{
+    NSString *ret = @"";
+    
+    if (value || [value isKindOfClass:[NSNumber class]]) { // 目前只支持 NSNumber
+        switch (type) {
+            case SmarkDetectTypeMoney:
+            {
+                
+            }
+                break;
+            case SmarkDetectTypeCaloric:
+            {
+               
+            }
+                break;
+            case SmarkDetectTypeDays:
+            {
+                ret = [NSString stringWithFormat:DaysStringWithValue, value];
+            }
+                break;
+                
+            default:
+                break;
+        }
+    }
+    
+    return ret;
+}
+
 #pragma mark - private
 
 - (NSArray *)datesInString:(NSString *)aString

@@ -197,7 +197,7 @@
 "PeriodAfterTodayText"   ="Thanks!";
 "PeriodBeforeTodayText"  ="Next period come after %d day.";
 "PeriodNotComeTodayText" ="Pray for coming!";
-"PeriodNoText"  ="Input period x day to begin.";
+"PeriodNoText"  ="Input period day to begin";
 "PeriodCircleDaysText" ="Circle";
 "PeriodFirstSecureDaysText" ="Safe";
 "PeriodEasyPregnantDaysText" ="EP"; // easy pregnant
@@ -206,6 +206,13 @@
 "PeriodDurationDaysText" ="Period";
 "PeriodPlaceHolder"       ="◉ Input Sample (1):\
 ◉ Input \"period 4 day\"";
+"PeriodFirstDay"   ="First Day";
+"PeriodSecondDay"  ="Second Day";
+"PeriodThirdDay"   ="Third Day";
+"PeriodFourthDay"  ="Fourth Day";
+"PeriodFifthDay"   ="Fifth Day";
+"PeriodSixthDay"   ="Sixth Day";
+"PeriodSeventhDay" ="Seventh Day";
 
 "DailySex"             ="Daily Sex";
 "TodaySex"             ="Today Sex";
@@ -231,4 +238,7 @@
 "Pull to refresh..."   ="Pull to dismiss";
 "Release to refresh..."="Release to dismiss";
 "Loading..."           ="Dismissing";
+
+// SMDetector
+"SMDetectDaysStringWithValue" ="period:%@day";
 

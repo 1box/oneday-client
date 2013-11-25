@@ -207,6 +207,13 @@
 ◉ 输入 \"第6天\"，将自动把这条记录记为 经期第六天\n\
 ◉ 输入示例二：\
 ◉ 输入 \"求姨妈\" 或 \"还愿\"，将自动把这条记录记录为你的愿望\"";
+"PeriodFirstDay"   ="月经第一天";
+"PeriodSecondDay"  ="月经第二天";
+"PeriodThirdDay"   ="月经第三天";
+"PeriodFourthDay"  ="月经第四天";
+"PeriodFifthDay"   ="月经第五天";
+"PeriodSixthDay"   ="月经第六天";
+"PeriodSeventhDay" ="月经第七天";
 
 "DailySex"             ="性福日记";
 "TodaySex"             ="今日性福日记";
@@ -238,3 +245,5 @@
 "Release to refresh..."="松开即可返回";
 "Loading..."           ="正在返回中";
 
+// SMDetector
+"SMDetectDaysStringWithValue" ="第%@天";

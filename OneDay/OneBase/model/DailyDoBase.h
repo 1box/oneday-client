@@ -31,6 +31,8 @@ static inline NSUInteger newDailyDoItemID() {
 
 @property (nonatomic, readonly) NSNumber *check;
 
+- (NSDate *)createDate;
+
 - (BOOL)isBlankDailyDo;
 
 - (NSArray *)todosSortedByIndex;
@@ -57,6 +59,7 @@ static inline NSUInteger newDailyDoItemID() {
 - (BOOL)recoveryToSnapshot; // return NO if no snapshot or recovery failed
 
 #pragma mark - protected
++ (ECalendarCellMarkType)calendarCellMarkType:(NSDate *)date;
 - (NSString *)presentedText;
 - (NSString *)todayText;
 - (NSString *)completionText;

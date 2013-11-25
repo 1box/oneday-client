@@ -276,7 +276,14 @@
         NSString *word = [words objectAtIndex:idx];
         
         if ([self textView:_inputView shouldChangeTextInRange:_inputView.selectedRange replacementText:word]) {
-            _inputView.text = [_inputView.text stringByAppendingString:word];
+            
+            NSMutableString *mutText = [NSMutableString stringWithString:_inputView.text];
+            [mutText insertString:word atIndex:_inputView.selectedRange.location];
+            
+            NSRange selectedRange = _inputView.selectedRange;
+            _inputView.text = [mutText copy];
+            _inputView.selectedRange = NSMakeRange(selectedRange.location + [word length], selectedRange.length);
+            
             [self textViewDidChange:_inputView];
         }
     }

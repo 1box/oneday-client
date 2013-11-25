@@ -264,6 +264,17 @@ static DailyDoManager *_sharedManager;
     [[NSNotificationCenter defaultCenter] postNotificationName:DailyDoManagerLoggedDosLoadFinishedNotification object:self userInfo:[mutUserInfo copy]];
 }
 
+- (DailyDoBase *)dailyDoInList:(NSArray *)dailyDos atDate:(NSDate *)date
+{
+    __block DailyDoBase *ret = nil;
+    [dailyDos enumerateObjectsUsingBlock:^(DailyDoBase *dailyDo, NSUInteger idx, BOOL *stop) {
+        if ([dailyDo.createDate isSameDayWithDate:date]) {
+            ret = dailyDo;
+        }
+    }];
+    return ret;
+}
+
 // monthlyDos
 - (NSArray *)monthlyDosForAddon:(AddonData *)addon year:(NSDate *)year
 {

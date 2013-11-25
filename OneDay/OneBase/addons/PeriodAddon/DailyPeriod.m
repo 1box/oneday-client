@@ -8,6 +8,7 @@
 
 #import "DailyPeriod.h"
 #import "TodoData.h"
+#import "KMModelManager.h"
 #import "SMDetector.h"
 
 #define NoPeriodDaysFlag -1
@@ -21,7 +22,8 @@
 #define kDailyPeriodLastPeriodDateUserDefaultKey @"kDailyPeriodLastPeriodDateUserDefaultKey"
 static inline void setDailyPeriodLastPeriodDate(NSDate *date, NSInteger currentDay)
 {
-    [[NSUserDefaults standardUserDefaults] setObject:[date dateByAddingDays:PeriodDurationDays - currentDay]
+    NSDate *lastDate = [[date dateByAddingDays:((PeriodDurationDays - PeriodSecondSecureDays) - currentDay)] morning];
+    [[NSUserDefaults standardUserDefaults] setObject:lastDate
                                               forKey:kDailyPeriodLastPeriodDateUserDefaultKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
@@ -44,6 +46,15 @@ static inline BOOL dailyPeriodHasMakeAWish()
     return [[NSUserDefaults standardUserDefaults] boolForKey:kDailyPeriodHasMakeAWishUserDefaultKey];
 }
 
+typedef NS_ENUM(NSInteger, DailyPeriodDayType) {
+    DailyPeriodDayTypeNone,         // 尚未设置
+    DailyPeriodDayTypeFirstSecure,  // 安全期（前段）
+    DailyPeriodDayTypeEasyPregnant, // 易孕期
+    DailyPeriodDayTypeOvulationDay, // 排卵日
+    DailyPeriodDayTypeSecondSecure, // 安全期（后段）
+    DailyPeriodDayTypeDuration,     // 月经期
+    DailyPeriodDayTypeNotCome       // 逾期未至
+};
 
 @implementation DailyPeriod
 
@@ -52,15 +63,88 @@ static inline BOOL dailyPeriodHasMakeAWish()
     return @"DailyPeriodData";
 }
 
-//+ (NSDictionary *)keyMapping
-//{
-//    NSMutableDictionary *keyMapping = [[[super keyMapping] mutableCopy] autorelease];
-//    [keyMapping setObject:@"shortContent" forKey:@"short_content"];
-//
-//    return keyMapping;
-//}
++ (id)dataEntityWithInsert:(BOOL)insert
+{
+    DailyDoBase *dailyDo = [super dataEntityWithInsert:insert];
+    
+    TodoData *tTodo = [dailyDo insertNewTodoAtIndex:0];
+    
+    NSDate *dailyDoDate = [NSDate dateWithTimeIntervalSince1970:[dailyDo.createTime doubleValue]];
+    DailyPeriodDayType type = [DailyPeriod periodDayType:dailyDoDate];
+    if (type == DailyPeriodDayTypeDuration) {
+        NSDate *lastDate = dailyPeriodLastPeriodDate();
+        NSInteger periodDays = [dailyDoDate daysBeforeDate:lastDate];
+        
+        NSString *daysString = [[SMDetector defaultDetector] stringForValue:@(periodDays) byType:SmarkDetectTypeDays];
+        tTodo.content = daysString;
+        tTodo.days = daysString;
+        [[KMModelManager sharedManager] saveContext:nil];
+    }
+    
+    return dailyDo;
+}
+
+#pragma mark - extended
+
+- (BOOL)detectTodos
+{
+    BOOL ret = [super detectTodos];
+    if (ret) {
+        NSString *wish = [self wish];
+        if (!KMEmptyString(wish)) {
+            if ([PrayWords containsObject:wish]) {
+                setDailyPeriodHasMakeAWish(YES);
+            }
+            else {
+                setDailyPeriodHasMakeAWish(NO);
+            }
+        }
+        
+        NSInteger periodDays = [self periodDays];
+        if (periodDays != NoPeriodDaysFlag) {
+            setDailyPeriodLastPeriodDate([NSDate dateWithTimeIntervalSince1970:[self.createTime doubleValue]], periodDays);
+        }
+    }
+    return ret;
+}
 
 #pragma mark - private
+
++ (DailyPeriodDayType)periodDayType:(NSDate *)date
+{
+    NSDate *lastDate = dailyPeriodLastPeriodDate();
+    DailyPeriodDayType type = DailyPeriodDayTypeNone;
+    
+    if (lastDate) {
+        NSInteger beforeToday = [lastDate daysBeforeDate:date];
+        
+        if (beforeToday <= 0) {
+            beforeToday =  beforeToday%PeriodCircleDays + PeriodCircleDays;
+        }
+        
+        if (beforeToday > 0 && beforeToday <= PeriodFirstSecureDays) {  // 安全期
+            type = DailyPeriodDayTypeFirstSecure;
+        }
+        else if (beforeToday > PeriodFirstSecureDays && beforeToday <= PeriodEasyPregnantDays) {    // 易孕期
+            if (beforeToday == PeriodOvulationDay) { // 排卵日
+                type = DailyPeriodDayTypeOvulationDay;
+            }
+            else {
+                type = DailyPeriodDayTypeEasyPregnant;
+            }
+        }
+        else if (beforeToday > PeriodEasyPregnantDays && beforeToday <= PeriodSecondSecureDays) {   // 安全期
+            type = DailyPeriodDayTypeSecondSecure;
+        }
+        else if (beforeToday > PeriodSecondSecureDays && beforeToday <= PeriodDurationDays) {   // 月经期
+            type = DailyPeriodDayTypeDuration;
+        }
+        else {
+            type = DailyPeriodDayTypeNotCome;
+        }
+    }
+    return type;
+}
 
 - (NSString *)wish
 {
@@ -74,9 +158,10 @@ static inline BOOL dailyPeriodHasMakeAWish()
     return ret;
 }
 
+// 返回当前是月经第几天
 - (NSInteger)periodDays
 {
-    __block NSInteger periodDays = NoPeriodDaysFlag;
+    __block NSInteger periodDays = NoPeriodDaysFlag;    // 未找到，可能非经期，可能用户未输入
     [[self todosSortedByIndex] enumerateObjectsUsingBlock:^(TodoData *todo, NSUInteger idx, BOOL *stop) {
         if (todo.days) {
             periodDays = [[[SMDetector defaultDetector] valueInString:todo.days byType:SmarkDetectTypeDays] integerValue];
@@ -86,63 +171,66 @@ static inline BOOL dailyPeriodHasMakeAWish()
     return periodDays;
 }
 
-#pragma mark - protected
-
-- (NSString *)presentedText
+- (NSString *)dailyPeriodTextWithPrefix:(BOOL)hasPrefix
 {
-    return [self todosTextWithLineNumber:YES];
-}
-
-- (NSString *)todayAndCompleteTextWithPrefix:(BOOL)hasPrefix
-{
-    NSDate *lastDate = dailyPeriodLastPeriodDate();
-    NSInteger periodDays = [self periodDays];
+    DailyPeriodDayType type = [DailyPeriod periodDayType:[NSDate dateWithTimeIntervalSince1970:[self.createTime doubleValue]]];
     
     NSString *prefix = @"";
-    if (hasPrefix && lastDate) {
-        NSInteger beforeToday = [lastDate daysBeforeDate:[NSDate date]];
-        if (beforeToday > 0 && beforeToday <= PeriodFirstSecureDays) {  // 安全期
-            prefix = NSLocalizedString(@"PeriodFirstSecureDaysText", nil);
-        }
-        else if (beforeToday > PeriodFirstSecureDays && beforeToday <= PeriodEasyPregnantDays) {    // 易孕期
-            if (beforeToday == PeriodOvulationDay) { // 排卵日
+    if (hasPrefix) {
+        switch (type) {
+            case DailyPeriodDayTypeFirstSecure:
+                prefix = NSLocalizedString(@"PeriodFirstSecureDaysText", nil);
+                break;
+            case DailyPeriodDayTypeOvulationDay:
                 prefix = NSLocalizedString(@"PeriodOvulationDayText", nil);
-            }
-            else {
+                break;
+            case DailyPeriodDayTypeEasyPregnant:
                 prefix = NSLocalizedString(@"PeriodEasyPregnantDaysText", nil);
-            }
-        }
-        else if (beforeToday > PeriodEasyPregnantDays && beforeToday <= PeriodSecondSecureDays) {   // 安全期
-            prefix = NSLocalizedString(@"PeriodSecondSecureDaysText", nil);
-        }
-        else if (beforeToday > PeriodSecondSecureDays && beforeToday <= PeriodDurationDays) {   // 月经期
-            prefix = NSLocalizedString(@"PeriodDurationDaysText", nil);
+                break;
+            case DailyPeriodDayTypeSecondSecure:
+                prefix = NSLocalizedString(@"PeriodSecondSecureDaysText", nil);
+                break;
+            case DailyPeriodDayTypeDuration:
+                prefix = NSLocalizedString(@"PeriodDurationDaysText", nil);
+                break;
+            default:
+                break;
         }
     }
     
     NSString *suffix = NSLocalizedString(@"PeriodNoText", nil);
-    if (periodDays == NoPeriodDaysFlag) {
-        if (lastDate) {
-            NSInteger beforeToday = [lastDate daysBeforeDate:[NSDate date]];
-            if (beforeToday > 0 && beforeToday <= PeriodDurationDays) {
-                if (dailyPeriodHasMakeAWish()) {
-                    suffix = NSLocalizedString(@"PeriodAfterTodayText", nil);
-                }
-                else {
-                    suffix = [NSString stringWithFormat:NSLocalizedString(@"PeriodBeforeTodayText", nil), PeriodCircleDays - PeriodDurationDays - beforeToday];
-                }
+    NSDate *lastDate = dailyPeriodLastPeriodDate();
+    NSInteger beforeToday = [lastDate daysBeforeDate:[NSDate date]];
+    switch (type) {
+        case DailyPeriodDayTypeFirstSecure:
+        case DailyPeriodDayTypeOvulationDay:
+        case DailyPeriodDayTypeEasyPregnant:
+        case DailyPeriodDayTypeSecondSecure:
+        {
+            if (dailyPeriodHasMakeAWish() && type == DailyPeriodDayTypeFirstSecure) {    // 还愿
+                suffix = NSLocalizedString(@"PeriodAfterTodayText", nil);
             }
-            else if (beforeToday > PeriodDurationDays && beforeToday < PeriodCircleDays - PeriodDurationDays) {
+            else {  // 显示距下次月经来临时间
                 suffix = [NSString stringWithFormat:NSLocalizedString(@"PeriodBeforeTodayText", nil), PeriodCircleDays - PeriodDurationDays - beforeToday];
             }
-            else {
+        }
+            break;
+        case DailyPeriodDayTypeDuration:
+        {
+            NSInteger periodDays = [self periodDays];
+            if (periodDays == NoPeriodDaysFlag) {
                 suffix = NSLocalizedString(@"PeriodNotComeTodayText", nil);
             }
+            else {
+                suffix = [NSString stringWithFormat:NSLocalizedString(@"PeriodInTodayText", nil), periodDays];
+            }
         }
-    }
-    else {
-        suffix = [NSString stringWithFormat:NSLocalizedString(@"PeriodInTodayText", nil), periodDays];
-        setDailyPeriodLastPeriodDate([NSDate date], periodDays);
+            break;
+        case DailyPeriodDayTypeNotCome:
+            suffix = NSLocalizedString(@"PeriodNotComeTodayText", nil);
+            break;
+        default:
+            break;
     }
     
     NSString *ret = @"";
@@ -155,14 +243,42 @@ static inline BOOL dailyPeriodHasMakeAWish()
     return ret;
 }
 
+#pragma mark - protected
+
++ (ECalendarCellMarkType)calendarCellMarkType:(NSDate *)date
+{
+    DailyPeriodDayType type = [self periodDayType:date];
+    
+    ECalendarCellMarkType ret = ECalendarCellMarkTypeNone;
+    switch (type) {
+        case DailyPeriodDayTypeOvulationDay:
+            ret = ECalendarCellMarkTypeBlueColorWithEvent;
+            break;
+        case DailyPeriodDayTypeEasyPregnant:
+            ret = ECalendarCellMarkTypeBlueColor;
+            break;
+        case DailyPeriodDayTypeDuration:
+            ret = ECalendarCellMarkTypePinkColor;
+            break;
+        default:
+            break;
+    }
+    return ret;
+}
+
+- (NSString *)presentedText
+{
+    return [self todosTextWithLineNumber:YES];
+}
+
 - (NSString *)todayText
 {
-    return [self todayAndCompleteTextWithPrefix:NO];
+    return [self dailyPeriodTextWithPrefix:NO];
 }
 
 - (NSString *)completionText
 {
-    return [self todayAndCompleteTextWithPrefix:YES];
+    return [self dailyPeriodTextWithPrefix:YES];
 }
 
 @end

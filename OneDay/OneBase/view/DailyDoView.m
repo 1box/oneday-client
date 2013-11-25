@@ -665,6 +665,7 @@
             if ([_addon.dailyDoName isEqualToString:@"DailyPeriod"]) {  // trick logic
                 controller = KMViewInUniversalStoryboard(CalendarViewStoryboardID);
                 ((CalendarViewController *)controller).dailyDos = [dailyDos copy];
+                ((CalendarViewController *)controller).addon = [_addon copy];
             }
             else {
                 controller = KMViewInUniversalStoryboard(TimelineViewStoryboardID);

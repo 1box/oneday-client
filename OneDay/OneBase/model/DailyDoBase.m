@@ -73,6 +73,11 @@
     return [self.todos count] == 0 && ![[NSDate dateWithTimeIntervalSince1970:[self.createTime integerValue]] isToday];
 }
 
+- (NSDate *)createDate
+{
+    return [NSDate dateWithTimeIntervalSince1970:[self.createTime doubleValue]];
+}
+
 #pragma mark - get todos
 
 - (NSArray *)todosSortedByIndex
@@ -384,6 +389,11 @@ static NSArray *__snapshotTodos = nil;
 
 #pragma mark - protected
 
++ (ECalendarCellMarkType)calendarCellMarkType:(NSDate *)date
+{
+    return ECalendarCellMarkTypeNone;
+}
+
 - (NSString *)presentedText
 {
     return [self todosTextWithLineNumber:YES];
@@ -411,4 +421,5 @@ static NSArray *__snapshotTodos = nil;
         return @"";
     }
 }
+
 @end

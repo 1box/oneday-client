@@ -62,4 +62,11 @@ static inline NSInteger homeCoverSelectedIndex() {
     return [[NSUserDefaults standardUserDefaults] integerForKey:kHomeCoverSelectedIndexUserDefaultKey];
 }
 
+typedef NS_ENUM(NSInteger, ECalendarCellMarkType) {
+    ECalendarCellMarkTypeNone,
+    ECalendarCellMarkTypePinkColor,
+    ECalendarCellMarkTypeBlueColor,
+    ECalendarCellMarkTypeBlueColorWithEvent
+};
+
 #endif

@@ -15,7 +15,7 @@
 #import "AddonData.h"
 
 @interface PasswordViewController () <UITableViewDataSource, UITableViewDelegate>
-@property (nonatomic, strong) IBOutlet KMTableView *listView;
+@property (nonatomic) IBOutlet KMTableView *listView;
 @property (nonatomic) NSArray *currentAddons;
 @end
 

@@ -122,8 +122,6 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-//    self.view.backgroundColor = [UIColor purpleColor];
-//    self.guideView.backgroundColor = [UIColor clearColor];
 }
 
 - (NSString *)pageNameForTrack

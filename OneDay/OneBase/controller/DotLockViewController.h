@@ -43,10 +43,10 @@ typedef NS_ENUM(NSInteger, LockViewPageType) {
 
 @property (nonatomic, weak) id<LockViewControllerDelegate> delegate;
 
-@property (strong, nonatomic) IBOutlet UILabel *infoLabel;
-@property (nonatomic, strong) IBOutlet UILabel *switchLabel;
+@property (nonatomic) IBOutlet UILabel *infoLabel;
+@property (nonatomic) IBOutlet UILabel *switchLabel;
 @property (strong, nonatomic) SPLockScreen *lockScreenView;
-@property (nonatomic, strong) IBOutlet UISwitch *passwordSwitch;
+@property (nonatomic) IBOutlet UISwitch *passwordSwitch;
 
 @property (nonatomic) InfoStatus infoLabelStatus;
 @property (nonatomic) LockViewPageType pageType;

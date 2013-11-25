@@ -13,7 +13,7 @@
 @class AddonData;
 
 @interface DailyDoViewController : KMViewControllerBase
-@property (nonatomic, retain) IBOutlet DailyDoView *dailyDoView;
+@property (nonatomic) IBOutlet DailyDoView *dailyDoView;
 @property (nonatomic, retain) AddonData *addon;
 
 - (IBAction)dismiss:(id)sender;

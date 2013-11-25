@@ -3416,11 +3416,34 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     <view key="view" contentMode="scaleToFill" id="R8i-Nh-AZY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rcr-Lc-nkE" customClass="DailyCalendarView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzG-rE-Qba">
+                                <rect key="frame" x="0.0" y="568" width="320" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="TXy-hQ-Sxz" id="Lr1-Lz-Lgk"/>
+                                    <outlet property="delegate" destination="TXy-hQ-Sxz" id="del-rX-YzE"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rcr-Lc-nkE" firstAttribute="top" secondItem="R8i-Nh-AZY" secondAttribute="top" id="0w9-ke-VX4"/>
+                            <constraint firstItem="rcr-Lc-nkE" firstAttribute="leading" secondItem="R8i-Nh-AZY" secondAttribute="leading" id="KZi-3o-gIg"/>
+                            <constraint firstAttribute="bottom" secondItem="rcr-Lc-nkE" secondAttribute="bottom" id="Pwj-OQ-Ttk"/>
+                            <constraint firstAttribute="trailing" secondItem="rcr-Lc-nkE" secondAttribute="trailing" id="RaN-L1-mcm"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="LTW-PY-HOK">
-                        <barButtonItem key="leftBarButtonItem" title="back" style="plain" id="7X2-SD-W9B">
+                        <barButtonItem key="leftBarButtonItem" title="back" id="7X2-SD-W9B">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Xbr-37-88Z" customClass="NavigationBarButton">
                                 <rect key="frame" x="16" y="0.0" width="30" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -3428,10 +3451,16 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <state key="normal" image="nav_back.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="back:" destination="TXy-hQ-Sxz" eventType="touchUpInside" id="jaX-q7-AR7"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="calendarView" destination="rcr-Lc-nkE" id="W7v-T1-CFZ"/>
+                        <outlet property="pickerView" destination="wzG-rE-Qba" id="trs-Kg-K9e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zcf-hU-ti4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -3497,6 +3526,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     </toolbar>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="cPk-Ef-MQz">
                                         <rect key="frame" x="0.0" y="44" width="480" height="216"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <date key="date" timeIntervalSinceReferenceDate="371900668.26806802">
                                             <!--2012-10-14 09:44:28 +0000-->
                                         </date>

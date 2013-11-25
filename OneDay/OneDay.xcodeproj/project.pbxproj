@@ -1431,6 +1431,16 @@
 		CB886CCA173BD6250074586F /* KMViewControllerBase.m in Sources */ = {isa = PBXBuildFile; fileRef = CB886CC8173BD6250074586F /* KMViewControllerBase.m */; };
 		CB8C059F1742116600522B61 /* AlarmData.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C059E1742116600522B61 /* AlarmData.m */; };
 		CB8C05A01742116600522B61 /* AlarmData.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8C059E1742116600522B61 /* AlarmData.m */; };
+		CB8CA979182274640096C306 /* CalendarDayCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8CA978182274640096C306 /* CalendarDayCellView.m */; };
+		CB8CA97A182274640096C306 /* CalendarDayCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8CA978182274640096C306 /* CalendarDayCellView.m */; };
+		CB8CA97D1822773D0096C306 /* DailyCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8CA97C1822773D0096C306 /* DailyCalendarView.m */; };
+		CB8CA97E1822773D0096C306 /* DailyCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8CA97C1822773D0096C306 /* DailyCalendarView.m */; };
+		CB8CA981182278C50096C306 /* UIView+BottomMark.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8CA980182278C50096C306 /* UIView+BottomMark.m */; };
+		CB8CA982182278C50096C306 /* UIView+BottomMark.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8CA980182278C50096C306 /* UIView+BottomMark.m */; };
+		CB8CA986182341050096C306 /* add_event_eggday.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8CA984182341050096C306 /* add_event_eggday.png */; };
+		CB8CA987182341050096C306 /* add_event_eggday.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8CA984182341050096C306 /* add_event_eggday.png */; };
+		CB8CA988182341050096C306 /* add_event_eggday@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8CA985182341050096C306 /* add_event_eggday@2x.png */; };
+		CB8CA989182341050096C306 /* add_event_eggday@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB8CA985182341050096C306 /* add_event_eggday@2x.png */; };
 		CB8CE0F6173E327A00B0E275 /* UndoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8CE0F5173E327A00B0E275 /* UndoCellView.m */; };
 		CB8CE0F7173E327A00B0E275 /* UndoCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8CE0F5173E327A00B0E275 /* UndoCellView.m */; };
 		CB8EE12817408B5E0068A6BA /* PCLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB8EE12517408B5E0068A6BA /* PCLineChartView.m */; };
@@ -2796,6 +2806,14 @@
 		CB8C059C1742102D00522B61 /* DailyData 4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DailyData 4.xcdatamodel"; sourceTree = "<group>"; };
 		CB8C059D1742116600522B61 /* AlarmData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlarmData.h; sourceTree = "<group>"; };
 		CB8C059E1742116600522B61 /* AlarmData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlarmData.m; sourceTree = "<group>"; };
+		CB8CA977182274640096C306 /* CalendarDayCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalendarDayCellView.h; sourceTree = "<group>"; };
+		CB8CA978182274640096C306 /* CalendarDayCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalendarDayCellView.m; sourceTree = "<group>"; };
+		CB8CA97B1822773D0096C306 /* DailyCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyCalendarView.h; sourceTree = "<group>"; };
+		CB8CA97C1822773D0096C306 /* DailyCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyCalendarView.m; sourceTree = "<group>"; };
+		CB8CA97F182278C50096C306 /* UIView+BottomMark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BottomMark.h"; sourceTree = "<group>"; };
+		CB8CA980182278C50096C306 /* UIView+BottomMark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BottomMark.m"; sourceTree = "<group>"; };
+		CB8CA984182341050096C306 /* add_event_eggday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_event_eggday.png; sourceTree = "<group>"; };
+		CB8CA985182341050096C306 /* add_event_eggday@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add_event_eggday@2x.png"; sourceTree = "<group>"; };
 		CB8CE0F4173E327A00B0E275 /* UndoCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UndoCellView.h; sourceTree = "<group>"; };
 		CB8CE0F5173E327A00B0E275 /* UndoCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UndoCellView.m; sourceTree = "<group>"; };
 		CB8EE12417408B5E0068A6BA /* PCLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PCLineChartView.h; path = iOSPlot/iOSPlot/Shared/PCLineChartView.h; sourceTree = "<group>"; };
@@ -2912,7 +2930,7 @@
 		CBA4DCEB181E150E0044D522 /* period_todos_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = period_todos_icon.png; sourceTree = "<group>"; };
 		CBA4DCEC181E150E0044D522 /* period_todos_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "period_todos_icon@2x.png"; sourceTree = "<group>"; };
 		CBA4DCED181E150E0044D522 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "zh-Hans"; path = "zh-Hans.lproj/DailyPeriodHintDialogs.plist"; sourceTree = "<group>"; };
-		CBA4DD68181E32B30044D522 /* DailyData 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DailyData 6.xcdatamodel"; sourceTree = "<group>"; };
+		CBA4DD68181E32B30044D522 /* DailyData 6.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "DailyData 6.xcdatamodel"; sourceTree = "<group>"; };
 		CBA4DD6A181E478D0044D522 /* 2_s_butterfly_0001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2_s_butterfly_0001.png; sourceTree = "<group>"; };
 		CBA4DD6B181E478D0044D522 /* 2_s_butterfly_0001@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2_s_butterfly_0001@2x.png"; sourceTree = "<group>"; };
 		CBA4DD6C181E478D0044D522 /* 2_s_butterfly_0002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2_s_butterfly_0002.png; sourceTree = "<group>"; };
@@ -4006,6 +4024,10 @@
 				CBDA451F17FC216D00C0CDC4 /* NormalNavigationBarButton.m */,
 				CB03E994180441D5004D35CF /* ToolbarButton.h */,
 				CB03E995180441D5004D35CF /* ToolbarButton.m */,
+				CB8CA977182274640096C306 /* CalendarDayCellView.h */,
+				CB8CA978182274640096C306 /* CalendarDayCellView.m */,
+				CB8CA97B1822773D0096C306 /* DailyCalendarView.h */,
+				CB8CA97C1822773D0096C306 /* DailyCalendarView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -4396,6 +4418,7 @@
 		CB4605F4173D4B8700955454 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				CB8CA983182341050096C306 /* calendar_page */,
 				CB4605F5173D4B8700955454 /* daily_do_page */,
 				CB460649173D4B8800955454 /* home_cover */,
 				CB46065C173D4B8800955454 /* main_page */,
@@ -4604,6 +4627,8 @@
 				CB5ED9FF176491260092433A /* UIView+CornerMark.m */,
 				CB9D47D917A407770074AD2C /* UINavigationController+HideKeyboard.h */,
 				CB9D47DA17A407770074AD2C /* UINavigationController+HideKeyboard.m */,
+				CB8CA97F182278C50096C306 /* UIView+BottomMark.h */,
+				CB8CA980182278C50096C306 /* UIView+BottomMark.m */,
 			);
 			path = additions;
 			sourceTree = "<group>";
@@ -4672,6 +4697,15 @@
 				CB886CBA173BCBDE0074586F /* UMTableViewController.m */,
 			);
 			path = TableView;
+			sourceTree = "<group>";
+		};
+		CB8CA983182341050096C306 /* calendar_page */ = {
+			isa = PBXGroup;
+			children = (
+				CB8CA984182341050096C306 /* add_event_eggday.png */,
+				CB8CA985182341050096C306 /* add_event_eggday@2x.png */,
+			);
+			path = calendar_page;
 			sourceTree = "<group>";
 		};
 		CB8EE12317408B390068A6BA /* iOSPlot */ = {
@@ -5253,6 +5287,7 @@
 				3F55A79516E50D4A00EBBA30 /* 2_s_kettle_0009@2x.png in Resources */,
 				3F55A79716E50D4A00EBBA30 /* 2_s_kettle_0010.png in Resources */,
 				3F55A79916E50D4A00EBBA30 /* 2_s_kettle_0010@2x.png in Resources */,
+				CB8CA987182341050096C306 /* add_event_eggday.png in Resources */,
 				3F55A79B16E50D4A00EBBA30 /* 2_s_kettle_0011.png in Resources */,
 				3F55A79D16E50D4A00EBBA30 /* 2_s_kettle_0011@2x.png in Resources */,
 				3F55A79F16E50D4A00EBBA30 /* 2_s_kettle_0012.png in Resources */,
@@ -5798,6 +5833,7 @@
 				CBF82B95170F052A004674C5 /* 2_s_sumou_0016@2x.png in Resources */,
 				CBF82B97170F052A004674C5 /* 2_s_sumou_0017.png in Resources */,
 				CBF82B99170F052A004674C5 /* 2_s_sumou_0017@2x.png in Resources */,
+				CB8CA989182341050096C306 /* add_event_eggday@2x.png in Resources */,
 				CBF82B9B170F052A004674C5 /* 2_s_sumou_0018.png in Resources */,
 				CBA4DC44181E14E00044D522 /* 2_s_heart_0005@2x.png in Resources */,
 				CBF82B9D170F052A004674C5 /* 2_s_sumou_0018@2x.png in Resources */,
@@ -6246,6 +6282,7 @@
 				3F55A8EA16E50D4A00EBBA30 /* 2_s_hourglass_0025.png in Resources */,
 				3F55A8EC16E50D4A00EBBA30 /* 2_s_hourglass_0025@2x.png in Resources */,
 				3F55A8EE16E50D4A00EBBA30 /* 2_s_hourglass_0026.png in Resources */,
+				CB8CA986182341050096C306 /* add_event_eggday.png in Resources */,
 				CBA4DDDC181E478D0044D522 /* 2_s_butterfly_0016.png in Resources */,
 				3F55A8F016E50D4A00EBBA30 /* 2_s_hourglass_0026@2x.png in Resources */,
 				3F55A8F216E50D4A00EBBA30 /* 2_s_hourglass_0027.png in Resources */,
@@ -6711,6 +6748,7 @@
 				CB46078F173D4B8800955454 /* root_icon_add@2x.png in Resources */,
 				CB460791173D4B8800955454 /* root_icon_add_flash.png in Resources */,
 				CB460793173D4B8800955454 /* root_icon_add_flash@2x.png in Resources */,
+				CB8CA988182341050096C306 /* add_event_eggday@2x.png in Resources */,
 				CB460795173D4B8800955454 /* root_icon_bg.png in Resources */,
 				CB460797173D4B8800955454 /* root_icon_bg@2x.png in Resources */,
 				CB460799173D4B8800955454 /* root_icon_clear.png in Resources */,
@@ -6840,10 +6878,12 @@
 				3FF3819216D4709700BD19C3 /* KMCommon.m in Sources */,
 				3FF3819D16D4709700BD19C3 /* KMTracker.m in Sources */,
 				3FF3815C16D46EF500BD19C3 /* main.m in Sources */,
+				CB8CA97E1822773D0096C306 /* DailyCalendarView.m in Sources */,
 				3FF3816016D46EF500BD19C3 /* AppDelegate.m in Sources */,
 				3F55A6DB16E50D4A00EBBA30 /* DailyCalorie.m in Sources */,
 				3F55A76716E50D4A00EBBA30 /* DailyCash.m in Sources */,
 				3F55A7FB16E50D4A00EBBA30 /* DailyMemo.m in Sources */,
+				CB8CA97A182274640096C306 /* CalendarDayCellView.m in Sources */,
 				3F55A87F16E50D4A00EBBA30 /* DailySchedule.m in Sources */,
 				3F55A98716E50D4A00EBBA30 /* DailyShort.m in Sources */,
 				3F55AA3B16E50D4A00EBBA30 /* DailyWorkout.m in Sources */,
@@ -6882,6 +6922,7 @@
 				3F55ABF516E50D4A00EBBA30 /* DailyDoLoggedCell.m in Sources */,
 				3F55ABF716E50D4A00EBBA30 /* DailyDoNoteCell.m in Sources */,
 				3F55ABF916E50D4A00EBBA30 /* DailyDoPresentView.m in Sources */,
+				CB8CA982182278C50096C306 /* UIView+BottomMark.m in Sources */,
 				3F55ABFB16E50D4A00EBBA30 /* DailyDoPropertyCell.m in Sources */,
 				3F55ABFD16E50D4A00EBBA30 /* DailyDoTagCell.m in Sources */,
 				3F55ABFF16E50D4A00EBBA30 /* DailyDoTodayCell.m in Sources */,
@@ -6999,10 +7040,12 @@
 				3FE914FB168224CE00FBA04B /* EMHintsView.m in Sources */,
 				3F7D97F416A9C280006FEA36 /* KMModelManager.m in Sources */,
 				3F840B1B16B687F600F5B354 /* NSDateFormatter+NSDateFormatterAdditions.m in Sources */,
+				CB8CA97D1822773D0096C306 /* DailyCalendarView.m in Sources */,
 				3F00D3F416BDB30800BC6A0F /* iVersion.m in Sources */,
 				3F55A6DA16E50D4A00EBBA30 /* DailyCalorie.m in Sources */,
 				3F55A76616E50D4A00EBBA30 /* DailyCash.m in Sources */,
 				3F55A7FA16E50D4A00EBBA30 /* DailyMemo.m in Sources */,
+				CB8CA979182274640096C306 /* CalendarDayCellView.m in Sources */,
 				3F55A87E16E50D4A00EBBA30 /* DailySchedule.m in Sources */,
 				3F55A98616E50D4A00EBBA30 /* DailyShort.m in Sources */,
 				3F55AA3A16E50D4A00EBBA30 /* DailyWorkout.m in Sources */,
@@ -7041,6 +7084,7 @@
 				3F55ABF416E50D4A00EBBA30 /* DailyDoLoggedCell.m in Sources */,
 				3F55ABF616E50D4A00EBBA30 /* DailyDoNoteCell.m in Sources */,
 				3F55ABF816E50D4A00EBBA30 /* DailyDoPresentView.m in Sources */,
+				CB8CA981182278C50096C306 /* UIView+BottomMark.m in Sources */,
 				3F55ABFA16E50D4A00EBBA30 /* DailyDoPropertyCell.m in Sources */,
 				3F55ABFC16E50D4A00EBBA30 /* DailyDoTagCell.m in Sources */,
 				3F55ABFE16E50D4A00EBBA30 /* DailyDoTodayCell.m in Sources */,

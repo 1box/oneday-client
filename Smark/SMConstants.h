@@ -195,6 +195,8 @@ static inline NSArray* quantityUnits() {
 #define DaysBeginSmark (@[@"第", @"period:"])
 #define DaysUnits (@[@"天", @"day"])
 
+#define DaysStringWithValue (NSLocalizedString(@"SMDetectDaysStringWithValue", nil))
+
 /*
  * 9) wish
  * case insensitive
@@ -203,6 +205,8 @@ static inline NSArray* quantityUnits() {
  */
 #define SMWishRegEx @"求姨妈|还愿|Pray|Thanks"
 #define WishWords (@[@"求姨妈", @"还愿", @"Pray", @"Thanks"])
+#define PrayWords (@[@"求姨妈", @"Pray"])
+#define ThankWords (@[@"还愿", @"Thanks"])
 
 @interface SMConstants : NSObject
 @end

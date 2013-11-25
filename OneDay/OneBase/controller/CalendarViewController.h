@@ -8,9 +8,12 @@
 
 #import "KMViewControllerBase.h"
 
-@class MNCalendarView;
+@class DailyCalendarView;
+@class AddonData;
 
 @interface CalendarViewController : KMViewControllerBase
-@property (nonatomic, strong) IBOutlet MNCalendarView *calendarView;
+@property (nonatomic) IBOutlet DailyCalendarView *calendarView;
+@property (nonatomic) IBOutlet UIPickerView *pickerView;
+@property (nonatomic) AddonData *addon;
 @property (nonatomic) NSArray *dailyDos;
 @end

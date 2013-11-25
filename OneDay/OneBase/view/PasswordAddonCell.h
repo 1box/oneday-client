@@ -10,7 +10,7 @@
 
 @interface PasswordAddonCell : KMTableViewCell
 
-@property (nonatomic, strong) IBOutlet UILabel *addonLabel;
-@property (nonatomic, strong) IBOutlet UISwitch *passwordSwitch;
+@property (nonatomic) IBOutlet UILabel *addonLabel;
+@property (nonatomic) IBOutlet UISwitch *passwordSwitch;
 
 @end

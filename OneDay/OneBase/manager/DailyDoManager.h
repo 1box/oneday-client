@@ -86,6 +86,8 @@
 
 - (void)loadLoggedDosForCondition:(NSDictionary *)condition;
 
+- (DailyDoBase *)dailyDoInList:(NSArray *)dailyDos atDate:(NSDate *)date;
+
 // monthlyDos&yearlyDos
 - (NSArray *)monthlyDosForAddon:(AddonData *)addon year:(NSDate *)year;
 - (NSArray *)yearlyDosForAddon:(AddonData *)addon;

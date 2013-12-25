@@ -65,11 +65,8 @@
 - (void)loadTextFromFileName:(NSString *)name
 {
     NSString *filePath = [[NSBundle mainBundle] pathForResource:name ofType:@"html"];
-//    NSString *filePath = [[NSBundle mainBundle] pathForResource:name ofType:@"md"];
     NSString *rawText = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-    
     [_tipView loadHTMLString:rawText baseURL:nil];
-//    [_tipView loadHTMLString:rawText.flavoredHTMLStringFromMarkdown baseURL:nil];
 }
 
 #pragma mark - UIWebViewDelegate

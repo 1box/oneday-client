@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="uoj-Me-Jrb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="uoj-Me-Jrb">
     <dependencies>
         <deployment defaultVersion="1536" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3746"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
         <!--Guide View Controller-->
@@ -1545,6 +1545,70 @@
                                             <outlet property="delegate" destination="CQf-w9-oab" id="Ayh-jp-zxh"/>
                                         </connections>
                                     </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6aF-a6-we8" customClass="DailyDoTipBannerView">
+                                        <rect key="frame" x="0.0" y="403" width="320" height="57"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <view alpha="0.94999999999999996" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PuS-wA-4jy">
+                                                <rect key="frame" x="0.0" y="9" width="320" height="48"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5p-IJ-v6I">
+                                                <rect key="frame" x="32" y="8" width="168" height="48"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="168" id="aVo-Dw-9Ij"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKK-GN-vzK">
+                                                <rect key="frame" x="220" y="16" width="83" height="33"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="83" id="Riu-Zi-hx1"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <state key="normal" title="确认" backgroundImage="tip_banner_confirm.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="confirm:" destination="6aF-a6-we8" eventType="touchUpInside" id="6nZ-xB-Tp4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a2d-P8-VR6">
+                                                <rect key="frame" x="6" y="0.0" width="19" height="19"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <state key="normal" image="tip_banner_close.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="close:" destination="6aF-a6-we8" eventType="touchUpInside" id="QM6-Wu-0DE"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="Z5p-IJ-v6I" firstAttribute="centerY" secondItem="UKK-GN-vzK" secondAttribute="centerY" id="LB9-5v-DlG"/>
+                                            <constraint firstAttribute="trailing" secondItem="UKK-GN-vzK" secondAttribute="trailing" constant="17" id="Rjm-8q-Cyi"/>
+                                            <constraint firstAttribute="bottom" secondItem="Z5p-IJ-v6I" secondAttribute="bottom" constant="1" id="Xm7-I6-vhs"/>
+                                            <constraint firstItem="Z5p-IJ-v6I" firstAttribute="top" secondItem="6aF-a6-we8" secondAttribute="top" constant="8" id="Z2W-Zs-rc4"/>
+                                            <constraint firstItem="a2d-P8-VR6" firstAttribute="top" secondItem="6aF-a6-we8" secondAttribute="top" id="m5h-Yf-Yzj"/>
+                                            <constraint firstItem="Z5p-IJ-v6I" firstAttribute="leading" secondItem="a2d-P8-VR6" secondAttribute="trailing" constant="7" id="nXz-aQ-HUO"/>
+                                            <constraint firstItem="UKK-GN-vzK" firstAttribute="top" secondItem="6aF-a6-we8" secondAttribute="top" constant="16" id="rXi-No-KpN"/>
+                                            <constraint firstItem="a2d-P8-VR6" firstAttribute="leading" secondItem="6aF-a6-we8" secondAttribute="leading" constant="6" id="vMP-9u-5n5"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="backgroundView" destination="PuS-wA-4jy" id="am2-ie-3gP"/>
+                                            <outlet property="closeButton" destination="a2d-P8-VR6" id="miU-23-9RP"/>
+                                            <outlet property="confirmButton" destination="UKK-GN-vzK" id="yBI-YO-X2I"/>
+                                            <outlet property="textLabel" destination="Z5p-IJ-v6I" id="P21-87-Haq"/>
+                                        </connections>
+                                    </view>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IPz-hI-gd4">
                                         <rect key="frame" x="0.0" y="460" width="320" height="44"/>
                                         <items>
@@ -1606,15 +1670,20 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="alq-7X-wct" firstAttribute="top" secondItem="CQf-w9-oab" secondAttribute="top" id="DqK-Xl-1mP"/>
+                                    <constraint firstItem="6aF-a6-we8" firstAttribute="bottom" secondItem="alq-7X-wct" secondAttribute="bottom" id="Ks8-Eh-YTG"/>
                                     <constraint firstItem="alq-7X-wct" firstAttribute="bottom" secondItem="IPz-hI-gd4" secondAttribute="top" id="T5u-zq-xSj"/>
                                     <constraint firstItem="IPz-hI-gd4" firstAttribute="trailing" secondItem="CQf-w9-oab" secondAttribute="trailing" id="Tnt-ph-yxc"/>
                                     <constraint firstItem="alq-7X-wct" firstAttribute="leading" secondItem="IPz-hI-gd4" secondAttribute="leading" id="ZBw-VC-JsC"/>
+                                    <constraint firstItem="6aF-a6-we8" firstAttribute="trailing" secondItem="IPz-hI-gd4" secondAttribute="trailing" id="bvN-dc-yrO"/>
+                                    <constraint firstItem="6aF-a6-we8" firstAttribute="leading" secondItem="IPz-hI-gd4" secondAttribute="leading" id="fAZ-9K-gvO"/>
                                     <constraint firstItem="IPz-hI-gd4" firstAttribute="leading" secondItem="CQf-w9-oab" secondAttribute="leading" id="n3V-QU-IZa"/>
                                     <constraint firstItem="IPz-hI-gd4" firstAttribute="bottom" secondItem="CQf-w9-oab" secondAttribute="bottom" id="r5Q-ld-y8v"/>
                                     <constraint firstItem="alq-7X-wct" firstAttribute="trailing" secondItem="IPz-hI-gd4" secondAttribute="trailing" id="w3y-iq-7FB"/>
+                                    <constraint firstItem="6aF-a6-we8" firstAttribute="top" secondItem="CQf-w9-oab" secondAttribute="top" constant="403" id="ycD-rQ-A1n"/>
                                 </constraints>
                                 <connections>
                                     <outlet property="listView" destination="alq-7X-wct" id="2WK-Y2-KVk"/>
+                                    <outlet property="tipBanner" destination="6aF-a6-we8" id="txG-hl-pag"/>
                                     <outlet property="toolbar" destination="IPz-hI-gd4" id="iM9-Yv-AwU"/>
                                     <outlet property="unfoldButton" destination="E7A-VR-0Ir" id="TLz-Lo-9Rr"/>
                                 </connections>
@@ -4047,6 +4116,8 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <image name="root_icon_set.png" width="32" height="32"/>
         <image name="root_icon_smark.png" width="32" height="32"/>
         <image name="smark_info.png" width="32" height="32"/>
+        <image name="tip_banner_close.png" width="19" height="19"/>
+        <image name="tip_banner_confirm.png" width="82" height="33"/>
         <image name="toolbar_bg.png" width="320" height="49"/>
         <image name="undone_tomorrow.png" width="33" height="33"/>
         <image name="welcome_1_sketch.png" width="16" height="16"/>

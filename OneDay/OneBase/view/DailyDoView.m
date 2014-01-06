@@ -18,6 +18,7 @@
 #import "CalendarViewController.h"
 
 #import "KMTableView.h"
+#import "DailyDoTipBannerView.h"
 #import "DailyDoTodayCell.h"
 #import "DailyDoTomorrowCell.h"
 #import "DailyDoLoggedCell.h"
@@ -42,7 +43,7 @@
 
 #define CommonCellHeight 44.f
 
-@interface DailyDoView () <DailyDoActionHelperDelegate, UIActionSheetDelegate> {
+@interface DailyDoView () <DailyDoActionHelperDelegate, UIActionSheetDelegate, DailyDoTipBannerViewDelegate> {
     
     BOOL _isLoading;
     BOOL _canLoadMore;
@@ -155,6 +156,8 @@
     _toolbar.items = [mutItems copy];
     
     [[PasswordManager sharedManager] showAddonLock:_addon finishBlock:nil];
+    
+    _tipBanner.delegate = self;
 }
 
 - (void)viewDidAppear
@@ -212,11 +215,11 @@
     [self reloadData];
 }
 
-//- (void)reportUIApplicationDidChangeStatusBarOrientationNotification:(NSNotification *)notification
-//{
-//    // fix bug
-//    [_listView reloadData];
-//}
+- (void)reportUIApplicationDidChangeStatusBarOrientationNotification:(NSNotification *)notification
+{
+    // fix bug on iPad
+    [_listView reloadData];
+}
 
 #pragma mark - setter&getter
 
@@ -277,6 +280,39 @@
             
         default:
             break;
+    }
+}
+
+- (void)changeTipBannerViewToDisplayStatus:(DailyDoTipBannerDisplayStatus)aStatus
+{
+    CGFloat duration = 0.5f;
+    CGRect tFrame = _tipBanner.frame;
+    
+    if (aStatus == DailyDoTipBannerDisplayStatusShow && _tipBanner.displayStatus == DailyDoTipBannerDisplayStatusHide) {
+        
+        tFrame.origin.y -= tFrame.size.height;
+        [UIView animateWithDuration:duration
+                         animations:^{
+                             _tipBanner.displayStatus = DailyDoTipBannerDisplayStatusShowing;
+                             _tipBanner.frame = tFrame;
+                             _tipBanner.alpha = 1.f;
+                         }
+                         completion:^(BOOL finished) {
+                             _tipBanner.displayStatus = DailyDoTipBannerDisplayStatusShow;
+                         }];
+    }
+    else if (aStatus == DailyDoTipBannerDisplayStatusHide && _tipBanner.displayStatus == DailyDoTipBannerDisplayStatusShow) {
+        
+        tFrame.origin.y += tFrame.size.height;
+        [UIView animateWithDuration:duration
+                         animations:^{
+                             _tipBanner.displayStatus = DailyDoTipBannerDisplayStatusHiding;
+                             _tipBanner.frame = tFrame;;
+                             _tipBanner.alpha = 0.f;
+                         }
+                         completion:^(BOOL finished) {
+                             _tipBanner.displayStatus = DailyDoTipBannerDisplayStatusHide;
+                         }];
     }
 }
 
@@ -664,12 +700,12 @@
             KMViewControllerBase *controller = nil;
             if ([_addon.dailyDoName isEqualToString:@"DailyPeriod"]) {  // trick logic
                 controller = KMViewInUniversalStoryboard(CalendarViewStoryboardID);
-                ((CalendarViewController *)controller).dailyDos = [dailyDos copy];
-                ((CalendarViewController *)controller).addon = [_addon copy];
+                ((CalendarViewController *)controller).dailyDos = dailyDos;
+                ((CalendarViewController *)controller).addon = _addon;
             }
             else {
                 controller = KMViewInUniversalStoryboard(TimelineViewStoryboardID);
-                ((TimelineViewController *)controller).dailyDos = [dailyDos copy];
+                ((TimelineViewController *)controller).dailyDos = dailyDos;
             }
             
             DailyDoPropertyCell *tCell = (DailyDoPropertyCell *)[tableView cellForRowAtIndexPath:indexPath];
@@ -801,6 +837,18 @@
                 break;
         }
     }
+}
+
+#pragma mark - DailyDoTipBannerViewDelegate
+
+- (void)tipBannerViewCloseButtonClicked:(DailyDoTipBannerView *)tipBannerView
+{
+    [self changeTipBannerViewToDisplayStatus:DailyDoTipBannerDisplayStatusHide];
+}
+
+- (void)tipBannerViewConfirmButtonClicked:(DailyDoTipBannerView *)tipBannerView
+{
+    [self changeTipBannerViewToDisplayStatus:DailyDoTipBannerDisplayStatusHide];
 }
 
 @end

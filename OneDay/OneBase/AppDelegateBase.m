@@ -53,7 +53,6 @@
     }
     
     MainViewController *mainView = KMViewInUniversalStoryboard(MainViewStoryboardID);
-//    MainViewController *mainView = [[UIStoryboard storyboardWithName:UniversalStoryboardName bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:MainViewStoryboardID];
     [_nav pushViewController:mainView animated:NO];
     
     [[KMTracker sharedTracker] setRootController:_nav];

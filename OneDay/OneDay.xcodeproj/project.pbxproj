@@ -1104,6 +1104,16 @@
 		CB053887186ABD9900AA1C1D /* smark_tip_en.html in Resources */ = {isa = PBXBuildFile; fileRef = CB053884186ABD9900AA1C1D /* smark_tip_en.html */; };
 		CB053888186ABD9900AA1C1D /* smark_tip_zh.html in Resources */ = {isa = PBXBuildFile; fileRef = CB053885186ABD9900AA1C1D /* smark_tip_zh.html */; };
 		CB053889186ABD9900AA1C1D /* smark_tip_zh.html in Resources */ = {isa = PBXBuildFile; fileRef = CB053885186ABD9900AA1C1D /* smark_tip_zh.html */; };
+		CB05388C186AD2AC00AA1C1D /* DailyDoTipBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB05388B186AD2AC00AA1C1D /* DailyDoTipBannerView.m */; };
+		CB05388D186AD2AC00AA1C1D /* DailyDoTipBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CB05388B186AD2AC00AA1C1D /* DailyDoTipBannerView.m */; };
+		CB053892186AD49C00AA1C1D /* tip_banner_close.png in Resources */ = {isa = PBXBuildFile; fileRef = CB05388E186AD49C00AA1C1D /* tip_banner_close.png */; };
+		CB053893186AD49C00AA1C1D /* tip_banner_close.png in Resources */ = {isa = PBXBuildFile; fileRef = CB05388E186AD49C00AA1C1D /* tip_banner_close.png */; };
+		CB053894186AD49C00AA1C1D /* tip_banner_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB05388F186AD49C00AA1C1D /* tip_banner_close@2x.png */; };
+		CB053895186AD49C00AA1C1D /* tip_banner_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB05388F186AD49C00AA1C1D /* tip_banner_close@2x.png */; };
+		CB053896186AD49C00AA1C1D /* tip_banner_confirm.png in Resources */ = {isa = PBXBuildFile; fileRef = CB053890186AD49C00AA1C1D /* tip_banner_confirm.png */; };
+		CB053897186AD49C00AA1C1D /* tip_banner_confirm.png in Resources */ = {isa = PBXBuildFile; fileRef = CB053890186AD49C00AA1C1D /* tip_banner_confirm.png */; };
+		CB053898186AD49C00AA1C1D /* tip_banner_confirm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB053891186AD49C00AA1C1D /* tip_banner_confirm@2x.png */; };
+		CB053899186AD49C00AA1C1D /* tip_banner_confirm@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CB053891186AD49C00AA1C1D /* tip_banner_confirm@2x.png */; };
 		CB083EFC170C8DB500959971 /* NavigationBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CB083EFB170C8DB500959971 /* NavigationBarButton.m */; };
 		CB083EFD170C8DB500959971 /* NavigationBarButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CB083EFB170C8DB500959971 /* NavigationBarButton.m */; };
 		CB1101E717A3B91200A7222A /* UniversalStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CB1101EA17A3B91200A7222A /* UniversalStoryboard.storyboard */; };
@@ -2588,6 +2598,12 @@
 		CB045E8F173CD16100BD415A /* MTStatusBarOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTStatusBarOverlay.m; path = MTStatusBarOverlay/MTStatusBarOverlay.m; sourceTree = "<group>"; };
 		CB053884186ABD9900AA1C1D /* smark_tip_en.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = smark_tip_en.html; sourceTree = "<group>"; };
 		CB053885186ABD9900AA1C1D /* smark_tip_zh.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = smark_tip_zh.html; sourceTree = "<group>"; };
+		CB05388A186AD2AC00AA1C1D /* DailyDoTipBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyDoTipBannerView.h; sourceTree = "<group>"; };
+		CB05388B186AD2AC00AA1C1D /* DailyDoTipBannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyDoTipBannerView.m; sourceTree = "<group>"; };
+		CB05388E186AD49C00AA1C1D /* tip_banner_close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tip_banner_close.png; sourceTree = "<group>"; };
+		CB05388F186AD49C00AA1C1D /* tip_banner_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tip_banner_close@2x.png"; sourceTree = "<group>"; };
+		CB053890186AD49C00AA1C1D /* tip_banner_confirm.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tip_banner_confirm.png; sourceTree = "<group>"; };
+		CB053891186AD49C00AA1C1D /* tip_banner_confirm@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tip_banner_confirm@2x.png"; sourceTree = "<group>"; };
 		CB083EFA170C8DB500959971 /* NavigationBarButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationBarButton.h; sourceTree = "<group>"; };
 		CB083EFB170C8DB500959971 /* NavigationBarButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationBarButton.m; sourceTree = "<group>"; };
 		CB0A47511740DA72001B87C6 /* KMMathUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMathUtilities.h; sourceTree = "<group>"; };
@@ -3968,6 +3984,8 @@
 		3F55A6AB16E50D4A00EBBA30 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				CB05388A186AD2AC00AA1C1D /* DailyDoTipBannerView.h */,
+				CB05388B186AD2AC00AA1C1D /* DailyDoTipBannerView.m */,
 				CB7421701745437200B75267 /* AlarmRepeatTypeCellView.h */,
 				CB7421711745437200B75267 /* AlarmRepeatTypeCellView.m */,
 				CB8CE0F4173E327A00B0E275 /* UndoCellView.h */,
@@ -4433,6 +4451,10 @@
 		CB4605F5173D4B8700955454 /* daily_do_page */ = {
 			isa = PBXGroup;
 			children = (
+				CB05388E186AD49C00AA1C1D /* tip_banner_close.png */,
+				CB05388F186AD49C00AA1C1D /* tip_banner_close@2x.png */,
+				CB053890186AD49C00AA1C1D /* tip_banner_confirm.png */,
+				CB053891186AD49C00AA1C1D /* tip_banner_confirm@2x.png */,
 				CB5ED9D81764906F0092433A /* corner_mark */,
 				CB460606173D4B8700955454 /* checkbox-n.png */,
 				CB460607173D4B8700955454 /* checkbox-n@2x.png */,
@@ -5670,6 +5692,7 @@
 				CBA4DC62181E14E00044D522 /* 2_s_heart_0013.png in Resources */,
 				3F55AA1916E50D4A00EBBA30 /* 2_s_ghost_0036@2x.png in Resources */,
 				3F55AA1B16E50D4A00EBBA30 /* 2_s_ghost_0037.png in Resources */,
+				CB053897186AD49C00AA1C1D /* tip_banner_confirm.png in Resources */,
 				CBA4DC66181E14E00044D522 /* 2_s_heart_0014.png in Resources */,
 				3F55AA1D16E50D4A00EBBA30 /* 2_s_ghost_0037@2x.png in Resources */,
 				3F55AA1F16E50D4A00EBBA30 /* 2_s_ghost_0038.png in Resources */,
@@ -5738,6 +5761,7 @@
 				CBA4DD61181E150E0044D522 /* DailyPeriod.plist in Resources */,
 				3F55AA9116E50D4A00EBBA30 /* 2_s_human_0019@2x.png in Resources */,
 				CB03E98B18042B47004D35CF /* splash-with-logo-7@2x.png in Resources */,
+				CB053899186AD49C00AA1C1D /* tip_banner_confirm@2x.png in Resources */,
 				CBA4DDE7181E478D0044D522 /* 2_s_butterfly_0018@2x.png in Resources */,
 				3F55AA9316E50D4A00EBBA30 /* 2_s_human_0020.png in Resources */,
 				3F55AA9516E50D4A00EBBA30 /* 2_s_human_0020@2x.png in Resources */,
@@ -5792,6 +5816,7 @@
 				CBA4DDD7181E478D0044D522 /* 2_s_butterfly_0014@2x.png in Resources */,
 				CB91EE05170742DB003FA094 /* okbtn_dialog_press@2x.png in Resources */,
 				CB91EE07170742DB003FA094 /* popupbg_dialog.png in Resources */,
+				CB053895186AD49C00AA1C1D /* tip_banner_close@2x.png in Resources */,
 				CB91EE09170742DB003FA094 /* popupbg_dialog@2x.png in Resources */,
 				CBA4DC48181E14E00044D522 /* 2_s_heart_0006@2x.png in Resources */,
 				CBF82B57170F052A004674C5 /* 2_s_sumou_0001.png in Resources */,
@@ -5970,6 +5995,7 @@
 				CB4607B8173D4B8800955454 /* dark_nav_back@2x.png in Resources */,
 				CBA4DE09181E478D0044D522 /* 2_s_butterfly_0027.png in Resources */,
 				CBA4DDCD181E478D0044D522 /* 2_s_butterfly_0012.png in Resources */,
+				CB053893186AD49C00AA1C1D /* tip_banner_close.png in Resources */,
 				CB4607BA173D4B8800955454 /* dark_nav_back_press.png in Resources */,
 				CB4607BC173D4B8800955454 /* dark_nav_back_press@2x.png in Resources */,
 				CB4607BE173D4B8800955454 /* dark_nav_bg.png in Resources */,
@@ -6039,6 +6065,7 @@
 				3F5F30DF1667E85600749B4B /* ma_leftArrow.png in Resources */,
 				3F5F30E01667E85600749B4B /* ma_leftArrow@2x.png in Resources */,
 				3F5F30E11667E85600749B4B /* ma_rightArrow.png in Resources */,
+				CB053898186AD49C00AA1C1D /* tip_banner_confirm@2x.png in Resources */,
 				3F5F30E21667E85600749B4B /* ma_rightArrow@2x.png in Resources */,
 				CBA4DC2D181E14E00044D522 /* daily_sex@2x.png in Resources */,
 				3F5F30E31667E85600749B4B /* ma_topBackground.png in Resources */,
@@ -6632,6 +6659,7 @@
 				CBF82B9A170F052A004674C5 /* 2_s_sumou_0018.png in Resources */,
 				CBF82B9C170F052A004674C5 /* 2_s_sumou_0018@2x.png in Resources */,
 				CBF82B9E170F052A004674C5 /* 2_s_sumou_0019.png in Resources */,
+				CB053896186AD49C00AA1C1D /* tip_banner_confirm.png in Resources */,
 				CBF82BA0170F052A004674C5 /* 2_s_sumou_0019@2x.png in Resources */,
 				CBA4DC41181E14E00044D522 /* 2_s_heart_0005.png in Resources */,
 				CBA4DDD0181E478D0044D522 /* 2_s_butterfly_0013.png in Resources */,
@@ -6639,6 +6667,7 @@
 				CBF82BA4170F052A004674C5 /* 2_s_sumou_0020@2x.png in Resources */,
 				CBF82BA6170F052A004674C5 /* 2_s_sumou_0021.png in Resources */,
 				CBF82BA8170F052A004674C5 /* 2_s_sumou_0021@2x.png in Resources */,
+				CB053894186AD49C00AA1C1D /* tip_banner_close@2x.png in Resources */,
 				CBF82BAA170F052A004674C5 /* 2_s_sumou_0022.png in Resources */,
 				CBF82BAC170F052A004674C5 /* 2_s_sumou_0022@2x.png in Resources */,
 				CBF82BAE170F052A004674C5 /* 2_s_sumou_0023.png in Resources */,
@@ -6709,6 +6738,7 @@
 				CBA4DCA3181E14E00044D522 /* sex_todos_icon.png in Resources */,
 				CB460711173D4B8800955454 /* list_icon_todo_normal.png in Resources */,
 				CBA4DC35181E14E00044D522 /* 2_s_heart_0002.png in Resources */,
+				CB053892186AD49C00AA1C1D /* tip_banner_close.png in Resources */,
 				CB460713173D4B8800955454 /* list_icon_todo_normal@2x.png in Resources */,
 				CB460715173D4B8800955454 /* list_icon_todo_selected.png in Resources */,
 				CB460717173D4B8800955454 /* list_icon_todo_selected@2x.png in Resources */,
@@ -6913,6 +6943,7 @@
 				3F55AAF716E50D4A00EBBA30 /* DailyData.xcdatamodeld in Sources */,
 				CB9AE912180807E100F24E33 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				CB03E997180441D5004D35CF /* ToolbarButton.m in Sources */,
+				CB05388D186AD2AC00AA1C1D /* DailyDoTipBannerView.m in Sources */,
 				3F55AAF916E50D4A00EBBA30 /* DailyDoBase.m in Sources */,
 				3F55AAFF16E50D4A00EBBA30 /* TagData.m in Sources */,
 				3F55AB0116E50D4A00EBBA30 /* TodoData.m in Sources */,
@@ -7075,6 +7106,7 @@
 				3F55AAF616E50D4A00EBBA30 /* DailyData.xcdatamodeld in Sources */,
 				CB9AE911180807E100F24E33 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				CB03E996180441D5004D35CF /* ToolbarButton.m in Sources */,
+				CB05388C186AD2AC00AA1C1D /* DailyDoTipBannerView.m in Sources */,
 				3F55AAF816E50D4A00EBBA30 /* DailyDoBase.m in Sources */,
 				3F55AAFE16E50D4A00EBBA30 /* TagData.m in Sources */,
 				3F55AB0016E50D4A00EBBA30 /* TodoData.m in Sources */,

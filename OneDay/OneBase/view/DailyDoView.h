@@ -10,6 +10,7 @@
 
 @class AddonData;
 @class KMTableView;
+@class DailyDoTipBannerView;
 
 @interface DailyDoView : KMViewBase <UITableViewDataSource, UITableViewDelegate> {
 @private
@@ -26,6 +27,7 @@
 @property (nonatomic) IBOutlet UIButton *unfoldButton;
 @property (nonatomic) IBOutlet UIToolbar *toolbar;
 @property (nonatomic, strong) AddonData *addon;
+@property (nonatomic) IBOutlet DailyDoTipBannerView *tipBanner;
 
 - (IBAction)edit:(id)sender;
 - (IBAction)search:(id)sender;

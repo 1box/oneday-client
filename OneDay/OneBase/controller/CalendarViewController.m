@@ -127,6 +127,7 @@
 {
     if (!_pickDailyDo) {
         self.pickDailyDo = [DailyDoBase dataEntityWithInsert:YES];
+        [_pickDailyDo updateWithDictionary:@{}];
         _pickDailyDo.addon = _addon;
     }
     

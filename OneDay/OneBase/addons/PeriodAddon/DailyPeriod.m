@@ -15,33 +15,35 @@
 #define PeriodCircleDays 30         // 月经周期
 #define PeriodFirstSecureDays 4     // 安全期（前段）
 #define PeriodEasyPregnantDays 14   // 易孕期
-#define PeriodOvulationDay  10       // 排卵日
-#define PeriodSecondSecureDays 23    // 安全期（后段）
-#define PeriodDurationDays 30        // 月经期
+#define PeriodOvulationDay  10      // 排卵日
+#define PeriodSecondSecureDays 23   // 安全期（后段）
+#define PeriodDurationDays 30       // 月经期
+#define PeriodDurationDayCount (PeriodDurationDays - PeriodSecondSecureDays)    // 经期长度：7天
 
 #define kDailyPeriodLastPeriodDateUserDefaultKey @"kDailyPeriodLastPeriodDateUserDefaultKey"
-static inline void setDailyPeriodLastPeriodDate(NSDate *date, NSInteger currentDay)
-{
+static inline void setDailyPeriodLastPeriodDate(NSDate *date, NSInteger currentDay) {
     NSDate *lastDate = [[date dateByAddingDays:((PeriodDurationDays - PeriodSecondSecureDays) - currentDay)] morning];
     [[NSUserDefaults standardUserDefaults] setObject:lastDate
                                               forKey:kDailyPeriodLastPeriodDateUserDefaultKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-static inline NSDate* dailyPeriodLastPeriodDate()
-{
-    return [[NSUserDefaults standardUserDefaults] objectForKey:kDailyPeriodLastPeriodDateUserDefaultKey];
+static inline NSDate* dailyPeriodLastPeriodDate() {
+    NSDate *ret = [[NSUserDefaults standardUserDefaults] objectForKey:kDailyPeriodLastPeriodDateUserDefaultKey];
+    return ret;
+}
+
+static inline BOOL hasDailyPeriodLastPeriodDate() {
+    return dailyPeriodLastPeriodDate() != nil;
 }
 
 #define kDailyPeriodHasMakeAWishUserDefaultKey @"kDailyPeriodHasMakeAWishUserDefaultKey"
-static inline void setDailyPeriodHasMakeAWish(BOOL hasMake)
-{
+static inline void setDailyPeriodHasMakeAWish(BOOL hasMake) {
     [[NSUserDefaults standardUserDefaults] setBool:hasMake forKey:kDailyPeriodHasMakeAWishUserDefaultKey];
     [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
-static inline BOOL dailyPeriodHasMakeAWish()
-{
+static inline BOOL dailyPeriodHasMakeAWish() {
     // default NO
     return [[NSUserDefaults standardUserDefaults] boolForKey:kDailyPeriodHasMakeAWishUserDefaultKey];
 }
@@ -66,22 +68,28 @@ typedef NS_ENUM(NSInteger, DailyPeriodDayType) {
 + (id)dataEntityWithInsert:(BOOL)insert
 {
     DailyDoBase *dailyDo = [super dataEntityWithInsert:insert];
+    return dailyDo;
+}
+
+- (void)updateWithDictionary:(NSDictionary *)dataDict
+{
+    [super updateWithDictionary:dataDict];
     
-    TodoData *tTodo = [dailyDo insertNewTodoAtIndex:0];
-    
-    NSDate *dailyDoDate = [NSDate dateWithTimeIntervalSince1970:[dailyDo.createTime doubleValue]];
+    TodoData *tTodo = [self insertNewTodoAtIndex:0];
+    NSDate *dailyDoDate = [NSDate dateWithTimeIntervalSince1970:[self.createTime doubleValue]];
     DailyPeriodDayType type = [DailyPeriod periodDayType:dailyDoDate];
     if (type == DailyPeriodDayTypeDuration) {
         NSDate *lastDate = dailyPeriodLastPeriodDate();
-        NSInteger periodDays = [dailyDoDate daysBeforeDate:lastDate];
+        NSInteger periodDays = PeriodDurationDayCount - [dailyDoDate daysBeforeDate:lastDate];
         
         NSString *daysString = [[SMDetector defaultDetector] stringForValue:@(periodDays) byType:SmarkDetectTypeDays];
         tTodo.content = daysString;
         tTodo.days = daysString;
-        [[KMModelManager sharedManager] saveContext:nil];
     }
-    
-    return dailyDo;
+    else {
+        tTodo.content = @"";
+    }
+    [[KMModelManager sharedManager] saveContext:nil];   
 }
 
 #pragma mark - extended

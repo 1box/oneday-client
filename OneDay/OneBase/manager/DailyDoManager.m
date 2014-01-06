@@ -149,6 +149,7 @@ static DailyDoManager *_sharedManager;
         dailyDo = [DailyDoData dataEntityWithInsert:YES];
         dailyDo.addon = addon;
         dailyDo.createTime = [NSNumber numberWithDouble:[[[NSDate date] dateByAddingDays:1] timeIntervalSince1970]];
+        [dailyDo updateWithDictionary:@{}];
         [[KMModelManager sharedManager] saveContext:nil];
     }
     
@@ -182,6 +183,7 @@ static DailyDoManager *_sharedManager;
     }
     else {
         dailyDo = [DailyDoData dataEntityWithInsert:YES];
+        [dailyDo updateWithDictionary:@{}];
         dailyDo.addon = addon;
     }
     

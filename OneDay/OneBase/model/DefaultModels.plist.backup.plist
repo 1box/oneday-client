@@ -136,6 +136,50 @@
 			<key>tip_image</key>
 			<string></string>
 		</dict>
+		<dict>
+			<key>display</key>
+			<false/>
+			<key>cartoon</key>
+			<string>butterfly</string>
+			<key>detect_type</key>
+			<integer>387</integer>
+			<key>number_of_cartoons</key>
+			<integer>27</integer>
+			<key>title</key>
+			<string>DailyPeriod</string>
+			<key>daily_do_name</key>
+			<string>DailyPeriod</string>
+			<key>icon</key>
+			<string>daily_period.png</string>
+			<key>order_index</key>
+			<integer>5</integer>
+			<key>show_checked</key>
+			<false/>
+			<key>tip_image</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>display</key>
+			<false/>
+			<key>cartoon</key>
+			<string>heart</string>
+			<key>detect_type</key>
+			<integer>115</integer>
+			<key>number_of_cartoons</key>
+			<integer>29</integer>
+			<key>title</key>
+			<string>DailySex</string>
+			<key>daily_do_name</key>
+			<string>DailySex</string>
+			<key>icon</key>
+			<string>daily_sex.png</string>
+			<key>order_index</key>
+			<integer>6</integer>
+			<key>show_checked</key>
+			<false/>
+			<key>tip_image</key>
+			<string></string>
+		</dict>
 	</array>
 </dict>
 </plist>

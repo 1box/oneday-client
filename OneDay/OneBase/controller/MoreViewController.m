@@ -293,7 +293,7 @@ typedef NS_ENUM(NSInteger, RateSectionRowType) {
     NSString *ret = nil;
     if (section == SectionTypeRate) {
 #ifdef DEBUG
-        ret = [NSString stringWithFormat:@"Debug: %s %s\nv%@", __DATE__, __TIME__, [KMCommon versionName]];
+        ret = [NSString stringWithFormat:@"Debug: %s %s v%@", __DATE__, __TIME__, [KMCommon versionName]];
 #else
         ret = [NSString stringWithFormat:@"©onebox design v%@", [KMCommon versionName]];
 #endif

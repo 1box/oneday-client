@@ -394,6 +394,26 @@ static NSArray *__snapshotTodos = nil;
     return ECalendarCellMarkTypeNone;
 }
 
++ (NSString *)monthSummaryTitleText
+{
+    return @"";
+}
+
++ (NSString *)yearSummaryTitleText
+{
+    return @"";
+}
+
++ (NSString *)monthSummaryItemText
+{
+    return @"";
+}
+
++ (NSString *)yearSummaryItemText
+{
+    return @"";
+}
+
 - (NSString *)presentedText
 {
     return [self todosTextWithLineNumber:YES];

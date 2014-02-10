@@ -125,7 +125,8 @@
     [DailyDoActionHelper sharedHelper].delegate = self;
     
     _todaySectionIndex = 0;
-    _tomorrowSectionIndex = [_tomorrowDo.todos count] > 0 ? 1 : -1;
+    _tomorrowSectionIndex = 1;  // 明天section始终存在
+//    _tomorrowSectionIndex = [_tomorrowDo.todos count] > 0 ? 1 : -1;
     _loggedSectionIndex = _tomorrowSectionIndex == 1 ? 2 : 1;
     
 //    UIImage *selectBackgroundImage = [UIImage imageNamed:@"light_nav_btn_bg_press.png"];
@@ -290,7 +291,7 @@
 - (void)reloadData
 {
     _todaySectionIndex = 0;
-    _tomorrowSectionIndex = [_tomorrowDo.todos count] > 0 ? 1 : -1;
+    _tomorrowSectionIndex = 1;  // 明天section始终存在
     _loggedSectionIndex = _tomorrowSectionIndex == 1 ? 2 : 1;
     
     [_listView reloadData];
@@ -431,10 +432,10 @@
         [otherButtonTitles addObject:NSLocalizedString(@"ShowAllUndosTitle", nil)];
     }
     if (DailyDoActionTypeCashMonthSummary == (actionType & DailyDoActionTypeCashMonthSummary)) {
-        [otherButtonTitles addObject:NSLocalizedString(@"CashMonthSummaryTitle", nil)];
+        [otherButtonTitles addObject:[NSClassFromString(_addon.dailyDoName) monthSummaryTitleText]];
     }
     if (DailyDoActionTypeCashYearSummary == (actionType & DailyDoActionTypeCashYearSummary)) {
-        [otherButtonTitles addObject:NSLocalizedString(@"CashYearSummaryTitle", nil)];
+        [otherButtonTitles addObject:[NSClassFromString(_addon.dailyDoName) yearSummaryTitleText]];
     }
     if (DailyDoActionTypeAlarmNotification == (actionType & DailyDoActionTypeAlarmNotification)) {
         [otherButtonTitles addObject:NSLocalizedString(@"AlarmNotificationTitle", nil)];
@@ -521,7 +522,7 @@
         }
     }
     else if (section == _tomorrowSectionIndex) {
-        ret = [_tomorrowDo.todos count] > 0 ? 1 : 0;
+        ret = 1;
     }
     else if (section == _loggedSectionIndex) {
         ret = [_loggedDos count];
@@ -548,7 +549,7 @@
         }
     }
     else if (indexPath.section == _tomorrowSectionIndex) {
-       ret = [_tomorrowDo.todos count] == 0 ? 0.f : [DailyDoTomorrowCell heightOfCellForDailyDo:_tomorrowDo unfolded:_viewHelper.tomorrowDoUnfold]; 
+       ret = [DailyDoTomorrowCell heightOfCellForDailyDo:_tomorrowDo unfolded:_viewHelper.tomorrowDoUnfold];
     }
     else if (indexPath.section == _loggedSectionIndex) {
         if (indexPath.row < [_loggedDos count]) {
@@ -662,7 +663,7 @@
     else if (section == _loggedSectionIndex) {
         title = NSLocalizedString(@"Logged", nil);
     }
-    else if (section == _tomorrowSectionIndex && [_tomorrowDo.todos count] > 0) {
+    else if (section == _tomorrowSectionIndex) {
         title = NSLocalizedString(@"TomorrowDo", nil);
     }
     return title;
@@ -763,7 +764,11 @@
         }
     }
     else if (indexPath.section == _tomorrowSectionIndex) {
-        [_viewHelper updateTomorrowDoUnfold];
+        TodoViewController *controller = KMViewInUniversalStoryboard(TodoViewControllerID);
+        controller.dailyDo = _tomorrowDo;
+        controller.navigationItem.title = NSLocalizedString(@"TomorrowDo", nil);
+        UINavigationController *nav = [KMCommon topMostNavigationControllerFor:self];
+        [nav pushViewController:controller animated:YES];
     }
     else if (indexPath.section == _loggedSectionIndex) {
         if (indexPath.row < [_loggedDos count]) {

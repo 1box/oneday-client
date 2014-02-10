@@ -60,6 +60,10 @@ static inline NSUInteger newDailyDoItemID() {
 
 #pragma mark - protected
 + (ECalendarCellMarkType)calendarCellMarkType:(NSDate *)date;
++ (NSString *)monthSummaryTitleText;
++ (NSString *)yearSummaryTitleText;
++ (NSString *)monthSummaryItemText;
++ (NSString *)yearSummaryItemText;
 - (NSString *)presentedText;
 - (NSString *)todayText;
 - (NSString *)completionText;

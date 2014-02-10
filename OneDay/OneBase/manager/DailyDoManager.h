@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DailyDoActionHelper.h"
+#import "TodoData.h"
 
 // -- properties
 #define kPropertyNameKey @"name"
@@ -32,6 +33,7 @@
 #define kConfigurationActionType @"ActionType"
 #define kConfigurationQuickAddPropertyName @"QuickAddPropertyName"
 #define kConfigurationInputHelperWords @"InputHelperWords"
+#define kConfigurationTodoTypeKey @"TodoType"
 
 // timeline type
 typedef NS_ENUM(NSInteger, ConfigurationTimelineType) {
@@ -119,6 +121,7 @@ static inline void addHasShowTipBannerTimes(NSString *dailyDoName) {
 - (NSDictionary *)configurationsForDoName:(NSString *)doName;
 - (NSString *)sloganForDoName:(NSString *)doName;
 - (NSArray *)inputHelperWordsForDoName:(NSString *)doName;
+- (BOOL)isTodoType:(ODTodoType)todoType forDoName:(NSString *)doName;
 
 // tip banner
 - (BOOL)hasTipBannerForDoName:(NSString *)doName;

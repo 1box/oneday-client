@@ -40,11 +40,7 @@
 "MoveAllUndosToToday"     ="All undos moved to today.";
 "CheckAllUndos"           ="All undos has been checked.";
 "ShowAllUndosTitle"       ="Show all undos";
-"CashMonthSummaryTitle"   ="Month Summary";
-"CashYearSummaryTitle"    ="Year Summary";
 "AlarmNotificationTitle"  ="Alarm clock";
-"CashMonthSummaryText"    ="Month Cash: %f";
-"CashYearSummaryText"     ="Year Cash: %f";
 "DeleteAlarmSuccess"      ="Delete Success.";
 "AlarmDataDefaultText"    ="Alarm clock";
 "CloseAllAlarmSuccess"    ="All alarms has been closed.";
@@ -153,6 +149,10 @@
 ◉ More Samples: \
 ◉ \"On the roadside pick up to 5 dollars\";\
 ◉ \"Go to sanya tourism spent 10000 dollars\";";
+"CashMonthSummaryTitle"   ="Month Summary";
+"CashYearSummaryTitle"    ="Year Summary";
+"CashMonthSummaryText"    ="Month Cash: %0.2f dollars";
+"CashYearSummaryText"     ="Year Cash: %0.2f dollars";
 
 // daily workout
 "DailyWorkout"             ="Daily Workout";
@@ -184,6 +184,10 @@
 ◉ Input \"Do yoga make me lose 100kilocalorie\", will automatically adjust the record's calorie to: lose 100kilocalorie\n\
 ◉ More Samples: \
 ◉ Input \"Another ice cream, gain 127kilocalorie\"";
+"CalorieMonthSummaryTitle"   ="Month Summary";
+"CalorieYearSummaryTitle"    ="Year Summary";
+"CalorieMonthSummaryText"    ="Month Cal: %0.2fkilocalorie";
+"CalorieYearSummaryText"     ="Year Cal: %0.2fkilocalorie";
 
 // daily memo
 "DailyMemo"                ="Daily Memo";

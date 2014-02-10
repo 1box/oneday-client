@@ -27,6 +27,27 @@
 //}
 
 #pragma mark - protected
+
++ (NSString *)monthSummaryTitleText
+{
+    return NSLocalizedString(@"CashMonthSummaryTitle", nil);
+}
+
++ (NSString *)yearSummaryTitleText
+{
+    return NSLocalizedString(@"CashYearSummaryTitle", nil);
+}
+
++ (NSString *)monthSummaryItemText
+{
+    return NSLocalizedString(@"CashMonthSummaryText", nil);
+}
+
++ (NSString *)yearSummaryItemText
+{
+    return NSLocalizedString(@"CashYearSummaryText", nil);
+}
+
 - (NSString *)presentedText
 {
     return [self todosTextWithLineNumber:YES];
@@ -87,4 +108,5 @@
     
     return completeTextString;
 }
+
 @end

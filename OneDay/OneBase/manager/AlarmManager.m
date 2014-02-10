@@ -83,7 +83,16 @@ static AlarmManager *_sharedManager = nil;
             if (!todo) {
                 todo = [todayDo insertNewTodoAtIndex:0];
             }
-            [todo updateWithAlarm:alarm save:YES];  // save here
+            [todo updateWithAlarm:alarm save:YES];  // save today here
+        }
+        
+        if ([alarm needAlarmTomorrow]) {
+            DailyDoBase *tomorrowDo = [[DailyDoManager sharedManager] tomorrowDoForAddon:addon];
+            TodoData *todo = [tomorrowDo todoForAlarm:alarm];
+            if (!todo) {
+                todo = [tomorrowDo insertNewTodoAtIndex:0];
+            }
+            [todo updateWithAlarm:alarm save:YES];  // save tomorrow here
         }
         
         [[NSNotificationCenter defaultCenter] postNotificationName:AlarmInsertOrUpdateNotification object:self];

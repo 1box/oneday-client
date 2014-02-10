@@ -47,6 +47,8 @@
 			<string>times</string>
 			<string>.</string>
 		</array>
+		<key>TodoType</key>
+		<integer>9</integer>
 	</dict>
 </dict>
 </plist>

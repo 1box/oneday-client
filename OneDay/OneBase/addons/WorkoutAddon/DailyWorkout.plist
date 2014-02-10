@@ -47,6 +47,8 @@
 			<string>个</string>
 			<string>times</string>
 		</array>
+		<key>TodoType</key>
+		<integer>29</integer>
 	</dict>
 </dict>
 </plist>

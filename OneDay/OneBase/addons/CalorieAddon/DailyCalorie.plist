@@ -38,7 +38,7 @@
 		<key>ShowQuickEntry</key>
 		<false/>
 		<key>ActionType</key>
-		<integer>99</integer>
+		<integer>122</integer>
 		<key>QuickAddPropertyName</key>
 		<string>todos</string>
 		<key>InputHelperWords</key>
@@ -48,6 +48,8 @@
 			<string>kilocalorie</string>
 			<string>.</string>
 		</array>
+		<key>TodoType</key>
+		<integer>3</integer>
 	</dict>
 </dict>
 </plist>

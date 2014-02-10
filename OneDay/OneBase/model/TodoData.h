@@ -21,6 +21,19 @@ static inline NSUInteger newToDoItemID() {
     return makeID;
 }
 
+// Todo类型
+typedef NS_ENUM(NSInteger, ODTodoType) {
+    ODTodoTypeNone = 0,
+    ODTodoTypeDuration = 1UL,           // 1
+    ODTodoTypeCalorie = (1UL << 1),     // 2
+    ODTodoTypeDistance = (1UL << 2),    // 4
+    ODTodoTypeFrequency = (1UL << 3),   // 8
+    ODTodoTypeQuantity = (1UL << 4),    // 16
+    ODTodoTypeDays = (1UL << 5),        // 32
+    ODTodoTypeWish = (1UL << 6),        // 64
+    ODTodoTypeMoney = (1UL << 7)        // 128
+};
+
 
 @class DailyDoBase;
 @class AlarmData;

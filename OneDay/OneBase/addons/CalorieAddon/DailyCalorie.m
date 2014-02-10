@@ -26,6 +26,27 @@
 //}
 
 #pragma mark - protected
+
++ (NSString *)monthSummaryTitleText
+{
+    return NSLocalizedString(@"CalorieMonthSummaryTitle", nil);
+}
+
++ (NSString *)yearSummaryTitleText
+{
+    return NSLocalizedString(@"CalorieYearSummaryTitle", nil);
+}
+
++ (NSString *)monthSummaryItemText
+{
+    return NSLocalizedString(@"CalorieMonthSummaryText", nil);
+}
+
++ (NSString *)yearSummaryItemText
+{
+    return NSLocalizedString(@"CalorieYearSummaryText", nil);
+}
+
 - (NSString *)presentedText
 {
     return [self todosTextWithLineNumber:YES];
@@ -75,4 +96,5 @@
     }
     return completeTextString;
 }
+
 @end

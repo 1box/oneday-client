@@ -31,6 +31,8 @@
 		<integer>66</integer>
 		<key>QuickAddPropertyName</key>
 		<string>shortContent</string>
+		<key>TodoType</key>
+		<integer>0</integer>
 	</dict>
 </dict>
 </plist>

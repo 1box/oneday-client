@@ -42,5 +42,7 @@
 		<key>QuickAddPropertyName</key>
 		<string>todos</string>
 	</dict>
+	<key>TodoType</key>
+	<integer>1</integer>
 </dict>
 </plist>

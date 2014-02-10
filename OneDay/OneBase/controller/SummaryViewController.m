@@ -8,6 +8,7 @@
 
 #import "SummaryViewController.h"
 #import "AddonData.h"
+#import "DailyDoBase.h"
 #import "PCLineChartView.h"
 #import "KMTableView.h"
 #import "DailyDoManager.h"
@@ -55,10 +56,10 @@
     NSString *title = @"";
     switch (_type) {
         case SummaryViewTypeMonth:
-            title = NSLocalizedString(@"CashMonthSummaryTitle", nil);
+            title = [NSClassFromString(_addon.dailyDoName) monthSummaryTitleText];
             break;
             case SummaryViewTypeYear:
-            title = NSLocalizedString(@"CashYearSummaryTitle", nil);
+            title = [NSClassFromString(_addon.dailyDoName) yearSummaryTitleText];
             break;
         default:
             break;
@@ -200,14 +201,14 @@
             {
                 MonthlyDo *summaryDo = [_summaryDos objectAtIndex:indexPath.row];
                 cell.dateLabel.text = [[YearToDayFormatter() shortMonthSymbols] objectAtIndex:summaryDo.currentMonth.month - 1];
-                cell.summaryLabel.text = [NSString stringWithFormat:NSLocalizedString(@"CashMonthSummaryText", nil), summaryDo.summary];
+                cell.summaryLabel.text = [NSString stringWithFormat:[NSClassFromString(_addon.dailyDoName) monthSummaryItemText], summaryDo.summary];
             }
                 break;
             case SummaryViewTypeYear:
             {
                 YearlyDo *summaryDo = [_summaryDos objectAtIndex:indexPath.row];
                 cell.dateLabel.text = [NSString stringWithFormat:@"%d", summaryDo.currentYear.year];
-                cell.summaryLabel.text = [NSString stringWithFormat:NSLocalizedString(@"CashYearSummaryText", nil), summaryDo.summary];
+                cell.summaryLabel.text = [NSString stringWithFormat:[NSClassFromString(_addon.dailyDoName) yearSummaryItemText], summaryDo.summary];
             }
                 break;
                 

@@ -184,6 +184,12 @@
     return (todayRepeatType == ([self.repeatType integerValue]&todayRepeatType));
 }
 
+- (BOOL)needAlarmTomorrow
+{
+    AlarmRepeatType tomorrowRepeatType = [AlarmData repeatTypeAfterDays:1];
+    return (tomorrowRepeatType == ([self.repeatType integerValue]&tomorrowRepeatType));
+}
+
 #pragma mark - private
 
 + (AlarmRepeatType)repeatTypeAfterDays:(NSInteger)days

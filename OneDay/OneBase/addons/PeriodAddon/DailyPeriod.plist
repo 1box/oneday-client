@@ -60,6 +60,8 @@
 		</dict>
 		<key>TimelineType</key>
 		<integer>1</integer>
+		<key>TodoType</key>
+		<integer>97</integer>
 	</dict>
 </dict>
 </plist>

@@ -47,6 +47,8 @@
 			<string>dollar</string>
 			<string>.</string>
 		</array>
+		<key>TodoType</key>
+		<integer>129</integer>
 	</dict>
 </dict>
 </plist>

@@ -92,6 +92,12 @@ static DailyDoManager *_sharedManager;
     return tArray;
 }
 
+- (BOOL)isTodoType:(ODTodoType)todoType forDoName:(NSString *)doName
+{
+    NSInteger todoTypes = [[[self configurationsForDoName:doName] objectForKey:kConfigurationTodoTypeKey] integerValue];
+    return (todoType == (todoTypes & todoType));
+}
+
 // tip banner
 - (BOOL)hasTipBannerForDoName:(NSString *)doName
 {
@@ -193,8 +199,10 @@ static DailyDoManager *_sharedManager;
         dailyDo.addon = addon;
         dailyDo.createTime = [NSNumber numberWithDouble:[[[NSDate date] dateByAddingDays:1] timeIntervalSince1970]];
         [dailyDo updateWithDictionary:@{}];
-        [[KMModelManager sharedManager] saveContext:nil];
     }
+    
+    [self addAlarmDependedTodosForDailyDo:&dailyDo];
+    [[KMModelManager sharedManager] saveContext:nil];
     
     return dailyDo;
 }
@@ -357,9 +365,7 @@ static DailyDoManager *_sharedManager;
             NSDate *createDate = [NSDate dateWithTimeIntervalSince1970:[dailyDo.createTime doubleValue]];
             if ([lastDate isSameMonthAsDate:createDate]) {
                 [dailyDosInMonth addObject:dailyDo];
-                for (TodoData *todo in dailyDo.todos) {
-                    summary += [[[SMDetector defaultDetector] valueInString:todo.money byType:SmarkDetectTypeMoney] floatValue];
-                }
+                summary += [self summaryForDailyDo:dailyDo addon:addon];
             }
             else {
                 currentMonthDo.dailyDos = [dailyDosInMonth copy];
@@ -370,9 +376,7 @@ static DailyDoManager *_sharedManager;
                 summary = 0.f;
                 
                 [dailyDosInMonth addObject:dailyDo];
-                for (TodoData *todo in dailyDo.todos) {
-                    summary += [[[SMDetector defaultDetector] valueInString:todo.money byType:SmarkDetectTypeMoney] floatValue];
-                }
+                summary += [self summaryForDailyDo:dailyDo addon:addon];
                 
                 currentMonthDo = [[MonthlyDo alloc] init];
                 currentMonthDo.currentMonth = createDate;
@@ -421,9 +425,7 @@ static DailyDoManager *_sharedManager;
             NSDate *createDate = [NSDate dateWithTimeIntervalSince1970:[dailyDo.createTime doubleValue]];
             if ([lastDate isSameYearAsDate:createDate]) {
                 [dailyDosInYear addObject:dailyDo];
-                for (TodoData *todo in dailyDo.todos) {
-                    summary += [[[SMDetector defaultDetector] valueInString:todo.money byType:SmarkDetectTypeMoney] floatValue];
-                }
+                summary += [self summaryForDailyDo:dailyDo addon:addon];
             }
             else {
                 currentYearDo.dailyDos = [dailyDosInYear copy];
@@ -432,9 +434,7 @@ static DailyDoManager *_sharedManager;
                 
                 [dailyDosInYear removeAllObjects];
                 [dailyDosInYear addObject:dailyDo];
-                for (TodoData *todo in dailyDo.todos) {
-                    summary += [[[SMDetector defaultDetector] valueInString:todo.money byType:SmarkDetectTypeMoney] floatValue];
-                }
+                summary += [self summaryForDailyDo:dailyDo addon:addon];
                 
                 currentYearDo = [[YearlyDo alloc] init];
                 currentYearDo.currentYear = createDate;
@@ -470,6 +470,20 @@ static DailyDoManager *_sharedManager;
             }
         }
     }
+}
+
+- (CGFloat)summaryForDailyDo:(DailyDoBase *)dailyDo addon:(AddonData *)addon
+{
+    CGFloat summary = 0.f;
+    for (TodoData *todo in dailyDo.todos) {
+        if ([[DailyDoManager sharedManager] isTodoType:ODTodoTypeMoney forDoName:addon.dailyDoName]) {
+            summary += [[[SMDetector defaultDetector] valueInString:todo.money byType:SmarkDetectTypeMoney] floatValue];
+        }
+        else if ([[DailyDoManager sharedManager] isTodoType:ODTodoTypeCalorie forDoName:addon.dailyDoName]) {
+            summary += [[[SMDetector defaultDetector] valueInString:todo.caloric byType:SmarkDetectTypeCaloric] floatValue];
+        }
+    }
+    return summary;
 }
 
 @end

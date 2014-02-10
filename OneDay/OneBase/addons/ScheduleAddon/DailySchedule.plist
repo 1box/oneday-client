@@ -51,6 +51,8 @@
 			<string>h</string>
 			<string>m</string>
 		</array>
+		<key>TodoType</key>
+		<integer>1</integer>
 	</dict>
 </dict>
 </plist>

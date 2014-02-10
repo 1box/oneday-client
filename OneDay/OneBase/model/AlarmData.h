@@ -53,5 +53,6 @@ static inline NSUInteger newAlarmItemID() {
 - (NSArray *)nextRepeatTimes;
 
 - (BOOL)needAlarmToday;
+- (BOOL)needAlarmTomorrow;
 
 @end

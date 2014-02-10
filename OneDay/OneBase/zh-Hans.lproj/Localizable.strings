@@ -19,7 +19,7 @@
 "_confirm"           ="确 定";
 "TodayDo"            ="今天";
 "Logged"             ="旧的记录";
-"TomorrowDo"         ="移至明天";
+"TomorrowDo"         ="明天";
 "tags"               ="标签";
 "_recommendApp"      ="精彩推荐";
 "_quickEntryMessage" ="将被插入到最新的一条记录";
@@ -40,11 +40,7 @@
 "MoveAllUndosToToday"     ="所有未完成已经移到今天";
 "CheckAllUndos"           ="所有项目已完成";
 "ShowAllUndosTitle"       ="查看所有未完成";
-"CashMonthSummaryTitle"   ="月收支汇总";
-"CashYearSummaryTitle"    ="年收支汇总";
 "AlarmNotificationTitle"  ="定时提醒";
-"CashMonthSummaryText"    ="月收支: %f";
-"CashYearSummaryText"     ="年收支: %f";
 "DeleteAlarmSuccess"      ="闹铃删除成功";
 "AlarmDataDefaultText"    ="闹钟";
 "CloseAllAlarmSuccess"    ="所有闹铃已关闭";
@@ -152,6 +148,10 @@
 ◉ 更多可自动识别的示例：\
 ◉ \"买彩票中了5块钱\"；\
 ◉ \"去三亚旅游消费40000元\"；";
+"CashMonthSummaryTitle"   ="月收支汇总";
+"CashYearSummaryTitle"    ="年收支汇总";
+"CashMonthSummaryText"    ="月收支: %0.2f元";
+"CashYearSummaryText"     ="年收支: %0.2f元";
 
 // daily workout
 "DailyWorkout"             ="每日锻炼";
@@ -183,6 +183,10 @@
 ◉ 输入 \"做瑜伽减了100大卡\"，将自动把这条记录的热量记为：消耗100大卡\n\
 ◉ 更多可自动识别的示例：\
 ◉ 输入 \"又吃了一盒八喜冰激凌摄取了 127大卡\"";
+"CalorieMonthSummaryTitle"   ="月热量汇总";
+"CalorieYearSummaryTitle"    ="年热量汇总";
+"CalorieMonthSummaryText"    ="月摄入热量: %0.2f大卡";
+"CalorieYearSummaryText"     ="年摄入热量: %0.2f大卡";
 
 // daily memo
 "DailyMemo"                ="每日便签";

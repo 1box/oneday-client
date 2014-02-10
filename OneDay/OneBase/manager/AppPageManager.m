@@ -53,7 +53,7 @@ static AppPageManager *_sharedManager = nil;
 - (void)showHomepageForNavigation
 {
     NSString *addonName = [[AppPageManager sharedManager] homepageAddon];
-    if (!KMEmptyString(addonName)) {
+    if (!CheckStringInvalid(addonName)) {
         AddonData *tAddon = [[AddonManager sharedManager] currentAddonForName:addonName];
         if (tAddon) {
             UINavigationController *nav = [KMCommon rootNavigationController];

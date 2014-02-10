@@ -32,7 +32,7 @@
 + (void)initialize
 {
     NSString *bundleID = [self bundleIDForRate];
-    if (!KMEmptyString(bundleID)) {
+    if (!CheckStringInvalid(bundleID)) {
         [iRate sharedInstance].applicationBundleID = bundleID;
         [iRate sharedInstance].onlyPromptIfLatestVersion = NO;
         

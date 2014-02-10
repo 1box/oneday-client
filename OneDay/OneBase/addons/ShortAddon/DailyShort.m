@@ -31,7 +31,7 @@
 
 - (BOOL)isBlankDailyDo
 {
-    return KMEmptyString(self.shortContent) && ![[NSDate dateWithTimeIntervalSince1970:[self.createTime integerValue]] isToday];
+    return CheckStringInvalid(self.shortContent) && ![[NSDate dateWithTimeIntervalSince1970:[self.createTime integerValue]] isToday];
 }
 
 - (NSString *)presentedText
@@ -42,7 +42,7 @@
 - (NSString *)completionText
 {
     NSString *ret = nil;
-    if (KMEmptyString(self.shortContent)) {
+    if (CheckStringInvalid(self.shortContent)) {
         ret = NSLocalizedString(@"DailyShortNoText", nil);
     }
     else {

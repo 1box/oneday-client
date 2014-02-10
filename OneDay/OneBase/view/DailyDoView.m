@@ -40,11 +40,13 @@
 #import "AddonData.h"
 #import "DailyDoBase.h"
 #import "TodoData.h"
+#import "DailyPeriod.h"
 
 #define CommonCellHeight 44.f
 
 @interface DailyDoView () <DailyDoActionHelperDelegate, UIActionSheetDelegate, DailyDoTipBannerViewDelegate> {
     
+    BOOL _hasAppear;
     BOOL _isLoading;
     BOOL _canLoadMore;
 }
@@ -157,7 +159,9 @@
     
     [[PasswordManager sharedManager] showAddonLock:_addon finishBlock:nil];
     
-    _tipBanner.delegate = self;
+    if ([self loadTipBanner]) {
+        addHasShowTipBannerTimes(_addon.dailyDoName);
+    }
 }
 
 - (void)viewDidAppear
@@ -165,6 +169,13 @@
     [super viewDidAppear];
     [self registerNotifications];
     [self loadLoggedDos:NO];
+    
+    if (_hasAppear) {
+        [self loadTipBanner];
+    }
+    else {
+        _hasAppear = YES;
+    }
 }
 
 - (void)viewDidDisappear
@@ -232,6 +243,32 @@
 }
 
 #pragma mark - private
+
+- (BOOL)loadTipBanner
+{
+    BOOL needShowTipBanner = NO;
+    // 显示tip banner的条件：
+    // 1. configuration中需要显示;
+    // 2. 显示次数不超过3次;
+    // 3. 尚未设置last period date;
+    if ([[DailyDoManager sharedManager] hasTipBannerForDoName:_addon.dailyDoName]) {
+        if (showTipBannerTimes(_addon.dailyDoName) < 3 && [DailyPeriod hasDailyPeriodLastPeriodDate] == NO) {
+            needShowTipBanner = YES;
+        }
+    }
+    
+    if (needShowTipBanner) {
+        _tipBanner.delegate = self;
+        _tipBanner.textLabel.text = [[DailyDoManager sharedManager] tipBannerContentTextForDoName:_addon.dailyDoName];
+        [_tipBanner.confirmButton setTitle:[[DailyDoManager sharedManager] tipBannerConfirmButtonTitleForDoName:_addon.dailyDoName] forState:UIControlStateNormal];
+    }
+    else {
+        [_tipBanner removeFromSuperview];
+        self.tipBanner = nil;
+    }
+    
+    return needShowTipBanner;
+}
 
 - (void)loadLoggedDos:(BOOL)loadMore
 {
@@ -572,7 +609,7 @@
             else if ([[property objectForKey:kPropertyTypeKey] isEqualToString:ProperyTypeString]) {
                 DailyDoNoteCell *cell = [tableView dequeueReusableCellWithIdentifier:todayPropertyNotesCell];
                 NSString *tString = [_todayDo valueForKeyPath:[property objectForKey:kPropertyNameKey]];
-                if (KMEmptyString(tString)) {
+                if (CheckStringInvalid(tString)) {
                     tString = NSLocalizedString([property objectForKey:kPropertyDisplayNameKey], nil);
                 }
                 cell.nameLabel.text = tString;
@@ -698,14 +735,24 @@
             [dailyDos addObjectsFromArray:_loggedDos];
             
             KMViewControllerBase *controller = nil;
-            if ([_addon.dailyDoName isEqualToString:@"DailyPeriod"]) {  // trick logic
-                controller = KMViewInUniversalStoryboard(CalendarViewStoryboardID);
-                ((CalendarViewController *)controller).dailyDos = dailyDos;
-                ((CalendarViewController *)controller).addon = _addon;
-            }
-            else {
-                controller = KMViewInUniversalStoryboard(TimelineViewStoryboardID);
-                ((TimelineViewController *)controller).dailyDos = dailyDos;
+            ConfigurationTimelineType timelineType = [[[[DailyDoManager sharedManager] configurationsForDoName:_addon.dailyDoName] objectForKey:kConfigurationTimelineType] integerValue];
+            switch (timelineType) {
+                case ConfigurationTimelineTypeCalendar:
+                {
+                    controller = KMViewInUniversalStoryboard(CalendarViewStoryboardID);
+                    ((CalendarViewController *)controller).dailyDos = dailyDos;
+                    ((CalendarViewController *)controller).addon = _addon;
+                }
+                    break;
+                case ConfigurationTimelineTypeTimeline:
+                {
+                    controller = KMViewInUniversalStoryboard(TimelineViewStoryboardID);
+                    ((TimelineViewController *)controller).dailyDos = dailyDos;
+                }
+                    break;
+                    
+                default:
+                    break;
             }
             
             DailyDoPropertyCell *tCell = (DailyDoPropertyCell *)[tableView cellForRowAtIndexPath:indexPath];
@@ -848,7 +895,26 @@
 
 - (void)tipBannerViewConfirmButtonClicked:(DailyDoTipBannerView *)tipBannerView
 {
-    [self changeTipBannerViewToDisplayStatus:DailyDoTipBannerDisplayStatusHide];
+    switch ([[DailyDoManager sharedManager] tipBannerTypeForDoName:_addon.dailyDoName]) {
+        case ConfigurationTipBannerTypeShowTimeline:
+        {
+            NSMutableArray *dailyDos = [NSMutableArray arrayWithObject:_todayDo];
+            [dailyDos addObjectsFromArray:_loggedDos];
+            
+            CalendarViewController *controller = KMViewInUniversalStoryboard(CalendarViewStoryboardID);
+            controller.dailyDos = dailyDos;
+            controller.addon = _addon;
+            controller.navigationItem.title = NSLocalizedString([_configurations objectForKey:kConfigurationTimelineTitle], nil);
+            controller.showPickerWhenAppear = YES;
+            
+            UINavigationController *nav = [KMCommon topMostNavigationControllerFor:self];
+            [nav pushViewController:controller animated:YES];   
+        }
+            break;
+            
+        default:
+            break;
+    }
 }
 
 @end

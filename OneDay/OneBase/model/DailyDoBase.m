@@ -366,7 +366,7 @@ static NSArray *__snapshotTodos = nil;
          @"start_time" : tmpTodo.startTime ? tmpTodo.startTime : @"",
          @"duration" : tmpTodo.duration ? tmpTodo.duration : @0,
          @"check" : tmpTodo.check ? tmpTodo.check : @NO,
-         @"content" : KMEmptyString(tmpTodo.content) ? @"" : tmpTodo.content,
+         @"content" : CheckStringInvalid(tmpTodo.content) ? @"" : tmpTodo.content,
          }];
     }
     __snapshotTodos = [tmpArray copy];

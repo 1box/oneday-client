@@ -111,7 +111,8 @@
 "MoveToTomorrow"          ="Move";
 "_tomorrowDoText"         ="%d todo has been moved";
 
-// daily do
+// -- daily do
+// daily schedule
 "DailySchedule"            ="Daily Schedule";
 "TodaySchedule"            ="Today Schedule";
 "ScheduleTimeline"         ="Timeline";
@@ -125,6 +126,7 @@
 ◉ More Samples: \
 ◉ \"Go to a movie at 4:45 pm (1.5h)\"";
 
+// daily short
 "DailyShort"               ="Daily Short";
 "TodayShort"               ="My short";
 "ShortSlogan"              ="Shortcomings is not terrible at all. Remember to give it a fatal blow at the appropriate time";
@@ -132,6 +134,7 @@
 "DailyShortNoText"         ="Not found short this day.";
 "DailyShortCompleteText"   ="Found short, click to see.";
 
+// daily cash
 "DailyCash"                ="Daily Cash";
 "TodayCash"                ="Today Balance";
 "CashTimeline"             ="Timeline";
@@ -151,6 +154,7 @@
 ◉ \"On the roadside pick up to 5 dollars\";\
 ◉ \"Go to sanya tourism spent 10000 dollars\";";
 
+// daily workout
 "DailyWorkout"             ="Daily Workout";
 "TodayWorkout"             ="To-do Workouts";
 "WorkoutTimeline"          ="Timeline";
@@ -162,6 +166,7 @@
 ◉ Input Sample (2): \
 ◉ Input \"Sit-ups 30 times\", will automatically adjust the record's times to: 30times\n";
 
+// daily calorie
 "DailyCalorie"             ="Daily Calorie";
 "TodayCalorie"             ="Today Calorie";
 "CalorieTimeline"          ="Timeline";
@@ -180,6 +185,7 @@
 ◉ More Samples: \
 ◉ Input \"Another ice cream, gain 127kilocalorie\"";
 
+// daily memo
 "DailyMemo"                ="Daily Memo";
 "TodayMemo"                ="My Memo";
 "MemoTimeline"             ="Timeline";
@@ -189,10 +195,13 @@
 "MemoNoText"               ="No memos this day";
 "MemoPlaceHolder"          ="◉ In remote antiquity Chinese people use tortoise shell to write memo.";
 
+// daily period
 "DailyPeriod"             ="Daily Period";
 "TodayPeriod"             ="My Period";
 "PeriodTimeline"          ="Timeline";
 "PeriodSlogan"            ="Periods didn't come? Pray!";
+"PeriodTipBannerContentText" ="Please select period day.";
+"PeriodTipBannerConfirmButtonTitle" ="Select";
 "PeriodInTodayText"      ="Periods: Day %d!";
 "PeriodAfterTodayText"   ="Thanks!";
 "PeriodBeforeTodayText"  ="Next period come after %d day.";
@@ -214,6 +223,7 @@
 "PeriodSixthDay"   ="Sixth Day";
 "PeriodSeventhDay" ="Seventh Day";
 
+// daily sex
 "DailySex"             ="Daily Sex";
 "TodaySex"             ="Today Sex";
 "SexTimeline"          ="Timeline";
@@ -242,3 +252,6 @@
 // SMDetector
 "SMDetectDaysStringWithValue" ="period:%@day";
 
+// KMKit
+"KMKitCancel"            ="取消";
+"KMKitConfirm"           ="确定";

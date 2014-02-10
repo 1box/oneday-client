@@ -181,7 +181,7 @@ static AlarmManager *_sharedManager = nil;
                 
                 NSMutableString *message = [NSMutableString stringWithCapacity:100];
                 NSString *alertBody = localNotification.alertBody;
-                if (!KMEmptyString(alertBody)) {
+                if (!CheckStringInvalid(alertBody)) {
                     [message appendFormat:@"%@; ", alertBody];
                 }
                 else {

@@ -30,7 +30,7 @@
 {
     self = [super init];
     if (self) {
-        if (!(!prefix || KMEmptyString(prefix) || hasHintForKey(prefix) || [KMCommon isPadDevice])) {
+        if (!(!prefix || CheckStringInvalid(prefix) || hasHintForKey(prefix) || [KMCommon isPadDevice])) {
             
             NSString *fileName = nil;
             if ([prefix hasSuffix:[KMCommon versionName]]) {
@@ -119,7 +119,7 @@
     NSString *imageName = [[_dialogs objectAtIndex:_offset] objectForKey:kHintDialogImageKey];
     
     UIImageView *tImageView = nil;
-    if (imageName && !KMEmptyString(imageName)) {
+    if (imageName && !CheckStringInvalid(imageName)) {
         tImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
     }
     return tImageView;

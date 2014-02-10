@@ -8,11 +8,12 @@
 
 #import "MNCalendarView.h"
 
-//#warning debug code
 #define DailyCalendarBeforeDays 60
 #define DailyCalendarAfterDays 365
 
+typedef void(^ScrollFinishedBlock)();
+
 
 @interface DailyCalendarView : MNCalendarView
-- (void)scrollToSelectedDate;
+- (void)scrollToSelectedDate:(ScrollFinishedBlock)aBlock;
 @end

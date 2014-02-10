@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "DailyDoActionHelper.h"
 
+// -- properties
 #define kPropertyNameKey @"name"
 #define kProperyIconKey @"icon"
 #define kPropertyTypeKey @"type"
@@ -21,6 +22,7 @@
 #define PropertyTypeTodos @"todos"
 
 
+// -- configurations
 #define kConfigurationDefaultUnfoldKey @"DefaultUnfold"
 #define kConfigurationShowTimelineKey @"ShowTimeline"
 #define kConfigurationSlogan @"Slogan"
@@ -30,6 +32,48 @@
 #define kConfigurationActionType @"ActionType"
 #define kConfigurationQuickAddPropertyName @"QuickAddPropertyName"
 #define kConfigurationInputHelperWords @"InputHelperWords"
+
+// timeline type
+typedef NS_ENUM(NSInteger, ConfigurationTimelineType) {
+    ConfigurationTimelineTypeTimeline = 0,
+    ConfigurationTimelineTypeCalendar
+};
+#define kConfigurationTimelineType @"TimelineType"
+
+// tip banner
+typedef NS_ENUM(NSInteger, ConfigurationTipBannerType) {
+    ConfigurationTipBannerTypeShowTimeline = 0
+};
+
+#define kConfigurationTipBannerDict @"TipBanner"
+#define kConfigurationTipBannerDictTypeKey @"TipBannerType"
+#define kConfigurationTipBannerDictContentTextKey @"ContentText"
+#define kConfigurationTipBannerDictConfirmButtonTitleKey @"ConfirmButtonTitle"
+
+#define kHasShowTipBannerDictUserDefaultKey @"kHasShowTipBannerDictUserDefaultKey"
+static inline NSInteger showTipBannerTimes(NSString *dailyDoName) {
+    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:kHasShowTipBannerDictUserDefaultKey];
+    
+    NSInteger ret = 0;
+    if (dict) {
+        ret = [[dict objectForKey:dailyDoName] integerValue];
+    }
+    return ret;
+}
+
+static inline void addHasShowTipBannerTimes(NSString *dailyDoName) {
+    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] objectForKey:kHasShowTipBannerDictUserDefaultKey];
+    NSInteger times = 0;
+    if (dict) {
+        times = [[dict objectForKey:dailyDoName] integerValue];
+    }
+    times ++;
+    
+    NSMutableDictionary *mutDict = [NSMutableDictionary dictionaryWithDictionary:dict];
+    [mutDict setObject:@(times) forKey:dailyDoName];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:mutDict forKey:kHasShowTipBannerDictUserDefaultKey];
+}
 
 
 #define DailyDoManagerLoggedDosLoadFinishedNotification @"DailyDoManagerLoggedDosLoadFinishedNotification"
@@ -67,16 +111,22 @@
 
 + (DailyDoManager *)sharedManager;
 
-// properties
+// -- properties
 - (NSArray *)propertiesForDoName:(NSString *)doName;
 - (NSDictionary *)propertiesDictForProperties:(NSArray *)properties inDailyDo:(DailyDoBase *)dailyDo;
 
-// configurations
+// -- configurations
 - (NSDictionary *)configurationsForDoName:(NSString *)doName;
 - (NSString *)sloganForDoName:(NSString *)doName;
 - (NSArray *)inputHelperWordsForDoName:(NSString *)doName;
 
-// dailydos
+// tip banner
+- (BOOL)hasTipBannerForDoName:(NSString *)doName;
+- (ConfigurationTipBannerType)tipBannerTypeForDoName:(NSString *)doName;
+- (NSString *)tipBannerContentTextForDoName:(NSString *)doName;
+- (NSString *)tipBannerConfirmButtonTitleForDoName:(NSString *)doName;
+
+// -- dailydos
 - (BOOL)saveDailyDoWithAddon:(AddonData *)addon updateDictionary:(NSDictionary *)aDictionary;
 - (void)moveDailyDoUndos:(DailyDoBase *)dailyDo toAnother:(DailyDoBase *)anotherDailyDo;
 
@@ -88,7 +138,7 @@
 
 - (DailyDoBase *)dailyDoInList:(NSArray *)dailyDos atDate:(NSDate *)date;
 
-// monthlyDos&yearlyDos
+// -- monthlyDos&yearlyDos
 - (NSArray *)monthlyDosForAddon:(AddonData *)addon year:(NSDate *)year;
 - (NSArray *)yearlyDosForAddon:(AddonData *)addon;
 

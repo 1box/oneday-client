@@ -92,6 +92,49 @@ static DailyDoManager *_sharedManager;
     return tArray;
 }
 
+// tip banner
+- (BOOL)hasTipBannerForDoName:(NSString *)doName
+{
+    NSDictionary *dict = [[self configurationsForDoName:doName] objectForKey:kConfigurationTipBannerDict];
+    return dict != nil;
+}
+
+- (ConfigurationTipBannerType)tipBannerTypeForDoName:(NSString *)doName
+{
+    ConfigurationTipBannerType ret = ConfigurationTipBannerTypeShowTimeline;
+    if ([self hasTipBannerForDoName:doName]) {
+        NSNumber *typeNumber = [[self configurationsForDoName:doName] objectForKey:kConfigurationTipBannerDictTypeKey];
+        ret = [typeNumber integerValue];
+    }
+    return ret;
+}
+
+- (NSString *)tipBannerContentTextForDoName:(NSString *)doName
+{
+    NSString *ret = @"";
+    if ([self hasTipBannerForDoName:doName]) {
+        
+        NSString *stringKey = [[[self configurationsForDoName:doName] objectForKey:kConfigurationTipBannerDict] objectForKey:kConfigurationTipBannerDictContentTextKey];
+        if (CheckStringInvalid(stringKey) == NO) {
+            ret = NSLocalizedString(stringKey, nil);
+        }
+    }
+    return ret;
+}
+
+- (NSString *)tipBannerConfirmButtonTitleForDoName:(NSString *)doName
+{
+    NSString *ret = @"";
+    if ([self hasTipBannerForDoName:doName]) {
+        
+        NSString *stringKey = [[[self configurationsForDoName:doName] objectForKey:kConfigurationTipBannerDict] objectForKey:kConfigurationTipBannerDictConfirmButtonTitleKey];
+        if (CheckStringInvalid(stringKey) == NO) {
+            ret = NSLocalizedString(stringKey, nil);
+        }
+    }
+    return ret;
+}
+
 #pragma mark - DailyDos
 
 - (BOOL)saveDailyDoWithAddon:(AddonData *)addon updateDictionary:(NSDictionary *)aDictionary

@@ -102,23 +102,23 @@
 - (NSString *)timelineContent
 {
     NSMutableString *tStr = [NSMutableString stringWithString:self.content];
-//    if (!KMEmptyString(self.money)) {
+//    if (!CheckStringInvalid(self.money)) {
 //        [tStr appendFormat:@" %@", self.money];
 //    }
 //
-//    if (!KMEmptyString(self.caloric)) {
+//    if (!CheckStringInvalid(self.caloric)) {
 //        [tStr appendFormat:@" %@", self.caloric];
 //    }
 //
-//    if (!KMEmptyString(self.distance)) {
+//    if (!CheckStringInvalid(self.distance)) {
 //        [tStr appendFormat:@" %@", self.distance];
 //    }
 //
-//    if (!KMEmptyString(self.frequency)) {
+//    if (!CheckStringInvalid(self.frequency)) {
 //        [tStr appendFormat:@" %@", self.frequency];
 //    }
 //    
-//    if (!KMEmptyString(self.quantity)) {
+//    if (!CheckStringInvalid(self.quantity)) {
 //        [tStr appendFormat:@" %@", self.quantity];
 //    }
     return [tStr copy];

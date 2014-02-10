@@ -38,7 +38,7 @@
 		<key>ShowQuickEntry</key>
 		<false/>
 		<key>ActionType</key>
-		<integer>90</integer>
+		<integer>66</integer>
 		<key>QuickAddPropertyName</key>
 		<string>todos</string>
 		<key>InputHelperWords</key>

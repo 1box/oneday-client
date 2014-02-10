@@ -174,7 +174,7 @@ static PasswordManager *_sharedManager = nil;
 + (BOOL)hasDotLockPassword
 {
     NSString *password = [[NSUserDefaults standardUserDefaults] objectForKey:kDotLockPasswordUserDefaultKey];
-    return !KMEmptyString(password);
+    return !CheckStringInvalid(password);
 }
 
 + (BOOL)checkDotLockPassword:(NSString *)password

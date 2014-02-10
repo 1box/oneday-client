@@ -101,7 +101,7 @@ static AddonManager *_sharedManager;
     if (addons) {
         NSMutableArray *tipAddons = [NSMutableArray arrayWithCapacity:[addons count]];
         for (AddonData *tAddon in addons) {
-            if (!KMEmptyString(tAddon.tipImage)) {
+            if (!CheckStringInvalid(tAddon.tipImage)) {
                 [tipAddons addObject:tAddon];
             }
         }

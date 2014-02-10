@@ -1566,10 +1566,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKK-GN-vzK">
-                                                <rect key="frame" x="220" y="16" width="83" height="33"/>
+                                                <rect key="frame" x="220" y="16" width="83" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="83" id="Riu-Zi-hx1"/>
+                                                    <constraint firstAttribute="width" constant="83" id="TIT-qQ-FY6"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <state key="normal" title="确认" backgroundImage="tip_banner_confirm.png">
@@ -1593,13 +1593,13 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="Z5p-IJ-v6I" firstAttribute="centerY" secondItem="UKK-GN-vzK" secondAttribute="centerY" id="LB9-5v-DlG"/>
-                                            <constraint firstAttribute="trailing" secondItem="UKK-GN-vzK" secondAttribute="trailing" constant="17" id="Rjm-8q-Cyi"/>
+                                            <constraint firstItem="UKK-GN-vzK" firstAttribute="centerY" secondItem="Z5p-IJ-v6I" secondAttribute="centerY" id="WCv-K9-4OO"/>
                                             <constraint firstAttribute="bottom" secondItem="Z5p-IJ-v6I" secondAttribute="bottom" constant="1" id="Xm7-I6-vhs"/>
                                             <constraint firstItem="Z5p-IJ-v6I" firstAttribute="top" secondItem="6aF-a6-we8" secondAttribute="top" constant="8" id="Z2W-Zs-rc4"/>
+                                            <constraint firstItem="UKK-GN-vzK" firstAttribute="leading" secondItem="Z5p-IJ-v6I" secondAttribute="trailing" constant="20" id="i7D-1M-uuX"/>
                                             <constraint firstItem="a2d-P8-VR6" firstAttribute="top" secondItem="6aF-a6-we8" secondAttribute="top" id="m5h-Yf-Yzj"/>
                                             <constraint firstItem="Z5p-IJ-v6I" firstAttribute="leading" secondItem="a2d-P8-VR6" secondAttribute="trailing" constant="7" id="nXz-aQ-HUO"/>
-                                            <constraint firstItem="UKK-GN-vzK" firstAttribute="top" secondItem="6aF-a6-we8" secondAttribute="top" constant="16" id="rXi-No-KpN"/>
+                                            <constraint firstItem="UKK-GN-vzK" firstAttribute="top" secondItem="6aF-a6-we8" secondAttribute="top" constant="16" id="qeh-4L-DFQ"/>
                                             <constraint firstItem="a2d-P8-VR6" firstAttribute="leading" secondItem="6aF-a6-we8" secondAttribute="leading" constant="6" id="vMP-9u-5n5"/>
                                         </constraints>
                                         <connections>
@@ -3491,22 +3491,55 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzG-rE-Qba">
-                                <rect key="frame" x="0.0" y="568" width="320" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="TXy-hQ-Sxz" id="Lr1-Lz-Lgk"/>
-                                    <outlet property="delegate" destination="TXy-hQ-Sxz" id="del-rX-YzE"/>
-                                </connections>
-                            </pickerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cWK-rC-iKa">
+                                <rect key="frame" x="0.0" y="568" width="320" height="216"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wzG-rE-Qba">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="162"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="TXy-hQ-Sxz" id="Lr1-Lz-Lgk"/>
+                                            <outlet property="delegate" destination="TXy-hQ-Sxz" id="del-rX-YzE"/>
+                                        </connections>
+                                    </pickerView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P2W-iq-Qbv">
+                                        <rect key="frame" x="240" y="20" width="60" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="_confirm">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pickConfirmButtonClicked:" destination="TXy-hQ-Sxz" eventType="touchUpInside" id="uCv-wm-0PT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ha3-FC-llc">
+                                        <rect key="frame" x="20" y="20" width="53" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="_cancel">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pickCancelButtonClicked:" destination="TXy-hQ-Sxz" eventType="touchUpInside" id="QWy-6V-5xL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="rcr-Lc-nkE" firstAttribute="top" secondItem="R8i-Nh-AZY" secondAttribute="top" id="0w9-ke-VX4"/>
+                            <constraint firstItem="cWK-rC-iKa" firstAttribute="top" secondItem="6CV-WN-6Pq" secondAttribute="bottom" id="6EI-Ym-1vh"/>
                             <constraint firstItem="rcr-Lc-nkE" firstAttribute="leading" secondItem="R8i-Nh-AZY" secondAttribute="leading" id="KZi-3o-gIg"/>
+                            <constraint firstItem="cWK-rC-iKa" firstAttribute="leading" secondItem="rcr-Lc-nkE" secondAttribute="leading" id="LpW-bh-PJc"/>
                             <constraint firstAttribute="bottom" secondItem="rcr-Lc-nkE" secondAttribute="bottom" id="Pwj-OQ-Ttk"/>
                             <constraint firstAttribute="trailing" secondItem="rcr-Lc-nkE" secondAttribute="trailing" id="RaN-L1-mcm"/>
+                            <constraint firstAttribute="bottom" secondItem="cWK-rC-iKa" secondAttribute="bottom" constant="-216" id="Sz9-kF-CRd"/>
+                            <constraint firstItem="cWK-rC-iKa" firstAttribute="trailing" secondItem="rcr-Lc-nkE" secondAttribute="trailing" id="hqf-ND-OIi"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
@@ -3528,7 +3561,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                     </navigationItem>
                     <connections>
                         <outlet property="calendarView" destination="rcr-Lc-nkE" id="W7v-T1-CFZ"/>
-                        <outlet property="pickerView" destination="wzG-rE-Qba" id="trs-Kg-K9e"/>
+                        <outlet property="pickCancelButton" destination="ha3-FC-llc" id="OsV-Qc-bVw"/>
+                        <outlet property="pickConfirmButton" destination="P2W-iq-Qbv" id="bjw-gj-jWt"/>
+                        <outlet property="pickerContainer" destination="cWK-rC-iKa" id="qPQ-BM-xwK"/>
+                        <outlet property="pickerView" destination="wzG-rE-Qba" id="c0r-zH-g6s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zcf-hU-ti4" userLabel="First Responder" sceneMemberID="firstResponder"/>

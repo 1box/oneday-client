@@ -54,7 +54,7 @@ static KMTracker *_sharedTracker = nil;
 //    [SSWeixin registerWithID:[self weixinAppID]];
 //    
 //    NSString *dmTrackerID = [self dmTrackerID];
-//    if(!KMEmptyString(dmTrackerID)) {
+//    if(!CheckStringInvalid(dmTrackerID)) {
 //        [DMConversionTracker startAsynchronousConversionTrackingWithDomobAppId:dmTrackerID];
 //    }
 }

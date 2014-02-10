@@ -21,9 +21,15 @@
 
 #pragma mark - public
 
-- (void)scrollToSelectedDate
+- (void)scrollToSelectedDate:(ScrollFinishedBlock)aBlock
 {
-    [self.collectionView scrollRectToVisible:CGRectMake(0, DailyCalendarBeforeDays * 10.f + 8.f, SSWidth(self), SSHeight(self)) animated:YES];
+    [UIView animateWithDuration:0.3f
+                     animations:^{
+                         [self.collectionView scrollRectToVisible:CGRectMake(0, DailyCalendarBeforeDays * 10.f + 8.f, SSWidth(self), SSHeight(self)) animated:NO];
+                     }
+                     completion:^(BOOL finished) {
+                         aBlock();
+                     }];
 }
 
 @end

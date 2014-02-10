@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define KMEmptyString(x) (![x isKindOfClass:[NSString class]] || x.length == 0)
+#define CheckStringInvalid(x) (![x isKindOfClass:[NSString class]] || x.length == 0)
 
 @interface NSString (NSStringAdditions)
 

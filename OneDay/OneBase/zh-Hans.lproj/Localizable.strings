@@ -110,7 +110,8 @@
 "MoveToTomorrow"          ="移到明天";
 "_tomorrowDoText"         ="%d条已移到明天";
 
-// daily do
+// -- daily do
+// daily schedule
 "DailySchedule"            ="每日计划";
 "TodaySchedule"            ="今日计划";
 "ScheduleTimeline"         ="一天时间表";
@@ -124,6 +125,7 @@
 ◉ 更多可自动识别的示例：\
 ◉ \"看电影 4:45 下午 (1.5小时)\"";
 
+// daily short
 "DailyShort"               ="每日缺点";
 "TodayShort"               ="我的缺点";
 "ShortSlogan"              ="缺点并不可怕，记得在适当的时候给它致命一击";
@@ -131,6 +133,7 @@
 "DailyShortNoText"         ="这一天没有发现缺点";
 "DailyShortCompleteText"   ="发现缺点, 点击查看";
 
+// daily cash
 "DailyCash"                ="每日收支";
 "TodayCash"                ="今日收支";
 "CashTimeline"             ="一天资金流";
@@ -150,6 +153,7 @@
 ◉ \"买彩票中了5块钱\"；\
 ◉ \"去三亚旅游消费40000元\"；";
 
+// daily workout
 "DailyWorkout"             ="每日锻炼";
 "TodayWorkout"             ="要做的运动";
 "WorkoutTimeline"          ="运动时间轴";
@@ -161,6 +165,7 @@
 ◉ 输入示例二：\
 ◉ 输入 \"仰卧起坐30次\"，将自动把记录的次数记为：30次\n";
 
+// daily calorie
 "DailyCalorie"             ="每日减肥";
 "TodayCalorie"             ="今日减肥记录";
 "CalorieTimeline"          ="一天卡路里";
@@ -179,6 +184,7 @@
 ◉ 更多可自动识别的示例：\
 ◉ 输入 \"又吃了一盒八喜冰激凌摄取了 127大卡\"";
 
+// daily memo
 "DailyMemo"                ="每日便签";
 "TodayMemo"                ="我的便签";
 "MemoTimeline"             ="便签流";
@@ -188,10 +194,13 @@
 "MemoNoText"               ="这一天没有便签";
 "MemoPlaceHolder"          ="◉ 古时候的便签是刻在龟背上的哦";
 
-"DailyPeriod"             ="姨妈日记";
+// daily period
+"DailyPeriod"             ="姨妈庙";
 "TodayPeriod"             ="今日姨妈记录";
-"PeriodTimeline"          ="一天大姨妈";
+"PeriodTimeline"          ="姨妈日历";
 "PeriodSlogan"            ="还没来? 快来姨妈庙拜一拜!";
+"PeriodTipBannerContentText" ="请选择经期第一天";
+"PeriodTipBannerConfirmButtonTitle" ="选择";
 "PeriodInTodayText"      ="今天是第%d天!";
 "PeriodAfterTodayText"   ="还愿去!";
 "PeriodBeforeTodayText"  ="距下次姨妈降临还有%d天";
@@ -215,6 +224,7 @@
 "PeriodSixthDay"   ="月经第六天";
 "PeriodSeventhDay" ="月经第七天";
 
+// daily sex
 "DailySex"             ="性福日记";
 "TodaySex"             ="今日性福日记";
 "SexTimeline"          ="一天性福时刻";
@@ -247,3 +257,7 @@
 
 // SMDetector
 "SMDetectDaysStringWithValue" ="第%@天";
+
+// KMKit
+"KMKitCancel"            ="取消";
+"KMKitConfirm"           ="确定";

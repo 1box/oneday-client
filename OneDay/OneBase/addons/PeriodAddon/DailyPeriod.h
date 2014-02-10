@@ -10,4 +10,6 @@
 
 @interface DailyPeriod : DailyDoBase
 
++ (BOOL)hasDailyPeriodLastPeriodDate;
+
 @end

@@ -49,7 +49,7 @@ static SMDetector *_defaultDetector = nil;
 - (NSArray *)itemInString:(NSString *)aString byType:(SmarkDetectType)type
 {
     NSArray *ret = nil;
-    if (!KMEmptyString(aString)) {
+    if (!CheckStringInvalid(aString)) {
         if (type == SmarkDetectTypeDate) {
             ret = [self datesInString:aString];
         }
@@ -105,7 +105,7 @@ static SMDetector *_defaultDetector = nil;
 - (id)valueInString:(NSString *)aString byType:(SmarkDetectType)type
 {
     id ret = nil;
-    if (!KMEmptyString(aString)) {
+    if (!CheckStringInvalid(aString)) {
         aString = [aString stringByReplacingOccurrencesOfString:SMChineseAuxWord withString:@""];
         switch (type) {
             case SmarkDetectTypeMoney:
@@ -119,7 +119,7 @@ static SMDetector *_defaultDetector = nil;
                 }
                 
                 NSString *signString = [[aString stringByTrimmingStrings:moneyUnits()] stringByTrimmingStrings:numberSmark()];
-                if (KMEmptyString(signString) || [negativeMoneyUnitBeginSmark() containsObject:signString]) {
+                if (CheckStringInvalid(signString) || [negativeMoneyUnitBeginSmark() containsObject:signString]) {
                     money *= -1;
                 }
                 

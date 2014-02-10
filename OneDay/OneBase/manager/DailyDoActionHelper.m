@@ -195,7 +195,7 @@ static DailyDoActionHelper *_sharedHelper = nil;
 {
     if (buttonIndex != alertView.cancelButtonIndex) {
         NSString *tContent = alertView.textView.text;
-        if (!KMEmptyString(tContent)) {
+        if (!CheckStringInvalid(tContent)) {
             
             NSDictionary *userInfo = alertView.userInfo;
             DailyDoBase *dailyDo = [userInfo objectForKey:kQuickAddUserInfoDailyDoKey];

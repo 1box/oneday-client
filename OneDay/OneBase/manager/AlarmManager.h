@@ -18,7 +18,7 @@
 static inline NSString* alarmNotificationFireTimeString() {
     NSString *ret = [[NSUserDefaults standardUserDefaults] stringForKey:kAlarmNotificationFireTimeStringUserDefaultKey];
     // default DefaultAlarmNotificationFireTimeString
-    if (KMEmptyString(ret)) {
+    if (CheckStringInvalid(ret)) {
         ret = DefaultAlarmNotificationFireTimeString;
     }
     return ret;

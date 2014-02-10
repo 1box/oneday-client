@@ -55,9 +55,9 @@
             break;
     }
     
-    if (!KMEmptyString(colorName)) {
+    if (!CheckStringInvalid(colorName)) {
         NSMutableString *imageName = [NSMutableString stringWithString:@"corner_mark"];
-        if (!KMEmptyString(scaleName)) {
+        if (!CheckStringInvalid(scaleName)) {
             [imageName appendFormat:@"_%@", scaleName];
         }
         if (favorite) {

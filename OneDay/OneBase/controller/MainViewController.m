@@ -409,7 +409,7 @@
 {
     if (buttonIndex != alertView.cancelButtonIndex) {
         NSString *tContent = alertView.textView.text;
-        if (!KMEmptyString(tContent)) {
+        if (!CheckStringInvalid(tContent)) {
             // 只有每日便签用到了快速添加
             AddonData *tAddon = (AddonData *)alertView.userInfo;
             

@@ -80,7 +80,7 @@ typedef NS_ENUM(NSInteger, DailyPeriodDayType) {
     DailyPeriodDayType type = [DailyPeriod periodDayType:dailyDoDate];
     if (type == DailyPeriodDayTypeDuration) {
         NSDate *lastDate = dailyPeriodLastPeriodDate();
-        NSInteger periodDays = PeriodDurationDayCount - [dailyDoDate daysBeforeDate:lastDate];
+        NSInteger periodDays = PeriodDurationDayCount - [dailyDoDate daysBeforeDate:lastDate] - 1;
         
         NSString *daysString = [[SMDetector defaultDetector] stringForValue:@(periodDays) byType:SmarkDetectTypeDays];
         tTodo.content = daysString;
@@ -99,7 +99,7 @@ typedef NS_ENUM(NSInteger, DailyPeriodDayType) {
     BOOL ret = [super detectTodos];
     if (ret) {
         NSString *wish = [self wish];
-        if (!KMEmptyString(wish)) {
+        if (!CheckStringInvalid(wish)) {
             if ([PrayWords containsObject:wish]) {
                 setDailyPeriodHasMakeAWish(YES);
             }
@@ -114,6 +114,13 @@ typedef NS_ENUM(NSInteger, DailyPeriodDayType) {
         }
     }
     return ret;
+}
+
+#pragma mark - public
+
++ (BOOL)hasDailyPeriodLastPeriodDate
+{
+    return hasDailyPeriodLastPeriodDate();
 }
 
 #pragma mark - private
@@ -242,7 +249,7 @@ typedef NS_ENUM(NSInteger, DailyPeriodDayType) {
     }
     
     NSString *ret = @"";
-    if (KMEmptyString(prefix) || !hasPrefix) {
+    if (CheckStringInvalid(prefix) || !hasPrefix) {
         ret = suffix;
     }
     else {

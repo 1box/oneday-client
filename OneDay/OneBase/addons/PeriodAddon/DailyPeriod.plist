@@ -49,6 +49,17 @@
 			<string>天</string>
 			<string>day</string>
 		</array>
+		<key>TipBanner</key>
+		<dict>
+			<key>TipBannerType</key>
+			<integer>0</integer>
+			<key>ContentText</key>
+			<string>PeriodTipBannerContentText</string>
+			<key>ConfirmButtonTitle</key>
+			<string>PeriodTipBannerConfirmButtonTitle</string>
+		</dict>
+		<key>TimelineType</key>
+		<integer>1</integer>
 	</dict>
 </dict>
 </plist>

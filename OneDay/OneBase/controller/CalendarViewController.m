@@ -15,6 +15,7 @@
 #import "TodoData.h"
 #import "DailyDoManager.h"
 #import "SMDetector.h"
+#import "DailyPeriod.h"
 
 
 @interface CalendarViewController () <MNCalendarViewDelegate, UIPickerViewDataSource, UIPickerViewDelegate> {
@@ -46,7 +47,24 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [_calendarView scrollToSelectedDate];
+    
+    [_calendarView scrollToSelectedDate:^{
+        if (_showPickerWhenAppear) {
+            [self showPickerView];
+        }
+    }];
+}
+
+#pragma mark - Actions
+
+- (IBAction)pickConfirmButtonClicked:(id)sender
+{
+    NSLog(@"confirm");
+}
+
+- (IBAction)pickCancelButtonClicked:(id)sender
+{
+    NSLog(@"cancel");
 }
 
 #pragma mark - private
@@ -56,16 +74,16 @@
     [UIView animateWithDuration:0.3f
                      animations:^{
                          if (!_showPicker) {
-                             setFrameWithOrigin(_pickerView, 0, SSHeight(self.view) - SSHeight(_pickerView));
+                             setFrameWithOrigin(_pickerContainer, 0, SSHeight(self.view) - SSHeight(_pickerContainer));
                              _showPicker = YES;
                          }
                          else {
-                             setFrameWithOrigin(_pickerView, 0, SSHeight(self.view));
+                             setFrameWithOrigin(_pickerContainer, 0, SSHeight(self.view));
                              _showPicker = NO;
                          }
                      }
                      completion:^(BOOL finished){
-                         
+                         NSLog(@"picker:%@", _pickerContainer);
                      }];
 }
 
@@ -126,13 +144,13 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     if (!_pickDailyDo) {
-        self.pickDailyDo = [DailyDoBase dataEntityWithInsert:YES];
+        self.pickDailyDo = [DailyPeriod dataEntityWithInsert:YES];
         [_pickDailyDo updateWithDictionary:@{}];
         _pickDailyDo.addon = _addon;
     }
     
     [[_pickDailyDo todosSortedByIndex] enumerateObjectsUsingBlock:^(TodoData *todo, NSUInteger idx, BOOL *stop){
-        if (!KMEmptyString(todo.days)) {
+        if (todo.days == nil || CheckStringInvalid(todo.days)) {
             todo.days = [[SMDetector defaultDetector] stringForValue:@(row+1) byType:SmarkDetectTypeDays];
             todo.content = todo.days;
         }

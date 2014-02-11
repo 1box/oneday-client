@@ -488,6 +488,9 @@
                 self.loggedDos = dataList;
             }
         }
+        else if (isLoadMore == NO) {    // Logged列表被清空之后，数组重置
+            self.loggedDos = dataList;
+        }
         
         _canLoadMore = [dataList count] > 0;
         

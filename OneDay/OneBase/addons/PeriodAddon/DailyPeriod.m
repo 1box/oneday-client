@@ -167,7 +167,7 @@ typedef NS_ENUM(NSInteger, DailyPeriodDayType) {
     [[self todosSortedByIndex] enumerateObjectsUsingBlock:^(TodoData *todo, NSUInteger idx, BOOL *stop) {
         if (todo.wish) {
             ret = todo.wish;
-            stop = YES;
+            *stop = YES;
         }
     }];
     return ret;
@@ -180,7 +180,7 @@ typedef NS_ENUM(NSInteger, DailyPeriodDayType) {
     [[self todosSortedByIndex] enumerateObjectsUsingBlock:^(TodoData *todo, NSUInteger idx, BOOL *stop) {
         if (todo.days) {
             periodDays = [[[SMDetector defaultDetector] valueInString:todo.days byType:SmarkDetectTypeDays] integerValue];
-            stop = YES;
+            *stop = YES;
         }
     }];
     return periodDays;

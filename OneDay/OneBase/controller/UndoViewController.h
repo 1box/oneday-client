@@ -14,7 +14,8 @@
 
 @property (nonatomic) AddonData *addon;
 
-- (IBAction)moveAllToTomorrow:(id)sender;
+// 移动所有未完成项目到今天
+- (IBAction)moveUndosToToday:(id)sender;
 - (IBAction)checkAll:(id)sender;
 
 @end

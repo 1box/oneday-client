@@ -495,7 +495,7 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                             <connections>
-                                                <action selector="moveAllToTomorrow:" destination="aEu-iv-I9L" eventType="touchUpInside" id="KO9-9u-zNB"/>
+                                                <action selector="moveUndosToToday:" destination="aEu-iv-I9L" eventType="touchUpInside" id="3B3-bD-fEF"/>
                                             </connections>
                                         </button>
                                     </barButtonItem>

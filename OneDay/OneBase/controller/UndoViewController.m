@@ -162,7 +162,7 @@
 
 #pragma mark - Actions
 
-- (IBAction)moveAllToTomorrow:(id)sender
+- (IBAction)moveUndosToToday:(id)sender
 {
     if (_hasMoved) {
         return;
@@ -170,7 +170,7 @@
     
     DailyDoBase *todayDo = [[DailyDoManager sharedManager] todayDoForAddon:_addon];
     [_undos enumerateObjectsUsingBlock:^(TodoData *todo, NSUInteger idx, BOOL *stop) {
-        if (todo.dailyDo != todayDo) {
+        if (todo.dailyDo != todayDo && [todo.check boolValue] == NO) {
             todo.dailyDo = todayDo;
         }
     }];

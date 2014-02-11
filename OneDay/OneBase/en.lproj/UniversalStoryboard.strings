@@ -312,7 +312,7 @@
 "nXH-gg-HdU.text" = "title";
 
 /* Class = "IBUIButton"; normalTitle = "_moveAllToToday"; ObjectID = "oUq-WG-6RZ"; */
-"oUq-WG-6RZ.normalTitle" = "Move all to today";
+"oUq-WG-6RZ.normalTitle" = "Move undos to today";
 
 /* Class = "IBUILabel"; text = "date"; ObjectID = "rKl-vs-Kpi"; */
 "rKl-vs-Kpi.text" = "date";

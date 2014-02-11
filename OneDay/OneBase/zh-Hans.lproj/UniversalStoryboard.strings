@@ -312,7 +312,7 @@
 "nXH-gg-HdU.text" = "title";
 
 /* Class = "IBUIButton"; normalTitle = "_moveAllToToday"; ObjectID = "oUq-WG-6RZ"; */
-"oUq-WG-6RZ.normalTitle" = "移动所有项目到今天";
+"oUq-WG-6RZ.normalTitle" = "移动未完成项目到今天";
 
 /* Class = "IBUILabel"; text = "date"; ObjectID = "rKl-vs-Kpi"; */
 "rKl-vs-Kpi.text" = "date";

@@ -72,7 +72,7 @@ static inline NSArray* durationMinuteUnit() {
 #define DollarToRMBRate 6.2192
 
 static inline NSArray* moneyUnitBeginSmark() {
-    return @[@"+", @"-", @" ", @"spend", @"spent" @"gain", @"cost", @"make", @"earn", @"pay", @"lose", @"lost", @"收入", @"赚", @"中", @"花", @"丢", @"消费", @"支出"];
+    return @[@"+", @"-", @" ", @"spend", @"spent", @"gain", @"cost", @"make", @"earn", @"pay", @"lose", @"lost", @"收入", @"赚", @"中", @"花", @"丢", @"消费", @"支出"];
 }
 
 static inline NSArray* positiveMoneyUnitBeginSmark() {

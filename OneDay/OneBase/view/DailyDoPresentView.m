@@ -29,6 +29,11 @@
 {
     // 在nib文件中指定不起作用
     _textView.scrollEnabled = NO;
+    
+#ifdef DEBUG
+    _textView.backgroundColor = [UIColor purpleColor];
+    self.backgroundColor = [UIColor orangeColor];
+#endif
 }
 
 #pragma mark - public
@@ -60,7 +65,9 @@
     
     NSDictionary *views = NSDictionaryOfVariableBindings(_textView);
     NSDictionary *metrics = @{@"textBottom" : @(textBottom)};
-    NSString *format = @"V:|[_textView]-textBottom-|";
+    NSString *format = @"V:|[_textView]|";
+//    NSString *format = @"V:|[_textView]-textBottom-|";
+    
     [tConstraints addObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:format
                                                                               options:0
                                                                               metrics:metrics

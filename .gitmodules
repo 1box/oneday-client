@@ -4,3 +4,6 @@
 [submodule "Common/submodule/MNCalendarView"]
 	path = Common/submodule/MNCalendarView
 	url = https://github.com/min/MNCalendarView.git
+[submodule "Common/submodule/CocoaLumberjack"]
+	path = Common/submodule/CocoaLumberjack
+	url = https://github.com/CocoaLumberjack/CocoaLumberjack.git

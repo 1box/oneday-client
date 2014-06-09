@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Properties</key>
+	<array>
+		<dict>
+			<key>name</key>
+			<string>todos</string>
+			<key>icon</key>
+			<string>period_todos_icon.png</string>
+			<key>type</key>
+			<string>todos</string>
+			<key>displayName</key>
+			<string>TodayPeriod</string>
+		</dict>
+		<dict>
+			<key>name</key>
+			<string>tags</string>
+			<key>icon</key>
+			<string>list_icon_tag.png</string>
+			<key>type</key>
+			<string>tags</string>
+		</dict>
+	</array>
+	<key>Configurations</key>
+	<dict>
+		<key>DefaultUnfold</key>
+		<false/>
+		<key>ShowTimeline</key>
+		<true/>
+		<key>Slogan</key>
+		<string>PeriodSlogan</string>
+		<key>TimelineTitle</key>
+		<string>PeriodTimeline</string>
+		<key>PlaceHolder</key>
+		<string>PeriodPlaceHolder</string>
+		<key>ShowQuickEntry</key>
+		<false/>
+		<key>ActionType</key>
+		<integer>2</integer>
+		<key>QuickAddPropertyName</key>
+		<string>todos</string>
+		<key>InputHelperWords</key>
+		<array>
+			<string>求姨妈</string>
+			<string>还愿</string>
+			<string>第</string>
+			<string>天</string>
+			<string>day</string>
+		</array>
+		<key>TipBanner</key>
+		<dict>
+			<key>TipBannerType</key>
+			<integer>0</integer>
+			<key>ContentText</key>
+			<string>PeriodTipBannerContentText</string>
+			<key>ConfirmButtonTitle</key>
+			<string>PeriodTipBannerConfirmButtonTitle</string>
+		</dict>
+		<key>TimelineType</key>
+		<integer>1</integer>
+		<key>TodoType</key>
+		<integer>97</integer>
+	</dict>
+</dict>
+</plist>

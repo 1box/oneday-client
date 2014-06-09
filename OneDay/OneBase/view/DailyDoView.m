@@ -390,7 +390,8 @@
     BOOL toChecked = !checkBox.selected;
     checkBox.selected = toChecked;
     
-    UIView *tCell = [[KMCommon OSVersion] floatValue] >= 7.0 ? checkBox.superview.superview.superview : checkBox.superview.superview;
+    // iOS7需要特殊处理
+    UIView *tCell = SystemVersionOn(7.f) ? checkBox.superview.superview.superview : checkBox.superview.superview;
     if ([tCell isKindOfClass:[DailyDoTodoCellListCell class]]) {
         TodoData *todo = ((DailyDoTodoCellListCell*)tCell).todo;
         todo.check = [NSNumber numberWithBool:toChecked];

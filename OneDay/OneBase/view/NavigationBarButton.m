@@ -43,13 +43,11 @@
 - (UIEdgeInsets)alignmentRectInsets
 {
     UIEdgeInsets ret = UIEdgeInsetsZero;
-    if ([KMCommon OSVersion].floatValue >= 7.f) {
-        if ([self isLeftNavBarButton]) {
-            ret = UIEdgeInsetsMake(0, NavigationButtonFixEdge, 0, 0);
-        }
-        else {
-            ret = UIEdgeInsetsMake(0, 0, 0, NavigationButtonFixEdge);
-        }
+    if ([self isLeftNavBarButton]) {
+        ret = UIEdgeInsetsMake(0, NavigationButtonFixEdge, 0, 0);
+    }
+    else {
+        ret = UIEdgeInsetsMake(0, 0, 0, NavigationButtonFixEdge);
     }
     return ret;
 }

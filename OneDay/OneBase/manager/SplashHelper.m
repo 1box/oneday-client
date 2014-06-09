@@ -112,9 +112,6 @@ static SplashHelper *_sharedHelper = nil;
     }
     
     NSMutableString *mutName = [NSMutableString stringWithString:imageName];
-        if ([[KMCommon OSVersion] floatValue] >= 7.f) {
-            [mutName appendString:@"-7"];
-        }
     [mutName appendString:@".png"];
     
     self.animationView1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[mutName copy]]];
@@ -237,9 +234,6 @@ static SplashHelper *_sharedHelper = nil;
             imageName = @"splash-screen-no-logo-568h";
         }
         NSMutableString *mutName = [NSMutableString stringWithString:imageName];
-        if ([[KMCommon OSVersion] floatValue] >= 7.f) {
-            [mutName appendString:@"-7"];
-        }
         [mutName appendString:@".png"];
         
         self.splashView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[mutName copy]]];

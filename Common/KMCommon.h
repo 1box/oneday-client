@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-
+#define SystemVersionOn(x) ([[KMCommon OSVersion] floatValue] >= (x) && [[KMCommon OSVersion] floatValue] < (x+1))
 
 @interface KMCommon : NSObject
 

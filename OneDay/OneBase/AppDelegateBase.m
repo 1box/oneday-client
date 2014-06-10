@@ -21,6 +21,9 @@
 #import "Constants.h"
 #import "NSUserDefaultsAdditions.h"
 #import "UINavigationController+HideKeyboard.h"
+#import "DDLog.h"
+#import "DDASLLogger.h"
+#import "DDTTYLogger.h"
 
 
 @interface AppDelegateBase () <iRateDelegate>
@@ -43,6 +46,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // 设置Log级别
+#ifdef DEBUG
+    [DDLog addLogger:[DDASLLogger sharedInstance]];
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
+#else
+    //TODO: KIMI 自定义Log级别
+#endif
+    
     if ([KMCommon isPadDevice]) {
 //        split's viewControllers returns an array of views. The zero-index element should be the left view, the one-index element should be the right view.
         UISplitViewController *split = (UISplitViewController *)_window.rootViewController;
@@ -71,10 +82,6 @@
     
     [[UIToolbar appearance] setBackgroundImage:[UIImage imageNamed:@"toolbar_bg.png"] forToolbarPosition:UIToolbarPositionBottom barMetrics:UIBarMetricsDefault];
     [[UIApplication sharedApplication] setStatusBarHidden:NO];
-    
-    if ([[KMCommon OSVersion] floatValue] < 7.f) {
-        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:NO];
-    }
     
     UILocalNotification *localNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
     [self handleLocalNotification:localNotification];

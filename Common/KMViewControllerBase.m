@@ -36,9 +36,7 @@
 {
     [super viewWillAppear:animated];
     
-    if ([[KMCommon OSVersion] floatValue] >= 7.f) {
-        self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
-    }
+    self.navigationController.interactivePopGestureRecognizer.delegate = (id<UIGestureRecognizerDelegate>)self;
     [MobClick beginLogPageView:[self pageNameForTrack]];
 }
 

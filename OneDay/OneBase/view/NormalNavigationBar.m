@@ -12,11 +12,11 @@
 
 - (void)awakeFromNib
 {
-    NSString *imageName = [[KMCommon OSVersion] floatValue] < 7.f ? @"light_nav_bg_pre.png" : @"light_nav_bg.png";
+    NSString *imageName = @"light_nav_bg.png";
     UIImage *navImage = [UIImage imageNamed:imageName];
     navImage = [navImage stretchableImageWithLeftCapWidth:navImage.size.width/2 topCapHeight:navImage.size.height/2];
     [self setBackgroundImage:navImage forBarMetrics:UIBarMetricsDefault];
-    self.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor];
+    self.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
 }
 
 @end

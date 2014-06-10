@@ -131,9 +131,12 @@
     [_inputView becomeFirstResponder];
 }
 
+// 重新把字符匹配到todos
 - (void)rematchText
 {
     NSArray *tContents = [_inputView.text componentsSeparatedByString:SMSeparator];
+    
+    // 去掉line number
     NSMutableArray *mutContents = [NSMutableArray arrayWithCapacity:[tContents count]];
     [tContents enumerateObjectsUsingBlock:^(NSString *content, NSUInteger idx, BOOL *stop) {
         NSString *pureContent = content;
@@ -164,15 +167,21 @@
     NSArray *contents = [mutContents copy];
     
     if ([contents count] == [_todos count]) {
+        // 如果字符串个数等于todos个数，重新匹配字符串即可
         [_todos enumerateObjectsUsingBlock:^(TodoData *todo, NSUInteger idx, BOOL *stop) {
             todo.content = [contents objectAtIndex:idx];
         }];
     }
     else if ([contents count] > [_todos count]) {
+        // 如果字符串个数大于todos个数，需要在适当位置添加新的todo
         [contents enumerateObjectsUsingBlock:^(NSString *content, NSUInteger idx, BOOL *stop) {
+            
+            // 需要添加todo的index范围
             NSRange insertRange = NSMakeRange(NSMaxRange(_changeTextIndexRange),
                                               _appendTextIndexRange.length - _changeTextIndexRange.length);
+            
             if (idx < insertRange.location) {
+                // 小于
                 TodoData *todo = [_todos objectAtIndex:idx];
                 todo.content = content;
             }
@@ -187,6 +196,7 @@
         }];
     }
     else {
+        // 如果字符串个数小于todos个数，需要删除对应todos
         [_todos enumerateObjectsUsingBlock:^(TodoData *todo, NSUInteger idx, BOOL *stop) {
             NSRange removeRange = NSMakeRange(NSMaxRange(_appendTextIndexRange),
                                               _changeTextIndexRange.length - _appendTextIndexRange.length);
@@ -204,6 +214,7 @@
     [[KMModelManager sharedManager] saveContext:nil];
 }
 
+// 刷新textView
 - (void)refreshText
 {
     self.todos = [[_dailyDo todosSortedByIndex] mutableCopy];
@@ -375,11 +386,16 @@
         return YES;
     }
     
+    // 字符插入起始todo的index
     NSUInteger beginIndex = [self indexForRange:range];
     
+    // 字符插入终止todo的index
     NSUInteger changeEndIndex = [self indexForRange:NSMakeRange(NSMaxRange(range) - 1, 1)];
+    
+    // 发生改变todos的index范围
     _changeTextIndexRange = NSMakeRange(beginIndex, changeEndIndex - beginIndex);
     
+    // 有字符插入todos的index范围
     NSArray *appendContents = [text componentsSeparatedByString:SMSeparator];
     _appendTextIndexRange = NSMakeRange(beginIndex, [appendContents count] - 1);
     

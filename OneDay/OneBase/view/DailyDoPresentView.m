@@ -31,8 +31,8 @@
     _textView.scrollEnabled = NO;
     
 #ifdef DEBUG
-    _textView.backgroundColor = [UIColor purpleColor];
-    self.backgroundColor = [UIColor orangeColor];
+//    _textView.backgroundColor = [UIColor purpleColor];
+//    self.backgroundColor = [UIColor orangeColor];
 #endif
 }
 
